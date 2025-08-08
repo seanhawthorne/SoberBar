@@ -72,6 +72,22 @@
   .tip .bubble{ display:none; position:absolute; top:100%; left:0; margin-top:8px; z-index:40; min-width:220px; max-width:280px; background:#0b0b0b; color:#fff; border:1px solid rgba(255,255,255,.12); padding:10px 12px; border-radius:8px; box-shadow:0 12px 28px rgba(0,0,0,.45); font-size:12px; line-height:1.35 }
   .tip .caret{ position:absolute; top:-6px; left:12px; width:10px; height:10px; background:#0b0b0b; transform:rotate(45deg); border-left:1px solid rgba(255,255,255,.12); border-top:1px solid rgba(255,255,255,.12) }
   .tip:hover .bubble, .tip:focus-within .bubble{ display:block }
+  /* Nav logo playback visibility helpers */
+  #brandLogo.playing {
+    transform: scale(1.12);
+    filter: brightness(1.35) contrast(1.15) drop-shadow(0 0 0.75px #fff) drop-shadow(0 0 8px rgba(234,176,64,.55));
+    transition: transform .25s ease, filter .25s ease;
+    border-radius: 8px;
+  }
+  a[aria-label='Sober Bar Home'].logo-playing { position: relative; }
+  a[aria-label='Sober Bar Home'].logo-playing::before {
+    content: '';
+    position: absolute; inset: -6px -8px; border-radius: 12px;
+    background:
+      radial-gradient(closest-side, rgba(255,255,255,.35), rgba(255,255,255,0) 60%),
+      linear-gradient(135deg, rgba(234,176,64,.25), rgba(244,222,121,.18));
+    pointer-events: none;
+  }
   </style>
 </head>
 <body class="font-lato antialiased text-gray-800 bg-white">
@@ -470,7 +486,7 @@
     }, {threshold:.15});
     document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
 
-    // Brand logo: play animation once for first-time visitors (with debug replay flag)
+    // Brand logo: play animation once for first-time visitors (overlay approach)
     (function(){
       const logo = document.getElementById('brandLogo');
       if(!logo) return;
@@ -483,18 +499,38 @@
       const animated = logo.getAttribute('data-animated');
       const statik = logo.getAttribute('data-static') || logo.src;
       if(!animated || !statik) return;
-      // Preload GIF, then swap, and add a subtle halo so it’s visible on the dark nav
+      const wrap = logo.closest("a[aria-label='Sober Bar Home']") || logo.parentElement;
+      if(!wrap) return;
+      // Preload GIF and overlay it with screen blend over the static PNG for visibility on dark bg
       const preload = new Image();
       preload.onload = ()=>{
-        const prevFilter = logo.style.filter;
-        logo.style.filter = 'drop-shadow(0 0 0.75px #fff) drop-shadow(0 0 1.5px #fff)';
-        logo.src = animated;
+        const overlay = document.createElement('img');
+        overlay.src = animated;
+        overlay.alt = '';
+        overlay.setAttribute('aria-hidden','true');
+        overlay.style.position = 'absolute';
+        overlay.style.left = '0';
+        overlay.style.top = '0';
+        overlay.style.height = logo.clientHeight + 'px';
+        overlay.style.width = 'auto';
+        overlay.style.pointerEvents = 'none';
+        overlay.style.opacity = '0';
+        overlay.style.transition = 'opacity .15s ease';
+        overlay.style.mixBlendMode = 'screen';
+        wrap.classList.add('logo-playing');
+        logo.classList.add('playing');
+        // Ensure wrap is positioned for absolute overlay
+        if(getComputedStyle(wrap).position === 'static') wrap.style.position = 'relative';
+        wrap.appendChild(overlay);
+        requestAnimationFrame(()=>{ overlay.style.opacity = '1'; });
         const revert = ()=>{
-          logo.src = statik;
-          logo.style.filter = prevFilter || '';
+          overlay.style.opacity = '0';
+          setTimeout(()=>{ overlay.remove(); }, 200);
+          logo.classList.remove('playing');
+          wrap.classList.remove('logo-playing');
           localStorage.setItem('sb_logo_played','1');
         };
-        setTimeout(revert, 2500);
+        setTimeout(revert, 3000);
       };
       preload.src = animated;
     })();
