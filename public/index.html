@@ -470,13 +470,16 @@
     }, {threshold:.15});
     document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
 
-    // Brand logo: play animation once for first-time visitors
+    // Brand logo: play animation once for first-time visitors (with debug replay flag)
     (function(){
       const logo = document.getElementById('brandLogo');
       if(!logo) return;
       const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if(reduce) return; // respect user setting
-      if(localStorage.getItem('sb_logo_played')==='1') return; // already played
+      const qp = new URLSearchParams(location.search);
+      const forceReplay = qp.has('replayLogo') || qp.has('logoTest');
+      if(localStorage.getItem('sb_logo_played')==='1' && !forceReplay) return; // already played
+      if(forceReplay) try{ localStorage.removeItem('sb_logo_played'); }catch(e){}
       const animated = logo.getAttribute('data-animated');
       const statik = logo.getAttribute('data-static');
       if(!animated || !statik) return;
