@@ -398,9 +398,9 @@
       <h2 class="text-center font-comfortaa font-bold text-4xl mb-10">FAQ</h2>
       <div class="space-y-4">
         <details class="p-6 rounded-lg bg-gray-50 border">
-          <summary class="font-bold cursor-pointer">How do you keep businesses from buying the Home Edition PDF?</summary>
+          <summary class="font-bold cursor-pointer">How do you limit business use of the Home Edition PDF?</summary>
           <div class="pt-3 text-gray-700 text-sm">
-            We gate it with: (1) mandatory “non‑commercial use” agreement, (2) purchase with personal email only, (3) per‑buyer watermarking, and (4) expiring download links. The PDF only lists consumer‑friendly sources (no EIN / no MOQ), so the pricing is naturally less attractive for a bar.
+            It’s designed for individuals. We require a non‑commercial use agreement, personal email at checkout, add a unique watermark, and use expiring download links. It also lists consumer‑friendly sources (no EIN / no MOQ), so it’s naturally less attractive for a bar.
           </div>
         </details>
         <details class="p-6 rounded-lg bg-gray-50 border">
@@ -481,14 +481,22 @@
       if(localStorage.getItem('sb_logo_played')==='1' && !forceReplay) return; // already played
       if(forceReplay) try{ localStorage.removeItem('sb_logo_played'); }catch(e){}
       const animated = logo.getAttribute('data-animated');
-      const statik = logo.getAttribute('data-static');
+      const statik = logo.getAttribute('data-static') || logo.src;
       if(!animated || !statik) return;
-      // Swap to GIF, then revert when it finishes (use duration fallback timer)
-      const origSrc = logo.src;
-      logo.src = animated;
-      const revert = ()=>{ logo.src = statik; localStorage.setItem('sb_logo_played','1'); };
-      // Try to detect GIF end by timing; keep short to avoid distraction
-      setTimeout(revert, 2500);
+      // Preload GIF, then swap, and add a subtle halo so it’s visible on the dark nav
+      const preload = new Image();
+      preload.onload = ()=>{
+        const prevFilter = logo.style.filter;
+        logo.style.filter = 'drop-shadow(0 0 0.75px #fff) drop-shadow(0 0 1.5px #fff)';
+        logo.src = animated;
+        const revert = ()=>{
+          logo.src = statik;
+          logo.style.filter = prevFilter || '';
+          localStorage.setItem('sb_logo_played','1');
+        };
+        setTimeout(revert, 2500);
+      };
+      preload.src = animated;
     })();
 
     // Calculator
