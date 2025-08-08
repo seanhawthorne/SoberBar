@@ -5,11 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sober Bar — The Kava & Kratom Sourcing Hub for Bars & Home Brewers</title>
   <meta name="description" content="Vetted wholesale directory for kava/kratom bars + a home‑brewer PDF. Save 15–20% on costs, source faster, and buy with confidence." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://soberbar.pages.dev/" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sober Bar — The Kava & Kratom Sourcing Hub" />
+  <meta property="og:description" content="Save 15–20% with a vetted wholesale directory, transparent pricing, and fast supplier intros." />
+  <meta property="og:url" content="https://soberbar.pages.dev/" />
+  <meta property="og:image" content="/full_trimmed_transparent_customcolor.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sober Bar — The Kava & Kratom Sourcing Hub" />
+  <meta name="twitter:description" content="Save 15–20% with a vetted wholesale directory, transparent pricing, and fast supplier intros." />
+  <meta name="twitter:image" content="/full_trimmed_transparent_customcolor.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/full_trimmed_transparent_customcolor.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sober Bar",
+    "url": "https://soberbar.pages.dev/",
+    "logo": "https://soberbar.pages.dev/full_trimmed_transparent_customcolor.png"
+  }
+  </script>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,7 +41,8 @@
         extend: {
           colors: {
             'sober-black': '#000000',
-            'sober-gold': '#C9A96E',
+            'sober-gold': '#EAB040',
+            'sober-gold-2': '#F4DE79',
           },
           fontFamily: {
             comfortaa: ['Comfortaa', 'sans-serif'],
@@ -31,25 +54,34 @@
   </script>
 
   <style>
-    :root { --sb: #000000; --sg: #C9A96E; }
-    .text-gradient { background: linear-gradient(135deg, var(--sg), #D4B574); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .btn-primary { background: linear-gradient(135deg, var(--sg), #D4B574); color:#000; font-weight:700; }
-    .btn-primary:hover { filter: brightness(1.05); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(201,169,110,.35); }
-    .btn-outline { border:2px solid var(--sg); color: var(--sg); font-weight:700; }
-    .btn-outline:hover { background: var(--sg); color:#000; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(201,169,110,.25); }
-    .bg-pattern { background-image: radial-gradient( circle at 20% 10%, rgba(201,169,110,.12), transparent 35%), radial-gradient( circle at 80% 0%, rgba(201,169,110,.12), transparent 35% ); }
+  :root { --sb: #000000; --sg1: #EAB040; --sg2: #F4DE79; }
+  .text-gradient { background: linear-gradient(135deg, var(--sg1), var(--sg2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .btn-primary { background: linear-gradient(135deg, var(--sg1), var(--sg2)); color:#000; font-weight:700; }
+  .btn-primary:hover { filter: brightness(1.05); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(234,176,64,.35); }
+  .btn-outline { border:2px solid var(--sg1); color: var(--sg1); font-weight:700; }
+  .btn-outline:hover { background: var(--sg1); color:#000; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(234,176,64,.25); }
+  .bg-pattern { background-image: radial-gradient( circle at 20% 10%, rgba(234,176,64,.12), transparent 35%), radial-gradient( circle at 80% 0%, rgba(234,176,64,.12), transparent 35% ); }
     .reveal { opacity:0; transform: translateY(28px); transition: all .7s ease; }
     .reveal.visible{ opacity:1; transform:none; }
     .toggle-dot{ transition: transform .3s ease; }
+  .info{ display:inline-flex; align-items:center; margin-left:6px; color: var(--sg1); opacity:.9 }
+  .info svg{ width:14px; height:14px; }
+  /* Tooltip */
+  .tip{ position:relative; display:inline-flex; align-items:center; margin-left:6px; color: var(--sg1); cursor:help }
+  .tip svg{ width:14px; height:14px; }
+  .tip .bubble{ display:none; position:absolute; top:100%; left:0; margin-top:8px; z-index:40; min-width:220px; max-width:280px; background:#0b0b0b; color:#fff; border:1px solid rgba(255,255,255,.12); padding:10px 12px; border-radius:8px; box-shadow:0 12px 28px rgba(0,0,0,.45); font-size:12px; line-height:1.35 }
+  .tip .caret{ position:absolute; top:-6px; left:12px; width:10px; height:10px; background:#0b0b0b; transform:rotate(45deg); border-left:1px solid rgba(255,255,255,.12); border-top:1px solid rgba(255,255,255,.12) }
+  .tip:hover .bubble, .tip:focus-within .bubble{ display:block }
   </style>
 </head>
 <body class="font-lato antialiased text-gray-800 bg-white">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-black text-white px-3 py-2 rounded">Skip to content</a>
 
   <!-- ================= NAV ================= -->
   <nav id="nav" class="fixed top-0 w-full z-50 bg-sober-black/90 backdrop-blur border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#" aria-label="Sober Bar Home" class="flex items-center">
-        <img alt="Sober Bar Logo" src="full_trimmed_transparent_customcolor.png" class="h-10 w-auto block" fetchpriority="high" decoding="async"
+        <img id="brandLogo" alt="Sober Bar Logo" src="full_trimmed_transparent_customcolor.png" data-static="full_trimmed_transparent_customcolor.png" data-animated="logo_animation.gif" class="h-9 w-auto block md:h-10" fetchpriority="high" decoding="async"
              onerror="this.onerror=null; this.replaceWith(document.getElementById('sb-logo-fallback').content.cloneNode(true));" />
         <template id="sb-logo-fallback">
           <span class="font-comfortaa text-xl font-bold text-gradient select-none">SOBER&nbsp;BAR</span>
@@ -78,7 +110,7 @@
   </nav>
 
   <!-- ================= HERO ================= -->
-  <header class="pt-28 lg:pt-36 bg-sober-black bg-pattern text-white relative overflow-hidden">
+  <header class="pt-28 lg:pt-36 pb-16 md:pb-20 bg-sober-black bg-pattern text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
       <div class="reveal visible">
         <p class="uppercase tracking-widest text-sober-gold font-bold mb-3">For Bars & Home Brewers</p>
@@ -88,20 +120,7 @@
           <a href="#plans" class="btn-primary rounded-lg px-6 py-4 text-center">I’m a Bar Owner</a>
           <a href="#home" class="btn-outline rounded-lg px-6 py-4 text-center">I’m a Home Brewer</a>
         </div>
-        <div class="mt-10 grid grid-cols-3 gap-6 text-center">
-          <div>
-            <div class="text-sober-gold text-2xl font-extrabold">15–20%</div>
-            <div class="text-gray-400 text-sm">Avg. cost savings</div>
-          </div>
-          <div>
-            <div class="text-sober-gold text-2xl font-extrabold">Vetted</div>
-            <div class="text-gray-400 text-sm">Suppliers only</div>
-          </div>
-          <div>
-            <div class="text-sober-gold text-2xl font-extrabold">Minutes</div>
-            <div class="text-gray-400 text-sm">from search → order</div>
-          </div>
-        </div>
+        
       </div>
 
       <div class="reveal">
@@ -143,12 +162,14 @@
     </div>
   </header>
 
+  
+
   <!-- ================= HOW IT WORKS ================= -->
   <section id="how" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-14 reveal">
-        <h2 class="font-comfortaa font-bold text-4xl lg:text-5xl">Source Smarter. <span class="text-gradient">No Guesswork.</span></h2>
-        <p class="text-lg text-gray-600 mt-3">We vet suppliers, surface price transparency, and give you fast filters so you make confident buys.</p>
+        <h2 id="main" class="font-comfortaa font-bold text-4xl lg:text-5xl">Source Smarter. <span class="text-gradient">No Guesswork.</span></h2>
+        <p class="text-lg text-gray-600 mt-3">We vet suppliers, surface price transparency, and give you fast filters so you make confident buys. <button id="vetInfo" class="inline underline decoration-dotted underline-offset-4">How we vet</button></p>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="p-8 rounded-xl border border-gray-200 hover:shadow-xl reveal">
@@ -172,22 +193,38 @@
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="font-comfortaa font-bold text-4xl mb-4">See Your <span class="text-gradient">Savings</span></h2>
       <p class="text-gray-600 mb-10">Enter your current monthly kava/kratom spend. Typical member savings: <strong>15–20%</strong>.</p>
-      <div class="bg-white rounded-2xl shadow-xl p-8 border">
+      <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-10 border-2 border-sober-gold/10">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <label for="cost" class="block text-left font-bold mb-2">Your current monthly spend ($)</label>
-            <input id="cost" inputmode="numeric" pattern="[0-9]*" class="w-full text-2xl font-bold p-4 rounded-lg border-2 focus:border-sober-gold" placeholder="2000" value="2000" />
+            <div class="relative group">
+              <input id="cost" inputmode="numeric" pattern="[0-9]*" class="w-full text-2xl font-bold p-4 pr-12 rounded-lg border-2 border-gray-300 focus:border-sober-gold hover:border-sober-gold transition shadow-sm hover:shadow-md cursor-text" placeholder="2000" value="2000" />
+              <svg aria-hidden="true" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 group-hover:text-sober-gold transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L8.25 18.402 3 19.5l1.098-5.25L16.862 4.487z" />
+              </svg>
+            </div>
+            <p class="text-left text-xs text-gray-500 mt-2">Edit to match your spend.</p>
           </div>
-          <div class="bg-sober-black text-white rounded-xl p-8">
-            <p class="text-gray-300">Estimated monthly savings</p>
-            <div id="saveM" class="text-5xl font-extrabold text-gradient my-2">$400</div>
-            <p class="text-gray-300">Estimated annual savings</p>
-            <div id="saveY" class="text-3xl font-bold text-sober-gold">$4,800</div>
+          <div class="rounded-xl p-0.5 bg-gradient-to-br from-sober-gold to-sober-gold-2 shadow-lg">
+            <div class="bg-sober-black text-white rounded-lg p-8 border border-white/10">
+              <p class="text-gray-300">Estimated monthly savings</p>
+              <div id="saveM" class="text-5xl font-extrabold text-gradient my-2">$400</div>
+              <p class="text-gray-300">Estimated annual savings</p>
+              <div id="saveY" class="text-3xl font-bold text-sober-gold">$4,800</div>
+            </div>
           </div>
         </div>
       </div>
+      <div class="mt-6 text-sm text-gray-600">Ready to act on those savings? <a href="#plans" class="font-bold underline decoration-dotted underline-offset-4 text-sober-gold">See plans</a> to unlock the full supplier list and contact info.</div>
     </div>
   </section>
+
+  <!-- Mobile sticky CTA (shown on small screens, dismissible) -->
+  <div id="stickyCta" class="md:hidden fixed inset-x-0 bottom-0 z-50 bg-black/90 backdrop-blur border-t border-white/10 px-4 py-3 flex items-center gap-3">
+    <button id="stickyClose" class="text-white/70 px-2 py-1">✕</button>
+    <div class="text-white text-sm">Get the vetted supplier directory.</div>
+    <a href="#plans" class="ml-auto btn-primary rounded-md px-4 py-2">Get Started</a>
+  </div>
 
   <!-- ================= PRICING (TABS) ================= -->
   <section id="plans" class="py-20 bg-white">
@@ -215,10 +252,16 @@
             <div class="text-gray-500">/month</div>
           </div>
           <ul class="space-y-3 mb-6 text-sm">
-            <li>All vetted suppliers</li>
-            <li>Member‑exclusive pricing</li>
-            <li>Live price updates</li>
-            <li>Email support</li>
+            <li>Full access to vetted supplier directory</li>
+            <li>Member‑only pricing and contact details</li>
+            <li>
+              Live price updates
+              <span class="tip" tabindex="0" aria-label="More info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
+                <span class="bubble"><span class="caret"></span>We refresh tracked SKUs regularly and highlight changes to price, MOQ, and EIN requirements so you’re never surprised.</span>
+              </span>
+            </li>
+            <li>Standard email support (24–48h)</li>
           </ul>
           <a href="#" class="btn-outline rounded-lg w-full block text-center px-6 py-3">Start free 7‑day trial</a>
         </div>
@@ -232,10 +275,37 @@
             <div class="text-gray-400">/month</div>
           </div>
           <ul class="space-y-3 mb-6 text-sm text-white/90">
-            <li>Everything in Starter</li>
-            <li>Priority support</li>
-            <li>Monthly market insights</li>
-            <li>Custom sourcing assistance</li>
+            <li>
+              Everything in Starter
+            </li>
+            <li>
+              Same‑day email support
+              <span class="tip" tabindex="0" aria-label="More info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
+                <span class="bubble"><span class="caret"></span>Skip the queue. First response by end of business day (Mon–Fri) for Pro members.</span>
+              </span>
+            </li>
+            <li>
+              Monthly market snapshot (1‑page)
+              <span class="tip" tabindex="0" aria-label="More info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
+                <span class="bubble"><span class="caret"></span>A concise PDF of key changes: price moves, MOQ shifts, and new/retired suppliers—delivered monthly.</span>
+              </span>
+            </li>
+            <li>
+              1 sourcing intro/month
+              <span class="tip" tabindex="0" aria-label="More info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
+                <span class="bubble"><span class="caret"></span>We warm‑introduce you to a vetted supplier matching your SKU/volume needs—no cold outreach.</span>
+              </span>
+            </li>
+            <li>
+              SKU cost review (1 quote/month)
+              <span class="tip" tabindex="0" aria-label="More info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
+                <span class="bubble"><span class="caret"></span>Email a quote; we sanity‑check it against current market and flag negotiation levers.</span>
+              </span>
+            </li>
           </ul>
           <a href="#" class="btn-primary rounded-lg w-full block text-center px-6 py-3">Start free 7‑day trial</a>
         </div>
@@ -248,9 +318,27 @@
             <div class="text-gray-500">/month</div>
           </div>
           <ul class="space-y-3 mb-6 text-sm">
-            <li>Dedicated account manager</li>
-            <li>Bulk order coordination</li>
-            <li>API & integrations</li>
+            <li>
+              Dedicated account manager
+              <span class="tip" tabindex="0" aria-label="More info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
+                <span class="bubble"><span class="caret"></span>One point of contact for sourcing requests, updates, and vendor coordination.</span>
+              </span>
+            </li>
+            <li>
+              Bulk order coordination
+              <span class="tip" tabindex="0" aria-label="More info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
+                <span class="bubble"><span class="caret"></span>We help synchronize larger buys across suppliers and align delivery windows.</span>
+              </span>
+            </li>
+            <li>
+              API & integrations
+              <span class="tip" tabindex="0" aria-label="More info">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
+                <span class="bubble"><span class="caret"></span>CSV/Google Sheets exports available now. API access available via waitlist.</span>
+              </span>
+            </li>
           </ul>
           <a href="#" class="btn-outline rounded-lg w-full block text-center px-6 py-3">Talk to sales</a>
         </div>
@@ -292,9 +380,15 @@
         <p class="text-sm text-gray-600">Suppliers don’t pay to be listed. Our incentives are aligned with members, not advertisers.</p>
       </div>
       <div class="p-6 rounded-xl bg-white border">
+        <h4 class="font-bold mb-2">Secure & Private</h4>
+        <p class="text-sm text-gray-600">Member data is never sold. We only use analytics to improve your experience.</p>
+      </div>
+      <!--
+      <div class="p-6 rounded-xl bg-white border">
         <h4 class="font-bold mb-2">Roadmap → White‑Label</h4>
         <p class="text-sm text-gray-600">As the brand of record, we’ll replace the lowest‑cost supplier with <strong>Sober Bar</strong> white‑label SKUs delivered via drop‑ship.</p>
       </div>
+      -->
     </div>
   </section>
 
@@ -311,18 +405,34 @@
         </details>
         <details class="p-6 rounded-lg bg-gray-50 border">
           <summary class="font-bold cursor-pointer">What does “vetted” mean for suppliers?</summary>
-          <div class="pt-3 text-gray-700 text-sm">Business credentials, COAs, delivery history, and reputation checks. We monitor ongoing performance and remove low performers.</div>
+          <div class="pt-3 text-gray-700 text-sm">We validate licensing and documents, verify COAs for relevant SKUs, review delivery performance and dispute history, assess reputation, and monitor ongoing performance.</div>
+        </details>
+        <details class="p-6 rounded-lg bg-gray-50 border">
+          <summary class="font-bold cursor-pointer">How often are prices updated?</summary>
+          <div class="pt-3 text-gray-700 text-sm">Tracked SKUs are reviewed routinely. We surface price moves and note MOQ/EIN changes so you can act with current info.</div>
+        </details>
+        <details class="p-6 rounded-lg bg-gray-50 border">
+          <summary class="font-bold cursor-pointer">Can you intro us to the right supplier?</summary>
+          <div class="pt-3 text-gray-700 text-sm">Yes—Professional includes one warm introduction per month to a vetted supplier that matches your SKU/volume needs.</div>
+        </details>
+        <details class="p-6 rounded-lg bg-gray-50 border">
+          <summary class="font-bold cursor-pointer">Will you review a quote we received?</summary>
+          <div class="pt-3 text-gray-700 text-sm">Yes—Professional includes one monthly SKU quote review. We sanity‑check against current market and flag negotiation levers.</div>
         </details>
         <details class="p-6 rounded-lg bg-gray-50 border">
           <summary class="font-bold cursor-pointer">Do you list kratom sources?</summary>
           <div class="pt-3 text-gray-700 text-sm">Yes, where legally permitted. Members are responsible for complying with local/state laws.</div>
+        </details>
+        <details class="p-6 rounded-lg bg-gray-50 border">
+          <summary class="font-bold cursor-pointer">Do you have affiliate relationships?</summary>
+          <div class="pt-3 text-gray-700 text-sm">For a few suppliers we may use affiliate links. These never change the price you pay and don’t affect how we rank or present suppliers.</div>
         </details>
       </div>
     </div>
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-gray-900 text-gray-300 py-12">
+  <footer class="bg-sober-black text-gray-300 py-12">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <div class="lg:col-span-2">
   <img alt="Sober Bar" class="h-10 w-auto mb-4" src="sober_bar_logo_highres.png" loading="lazy" decoding="async" />
@@ -360,6 +470,24 @@
     }, {threshold:.15});
     document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
 
+    // Brand logo: play animation once for first-time visitors
+    (function(){
+      const logo = document.getElementById('brandLogo');
+      if(!logo) return;
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce) return; // respect user setting
+      if(localStorage.getItem('sb_logo_played')==='1') return; // already played
+      const animated = logo.getAttribute('data-animated');
+      const statik = logo.getAttribute('data-static');
+      if(!animated || !statik) return;
+      // Swap to GIF, then revert when it finishes (use duration fallback timer)
+      const origSrc = logo.src;
+      logo.src = animated;
+      const revert = ()=>{ logo.src = statik; localStorage.setItem('sb_logo_played','1'); };
+      // Try to detect GIF end by timing; keep short to avoid distraction
+      setTimeout(revert, 2500);
+    })();
+
     // Calculator
     const cost = document.getElementById('cost');
     const saveM = document.getElementById('saveM');
@@ -371,7 +499,14 @@
       const fmt = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
       saveM.textContent = fmt.format(m); saveY.textContent = fmt.format(y);
     }
-    cost.addEventListener('input', calc); calc();
+    cost.addEventListener('input', calc);
+    // URL param prefill: ?cost=2500
+    const usp = new URLSearchParams(location.search);
+    if(usp.has('cost')){
+      const v = usp.get('cost');
+      if(/^\d+(\.\d+)?$/.test(v)) cost.value = v;
+    }
+    calc();
 
     // Pricing tabs
     const tabBusiness = document.getElementById('tabBusiness');
@@ -412,6 +547,34 @@
       cancel.addEventListener('click', ()=> wrap.remove());
       proceed.addEventListener('click', ()=>{ window.location.href = '#'; /* TODO: Stripe checkout link */ });
     });
+
+    // How we vet modal (lightweight)
+    const vetBtn = document.getElementById('vetInfo');
+    vetBtn?.addEventListener('click', ()=>{
+      const wrap = document.createElement('div');
+      wrap.className = 'fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-4';
+      wrap.innerHTML = `
+        <div class='bg-white rounded-2xl max-w-xl w-full p-6'>
+          <h3 class='text-xl font-bold mb-2'>How we vet suppliers</h3>
+          <ul class='list-disc pl-5 text-sm text-gray-700 space-y-1'>
+            <li>Licensing and documents validated</li>
+            <li>COAs verified for relevant SKUs</li>
+            <li>Delivery reliability and dispute history reviewed</li>
+            <li>Pricing transparency and MOQ/EIN requirements tracked</li>
+            <li>Ongoing performance monitoring</li>
+          </ul>
+          <div class='text-right mt-4'><button id='vetClose' class='px-4 py-2'>Close</button></div>
+        </div>`;
+      document.body.appendChild(wrap);
+      wrap.querySelector('#vetClose')?.addEventListener('click', ()=> wrap.remove());
+      wrap.addEventListener('click', (e)=>{ if(e.target===wrap) wrap.remove(); });
+    });
+
+    // Sticky CTA dismiss with localStorage
+    const sticky = document.getElementById('stickyCta');
+    const stickyClose = document.getElementById('stickyClose');
+    if(localStorage.getItem('sb_sticky_dismissed')==='1') sticky?.remove();
+    stickyClose?.addEventListener('click', ()=>{ localStorage.setItem('sb_sticky_dismissed','1'); sticky?.remove(); });
   </script>
 </body>
 </html>
