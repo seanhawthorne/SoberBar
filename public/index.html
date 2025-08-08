@@ -15,11 +15,12 @@
   <meta property="og:title" content="Sober Bar — The Kava & Kratom Sourcing Hub" />
   <meta property="og:description" content="Save 15–20% with a vetted wholesale directory, transparent pricing, and fast supplier intros." />
   <meta property="og:url" content="https://soberbar.pages.dev/" />
-  <meta property="og:image" content="/full_trimmed_transparent_customcolor.png" />
+  <meta property="og:image" content="https://soberbar.pages.dev/full_trimmed_transparent_customcolor.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sober Bar — The Kava & Kratom Sourcing Hub" />
   <meta name="twitter:description" content="Save 15–20% with a vetted wholesale directory, transparent pricing, and fast supplier intros." />
-  <meta name="twitter:image" content="/full_trimmed_transparent_customcolor.png" />
+  <meta name="twitter:image" content="https://soberbar.pages.dev/full_trimmed_transparent_customcolor.png" />
+  <meta name="twitter:image:alt" content="Sober Bar logo on brand background" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -99,7 +100,7 @@
   <!-- ================= NAV ================= -->
   <nav id="nav" class="fixed top-0 w-full z-50 bg-sober-black/90 backdrop-blur border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" aria-label="Sober Bar Home" class="flex items-center">
+  <a href="/" aria-label="Sober Bar Home" class="flex items-center">
         <img id="brandLogo" alt="Sober Bar Logo" src="full_trimmed_transparent_customcolor.png" data-static="full_trimmed_transparent_customcolor.png" data-animated="logo_animation.gif" class="h-9 w-auto block md:h-10" fetchpriority="high" decoding="async"
              onerror="this.onerror=null; this.replaceWith(document.getElementById('sb-logo-fallback').content.cloneNode(true));" />
         <template id="sb-logo-fallback">
@@ -107,10 +108,10 @@
         </template>
       </a>
       <div class="hidden md:flex items-center gap-8 text-white">
-        <a href="#how" class="hover:text-sober-gold">How it works</a>
-        <a href="#calc" class="hover:text-sober-gold">Calculator</a>
-        <a href="#plans" class="hover:text-sober-gold">Pricing</a>
-        <a href="#faq" class="hover:text-sober-gold">FAQ</a>
+        <a href="#how" class="hover:text-sober-gold" data-nav>How it works</a>
+        <a href="#calc" class="hover:text-sober-gold" data-nav>Calculator</a>
+        <a href="#plans" class="hover:text-sober-gold" data-nav>Pricing</a>
+        <a href="#faq" class="hover:text-sober-gold" data-nav>FAQ</a>
       </div>
       <div class="hidden md:block"><a href="#plans" class="btn-primary rounded-lg px-5 py-3">Get Started</a></div>
   <button id="menuBtn" class="md:hidden text-white p-2" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
@@ -224,7 +225,7 @@
             </div>
             <p class="text-left text-xs text-gray-500 mt-2">Edit to match your spend.</p>
           </div>
-          <div class="rounded-xl p-0.5 bg-gradient-to-br from-sober-gold to-sober-gold-2 shadow-lg">
+          <div class="rounded-xl p-0.5 bg-gradient-to-br from-sober-gold to-sober-gold-2 shadow-lg" aria-live="polite">
             <div class="bg-sober-black text-white rounded-lg p-8 border border-white/10">
               <p class="text-gray-300">Estimated monthly savings</p>
               <div id="saveM" class="text-5xl font-extrabold text-gradient my-2">$400</div>
@@ -255,14 +256,14 @@
 
       <!-- Tabs -->
       <div class="flex justify-center mb-8">
-        <div class="inline-flex rounded-lg border border-gray-200 overflow-hidden">
-          <button id="tabBusiness" class="px-5 py-3 font-bold bg-black text-sober-gold">Business (Bars)</button>
-          <button id="tabHome" class="px-5 py-3 font-bold">Home Edition</button>
+        <div class="inline-flex rounded-lg border border-gray-200 overflow-hidden" role="tablist" aria-label="Pricing tabs">
+          <button id="tabBusiness" class="px-5 py-3 font-bold bg-black text-sober-gold" role="tab" aria-selected="true" aria-controls="businessPlans">Business (Bars)</button>
+          <button id="tabHome" class="px-5 py-3 font-bold" role="tab" aria-selected="false" aria-controls="home">Home Edition</button>
         </div>
       </div>
 
       <!-- Business Plans -->
-      <div id="businessPlans" class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+  <div id="businessPlans" class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto" role="tabpanel" aria-labelledby="tabBusiness">
         <div class="p-8 rounded-xl border-2 border-gray-200 hover:-translate-y-1 transition">
           <div class="text-center mb-6">
             <h3 class="text-2xl font-bold">Starter</h3>
@@ -364,7 +365,7 @@
       </div>
 
       <!-- Home Edition -->
-      <div id="home" class="hidden max-w-4xl mx-auto mt-6">
+  <div id="home" class="hidden max-w-4xl mx-auto mt-6" role="tabpanel" aria-labelledby="tabHome">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div class="order-2 md:order-1 p-8 rounded-2xl border-2 border-gray-200">
             <h3 class="text-2xl font-bold mb-2">Home Edition PDF</h3>
@@ -574,7 +575,7 @@
     }
     calc();
 
-    // Pricing tabs
+    // Pricing tabs (ARIA + keyboard)
     const tabBusiness = document.getElementById('tabBusiness');
     const tabHome = document.getElementById('tabHome');
     const business = document.getElementById('businessPlans');
@@ -585,9 +586,32 @@
       tabHome.classList.toggle('bg-black', !biz); tabHome.classList.toggle('text-sober-gold', !biz);
       business.classList.toggle('hidden', !biz);
       home.classList.toggle('hidden', biz);
+      tabBusiness.setAttribute('aria-selected', String(biz));
+      tabHome.setAttribute('aria-selected', String(!biz));
     }
     tabBusiness.addEventListener('click',()=>activate('biz'));
     tabHome.addEventListener('click',()=>activate('home'));
+    // arrow key navigation between tabs
+    [tabBusiness, tabHome].forEach((el, idx, arr)=>{
+      el.addEventListener('keydown', (e)=>{
+        if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+          e.preventDefault(); const next = e.key==='ArrowRight'? (idx+1)%arr.length : (idx-1+arr.length)%arr.length; arr[next].focus(); arr[next].click();
+        }
+      });
+    });
+
+    // Nav scroll spy for aria-current
+    const navLinks = Array.from(document.querySelectorAll('a[data-nav]'));
+    const sections = navLinks.map(a=> document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const sp = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const id = '#' + e.target.id;
+          navLinks.forEach(a=> a.toggleAttribute('aria-current', a.getAttribute('href')===id));
+        }
+      });
+    }, {rootMargin:'-50% 0px -40% 0px', threshold:0});
+    sections.forEach(sec=> sp.observe(sec));
 
     // Home PDF purchase gate (checkbox modal)
     const buyBtn = document.getElementById('buyPDF');
