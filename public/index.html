@@ -7,6 +7,9 @@
   <meta name="description" content="Vetted wholesale directory for kava/kratom bars + a home‑brewer PDF. Save 15–20% on costs, source faster, and buy with confidence." />
   <meta name="theme-color" content="#000000" />
   <link rel="canonical" href="https://soberbar.pages.dev/" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sober Bar — The Kava & Kratom Sourcing Hub" />
@@ -110,7 +113,7 @@
         <a href="#faq" class="hover:text-sober-gold">FAQ</a>
       </div>
       <div class="hidden md:block"><a href="#plans" class="btn-primary rounded-lg px-5 py-3">Get Started</a></div>
-      <button id="menuBtn" class="md:hidden text-white p-2" aria-label="Menu">
+  <button id="menuBtn" class="md:hidden text-white p-2" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m0 6H4"/></svg>
       </button>
     </div>
@@ -466,8 +469,8 @@
       <div>
         <h4 class="font-bold text-white mb-3">Legal</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:text-sober-gold">Privacy Policy</a></li>
-          <li><a href="#" class="hover:text-sober-gold">Terms of Service</a></li>
+          <li><a href="/privacy.html" class="hover:text-sober-gold">Privacy Policy</a></li>
+          <li><a href="/terms.html" class="hover:text-sober-gold">Terms of Service</a></li>
         </ul>
       </div>
     </div>
@@ -478,7 +481,23 @@
     // Mobile menu
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+    menuBtn?.addEventListener('click', ()=>{
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+      if(!expanded){
+        const first = mobileMenu.querySelector('a,button,[tabindex]:not([tabindex="-1"])');
+        first && first.focus();
+      }
+    });
+    // Close mobile menu with ESC
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && !mobileMenu.classList.contains('hidden')){
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.focus();
+      }
+    });
 
     // Reveal on scroll
     const io = new IntersectionObserver((entries)=>{
@@ -591,7 +610,21 @@
       const proceed = wrap.querySelector('#proceed'); const cancel = wrap.querySelector('#cancel');
       function gate(){ const ok = ck1.checked && ck2.checked; proceed.style.opacity = ok?1:.5; proceed.classList.toggle('pointer-events-none', !ok); }
       ck1.addEventListener('change', gate); ck2.addEventListener('change', gate);
-      cancel.addEventListener('click', ()=> wrap.remove());
+      // focus management & escape
+      const prev = document.activeElement;
+      setTimeout(()=> ck1.focus(), 0);
+      function close(){ wrap.remove(); prev && prev.focus && prev.focus(); }
+      cancel.addEventListener('click', close);
+      wrap.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape') close();
+        if(e.key === 'Tab'){
+          const f = wrap.querySelectorAll('a,button,input,select,textarea,[tabindex]:not([tabindex="-1"])');
+          const focusables = Array.from(f);
+          const first = focusables[0]; const last = focusables[focusables.length-1];
+          if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+          else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+        }
+      });
       proceed.addEventListener('click', ()=>{ window.location.href = '#'; /* TODO: Stripe checkout link */ });
     });
 
@@ -613,8 +646,13 @@
           <div class='text-right mt-4'><button id='vetClose' class='px-4 py-2'>Close</button></div>
         </div>`;
       document.body.appendChild(wrap);
-      wrap.querySelector('#vetClose')?.addEventListener('click', ()=> wrap.remove());
-      wrap.addEventListener('click', (e)=>{ if(e.target===wrap) wrap.remove(); });
+      const closeBtn = wrap.querySelector('#vetClose');
+      const prev = document.activeElement;
+      setTimeout(()=> closeBtn.focus(), 0);
+      function close(){ wrap.remove(); prev && prev.focus && prev.focus(); }
+      closeBtn?.addEventListener('click', close);
+      wrap.addEventListener('click', (e)=>{ if(e.target===wrap) close(); });
+      wrap.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
     });
 
     // Sticky CTA dismiss with localStorage
@@ -622,6 +660,49 @@
     const stickyClose = document.getElementById('stickyClose');
     if(localStorage.getItem('sb_sticky_dismissed')==='1') sticky?.remove();
     stickyClose?.addEventListener('click', ()=>{ localStorage.setItem('sb_sticky_dismissed','1'); sticky?.remove(); });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you limit business use of the Home Edition PDF?",
+        "acceptedAnswer": {"@type": "Answer", "text": "It’s designed for individuals. We require a non‑commercial use agreement, personal email at checkout, add a unique watermark, and use expiring download links. It also lists consumer‑friendly sources (no EIN / no MOQ), so it’s naturally less attractive for a bar."}
+      },
+      {
+        "@type": "Question",
+        "name": "What does ‘vetted’ mean for suppliers?",
+        "acceptedAnswer": {"@type": "Answer", "text": "We validate licensing and documents, verify COAs for relevant SKUs, review delivery performance and dispute history, assess reputation, and monitor ongoing performance."}
+      },
+      {
+        "@type": "Question",
+        "name": "How often are prices updated?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Tracked SKUs are reviewed routinely. We surface price moves and note MOQ/EIN changes so you can act with current info."}
+      },
+      {
+        "@type": "Question",
+        "name": "Can you intro us to the right supplier?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes—Professional includes one warm introduction per month to a vetted supplier that matches your SKU/volume needs."}
+      },
+      {
+        "@type": "Question",
+        "name": "Will you review a quote we received?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes—Professional includes one monthly SKU quote review. We sanity‑check against current market and flag negotiation levers."}
+      },
+      {
+        "@type": "Question",
+        "name": "Do you list kratom sources?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes, where legally permitted. Members are responsible for complying with local/state laws."}
+      },
+      {
+        "@type": "Question",
+        "name": "Do you have affiliate relationships?",
+        "acceptedAnswer": {"@type": "Answer", "text": "For a few suppliers we may use affiliate links. These never change the price you pay and don’t affect how we rank or present suppliers."}
+      }
+    ]
+  }
   </script>
 </body>
 </html>

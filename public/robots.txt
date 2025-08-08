@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://soberbar.pages.dev/sitemap.xml
