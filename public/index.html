@@ -73,7 +73,7 @@
   /* Tooltip */
   .tip{ position:relative; display:inline-flex; align-items:center; margin-left:6px; color: var(--sg1); cursor:help }
   .tip svg{ width:14px; height:14px; }
-  .tip .bubble{ display:none; position:absolute; top:100%; left:0; margin-top:8px; z-index:40; min-width:220px; max-width:280px; background:#0b0b0b; color:#fff; border:1px solid rgba(255,255,255,.12); padding:10px 12px; border-radius:8px; box-shadow:0 12px 28px rgba(0,0,0,.45); font-size:12px; line-height:1.35 }
+  .tip .bubble{ display:none; position:absolute; top:100%; left:0; margin-top:8px; z-index:70; min-width:220px; max-width:280px; background:#0b0b0b; color:#fff; border:1px solid rgba(255,255,255,.12); padding:10px 12px; border-radius:8px; box-shadow:0 12px 28px rgba(0,0,0,.45); font-size:12px; line-height:1.35 }
   .tip .caret{ position:absolute; top:-6px; left:12px; width:10px; height:10px; background:#0b0b0b; transform:rotate(45deg); border-left:1px solid rgba(255,255,255,.12); border-top:1px solid rgba(255,255,255,.12) }
   .tip:hover .bubble, .tip:focus-within .bubble{ display:block }
   /* Nav logo playback visibility helpers */
@@ -138,7 +138,7 @@
         <p class="text-lg text-gray-300 mb-8">Sober Bar is the industry’s sourcing hub: a <strong>vetted wholesale directory</strong> for kava/kratom bars, plus a <strong>Home Edition PDF</strong> for individuals who brew at home. Transparent pricing, trusted suppliers, and fast decisions.</p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="#plans" class="btn-primary rounded-lg px-6 py-4 text-center">I’m a Bar Owner</a>
-          <a href="#home" class="btn-outline rounded-lg px-6 py-4 text-center">I’m a Home Brewer</a>
+          <a id="ctaHome" href="#home" class="btn-outline rounded-lg px-6 py-4 text-center">I’m a Home Brewer</a>
         </div>
         
       </div>
@@ -209,7 +209,7 @@
   </section>
 
   <!-- ================= CALCULATOR ================= -->
-  <section id="calc" class="py-20 bg-gray-50">
+  <section id="calc" class="py-20 bg-gray-50 scroll-mt-24">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="font-comfortaa font-bold text-4xl mb-4">See Your <span class="text-gradient">Savings</span></h2>
       <p class="text-gray-600 mb-10">Enter your current monthly kava/kratom spend. Typical member savings: <strong>15–20%</strong>.</p>
@@ -247,7 +247,7 @@
   </div>
 
   <!-- ================= PRICING (TABS) ================= -->
-  <section id="plans" class="py-20 bg-white">
+  <section id="plans" class="py-20 bg-white scroll-mt-24">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center reveal mb-10">
         <h2 class="font-comfortaa font-bold text-4xl">Simple, Transparent <span class="text-gradient">Pricing</span></h2>
@@ -365,7 +365,7 @@
       </div>
 
       <!-- Home Edition -->
-  <div id="home" class="hidden max-w-4xl mx-auto mt-6" role="tabpanel" aria-labelledby="tabHome">
+  <div id="home" class="hidden max-w-4xl mx-auto mt-6 scroll-mt-24" role="tabpanel" aria-labelledby="tabHome">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div class="order-2 md:order-1 p-8 rounded-2xl border-2 border-gray-200">
             <h3 class="text-2xl font-bold mb-2">Home Edition PDF</h3>
@@ -591,6 +591,20 @@
     }
     tabBusiness.addEventListener('click',()=>activate('biz'));
     tabHome.addEventListener('click',()=>activate('home'));
+    // CTA: Home Brewer activates Home tab and scrolls to plans
+    document.getElementById('ctaHome')?.addEventListener('click', (e)=>{
+      activate('home');
+      // allow hash change to handle scroll; ensure correct target visible
+      setTimeout(()=> document.getElementById('plans')?.scrollIntoView({behavior:'smooth', block:'start'}), 0);
+    });
+    // Handle hash navigation for tabs
+    function handleHash(){
+      const h = (location.hash||'').toLowerCase();
+      if(h==="#home") activate('home');
+      if(h==="#plans"||h==="#business") activate('biz');
+    }
+    window.addEventListener('hashchange', handleHash);
+    handleHash();
     // arrow key navigation between tabs
     [tabBusiness, tabHome].forEach((el, idx, arr)=>{
       el.addEventListener('keydown', (e)=>{
@@ -612,6 +626,27 @@
       });
     }, {rootMargin:'-50% 0px -40% 0px', threshold:0});
     sections.forEach(sec=> sp.observe(sec));
+
+    // Tooltip auto-flip when near viewport edge
+    document.querySelectorAll('.tip').forEach(tip=>{
+      tip.addEventListener('mouseenter', positionBubble);
+      tip.addEventListener('focusin', positionBubble);
+      function positionBubble(){
+        const bubble = tip.querySelector('.bubble');
+        const caret = tip.querySelector('.caret');
+        if(!bubble) return;
+        // Reset positioning
+        bubble.style.left = '0px'; bubble.style.right = '';
+        if(caret){ caret.style.left = '12px'; caret.style.right = ''; }
+        const rect = bubble.getBoundingClientRect();
+        const overflowRight = rect.right > (window.innerWidth - 16);
+        if(overflowRight){
+          bubble.style.left = '';
+          bubble.style.right = '0px';
+          if(caret){ caret.style.left = ''; caret.style.right = '12px'; }
+        }
+      }
+    });
 
     // Home PDF purchase gate (checkbox modal)
     const buyBtn = document.getElementById('buyPDF');
