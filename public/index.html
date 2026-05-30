@@ -3,54 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sober Bar — The Kava & Kratom Sourcing Hub for Bars & Home Brewers</title>
-  <meta name="description" content="Vetted wholesale directory for kava/kratom bars + a home‑brewer PDF. Save 15–20% on costs, source faster, and buy with confidence." />
-  <meta name="theme-color" content="#000000" />
-  <link rel="canonical" href="https://soberbar.pages.dev/" />
+  <title>Sober Bar — Gulfport's Zero-Proof Cocktail Bar</title>
+  <meta name="description" content="Sober Bar is Gulfport's elevated zero-proof cocktail bar, coffee spot, and gathering space in the heart of Gulfport, Florida. New Orleans inspired food, functional cocktails, NA beer & wine." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="canonical" href="https://www.sipsoberbar.com/" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <!-- Open Graph / Twitter -->
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sober Bar — The Kava & Kratom Sourcing Hub" />
-  <meta property="og:description" content="Save 15–20% with a vetted wholesale directory, transparent pricing, and fast supplier intros." />
-  <meta property="og:url" content="https://soberbar.pages.dev/" />
-  <meta property="og:image" content="https://soberbar.pages.dev/full_trimmed_transparent_customcolor.png" />
+  <meta property="og:title" content="Sober Bar — Gulfport's Zero-Proof Cocktail Bar" />
+  <meta property="og:description" content="An elevated zero-proof cocktail bar, coffee spot, and gathering space on Beach Boulevard. New Orleans inspired food, functional cocktails, NA beer & wine." />
+  <meta property="og:url" content="https://www.sipsoberbar.com/" />
+  <meta property="og:image" content="https://www.sipsoberbar.com/sober_bar_logo_highres.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sober Bar — The Kava & Kratom Sourcing Hub" />
-  <meta name="twitter:description" content="Save 15–20% with a vetted wholesale directory, transparent pricing, and fast supplier intros." />
-  <meta name="twitter:image" content="https://soberbar.pages.dev/full_trimmed_transparent_customcolor.png" />
-  <meta name="twitter:image:alt" content="Sober Bar logo on brand background" />
+  <meta name="twitter:title" content="Sober Bar — Gulfport's Zero-Proof Cocktail Bar" />
+  <meta name="twitter:description" content="An elevated zero-proof cocktail bar, coffee spot, and gathering space on Beach Boulevard." />
+  <meta name="twitter:image" content="https://www.sipsoberbar.com/sober_bar_logo_highres.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="/full_trimmed_transparent_customcolor.png" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Sober Bar",
-    "url": "https://soberbar.pages.dev/",
-    "logo": "https://soberbar.pages.dev/full_trimmed_transparent_customcolor.png"
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'sober-black': '#000000',
-            'sober-gold': '#EAB040',
-            'sober-gold-2': '#F4DE79',
+            'sober-black': '#0a0a0a',
+            'sober-dark': '#111111',
+            'sober-charcoal': '#1a1a1a',
+            'sober-gold': '#C8963E',
+            'sober-gold-light': '#D4A44A',
+            'sober-gold-pale': '#E8C872',
+            'sober-cream': '#F5F0E8',
+            'sober-warm-gray': '#8B8178',
           },
           fontFamily: {
-            comfortaa: ['Comfortaa', 'sans-serif'],
-            lato: ['Lato', 'sans-serif'],
+            playfair: ['"Playfair Display"', 'Georgia', 'serif'],
+            cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            inter: ['Inter', 'system-ui', 'sans-serif'],
           },
         }
       }
@@ -58,709 +53,1092 @@
   </script>
 
   <style>
-  :root { --sb: #000000; --sg1: #EAB040; --sg2: #F4DE79; }
-  .text-gradient { background: linear-gradient(135deg, var(--sg1), var(--sg2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .btn-primary { background: linear-gradient(135deg, var(--sg1), var(--sg2)); color:#000; font-weight:700; }
-  .btn-primary:hover { filter: brightness(1.05); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(234,176,64,.35); }
-  .btn-outline { border:2px solid var(--sg1); color: var(--sg1); font-weight:700; }
-  .btn-outline:hover { background: var(--sg1); color:#000; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(234,176,64,.25); }
-  .bg-pattern { background-image: radial-gradient( circle at 20% 10%, rgba(234,176,64,.12), transparent 35%), radial-gradient( circle at 80% 0%, rgba(234,176,64,.12), transparent 35% ); }
-    .reveal { opacity:0; transform: translateY(28px); transition: all .7s ease; }
-    .reveal.visible{ opacity:1; transform:none; }
-    .toggle-dot{ transition: transform .3s ease; }
-  .info{ display:inline-flex; align-items:center; margin-left:6px; color: var(--sg1); opacity:.9 }
-  .info svg{ width:14px; height:14px; }
-  /* Tooltip */
-  .tip{ position:relative; display:inline-flex; align-items:center; margin-left:6px; color: var(--sg1); cursor:help }
-  .tip svg{ width:14px; height:14px; }
-  .tip .bubble{ display:none; position:absolute; top:100%; left:0; margin-top:8px; z-index:70; min-width:220px; max-width:280px; background:#0b0b0b; color:#fff; border:1px solid rgba(255,255,255,.12); padding:10px 12px; border-radius:8px; box-shadow:0 12px 28px rgba(0,0,0,.45); font-size:12px; line-height:1.35 }
-  .tip .caret{ position:absolute; top:-6px; left:12px; width:10px; height:10px; background:#0b0b0b; transform:rotate(45deg); border-left:1px solid rgba(255,255,255,.12); border-top:1px solid rgba(255,255,255,.12) }
-  .tip:hover .bubble, .tip:focus-within .bubble{ display:block }
-  /* Nav logo playback visibility helpers */
-  #brandLogo.playing {
-    transform: scale(1.12);
-    filter: brightness(1.35) contrast(1.15) drop-shadow(0 0 0.75px #fff) drop-shadow(0 0 8px rgba(234,176,64,.55));
-    transition: transform .25s ease, filter .25s ease;
-    border-radius: 8px;
-  }
-  a[aria-label='Sober Bar Home'].logo-playing { position: relative; }
-  a[aria-label='Sober Bar Home'].logo-playing::before {
-    content: '';
-    position: absolute; inset: -6px -8px; border-radius: 12px;
-    background:
-      radial-gradient(closest-side, rgba(255,255,255,.35), rgba(255,255,255,0) 60%),
-      linear-gradient(135deg, rgba(234,176,64,.25), rgba(244,222,121,.18));
-    pointer-events: none;
-  }
+    :root {
+      --sb: #0a0a0a;
+      --sd: #111111;
+      --sc: #1a1a1a;
+      --sg: #C8963E;
+      --sgl: #D4A44A;
+      --sgp: #E8C872;
+      --scr: #F5F0E8;
+      --swg: #8B8178;
+    }
+
+    * { box-sizing: border-box; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--sb); }
+    ::-webkit-scrollbar-thumb { background: var(--sg); border-radius: 3px; }
+
+    /* Smooth scrollbar for Firefox */
+    html { scrollbar-color: var(--sg) var(--sb); scrollbar-width: thin; }
+
+    /* Text gradient */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, var(--sgp), var(--sg), var(--sgl));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Button styles */
+    .btn-gold {
+      background: linear-gradient(135deg, var(--sg), var(--sgl));
+      color: #000;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-gold::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--sgl), var(--sgp));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .btn-gold:hover::after { opacity: 1; }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(200,150,62,0.3); }
+    .btn-gold span { position: relative; z-index: 1; }
+
+    .btn-outline-gold {
+      border: 1.5px solid var(--sg);
+      color: var(--sg);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-gold:hover {
+      background: var(--sg);
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(200,150,62,0.25);
+    }
+
+    /* Nav */
+    #nav {
+      transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+    }
+    #nav.scrolled {
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-link {
+      position: relative;
+      color: rgba(245,240,232,0.75);
+      transition: color 0.3s ease;
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--sg);
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover { color: var(--scr); }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Mobile menu */
+    #mobileMenu {
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    #mobileMenu.open {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    /* Scroll reveals */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero glow animation */
+    @keyframes heroGlow {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+    .hero-glow {
+      animation: heroGlow 8s ease-in-out infinite;
+    }
+
+    @keyframes heroGlow2 {
+      0%, 100% { opacity: 0.3; transform: scale(1) translate(-30%, -30%); }
+      50% { opacity: 0.55; transform: scale(1.1) translate(-28%, -28%); }
+    }
+    .hero-glow-2 {
+      animation: heroGlow2 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0; }
+      20% { opacity: 0.6; }
+      80% { opacity: 0.3; }
+      100% { transform: translateY(-120px) scale(0.5); opacity: 0; }
+    }
+
+    /* Card hover glow */
+    .card-glow {
+      transition: all 0.4s ease;
+    }
+    .card-glow:hover {
+      box-shadow: 0 0 60px rgba(200,150,62,0.08), 0 0 120px rgba(200,150,62,0.04);
+      transform: translateY(-4px);
+    }
+
+    /* Gallery image hover */
+    .gallery-img {
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-img:hover {
+      transform: scale(1.03);
+    }
+    .gallery-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.6) 0%, transparent 40%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .gallery-img-wrap:hover::after { opacity: 1; }
+
+    /* FAQ accordion */
+    .faq-trigger {
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .faq-trigger:hover { color: var(--sg); }
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq-item.open .faq-content {
+      max-height: 300px;
+      padding-top: 1rem;
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    /* Form styles */
+    .form-input {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--scr);
+      transition: all 0.3s ease;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--sg);
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 0 0 3px rgba(200,150,62,0.1);
+    }
+    .form-input::placeholder { color: var(--swg); }
+
+    /* Spec line item */
+    .spec-line {
+      position: relative;
+      overflow: hidden;
+    }
+    .spec-line::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 1px;
+      background: var(--sg);
+      opacity: 0.5;
+    }
+
+    /* Soft opening highlight */
+    @keyframes softGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(200,150,62,0.1), 0 0 60px rgba(200,150,62,0.05); }
+      50% { box-shadow: 0 0 30px rgba(200,150,62,0.2), 0 0 80px rgba(200,150,62,0.1); }
+    }
+    .soft-opening-card {
+      animation: softGlow 3s ease-in-out infinite;
+    }
+
+    /* Smooth section transitions */
+    section {
+      position: relative;
+    }
+
+    /* Divider */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(200,150,62,0.2), transparent);
+    }
   </style>
 </head>
-<body class="font-lato antialiased text-gray-800 bg-white">
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-black text-white px-3 py-2 rounded">Skip to content</a>
+<body class="font-inter antialiased bg-sober-black text-sober-cream">
 
-  <!-- ================= NAV ================= -->
-  <nav id="nav" class="fixed top-0 w-full z-50 bg-sober-black/90 backdrop-blur border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-  <a href="/" aria-label="Sober Bar Home" class="flex items-center">
-        <img id="brandLogo" alt="Sober Bar Logo" src="full_trimmed_transparent_customcolor.png" data-static="full_trimmed_transparent_customcolor.png" data-animated="logo_animation.gif" class="h-9 w-auto block md:h-10" fetchpriority="high" decoding="async"
-             onerror="this.onerror=null; this.replaceWith(document.getElementById('sb-logo-fallback').content.cloneNode(true));" />
-        <template id="sb-logo-fallback">
-          <span class="font-comfortaa text-xl font-bold text-gradient select-none">SOBER&nbsp;BAR</span>
-        </template>
+  <!-- ================ SKIP LINK ================ -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-sober-gold text-black px-4 py-3 rounded-lg z-[100] font-semibold">Skip to content</a>
+
+  <!-- ================ NAV ================ -->
+  <nav id="nav" class="fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" aria-label="Sober Bar Home" class="flex items-center group">
+        <img
+          src="full_trimmed_transparent_customcolor.png"
+          alt="Sober Bar"
+          class="h-9 w-auto brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+        />
       </a>
-      <div class="hidden md:flex items-center gap-8 text-white">
-        <a href="#how" class="hover:text-sober-gold" data-nav>How it works</a>
-        <a href="#calc" class="hover:text-sober-gold" data-nav>Calculator</a>
-        <a href="#plans" class="hover:text-sober-gold" data-nav>Pricing</a>
-        <a href="#faq" class="hover:text-sober-gold" data-nav>FAQ</a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-10">
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#soft-opening" class="nav-link text-sober-gold">Soft Opening</a>
+        <a href="#visit" class="nav-link">Visit</a>
       </div>
-      <div class="hidden md:block"><a href="#plans" class="btn-primary rounded-lg px-5 py-3">Get Started</a></div>
-  <button id="menuBtn" class="md:hidden text-white p-2" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m0 6H4"/></svg>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:block">
+        <a href="#join" class="btn-gold rounded-lg px-5 py-3 inline-flex items-center text-sm">
+          <span>Join the Opening List</span>
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button id="menuBtn" class="md:hidden text-sober-cream p-2 -mr-2 relative z-50" aria-label="Menu" aria-expanded="false">
+        <div class="w-6 h-5 relative flex flex-col justify-between">
+          <span class="block w-full h-[2px] bg-current transition-all duration-300 origin-center" id="bar1"></span>
+          <span class="block w-full h-[2px] bg-current transition-all duration-300" id="bar2"></span>
+          <span class="block w-full h-[2px] bg-current transition-all duration-300 origin-center" id="bar3"></span>
+        </div>
       </button>
     </div>
-    <div id="mobileMenu" class="hidden md:hidden bg-black/95 text-white">
-      <div class="px-6 py-4 space-y-2">
-        <a class="block py-2" href="#how">How it works</a>
-        <a class="block py-2" href="#calc">Calculator</a>
-        <a class="block py-2" href="#plans">Pricing</a>
-        <a class="block py-2" href="#faq">FAQ</a>
-        <a class="block mt-2 btn-primary rounded-lg px-5 py-3 text-center" href="#plans">Get Started</a>
+
+    <!-- Mobile menu overlay -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 md:hidden">
+      <div class="absolute inset-0 bg-sober-black/95 backdrop-blur-xl"></div>
+      <div class="relative z-10 flex flex-col items-center justify-center h-full gap-8 text-2xl">
+        <a href="#experience" class="text-sober-cream/80 hover:text-sober-gold transition-colors mobile-link">Experience</a>
+        <a href="#menu" class="text-sober-cream/80 hover:text-sober-gold transition-colors mobile-link">Menu</a>
+        <a href="#soft-opening" class="text-sober-gold hover:text-sober-gold-light transition-colors mobile-link">Soft Opening</a>
+        <a href="#visit" class="text-sober-cream/80 hover:text-sober-gold transition-colors mobile-link">Visit</a>
+        <a href="#join" class="btn-gold rounded-lg px-8 py-4 text-lg mt-4"><span>Join the Opening List</span></a>
       </div>
     </div>
   </nav>
 
-  <!-- ================= HERO ================= -->
-  <header class="pt-28 lg:pt-36 pb-16 md:pb-20 bg-sober-black bg-pattern text-white relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
-      <div class="reveal visible">
-        <p class="uppercase tracking-widest text-sober-gold font-bold mb-3">For Bars & Home Brewers</p>
-        <h1 class="font-comfortaa font-bold text-5xl lg:text-7xl leading-[1.1] mb-6">Stop Overpaying for <span class="text-gradient">Kava & Kratom</span></h1>
-        <p class="text-lg text-gray-300 mb-8">Sober Bar is the industry’s sourcing hub: a <strong>vetted wholesale directory</strong> for kava/kratom bars, plus a <strong>Home Edition PDF</strong> for individuals who brew at home. Transparent pricing, trusted suppliers, and fast decisions.</p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#plans" class="btn-primary rounded-lg px-6 py-4 text-center">I’m a Bar Owner</a>
-          <a id="ctaHome" href="#home" class="btn-outline rounded-lg px-6 py-4 text-center">I’m a Home Brewer</a>
+  <!-- ================ HERO ================ -->
+  <section class="relative min-h-screen flex items-center overflow-hidden bg-sober-black" id="main-content">
+    <!-- Ambient glow backgrounds -->
+    <div class="hero-glow absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(200,150,62,0.15) 0%, transparent 70%);"></div>
+    <div class="hero-glow-2 absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(212,164,74,0.1) 0%, transparent 70%);"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-40 w-full">
+      <div class="max-w-3xl">
+        <!-- Opening badge -->
+        <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sober-gold/30 bg-sober-gold/5 mb-8">
+          <span class="w-2 h-2 rounded-full bg-sober-gold animate-pulse"></span>
+          <span class="text-xs tracking-[0.2em] uppercase text-sober-gold font-medium">Soft Opening June 7</span>
         </div>
-        
+
+        <!-- Headline -->
+        <h1 class="reveal font-playfair text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-8 tracking-tight">
+          Gulfport's<br>
+          <span class="text-gold-gradient italic">sober bar.</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="reveal text-lg sm:text-xl text-sober-cream/60 leading-relaxed mb-10 max-w-xl">
+          An elevated zero-proof cocktail bar, coffee spot, and gathering space on Beach Boulevard. 
+          New Orleans inspired food, functional cocktails, and NA beer & wine — built for the nights you 
+          still want to go out and the mornings you want to feel good about.
+        </p>
+
+        <!-- CTAs -->
+        <div class="reveal flex flex-col sm:flex-row gap-4">
+          <a href="#soft-opening" class="btn-gold rounded-lg px-8 py-4 text-center inline-flex items-center justify-center gap-2">
+            <span>Get Invited to Soft Opening</span>
+            <svg class="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener" class="btn-outline-gold rounded-lg px-8 py-4 text-center inline-flex items-center justify-center gap-2">
+            Follow @sipsoberbar
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
       </div>
 
+      <!-- Feature pills -->
+      <div class="reveal flex flex-wrap gap-3 mt-16">
+        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-sober-cream/70">Zero-proof cocktails</span>
+        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-sober-cream/70">New Orleans inspired food</span>
+        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-sober-cream/70">NA Beer & Wine</span>
+        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-sober-cream/70">Beach Boulevard, Gulfport</span>
+        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-sober-cream/70">Opening Soon</span>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 reveal">
+      <div class="flex flex-col items-center gap-2 text-sober-cream/40">
+        <span class="text-xs tracking-[0.3em] uppercase">Scroll</span>
+        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ EXPERIENCE ================ -->
+  <section id="experience" class="py-24 lg:py-32 bg-sober-dark">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal mb-16">
+        <p class="text-xs tracking-[0.25em] uppercase text-sober-gold mb-4 font-medium">At a Glance</p>
+        <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-4">
+          A better night out,<br class="sm:hidden"> 
+          <span class="text-gold-gradient italic">with more intention.</span>
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 01 -->
+        <div class="reveal p-8 rounded-2xl bg-sober-charcoal/50 border border-white/[0.06] card-glow group">
+          <span class="text-5xl font-playfair font-bold text-sober-gold/15 group-hover:text-sober-gold/30 transition-colors duration-500">01</span>
+          <h3 class="text-xl font-playfair font-semibold mt-3 mb-2">Bar Energy</h3>
+          <p class="text-sober-cream/50 leading-relaxed text-sm">A place that still feels social, styled, and worth getting dressed for.</p>
+        </div>
+
+        <!-- 02 -->
+        <div class="reveal p-8 rounded-2xl bg-sober-charcoal/50 border border-white/[0.06] card-glow group">
+          <span class="text-5xl font-playfair font-bold text-sober-gold/15 group-hover:text-sober-gold/30 transition-colors duration-500">02</span>
+          <h3 class="text-xl font-playfair font-semibold mt-3 mb-2">Thoughtful Drinks</h3>
+          <p class="text-sober-cream/50 leading-relaxed text-sm">Functional zero-proof cocktails, NA beer, and NA wine with structure and ritual.</p>
+        </div>
+
+        <!-- 03 -->
+        <div class="reveal p-8 rounded-2xl bg-sober-charcoal/50 border border-white/[0.06] card-glow group">
+          <span class="text-5xl font-playfair font-bold text-sober-gold/15 group-hover:text-sober-gold/30 transition-colors duration-500">03</span>
+          <h3 class="text-xl font-playfair font-semibold mt-3 mb-2">NOLA Kitchen</h3>
+          <p class="text-sober-cream/50 leading-relaxed text-sm">New Orleans inspired food made to share — bold flavors, real hospitality.</p>
+        </div>
+
+        <!-- 04 -->
+        <div class="reveal p-8 rounded-2xl bg-sober-charcoal/50 border border-white/[0.06] card-glow group">
+          <span class="text-5xl font-playfair font-bold text-sober-gold/15 group-hover:text-sober-gold/30 transition-colors duration-500">04</span>
+          <h3 class="text-xl font-playfair font-semibold mt-3 mb-2">Gulfport Address</h3>
+          <p class="text-sober-cream/50 leading-relaxed text-sm">Right on Beach Boulevard in a neighborhood that already knows how to linger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ CONCEPT ================ -->
+  <section class="py-24 lg:py-32 bg-sober-black">
+    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="reveal">
+          <p class="text-xs tracking-[0.25em] uppercase text-sober-gold mb-4 font-medium">The Concept</p>
+          <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+            Designed for presence,<br>
+            <span class="text-gold-gradient italic">not compromise.</span>
+          </h2>
+          <div class="space-y-4 text-sober-cream/60 leading-relaxed text-base lg:text-lg">
+            <p>
+              We're building a sober bar that feels intentional, social, and elevated — not clinical, 
+              not performative, and never like an afterthought.
+            </p>
+            <p>
+              The goal is simple: a room you actually want to spend the night in. Where the lighting 
+              is right, the soundtrack matters, and the drinks give everyone a reason to stay a little longer.
+            </p>
+            <p>
+              The food draws from New Orleans — bold, layered, meant to bring people together around a table.
+            </p>
+          </div>
+        </div>
+        <div class="reveal relative">
+          <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-sober-charcoal to-sober-dark border border-white/[0.06]">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-8xl mb-6">🍸</div>
+                <p class="text-sober-cream/20 italic font-playfair text-lg">The space taking shape.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Decorative accent -->
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full border border-sober-gold/20 -z-10"></div>
+          <div class="absolute -top-6 -left-6 w-24 h-24 rounded-full border border-sober-gold/10 -z-10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ MENU ================ -->
+  <section id="menu" class="py-24 lg:py-32 bg-sober-dark">
+    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal mb-16">
+        <p class="text-xs tracking-[0.25em] uppercase text-sober-gold mb-4 font-medium">What to Expect</p>
+        <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-4">
+          Thoughtful drinks, bold food,<br class="sm:hidden">
+          <span class="text-gold-gradient italic">warm hospitality.</span>
+        </h2>
+        <p class="text-sober-cream/50 max-w-xl mx-auto mt-4">The full menu drops soon. Here's what's coming.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Cocktails -->
+        <div class="reveal p-8 rounded-2xl bg-sober-charcoal/40 border border-white/[0.06] card-glow">
+          <div class="text-4xl mb-5">🥂</div>
+          <h3 class="font-playfair text-2xl font-semibold mb-3">Zero-Proof Cocktails</h3>
+          <p class="text-sober-cream/50 leading-relaxed text-sm mb-4">
+            Built to feel grown-up, beautiful, and worth coming back for. Layered flavors, 
+            functional ingredients, and real craft behind every pour.
+          </p>
+          <p class="text-xs text-sober-gold/60 italic">Full cocktail menu coming soon</p>
+        </div>
+
+        <!-- Food -->
+        <div class="reveal p-8 rounded-2xl bg-sober-charcoal/40 border border-white/[0.06] card-glow">
+          <div class="text-4xl mb-5">🍽</div>
+          <h3 class="font-playfair text-2xl font-semibold mb-3">New Orleans Inspired Food</h3>
+          <p class="text-sober-cream/50 leading-relaxed text-sm mb-4">
+            Bold, layered, meant to bring people together around a table. Drawing from the flavors 
+            and hospitality tradition of New Orleans.
+          </p>
+          <p class="text-xs text-sober-gold/60 italic">Full food menu coming soon</p>
+        </div>
+
+        <!-- NA Beer & Wine -->
+        <div class="reveal p-8 rounded-2xl bg-sober-charcoal/40 border border-white/[0.06] card-glow">
+          <div class="text-4xl mb-5">🍷</div>
+          <h3 class="font-playfair text-2xl font-semibold mb-3">NA Beer & Wine</h3>
+          <p class="text-sober-cream/50 leading-relaxed text-sm mb-4">
+            Curated selection of non-alcoholic beers and wines that hold their own — 
+            for those who want the ritual without the alcohol.
+          </p>
+          <p class="text-xs text-sober-gold/60 italic">Full drinks list coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ SOFT OPENING ================ -->
+  <section id="soft-opening" class="py-24 lg:py-32 bg-sober-black relative overflow-hidden">
+    <!-- Subtle background glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(200,150,62,0.06) 0%, transparent 60%);"></div>
+
+    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto relative z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center reveal">
+          <p class="text-xs tracking-[0.25em] uppercase text-sober-gold mb-4 font-medium">June 7th, 2025</p>
+          <h2 class="font-playfair text-4xl lg:text-6xl font-bold mb-4 leading-tight">
+            Soft Opening.<br>
+            <span class="text-gold-gradient italic">Be the first inside.</span>
+          </h2>
+          <p class="text-sober-cream/50 text-lg mb-8">
+            An invite-only evening. 6 PM – 10 PM. Space is limited.
+          </p>
+        </div>
+
+        <!-- The Deal Card -->
+        <div class="reveal soft-opening-card rounded-2xl bg-sober-charcoal/80 border border-sober-gold/20 p-8 lg:p-10 mb-10">
+          <h3 class="font-playfair text-2xl font-semibold mb-6 text-center">What You Get</h3>
+          <div class="grid sm:grid-cols-3 gap-6 text-center">
+            <div class="space-y-2">
+              <div class="text-3xl">🔑</div>
+              <h4 class="font-semibold text-sm">First Look</h4>
+              <p class="text-sober-cream/50 text-xs leading-relaxed">See the space before anyone else. Walk through the room while it's still ours.</p>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl">🗳</div>
+              <h4 class="font-semibold text-sm">Shape the Menu</h4>
+              <p class="text-sober-cream/50 text-xs leading-relaxed">Your feedback influences what makes the final cut. Have a real voice.</p>
+            </div>
+            <div class="space-y-2">
+              <div class="text-3xl">💰</div>
+              <h4 class="font-semibold text-sm">Half Price</h4>
+              <p class="text-sober-cream/50 text-xs leading-relaxed">Everything on the menu — drinks and food — at 50% off for the night.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Ask -->
+        <div class="reveal rounded-2xl bg-sober-charcoal/60 border border-white/[0.06] p-8 lg:p-10 mb-12">
+          <h3 class="font-playfair text-xl font-semibold mb-4 text-center">All We Ask</h3>
+          <div class="grid sm:grid-cols-2 gap-4 text-sm text-sober-cream/60">
+            <div class="flex items-start gap-3">
+              <span class="text-sober-gold mt-0.5">📸</span>
+              <span>Take photos and videos of the space, drinks, and food</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-sober-gold mt-0.5">🏷</span>
+              <span>Tag <strong class="text-sober-gold">@sipsoberbar</strong> when you post on social media</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-sober-gold mt-0.5">📝</span>
+              <span>Fill out a short survey at the end of your visit</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-sober-gold mt-0.5">🕕</span>
+              <span>Arrive between 6 PM and 10 PM on June 7th</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="reveal rounded-2xl bg-sober-charcoal/80 border border-sober-gold/20 p-8 lg:p-10" id="join">
+          <h3 class="font-playfair text-2xl font-semibold mb-2 text-center">Request an Invitation</h3>
+          <p class="text-sober-cream/50 text-center mb-8 text-sm">Limited spots. Fill this out and we'll be in touch.</p>
+
+          <form id="softOpeningForm" class="space-y-5 max-w-md mx-auto">
+            <div>
+              <label class="block text-sm font-medium text-sober-cream/70 mb-2" for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your full name"
+                class="form-input w-full rounded-lg px-4 py-3 text-sm"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-sober-cream/70 mb-2" for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="you@email.com"
+                class="form-input w-full rounded-lg px-4 py-3 text-sm"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-sober-cream/70 mb-2" for="instagram">Instagram Handle</label>
+              <div class="relative">
+                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-sober-cream/30 text-sm">@</span>
+                <input
+                  type="text"
+                  id="instagram"
+                  name="instagram"
+                  required
+                  placeholder="yourhandle"
+                  class="form-input w-full rounded-lg pl-8 pr-4 py-3 text-sm"
+                />
+              </div>
+            </div>
+            <button type="submit" class="btn-gold rounded-lg px-6 py-4 w-full text-center text-sm font-semibold">
+              <span>Request Invitation</span>
+            </button>
+            <p class="text-xs text-sober-cream/30 text-center mt-4">
+              We respect your privacy. Your info stays with us — never shared, never sold.
+            </p>
+          </form>
+        </div>
+
+        <!-- Success message (hidden by default) -->
+        <div id="formSuccess" class="hidden reveal text-center p-10 rounded-2xl bg-sober-charcoal/80 border border-sober-gold/20">
+          <div class="text-5xl mb-4">✨</div>
+          <h3 class="font-playfair text-2xl font-semibold mb-2">You're on the list.</h3>
+          <p class="text-sober-cream/50">We'll be in touch with soft opening details. See you on June 7th.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ THE SPACE ================ -->
+  <section class="py-24 lg:py-32 bg-sober-dark">
+    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal mb-16">
+        <p class="text-xs tracking-[0.25em] uppercase text-sober-gold mb-4 font-medium">The Space</p>
+        <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-4">
+          Built by hand,<br class="sm:hidden">
+          <span class="text-gold-gradient italic">shaped with intention.</span>
+        </h2>
+        <p class="text-sober-cream/50 max-w-xl mx-auto mt-4">
+          We'd rather show you the honest evolution than stage something that isn't real. 
+          Here's the room, the materials, the mood, and the details taking shape.
+        </p>
+      </div>
+
+      <!-- Gallery grid with placeholder vignettes -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+        <div class="reveal gallery-img-wrap relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-sober-charcoal to-sober-dark border border-white/[0.06]">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p class="text-sober-cream/15 italic font-playfair text-sm">Interior taking shape</p>
+          </div>
+        </div>
+        <div class="reveal gallery-img-wrap relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-tr from-sober-charcoal to-sober-dark border border-white/[0.06] lg:row-span-2 lg:aspect-auto">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p class="text-sober-cream/15 italic font-playfair text-sm">The room</p>
+          </div>
+        </div>
+        <div class="reveal gallery-img-wrap relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-bl from-sober-charcoal to-sober-dark border border-white/[0.06]">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p class="text-sober-cream/15 italic font-playfair text-sm">Details</p>
+          </div>
+        </div>
+        <div class="reveal gallery-img-wrap relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-tl from-sober-charcoal to-sober-dark border border-white/[0.06]">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p class="text-sober-cream/15 italic font-playfair text-sm">Glassware</p>
+          </div>
+        </div>
+        <div class="reveal gallery-img-wrap relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-sober-charcoal to-sober-dark border border-white/[0.06]">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p class="text-sober-cream/15 italic font-playfair text-sm">The bar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ SPECS ================ -->
+  <section class="py-24 lg:py-32 bg-sober-black">
+    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="reveal">
+          <p class="text-xs tracking-[0.25em] uppercase text-sober-gold mb-4 font-medium">The Experience</p>
+          <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+            For date nights, catch-ups, solo resets, and the people who<br class="hidden lg:block">
+            <span class="text-gold-gradient italic">still want the ritual.</span>
+          </h2>
+          <p class="text-sober-cream/50 leading-relaxed text-base lg:text-lg">
+            Sober Bar is meant to feel generous and grown-up — the kind of room where the 
+            lighting is right, the soundtrack matters, and the menu gives everyone a reason 
+            to stay a little longer.
+          </p>
+        </div>
+        <div class="reveal space-y-8">
+          <div class="spec-line pb-5">
+            <p class="text-xs tracking-[0.2em] uppercase text-sober-cream/40 mb-1">Atmosphere</p>
+            <p class="font-playfair text-xl font-semibold">Moody, social, design-forward</p>
+          </div>
+          <div class="spec-line pb-5">
+            <p class="text-xs tracking-[0.2em] uppercase text-sober-cream/40 mb-1">Drinks</p>
+            <p class="font-playfair text-xl font-semibold">Functional, layered, zero-proof</p>
+          </div>
+          <div class="spec-line pb-5">
+            <p class="text-xs tracking-[0.2em] uppercase text-sober-cream/40 mb-1">Food</p>
+            <p class="font-playfair text-xl font-semibold">New Orleans inspired, shareable</p>
+          </div>
+          <div class="spec-line pb-5">
+            <p class="text-xs tracking-[0.2em] uppercase text-sober-cream/40 mb-1">Rhythm</p>
+            <p class="font-playfair text-xl font-semibold">Coffee by day, bar energy by night</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ VISIT ================ -->
+  <section id="visit" class="py-24 lg:py-32 bg-sober-dark">
+    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal mb-16">
+        <p class="text-xs tracking-[0.25em] uppercase text-sober-gold mb-4 font-medium">Visit</p>
+        <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-4">
+          Coming soon to<br class="sm:hidden">
+          <span class="text-gold-gradient italic">Beach Boulevard.</span>
+        </h2>
+        <p class="text-sober-cream/50 max-w-xl mx-auto mt-4">
+          Right where the neighborhood already knows how to linger — walkable, creative, coastal, and full of character.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-3xl mx-auto reveal">
+        <div class="text-center sm:text-left">
+          <p class="text-xs tracking-[0.2em] uppercase text-sober-cream/40 mb-2">Address</p>
+          <p class="font-playfair text-lg font-semibold leading-relaxed">
+            3062 Beach Blvd S<br>
+            Gulfport, FL 33707
+          </p>
+          <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-sober-gold hover:text-sober-gold-light transition-colors mt-3">
+            Open in Maps
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <p class="text-xs tracking-[0.2em] uppercase text-sober-cream/40 mb-2">Opening</p>
+          <p class="font-playfair text-lg font-semibold">Soft open June 7</p>
+          <p class="text-sober-cream/40 text-sm mt-1">Full hours coming soon</p>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <p class="text-xs tracking-[0.2em] uppercase text-sober-cream/40 mb-2">Email</p>
+          <a href="mailto:Sean@sipsoberbar.com" class="font-playfair text-lg font-semibold hover:text-sober-gold transition-colors">
+            Sean@sipsoberbar.com
+          </a>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <p class="text-xs tracking-[0.2em] uppercase text-sober-cream/40 mb-2">Follow</p>
+          <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener" class="font-playfair text-lg font-semibold hover:text-sober-gold transition-colors">
+            @sipsoberbar
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ FAQ ================ -->
+  <section class="py-24 lg:py-32 bg-sober-black">
+    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal mb-16">
+        <p class="text-xs tracking-[0.25em] uppercase text-sober-gold mb-4 font-medium">FAQ</p>
+        <h2 class="font-playfair text-4xl lg:text-5xl font-bold">
+          What people usually<br class="sm:hidden">
+          <span class="text-gold-gradient italic">ask first.</span>
+        </h2>
+      </div>
+
+      <div class="space-y-3 reveal">
+        <!-- FAQ Item -->
+        <div class="faq-item open bg-sober-charcoal/50 border border-white/[0.06] rounded-xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="true">
+            <span class="font-playfair text-lg font-semibold pr-4">What is Sober Bar?</span>
+            <span class="faq-icon text-sober-gold text-2xl flex-shrink-0">+</span>
+          </button>
+          <div class="faq-content px-5">
+            <p class="text-sober-cream/50 text-sm leading-relaxed pb-5">
+              Sober Bar is Gulfport's upcoming destination for functional zero-proof cocktails, 
+              New Orleans inspired food, NA beer & wine, and specialty coffee — all in a social, 
+              design-forward setting on Beach Boulevard.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item -->
+        <div class="faq-item bg-sober-charcoal/50 border border-white/[0.06] rounded-xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-playfair text-lg font-semibold pr-4">When is the soft opening?</span>
+            <span class="faq-icon text-sober-gold text-2xl flex-shrink-0">+</span>
+          </button>
+          <div class="faq-content px-5">
+            <p class="text-sober-cream/50 text-sm leading-relaxed pb-5">
+              Saturday, June 7th, from 6 PM to 10 PM. It's an invite-only event. Fill out the form above to request an invitation.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item -->
+        <div class="faq-item bg-sober-charcoal/50 border border-white/[0.06] rounded-xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-playfair text-lg font-semibold pr-4">Is everything really zero-proof?</span>
+            <span class="faq-icon text-sober-gold text-2xl flex-shrink-0">+</span>
+          </button>
+          <div class="faq-content px-5">
+            <p class="text-sober-cream/50 text-sm leading-relaxed pb-5">
+              Yes. Every cocktail on our menu is zero-proof — made with functional ingredients, layered flavors, 
+              and real craft. We also serve a curated selection of NA beer and NA wine. No alcohol, full experience.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item -->
+        <div class="faq-item bg-sober-charcoal/50 border border-white/[0.06] rounded-xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-playfair text-lg font-semibold pr-4">What kind of food do you serve?</span>
+            <span class="faq-icon text-sober-gold text-2xl flex-shrink-0">+</span>
+          </button>
+          <div class="faq-content px-5">
+            <p class="text-sober-cream/50 text-sm leading-relaxed pb-5">
+              New Orleans inspired — bold flavors, shareable plates, and real hospitality. 
+              The full menu will be announced closer to opening.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ Item -->
+        <div class="faq-item bg-sober-charcoal/50 border border-white/[0.06] rounded-xl overflow-hidden">
+          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
+            <span class="font-playfair text-lg font-semibold pr-4">Where are you located?</span>
+            <span class="faq-icon text-sober-gold text-2xl flex-shrink-0">+</span>
+          </button>
+          <div class="faq-content px-5">
+            <p class="text-sober-cream/50 text-sm leading-relaxed pb-5">
+              3062 Beach Blvd S, Gulfport, FL 33707 — right on Beach Boulevard in the heart of Gulfport's 
+              walkable, creative, coastal neighborhood.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ CTA ================ -->
+  <section class="py-24 lg:py-32 bg-sober-dark">
+    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
       <div class="reveal">
-        <div class="rounded-2xl border border-white/10 bg-white/5 backdrop-blur p-1">
-          <div class="rounded-xl bg-black/60 border border-white/10 p-6">
-            <div class="text-center mb-4">
-              <h3 class="font-comfortaa text-2xl font-bold">Live Pricing Snapshot</h3>
-              <p class="text-gray-400 text-sm">Example data — members see full list</p>
-            </div>
-            <div class="space-y-4">
-              <div class="flex items-center justify-between p-4 rounded-lg bg-white/5 border border-white/10">
-                <div>
-                  <div class="font-bold">Vanuatu Noble Kava (5kg MOQ)</div>
-                  <div class="text-xs text-gray-400">Verified Supplier</div>
-                </div>
-                <div class="text-right">
-                  <div class="text-emerald-400 font-extrabold">$65/kg</div>
-                  <div class="text-xs text-gray-500 line-through">$85/kg</div>
-                </div>
-              </div>
-              <div class="flex items-center justify-between p-4 rounded-lg bg-white/5 border border-white/10">
-                <div>
-                  <div class="font-bold">Fiji Noble Powder (3kg MOQ)</div>
-                  <div class="text-xs text-gray-400">Verified Supplier</div>
-                </div>
-                <div class="text-right">
-                  <div class="text-emerald-400 font-extrabold">$72/kg</div>
-                  <div class="text-xs text-gray-500 line-through">$94/kg</div>
-                </div>
-              </div>
-              <div class="p-4 rounded-lg bg-sober-gold/10 border border-sober-gold/40 text-center">
-                <div class="text-white text-lg font-bold">You could save ~$240/mo</div>
-                <div class="text-gray-300 text-sm">Based on 12kg monthly volume</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+        <p class="text-xs tracking-[0.25em] uppercase text-sober-gold mb-4 font-medium">Stay in the Loop</p>
+        <h2 class="font-playfair text-4xl lg:text-6xl font-bold mb-4 leading-tight">
+          Be first through<br class="sm:hidden">
+          <span class="text-gold-gradient italic">the door.</span>
+        </h2>
+        <p class="text-sober-cream/50 text-lg mb-10 max-w-lg mx-auto">
+          Want launch updates, opening announcements, and first look at what's coming? 
+          You know where to find us.
+        </p>
 
-  
-
-  <!-- ================= HOW IT WORKS ================= -->
-  <section id="how" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-14 reveal">
-        <h2 id="main" class="font-comfortaa font-bold text-4xl lg:text-5xl">Source Smarter. <span class="text-gradient">No Guesswork.</span></h2>
-        <p class="text-lg text-gray-600 mt-3">We vet suppliers, surface price transparency, and give you fast filters so you make confident buys. <button id="vetInfo" class="inline underline decoration-dotted underline-offset-4">How we vet</button></p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-8 rounded-xl border border-gray-200 hover:shadow-xl reveal">
-          <h3 class="text-xl font-bold mb-2">1) Vetting</h3>
-          <p class="text-gray-600">Licenses checked, COAs verified, delivery performance reviewed. Only reliable operations make the cut.</p>
-        </div>
-        <div class="p-8 rounded-xl border border-gray-200 hover:shadow-xl reveal">
-          <h3 class="text-xl font-bold mb-2">2) Live Pricing</h3>
-          <p class="text-gray-600">We track price changes and MOQ/EIN requirements so you always see the real picture before outreach.</p>
-        </div>
-        <div class="p-8 rounded-xl border border-gray-200 hover:shadow-xl reveal">
-          <h3 class="text-xl font-bold mb-2">3) Direct to Supplier</h3>
-          <p class="text-gray-600">Contact details unlocked. No middle‑man tax. Build the right relationships and buy better, faster.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#soft-opening" class="btn-gold rounded-lg px-8 py-4 text-center inline-flex items-center justify-center gap-2">
+            <span>Request Soft Opening Invite</span>
+            <svg class="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener" class="btn-outline-gold rounded-lg px-8 py-4 text-center inline-flex items-center justify-center gap-2">
+            Follow @sipsoberbar
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= CALCULATOR ================= -->
-  <section id="calc" class="py-20 bg-gray-50 scroll-mt-24">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="font-comfortaa font-bold text-4xl mb-4">See Your <span class="text-gradient">Savings</span></h2>
-      <p class="text-gray-600 mb-10">Enter your current monthly kava/kratom spend. Typical member savings: <strong>15–20%</strong>.</p>
-      <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-10 border-2 border-sober-gold/10">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <label for="cost" class="block text-left font-bold mb-2">Your current monthly spend ($)</label>
-            <div class="relative group">
-              <input id="cost" inputmode="numeric" pattern="[0-9]*" class="w-full text-2xl font-bold p-4 pr-12 rounded-lg border-2 border-gray-300 focus:border-sober-gold hover:border-sober-gold transition shadow-sm hover:shadow-md cursor-text" placeholder="2000" value="2000" />
-              <svg aria-hidden="true" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400 group-hover:text-sober-gold transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L8.25 18.402 3 19.5l1.098-5.25L16.862 4.487z" />
-              </svg>
-            </div>
-            <p class="text-left text-xs text-gray-500 mt-2">Edit to match your spend.</p>
-          </div>
-          <div class="rounded-xl p-0.5 bg-gradient-to-br from-sober-gold to-sober-gold-2 shadow-lg" aria-live="polite">
-            <div class="bg-sober-black text-white rounded-lg p-8 border border-white/10">
-              <p class="text-gray-300">Estimated monthly savings</p>
-              <div id="saveM" class="text-5xl font-extrabold text-gradient my-2">$400</div>
-              <p class="text-gray-300">Estimated annual savings</p>
-              <div id="saveY" class="text-3xl font-bold text-sober-gold">$4,800</div>
-            </div>
-          </div>
+  <!-- ================ FOOTER ================ -->
+  <footer class="py-16 bg-sober-black border-t border-white/[0.04]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div class="sm:col-span-2">
+          <img
+            src="full_trimmed_transparent_customcolor.png"
+            alt="Sober Bar"
+            class="h-9 w-auto brightness-0 invert opacity-70 mb-4"
+          />
+          <p class="text-sober-cream/30 text-sm max-w-sm">
+            Opening soon in Gulfport, Florida. An elevated zero-proof cocktail bar, coffee spot, 
+            and gathering space on Beach Boulevard. New Orleans inspired food. NA beer & wine.
+          </p>
         </div>
-      </div>
-      <div class="mt-6 text-sm text-gray-600">Ready to act on those savings? <a href="#plans" class="font-bold underline decoration-dotted underline-offset-4 text-sober-gold">See plans</a> to unlock the full supplier list and contact info.</div>
-    </div>
-  </section>
-
-  <!-- Mobile sticky CTA (shown on small screens, dismissible) -->
-  <div id="stickyCta" class="md:hidden fixed inset-x-0 bottom-0 z-50 bg-black/90 backdrop-blur border-t border-white/10 px-4 py-3 flex items-center gap-3">
-    <button id="stickyClose" class="text-white/70 px-2 py-1">✕</button>
-    <div class="text-white text-sm">Get the vetted supplier directory.</div>
-    <a href="#plans" class="ml-auto btn-primary rounded-md px-4 py-2">Get Started</a>
-  </div>
-
-  <!-- ================= PRICING (TABS) ================= -->
-  <section id="plans" class="py-20 bg-white scroll-mt-24">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center reveal mb-10">
-        <h2 class="font-comfortaa font-bold text-4xl">Simple, Transparent <span class="text-gradient">Pricing</span></h2>
-        <p class="text-gray-600 mt-2">Choose your lane. Bars get the wholesale directory. Home brewers get a practical PDF with suppliers that <em>don’t</em> require EINs or MOQs.</p>
-      </div>
-
-      <!-- Tabs -->
-      <div class="flex justify-center mb-8">
-        <div class="inline-flex rounded-lg border border-gray-200 overflow-hidden" role="tablist" aria-label="Pricing tabs">
-          <button id="tabBusiness" class="px-5 py-3 font-bold bg-black text-sober-gold" role="tab" aria-selected="true" aria-controls="businessPlans">Business (Bars)</button>
-          <button id="tabHome" class="px-5 py-3 font-bold" role="tab" aria-selected="false" aria-controls="home">Home Edition</button>
-        </div>
-      </div>
-
-      <!-- Business Plans -->
-  <div id="businessPlans" class="grid lg:grid-cols-3 gap-8 max-w-5xl mx-auto" role="tabpanel" aria-labelledby="tabBusiness">
-        <div class="p-8 rounded-xl border-2 border-gray-200 hover:-translate-y-1 transition">
-          <div class="text-center mb-6">
-            <h3 class="text-2xl font-bold">Starter</h3>
-            <p class="text-gray-600 h-12">Single‑location bars getting started.</p>
-            <div class="text-5xl font-extrabold">$49</div>
-            <div class="text-gray-500">/month</div>
-          </div>
-          <ul class="space-y-3 mb-6 text-sm">
-            <li>Full access to vetted supplier directory</li>
-            <li>Member‑only pricing and contact details</li>
-            <li>
-              Live price updates
-              <span class="tip" tabindex="0" aria-label="More info">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
-                <span class="bubble"><span class="caret"></span>We refresh tracked SKUs regularly and highlight changes to price, MOQ, and EIN requirements so you’re never surprised.</span>
-              </span>
-            </li>
-            <li>Standard email support (24–48h)</li>
+        <div>
+          <h4 class="text-xs tracking-[0.2em] uppercase text-sober-cream/40 mb-4 font-medium">Navigate</h4>
+          <ul class="space-y-2 text-sm text-sober-cream/50">
+            <li><a href="#experience" class="hover:text-sober-gold transition-colors">Experience</a></li>
+            <li><a href="#menu" class="hover:text-sober-gold transition-colors">Menu</a></li>
+            <li><a href="#soft-opening" class="hover:text-sober-gold transition-colors">Soft Opening</a></li>
+            <li><a href="#visit" class="hover:text-sober-gold transition-colors">Visit</a></li>
+            <li><a href="#faq" class="hover:text-sober-gold transition-colors">FAQ</a></li>
           </ul>
-          <a href="#" class="btn-outline rounded-lg w-full block text-center px-6 py-3">Start free 7‑day trial</a>
         </div>
-
-        <div class="p-8 rounded-xl border-2 border-sober-gold bg-sober-black text-white relative hover:-translate-y-1 transition">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sober-gold to-amber-300 text-black text-xs font-bold px-3 py-1 rounded-full shadow">MOST POPULAR</span>
-          <div class="text-center mb-6">
-            <h3 class="text-2xl font-bold">Professional</h3>
-            <p class="text-gray-300 h-12">Serious savings + priority support.</p>
-            <div class="text-5xl font-extrabold text-sober-gold">$99</div>
-            <div class="text-gray-400">/month</div>
-          </div>
-          <ul class="space-y-3 mb-6 text-sm text-white/90">
-            <li>
-              Everything in Starter
-            </li>
-            <li>
-              Same‑day email support
-              <span class="tip" tabindex="0" aria-label="More info">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
-                <span class="bubble"><span class="caret"></span>Skip the queue. First response by end of business day (Mon–Fri) for Pro members.</span>
-              </span>
-            </li>
-            <li>
-              Monthly market snapshot (1‑page)
-              <span class="tip" tabindex="0" aria-label="More info">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
-                <span class="bubble"><span class="caret"></span>A concise PDF of key changes: price moves, MOQ shifts, and new/retired suppliers—delivered monthly.</span>
-              </span>
-            </li>
-            <li>
-              1 sourcing intro/month
-              <span class="tip" tabindex="0" aria-label="More info">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
-                <span class="bubble"><span class="caret"></span>We warm‑introduce you to a vetted supplier matching your SKU/volume needs—no cold outreach.</span>
-              </span>
-            </li>
-            <li>
-              SKU cost review (1 quote/month)
-              <span class="tip" tabindex="0" aria-label="More info">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
-                <span class="bubble"><span class="caret"></span>Email a quote; we sanity‑check it against current market and flag negotiation levers.</span>
-              </span>
-            </li>
+        <div>
+          <h4 class="text-xs tracking-[0.2em] uppercase text-sober-cream/40 mb-4 font-medium">Connect</h4>
+          <ul class="space-y-2 text-sm text-sober-cream/50">
+            <li><a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener" class="hover:text-sober-gold transition-colors">Instagram</a></li>
+            <li><a href="mailto:Sean@sipsoberbar.com" class="hover:text-sober-gold transition-colors">Email</a></li>
+            <li><a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener" class="hover:text-sober-gold transition-colors">Google Maps</a></li>
           </ul>
-          <a href="#" class="btn-primary rounded-lg w-full block text-center px-6 py-3">Start free 7‑day trial</a>
-        </div>
-
-        <div class="p-8 rounded-xl border-2 border-gray-200 hover:-translate-y-1 transition">
-          <div class="text-center mb-6">
-            <h3 class="text-2xl font-bold">Enterprise</h3>
-            <p class="text-gray-600 h-12">Multi‑location & franchises.</p>
-            <div class="text-5xl font-extrabold">$199+</div>
-            <div class="text-gray-500">/month</div>
-          </div>
-          <ul class="space-y-3 mb-6 text-sm">
-            <li>
-              Dedicated account manager
-              <span class="tip" tabindex="0" aria-label="More info">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
-                <span class="bubble"><span class="caret"></span>One point of contact for sourcing requests, updates, and vendor coordination.</span>
-              </span>
-            </li>
-            <li>
-              Bulk order coordination
-              <span class="tip" tabindex="0" aria-label="More info">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
-                <span class="bubble"><span class="caret"></span>We help synchronize larger buys across suppliers and align delivery windows.</span>
-              </span>
-            </li>
-            <li>
-              API & integrations
-              <span class="tip" tabindex="0" aria-label="More info">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v4"/></svg>
-                <span class="bubble"><span class="caret"></span>CSV/Google Sheets exports available now. API access available via waitlist.</span>
-              </span>
-            </li>
-          </ul>
-          <a href="#" class="btn-outline rounded-lg w-full block text-center px-6 py-3">Talk to sales</a>
         </div>
       </div>
-
-      <!-- Home Edition -->
-  <div id="home" class="hidden max-w-4xl mx-auto mt-6 scroll-mt-24" role="tabpanel" aria-labelledby="tabHome">
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div class="order-2 md:order-1 p-8 rounded-2xl border-2 border-gray-200">
-            <h3 class="text-2xl font-bold mb-2">Home Edition PDF</h3>
-            <p class="text-gray-600">A practical list for individuals who brew at home. Includes suppliers that <strong>do not require an EIN</strong> and <strong>have no MOQ</strong> (pricing is still better than retail, but not wholesale‑level).</p>
-            <ul class="mt-4 space-y-2 text-sm">
-              <li>• 20+ consumer‑friendly sources (kava & kratom)</li>
-              <li>• Notes on shipping times, grind types, and popular strains</li>
-              <li>• Brew ratios & starter tips</li>
-              <li>• Lifetime updates for this edition</li>
-            </ul>
-            <div class="mt-6 flex items-end gap-3">
-              <div>
-                <div class="text-4xl font-extrabold">$29</div>
-                <div class="text-gray-500 text-sm">one‑time</div>
-              </div>
-              <button id="buyPDF" class="btn-primary rounded-lg px-6 py-3">Buy PDF</button>
-            </div>
-            <p class="mt-3 text-xs text-gray-500">Commercial use prohibited. For consumer/home brewing only.</p>
-          </div>
-          <div class="order-1 md:order-2"><div class="w-full rounded-xl border-2 border-sober-gold/40 bg-gradient-to-br from-sober-gold/20 to-transparent p-10 text-center"><div class="text-6xl mb-2">PDF</div><div class="font-bold text-lg">Home Edition PDF</div><p class="text-sm text-gray-600 mt-2">Supplier list preview available after purchase</p></div></div></div></div>
-  </section>
-
-  <!-- ================= GUARANTEES ================= -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-6">
-      <div class="p-6 rounded-xl bg-white border">
-        <h4 class="font-bold mb-2">30‑Day Guarantee</h4>
-        <p class="text-sm text-gray-600">If Sober Bar doesn’t materially save you time or money in the first month, we’ll refund your first payment. Cancel anytime.</p>
-      </div>
-      <div class="p-6 rounded-xl bg-white border">
-        <h4 class="font-bold mb-2">Unbiased Listings</h4>
-        <p class="text-sm text-gray-600">Suppliers don’t pay to be listed. Our incentives are aligned with members, not advertisers.</p>
-      </div>
-      <div class="p-6 rounded-xl bg-white border">
-        <h4 class="font-bold mb-2">Secure & Private</h4>
-        <p class="text-sm text-gray-600">Member data is never sold. We only use analytics to improve your experience.</p>
-      </div>
-      <!--
-      <div class="p-6 rounded-xl bg-white border">
-        <h4 class="font-bold mb-2">Roadmap → White‑Label</h4>
-        <p class="text-sm text-gray-600">As the brand of record, we’ll replace the lowest‑cost supplier with <strong>Sober Bar</strong> white‑label SKUs delivered via drop‑ship.</p>
-      </div>
-      -->
-    </div>
-  </section>
-
-  <!-- ================= FAQ ================= -->
-  <section id="faq" class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-center font-comfortaa font-bold text-4xl mb-10">FAQ</h2>
-      <div class="space-y-4">
-        <details class="p-6 rounded-lg bg-gray-50 border">
-          <summary class="font-bold cursor-pointer">How do you limit business use of the Home Edition PDF?</summary>
-          <div class="pt-3 text-gray-700 text-sm">
-            It’s designed for individuals. We require a non‑commercial use agreement, personal email at checkout, add a unique watermark, and use expiring download links. It also lists consumer‑friendly sources (no EIN / no MOQ), so it’s naturally less attractive for a bar.
-          </div>
-        </details>
-        <details class="p-6 rounded-lg bg-gray-50 border">
-          <summary class="font-bold cursor-pointer">What does “vetted” mean for suppliers?</summary>
-          <div class="pt-3 text-gray-700 text-sm">We validate licensing and documents, verify COAs for relevant SKUs, review delivery performance and dispute history, assess reputation, and monitor ongoing performance.</div>
-        </details>
-        <details class="p-6 rounded-lg bg-gray-50 border">
-          <summary class="font-bold cursor-pointer">How often are prices updated?</summary>
-          <div class="pt-3 text-gray-700 text-sm">Tracked SKUs are reviewed routinely. We surface price moves and note MOQ/EIN changes so you can act with current info.</div>
-        </details>
-        <details class="p-6 rounded-lg bg-gray-50 border">
-          <summary class="font-bold cursor-pointer">Can you intro us to the right supplier?</summary>
-          <div class="pt-3 text-gray-700 text-sm">Yes—Professional includes one warm introduction per month to a vetted supplier that matches your SKU/volume needs.</div>
-        </details>
-        <details class="p-6 rounded-lg bg-gray-50 border">
-          <summary class="font-bold cursor-pointer">Will you review a quote we received?</summary>
-          <div class="pt-3 text-gray-700 text-sm">Yes—Professional includes one monthly SKU quote review. We sanity‑check against current market and flag negotiation levers.</div>
-        </details>
-        <details class="p-6 rounded-lg bg-gray-50 border">
-          <summary class="font-bold cursor-pointer">Do you list kratom sources?</summary>
-          <div class="pt-3 text-gray-700 text-sm">Yes, where legally permitted. Members are responsible for complying with local/state laws.</div>
-        </details>
-        <details class="p-6 rounded-lg bg-gray-50 border">
-          <summary class="font-bold cursor-pointer">Do you have affiliate relationships?</summary>
-          <div class="pt-3 text-gray-700 text-sm">For a few suppliers we may use affiliate links. These never change the price you pay and don’t affect how we rank or present suppliers.</div>
-        </details>
+      <div class="pt-8 border-t border-white/[0.04] flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-sober-cream/30">
+        <p>© 2025 Sober Bar. All rights reserved. 3062 Beach Blvd S, Gulfport, FL 33707</p>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-sober-cream/60 transition-colors">Privacy</a>
+          <a href="#" class="hover:text-sober-cream/60 transition-colors">Terms</a>
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="bg-sober-black text-gray-300 py-12">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="lg:col-span-2">
-  <img alt="Sober Bar" class="h-10 w-auto mb-4" src="sober_bar_logo_highres.png" loading="lazy" decoding="async" />
-        <p class="text-gray-400 max-w-md">The sourcing hub for kava & kratom. Save money, save time, and build the right supplier relationships.</p>
-      </div>
-      <div>
-        <h4 class="font-bold text-white mb-3">Product</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#how" class="hover:text-sober-gold">How it works</a></li>
-          <li><a href="#calc" class="hover:text-sober-gold">Calculator</a></li>
-          <li><a href="#plans" class="hover:text-sober-gold">Pricing</a></li>
-          <li><a href="#faq" class="hover:text-sober-gold">FAQ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold text-white mb-3">Legal</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/privacy.html" class="hover:text-sober-gold">Privacy Policy</a></li>
-          <li><a href="/terms.html" class="hover:text-sober-gold">Terms of Service</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="border-t border-gray-800 mt-10 pt-6 text-center text-sm">© 2025 Sober Bar. All rights reserved.</div>
   </footer>
 
+  <!-- ================ SCRIPTS ================ -->
   <script>
-    // Mobile menu
+    // ── Scroll Reveal ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = `${Math.min(i * 80, 600)}ms`;
+      observer.observe(el);
+    });
+
+    // ── Nav scroll behavior ──
+    const nav = document.getElementById('nav');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // ── Mobile Menu ──
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn?.addEventListener('click', ()=>{
-      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', String(!expanded));
-      mobileMenu.classList.toggle('hidden');
-      if(!expanded){
-        const first = mobileMenu.querySelector('a,button,[tabindex]:not([tabindex="-1"])');
-        first && first.focus();
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    let menuOpen = false;
+
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      menuBtn.setAttribute('aria-expanded', menuOpen);
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        bar1.style.transform = 'translateY(9px) rotate(45deg)';
+        bar2.style.opacity = '0';
+        bar3.style.transform = 'translateY(-9px) rotate(-45deg)';
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileMenu.classList.remove('open');
+        bar1.style.transform = 'none';
+        bar2.style.opacity = '1';
+        bar3.style.transform = 'none';
+        document.body.style.overflow = '';
       }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (menuOpen) toggleMenu();
+      });
     });
-    // Close mobile menu with ESC
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'Escape' && !mobileMenu.classList.contains('hidden')){
-        mobileMenu.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded','false');
-        menuBtn.focus();
-      }
+
+    // Close mobile menu on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuOpen) toggleMenu();
     });
 
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
-    }, {threshold:.15});
-    document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+    // ── FAQ Accordion ──
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.parentElement;
+        const isOpen = item.classList.contains('open');
 
-    // Brand logo: play animation once for first-time visitors (overlay approach)
-    (function(){
-      const logo = document.getElementById('brandLogo');
-      if(!logo) return;
-      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(reduce) return; // respect user setting
-      const qp = new URLSearchParams(location.search);
-      const forceReplay = qp.has('replayLogo') || qp.has('logoTest');
-      if(localStorage.getItem('sb_logo_played')==='1' && !forceReplay) return; // already played
-      if(forceReplay) try{ localStorage.removeItem('sb_logo_played'); }catch(e){}
-      const animated = logo.getAttribute('data-animated');
-      const statik = logo.getAttribute('data-static') || logo.src;
-      if(!animated || !statik) return;
-      const wrap = logo.closest("a[aria-label='Sober Bar Home']") || logo.parentElement;
-      if(!wrap) return;
-      // Preload GIF and overlay it with screen blend over the static PNG for visibility on dark bg
-      const preload = new Image();
-      preload.onload = ()=>{
-        const overlay = document.createElement('img');
-        overlay.src = animated;
-        overlay.alt = '';
-        overlay.setAttribute('aria-hidden','true');
-        overlay.style.position = 'absolute';
-        overlay.style.left = '0';
-        overlay.style.top = '0';
-        overlay.style.height = logo.clientHeight + 'px';
-        overlay.style.width = 'auto';
-        overlay.style.pointerEvents = 'none';
-        overlay.style.opacity = '0';
-        overlay.style.transition = 'opacity .15s ease';
-        overlay.style.mixBlendMode = 'screen';
-        wrap.classList.add('logo-playing');
-        logo.classList.add('playing');
-        // Ensure wrap is positioned for absolute overlay
-        if(getComputedStyle(wrap).position === 'static') wrap.style.position = 'relative';
-        wrap.appendChild(overlay);
-        requestAnimationFrame(()=>{ overlay.style.opacity = '1'; });
-        const revert = ()=>{
-          overlay.style.opacity = '0';
-          setTimeout(()=>{ overlay.remove(); }, 200);
-          logo.classList.remove('playing');
-          wrap.classList.remove('logo-playing');
-          localStorage.setItem('sb_logo_played','1');
-        };
-        setTimeout(revert, 3000);
-      };
-      preload.src = animated;
-    })();
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(fi => {
+          fi.classList.remove('open');
+          fi.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+        });
 
-    // Calculator
-    const cost = document.getElementById('cost');
-    const saveM = document.getElementById('saveM');
-    const saveY = document.getElementById('saveY');
-    const rate = 0.20; // 20% typical savings
-    function calc(){
-      const v = parseFloat((cost.value||'').replace(/[^0-9.]/g,'')) || 0;
-      const m = v * rate; const y = m*12;
-      const fmt = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
-      saveM.textContent = fmt.format(m); saveY.textContent = fmt.format(y);
-    }
-    cost.addEventListener('input', calc);
-    // URL param prefill: ?cost=2500
-    const usp = new URLSearchParams(location.search);
-    if(usp.has('cost')){
-      const v = usp.get('cost');
-      if(/^\d+(\.\d+)?$/.test(v)) cost.value = v;
-    }
-    calc();
-
-    // Pricing tabs (ARIA + keyboard)
-    const tabBusiness = document.getElementById('tabBusiness');
-    const tabHome = document.getElementById('tabHome');
-    const business = document.getElementById('businessPlans');
-    const home = document.getElementById('home');
-    function activate(which){
-      const biz = which==='biz';
-      tabBusiness.classList.toggle('bg-black', biz); tabBusiness.classList.toggle('text-sober-gold', biz);
-      tabHome.classList.toggle('bg-black', !biz); tabHome.classList.toggle('text-sober-gold', !biz);
-      business.classList.toggle('hidden', !biz);
-      home.classList.toggle('hidden', biz);
-      tabBusiness.setAttribute('aria-selected', String(biz));
-      tabHome.setAttribute('aria-selected', String(!biz));
-    }
-    tabBusiness.addEventListener('click',()=>activate('biz'));
-    tabHome.addEventListener('click',()=>activate('home'));
-    // CTA: Home Brewer activates Home tab and scrolls to plans
-    document.getElementById('ctaHome')?.addEventListener('click', (e)=>{
-      activate('home');
-      // allow hash change to handle scroll; ensure correct target visible
-      setTimeout(()=> document.getElementById('plans')?.scrollIntoView({behavior:'smooth', block:'start'}), 0);
-    });
-    // Handle hash navigation for tabs
-    function handleHash(){
-      const h = (location.hash||'').toLowerCase();
-      if(h==="#home") activate('home');
-      if(h==="#plans"||h==="#business") activate('biz');
-    }
-    window.addEventListener('hashchange', handleHash);
-    handleHash();
-    // arrow key navigation between tabs
-    [tabBusiness, tabHome].forEach((el, idx, arr)=>{
-      el.addEventListener('keydown', (e)=>{
-        if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
-          e.preventDefault(); const next = e.key==='ArrowRight'? (idx+1)%arr.length : (idx-1+arr.length)%arr.length; arr[next].focus(); arr[next].click();
+        // Open clicked (if wasn't already open)
+        if (!isOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
         }
       });
     });
 
-    // Nav scroll spy for aria-current
-    const navLinks = Array.from(document.querySelectorAll('a[data-nav]'));
-    const sections = navLinks.map(a=> document.querySelector(a.getAttribute('href'))).filter(Boolean);
-    const sp = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          const id = '#' + e.target.id;
-          navLinks.forEach(a=> a.toggleAttribute('aria-current', a.getAttribute('href')===id));
+    // ── Soft Opening Form ──
+    const form = document.getElementById('softOpeningForm');
+    const formSuccess = document.getElementById('formSuccess');
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const instagram = document.getElementById('instagram').value.trim();
+
+        if (!name || !email || !instagram) return;
+
+        // Simple email validation
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          alert('Please enter a valid email address.');
+          return;
+        }
+
+        // For now, store in localStorage and show success
+        const entries = JSON.parse(localStorage.getItem('soberBarSignups') || '[]');
+        entries.push({
+          name,
+          email,
+          instagram,
+          timestamp: new Date().toISOString()
+        });
+        localStorage.setItem('soberBarSignups', JSON.stringify(entries));
+
+        form.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+
+        // Also try to trigger a no-op form submission for any analytics
+        console.log('Soft opening signup:', { name, email, instagram });
+      });
+    }
+
+    // ── Smooth scroll for anchor links ──
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const navHeight = 80;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
         }
       });
-    }, {rootMargin:'-50% 0px -40% 0px', threshold:0});
-    sections.forEach(sec=> sp.observe(sec));
-
-    // Tooltip auto-flip when near viewport edge
-    document.querySelectorAll('.tip').forEach(tip=>{
-      tip.addEventListener('mouseenter', positionBubble);
-      tip.addEventListener('focusin', positionBubble);
-      function positionBubble(){
-        const bubble = tip.querySelector('.bubble');
-        const caret = tip.querySelector('.caret');
-        if(!bubble) return;
-        // Reset positioning
-        bubble.style.left = '0px'; bubble.style.right = '';
-        if(caret){ caret.style.left = '12px'; caret.style.right = ''; }
-        const rect = bubble.getBoundingClientRect();
-        const overflowRight = rect.right > (window.innerWidth - 16);
-        if(overflowRight){
-          bubble.style.left = '';
-          bubble.style.right = '0px';
-          if(caret){ caret.style.left = ''; caret.style.right = '12px'; }
-        }
-      }
     });
 
-    // Home PDF purchase gate (checkbox modal)
-    const buyBtn = document.getElementById('buyPDF');
-    buyBtn?.addEventListener('click', ()=>{
-      const wrap = document.createElement('div');
-      wrap.className = 'fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-4';
-      wrap.innerHTML = `
-        <div class='bg-white rounded-2xl max-w-lg w-full p-6'>
-          <h3 class='text-xl font-bold mb-2'>Confirm Non‑Commercial Use</h3>
-          <p class='text-sm text-gray-600 mb-4'>The Home Edition PDF is for individual/home use only and may not be used by or on behalf of a business. Each copy is watermarked and download links expire.</p>
-          <label class='flex items-start gap-3 text-sm mb-3'><input id='ck1' type='checkbox' class='mt-1'> I am not purchasing on behalf of a business and I do not hold/enter an EIN for this purchase.</label>
-          <label class='flex items-start gap-3 text-sm mb-4'><input id='ck2' type='checkbox' class='mt-1'> I agree not to share, resell, or use this file for commercial purposes.</label>
-          <div class='flex justify-end gap-3'>
-            <button class='px-4 py-2' id='cancel'>Cancel</button>
-            <a id='proceed' class='btn-primary rounded-lg px-4 py-2 opacity-50 pointer-events-none'>Continue</a>
-          </div>
-        </div>`;
-      document.body.appendChild(wrap);
-      const ck1 = wrap.querySelector('#ck1'); const ck2 = wrap.querySelector('#ck2');
-      const proceed = wrap.querySelector('#proceed'); const cancel = wrap.querySelector('#cancel');
-      function gate(){ const ok = ck1.checked && ck2.checked; proceed.style.opacity = ok?1:.5; proceed.classList.toggle('pointer-events-none', !ok); }
-      ck1.addEventListener('change', gate); ck2.addEventListener('change', gate);
-      // focus management & escape
-      const prev = document.activeElement;
-      setTimeout(()=> ck1.focus(), 0);
-      function close(){ wrap.remove(); prev && prev.focus && prev.focus(); }
-      cancel.addEventListener('click', close);
-      wrap.addEventListener('keydown', (e)=>{
-        if(e.key === 'Escape') close();
-        if(e.key === 'Tab'){
-          const f = wrap.querySelectorAll('a,button,input,select,textarea,[tabindex]:not([tabindex="-1"])');
-          const focusables = Array.from(f);
-          const first = focusables[0]; const last = focusables[focusables.length-1];
-          if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
-          else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
-        }
-      });
-      proceed.addEventListener('click', ()=>{ window.location.href = '#'; /* TODO: Stripe checkout link */ });
-    });
-
-    // How we vet modal (lightweight)
-    const vetBtn = document.getElementById('vetInfo');
-    vetBtn?.addEventListener('click', ()=>{
-      const wrap = document.createElement('div');
-      wrap.className = 'fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-4';
-      wrap.innerHTML = `
-        <div class='bg-white rounded-2xl max-w-xl w-full p-6'>
-          <h3 class='text-xl font-bold mb-2'>How we vet suppliers</h3>
-          <ul class='list-disc pl-5 text-sm text-gray-700 space-y-1'>
-            <li>Licensing and documents validated</li>
-            <li>COAs verified for relevant SKUs</li>
-            <li>Delivery reliability and dispute history reviewed</li>
-            <li>Pricing transparency and MOQ/EIN requirements tracked</li>
-            <li>Ongoing performance monitoring</li>
-          </ul>
-          <div class='text-right mt-4'><button id='vetClose' class='px-4 py-2'>Close</button></div>
-        </div>`;
-      document.body.appendChild(wrap);
-      const closeBtn = wrap.querySelector('#vetClose');
-      const prev = document.activeElement;
-      setTimeout(()=> closeBtn.focus(), 0);
-      function close(){ wrap.remove(); prev && prev.focus && prev.focus(); }
-      closeBtn?.addEventListener('click', close);
-      wrap.addEventListener('click', (e)=>{ if(e.target===wrap) close(); });
-      wrap.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
-    });
-
-    // Sticky CTA dismiss with localStorage
-    const sticky = document.getElementById('stickyCta');
-    const stickyClose = document.getElementById('stickyClose');
-    if(localStorage.getItem('sb_sticky_dismissed')==='1') sticky?.remove();
-    stickyClose?.addEventListener('click', ()=>{ localStorage.setItem('sb_sticky_dismissed','1'); sticky?.remove(); });
+    // ── Initial scroll state ──
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    }
   </script>
+
+  <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do you limit business use of the Home Edition PDF?",
-        "acceptedAnswer": {"@type": "Answer", "text": "It’s designed for individuals. We require a non‑commercial use agreement, personal email at checkout, add a unique watermark, and use expiring download links. It also lists consumer‑friendly sources (no EIN / no MOQ), so it’s naturally less attractive for a bar."}
-      },
-      {
-        "@type": "Question",
-        "name": "What does ‘vetted’ mean for suppliers?",
-        "acceptedAnswer": {"@type": "Answer", "text": "We validate licensing and documents, verify COAs for relevant SKUs, review delivery performance and dispute history, assess reputation, and monitor ongoing performance."}
-      },
-      {
-        "@type": "Question",
-        "name": "How often are prices updated?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Tracked SKUs are reviewed routinely. We surface price moves and note MOQ/EIN changes so you can act with current info."}
-      },
-      {
-        "@type": "Question",
-        "name": "Can you intro us to the right supplier?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Yes—Professional includes one warm introduction per month to a vetted supplier that matches your SKU/volume needs."}
-      },
-      {
-        "@type": "Question",
-        "name": "Will you review a quote we received?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Yes—Professional includes one monthly SKU quote review. We sanity‑check against current market and flag negotiation levers."}
-      },
-      {
-        "@type": "Question",
-        "name": "Do you list kratom sources?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Yes, where legally permitted. Members are responsible for complying with local/state laws."}
-      },
-      {
-        "@type": "Question",
-        "name": "Do you have affiliate relationships?",
-        "acceptedAnswer": {"@type": "Answer", "text": "For a few suppliers we may use affiliate links. These never change the price you pay and don’t affect how we rank or present suppliers."}
-      }
-    ]
+    "@type": "BarOrPub",
+    "name": "Sober Bar",
+    "description": "Gulfport's elevated zero-proof cocktail bar, coffee spot, and gathering space. New Orleans inspired food, functional cocktails, and NA beer & wine.",
+    "url": "https://www.sipsoberbar.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3062 Beach Blvd S",
+      "addressLocality": "Gulfport",
+      "addressRegion": "FL",
+      "postalCode": "33707",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://instagram.com/sipsoberbar"
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "18:00",
+      "closes": "22:00",
+      "description": "Soft Opening — June 7, 2025"
+    }
   }
   </script>
 </body>
