@@ -1,793 +1,627 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sober Bar — Gulfport's Zero-Proof Cocktail Bar & Coffee Spot</title>
-  <meta name="description" content="Sober Bar is Gulfport's zero-proof cocktail bar, coffee spot, and gathering space. New Orleans inspired food, craft zero-proof cocktails, NA beer & wine. Now open on Beach Boulevard." />
-  <meta name="theme-color" content="#0a0a0a" />
+  <title>Sober Bar — Gulfport's Zero-Proof Cocktail Bar &amp; Coffee House</title>
+  <meta name="description" content="Sober Bar is Gulfport's zero-proof cocktail bar and coffee house. Craft NA cocktails, New Orleans inspired food, NA beer & wine, and specialty coffee — now open on Beach Boulevard." />
+  <meta name="theme-color" content="#070605" />
   <link rel="canonical" href="https://www.sipsoberbar.com/" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="manifest" href="/manifest.webmanifest" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="mobile-web-app-capable" content="yes" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sober Bar — Gulfport's Zero-Proof Cocktail Bar & Coffee Spot" />
-  <meta property="og:description" content="Now open on Beach Boulevard. Craft zero-proof cocktails, New Orleans inspired food, NA beer & wine, and specialty coffee — from morning till late." />
+  <meta property="og:title" content="Sober Bar — Gulfport's Zero-Proof Cocktail Bar & Coffee House" />
+  <meta property="og:description" content="Now open on Beach Boulevard. Craft zero-proof cocktails, NOLA-inspired food, NA beer & wine, and specialty coffee — from 7 AM till late." />
   <meta property="og:url" content="https://www.sipsoberbar.com/" />
   <meta property="og:image" content="https://www.sipsoberbar.com/images/cocktail-trio.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sober Bar — Gulfport's Zero-Proof Cocktail Bar & Coffee Spot" />
+  <meta name="twitter:title" content="Sober Bar — Gulfport's Zero-Proof Cocktail Bar & Coffee House" />
   <meta name="twitter:description" content="Now open on Beach Boulevard. Craft zero-proof cocktails, NOLA food, coffee, and NA drinks." />
   <meta name="twitter:image" content="https://www.sipsoberbar.com/images/cocktail-trio.jpg" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'sb-black': '#0a0a0a',
-            'sb-dark': '#111111',
-            'sb-charcoal': '#1a1a1a',
-            'sb-gold': '#C8963E',
-            'sb-gold-light': '#D4A44A',
-            'sb-gold-pale': '#E8C872',
-            'sb-cream': '#F5F0E8',
-            'sb-muted': '#8B8178',
-          },
-          fontFamily: {
-            playfair: ['"Playfair Display"', 'Georgia', 'serif'],
-            cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-            inter: ['Inter', 'system-ui', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --sb: #0a0a0a; --sd: #111111; --sc: #1a1a1a;
-      --sg: #C8963E; --sgl: #D4A44A; --sgp: #E8C872;
-      --scr: #F5F0E8; --swg: #8B8178;
-    }
-    * { box-sizing: border-box; }
-
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--sb); }
-    ::-webkit-scrollbar-thumb { background: var(--sg); border-radius: 3px; }
-    html { scrollbar-color: var(--sg) var(--sb); scrollbar-width: thin; }
-
-    .text-gold-gradient {
-      background: linear-gradient(135deg, var(--sgp), var(--sg), var(--sgl));
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
+      --black: #070605;
+      --ink: #0e0c09;
+      --panel: #12100c;
+      --gold: #d4af6a;
+      --gold-bright: #eed9a4;
+      --gold-dim: rgba(212, 175, 106, 0.35);
+      --gold-faint: rgba(212, 175, 106, 0.16);
+      --cream: #f4ead8;
+      --muted: rgba(244, 234, 216, 0.66);
+      --muted-2: rgba(244, 234, 216, 0.45);
     }
 
-    .btn-gold {
-      background: linear-gradient(135deg, var(--sg), var(--sgl));
-      color: #000; font-weight: 600;
-      transition: all 0.3s ease; position: relative; overflow: hidden;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'Josefin Sans', 'Futura', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
-    .btn-gold::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, var(--sgl), var(--sgp));
-      opacity: 0; transition: opacity 0.3s ease;
+    ::selection { background: var(--gold); color: #000; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    .shell { width: min(100% - 48px, 1180px); margin: 0 auto; }
+
+    .display {
+      font-family: 'Poiret One', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
-    .btn-gold:hover::after { opacity: 1; }
-    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(200,150,62,0.3); }
-    .btn-gold span { position: relative; z-index: 1; }
+    .serif-it { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; }
 
-    .btn-outline {
-      border: 1.5px solid var(--sg); color: var(--sg); font-weight: 500;
-      transition: all 0.3s ease;
+    /* ------- deco ornaments ------- */
+    .deco-rule {
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; color: var(--gold);
     }
-    .btn-outline:hover { background: var(--sg); color: #000; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(200,150,62,0.25); }
+    .deco-rule::before, .deco-rule::after {
+      content: ''; height: 1px; width: min(120px, 20vw);
+      background: linear-gradient(90deg, transparent, var(--gold-dim));
+    }
+    .deco-rule::after { background: linear-gradient(90deg, var(--gold-dim), transparent); }
+    .deco-rule .gem { font-size: 0.7rem; transform: rotate(45deg); display: inline-block; border: 1px solid var(--gold); width: 8px; height: 8px; }
 
-    #nav { transition: background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease; }
-    #nav.scrolled { background: rgba(10,10,10,0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .nav-link { position: relative; color: rgba(245,240,232,0.75); transition: color 0.3s ease; font-size: 0.875rem; letter-spacing: 0.05em; text-transform: uppercase; }
-    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--sg); transition: width 0.3s ease; }
-    .nav-link:hover { color: var(--scr); }
-    .nav-link:hover::after { width: 100%; }
+    .eyebrow {
+      font-family: 'Josefin Sans', sans-serif; font-weight: 400;
+      letter-spacing: 0.42em; text-transform: uppercase;
+      font-size: 0.72rem; color: var(--gold);
+    }
 
-    #mobileMenu { transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease; transform: translateX(100%); opacity: 0; }
-    #mobileMenu.open { transform: translateX(0); opacity: 1; }
+    h2.title {
+      font-family: 'Poiret One', sans-serif; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: clamp(1.9rem, 4.4vw, 3.1rem);
+      line-height: 1.15; color: var(--cream);
+    }
+    h2.title em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; letter-spacing: 0.01em; color: var(--gold-bright); font-size: 1.15em; }
 
-    .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* ------- nav ------- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+      transition: background 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled { background: rgba(7, 6, 5, 0.92); backdrop-filter: blur(14px); border-bottom-color: var(--gold-faint); }
+    .nav-inner {
+      width: min(100% - 48px, 1180px); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 76px;
+    }
+    .nav-brand img { height: 52px; width: auto; }
+    .nav-links { display: flex; gap: 36px; align-items: center; list-style: none; }
+    .nav-links a {
+      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--muted);
+      transition: color 0.25s ease; font-weight: 400;
+    }
+    .nav-links a:hover { color: var(--gold-bright); }
+    .nav-cta {
+      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--gold-dim); padding: 12px 22px;
+      transition: all 0.3s ease; font-weight: 400; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--gold); color: #000; }
+    .burger { display: none; background: none; border: 1px solid var(--gold-dim); color: var(--gold); width: 44px; height: 44px; cursor: pointer; font-size: 1.1rem; }
 
-    @keyframes heroGlow { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.05); } }
-    .hero-glow { animation: heroGlow 8s ease-in-out infinite; }
-    @keyframes heroGlow2 { 0%, 100% { opacity: 0.3; transform: scale(1) translate(-30%, -30%); } 50% { opacity: 0.55; transform: scale(1.1) translate(-28%, -28%); } }
-    .hero-glow-2 { animation: heroGlow2 10s ease-in-out infinite reverse; }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 55;
+      background: rgba(7, 6, 5, 0.97); backdrop-filter: blur(16px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 34px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      text-decoration: none; color: var(--cream); font-family: 'Poiret One', sans-serif;
+      font-size: 1.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    .mobile-menu a:hover { color: var(--gold-bright); }
 
-    .card-glow { transition: all 0.4s ease; }
-    .card-glow:hover { box-shadow: 0 0 60px rgba(200,150,62,0.08), 0 0 120px rgba(200,150,62,0.04); transform: translateY(-4px); }
+    /* ------- hero ------- */
+    header.hero {
+      min-height: 100svh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; position: relative; overflow: hidden;
+      padding: 120px 24px 90px;
+    }
+    /* sunburst rays radiating from top center, echoing the logo */
+    header.hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        repeating-conic-gradient(from -90deg at 50% -12%, rgba(212,175,106,0.055) 0deg 1.1deg, transparent 1.1deg 7deg),
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(212,175,106,0.14), transparent 60%);
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
+      mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
+    }
+    .hero-logo { width: min(560px, 82vw); height: auto; margin-bottom: 34px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 12px;
+      border: 1px solid var(--gold-dim); padding: 10px 26px;
+      font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--gold-bright); margin-bottom: 30px; font-weight: 400;
+    }
+    .pulse { width: 7px; height: 7px; border-radius: 50%; background: #7fd88f; box-shadow: 0 0 0 0 rgba(127,216,143,0.5); animation: pulse 2.2s infinite; }
+    @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(127,216,143,0); } 100% { box-shadow: 0 0 0 0 rgba(127,216,143,0); } }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(1.35rem, 2.6vw, 1.9rem); color: var(--muted);
+      max-width: 34ch; margin: 0 auto 14px;
+    }
+    .hero-locale { font-size: 0.74rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 42px; font-weight: 400; }
+    .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      text-decoration: none; font-size: 0.74rem; letter-spacing: 0.28em; text-transform: uppercase;
+      padding: 17px 38px; transition: all 0.3s ease; font-weight: 400;
+    }
+    .btn-solid { background: var(--gold); color: #060504; }
+    .btn-solid:hover { background: var(--gold-bright); }
+    .btn-line { border: 1px solid var(--gold-dim); color: var(--gold-bright); }
+    .btn-line:hover { border-color: var(--gold); background: rgba(212,175,106,0.08); }
+    .hero-hours { margin-top: 46px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted-2); font-weight: 400; }
+    .hero-hours b { color: var(--gold); font-weight: 400; margin-right: 8px; }
 
-    .gallery-img { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-    .gallery-img:hover { transform: scale(1.03); }
-    .gallery-img-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,10,0.6) 0%, transparent 40%); opacity: 0; transition: opacity 0.4s ease; }
-    .gallery-img-wrap:hover::after { opacity: 1; }
+    /* ------- marquee ------- */
+    .marquee {
+      border-top: 1px solid var(--gold-faint); border-bottom: 1px solid var(--gold-faint);
+      overflow: hidden; padding: 16px 0; background: var(--ink);
+    }
+    .marquee-track {
+      display: flex; gap: 0; width: max-content;
+      animation: slide 34s linear infinite;
+    }
+    .marquee span {
+      font-family: 'Poiret One', sans-serif; white-space: nowrap;
+      letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.82rem;
+      color: var(--gold); padding: 0 28px; position: relative;
+    }
+    .marquee span::after { content: '◆'; position: absolute; right: -7px; font-size: 0.5rem; top: 50%; transform: translateY(-50%); color: var(--gold-dim); }
+    @keyframes slide { to { transform: translateX(-50%); } }
 
-    .faq-trigger { cursor: pointer; transition: color 0.2s ease; }
-    .faq-trigger:hover { color: var(--sg); }
-    .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
-    .faq-item.open .faq-content { max-height: 400px; padding-top: 1rem; }
-    .faq-icon { transition: transform 0.3s ease; }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    /* ------- sections ------- */
+    section { padding: 110px 0; }
+    .sec-head { text-align: center; margin-bottom: 64px; display: grid; gap: 18px; justify-items: center; }
 
-    .form-input { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: var(--scr); transition: all 0.3s ease; }
-    .form-input:focus { outline: none; border-color: var(--sg); background: rgba(255,255,255,0.06); box-shadow: 0 0 0 3px rgba(200,150,62,0.1); }
-    .form-input::placeholder { color: var(--swg); }
+    /* arch photo frame — echoes the sun arc in the logo */
+    .arch {
+      position: relative;
+      border-radius: 999px 999px 18px 18px;
+      overflow: hidden;
+      border: 1px solid var(--gold-dim);
+      padding: 12px;
+      background: var(--ink);
+    }
+    .arch img { border-radius: 999px 999px 12px 12px; width: 100%; height: 100%; object-fit: cover; }
 
-    .spec-line { position: relative; overflow: hidden; }
-    .spec-line::before { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 1px; background: var(--sg); opacity: 0.5; }
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+    .feature .copy p { color: var(--muted); margin-bottom: 18px; font-size: 1.02rem; }
+    .feature .copy .eyebrow { display: block; margin-bottom: 18px; }
+    .feature .copy h2 { margin-bottom: 26px; }
+    .sig-list { list-style: none; margin-top: 8px; border-top: 1px solid var(--gold-faint); }
+    .sig-list li {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
+      padding: 13px 2px; border-bottom: 1px solid var(--gold-faint);
+      font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; color: var(--cream);
+    }
+    .sig-list li small { font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-2); text-align: right; }
 
-    @keyframes openPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(200,150,62,0.4); } 50% { box-shadow: 0 0 0 8px rgba(200,150,62,0); } }
-    .open-dot { animation: openPulse 2s ease-in-out infinite; }
+    /* ------- menu board ------- */
+    .menu-bg { background: var(--ink); border-top: 1px solid var(--gold-faint); border-bottom: 1px solid var(--gold-faint); }
+    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(36px, 5vw, 70px); max-width: 980px; margin: 0 auto; }
+    .menu-col h3 {
+      font-family: 'Poiret One', sans-serif; font-weight: 400; letter-spacing: 0.22em;
+      text-transform: uppercase; font-size: 1.05rem; color: var(--gold);
+      display: flex; align-items: center; gap: 16px; margin-bottom: 22px;
+    }
+    .menu-col h3::after { content: ''; flex: 1; height: 1px; background: var(--gold-faint); }
+    .mi { margin-bottom: 20px; }
+    .mi .mi-name { font-family: 'Cormorant Garamond', serif; font-size: 1.32rem; color: var(--cream); }
+    .mi .mi-desc { font-size: 0.85rem; color: var(--muted-2); margin-top: 2px; }
+    .menu-note { text-align: center; margin-top: 60px; color: var(--muted-2); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; }
+    .menu-note a { color: var(--gold); }
 
-    .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(200,150,62,0.2), transparent); }
+    /* ------- rhythm ------- */
+    .timeline { list-style: none; margin-top: 34px; }
+    .timeline li { display: grid; grid-template-columns: 92px 1fr; gap: 22px; padding: 16px 0; border-bottom: 1px solid var(--gold-faint); align-items: baseline; }
+    .timeline li:last-child { border-bottom: none; }
+    .timeline .t { font-family: 'Poiret One', sans-serif; color: var(--gold-bright); letter-spacing: 0.1em; font-size: 1.05rem; white-space: nowrap; }
+    .timeline .d { color: var(--muted); font-size: 0.98rem; }
 
-    @keyframes hoursGlow { 0%, 100% { border-color: rgba(200,150,62,0.15); } 50% { border-color: rgba(200,150,62,0.35); } }
-    .hours-card { animation: hoursGlow 4s ease-in-out infinite; }
+    /* ------- gallery duo ------- */
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 48px); max-width: 900px; margin: 0 auto; }
+    .duo figure { position: relative; }
+    .duo .arch { aspect-ratio: 3/4; }
+    .duo figcaption { text-align: center; margin-top: 18px; font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--muted-2); font-weight: 400; }
+
+    /* ------- visit ------- */
+    .visit-photo { border: 1px solid var(--gold-dim); padding: 12px; background: var(--ink); max-width: 980px; margin: 0 auto 70px; }
+    .visit-photo img { width: 100%; object-fit: cover; }
+    .visit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gold-faint); border: 1px solid var(--gold-faint); max-width: 980px; margin: 0 auto; }
+    .visit-cell { background: var(--black); padding: 38px 30px; text-align: center; }
+    .visit-cell .eyebrow { display: block; margin-bottom: 16px; }
+    .visit-cell p, .visit-cell a { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); text-decoration: none; line-height: 1.45; }
+    .visit-cell a:hover { color: var(--gold-bright); }
+    .visit-actions { display: flex; justify-content: center; gap: 18px; margin-top: 54px; flex-wrap: wrap; }
+
+    /* ------- faq ------- */
+    .faq-wrap { max-width: 760px; margin: 0 auto; }
+    details {
+      border: 1px solid var(--gold-faint); background: var(--ink);
+      margin-bottom: 12px; padding: 0 28px;
+      transition: border-color 0.3s ease;
+    }
+    details[open] { border-color: var(--gold-dim); }
+    summary {
+      cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.28rem; color: var(--cream);
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; color: var(--gold); font-family: 'Josefin Sans', sans-serif; font-size: 1.3rem; font-weight: 300; }
+    details[open] summary::after { content: '–'; }
+    details p { color: var(--muted); padding-bottom: 24px; font-size: 0.95rem; }
+
+    /* ------- join ------- */
+    .join { text-align: center; }
+    .join-form { display: flex; gap: 12px; max-width: 480px; margin: 40px auto 0; }
+    .join-form input {
+      flex: 1; background: var(--ink); border: 1px solid var(--gold-faint);
+      color: var(--cream); padding: 16px 20px; font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.9rem; letter-spacing: 0.05em; outline: none; transition: border-color 0.3s ease;
+    }
+    .join-form input:focus { border-color: var(--gold); }
+    .join-form input::placeholder { color: var(--muted-2); }
+    .join-form button { border: none; cursor: pointer; font-family: 'Josefin Sans', sans-serif; }
+    .join-ok { display: none; margin-top: 34px; color: var(--gold-bright); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; }
+    .join-social { margin-top: 44px; display: flex; gap: 28px; justify-content: center; font-size: 0.74rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 400; }
+    .join-social a { color: var(--muted-2); text-decoration: none; transition: color 0.25s ease; }
+    .join-social a:hover { color: var(--gold-bright); }
+
+    /* ------- footer ------- */
+    footer { border-top: 1px solid var(--gold-faint); padding: 70px 0 46px; text-align: center; }
+    .foot-logo { width: 240px; margin: 0 auto 30px; }
+    footer .fine { color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px; }
+    footer .fine a { color: var(--muted-2); }
+    footer .fine a:hover { color: var(--gold); }
+
+    /* ------- reveal ------- */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .marquee-track { animation: none; }
+    }
+
+    /* ------- responsive ------- */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .burger { display: block; }
+      .feature { grid-template-columns: 1fr; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .duo { grid-template-columns: 1fr; max-width: 460px; }
+      .visit-grid { grid-template-columns: 1fr; }
+      section { padding: 80px 0; }
+      .join-form { flex-direction: column; }
+    }
   </style>
 </head>
-<body class="font-inter antialiased bg-sb-black text-sb-cream">
+<body>
 
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-sb-gold text-black px-4 py-3 rounded-lg z-[100] font-semibold">Skip to content</a>
-
-  <!-- NAV -->
-  <nav id="nav" class="fixed top-0 w-full z-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="#" aria-label="Sober Bar Home" class="flex items-center group">
-        <img src="logo-white.png" alt="Sober Bar" class="h-9 w-auto group-hover:opacity-90 transition-opacity duration-300" />
+  <nav id="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top" aria-label="Sober Bar home">
+        <img src="/images/logo-sunburst.png" alt="Sober Bar" />
       </a>
-      <div class="hidden md:flex items-center gap-10">
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#menu" class="nav-link">Menu</a>
-        <a href="#hours" class="nav-link">Hours</a>
-        <a href="#visit" class="nav-link">Visit</a>
-      </div>
-      <div class="hidden md:block">
-        <a href="#visit" class="btn-gold rounded-lg px-5 py-3 inline-flex items-center text-sm">
-          <span>Come Through</span>
-        </a>
-      </div>
-      <button id="menuBtn" class="md:hidden text-sb-cream p-2 -mr-2 relative z-50" aria-label="Menu" aria-expanded="false">
-        <div class="w-6 h-5 relative flex flex-col justify-between">
-          <span class="block w-full h-[2px] bg-current transition-all duration-300 origin-center" id="bar1"></span>
-          <span class="block w-full h-[2px] bg-current transition-all duration-300" id="bar2"></span>
-          <span class="block w-full h-[2px] bg-current transition-all duration-300 origin-center" id="bar3"></span>
-        </div>
-      </button>
-    </div>
-    <div id="mobileMenu" class="fixed inset-0 z-40 md:hidden">
-      <div class="absolute inset-0 bg-sb-black/95 backdrop-blur-xl"></div>
-      <div class="relative z-10 flex flex-col items-center justify-center h-full gap-8 text-2xl">
-        <a href="#experience" class="text-sb-cream/80 hover:text-sb-gold transition-colors mobile-link">Experience</a>
-        <a href="#menu" class="text-sb-cream/80 hover:text-sb-gold transition-colors mobile-link">Menu</a>
-        <a href="#hours" class="text-sb-cream/80 hover:text-sb-gold transition-colors mobile-link">Hours</a>
-        <a href="#visit" class="text-sb-cream/80 hover:text-sb-gold transition-colors mobile-link">Visit</a>
-        <a href="#visit" class="btn-gold rounded-lg px-8 py-4 text-lg mt-4"><span>Come Through</span></a>
-      </div>
+      <ul class="nav-links">
+        <li><a href="#bar">The Bar</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#rhythm">Day &amp; Night</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+      <a class="nav-cta" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Get Directions</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="relative min-h-screen flex items-center overflow-hidden bg-sb-black" id="main-content">
-    <div class="hero-glow absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(200,150,62,0.15) 0%, transparent 70%);"></div>
-    <div class="hero-glow-2 absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(212,164,74,0.1) 0%, transparent 70%);"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#bar">The Bar</a>
+    <a href="#menu">Menu</a>
+    <a href="#rhythm">Day &amp; Night</a>
+    <a href="#visit">Visit</a>
+    <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Instagram</a>
+  </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 lg:py-36 w-full">
-      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
-      <div class="max-w-3xl">
-        <div class="reveal inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-sb-gold/30 bg-sb-gold/5 mb-8">
-          <span class="relative flex h-2.5 w-2.5">
-            <span class="open-dot animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
-          </span>
-          <span class="text-xs tracking-[0.2em] uppercase text-sb-gold font-semibold">Now Open</span>
-        </div>
-
-        <h1 class="reveal font-playfair text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-6 tracking-tight">
-          Gulfport's<br>
-          <span class="text-gold-gradient italic">sober bar.</span>
-        </h1>
-
-        <p class="reveal text-lg sm:text-xl text-sb-cream/60 leading-relaxed mb-6 max-w-xl">
-          Craft zero-proof cocktails, New Orleans inspired food, NA beer &amp; wine, and specialty coffee — 
-          on Beach Boulevard, now open.
-        </p>
-
-        <div class="reveal flex flex-wrap gap-x-8 gap-y-2 mb-10 text-sm text-sb-cream/50">
-          <div class="flex items-center gap-2">
-            <span class="text-sb-gold text-xs tracking-[0.15em] uppercase font-medium">Sun–Thu</span>
-            <span class="font-semibold text-sb-cream/80">7 AM – 10 PM</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="text-sb-gold text-xs tracking-[0.15em] uppercase font-medium">Fri–Sat</span>
-            <span class="font-semibold text-sb-cream/80">7 AM – 1 AM</span>
-          </div>
-        </div>
-
-        <div class="reveal flex flex-col sm:flex-row gap-4">
-          <a href="#visit" class="btn-gold rounded-lg px-8 py-4 text-center inline-flex items-center justify-center gap-2">
-            <span>Get Directions</span>
-            <svg class="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-          </a>
-          <a href="#menu" class="btn-outline rounded-lg px-8 py-4 text-center inline-flex items-center justify-center gap-2">
-            See the Menu
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="reveal relative hidden lg:block">
-        <div class="rounded-3xl overflow-hidden border border-white/10 shadow-[0_40px_120px_rgba(0,0,0,0.6)]">
-          <img src="images/cocktail-trio.jpg" alt="Three craft zero-proof cocktails on a marble table at Sober Bar" class="w-full aspect-[3/4] object-cover" fetchpriority="high" decoding="async" />
-        </div>
-        <div class="absolute -bottom-8 -left-8 w-32 h-32 rounded-full border border-sb-gold/25 -z-10"></div>
-        <div class="absolute -top-8 -right-8 w-24 h-24 rounded-full border border-sb-gold/15 -z-10"></div>
-        <div class="absolute bottom-5 left-5 px-4 py-2 rounded-full bg-black/60 backdrop-blur border border-white/10 text-xs tracking-[0.15em] uppercase text-sb-cream/80">Poured in-house</div>
-      </div>
-      </div>
-
-      <div class="reveal flex flex-wrap gap-3 mt-16">
-        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-sb-cream/70">Zero-proof cocktails</span>
-        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-sb-cream/70">NOLA-inspired food</span>
-        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-sb-cream/70">NA Beer &amp; Wine</span>
-        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-sb-cream/70">Specialty coffee</span>
-        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-sb-cream/70">Beach Blvd, Gulfport</span>
-      </div>
-
-      <div class="reveal mt-10 lg:hidden rounded-2xl overflow-hidden border border-white/10">
-        <img src="images/cocktail-trio.jpg" alt="Three craft zero-proof cocktails on a marble table at Sober Bar" class="w-full aspect-[4/3] object-cover object-center" decoding="async" />
-      </div>
+  <header class="hero" id="top">
+    <img class="hero-logo" src="/images/logo-sunburst.png" alt="Sober Bar — art deco sunburst logo" fetchpriority="high" />
+    <div class="hero-badge"><span class="pulse"></span> Now Open</div>
+    <p class="hero-sub">Craft cocktails without the alcohol, coffee without the compromise, and a room that glows after dark.</p>
+    <p class="hero-locale">3062 Beach Blvd S &nbsp;◆&nbsp; Gulfport, Florida</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#menu">See the Menu</a>
+      <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Get Directions</a>
     </div>
-
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 reveal">
-      <div class="flex flex-col items-center gap-2 text-sb-cream/40">
-        <span class="text-xs tracking-[0.3em] uppercase">Scroll</span>
-        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-      </div>
+    <div class="hero-hours">
+      <span><b>Sun – Thu</b> 7 am – 10 pm</span>
+      <span><b>Fri – Sat</b> 7 am – 1 am</span>
     </div>
-  </section>
+  </header>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="py-24 lg:py-32 bg-sb-dark">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center reveal mb-16">
-        <p class="text-xs tracking-[0.25em] uppercase text-sb-gold mb-4 font-medium">What to Expect</p>
-        <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-4">
-          A better night out,<br class="sm:hidden"> 
-          <span class="text-gold-gradient italic">with more intention.</span>
-        </h2>
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="reveal p-8 rounded-2xl bg-sb-charcoal/50 border border-white/[0.06] card-glow group">
-          <span class="text-5xl font-playfair font-bold text-sb-gold/15 group-hover:text-sb-gold/30 transition-colors duration-500">01</span>
-          <h3 class="text-xl font-playfair font-semibold mt-3 mb-2">Bar Energy, Zero Proof</h3>
-          <p class="text-sb-cream/50 leading-relaxed text-sm">A room that feels social, styled, and worth getting dressed for — without the alcohol.</p>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Zero-Proof Cocktails</span><span>Specialty Coffee</span><span>NOLA Kitchen</span><span>NA Beer &amp; Wine</span><span>Open 7 Days</span><span>Beach Blvd, Gulfport</span>
+      <span>Zero-Proof Cocktails</span><span>Specialty Coffee</span><span>NOLA Kitchen</span><span>NA Beer &amp; Wine</span><span>Open 7 Days</span><span>Beach Blvd, Gulfport</span>
+    </div>
+  </div>
+
+  <section id="bar">
+    <div class="shell">
+      <div class="feature">
+        <div class="arch reveal" style="aspect-ratio: 3/4;">
+          <img src="/images/cocktail-trio.jpg" alt="Three craft zero-proof cocktails on a marble table at Sober Bar" loading="lazy" decoding="async" />
         </div>
-        <div class="reveal p-8 rounded-2xl bg-sb-charcoal/50 border border-white/[0.06] card-glow group">
-          <span class="text-5xl font-playfair font-bold text-sb-gold/15 group-hover:text-sb-gold/30 transition-colors duration-500">02</span>
-          <h3 class="text-xl font-playfair font-semibold mt-3 mb-2">Coffee by Day</h3>
-          <p class="text-sb-cream/50 leading-relaxed text-sm">Specialty coffee, espresso drinks, and breakfast sandwiches starting at 7 AM. Your new morning ritual.</p>
-        </div>
-        <div class="reveal p-8 rounded-2xl bg-sb-charcoal/50 border border-white/[0.06] card-glow group">
-          <span class="text-5xl font-playfair font-bold text-sb-gold/15 group-hover:text-sb-gold/30 transition-colors duration-500">03</span>
-          <h3 class="text-xl font-playfair font-semibold mt-3 mb-2">NOLA Kitchen</h3>
-          <p class="text-sb-cream/50 leading-relaxed text-sm">Muffalettas, flatbreads, pretzel bites, and breakfast sandwiches — bold flavors, real hospitality.</p>
-        </div>
-        <div class="reveal p-8 rounded-2xl bg-sb-charcoal/50 border border-white/[0.06] card-glow group">
-          <span class="text-5xl font-playfair font-bold text-sb-gold/15 group-hover:text-sb-gold/30 transition-colors duration-500">04</span>
-          <h3 class="text-xl font-playfair font-semibold mt-3 mb-2">Gulfport Address</h3>
-          <p class="text-sb-cream/50 leading-relaxed text-sm">Right on Beach Boulevard — walkable, creative, coastal, and full of character.</p>
+        <div class="copy reveal">
+          <span class="eyebrow">The Bar</span>
+          <h2 class="title">Full ritual,<br><em>zero proof.</em></h2>
+          <p>Every drink is built like it belongs on a top-shelf menu — layered, garnished, and worth slowing down for. NA spirits, fresh ingredients, real craft. Nothing on our menu contains alcohol.</p>
+          <ul class="sig-list">
+            <li>Call Me an Ube <small>signature</small></li>
+            <li>Hot Mami <small>spicy</small></li>
+            <li>Red Widow <small>dark &amp; moody</small></li>
+            <li>Linn &amp; Juniper <small>botanical</small></li>
+            <li>Bee's Bouquet <small>floral</small></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DAY TO NIGHT -->
-  <section class="py-24 lg:py-32 bg-sb-black">
-    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div class="reveal order-2 lg:order-1">
-          <p class="text-xs tracking-[0.25em] uppercase text-sb-gold mb-4 font-medium">The Rhythm</p>
-          <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-            Morning coffee,<br>
-            <span class="text-gold-gradient italic">evening energy.</span>
-          </h2>
-          <div class="space-y-4 text-sb-cream/60 leading-relaxed text-base lg:text-lg">
-            <p>Mornings start quietly — cortados, lattes, and breakfast sandwiches while the sun hits Beach Boulevard. The soundtrack is low, the light is soft, and the WiFi is fast.</p>
-            <p>As the day shifts, so does the room. The lighting warms up, the music finds its groove, and the bar comes alive with craft zero-proof cocktails built with the same precision as any top-shelf bar.</p>
-            <p>Designed to work for a 7 AM coffee meeting <em>and</em> a Friday night that runs till 1 AM. Same room, different energy.</p>
-          </div>
+  <section id="menu" class="menu-bg">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">The Menu</span>
+        <h2 class="title">What's <em>pouring.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
+      </div>
+      <div class="menu-grid">
+        <div class="menu-col reveal">
+          <h3>Zero-Proof Cocktails</h3>
+          <div class="mi"><div class="mi-name">Call Me an Ube</div><div class="mi-desc">Velvet-purple, creamy, and unreasonably photogenic</div></div>
+          <div class="mi"><div class="mi-name">Hot Mami</div><div class="mi-desc">Heat up front, smooth landing</div></div>
+          <div class="mi"><div class="mi-name">Red Widow</div><div class="mi-desc">Dark fruit, rosemary smoke, evening energy</div></div>
+          <div class="mi"><div class="mi-name">Linn &amp; Juniper</div><div class="mi-desc">Crisp botanical build on NA spirits</div></div>
+          <div class="mi"><div class="mi-name">Bee's Bouquet</div><div class="mi-desc">Honey, florals, and a silk finish</div></div>
         </div>
-        <div class="reveal relative order-1 lg:order-2">
-          <div class="aspect-[4/5] rounded-2xl overflow-hidden border border-white/[0.06]">
-            <img src="images/bar-interior.jpg" alt="The hand-built bar at Sober Bar — black lacquer top with brass trim" class="w-full h-full object-cover" loading="lazy" decoding="async" />
-          </div>
-          <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full border border-sb-gold/20 -z-10"></div>
-          <div class="absolute -top-6 -left-6 w-24 h-24 rounded-full border border-sb-gold/10 -z-10"></div>
+        <div class="menu-col reveal">
+          <h3>Coffee &amp; Morning</h3>
+          <div class="mi"><div class="mi-name">Cortado</div><div class="mi-desc">Equal parts espresso and steamed milk</div></div>
+          <div class="mi"><div class="mi-name">Kyoto Cold Brew</div><div class="mi-desc">Slow-dripped, served over clear ice</div></div>
+          <div class="mi"><div class="mi-name">Beach Blvd Bodega</div><div class="mi-desc">Breakfast sandwich, done right, from 7 am</div></div>
+          <div class="mi"><div class="mi-name">Mad Hatter</div><div class="mi-desc">Specialty latte with a point of view</div></div>
+        </div>
+        <div class="menu-col reveal">
+          <h3>NOLA Kitchen</h3>
+          <div class="mi"><div class="mi-name">The Muffaletta</div><div class="mi-desc">Olive salad, cured meats, pressed to order</div></div>
+          <div class="mi"><div class="mi-name">Fig &amp; Brie Flatbread</div><div class="mi-desc">Sweet, savory, made to share</div></div>
+          <div class="mi"><div class="mi-name">Pretzel Bites</div><div class="mi-desc">Late-night fuel till close</div></div>
+          <div class="mi"><div class="mi-name">Naan Dippers</div><div class="mi-desc">Warm naan with house dips</div></div>
+        </div>
+        <div class="menu-col reveal">
+          <h3>NA Beer, Wine &amp; Bagels</h3>
+          <div class="mi"><div class="mi-name">Athletic Run Wild IPA</div><div class="mi-desc">Hop-forward, zero alcohol</div></div>
+          <div class="mi"><div class="mi-name">Guinness 0.0 &nbsp;·&nbsp; Heineken 0.0</div><div class="mi-desc">The classics, minus the proof</div></div>
+          <div class="mi"><div class="mi-name">Bagels &amp; House Cream Cheese</div><div class="mi-desc">Ube · fig &amp; honey · classic</div></div>
+        </div>
+      </div>
+      <p class="menu-note">Full menu in-house · Follow <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">@sipsoberbar</a> for seasonal pours</p>
+    </div>
+  </section>
+
+  <section id="rhythm">
+    <div class="shell">
+      <div class="feature">
+        <div class="copy reveal">
+          <span class="eyebrow">The Rhythm</span>
+          <h2 class="title">Coffee house by day,<br><em>speakeasy by night.</em></h2>
+          <p>One room, two lives. Sunlight and espresso in the morning; warm lights, music, and cocktails after dark. Designed for a 7 am meeting and a Friday night that runs till 1 am.</p>
+          <ul class="timeline">
+            <li><span class="t">7 am</span><span class="d">Doors open — espresso, bagels, breakfast sandwiches, fast WiFi</span></li>
+            <li><span class="t">Noon</span><span class="d">Muffalettas and flatbreads out of the kitchen</span></li>
+            <li><span class="t">5 pm</span><span class="d">The lights drop, the bar wakes up — cocktail hour begins</span></li>
+            <li><span class="t">Late</span><span class="d">Full menu till close — 10 pm weekdays, 1 am weekends</span></li>
+          </ul>
+        </div>
+        <div class="arch reveal" style="aspect-ratio: 3/4;">
+          <img src="/images/bar-interior.jpg" alt="The hand-built bar at Sober Bar — black lacquer with brass trim" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MENU -->
-  <section id="menu" class="py-24 lg:py-32 bg-sb-dark">
-    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center reveal mb-16">
-        <p class="text-xs tracking-[0.25em] uppercase text-sb-gold mb-4 font-medium">The Menu</p>
-        <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-4">
-          Thoughtful drinks, bold food,<br class="sm:hidden">
-          <span class="text-gold-gradient italic">warm hospitality.</span>
-        </h2>
+  <section class="menu-bg">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">The Details</span>
+        <h2 class="title">Shaped with <em>intention.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
       </div>
-
-      <div class="grid md:grid-cols-3 gap-8 mb-12">
-        <div class="reveal p-8 rounded-2xl bg-sb-charcoal/40 border border-white/[0.06] card-glow">
-          <div class="text-4xl mb-5">🥂</div>
-          <h3 class="font-playfair text-2xl font-semibold mb-3">Zero-Proof Cocktails</h3>
-          <p class="text-sb-cream/50 leading-relaxed text-sm mb-4">Craft cocktails built with NA spirits, fresh ingredients, and layered flavors. Grown-up, beautiful, and worth coming back for.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Call Me an Ube</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Hot Mami</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Red Widow</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Linn &amp; Juniper</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Bee's Bouquet</span>
-          </div>
-        </div>
-        <div class="reveal p-8 rounded-2xl bg-sb-charcoal/40 border border-white/[0.06] card-glow">
-          <div class="text-4xl mb-5">🍽</div>
-          <h3 class="font-playfair text-2xl font-semibold mb-3">NOLA-Inspired Food</h3>
-          <p class="text-sb-cream/50 leading-relaxed text-sm mb-4">Muffalettas, flatbreads, pretzel bites, and breakfast sandwiches that pull from New Orleans — bold, layered, made to share.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">The Muffaletta</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Fig &amp; Brie Flatbread</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Pretzel Bites</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Naan Dippers</span>
-          </div>
-        </div>
-        <div class="reveal p-8 rounded-2xl bg-sb-charcoal/40 border border-white/[0.06] card-glow">
-          <div class="text-4xl mb-5">☕</div>
-          <h3 class="font-playfair text-2xl font-semibold mb-3">Coffee &amp; Breakfast</h3>
-          <p class="text-sb-cream/50 leading-relaxed text-sm mb-4">Espresso drinks, specialty lattes, Kyoto cold brew, and breakfast sandwiches served from 7 AM daily.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Cortado</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Kyoto Cold Brew</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Beach Blvd Bodega</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Mad Hatter</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-        <div class="reveal p-8 rounded-2xl bg-sb-charcoal/40 border border-white/[0.06] card-glow">
-          <div class="text-4xl mb-5">🍺</div>
-          <h3 class="font-playfair text-2xl font-semibold mb-3">NA Beer &amp; Wine</h3>
-          <p class="text-sb-cream/50 leading-relaxed text-sm mb-4">A curated selection — Athletic Run Wild IPA, Guinness 0.0, Heineken 0.0, and more. The ritual, without the alcohol.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Run Wild IPA</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Guinness 0.0</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Heineken 0.0</span>
-          </div>
-        </div>
-        <div class="reveal p-8 rounded-2xl bg-sb-charcoal/40 border border-white/[0.06] card-glow">
-          <div class="text-4xl mb-5">🥯</div>
-          <h3 class="font-playfair text-2xl font-semibold mb-3">Bagels &amp; Bowls</h3>
-          <p class="text-sb-cream/50 leading-relaxed text-sm mb-4">Fresh bagels with house-made cream cheeses — ube, fig &amp; honey, classic — plus yogurt parfaits. Anything but basic.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Ube Cream Cheese</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Fig &amp; Honey CC</span>
-            <span class="text-xs px-3 py-1 rounded-full bg-sb-gold/10 border border-sb-gold/20 text-sb-gold/80">Yogurt Parfait</span>
-          </div>
-        </div>
+      <div class="duo">
+        <figure class="reveal">
+          <div class="arch"><img src="/images/glass-detail.jpg" alt="Textured coupe glass held to the window light" loading="lazy" decoding="async" /></div>
+          <figcaption>The glassware</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="arch"><img src="/images/globe-detail.jpg" alt="Antique globe against dark tile inside Sober Bar" loading="lazy" decoding="async" /></div>
+          <figcaption>The room</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- HOURS & LOCATION -->
-  <section id="hours" class="py-24 lg:py-32 bg-sb-black relative overflow-hidden">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(200,150,62,0.04) 0%, transparent 60%);"></div>
-    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto relative z-10"></div>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-      <div class="text-center reveal mb-16">
-        <p class="text-xs tracking-[0.25em] uppercase text-sb-gold mb-4 font-medium">Hours &amp; Location</p>
-        <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-4">
-          Open every day.<br class="sm:hidden">
-          <span class="text-gold-gradient italic">Come through.</span>
-        </h2>
+  <section id="visit">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Visit</span>
+        <h2 class="title">Right on <em>Beach Boulevard.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
       </div>
-
-      <div class="max-w-4xl mx-auto">
-        <div class="reveal hours-card rounded-2xl bg-sb-charcoal/60 border border-sb-gold/20 p-8 lg:p-12 mb-8">
-          <div class="grid sm:grid-cols-2 gap-8">
-            <div class="text-center sm:text-left">
-              <p class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-3 font-medium">Sunday – Thursday</p>
-              <p class="font-playfair text-3xl lg:text-4xl font-bold text-sb-cream">7 AM – 10 PM</p>
-              <p class="text-sb-cream/40 text-sm mt-2">Coffee, food &amp; cocktails all day</p>
-            </div>
-            <div class="text-center sm:text-left">
-              <p class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-3 font-medium">Friday &amp; Saturday</p>
-              <p class="font-playfair text-3xl lg:text-4xl font-bold text-sb-cream">7 AM – 1 AM</p>
-              <p class="text-sb-cream/40 text-sm mt-2">Late-night bar energy, full menu till close</p>
-            </div>
-          </div>
+      <div class="visit-photo reveal">
+        <img src="/images/storefront.jpg" alt="The Sober Bar storefront at 3062 Beach Blvd S with its glowing art-deco sign" loading="lazy" decoding="async" />
+      </div>
+      <div class="visit-grid reveal">
+        <div class="visit-cell">
+          <span class="eyebrow">Address</span>
+          <p>3062 Beach Blvd S<br>Gulfport, FL 33707</p>
         </div>
-
-        <div class="reveal rounded-2xl bg-sb-charcoal/40 border border-white/[0.06] p-8 lg:p-10 text-center">
-          <h3 class="font-playfair text-2xl font-semibold mb-3">3062 Beach Blvd S</h3>
-          <p class="text-sb-cream/50 mb-6">Gulfport, FL 33707</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener" class="btn-gold rounded-lg px-6 py-3.5 text-center inline-flex items-center justify-center gap-2 text-sm">
-              <span>Open in Google Maps</span>
-              <svg class="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-            </a>
-            <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener" class="btn-outline rounded-lg px-6 py-3.5 text-center inline-flex items-center justify-center gap-2 text-sm">
-              @sipsoberbar
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-            </a>
-          </div>
+        <div class="visit-cell">
+          <span class="eyebrow">Hours</span>
+          <p>Sun – Thu · 7 am – 10 pm<br>Fri – Sat · 7 am – 1 am</p>
         </div>
+        <div class="visit-cell">
+          <span class="eyebrow">Contact</span>
+          <p><a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a><br><a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">@sipsoberbar</a></p>
+        </div>
+      </div>
+      <div class="visit-actions reveal">
+        <a class="btn btn-solid" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn btn-line" href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Follow Along</a>
       </div>
     </div>
   </section>
 
-  <!-- THE SPACE -->
-  <section class="py-24 lg:py-32 bg-sb-dark">
-    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center reveal mb-16">
-        <p class="text-xs tracking-[0.25em] uppercase text-sb-gold mb-4 font-medium">The Space</p>
-        <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-4">
-          Built by hand,<br class="sm:hidden">
-          <span class="text-gold-gradient italic">shaped with intention.</span>
-        </h2>
-        <p class="text-sb-cream/50 max-w-xl mx-auto mt-4">Moody lighting, warm materials, and a room designed for lingering — morning, noon, and late into the night.</p>
+  <section class="menu-bg">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Questions</span>
+        <h2 class="title">Before you <em>come through.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-        <div class="reveal gallery-img-wrap relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/[0.06]">
-          <img src="images/globe-detail.jpg" alt="Antique globe against dark tile inside Sober Bar" class="gallery-img w-full h-full object-cover" loading="lazy" decoding="async" />
-        </div>
-        <div class="reveal gallery-img-wrap relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/[0.06] lg:row-span-2 lg:aspect-auto">
-          <img src="images/glass-detail.jpg" alt="Textured coupe glass held up to the window light at Sober Bar" class="gallery-img w-full h-full object-cover" loading="lazy" decoding="async" />
-        </div>
-        <div class="reveal gallery-img-wrap relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/[0.06]">
-          <img src="images/nola-kitchen.jpg" alt="A loaded NOLA-style sandwich served on slate at Sober Bar" class="gallery-img w-full h-full object-cover" loading="lazy" decoding="async" />
-        </div>
-        <div class="reveal gallery-img-wrap relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/[0.06]">
-          <img src="images/market-serving.jpg" alt="Sober Bar team serving drinks from the yellow tent at a Gulfport market" class="gallery-img w-full h-full object-cover" loading="lazy" decoding="async" />
-        </div>
-        <div class="reveal gallery-img-wrap relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/[0.06]">
-          <img src="images/tea-pouch.jpg" alt="Sober Bar branded pouch and an iced botanical drink" class="gallery-img w-full h-full object-cover" loading="lazy" decoding="async" />
-        </div>
+      <div class="faq-wrap reveal">
+        <details open>
+          <summary>Is everything really alcohol-free?</summary>
+          <p>Yes — 100%. Cocktails are built on NA spirits with fresh ingredients, and every beer and wine we pour is non-alcoholic. Full experience, zero proof.</p>
+        </details>
+        <details>
+          <summary>What are your hours?</summary>
+          <p>Open daily. Sunday through Thursday 7 am – 10 pm, Friday and Saturday 7 am – 1 am. Coffee and breakfast start at 7 am; the full menu runs open to close.</p>
+        </details>
+        <details>
+          <summary>Can I work here during the day?</summary>
+          <p>Absolutely. Mornings and afternoons are coffee-house energy — fast WiFi, good seats, great espresso. The room shifts to bar energy as the sun goes down.</p>
+        </details>
+        <details>
+          <summary>Do you serve food all day?</summary>
+          <p>Yes. Breakfast sandwiches, bagels, flatbreads, muffalettas, and shareable plates from open to close — pretzel bites at 11 pm are encouraged.</p>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- SPECS -->
-  <section class="py-24 lg:py-32 bg-sb-black">
-    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div class="reveal">
-          <p class="text-xs tracking-[0.25em] uppercase text-sb-gold mb-4 font-medium">The Vibe</p>
-          <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-            For date nights, catch-ups, solo resets, and the people who<br class="hidden lg:block">
-            <span class="text-gold-gradient italic">still want the ritual.</span>
-          </h2>
-          <p class="text-sb-cream/50 leading-relaxed text-base lg:text-lg">
-            Sober Bar is meant to feel generous and grown-up — the kind of room where the lighting is right, 
-            the soundtrack matters, and the menu gives everyone a reason to stay a little longer.
-          </p>
-        </div>
-        <div class="reveal space-y-8">
-          <div class="spec-line pb-5"><p class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-1">Atmosphere</p><p class="font-playfair text-xl font-semibold">Moody, social, design-forward</p></div>
-          <div class="spec-line pb-5"><p class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-1">Drinks</p><p class="font-playfair text-xl font-semibold">Craft zero-proof, functional, layered</p></div>
-          <div class="spec-line pb-5"><p class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-1">Food</p><p class="font-playfair text-xl font-semibold">New Orleans inspired, shareable</p></div>
-          <div class="spec-line pb-5"><p class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-1">Rhythm</p><p class="font-playfair text-xl font-semibold">Coffee by day, bar energy by night</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VISIT -->
-  <section id="visit" class="py-24 lg:py-32 bg-sb-dark">
-    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center reveal mb-16">
-        <p class="text-xs tracking-[0.25em] uppercase text-sb-gold mb-4 font-medium">Visit</p>
-        <h2 class="font-playfair text-4xl lg:text-5xl font-bold mb-4">
-          Right on<br class="sm:hidden">
-          <span class="text-gold-gradient italic">Beach Boulevard.</span>
-        </h2>
-        <p class="text-sb-cream/50 max-w-xl mx-auto mt-4">In the heart of Gulfport's walkable, creative, coastal neighborhood — surrounded by art, water, and good company.</p>
-      </div>
-      <div class="reveal max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden border border-white/[0.06] shadow-[0_30px_90px_rgba(0,0,0,0.5)]">
-        <img src="images/storefront.jpg" alt="The Sober Bar storefront at 3062 Beach Blvd S with its glowing art-deco sign" class="w-full object-cover" loading="lazy" decoding="async" />
-      </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-3xl mx-auto reveal">
-        <div class="text-center sm:text-left">
-          <p class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-2">Address</p>
-          <p class="font-playfair text-lg font-semibold leading-relaxed">3062 Beach Blvd S<br>Gulfport, FL 33707</p>
-          <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-sm text-sb-gold hover:text-sb-gold-light transition-colors mt-3">Open in Maps <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
-        </div>
-        <div class="text-center sm:text-left">
-          <p class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-2">Hours</p>
-          <p class="font-playfair text-lg font-semibold">Sun–Thu 7a–10p</p>
-          <p class="font-playfair text-lg font-semibold">Fri–Sat 7a–1a</p>
-          <p class="text-sb-cream/40 text-sm mt-1">Open daily</p>
-        </div>
-        <div class="text-center sm:text-left">
-          <p class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-2">Contact</p>
-          <a href="mailto:Sean@sipsoberbar.com" class="font-playfair text-lg font-semibold hover:text-sb-gold transition-colors">Sean@sipsoberbar.com</a>
-        </div>
-        <div class="text-center sm:text-left">
-          <p class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-2">Follow</p>
-          <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener" class="font-playfair text-lg font-semibold hover:text-sb-gold transition-colors">@sipsoberbar</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="py-24 lg:py-32 bg-sb-black">
-    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
-    <div class="max-w-3xl mx-auto px-6 lg:px-8">
-      <div class="text-center reveal mb-16">
-        <p class="text-xs tracking-[0.25em] uppercase text-sb-gold mb-4 font-medium">FAQ</p>
-        <h2 class="font-playfair text-4xl lg:text-5xl font-bold">
-          What people usually<br class="sm:hidden">
-          <span class="text-gold-gradient italic">ask first.</span>
-        </h2>
-      </div>
-      <div class="space-y-3 reveal">
-        <div class="faq-item open bg-sb-charcoal/50 border border-white/[0.06] rounded-xl overflow-hidden">
-          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="true">
-            <span class="font-playfair text-lg font-semibold pr-4">What is Sober Bar?</span>
-            <span class="faq-icon text-sb-gold text-2xl flex-shrink-0">+</span>
-          </button>
-          <div class="faq-content px-5">
-            <p class="text-sb-cream/50 text-sm leading-relaxed pb-5">Sober Bar is Gulfport's zero-proof cocktail bar, coffee spot, and gathering space. We serve craft zero-proof cocktails, New Orleans inspired food, NA beer &amp; wine, and specialty coffee — all in a moody, design-forward setting on Beach Boulevard.</p>
-          </div>
-        </div>
-        <div class="faq-item bg-sb-charcoal/50 border border-white/[0.06] rounded-xl overflow-hidden">
-          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
-            <span class="font-playfair text-lg font-semibold pr-4">What are your hours?</span>
-            <span class="faq-icon text-sb-gold text-2xl flex-shrink-0">+</span>
-          </button>
-          <div class="faq-content px-5">
-            <p class="text-sb-cream/50 text-sm leading-relaxed pb-5">We're open daily: Sunday through Thursday 7 AM – 10 PM, and Friday &amp; Saturday 7 AM – 1 AM. Coffee and breakfast start at 7 AM every day. The full food and drink menu is available from open to close.</p>
-          </div>
-        </div>
-        <div class="faq-item bg-sb-charcoal/50 border border-white/[0.06] rounded-xl overflow-hidden">
-          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
-            <span class="font-playfair text-lg font-semibold pr-4">Is everything really alcohol-free?</span>
-            <span class="faq-icon text-sb-gold text-2xl flex-shrink-0">+</span>
-          </button>
-          <div class="faq-content px-5">
-            <p class="text-sb-cream/50 text-sm leading-relaxed pb-5">Yes. Every drink on our menu is 100% zero-proof. Our cocktails are built with NA spirits, fresh ingredients, and real craft. Our beer and wine selections are all non-alcoholic. Full experience, zero alcohol.</p>
-          </div>
-        </div>
-        <div class="faq-item bg-sb-charcoal/50 border border-white/[0.06] rounded-xl overflow-hidden">
-          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
-            <span class="font-playfair text-lg font-semibold pr-4">Do you serve food all day?</span>
-            <span class="faq-icon text-sb-gold text-2xl flex-shrink-0">+</span>
-          </button>
-          <div class="faq-content px-5">
-            <p class="text-sb-cream/50 text-sm leading-relaxed pb-5">Yes. Our full menu — breakfast sandwiches, bagels, flatbreads, muffalettas, and shareable plates — is available from open to close. Come for a breakfast sandwich at 8 AM or pretzel bites at 11 PM.</p>
-          </div>
-        </div>
-        <div class="faq-item bg-sb-charcoal/50 border border-white/[0.06] rounded-xl overflow-hidden">
-          <button class="faq-trigger w-full flex items-center justify-between p-5 text-left" aria-expanded="false">
-            <span class="font-playfair text-lg font-semibold pr-4">Can I bring my laptop and work?</span>
-            <span class="faq-icon text-sb-gold text-2xl flex-shrink-0">+</span>
-          </button>
-          <div class="faq-content px-5">
-            <p class="text-sb-cream/50 text-sm leading-relaxed pb-5">Absolutely. Our morning and afternoon vibe is coffee-shop energy — fast WiFi, comfortable seating, and great espresso. As evening rolls in, the energy shifts to a bar atmosphere, but you're always welcome.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="py-24 lg:py-32 bg-sb-dark">
-    <div class="section-divider mb-24 lg:mb-32 max-w-7xl mx-auto"></div>
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+  <section class="join">
+    <div class="shell">
       <div class="reveal">
-        <p class="text-xs tracking-[0.25em] uppercase text-sb-gold mb-4 font-medium">Stay Connected</p>
-        <h2 class="font-playfair text-4xl lg:text-6xl font-bold mb-4 leading-tight">
-          Keep up with<br class="sm:hidden">
-          <span class="text-gold-gradient italic">what's pouring.</span>
-        </h2>
-        <p class="text-sb-cream/50 text-lg mb-10 max-w-lg mx-auto">New cocktails, events, and the best of Gulfport — follow along on Instagram or drop your email.</p>
-
-        <form id="newsletterForm" class="space-y-4 max-w-md mx-auto mb-6">
-          <div class="flex flex-col sm:flex-row gap-3">
-            <input type="email" id="nlEmail" name="email" required placeholder="your@email.com" class="form-input flex-1 rounded-lg px-4 py-3.5 text-sm" />
-            <button type="submit" class="btn-gold rounded-lg px-6 py-3.5 text-sm font-semibold flex-shrink-0"><span>Subscribe</span></button>
-          </div>
+        <span class="eyebrow">Stay in the loop</span>
+        <h2 class="title" style="margin-top:18px;">Keep up with <em>what's pouring.</em></h2>
+        <form class="join-form" id="joinForm">
+          <input type="email" id="joinEmail" placeholder="your@email.com" required aria-label="Email address" />
+          <button class="btn btn-solid" type="submit">Subscribe</button>
         </form>
-
-        <div id="nlSuccess" class="hidden reveal text-center p-8 rounded-2xl bg-sb-charcoal/60 border border-sb-gold/20 max-w-md mx-auto">
-          <div class="text-4xl mb-3">✨</div>
-          <h3 class="font-playfair text-xl font-semibold mb-1">Almost there.</h3>
-          <p class="text-sb-cream/50 text-sm">We opened an email draft for you — just hit send. No spam, ever.</p>
-        </div>
-
-        <div class="flex items-center justify-center gap-6 mt-8">
-          <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener" class="text-sb-cream/50 hover:text-sb-gold transition-colors text-sm">Instagram</a>
-          <span class="text-sb-cream/20">·</span>
-          <a href="mailto:Sean@sipsoberbar.com" class="text-sb-cream/50 hover:text-sb-gold transition-colors text-sm">Email</a>
-          <span class="text-sb-cream/20">·</span>
-          <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener" class="text-sb-cream/50 hover:text-sb-gold transition-colors text-sm">Maps</a>
+        <p class="join-ok" id="joinOk">We opened an email draft for you — just hit send. See you at the bar.</p>
+        <div class="join-social">
+          <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Instagram</a>
+          <a href="mailto:Sean@sipsoberbar.com">Email</a>
+          <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Maps</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="py-16 bg-sb-black border-t border-white/[0.04]">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-        <div class="sm:col-span-2">
-          <img src="logo-white.png" alt="Sober Bar" class="h-10 w-auto opacity-80 mb-4" />
-          <p class="text-sb-cream/30 text-sm max-w-sm">Now open in Gulfport, Florida. Craft zero-proof cocktails, New Orleans inspired food, NA beer &amp; wine, and specialty coffee on Beach Boulevard.</p>
-        </div>
-        <div>
-          <h4 class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-4 font-medium">Navigate</h4>
-          <ul class="space-y-2 text-sm text-sb-cream/50">
-            <li><a href="#experience" class="hover:text-sb-gold transition-colors">Experience</a></li>
-            <li><a href="#menu" class="hover:text-sb-gold transition-colors">Menu</a></li>
-            <li><a href="#hours" class="hover:text-sb-gold transition-colors">Hours</a></li>
-            <li><a href="#visit" class="hover:text-sb-gold transition-colors">Visit</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xs tracking-[0.2em] uppercase text-sb-cream/40 mb-4 font-medium">Connect</h4>
-          <ul class="space-y-2 text-sm text-sb-cream/50">
-            <li><a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener" class="hover:text-sb-gold transition-colors">Instagram</a></li>
-            <li><a href="mailto:Sean@sipsoberbar.com" class="hover:text-sb-gold transition-colors">Email</a></li>
-            <li><a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener" class="hover:text-sb-gold transition-colors">Google Maps</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="pt-8 border-t border-white/[0.04] flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-sb-cream/30">
-        <p>&copy; 2025 Sober Bar. 3062 Beach Blvd S, Gulfport, FL 33707</p>
-        <div class="flex gap-4">
-          <a href="/privacy.html" class="hover:text-sb-cream/60 transition-colors">Privacy</a>
-          <a href="/terms.html" class="hover:text-sb-cream/60 transition-colors">Terms</a>
-        </div>
-      </div>
+  <footer>
+    <div class="shell">
+      <img class="foot-logo" src="/images/logo-sunburst.png" alt="Sober Bar" loading="lazy" />
+      <div class="deco-rule" style="margin-bottom: 26px;"><span class="gem"></span></div>
+      <p class="fine">© 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
+      <p class="fine"><a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></p>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), i * 100);
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    const nav = document.getElementById('nav');
+    function onScroll() {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+      revealSkipped();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     const revealEls = document.querySelectorAll('.reveal');
-    revealEls.forEach((el, i) => {
-      el.style.transitionDelay = `${Math.min(i * 80, 600)}ms`;
-      observer.observe(el);
-    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach((el) => io.observe(el));
 
-    // Fast scrolls (flicks, scrollbar drags, End key) can jump an element past
-    // the viewport between frames, so the observer never fires and the section
-    // stays hidden. Sweep on scroll and reveal anything at or above the fold.
+    // Fast scrolls can jump an element past the viewport between frames, so the
+    // observer never fires and the section stays hidden. Sweep as a fallback.
     function revealSkipped() {
       revealEls.forEach((el) => {
         if (!el.classList.contains('visible') && el.getBoundingClientRect().top < window.innerHeight) {
           el.classList.add('visible');
+          io.unobserve(el);
         }
       });
     }
-    window.addEventListener('scroll', revealSkipped, { passive: true });
     window.addEventListener('load', revealSkipped);
 
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    });
-
-    const menuBtn = document.getElementById('menuBtn');
+    const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');
-    const bar1 = document.getElementById('bar1'), bar2 = document.getElementById('bar2'), bar3 = document.getElementById('bar3');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    let menuOpen = false;
-
-    function toggleMenu() {
-      menuOpen = !menuOpen;
-      menuBtn.setAttribute('aria-expanded', menuOpen);
-      if (menuOpen) {
-        mobileMenu.classList.add('open');
-        bar1.style.transform = 'translateY(9px) rotate(45deg)';
-        bar2.style.opacity = '0';
-        bar3.style.transform = 'translateY(-9px) rotate(-45deg)';
-        document.body.style.overflow = 'hidden';
-      } else {
-        mobileMenu.classList.remove('open');
-        bar1.style.transform = 'none'; bar2.style.opacity = '1'; bar3.style.transform = 'none';
-        document.body.style.overflow = '';
-      }
-    }
-    menuBtn.addEventListener('click', toggleMenu);
-    mobileLinks.forEach(link => link.addEventListener('click', () => { if (menuOpen) toggleMenu(); }));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menuOpen) toggleMenu(); });
-
-    document.querySelectorAll('.faq-trigger').forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const item = trigger.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(fi => {
-          fi.classList.remove('open');
-          fi.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) { item.classList.add('open'); trigger.setAttribute('aria-expanded', 'true'); }
-      });
+    burger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+      burger.textContent = open ? '✕' : '☰';
+      document.body.style.overflow = open ? 'hidden' : '';
     });
+    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.textContent = '☰';
+      document.body.style.overflow = '';
+    }));
 
-    const nlForm = document.getElementById('newsletterForm');
-    const nlSuccess = document.getElementById('nlSuccess');
-    if (nlForm) {
-      nlForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('nlEmail').value.trim();
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
-        // No backend on GitHub Pages — deliver the signup as a prefilled email.
-        const subject = encodeURIComponent('Sober Bar mailing list signup');
-        const body = encodeURIComponent(`Hi Sean,\n\nPlease add me to the Sober Bar list.\n\nEmail: ${email}\n\nThanks!`);
-        window.location.href = `mailto:Sean@sipsoberbar.com?subject=${subject}&body=${body}`;
-        nlForm.classList.add('hidden');
-        nlSuccess.classList.remove('hidden');
-      });
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          const navHeight = 80;
-          const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight;
-          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-        }
-      });
+    // No backend on GitHub Pages — deliver signups as a prefilled email.
+    const joinForm = document.getElementById('joinForm');
+    joinForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('joinEmail').value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+      const subject = encodeURIComponent('Sober Bar mailing list signup');
+      const body = encodeURIComponent(`Hi Sean,\n\nPlease add me to the Sober Bar list.\n\nEmail: ${email}\n\nThanks!`);
+      window.location.href = `mailto:Sean@sipsoberbar.com?subject=${subject}&body=${body}`;
+      joinForm.style.display = 'none';
+      document.getElementById('joinOk').style.display = 'block';
     });
-
-    if (window.scrollY > 50) nav.classList.add('scrolled');
   </script>
 
-  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BarOrPub",
     "name": "Sober Bar",
-    "description": "Gulfport's zero-proof cocktail bar, coffee spot, and gathering space. Craft zero-proof cocktails, New Orleans inspired food, NA beer & wine, and specialty coffee.",
+    "description": "Gulfport's zero-proof cocktail bar and coffee house. Craft NA cocktails, New Orleans inspired food, NA beer & wine, and specialty coffee.",
     "url": "https://www.sipsoberbar.com",
     "image": "https://www.sipsoberbar.com/images/cocktail-trio.jpg",
+    "logo": "https://www.sipsoberbar.com/images/logo-sunburst.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "3062 Beach Blvd S",
@@ -799,18 +633,8 @@
     "sameAs": ["https://instagram.com/sipsoberbar"],
     "email": "Sean@sipsoberbar.com",
     "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"],
-        "opens": "07:00",
-        "closes": "22:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Friday","Saturday"],
-        "opens": "07:00",
-        "closes": "01:00"
-      }
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "07:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "07:00", "closes": "01:00" }
     ],
     "servesCuisine": ["New Orleans","American","Coffee"],
     "priceRange": "$$"
