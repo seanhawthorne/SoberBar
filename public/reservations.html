@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservations — Sober Bar Gulfport</title>
+  <meta name="description" content="Book a table at Sober Bar Gulfport — 30 indoor seats, 20 outdoor patio. Reserve for date night, groups, or a table for one. Powered by SeatOn." />
+  <meta name="theme-color" content="#070605" />
+  <link rel="canonical" href="https://www.sipsoberbar.com/reservations.html" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Book a Table — Sober Bar Gulfport" />
+  <meta property="og:description" content="Reserve your spot at Gulfport's zero-proof cocktail bar. 50 seats — indoor and outdoor. Powered by SeatOn." />
+  <meta property="og:url" content="https://www.sipsoberbar.com/reservations.html" />
+  <meta property="og:image" content="https://www.sipsoberbar.com/images/cocktail-trio.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book a Table — Sober Bar Gulfport" />
+  <meta name="twitter:description" content="Reserve your spot at Gulfport's zero-proof cocktail bar. 50 seats — indoor and outdoor." />
+  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/cocktail-trio.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #070605;
+      --ink: #0e0c09;
+      --panel: #12100c;
+      --gold: #d4af6a;
+      --gold-bright: #eed9a4;
+      --gold-dim: rgba(212, 175, 106, 0.35);
+      --gold-faint: rgba(212, 175, 106, 0.16);
+      --cream: #f4ead8;
+      --muted: rgba(244, 234, 216, 0.66);
+      --muted-2: rgba(244, 234, 216, 0.45);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'Josefin Sans', 'Futura', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: var(--gold); color: #000; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+    .shell { width: min(100% - 48px, 1180px); margin: 0 auto; }
+
+    .display {
+      font-family: 'Poiret One', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .serif-it { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; }
+
+    /* ------- deco ornaments ------- */
+    .deco-rule {
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px; color: var(--gold);
+    }
+    .deco-rule::before, .deco-rule::after {
+      content: ''; height: 1px; width: min(120px, 20vw);
+      background: linear-gradient(90deg, transparent, var(--gold-dim));
+    }
+    .deco-rule::after { background: linear-gradient(90deg, transparent, var(--gold-dim)); }
+    .deco-rule .gem { font-size: 0.7rem; transform: rotate(45deg); display: inline-block; border: 1px solid var(--gold); width: 8px; height: 8px; }
+
+    .eyebrow {
+      font-family: 'Josefin Sans', sans-serif; font-weight: 400;
+      letter-spacing: 0.42em; text-transform: uppercase;
+      font-size: 0.72rem; color: var(--gold);
+    }
+
+    h2.title {
+      font-family: 'Poiret One', sans-serif; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: clamp(1.9rem, 4.4vw, 3.1rem);
+      line-height: 1.15; color: var(--cream);
+    }
+    h2.title em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; letter-spacing: 0.01em; color: var(--gold-bright); font-size: 1.15em; }
+
+    /* ------- nav ------- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+      transition: background 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled { background: rgba(7, 6, 5, 0.92); backdrop-filter: blur(14px); border-bottom-color: var(--gold-faint); }
+    .nav-inner {
+      width: min(100% - 48px, 1180px); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 76px;
+    }
+    .nav-brand img { height: 52px; width: auto; }
+    .nav-links { display: flex; gap: 36px; align-items: center; list-style: none; }
+    .nav-links a {
+      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--muted);
+      transition: color 0.25s ease; font-weight: 400;
+    }
+    .nav-links a:hover { color: var(--gold-bright); }
+    .nav-links a.active { color: var(--gold-bright); }
+    .nav-cta {
+      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--gold-dim); padding: 12px 22px;
+      transition: all 0.3s ease; font-weight: 400; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--gold); color: #000; }
+    .burger { display: none; background: none; border: 1px solid var(--gold-dim); color: var(--gold); width: 44px; height: 44px; cursor: pointer; font-size: 1.1rem; }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 55;
+      background: rgba(7, 6, 5, 0.97); backdrop-filter: blur(16px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 34px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      text-decoration: none; color: var(--cream); font-family: 'Poiret One', sans-serif;
+      font-size: 1.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    .mobile-menu a:hover { color: var(--gold-bright); }
+
+    /* ------- hero ------- */
+    header.hero {
+      min-height: 60vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; position: relative; overflow: hidden;
+      padding: 140px 24px 80px;
+    }
+    header.hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        repeating-conic-gradient(from -90deg at 50% -12%, rgba(212,175,106,0.045) 0deg 1.1deg, transparent 1.1deg 7deg),
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(212,175,106,0.10), transparent 60%);
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
+      mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 12px;
+      border: 1px solid var(--gold-dim); padding: 10px 26px;
+      font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--gold-bright); margin-bottom: 30px; font-weight: 400;
+    }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(1.35rem, 2.6vw, 1.9rem); color: var(--muted);
+      max-width: 36ch; margin: 0 auto 32px;
+    }
+    .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      text-decoration: none; font-size: 0.74rem; letter-spacing: 0.28em; text-transform: uppercase;
+      padding: 17px 38px; transition: all 0.3s ease; font-weight: 400;
+    }
+    .btn-solid { background: var(--gold); color: #060504; }
+    .btn-solid:hover { background: var(--gold-bright); }
+    .btn-line { border: 1px solid var(--gold-dim); color: var(--gold-bright); }
+    .btn-line:hover { border-color: var(--gold); background: rgba(212,175,106,0.08); }
+
+    /* ------- sections ------- */
+    section { padding: 110px 0; }
+    .sec-head { text-align: center; margin-bottom: 64px; display: grid; gap: 18px; justify-items: center; }
+    .menu-bg { background: var(--ink); border-top: 1px solid var(--gold-faint); border-bottom: 1px solid var(--gold-faint); }
+
+    /* ------- visit grid reuse ------- */
+    .visit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--gold-faint); border: 1px solid var(--gold-faint); max-width: 700px; margin: 0 auto; }
+    .visit-cell { background: var(--black); padding: 38px 30px; text-align: center; }
+    .visit-cell .eyebrow { display: block; margin-bottom: 16px; }
+    .visit-cell p, .visit-cell a { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); text-decoration: none; line-height: 1.45; }
+    .visit-cell a:hover { color: var(--gold-bright); }
+    .visit-actions { display: flex; justify-content: center; gap: 18px; margin-top: 54px; flex-wrap: wrap; }
+
+    /* ------- steps ------- */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gold-faint); border: 1px solid var(--gold-faint); max-width: 900px; margin: 0 auto; }
+    .step { background: var(--black); padding: 40px 24px; text-align: center; }
+    .step .num {
+      font-family: 'Poiret One', sans-serif; font-size: 3rem; color: var(--gold-faint);
+      margin-bottom: 16px; letter-spacing: 0.05em;
+    }
+    .step h3 {
+      font-family: 'Poiret One', sans-serif; font-weight: 400; letter-spacing: 0.15em;
+      text-transform: uppercase; font-size: 1.05rem; color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .step p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ------- faq ------- */
+    .faq-wrap { max-width: 760px; margin: 0 auto; }
+    details {
+      border: 1px solid var(--gold-faint); background: var(--ink);
+      margin-bottom: 12px; padding: 0 28px;
+      transition: border-color 0.3s ease;
+    }
+    details[open] { border-color: var(--gold-dim); }
+    summary {
+      cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.28rem; color: var(--cream);
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; color: var(--gold); font-family: 'Josefin Sans', sans-serif; font-size: 1.3rem; font-weight: 300; }
+    details[open] summary::after { content: '–'; }
+    details p { color: var(--muted); padding-bottom: 24px; font-size: 0.95rem; }
+    details p a { color: var(--gold); text-decoration: none; }
+    details p a:hover { color: var(--gold-bright); }
+
+    /* ------- reveal ------- */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ------- responsive ------- */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .burger { display: block; }
+      .visit-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      section { padding: 80px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/" aria-label="Sober Bar home">
+        <img src="/images/logo-sunburst.png" alt="Sober Bar" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#bar">Cocktails</a></li>
+        <li><a href="/#menu">Menu</a></li>
+        <li><a href="/#rhythm">Day &amp; Night</a></li>
+        <li><a href="/reservations.html" class="active">Reservations</a></li>
+        <li><a href="/#visit">Visit</a></li>
+      </ul>
+      <a class="nav-cta" href="/#visit">Get Directions</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#bar">Cocktails</a>
+    <a href="/#menu">Menu</a>
+    <a href="/#rhythm">Day &amp; Night</a>
+    <a href="/reservations.html">Reservations</a>
+    <a href="/#visit">Visit</a>
+    <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Instagram</a>
+  </div>
+
+  <header class="hero" id="top">
+    <h1 class="visually-hidden">Book a Table at Sober Bar Gulfport</h1>
+    <div class="hero-badge">📅 Powered by SeatOn</div>
+    <h2 class="title" style="font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 20px;">Book a <em>table.</em></h2>
+    <p class="hero-sub">Reserve your spot at Gulfport's zero-proof cocktail bar. 50 seats — 30 indoor, 20 outdoor. Date night, group hangs, or a table for one.</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#widget">Reserve Now</a>
+      <a class="btn btn-line" href="/">← Back to Sober Bar</a>
+    </div>
+  </header>
+
+  <!-- Widget Placeholder -->
+  <section id="widget" class="menu-bg">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">SeatOn — Coming Soon</span>
+        <h2 class="title">Reservation system<br><em>being installed.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
+      </div>
+
+      <div class="visit-grid reveal">
+        <div class="visit-cell">
+          <div style="font-size: 2.4rem; margin-bottom: 10px;">🏠</div>
+          <span class="eyebrow" style="font-size: 0.65rem;">Indoor</span>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--gold-bright);">30</p>
+          <p style="color: var(--muted-2); font-size: 0.85rem;">seats available</p>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 6px;">Bar + tables, moody lighting</p>
+        </div>
+        <div class="visit-cell">
+          <div style="font-size: 2.4rem; margin-bottom: 10px;">🌿</div>
+          <span class="eyebrow" style="font-size: 0.65rem;">Outdoor</span>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--gold-bright);">20</p>
+          <p style="color: var(--muted-2); font-size: 0.85rem;">patio seats</p>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 6px;">Beach Boulevard views</p>
+        </div>
+      </div>
+
+      <div style="max-width: 700px; margin: 50px auto 0; text-align: center;" class="reveal">
+        <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 30px;">We're setting up SeatOn Reservations via the Clover App Market for instant online booking. In the meantime, reservations are handled in person or by phone. Walk-ins are always welcome.</p>
+        <div class="visit-actions">
+          <a class="btn btn-solid" href="mailto:Sean@sipsoberbar.com">Email for Reservations</a>
+          <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section>
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2 class="title">Three easy steps to<br><em>your table.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
+      </div>
+
+      <div class="steps reveal">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Pick Your Time</h3>
+          <p>Choose any day during open hours. We're open 7 AM – 10 PM Sun–Thu, till 1 AM Fri–Sat.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Choose Inside or Out</h3>
+          <p>30 indoor seats in a moody candlelit room, or 20 outdoor seats on the Beach Boulevard patio.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Show Up &amp; Enjoy</h3>
+          <p>Your table is ready. Order craft zero-proof cocktails, NOLA-inspired food, and settle in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="menu-bg">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Questions</span>
+        <h2 class="title">Reservation <em>FAQs.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
+      </div>
+      <div class="faq-wrap reveal">
+        <details open>
+          <summary>Do I need a reservation?</summary>
+          <p>Not required — walk-ins are always welcome. But reservations are recommended for Friday and Saturday evenings, and for groups of 4+.</p>
+        </details>
+        <details>
+          <summary>How many people can I reserve for?</summary>
+          <p>Up to 12 guests online. For larger groups or private events, email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a> and we'll make it work.</p>
+        </details>
+        <details>
+          <summary>Can I choose indoor or outdoor?</summary>
+          <p>Yes. When SeatOn is live, you'll select indoor or outdoor at booking. We'll always try to accommodate your preference.</p>
+        </details>
+        <details>
+          <summary>What's your cancellation policy?</summary>
+          <p>Free cancellation up to 2 hours before your reservation. Late cancellations and no-shows may affect future bookings.</p>
+        </details>
+        <details>
+          <summary>Do you host private events?</summary>
+          <p>We do. The full space accommodates up to 50 guests. Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a> with your date and group size.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="shell">
+      <img class="foot-logo" src="/images/logo-sunburst.png" alt="Sober Bar" loading="lazy" style="width: 240px; margin: 0 auto 30px;" />
+      <div class="deco-rule" style="margin-bottom: 26px;"><span class="gem"></span></div>
+      <p class="fine" style="color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px;">© 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
+      <p class="fine" style="color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px;"><a href="/privacy.html" style="color: var(--muted-2);">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html" style="color: var(--muted-2);">Terms</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    function onScroll() {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+      revealSkipped();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach((el) => io.observe(el));
+
+    function revealSkipped() {
+      revealEls.forEach((el) => {
+        if (!el.classList.contains('visible') && el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add('visible');
+          io.unobserve(el);
+        }
+      });
+    }
+    window.addEventListener('load', revealSkipped);
+
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+      burger.textContent = open ? '✕' : '☰';
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.textContent = '☰';
+      document.body.style.overflow = '';
+    }));
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "Sober Bar",
+    "description": "Gulfport's zero-proof cocktail bar and coffee house. Reservations powered by SeatOn.",
+    "url": "https://www.sipsoberbar.com",
+    "image": "https://www.sipsoberbar.com/images/cocktail-trio.jpg",
+    "logo": "https://www.sipsoberbar.com/images/logo-sunburst.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3062 Beach Blvd S",
+      "addressLocality": "Gulfport",
+      "addressRegion": "FL",
+      "postalCode": "33707",
+      "addressCountry": "US"
+    },
+    "sameAs": ["https://instagram.com/sipsoberbar"],
+    "email": "Sean@sipsoberbar.com",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "07:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "07:00", "closes": "01:00" }
+    ],
+    "servesCuisine": ["New Orleans","American","Coffee"],
+    "priceRange": "$$"
+  }
+  </script>
+</body>
+</html>
