@@ -1,69 +1,122 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Sober Bar</title>
-  <meta name="description" content="Privacy policy for Sober Bar opening list and soft opening invitation requests." />
-  <meta name="theme-color" content="#0a0a0a" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css" />
+  <meta name="description" content="Privacy policy for the Sober Bar website — what the mailing-list form collects and how we handle it." />
+  <meta name="theme-color" content="#070605" />
+  <link rel="canonical" href="https://www.sipsoberbar.com/privacy.html" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #070605; --ink: #0e0c09; --panel: #12100c;
+      --gold: #d4af6a; --gold-bright: #eed9a4;
+      --gold-dim: rgba(212, 175, 106, 0.35); --gold-faint: rgba(212, 175, 106, 0.16);
+      --cream: #f4ead8; --muted: rgba(244, 234, 216, 0.66); --muted-2: rgba(244, 234, 216, 0.45);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black); color: var(--cream);
+      font-family: 'Josefin Sans', 'Futura', sans-serif; font-weight: 300;
+      line-height: 1.7; -webkit-font-smoothing: antialiased; min-height: 100vh;
+      display: flex; flex-direction: column;
+    }
+    ::selection { background: var(--gold); color: #000; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .shell { width: min(100% - 48px, 780px); margin: 0 auto; }
+    .eyebrow { font-family: 'Josefin Sans', sans-serif; font-weight: 400; letter-spacing: 0.42em; text-transform: uppercase; font-size: 0.72rem; color: var(--gold); }
+    h1.title {
+      font-family: 'Poiret One', sans-serif; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: clamp(1.9rem, 4.4vw, 3rem); line-height: 1.15; color: var(--cream); margin-top: 14px;
+    }
+    h1.title em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; letter-spacing: 0.01em; color: var(--gold-bright); font-size: 1.15em; }
+    .deco-rule { display: flex; align-items: center; justify-content: center; gap: 14px; color: var(--gold); margin: 28px 0; }
+    .deco-rule::before, .deco-rule::after { content: ''; height: 1px; width: min(120px, 20vw); background: linear-gradient(90deg, transparent, var(--gold-dim)); }
+    .deco-rule::after { background: linear-gradient(90deg, var(--gold-dim), transparent); }
+    .deco-rule .gem { transform: rotate(45deg); display: inline-block; border: 1px solid var(--gold); width: 8px; height: 8px; }
+    /* nav */
+    nav { position: sticky; top: 0; z-index: 60; background: rgba(7,6,5,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--gold-faint); }
+    .nav-inner { width: min(100% - 48px, 1180px); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .nav-brand img { height: 52px; width: auto; }
+    .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--muted); transition: color 0.25s ease; }
+    .nav-links a:hover { color: var(--gold-bright); }
+    @media (max-width: 620px) { .nav-links { gap: 20px; } .nav-links a { letter-spacing: 0.16em; } }
+    /* content */
+    main { flex: 1; padding: clamp(48px, 8vw, 96px) 0; }
+    .lead { text-align: center; }
+    .lead p { color: var(--muted); max-width: 46rem; margin: 18px auto 0; }
+    article { margin-top: 48px; }
+    article .updated { color: var(--muted-2); font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    article h2 {
+      font-family: 'Poiret One', sans-serif; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase;
+      font-size: 1.05rem; color: var(--gold); margin: 36px 0 12px;
+    }
+    article p { color: var(--muted); margin: 12px 0; }
+    article a { color: var(--gold); }
+    .back { display: inline-block; margin-top: 44px; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-dim); padding: 14px 26px; transition: all 0.3s ease; }
+    .back:hover { background: var(--gold); color: #000; }
+    /* footer */
+    footer { text-align: center; padding: 54px 0; border-top: 1px solid var(--gold-faint); }
+    footer img { height: 46px; width: auto; margin: 0 auto 20px; opacity: 0.9; }
+    footer .fine { color: var(--muted-2); font-size: 0.8rem; letter-spacing: 0.08em; }
+    footer .fine a { color: var(--gold); text-decoration: none; }
+  </style>
 </head>
-<body class="legal-page">
-  <a href="#main-content" class="skip-link">Skip to content</a>
-  <header class="site-header" id="siteHeader">
-    <div class="nav-shell">
-      <a href="/" aria-label="Sober Bar home"><img src="/full_trimmed_transparent_customcolor.png" alt="Sober Bar" class="brand-mark" /></a>
-      <nav class="nav-links" aria-label="Legal page navigation">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/privacy.html" class="nav-link">Privacy</a>
-        <a href="/terms.html" class="nav-link">Terms</a>
-      </nav>
-      <div class="nav-cta"><a href="/#join" class="button"><span>Join the Opening List</span></a></div>
+<body>
+  <nav aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst.png" alt="Sober Bar" /></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  <main id="main-content" class="legal-main">
-    <div class="section-shell">
-      <div class="legal-intro reveal visible">
-        <p class="eyebrow">Sober Bar Legal</p>
-        <h1 class="legal-title display-title">Privacy Policy</h1>
-        <p class="section-copy" style="margin:1rem auto 0; text-align:center;">A simple overview of what we collect, why we collect it, and how we handle information shared through the Sober Bar site.</p>
+  <main>
+    <div class="shell">
+      <div class="lead">
+        <span class="eyebrow">Sober Bar</span>
+        <h1 class="title">Privacy <em>Policy.</em></h1>
+        <p>What our mailing-list form collects, why, and how we handle it.</p>
       </div>
+      <div class="deco-rule"><span class="gem"></span></div>
 
-      <article class="legal-card reveal visible deco-corners">
-        <p><strong>Last updated:</strong> May 2025</p>
-<h2>Information We Collect</h2>
-<p>When you sign up for our opening list or soft opening invitations, we collect your name, email address, and optionally your Instagram handle. We collect this only when you voluntarily submit it.</p>
-<h2>How We Use Your Information</h2>
-<p>Your information is used solely to send you updates about Sober Bar's opening, invitations to events, and announcements. We do not sell, rent, or share your personal information with third parties.</p>
-<h2>Data Storage</h2>
-<p>Form submissions are stored locally and used only for communication related to Sober Bar. If you wish to have your information removed, email Sean@sipsoberbar.com.</p>
-<h2>Cookies</h2>
-<p>We do not use tracking cookies. Any form data is stored in your browser's local storage.</p>
-<h2>Contact</h2>
-<p>Questions? Email Sean@sipsoberbar.com.</p>
-        <div class="legal-actions">
-          <a href="/" class="button"><span>Back to Sober Bar</span></a>
-          <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener" class="button-secondary"><span>Follow @sipsoberbar</span></a>
-        </div>
+      <article>
+        <p class="updated"><strong>Last updated:</strong> July 2026</p>
+
+        <h2>Information We Collect</h2>
+        <p>The only information we collect through this site is an email address, and only if you choose to enter it in our mailing-list form. We don't ask for anything else.</p>
+
+        <h2>How the Form Works</h2>
+        <p>When you submit the form, your browser opens a pre-filled email in your own mail app addressed to us — you send it yourself. The website itself does not store your email or transmit it to any server or third-party service.</p>
+
+        <h2>How We Use Your Information</h2>
+        <p>If you email us to join the list, we use your address only to send occasional updates about Sober Bar. We do not sell, rent, or share your information with anyone. Reply to any message to be removed, or email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a> anytime.</p>
+
+        <h2>Cookies &amp; Tracking</h2>
+        <p>We do not use tracking cookies or third-party analytics on this site.</p>
+
+        <h2>Contact</h2>
+        <p>Questions? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>.</p>
+
+        <a class="back" href="/">Back to Sober Bar</a>
       </article>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="footer-shell">
-      <div class="footer-meta">
-        <p>© 2025 Sober Bar. All rights reserved. 3062 Beach Blvd S, Gulfport, FL 33707</p>
-        <div class="footer-meta-links">
-          <a href="/privacy.html" class="inline-link">Privacy</a>
-          <a href="/terms.html" class="inline-link">Terms</a>
-        </div>
-      </div>
-    </div>
+  <footer>
+    <img src="/images/logo-sunburst.png" alt="Sober Bar" loading="lazy" />
+    <p class="fine">© 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
+    <p class="fine"><a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></p>
   </footer>
 </body>
 </html>
