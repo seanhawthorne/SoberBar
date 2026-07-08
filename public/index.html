@@ -210,13 +210,7 @@
     .feature .copy p { color: var(--muted); margin-bottom: 18px; font-size: 1.02rem; }
     .feature .copy .eyebrow { display: block; margin-bottom: 18px; }
     .feature .copy h2 { margin-bottom: 26px; }
-    .sig-list { list-style: none; margin-top: 8px; border-top: 1px solid var(--gold-faint); }
-    .sig-list li {
-      display: flex; justify-content: space-between; align-items: baseline; gap: 14px;
-      padding: 13px 2px; border-bottom: 1px solid var(--gold-faint);
-      font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; color: var(--cream);
-    }
-    .sig-list li small { font-family: 'Josefin Sans', sans-serif; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-2); text-align: right; }
+    .feature .copy .btn { margin-top: 10px; }
 
     /* ------- menu board ------- */
     .menu-bg { background: var(--ink); border-top: 1px solid var(--gold-faint); border-bottom: 1px solid var(--gold-faint); }
@@ -360,8 +354,8 @@
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Zero-Proof Cocktails</span><span>Specialty Coffee</span><span>NOLA Kitchen</span><span>NA Beer &amp; Wine</span><span>Open 7 Days</span><span>Beach Blvd, Gulfport</span>
-      <span>Zero-Proof Cocktails</span><span>Specialty Coffee</span><span>NOLA Kitchen</span><span>NA Beer &amp; Wine</span><span>Open 7 Days</span><span>Beach Blvd, Gulfport</span>
+      <span>Zero-Proof Cocktails</span><span>Specialty Coffee</span><span>NOLA Kitchen</span><span>NA Beer &amp; Kombucha</span><span>Open 7 Days</span><span>Beach Blvd, Gulfport</span>
+      <span>Zero-Proof Cocktails</span><span>Specialty Coffee</span><span>NOLA Kitchen</span><span>NA Beer &amp; Kombucha</span><span>Open 7 Days</span><span>Beach Blvd, Gulfport</span>
     </div>
   </div>
 
@@ -369,19 +363,14 @@
     <div class="shell">
       <div class="feature">
         <div class="arch reveal" style="aspect-ratio: 3/4;">
-          <img src="/images/cocktail-trio.jpg" alt="Three craft zero-proof cocktails on a marble table at Sober Bar" loading="lazy" decoding="async" />
+          <img src="/images/bar.jpg" alt="The black marble bar at Sober Bar lined with brass barware and bitters, NA bottle shelves against white subway tile" loading="lazy" decoding="async" />
         </div>
         <div class="copy reveal">
           <span class="eyebrow">The Bar</span>
           <h2 class="title">Full ritual,<br><em>zero proof.</em></h2>
           <p>Every drink is built like it belongs on a top-shelf menu — layered, garnished, and worth slowing down for. NA spirits, fresh ingredients, real craft. Nothing on our menu contains alcohol.</p>
-          <ul class="sig-list">
-            <li>Call Me an Ube <small>signature</small></li>
-            <li>Hot Mami <small>spicy</small></li>
-            <li>Red Widow <small>dark &amp; moody</small></li>
-            <li>Linn &amp; Juniper <small>botanical</small></li>
-            <li>Bee's Bouquet <small>floral</small></li>
-          </ul>
+          <p>Pull up a stool. The black marble bar is stocked with NA spirits, house syrups, and bitters — and each signature pour was crafted by one of our own bartenders. Ask about functional botanicals for any beverage.</p>
+          <a class="btn btn-line" href="#menu">See what's pouring</a>
         </div>
       </div>
     </div>
@@ -397,34 +386,59 @@
       <div class="menu-grid">
         <div class="menu-col reveal">
           <h3>Zero-Proof Cocktails</h3>
-          <div class="mi"><div class="mi-name">Call Me an Ube</div><div class="mi-desc">Velvet-purple, creamy, and unreasonably photogenic</div></div>
-          <div class="mi"><div class="mi-name">Hot Mami</div><div class="mi-desc">Heat up front, smooth landing</div></div>
-          <div class="mi"><div class="mi-name">Red Widow</div><div class="mi-desc">Dark fruit, rosemary smoke, evening energy</div></div>
-          <div class="mi"><div class="mi-name">Linn &amp; Juniper</div><div class="mi-desc">Crisp botanical build on NA spirits</div></div>
-          <div class="mi"><div class="mi-name">Bee's Bouquet</div><div class="mi-desc">Honey, florals, and a silk finish</div></div>
+          <div class="mi"><div class="mi-name">Call Me an Ube</div><div class="mi-desc">Ritual gin alt, ube, coconut cream, key lime, pineapple</div></div>
+          <div class="mi"><div class="mi-name">Hot Mami</div><div class="mi-desc">Reposado tequila alt, jalape&ntilde;o, lime, pineapple ginger, chili</div></div>
+          <div class="mi"><div class="mi-name">Jinn &amp; Juniper</div><div class="mi-desc">Gin alt, cucumber, juniper, ashwagandha — crisp and garden-fresh</div></div>
+          <div class="mi"><div class="mi-name">Red Widow</div><div class="mi-desc">Bourbon alt, tart cherry, lemon, honey — a dark, silky sour</div></div>
+          <div class="mi"><div class="mi-name">Bee's Bouquet</div><div class="mi-desc">Gin alt, fresh lemon, honey, lavender — bright and floral</div></div>
+          <div class="mi"><div class="mi-name">Moonlit Meringue</div><div class="mi-desc">Gin alt, NA limoncello, egg white, lavender bitters — cloud-soft</div></div>
+          <div class="mi"><div class="mi-name">Espresso Martini</div><div class="mi-desc">Reposado tequila alt, cold brew espresso, agave, fig &amp; walnut bitters</div></div>
         </div>
         <div class="menu-col reveal">
-          <h3>Coffee &amp; Morning</h3>
-          <div class="mi"><div class="mi-name">Cortado</div><div class="mi-desc">Equal parts espresso and steamed milk</div></div>
-          <div class="mi"><div class="mi-name">Kyoto Cold Brew</div><div class="mi-desc">Slow-dripped, served over clear ice</div></div>
-          <div class="mi"><div class="mi-name">Beach Blvd Bodega</div><div class="mi-desc">Breakfast sandwich, done right, from 7 am</div></div>
-          <div class="mi"><div class="mi-name">Mad Hatter</div><div class="mi-desc">Specialty latte with a point of view</div></div>
+          <h3>Beer &amp; Kombucha</h3>
+          <div class="mi"><div class="mi-name">Run Wild IPA</div><div class="mi-desc">Crisp, hoppy, citrus-forward NA IPA · 16 oz draft</div></div>
+          <div class="mi"><div class="mi-name">Guinness 0.0</div><div class="mi-desc">Smooth, roasted coffee and chocolate notes</div></div>
+          <div class="mi"><div class="mi-name">Heineken 0.0</div><div class="mi-desc">Crisp, clean, and lightly malty</div></div>
+          <div class="mi"><div class="mi-name">Beech Kombucha</div><div class="mi-desc">Bright, sparkling fermented tea on draft</div></div>
         </div>
         <div class="menu-col reveal">
-          <h3>NOLA Kitchen</h3>
-          <div class="mi"><div class="mi-name">The Muffaletta</div><div class="mi-desc">Olive salad, cured meats, pressed to order</div></div>
-          <div class="mi"><div class="mi-name">Fig &amp; Brie Flatbread</div><div class="mi-desc">Sweet, savory, made to share</div></div>
-          <div class="mi"><div class="mi-name">Pretzel Bites</div><div class="mi-desc">Late-night fuel till close</div></div>
-          <div class="mi"><div class="mi-name">Naan Dippers</div><div class="mi-desc">Warm naan with house dips</div></div>
+          <h3>Coffee &amp; Espresso</h3>
+          <div class="mi"><div class="mi-name">Cortado</div><div class="mi-desc">Espresso with a small pour of steamed milk</div></div>
+          <div class="mi"><div class="mi-name">Caf&eacute; au Lait</div><div class="mi-desc">Hot coffee and steamed milk — a New Orleans classic</div></div>
+          <div class="mi"><div class="mi-name">Latte</div><div class="mi-desc">Espresso and steamed milk, smooth and creamy</div></div>
+          <div class="mi"><div class="mi-name">Mocha</div><div class="mi-desc">Espresso, chocolate, and steamed milk</div></div>
+          <div class="mi"><div class="mi-name">Kyoto Cold Brew</div><div class="mi-desc">Slow-dripped with a clean, smooth finish</div></div>
+          <div class="mi"><div class="mi-name">Nitro Cold Brew</div><div class="mi-desc">Cascading nitro pour, naturally creamy</div></div>
+          <div class="mi"><div class="mi-name">Chai Latte</div><div class="mi-desc">Spiced chai with steamed milk</div></div>
         </div>
         <div class="menu-col reveal">
-          <h3>NA Beer, Wine &amp; Bagels</h3>
-          <div class="mi"><div class="mi-name">Athletic Run Wild IPA</div><div class="mi-desc">Hop-forward, zero alcohol</div></div>
-          <div class="mi"><div class="mi-name">Guinness 0.0 &nbsp;·&nbsp; Heineken 0.0</div><div class="mi-desc">The classics, minus the proof</div></div>
-          <div class="mi"><div class="mi-name">Bagels &amp; House Cream Cheese</div><div class="mi-desc">Ube · fig &amp; honey · classic</div></div>
+          <h3>Breakfast Sandwiches</h3>
+          <div class="mi"><div class="mi-name">The Classic Morning Melt</div><div class="mi-desc">English muffin, egg, American cheese, bacon, sausage, or ham</div></div>
+          <div class="mi"><div class="mi-name">The Beach Blvd Bodega</div><div class="mi-desc">Everything bagel, egg, American cheese, choice of meat</div></div>
+          <div class="mi"><div class="mi-name">The White Rabbit</div><div class="mi-desc">Plain bagel, egg, brie, fig spread, prosciutto, hot honey</div></div>
+          <div class="mi"><div class="mi-name">The Mad Hatter</div><div class="mi-desc">Egg, everything bacon, choice of meat, provolone, tomato, spinach, pesto</div></div>
+          <div class="mi"><div class="mi-name">Breakfast Muffuletta</div><div class="mi-desc">Toasted focaccia, pesto cream cheese, egg, sausage, bacon, smoked provolone</div></div>
+          <div class="mi"><div class="mi-name">Hot Honey Breakfast Flatbread</div><div class="mi-desc">Pesto cream cheese, mozzarella, sausage, bacon, egg, hot honey drizzle</div></div>
+        </div>
+        <div class="menu-col reveal">
+          <h3>Bagels &amp; Bowls</h3>
+          <div class="mi"><div class="mi-name">Bagel &amp; Cream Cheese</div><div class="mi-desc">Plain or everything — house ube, fig &amp; honey, or vegan spreads</div></div>
+          <div class="mi"><div class="mi-name">Yogurt Parfait</div><div class="mi-desc">Greek yogurt, raw honey, mixed berries, Ryker's granola</div></div>
+          <div class="mi"><div class="mi-name">Pretzel Bites</div><div class="mi-desc">Soft-baked, with spicy beer cheese</div></div>
+          <div class="mi"><div class="mi-name">Naan Dippers</div><div class="mi-desc">Warm naan, roasted red pepper hummus, carrots, celery</div></div>
+        </div>
+        <div class="menu-col reveal">
+          <h3>Provisions &amp; Salads</h3>
+          <div class="mi"><div class="mi-name">The Muffuletta</div><div class="mi-desc">Genoa salami, capicola, mozzarella, olive salad, basil pesto, toasted focaccia</div></div>
+          <div class="mi"><div class="mi-name">Hot Honey Soppressata Flatbread</div><div class="mi-desc">Whipped ricotta, mozzarella, spicy soppressata, hot honey</div></div>
+          <div class="mi"><div class="mi-name">Fig, Brie &amp; Prosciutto Flatbread</div><div class="mi-desc">Brie, fig jam, prosciutto, toasted pecans, arugula, hot honey</div></div>
+          <div class="mi"><div class="mi-name">Garden Mezze Flatbread</div><div class="mi-desc">Hummus, roasted red peppers, pickled onion, balsamic-agave — plant-based</div></div>
+          <div class="mi"><div class="mi-name">Garden District Muffuletta</div><div class="mi-desc">Vegan pesto, olive tapenade, roasted peppers, sourdough — plant-based</div></div>
+          <div class="mi"><div class="mi-name">Goat Cheese Berry Salad</div><div class="mi-desc">Mixed greens, fresh berries, toasted pecans, goat cheese</div></div>
+          <div class="mi"><div class="mi-name">Spicy Mardi Gras Salad</div><div class="mi-desc">Greens, hot capicola, Genoa salami, egg, blue cheese</div></div>
         </div>
       </div>
-      <p class="menu-note">Full menu in-house · Follow <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">@sipsoberbar</a> for seasonal pours</p>
+      <p class="menu-note">Everything is zero-proof · Gluten-free options available<br>Follow <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">@sipsoberbar</a> for seasonal pours</p>
     </div>
   </section>
 
@@ -437,7 +451,7 @@
           <p>One room, two lives. Sunlight and espresso in the morning; warm lights, music, and cocktails after dark. Designed for a 7 am meeting and a Friday night that runs till 1 am.</p>
           <ul class="timeline">
             <li><span class="t">7 am</span><span class="d">Doors open — espresso, bagels, breakfast sandwiches, fast WiFi</span></li>
-            <li><span class="t">Noon</span><span class="d">Muffalettas and flatbreads out of the kitchen</span></li>
+            <li><span class="t">Noon</span><span class="d">Muffulettas and flatbreads out of the kitchen</span></li>
             <li><span class="t">5 pm</span><span class="d">The lights drop, the bar wakes up — cocktail hour begins</span></li>
             <li><span class="t">Late</span><span class="d">Full menu till close — 10 pm weekdays, 1 am weekends</span></li>
           </ul>
@@ -458,8 +472,8 @@
       </div>
       <div class="duo duo--quad">
         <figure class="reveal">
-          <div class="arch"><img src="/images/bar.jpg" alt="The black marble bar lined with brass barware and bitters, bottle shelves against white subway tile under warm track lighting" loading="lazy" decoding="async" /></div>
-          <figcaption>The bar</figcaption>
+          <div class="arch"><img src="/images/cocktail-trio.jpg" alt="Three craft zero-proof cocktails on a marble table at Sober Bar" loading="lazy" decoding="async" /></div>
+          <figcaption>The pours</figcaption>
         </figure>
         <figure class="reveal">
           <div class="arch"><img src="/images/cafe.jpg" alt="The café room — round marble tables along a red velvet banquette, with sunlight through the front window" loading="lazy" decoding="async" /></div>
@@ -530,7 +544,7 @@
         </details>
         <details>
           <summary>Do you serve food all day?</summary>
-          <p>Yes. Breakfast sandwiches, bagels, flatbreads, muffalettas, and shareable plates from open to close — pretzel bites at 11 pm are encouraged.</p>
+          <p>Yes. Breakfast sandwiches, bagels, flatbreads, muffulettas, and shareable plates from open to close — pretzel bites at 11 pm are encouraged.</p>
         </details>
       </div>
     </div>
