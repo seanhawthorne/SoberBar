@@ -3,53 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Not Found — Sober Bar</title>
-  <meta name="theme-color" content="#0a0a0a" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/site.css" />
+  <title>Page Not Found — Sober Bar</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#070605" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #070605; --gold: #d4af6a; --gold-bright: #eed9a4;
+      --gold-dim: rgba(212, 175, 106, 0.35); --gold-faint: rgba(212, 175, 106, 0.16);
+      --cream: #f4ead8; --muted: rgba(244, 234, 216, 0.66); --muted-2: rgba(244, 234, 216, 0.45);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--black); color: var(--cream);
+      font-family: 'Josefin Sans', 'Futura', sans-serif; font-weight: 300;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
+      min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 40px 24px; position: relative; overflow: hidden;
+    }
+    body::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        repeating-conic-gradient(from -90deg at 50% -12%, rgba(212,175,106,0.055) 0deg 1.1deg, transparent 1.1deg 7deg),
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(212,175,106,0.14), transparent 60%);
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
+      mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
+    }
+    ::selection { background: var(--gold); color: #000; }
+    img { display: block; max-width: 100%; }
+    .logo { width: min(360px, 76vw); height: auto; margin-bottom: 40px; position: relative; }
+    .code { font-family: 'Poiret One', sans-serif; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-size: 0.75rem; margin-bottom: 18px; position: relative; }
+    h1 {
+      font-family: 'Poiret One', sans-serif; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+      font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.15; color: var(--cream); position: relative;
+    }
+    h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; color: var(--gold-bright); font-size: 1.15em; }
+    p.sub { color: var(--muted); max-width: 34rem; margin: 20px auto 0; position: relative; }
+    .actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 38px; position: relative; }
+    .btn { text-decoration: none; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; padding: 15px 30px; transition: all 0.3s ease; }
+    .btn-solid { background: var(--gold); color: #000; }
+    .btn-solid:hover { background: var(--gold-bright); }
+    .btn-line { color: var(--gold); border: 1px solid var(--gold-dim); }
+    .btn-line:hover { background: var(--gold); color: #000; }
+  </style>
 </head>
-<body class="legal-page">
-  <a href="#main-content" class="skip-link">Skip to content</a>
-  <header class="site-header scrolled" id="siteHeader">
-    <div class="nav-shell">
-      <a href="/" aria-label="Sober Bar home"><img src="/full_trimmed_transparent_customcolor.png" alt="Sober Bar" class="brand-mark" /></a>
-      <nav class="nav-links" aria-label="Not found navigation">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/privacy.html" class="nav-link">Privacy</a>
-        <a href="/terms.html" class="nav-link">Terms</a>
-      </nav>
-      <div class="nav-cta"><a href="/#join" class="button"><span>Join the Opening List</span></a></div>
-    </div>
-  </header>
-
-  <main id="main-content" class="legal-main">
-    <div class="section-shell">
-      <article class="legal-card reveal visible deco-corners" style="text-align:center;">
-        <div class="not-found-code">404</div>
-        <p class="eyebrow" style="justify-content:center;">Page not found</p>
-        <h1 class="display-title">The page you're looking for doesn't exist.</h1>
-        <p class="section-copy" style="margin:1rem auto 0; text-align:center; max-width:36rem;">But the bar is real — come back to Beach Boulevard and we'll point you toward the door.</p>
-        <div class="legal-actions">
-          <a href="/" class="button"><span>Go Home</span></a>
-          <a href="/#soft-opening" class="button-secondary"><span>Soft Opening Details</span></a>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-shell">
-      <div class="footer-meta">
-        <p>© 2025 Sober Bar. All rights reserved. 3062 Beach Blvd S, Gulfport, FL 33707</p>
-        <div class="footer-meta-links">
-          <a href="/privacy.html" class="inline-link">Privacy</a>
-          <a href="/terms.html" class="inline-link">Terms</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+<body>
+  <a href="/" aria-label="Sober Bar home"><img class="logo" src="/images/logo-sunburst.png" alt="Sober Bar — art-deco sunburst logo" /></a>
+  <p class="code">404 · Page not found</p>
+  <h1>This page slipped <em>off the menu.</em></h1>
+  <p class="sub">The link may be old or mistyped — but the bar is very real. Head back and we'll point you to the door on Beach Boulevard.</p>
+  <div class="actions">
+    <a class="btn btn-solid" href="/">Back to Home</a>
+    <a class="btn btn-line" href="/#menu">See the Menu</a>
+  </div>
 </body>
 </html>
