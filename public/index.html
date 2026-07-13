@@ -234,6 +234,54 @@
     .timeline .t { font-family: 'Poiret One', sans-serif; color: var(--gold-bright); letter-spacing: 0.1em; font-size: 1.05rem; white-space: nowrap; }
     .timeline .d { color: var(--muted); font-size: 0.98rem; }
 
+    /* ------- Sunday jazz brunch ------- */
+    .brunch-panel {
+      position: relative; isolation: isolate; overflow: hidden;
+      max-width: 980px; margin: 0 auto; padding: clamp(64px, 9vw, 100px) clamp(28px, 8vw, 90px);
+      text-align: center; border: 1px solid var(--gold-dim);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(212,175,106,0.19), transparent 48%),
+        linear-gradient(145deg, #15110c, #090807 70%);
+    }
+    .brunch-panel::before {
+      content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background: repeating-conic-gradient(from -90deg at 50% -10%, rgba(212,175,106,0.055) 0deg 1deg, transparent 1deg 9deg);
+      -webkit-mask-image: linear-gradient(180deg, #000, transparent 75%);
+      mask-image: linear-gradient(180deg, #000, transparent 75%);
+    }
+    .brunch-panel h2 { margin: 20px 0 24px; }
+    .brunch-copy {
+      max-width: 700px; margin: 0 auto; color: var(--muted);
+      font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.18rem, 2.3vw, 1.45rem);
+    }
+    .brunch-notes {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 28px;
+      margin: 34px auto 38px; color: var(--gold-bright);
+      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
+    }
+    .brunch-notes span { position: relative; }
+    .brunch-notes span + span::before { content: '◆'; position: absolute; left: -18px; color: var(--gold-dim); font-size: 0.48rem; }
+    .eventbrite-trigger { border: 0; cursor: pointer; font-family: 'Josefin Sans', sans-serif; }
+    .eventbrite-fallback { display: block; width: fit-content; margin: 20px auto 0; color: var(--muted-2); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; text-underline-offset: 5px; }
+    .eventbrite-fallback:hover { color: var(--gold-bright); }
+
+    /* ------- reviews ------- */
+    .rating-summary { text-align: center; margin: -30px auto 44px; color: var(--muted); }
+    .rating-summary strong { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--cream); font-weight: 500; }
+    .rating-stars { color: var(--gold); letter-spacing: 0.16em; white-space: nowrap; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1040px; margin: 0 auto; }
+    .review-card {
+      position: relative; display: flex; flex-direction: column; min-height: 280px;
+      padding: 38px 34px 32px; border: 1px solid var(--gold-faint); background: var(--ink);
+    }
+    .review-card::before {
+      content: '“'; position: absolute; top: 8px; right: 24px;
+      font-family: 'Cormorant Garamond', serif; font-size: 5rem; line-height: 1; color: var(--gold-faint);
+    }
+    .review-card blockquote { margin: 24px 0 28px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; line-height: 1.5; color: var(--cream); }
+    .reviewer { margin-top: auto; color: var(--muted-2); font-size: 0.7rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; }
+    .reviews-action { text-align: center; margin-top: 42px; }
+
     /* ------- gallery duo ------- */
     .duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 48px); max-width: 900px; margin: 0 auto; }
     .duo figure { position: relative; }
@@ -304,6 +352,7 @@
       .burger { display: block; }
       .feature { grid-template-columns: 1fr; }
       .menu-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; max-width: 560px; }
       .duo { grid-template-columns: 1fr; max-width: 460px; }
       .visit-grid { grid-template-columns: 1fr; }
       section { padding: 80px 0; }
@@ -322,6 +371,7 @@
         <li><a href="#bar">Cocktails</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#rhythm">Day &amp; Night</a></li>
+        <li><a href="#jazz-brunch">Jazz Brunch</a></li>
         <li><a href="#reservations">Reservations</a></li>
         <li><a href="#visit">Visit</a></li>
       </ul>
@@ -334,6 +384,7 @@
     <a href="#bar">Cocktails</a>
     <a href="#menu">Menu</a>
     <a href="#rhythm">Day &amp; Night</a>
+    <a href="#jazz-brunch">Jazz Brunch</a>
     <a href="/reservations.html">Reservations</a>
     <a href="#visit">Visit</a>
     <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Instagram</a>
@@ -351,7 +402,7 @@
     </div>
     <div class="hero-hours">
       <span><b>Sun – Thu</b> 7 am – 10 pm</span>
-      <span><b>Fri – Sat</b> 7 am – 1 am</span>
+      <span><b>Fri – Sat</b> 7 am – Midnight</span>
     </div>
   </header>
 
@@ -452,17 +503,37 @@
         <div class="copy reveal">
           <span class="eyebrow">The Rhythm</span>
           <h2 class="title">Coffee house by day,<br><em>speakeasy by night.</em></h2>
-          <p>One room, two lives. Sunlight and espresso in the morning; warm lights, music, and cocktails after dark. Designed for a 7 am meeting and a Friday night that runs till 1 am.</p>
+          <p>One room, two lives. Sunlight and espresso in the morning; warm lights, music, and cocktails after dark. Designed for a 7 am meeting and a Friday night that runs till midnight.</p>
           <ul class="timeline">
             <li><span class="t">7 am</span><span class="d">Doors open — espresso, bagels, breakfast sandwiches, fast WiFi</span></li>
             <li><span class="t">Noon</span><span class="d">Muffulettas and flatbreads out of the kitchen</span></li>
             <li><span class="t">5 pm</span><span class="d">The lights drop, the bar wakes up — cocktail hour begins</span></li>
-            <li><span class="t">Late</span><span class="d">Full menu till close — 10 pm Sun–Thu, 1 am Fri &amp; Sat</span></li>
+            <li><span class="t">Late</span><span class="d">Full menu till close — 10 pm Sun–Thu, midnight Fri &amp; Sat</span></li>
           </ul>
         </div>
         <div class="arch reveal" style="aspect-ratio: 3/4;">
           <img src="/images/bar-night.jpg" alt="A ribbed coupe cocktail on the black marble bar at night, gold mirror and sconces glowing behind" loading="lazy" decoding="async" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sunday Jazz Brunch -->
+  <section id="jazz-brunch">
+    <div class="shell">
+      <div class="brunch-panel reveal">
+        <span class="eyebrow">Sunday at Sober Bar</span>
+        <h2 class="title">Jazz, brunch<br><em>&amp; a slower Sunday.</em></h2>
+        <div class="deco-rule" style="margin-bottom: 28px;"><span class="gem"></span></div>
+        <p class="brunch-copy">Live gypsy jazz, blues, and bossa nova from Western Gypsies, paired with a New Orleans-inspired brunch menu made just for Sundays.</p>
+        <div class="brunch-notes" aria-label="Event highlights">
+          <span>Live music</span>
+          <span>Sunday-only menu</span>
+          <span>Free RSVP</span>
+        </div>
+        <noscript><style>.eventbrite-trigger,.eventbrite-fallback{display:none}</style><a class="btn btn-solid" href="https://www.eventbrite.com/e/sunday-jazz-brunch-tickets-1993875861375" rel="noopener noreferrer" target="_blank">Reserve Your Spot</a></noscript>
+        <button class="btn btn-solid eventbrite-trigger" id="eventbrite-widget-modal-trigger-1993875861375" type="button">Reserve Your Spot</button>
+        <a class="eventbrite-fallback" href="https://www.eventbrite.com/e/sunday-jazz-brunch-tickets-1993875861375" rel="noopener noreferrer" target="_blank">View event details</a>
       </div>
     </div>
   </section>
@@ -536,6 +607,37 @@
     </div>
   </section>
 
+  <section id="reviews">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Guest Notes</span>
+        <h2 class="title">Gulfport is <em>glowing.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
+      </div>
+      <p class="rating-summary reveal"><strong>5.0</strong> <span class="rating-stars" aria-label="5 out of 5 stars">★★★★★</span><br>60 Google reviews</p>
+      <div class="reviews-grid">
+        <article class="review-card reveal">
+          <div class="rating-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>What a fun new addition to Gulfport! I loved the atmosphere and everyone was super friendly.</blockquote>
+          <p class="reviewer">Cara Malasto · Google Review</p>
+        </article>
+        <article class="review-card reveal">
+          <div class="rating-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>A beautiful space with a great atmosphere, delicious food, and well crafted cocktails. The baristas take pride in their creations, and it shows in every detail.</blockquote>
+          <p class="reviewer">Jessica P. · Google Review</p>
+        </article>
+        <article class="review-card reveal">
+          <div class="rating-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>What a great place to hang out - day or night! Vegan options on their menu, one of the best chai lattes I have ever had and the Call me an Ube mocktail is as tasty as it looks!</blockquote>
+          <p class="reviewer">Nancy Weil · Google Review</p>
+        </article>
+      </div>
+      <div class="reviews-action reveal">
+        <a class="btn btn-line" href="https://www.google.com/search?q=Sober+Bar+3062+Beach+Blvd+S+Gulfport+FL+reviews" target="_blank" rel="noopener">Read All Google Reviews</a>
+      </div>
+    </div>
+  </section>
+
   <section id="visit">
     <div class="shell">
       <div class="sec-head reveal">
@@ -553,7 +655,7 @@
         </div>
         <div class="visit-cell">
           <span class="eyebrow">Hours</span>
-          <p>Sun – Thu · 7 am – 10 pm<br>Fri – Sat · 7 am – 1 am</p>
+          <p>Sun – Thu · 7 am – 10 pm<br>Fri – Sat · 7 am – Midnight</p>
         </div>
         <div class="visit-cell">
           <span class="eyebrow">Contact</span>
@@ -581,7 +683,7 @@
         </details>
         <details>
           <summary>What are your hours?</summary>
-          <p>Open daily. Sunday through Thursday 7 am – 10 pm, Friday and Saturday 7 am – 1 am. Coffee and breakfast start at 7 am; the full menu runs open to close.</p>
+          <p>Open daily. Sunday through Thursday 7 am – 10 pm, Friday and Saturday 7 am – midnight. Coffee and breakfast start at 7 am; the full menu runs open to close.</p>
         </details>
         <details>
           <summary>Can I work here during the day?</summary>
@@ -680,6 +782,23 @@
     });
   </script>
 
+  <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+  <script>
+    const eventbriteUrl = 'https://www.eventbrite.com/e/sunday-jazz-brunch-tickets-1993875861375';
+    const eventbriteTrigger = document.getElementById('eventbrite-widget-modal-trigger-1993875861375');
+    if (window.EBWidgets) {
+      window.EBWidgets.createWidget({
+        widgetType: 'checkout',
+        eventId: '1993875861375',
+        themeSettings: { brandColor: '#000000' },
+        modal: true,
+        modalTriggerElementId: 'eventbrite-widget-modal-trigger-1993875861375'
+      });
+    } else {
+      eventbriteTrigger.addEventListener('click', () => window.open(eventbriteUrl, '_blank', 'noopener'));
+    }
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -701,7 +820,7 @@
     "email": "Sean@sipsoberbar.com",
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "07:00", "closes": "22:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "07:00", "closes": "01:00" }
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "07:00", "closes": "00:00" }
     ],
     "servesCuisine": ["New Orleans","American","Coffee"],
     "priceRange": "$$"
