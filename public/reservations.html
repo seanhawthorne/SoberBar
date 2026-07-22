@@ -182,6 +182,43 @@
     .visit-cell a:hover { color: var(--gold-bright); }
     .visit-actions { display: flex; justify-content: center; gap: 18px; margin-top: 54px; flex-wrap: wrap; }
 
+    .reservation-options {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
+      background: var(--gold-faint); border: 1px solid var(--gold-faint);
+      max-width: 900px; margin: 48px auto 0;
+    }
+    .reservation-option {
+      background: var(--black); padding: 38px 30px; text-align: center;
+      display: grid; gap: 18px; justify-items: center;
+    }
+    .reservation-option p {
+      color: var(--muted); max-width: 34ch; margin: 0 auto;
+      font-size: 0.95rem;
+    }
+    .slot-grid {
+      display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px; max-width: 900px; margin: 28px auto 0;
+    }
+    .slot-card {
+      display: grid; gap: 5px; place-items: center; min-height: 92px;
+      border: 1px solid var(--gold-dim); background: rgba(7, 6, 5, 0.62);
+      color: var(--gold-bright); text-decoration: none;
+      transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+    }
+    .slot-card:hover { border-color: var(--gold); background: rgba(212,175,106,0.09); transform: translateY(-2px); }
+    .slot-card strong {
+      font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.45rem;
+      color: var(--cream); font-weight: 500; line-height: 1;
+    }
+    .slot-card span {
+      color: var(--muted-2); font-size: 0.64rem; letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .reservation-status {
+      max-width: 760px; margin: 22px auto 0; color: var(--muted-2);
+      font-size: 0.82rem; letter-spacing: 0.08em; text-align: center;
+    }
+
     /* ------- steps ------- */
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gold-faint); border: 1px solid var(--gold-faint); max-width: 900px; margin: 0 auto; }
     .step { background: var(--black); padding: 40px 24px; text-align: center; }
@@ -216,7 +253,7 @@
     details p a:hover { color: var(--gold-bright); }
 
     /* ------- reveal ------- */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+    .reveal { opacity: 1; transform: none; transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
     .reveal.visible { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
@@ -227,6 +264,8 @@
       .nav-links, .nav-cta { display: none; }
       .burger { display: block; }
       .visit-grid { grid-template-columns: 1fr; }
+      .reservation-options { grid-template-columns: 1fr; }
+      .slot-grid { grid-template-columns: 1fr; max-width: 360px; }
       .steps { grid-template-columns: 1fr; }
       section { padding: 80px 0; }
     }
@@ -266,7 +305,7 @@
     <h2 class="title" style="font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 20px;">Book a <em>table.</em></h2>
     <p class="hero-sub">Reserve your spot at Gulfport's zero-proof cocktail bar. 50 seats — 30 indoor, 20 outdoor. Date night, group hangs, or a table for one.</p>
     <div class="hero-actions">
-      <a class="btn btn-solid" href="#widget">Reserve Now</a>
+      <a class="btn btn-solid js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Dining">Reserve Now</a>
       <a class="btn btn-line" href="/">← Back to Sober Bar</a>
     </div>
   </header>
@@ -275,8 +314,8 @@
   <section id="widget" class="menu-bg">
     <div class="shell">
       <div class="sec-head reveal">
-        <span class="eyebrow">SeatOn — Coming Soon</span>
-        <h2 class="title">Reservation system<br><em>being installed.</em></h2>
+        <span class="eyebrow">SeatOn Reservations</span>
+        <h2 class="title">Choose your<br><em>reservation.</em></h2>
         <div class="deco-rule"><span class="gem"></span></div>
       </div>
 
@@ -297,12 +336,39 @@
         </div>
       </div>
 
-      <div style="max-width: 700px; margin: 50px auto 0; text-align: center;" class="reveal">
-        <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 30px;">We're setting up SeatOn Reservations via the Clover App Market for instant online booking. In the meantime, reservations are handled in person or by phone. Walk-ins are always welcome.</p>
-        <div class="visit-actions">
-          <a class="btn btn-solid" href="mailto:Sean@sipsoberbar.com">Email for Reservations</a>
-          <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Get Directions</a>
+      <div class="reservation-options reveal">
+        <div class="reservation-option">
+          <span class="eyebrow">Dining</span>
+          <p>Book a standard table for cocktails, coffee, food, date night, or a group hang.</p>
+          <a class="btn btn-solid js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Dining">Book a Table</a>
         </div>
+        <div class="reservation-option">
+          <span class="eyebrow">Jazz Brunch</span>
+          <p>Sunday Jazz Brunch seatings are one hour each, from 10 AM through 2 PM.</p>
+          <a class="btn btn-line" href="#jazz-brunch-slots">Choose a Time</a>
+        </div>
+      </div>
+
+      <div id="jazz-brunch-slots" class="reveal" style="max-width: 900px; margin: 54px auto 0; text-align: center;">
+        <span class="eyebrow">Jazz Brunch Slots</span>
+        <div class="slot-grid" aria-label="Jazz Brunch reservation times">
+          <a class="slot-card js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Jazz Brunch" data-time="10:00">
+            <strong>10 AM</strong><span>10-11</span>
+          </a>
+          <a class="slot-card js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Jazz Brunch" data-time="11:00">
+            <strong>11 AM</strong><span>11-12</span>
+          </a>
+          <a class="slot-card js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Jazz Brunch" data-time="12:00">
+            <strong>Noon</strong><span>12-1</span>
+          </a>
+          <a class="slot-card js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Jazz Brunch" data-time="13:00">
+            <strong>1 PM</strong><span>1-2</span>
+          </a>
+          <a class="slot-card js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Jazz Brunch" data-time="14:00">
+            <strong>2 PM</strong><span>2-3</span>
+          </a>
+        </div>
+        <p class="reservation-status">Reservations open in SeatOn.</p>
       </div>
     </div>
   </section>
@@ -355,7 +421,7 @@
         </details>
         <details>
           <summary>Can I choose indoor or outdoor?</summary>
-          <p>Yes. When SeatOn is live, you'll select indoor or outdoor at booking. We'll always try to accommodate your preference.</p>
+          <p>Yes. Select your seating preference during booking and we'll always try to accommodate it.</p>
         </details>
         <details>
           <summary>What's your cancellation policy?</summary>
@@ -378,6 +444,7 @@
     </div>
   </footer>
 
+  <script src="/reservation-config.js"></script>
   <script>
     const nav = document.getElementById('nav');
     function onScroll() {
@@ -418,6 +485,21 @@
       burger.textContent = '☰';
       document.body.style.overflow = '';
     }));
+
+    const SEATON_BOOKING_URL = window.SOBER_BAR_SEATON_BOOKING_URL || '';
+
+    function buildSeatOnUrl(link) {
+      const url = SEATON_BOOKING_URL.trim();
+      if (!url || url === 'PASTE_SEATON_BOOKING_URL_HERE') return link.href;
+      return url;
+    }
+
+    document.querySelectorAll('.js-seaton-reservation').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.open(buildSeatOnUrl(link), '_blank', 'noopener');
+      });
+    });
   </script>
 
   <script type="application/ld+json">
