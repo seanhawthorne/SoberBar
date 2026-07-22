@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sober Bar — Gulfport's Zero-Proof Cocktail Bar &amp; Coffee House</title>
-  <meta name="description" content="Sober Bar is Gulfport's zero-proof cocktail bar and coffee house. Craft NA cocktails, New Orleans–inspired food, NA beer & kombucha, and specialty coffee — now open on Beach Boulevard." />
+  <meta name="description" content="Sober Bar is Gulfport's non-alcoholic cocktail bar and coffee house near St. Petersburg, FL. Craft zero-proof cocktails and mocktails, New Orleans–inspired food, NA beer & kombucha, and specialty coffee — open daily on Beach Boulevard." />
   <meta name="theme-color" content="#070605" />
   <link rel="canonical" href="https://www.sipsoberbar.com/" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -12,12 +12,12 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sober Bar — Gulfport's Zero-Proof Cocktail Bar & Coffee House" />
-  <meta property="og:description" content="Now open on Beach Boulevard. Craft zero-proof cocktails, NOLA-inspired food, NA beer & kombucha, and specialty coffee — from 7 am till late." />
+  <meta property="og:description" content="Gulfport's non-alcoholic cocktail bar &amp; coffee house near St. Pete. Zero-proof cocktails and mocktails, NOLA-inspired food, NA beer &amp; kombucha, and specialty coffee — from 7 am till late." />
   <meta property="og:url" content="https://www.sipsoberbar.com/" />
   <meta property="og:image" content="https://www.sipsoberbar.com/images/cocktail-trio.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sober Bar — Gulfport's Zero-Proof Cocktail Bar & Coffee House" />
-  <meta name="twitter:description" content="Now open on Beach Boulevard. Craft zero-proof cocktails, NOLA food, coffee, and NA drinks." />
+  <meta name="twitter:description" content="Gulfport's non-alcoholic cocktail bar &amp; coffee house near St. Pete — zero-proof cocktails, mocktails, NOLA food, and specialty coffee." />
   <meta name="twitter:image" content="https://www.sipsoberbar.com/images/cocktail-trio.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -640,12 +640,23 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BarOrPub",
+    "@type": ["BarOrPub", "Restaurant", "CafeOrCoffeeShop"],
+    "@id": "https://www.sipsoberbar.com/#business",
     "name": "Sober Bar",
-    "description": "Gulfport's zero-proof cocktail bar and coffee house. Craft NA cocktails, New Orleans–inspired food, NA beer & kombucha, and specialty coffee.",
+    "alternateName": "Sober Bar Gulfport",
+    "description": "Gulfport's non-alcoholic cocktail bar and coffee house near St. Petersburg, Florida. Craft zero-proof cocktails and mocktails, New Orleans–inspired food, NA beer & kombucha, and specialty coffee. Nothing on the menu contains alcohol.",
+    "slogan": "Full ritual, zero proof.",
     "url": "https://www.sipsoberbar.com",
-    "image": "https://www.sipsoberbar.com/images/cocktail-trio.jpg",
+    "image": [
+      "https://www.sipsoberbar.com/images/cocktail-trio.jpg",
+      "https://www.sipsoberbar.com/images/bar.jpg",
+      "https://www.sipsoberbar.com/images/storefront.jpg"
+    ],
     "logo": "https://www.sipsoberbar.com/images/logo-sunburst.png",
+    "email": "Sean@sipsoberbar.com",
+    "priceRange": "$$",
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Credit Card",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "3062 Beach Blvd S",
@@ -654,14 +665,96 @@
       "postalCode": "33707",
       "addressCountry": "US"
     },
-    "sameAs": ["https://instagram.com/sipsoberbar"],
-    "email": "Sean@sipsoberbar.com",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 27.7391,
+      "longitude": -82.7077
+    },
+    "hasMap": "https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707",
+    "areaServed": [
+      { "@type": "City", "name": "Gulfport, FL" },
+      { "@type": "City", "name": "St. Petersburg, FL" },
+      { "@type": "City", "name": "South Pasadena, FL" },
+      { "@type": "City", "name": "St. Pete Beach, FL" }
+    ],
+    "sameAs": [
+      "https://instagram.com/sipsoberbar",
+      "https://www.yelp.com/biz/sober-bar-gulfport-2"
+    ],
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "07:00", "closes": "22:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "07:00", "closes": "01:00" }
     ],
-    "servesCuisine": ["New Orleans","American","Coffee"],
-    "priceRange": "$$"
+    "servesCuisine": ["Non-Alcoholic Cocktails", "Mocktails", "New Orleans", "American", "Coffee"],
+    "keywords": "non-alcoholic bar, zero-proof cocktails, mocktail bar, sober bar, alcohol-free bar, NA cocktails, dry bar, coffee house, Gulfport, St. Petersburg",
+    "knowsAbout": ["Non-alcoholic cocktails", "Zero-proof spirits", "Mocktails", "Specialty coffee", "Sober-curious lifestyle"],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Serves alcohol", "value": false },
+      { "@type": "LocationFeatureSpecification", "name": "Family friendly", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Outdoor seating", "value": true }
+    ],
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Sober Bar Menu",
+      "hasMenuSection": [
+        { "@type": "MenuSection", "name": "Zero-Proof Cocktails", "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Call Me an Ube" },
+          { "@type": "MenuItem", "name": "Hot Mami" },
+          { "@type": "MenuItem", "name": "Jinn & Juniper" },
+          { "@type": "MenuItem", "name": "Red Widow" },
+          { "@type": "MenuItem", "name": "Bee's Bouquet" },
+          { "@type": "MenuItem", "name": "Moonlit Meringue" },
+          { "@type": "MenuItem", "name": "Espresso Martini" }
+        ]},
+        { "@type": "MenuSection", "name": "Beer & Kombucha", "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Run Wild NA IPA" },
+          { "@type": "MenuItem", "name": "Guinness 0.0" },
+          { "@type": "MenuItem", "name": "Heineken 0.0" },
+          { "@type": "MenuItem", "name": "Beech Kombucha" }
+        ]},
+        { "@type": "MenuSection", "name": "Coffee & Espresso", "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Cortado" },
+          { "@type": "MenuItem", "name": "Cappuccino" },
+          { "@type": "MenuItem", "name": "Latte" },
+          { "@type": "MenuItem", "name": "Kyoto Cold Brew" }
+        ]},
+        { "@type": "MenuSection", "name": "Kitchen", "hasMenuItem": [
+          { "@type": "MenuItem", "name": "The Muffuletta" },
+          { "@type": "MenuItem", "name": "Breakfast Sandwiches" },
+          { "@type": "MenuItem", "name": "Flatbreads" },
+          { "@type": "MenuItem", "name": "Salads" }
+        ]}
+      ]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is everything at Sober Bar really alcohol-free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — 100%. Every cocktail is built on non-alcoholic (NA) spirits with fresh ingredients, and every beer and kombucha we pour is non-alcoholic. Full experience, zero proof." }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Sober Bar located?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sober Bar is at 3062 Beach Blvd S in Gulfport, Florida, 33707 — on Beach Boulevard in downtown Gulfport, just minutes from St. Petersburg and St. Pete Beach." }
+      },
+      {
+        "@type": "Question",
+        "name": "What are Sober Bar's hours?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Open daily. Sunday through Thursday 7 am to 10 pm, Friday and Saturday 7 am to 1 am. Coffee and breakfast start at 7 am; the full menu runs open to close." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I work or study at Sober Bar during the day?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Mornings and afternoons are coffee-house energy — fast WiFi, good seats, and great espresso. The room shifts to bar energy as the sun goes down." }
+      }
+    ]
   }
   </script>
 </body>
