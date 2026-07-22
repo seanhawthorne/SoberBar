@@ -261,30 +261,6 @@
     }
     .brunch-notes span { position: relative; }
     .brunch-notes span + span::before { content: '◆'; position: absolute; left: -18px; color: var(--gold-dim); font-size: 0.48rem; }
-    .brunch-slots {
-      display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px; max-width: 760px; margin: 40px auto 0;
-    }
-    .slot-card {
-      display: grid; gap: 5px; place-items: center; min-height: 92px;
-      border: 1px solid var(--gold-dim); background: rgba(7, 6, 5, 0.62);
-      color: var(--gold-bright); text-decoration: none;
-      transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
-    }
-    .slot-card:hover { border-color: var(--gold); background: rgba(212,175,106,0.09); transform: translateY(-2px); }
-    .slot-card strong {
-      font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.45rem;
-      color: var(--cream); font-weight: 500; line-height: 1;
-    }
-    .slot-card span {
-      color: var(--muted-2); font-size: 0.64rem; letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-    .reservation-status {
-      max-width: 760px; margin: 22px auto 0; color: var(--muted-2);
-      font-size: 0.82rem; letter-spacing: 0.08em; text-align: center;
-    }
-
     /* ------- reviews ------- */
     .rating-summary { text-align: center; margin: -30px auto 44px; color: var(--muted); }
     .rating-summary strong { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--cream); font-weight: 500; }
@@ -375,7 +351,6 @@
       .reviews-grid { grid-template-columns: 1fr; max-width: 560px; }
       .duo { grid-template-columns: 1fr; max-width: 460px; }
       .visit-grid { grid-template-columns: 1fr; }
-      .brunch-slots { grid-template-columns: 1fr; max-width: 360px; }
       section { padding: 80px 0; }
       .join-form { flex-direction: column; }
     }
@@ -550,26 +525,9 @@
         <div class="brunch-notes" aria-label="Event highlights">
           <span>Live music</span>
           <span>Sunday-only menu</span>
-          <span>One-hour seatings</span>
+          <span>Free RSVP</span>
         </div>
-        <div class="brunch-slots" aria-label="Jazz Brunch reservation times">
-          <a class="slot-card js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Jazz Brunch" data-time="10:00">
-            <strong>10 AM</strong><span>10-11</span>
-          </a>
-          <a class="slot-card js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Jazz Brunch" data-time="11:00">
-            <strong>11 AM</strong><span>11-12</span>
-          </a>
-          <a class="slot-card js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Jazz Brunch" data-time="12:00">
-            <strong>Noon</strong><span>12-1</span>
-          </a>
-          <a class="slot-card js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Jazz Brunch" data-time="13:00">
-            <strong>1 PM</strong><span>1-2</span>
-          </a>
-          <a class="slot-card js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Jazz Brunch" data-time="14:00">
-            <strong>2 PM</strong><span>2-3</span>
-          </a>
-        </div>
-        <p class="reservation-status">Reservations open in SeatOn.</p>
+        <a class="btn btn-solid" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" rel="noopener noreferrer" target="_blank">Reserve Your Spot</a>
       </div>
     </div>
   </section>
@@ -609,7 +567,7 @@
         </div>
       </div>
       <div class="visit-actions reveal">
-        <a class="btn btn-solid js-seaton-reservation" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener" data-experience="Dining">Book a Table</a>
+        <a class="btn btn-solid" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener">Book a Table</a>
         <a class="btn btn-line" href="#visit">Get Directions</a>
       </div>
     </div>
@@ -815,24 +773,6 @@
       window.location.href = `mailto:Sean@sipsoberbar.com?subject=${subject}&body=${body}`;
       joinForm.style.display = 'none';
       document.getElementById('joinOk').style.display = 'block';
-    });
-  </script>
-
-  <script src="/reservation-config.js"></script>
-  <script>
-    const SEATON_BOOKING_URL = window.SOBER_BAR_SEATON_BOOKING_URL || '';
-
-    function buildSeatOnUrl(link) {
-      const url = SEATON_BOOKING_URL.trim();
-      if (!url || url === 'PASTE_SEATON_BOOKING_URL_HERE') return link.href;
-      return url;
-    }
-
-    document.querySelectorAll('.js-seaton-reservation').forEach((link) => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        window.open(buildSeatOnUrl(link), '_blank', 'noopener');
-      });
     });
   </script>
 
