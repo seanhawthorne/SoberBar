@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sober Bar — Growth Metrics Dashboard</title>
+  <meta name="description" content="Internal growth metrics dashboard for Sober Bar in Gulfport, FL. Track reviews, social growth, Passport signups, event leads, and traffic." />
+  <meta name="theme-color" content="#070605" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --black: #070605;
+      --ink: #0e0c09;
+      --panel: #12100c;
+      --panel-2: #1a1712;
+      --gold: #d4af6a;
+      --gold-bright: #eed9a4;
+      --gold-dim: rgba(212, 175, 106, 0.35);
+      --gold-faint: rgba(212, 175, 106, 0.14);
+      --cream: #f4ead8;
+      --muted: rgba(244, 234, 216, 0.66);
+      --muted-2: rgba(244, 234, 216, 0.42);
+      --success: #7fb069;
+      --danger: #d9534f;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'Josefin Sans', 'Futura', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    ::selection { background: var(--gold); color: #000; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+    .shell { width: min(100% - 40px, 1200px); margin: 0 auto; }
+
+    header {
+      border-bottom: 1px solid var(--gold-faint);
+      padding: 28px 0 22px;
+      background: linear-gradient(180deg, rgba(212,175,106,0.06), transparent);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .brand { display: flex; align-items: center; gap: 18px; }
+    .brand-mark {
+      width: 44px; height: 44px; border: 1px solid var(--gold); transform: rotate(45deg);
+      display: grid; place-items: center; flex-shrink: 0;
+    }
+    .brand-mark span { transform: rotate(-45deg); font-family: 'Poiret One', sans-serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.04em; }
+    .brand h1 {
+      font-family: 'Poiret One', sans-serif; font-size: clamp(1.4rem, 3vw, 2rem);
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream); font-weight: 400;
+    }
+    .brand p { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.08em; margin-top: 2px; }
+    .header-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .btn {
+      appearance: none; border: 1px solid var(--gold-dim); background: transparent;
+      color: var(--gold); font-family: 'Josefin Sans', sans-serif; font-size: 0.72rem;
+      letter-spacing: 0.18em; text-transform: uppercase; padding: 11px 18px; cursor: pointer;
+      transition: all 0.25s ease; font-weight: 400; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn:hover { background: var(--gold); color: #000; border-color: var(--gold); }
+    .btn.primary { background: var(--gold); color: #000; border-color: var(--gold); }
+    .btn.primary:hover { background: var(--gold-bright); border-color: var(--gold-bright); }
+    .btn.small { padding: 8px 13px; font-size: 0.66rem; }
+    .btn.danger { border-color: rgba(217,83,79,0.5); color: var(--danger); }
+    .btn.danger:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+
+    main { padding: 34px 0 60px; }
+
+    .section-title {
+      font-family: 'Poiret One', sans-serif; font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px; font-weight: 400;
+    }
+    .section-title em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; letter-spacing: 0.02em; color: var(--gold-bright); font-size: 1.1em; }
+
+    .summary-bar {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px;
+      margin-bottom: 34px;
+    }
+    .summary-pill {
+      background: var(--panel); border: 1px solid var(--gold-faint); padding: 16px 18px; border-radius: 2px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .summary-pill label { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted-2); }
+    .summary-pill strong { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--gold); font-weight: 600; }
+
+    .kpi-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px;
+      margin-bottom: 38px;
+    }
+    .kpi-card {
+      background: var(--panel); border: 1px solid var(--gold-faint); border-radius: 3px;
+      padding: 22px; display: flex; flex-direction: column; gap: 14px;
+      transition: border-color 0.25s ease, transform 0.2s ease;
+    }
+    .kpi-card:hover { border-color: var(--gold-dim); transform: translateY(-2px); }
+    .kpi-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+    .kpi-title { font-family: 'Poiret One', sans-serif; font-size: 1.05rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); }
+    .kpi-icon { font-size: 1.3rem; opacity: 0.8; }
+    .kpi-value {
+      font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; line-height: 1; color: var(--gold); font-weight: 600;
+    }
+    .kpi-value small { font-size: 1rem; color: var(--muted); margin-left: 6px; font-weight: 400; }
+    .kpi-meta { font-size: 0.78rem; color: var(--muted); }
+    .kpi-meta strong { color: var(--cream); }
+    .progress-wrap { margin-top: 4px; }
+    .progress-bar {
+      height: 7px; background: var(--ink); border-radius: 4px; overflow: hidden; border: 1px solid var(--gold-faint);
+    }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); border-radius: 4px; transition: width 0.6s ease; min-width: 2px; }
+    .progress-label { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--muted-2); margin-top: 6px; letter-spacing: 0.06em; }
+
+    .panel {
+      background: var(--panel); border: 1px solid var(--gold-faint); border-radius: 3px; padding: 26px; margin-bottom: 24px;
+    }
+    .panel-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
+    .panel-sub { font-size: 0.82rem; color: var(--muted); max-width: 720px; }
+
+    .chart-wrap { position: relative; height: 340px; }
+
+    .form-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;
+    }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .field input, .field select {
+      background: var(--ink); border: 1px solid var(--gold-faint); color: var(--cream);
+      padding: 11px 12px; font-family: inherit; font-size: 0.92rem; border-radius: 2px;
+    }
+    .field input:focus, .field select:focus { outline: none; border-color: var(--gold); }
+    .field .hint { font-size: 0.7rem; color: var(--muted-2); }
+
+    .edit-actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+
+    .hidden { display: none !important; }
+
+    .date-note { font-size: 0.78rem; color: var(--muted-2); margin-top: 8px; }
+
+    footer {
+      border-top: 1px solid var(--gold-faint); padding: 24px 0 40px; color: var(--muted-2); font-size: 0.74rem; letter-spacing: 0.06em;
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .header-inner { flex-direction: column; align-items: flex-start; }
+      .kpi-grid { grid-template-columns: 1fr; }
+      .chart-wrap { height: 260px; }
+      .form-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span>SB</span></div>
+        <div>
+          <h1>Growth Metrics</h1>
+          <p>Sober Bar · Gulfport, FL · 90-Day Tracking Dashboard</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn small" id="editToggle">Edit Metrics</button>
+        <button class="btn small" id="exportBtn">Export JSON</button>
+        <label class="btn small" for="importFile" style="cursor:pointer;">Import JSON</label>
+        <input type="file" id="importFile" accept="application/json" class="hidden" />
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="summary-bar" id="summaryBar"></div>
+
+    <section>
+      <h2 class="section-title">Key Performance <em>Indicators</em></h2>
+      <div class="kpi-grid" id="kpiGrid"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div>
+          <h2 class="section-title" style="margin-bottom:4px;">Growth <em>Trend</em></h2>
+          <p class="panel-sub">Historical values across all tracked metrics. Update the dashboard regularly to build a useful trend line.</p>
+        </div>
+        <select id="chartMetric" class="btn small" style="padding-right:24px;"></select>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="trendChart"></canvas>
+      </div>
+      <p class="date-note" id="lastUpdated">Last updated: —</p>
+    </section>
+
+    <section class="panel hidden" id="editPanel">
+      <div class="panel-head">
+        <div>
+          <h2 class="section-title" style="margin-bottom:4px;">Update <em>Metrics</em></h2>
+          <p class="panel-sub">Edit current values and 30/60/90-day targets. Values are saved locally in your browser (localStorage). Use Export/Import to back up or share the dataset.</p>
+        </div>
+      </div>
+      <div class="form-grid" id="editForm"></div>
+      <div class="edit-actions">
+        <button class="btn primary" id="saveBtn">Save Changes</button>
+        <button class="btn" id="addSnapshotBtn">+ Add Snapshot</button>
+        <button class="btn danger" id="resetBtn">Reset to Defaults</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      Internal dashboard for Sober Bar. Data is stored locally in the browser unless exported. <a href="https://www.sipsoberbar.com/" target="_blank" rel="noopener">sipsoberbar.com</a>
+    </div>
+  </footer>
+
+  <script>
+    // ---------------------------------------------------------------------------
+    // Default configuration
+    // ---------------------------------------------------------------------------
+    const DEFAULT_TARGETS = {
+      google_reviews: { 30: 10, 60: 30, 90: 50 },
+      gbp_actions:    { 30: 20, 60: 40, 90: 60 },
+      instagram:      { 30: 200, 60: 600, 90: 1000 },
+      tiktok:         { 30: 500, 60: 1500, 90: 3000 },
+      email_list:     { 30: 50, 60: 150, 90: 300 },
+      passport:       { 30: 50, 60: 150, 90: 300 },
+      event_leads:    { 30: 5, 60: 15, 90: 30 },
+      organic_traffic:{ 30: 30, 60: 70, 90: 120 },
+      directory_refs: { 30: 5, 60: 15, 90: 30 }
+    };
+
+    const METADATA = {
+      google_reviews: { label: 'Google Reviews', icon: '⭐', unit: '', format: 'int', targetWindow: 90, baseline: 0, percentMetric: false },
+      gbp_actions:    { label: 'GBP Actions', icon: '📍', unit: '', format: 'int', targetWindow: 90, baseline: 0, percentMetric: false },
+      instagram:      { label: 'Instagram Followers', icon: '📸', unit: '', format: 'int', targetWindow: 90, baseline: 0, percentMetric: false },
+      tiktok:         { label: 'TikTok Followers', icon: '🎵', unit: '', format: 'int', targetWindow: 90, baseline: 0, percentMetric: false },
+      email_list:     { label: 'Email List Size', icon: '✉️', unit: '', format: 'int', targetWindow: 90, baseline: 0, percentMetric: false },
+      passport:       { label: 'Passport Signups', icon: '🛂', unit: '', format: 'int', targetWindow: 90, baseline: 0, percentMetric: false },
+      event_leads:    { label: 'Private Event Leads', icon: '🎉', unit: '', format: 'int', targetWindow: 90, baseline: 0, percentMetric: false },
+      organic_traffic:{ label: 'Organic Website Traffic', icon: '🌐', unit: '', format: 'int', targetWindow: 90, baseline: 0, percentMetric: false },
+      directory_refs: { label: 'Directory Referrals', icon: '📂', unit: '', format: 'int', targetWindow: 90, baseline: 0, percentMetric: false }
+    };
+
+    const STORAGE_KEY = 'soberbar_growth_dashboard_v1';
+
+    function makeDefaultState() {
+      return {
+        updatedAt: new Date().toISOString(),
+        current: {
+          google_reviews: 0,
+          gbp_actions: 0,
+          instagram: 0,
+          tiktok: 0,
+          email_list: 0,
+          passport: 0,
+          event_leads: 0,
+          organic_traffic: 0,
+          directory_refs: 0
+        },
+        targets: JSON.parse(JSON.stringify(DEFAULT_TARGETS)),
+        snapshots: []
+      };
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return makeDefaultState();
+        const parsed = JSON.parse(raw);
+        // merge any missing keys
+        const def = makeDefaultState();
+        return {
+          ...def,
+          ...parsed,
+          current: { ...def.current, ...parsed.current },
+          targets: { ...def.targets, ...(parsed.targets || {}) },
+          snapshots: Array.isArray(parsed.snapshots) ? parsed.snapshots : []
+        };
+      } catch (e) {
+        console.error('Failed to load state', e);
+        return makeDefaultState();
+      }
+    }
+
+    function saveState(state) {
+      state.updatedAt = new Date().toISOString();
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    let state = loadState();
+
+    // ---------------------------------------------------------------------------
+    // Formatting helpers
+    // ---------------------------------------------------------------------------
+    function fmtInt(n) {
+      const v = Number(n) || 0;
+      return v.toLocaleString();
+    }
+
+    function pct(current, target, baseline = 0) {
+      if (target === 0) return 0;
+      // for growth-from-baseline targets, progress = current - baseline / target
+      const progress = Math.max(0, (Number(current) - baseline));
+      return Math.min(100, Math.round((progress / target) * 100));
+    }
+
+    // ---------------------------------------------------------------------------
+    // Render
+    // ---------------------------------------------------------------------------
+    function renderSummary() {
+      const container = document.getElementById('summaryBar');
+      const totalKpis = Object.keys(METADATA).length;
+      const target90 = Object.keys(METADATA).reduce((acc, key) => acc + (state.targets[key]?.90 || 0), 0);
+      const currentTotal = Object.values(state.current).reduce((a, b) => a + (Number(b) || 0), 0);
+      const snapshots = state.snapshots.length;
+      const last = state.updatedAt ? new Date(state.updatedAt).toLocaleDateString() : '—';
+
+      container.innerHTML = `
+        <div class="summary-pill"><label>Metrics Tracked</label><strong>${totalKpis}</strong></div>
+        <div class="summary-pill"><label>90-Day Target Points</label><strong>${fmtInt(target90)}</strong></div>
+        <div class="summary-pill"><label>Current Total</label><strong>${fmtInt(currentTotal)}</strong></div>
+        <div class="summary-pill"><label>Snapshots</label><strong>${fmtInt(snapshots)}</strong></div>
+        <div class="summary-pill"><label>Last Updated</label><strong>${last}</strong></div>
+      `;
+    }
+
+    function renderKPIs() {
+      const grid = document.getElementById('kpiGrid');
+      grid.innerHTML = '';
+
+      Object.keys(METADATA).forEach(key => {
+        const meta = METADATA[key];
+        const current = Number(state.current[key]) || 0;
+        const target = Number(state.targets[key]?.90) || 0;
+        const baseline = Number(meta.baseline) || 0;
+        const progress = pct(current, target, baseline);
+        const needed = Math.max(0, target - (current - baseline));
+
+        const card = document.createElement('div');
+        card.className = 'kpi-card';
+        card.innerHTML = `
+          <div class="kpi-header">
+            <div class="kpi-title">${meta.label}</div>
+            <div class="kpi-icon" aria-hidden="true">${meta.icon}</div>
+          </div>
+          <div class="kpi-value">${fmtInt(current)}${meta.unit ? `<small>${meta.unit}</small>` : ''}</div>
+          <div class="kpi-meta">
+            90-day target: <strong>${fmtInt(target)}${meta.unit}</strong> ·
+            ${progress >= 100 ? 'Target reached 🎉' : `${fmtInt(needed)}${meta.unit} to go`}
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-bar"><div class="progress-fill" style="width:${progress}%"></div></div>
+            <div class="progress-label"><span>${progress}% complete</span><span>30d: ${fmtInt(state.targets[key]?.30 || 0)} · 60d: ${fmtInt(state.targets[key]?.60 || 0)}</span></div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function renderEditForm() {
+      const form = document.getElementById('editForm');
+      form.innerHTML = '';
+
+      Object.keys(METADATA).forEach(key => {
+        const meta = METADATA[key];
+        const cur = state.current[key] ?? 0;
+        const t = state.targets[key] || DEFAULT_TARGETS[key];
+
+        const block = document.createElement('div');
+        block.style.cssText = 'background:var(--ink); border:1px solid var(--gold-faint); padding:16px; border-radius:3px; display:flex; flex-direction:column; gap:10px;';
+        block.innerHTML = `
+          <div style="font-family:'Poiret One',sans-serif; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold);">${meta.icon} ${meta.label}</div>
+          <div class="field">
+            <label>Current value</label>
+            <input type="number" data-current="${key}" value="${cur}" min="0" step="1">
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;">
+            <div class="field"><label>30d target</label><input type="number" data-target-30="${key}" value="${t[30]}" min="0" step="1"></div>
+            <div class="field"><label>60d target</label><input type="number" data-target-60="${key}" value="${t[60]}" min="0" step="1"></div>
+            <div class="field"><label>90d target</label><input type="number" data-target-90="${key}" value="${t[90]}" min="0" step="1"></div>
+          </div>
+        `;
+        form.appendChild(block);
+      });
+    }
+
+    // ---------------------------------------------------------------------------
+    // Chart
+    // ---------------------------------------------------------------------------
+    let trendChart = null;
+
+    function buildChart(metricKey) {
+      const ctx = document.getElementById('trendChart').getContext('2d');
+      const meta = METADATA[metricKey];
+
+      // Combine snapshots + current
+      const points = (state.snapshots || []).map(s => ({ date: s.date, value: Number(s[metricKey]) || 0 }));
+      const currentDate = state.updatedAt ? state.updatedAt.split('T')[0] : new Date().toISOString().split('T')[0];
+      points.push({ date: currentDate, value: Number(state.current[metricKey]) || 0 });
+
+      // Sort and dedupe by date (keep latest value for a date)
+      const map = new Map();
+      points.forEach(p => map.set(p.date, p.value));
+      const sorted = Array.from(map.entries()).sort((a, b) => a[0].localeCompare(b[0]));
+      const labels = sorted.map(([d]) => d);
+      const data = sorted.map(([, v]) => v);
+
+      const target90 = Number(state.targets[metricKey]?.90) || 0;
+      const targetLine = labels.map(() => target90);
+
+      if (trendChart) trendChart.destroy();
+
+      Chart.defaults.color = 'rgba(244,234,216,0.55)';
+      Chart.defaults.font.family = "'Josefin Sans', 'Futura', sans-serif";
+
+      trendChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            {
+              label: meta.label,
+              data,
+              borderColor: '#d4af6a',
+              backgroundColor: 'rgba(212,175,106,0.12)',
+              borderWidth: 2,
+              pointBackgroundColor: '#070605',
+              pointBorderColor: '#d4af6a',
+              pointBorderWidth: 2,
+              pointRadius: 4,
+              pointHoverRadius: 6,
+              tension: 0.25,
+              fill: true
+            },
+            {
+              label: '90-day target',
+              data: targetLine,
+              borderColor: 'rgba(244,234,216,0.35)',
+              borderWidth: 1,
+              borderDash: [6, 6],
+              pointRadius: 0,
+              fill: false
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { labels: { color: 'rgba(244,234,216,0.8)', font: { size: 12 } } },
+            tooltip: {
+              backgroundColor: 'rgba(7,6,5,0.95)',
+              titleColor: '#d4af6a',
+              bodyColor: '#f4ead8',
+              borderColor: 'rgba(212,175,106,0.3)',
+              borderWidth: 1
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(212,175,106,0.08)' },
+              ticks: { color: 'rgba(244,234,216,0.5)' }
+            },
+            y: {
+              grid: { color: 'rgba(212,175,106,0.08)' },
+              ticks: { color: 'rgba(244,234,216,0.5)' },
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+
+    function renderChartSelect() {
+      const sel = document.getElementById('chartMetric');
+      sel.innerHTML = '';
+      Object.keys(METADATA).forEach(key => {
+        const opt = document.createElement('option');
+        opt.value = key;
+        opt.textContent = METADATA[key].label;
+        sel.appendChild(opt);
+      });
+      sel.value = 'google_reviews';
+    }
+
+    // ---------------------------------------------------------------------------
+    // Actions
+    // ---------------------------------------------------------------------------
+    function gatherFormValues() {
+      const newCurrent = {};
+      const newTargets = {};
+
+      Object.keys(METADATA).forEach(key => {
+        const curInput = document.querySelector(`input[data-current="${key}"]`);
+        newCurrent[key] = Number(curInput?.value) || 0;
+
+        newTargets[key] = {
+          30: Number(document.querySelector(`input[data-target-30="${key}"]`).value) || 0,
+          60: Number(document.querySelector(`input[data-target-60="${key}"]`).value) || 0,
+          90: Number(document.querySelector(`input[data-target-90="${key}"]`).value) || 0
+        };
+      });
+
+      return { current: newCurrent, targets: newTargets };
+    }
+
+    function saveFromForm() {
+      const { current, targets } = gatherFormValues();
+      // Snapshot old current before overwriting (only if changed)
+      const changed = Object.keys(METADATA).some(key => state.current[key] !== current[key]);
+      if (changed) {
+        const snap = { date: new Date().toISOString().split('T')[0], ...state.current };
+        state.snapshots.push(snap);
+      }
+      state.current = current;
+      state.targets = targets;
+      saveState(state);
+      refreshAll();
+    }
+
+    function addSnapshotNow() {
+      const snap = { date: new Date().toISOString().split('T')[0], ...state.current };
+      state.snapshots.push(snap);
+      saveState(state);
+      refreshAll();
+      alert('Snapshot saved for today with current values.');
+    }
+
+    function resetToDefaults() {
+      if (!confirm('Reset all metrics, targets, and snapshots to defaults? This cannot be undone.')) return;
+      state = makeDefaultState();
+      saveState(state);
+      refreshAll();
+    }
+
+    function exportJSON() {
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `soberbar-growth-${new Date().toISOString().split('T')[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importJSON(file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const imported = JSON.parse(reader.result);
+          // Validate rough shape
+          if (!imported.current || !imported.targets) throw new Error('Invalid file format');
+          state = { ...makeDefaultState(), ...imported, current: { ...makeDefaultState().current, ...imported.current }, targets: { ...makeDefaultState().targets, ...imported.targets } };
+          saveState(state);
+          refreshAll();
+          alert('Dashboard data imported successfully.');
+        } catch (e) {
+          alert('Import failed: ' + e.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function refreshAll() {
+      renderSummary();
+      renderKPIs();
+      renderEditForm();
+      const activeMetric = document.getElementById('chartMetric').value || 'google_reviews';
+      buildChart(activeMetric);
+      document.getElementById('lastUpdated').textContent = 'Last updated: ' + (state.updatedAt ? new Date(state.updatedAt).toLocaleString() : '—');
+    }
+
+    // ---------------------------------------------------------------------------
+    // Bindings
+    // ---------------------------------------------------------------------------
+    document.getElementById('editToggle').addEventListener('click', () => {
+      const panel = document.getElementById('editPanel');
+      panel.classList.toggle('hidden');
+      document.getElementById('editToggle').textContent = panel.classList.contains('hidden') ? 'Edit Metrics' : 'Close Editor';
+      if (!panel.classList.contains('hidden')) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    document.getElementById('saveBtn').addEventListener('click', saveFromForm);
+    document.getElementById('addSnapshotBtn').addEventListener('click', addSnapshotNow);
+    document.getElementById('resetBtn').addEventListener('click', resetToDefaults);
+    document.getElementById('exportBtn').addEventListener('click', exportJSON);
+    document.getElementById('importFile').addEventListener('change', e => {
+      if (e.target.files[0]) importJSON(e.target.files[0]);
+      e.target.value = '';
+    });
+    document.getElementById('chartMetric').addEventListener('change', e => buildChart(e.target.value));
+
+    // Init
+    renderChartSelect();
+    refreshAll();
+  </script>
+</body>
+</html>
