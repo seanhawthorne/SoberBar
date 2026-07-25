@@ -1,0 +1,137 @@
+- generic [active] [ref=e1]:
+  - navigation "Primary" [ref=e2]:
+    - generic [ref=e3]:
+      - link "Sober Bar home" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Sober Bar" [ref=e5]
+      - list [ref=e6]:
+        - listitem [ref=e7]:
+          - link "Cocktails" [ref=e8] [cursor=pointer]:
+            - /url: /#bar
+        - listitem [ref=e9]:
+          - link "Menu" [ref=e10] [cursor=pointer]:
+            - /url: /#menu
+        - listitem [ref=e11]:
+          - link "Day & Night" [ref=e12] [cursor=pointer]:
+            - /url: /#rhythm
+        - listitem [ref=e13]:
+          - link "Reservations" [ref=e14] [cursor=pointer]:
+            - /url: /reservations.html
+        - listitem [ref=e15]:
+          - link "Visit" [ref=e16] [cursor=pointer]:
+            - /url: /#visit
+      - link "Get Directions" [ref=e17] [cursor=pointer]:
+        - /url: /#visit
+  - banner [ref=e18]:
+    - heading "Book a Table at Sober Bar Gulfport" [level=1] [ref=e19]
+    - generic [ref=e20]: 📅 Powered by SeatOn
+    - heading [level=2] [ref=e21]:
+      - text: Book a
+      - emphasis [ref=e22]: table.
+    - paragraph [ref=e23]: Reserve your spot at Gulfport's zero-proof cocktail bar. 50 seats — 30 indoor, 20 outdoor. Date night, group hangs, or a table for one.
+    - generic [ref=e24]:
+      - link "Reserve Now" [ref=e25] [cursor=pointer]:
+        - /url: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
+      - link "← Back to Sober Bar" [ref=e26] [cursor=pointer]:
+        - /url: /
+  - generic [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]: SeatOn Reservations
+      - heading [level=2] [ref=e31]:
+        - text: Choose your
+        - emphasis [ref=e32]: reservation.
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]: 🏠
+        - generic [ref=e38]: Indoor
+        - paragraph [ref=e39]: "30"
+        - paragraph [ref=e40]: seats available
+        - paragraph [ref=e41]: Bar + tables, moody lighting
+      - generic [ref=e42]:
+        - generic [ref=e43]: 🌿
+        - generic [ref=e44]: Outdoor
+        - paragraph [ref=e45]: "20"
+        - paragraph [ref=e46]: patio seats
+        - paragraph [ref=e47]: Beach Boulevard views
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]: Dining
+        - paragraph [ref=e51]: Book a standard table for cocktails, coffee, food, date night, or a group hang.
+        - link "Book a Table" [ref=e52] [cursor=pointer]:
+          - /url: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
+      - generic [ref=e53]:
+        - generic [ref=e54]: Jazz Brunch
+        - paragraph [ref=e55]: Sunday Jazz Brunch seatings are one hour each, from 10 AM through 2 PM.
+        - link "Choose a Time" [ref=e56] [cursor=pointer]:
+          - /url: "#jazz-brunch-slots"
+    - generic [ref=e57]:
+      - text: Jazz Brunch Slots
+      - generic "Jazz Brunch reservation times" [ref=e58]:
+        - link "10 AM 10-11" [ref=e59] [cursor=pointer]:
+          - /url: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
+          - strong [ref=e60]: 10 AM
+          - generic [ref=e61]: 10-11
+        - link "11 AM 11-12" [ref=e62] [cursor=pointer]:
+          - /url: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
+          - strong [ref=e63]: 11 AM
+          - generic [ref=e64]: 11-12
+        - link "Noon 12-1" [ref=e65] [cursor=pointer]:
+          - /url: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
+          - strong [ref=e66]: Noon
+          - generic [ref=e67]: 12-1
+        - link "1 PM 1-2" [ref=e68] [cursor=pointer]:
+          - /url: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
+          - strong [ref=e69]: 1 PM
+          - generic [ref=e70]: 1-2
+        - link "2 PM 2-3" [ref=e71] [cursor=pointer]:
+          - /url: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
+          - strong [ref=e72]: 2 PM
+          - generic [ref=e73]: 2-3
+      - paragraph [ref=e74]: Reservations open in SeatOn.
+  - generic [ref=e76]:
+    - generic [ref=e77]:
+      - generic [ref=e78]: How It Works
+      - heading [level=2] [ref=e79]:
+        - text: Three easy steps to
+        - emphasis [ref=e80]: your table.
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - generic [ref=e85]: "1"
+        - heading "Pick Your Time" [level=3] [ref=e86]
+        - paragraph [ref=e87]: Choose any day during open hours. We're open 7 AM – 10 PM Sun–Thu, till 1 AM Fri–Sat.
+      - generic [ref=e88]:
+        - generic [ref=e89]: "2"
+        - heading "Choose Inside or Out" [level=3] [ref=e90]
+        - paragraph [ref=e91]: 30 indoor seats in a moody candlelit room, or 20 outdoor seats on the Beach Boulevard patio.
+      - generic [ref=e92]:
+        - generic [ref=e93]: "3"
+        - heading "Show Up & Enjoy" [level=3] [ref=e94]
+        - paragraph [ref=e95]: Your table is ready. Order craft zero-proof cocktails, NOLA-inspired food, and settle in.
+  - generic [ref=e97]:
+    - generic [ref=e98]:
+      - generic [ref=e99]: Questions
+      - heading [level=2] [ref=e100]:
+        - text: Reservation
+        - emphasis [ref=e101]: FAQs.
+    - generic [ref=e104]:
+      - group [ref=e105]:
+        - generic "Do I need a reservation? –" [ref=e106] [cursor=pointer]
+        - paragraph [ref=e107]: Not required — walk-ins are always welcome. But reservations are recommended for Friday and Saturday evenings, and for groups of 4+.
+      - group [ref=e108]:
+        - generic "How many people can I reserve for? +" [ref=e109] [cursor=pointer]
+      - group [ref=e110]:
+        - generic "Can I choose indoor or outdoor? +" [ref=e111] [cursor=pointer]
+      - group [ref=e112]:
+        - generic "What's your cancellation policy? +" [ref=e113] [cursor=pointer]
+      - group [ref=e114]:
+        - generic "Do you host private events? +" [ref=e115] [cursor=pointer]
+  - contentinfo [ref=e116]:
+    - generic [ref=e117]:
+      - img "Sober Bar" [ref=e118]
+      - paragraph [ref=e121]: © 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707
+      - paragraph [ref=e122]:
+        - link "Privacy" [ref=e123] [cursor=pointer]:
+          - /url: /privacy.html
+        - text: ·
+        - link "Terms" [ref=e124] [cursor=pointer]:
+          - /url: /terms.html
