@@ -721,18 +721,18 @@ html { scroll-padding-top: 84px; }
     @media (min-width: 901px) { header.hero .hero-actions { gap: 14px; } header.hero .btn { padding: 17px 30px; } }
     @media (prefers-reduced-motion: reduce) { .hero-status.is-open::before, .marquee-track { animation: none !important; } html { scroll-behavior: auto; } }
     @media (max-width: 900px) {
-      header.hero { display: block; text-align: center; padding: 0 0 26px; min-height: auto; }
-      .hero-photo { position: absolute; inset: 0; width: 100%; max-height: none; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
-      .hero-photo::after { inset: 0; border: 0; border-radius: 0; background: linear-gradient(180deg, rgba(7,6,5,.35) 0%, rgba(7,6,5,.15) 18%, rgba(7,6,5,.78) 42%, rgba(7,6,5,.97) 72%); }
-      .hero-photo img { object-position: center center; }
-      .hero-copy { padding: 210px 20px 0; }
+      header.hero { display: block; text-align: center; padding: 76px 0 18px; min-height: auto; }
+      .hero-photo { position: relative; inset: auto; width: 100%; max-height: 168px; aspect-ratio: 16 / 9; border-radius: 0; box-shadow: none; }
+      .hero-photo::after { inset: auto; border: 0; border-radius: 0; background: none; }
+      .hero-photo img { object-position: center 42%; }
+      .hero-copy { padding: 12px 20px 0; }
       .hero-logo { display: none; }
-      .hero-status { justify-content: center; letter-spacing: .16em; font-size: .68rem; margin-bottom: 12px; }
-      .hero-title { margin: 0 auto 12px; font-size: clamp(1.85rem, 8vw, 2.4rem); }
-      .hero-sub { margin: 0 auto 20px; font-size: 1.12rem; color: rgba(244,234,216,.82); }
-      header.hero .hero-actions { margin: 0 auto; }
-      .hero-proof { margin-top: 16px; font-size: .7rem; letter-spacing: .06em; }
-      header.hero .hero-hours { justify-content: center; margin-top: 8px; gap: 4px 16px; }
+      .hero-status { justify-content: center; letter-spacing: .12em; font-size: .64rem; margin-bottom: 8px; }
+      .hero-title { margin: 0 auto 8px; font-size: clamp(1.7rem, 7.2vw, 2.15rem); }
+      .hero-sub { margin: 0 auto 12px; font-size: 1.05rem; color: rgba(244,234,216,.82); }
+      header.hero .hero-actions { margin: 0 auto; gap: 8px; }
+      .hero-proof { margin-top: 10px; font-size: .68rem; letter-spacing: .04em; }
+      header.hero .hero-hours { justify-content: center; margin-top: 6px; gap: 4px 12px; }
     }
   </style>
 </head>
