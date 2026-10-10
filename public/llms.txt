@@ -2,7 +2,7 @@
 
 > Alcohol-free cocktails, coffee, breakfast, and lunch in downtown Gulfport, Florida. Walk-ins welcome. Open daily at 7am.
 
-Sober Bar & Kitchen (also called Sober Bar) serves craft zero-proof cocktails, specialty coffee, and New Orleans-inspired food. No spirits, wine or beer with alcohol. NA beers are labeled 0.0% or <0.5% ABV.
+Sober Bar & Kitchen (also called Sober Bar) serves craft alcohol-free cocktails, specialty coffee, and New Orleans-inspired food. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.
 
 ## Visit
 
@@ -28,10 +28,10 @@ Sober Bar & Kitchen (also called Sober Bar) serves craft zero-proof cocktails, s
 
 ## Useful answers
 
-- No spirits, wine or beer with alcohol. NA beers are labeled 0.0% or <0.5% ABV.
+- We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.
 - The venue has approximately 50 seats: about 30 indoors and 20 on the patio. Walk-ins are welcome; reservations are available.
 - It is in Gulfport, close to St. Petersburg and St. Pete Beach.
-- TODO(owner): Sunday jazz brunch time and band are not confirmed. Do not state a start time.
+- Live jazz every Sunday brunch. TODO(owner): the start time is not confirmed. Do not state a start time or a band name.
 
 ## Canonical pages
 

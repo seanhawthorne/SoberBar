@@ -67,6 +67,8 @@
   html { scroll-padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)); }
 }
 
+html { scroll-padding-top: 84px; }
+
 @media print {
   .mobile-actions { display: none !important; }
   body { padding-bottom: 0 !important; }

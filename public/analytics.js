@@ -46,10 +46,4 @@
       sendEvent('private_events_viewed', { link_url: href, link_text: label });
     }
   });
-
-  document.addEventListener('submit', function (event) {
-    if (event.target && event.target.id === 'joinForm') {
-      sendEvent('email_signup_started', { form_id: 'joinForm' });
-    }
-  });
 })();

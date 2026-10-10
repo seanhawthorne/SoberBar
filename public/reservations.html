@@ -131,12 +131,15 @@
     .mobile-menu {
       display: none; position: fixed; inset: 0; z-index: 55;
       background: rgba(7, 6, 5, 0.97); backdrop-filter: blur(16px);
-      flex-direction: column; align-items: center; justify-content: center; gap: 34px;
+      flex-direction: column; align-items: center; justify-content: flex-start; gap: 16px;
+      overflow-y: auto; -webkit-overflow-scrolling: touch;
+      padding: 96px 20px calc(96px + env(safe-area-inset-bottom, 0px));
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
       text-decoration: none; color: var(--cream); font-family: 'Poiret One', sans-serif;
-      font-size: 1.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      font-size: 1.25rem; letter-spacing: 0.12em; text-transform: uppercase;
+      flex: none;
     }
     .mobile-menu a:hover { color: var(--gold-bright); }
 
@@ -449,7 +452,7 @@
     "name": "Sober Bar & Kitchen",
     "alternateName": "Sober Bar",
     "telephone": "+1-813-586-1660",
-    "description": "Coffee, breakfast, lunch, and alcohol-free cocktails in Gulfport. Reservations powered by SeatOn. No spirits, wine or beer with alcohol. NA beers are labeled 0.0% or less than 0.5% ABV.",
+    "description": "Coffee, breakfast, lunch, and alcohol-free cocktails in Gulfport. Reservations powered by SeatOn. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.",
     "url": "https://www.sipsoberbar.com",
     "image": "https://www.sipsoberbar.com/images/cocktail-trio.jpg",
     "logo": "https://www.sipsoberbar.com/images/logo-sunburst.png",

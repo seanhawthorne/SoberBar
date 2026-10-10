@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sober Bar — Coffee, Breakfast, Lunch &amp; Alcohol-Free Cocktails in Gulfport</title>
-  <meta name="description" content="Coffee, breakfast, lunch, and alcohol-free cocktails in Gulfport, FL. Open daily at 7am, walk-ins welcome. No spirits, wine, or beer with alcohol. NA beers are labeled 0.0% or &lt;0.5% ABV." />
+  <title>Sober Bar &amp; Kitchen — Coffee, Breakfast, Lunch &amp; Alcohol-Free Cocktails in Gulfport</title>
+  <meta name="description" content="Coffee, breakfast, lunch, and alcohol-free cocktails in Gulfport, FL. Open daily at 7am, walk-ins welcome. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV." />
   <meta name="theme-color" content="#070605" />
   <link rel="canonical" href="https://www.sipsoberbar.com/" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -12,13 +12,13 @@
   <script src="/analytics.js" defer></script>
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sober Bar — Coffee, Breakfast, Lunch & Alcohol-Free Cocktails in Gulfport" />
-  <meta property="og:description" content="Open daily at 7am in Gulfport. Coffee, breakfast, lunch, and alcohol-free cocktails. Walk-ins welcome. NA beers are labeled 0.0% or &lt;0.5% ABV." />
+  <meta property="og:title" content="Sober Bar &amp; Kitchen — Coffee, Breakfast, Lunch &amp; Alcohol-Free Cocktails in Gulfport" />
+  <meta property="og:description" content="Open daily at 7am in Gulfport. Coffee, breakfast, lunch, and alcohol-free cocktails. Walk-ins welcome. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV." />
   <meta property="og:url" content="https://www.sipsoberbar.com/" />
   <meta property="og:image" content="https://www.sipsoberbar.com/images/cocktail-trio.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sober Bar — Coffee, Breakfast, Lunch & Alcohol-Free Cocktails in Gulfport" />
-  <meta name="twitter:description" content="Open daily at 7am in Gulfport. Coffee, breakfast, lunch, and alcohol-free cocktails. Walk-ins welcome." />
+  <meta name="twitter:title" content="Sober Bar &amp; Kitchen — Coffee, Breakfast, Lunch &amp; Alcohol-Free Cocktails in Gulfport" />
+  <meta name="twitter:description" content="Open daily at 7am in Gulfport. Coffee, breakfast, lunch, and alcohol-free cocktails. Walk-ins welcome. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV." />
   <meta name="twitter:image" content="https://www.sipsoberbar.com/images/cocktail-trio.jpg" />
 
   <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
@@ -108,17 +108,19 @@
     .nav-inner {
       width: min(100% - 48px, 1180px); margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
+      gap: 28px;
       height: 76px;
     }
+    .nav-brand { flex: none; }
     .nav-brand img { height: 52px; width: auto; }
-    .nav-links { display: flex; gap: 26px; align-items: center; list-style: none; }
+    .nav-links { display: flex; gap: 16px; align-items: center; list-style: none; flex: 1; justify-content: center; min-width: 0; }
     .nav-phone {
       text-decoration: none; font-size: 0.72rem; letter-spacing: 0.08em;
       color: var(--gold-bright); font-weight: 400; white-space: nowrap; margin-right: 8px;
     }
     .nav-phone:hover { color: var(--cream); }
     .nav-links a {
-      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.28em;
+      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--muted);
       transition: color 0.25s ease; font-weight: 400;
     }
@@ -134,12 +136,15 @@
     .mobile-menu {
       display: none; position: fixed; inset: 0; z-index: 55;
       background: rgba(7, 6, 5, 0.97); backdrop-filter: blur(16px);
-      flex-direction: column; align-items: center; justify-content: center; gap: 34px;
+      flex-direction: column; align-items: center; justify-content: flex-start; gap: 16px;
+      overflow-y: auto; -webkit-overflow-scrolling: touch;
+      padding: 96px 20px calc(96px + env(safe-area-inset-bottom, 0px));
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
       text-decoration: none; color: var(--cream); font-family: 'Poiret One', sans-serif;
-      font-size: 1.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      font-size: 1.25rem; letter-spacing: 0.12em; text-transform: uppercase;
+      flex: none;
     }
     .mobile-menu a:hover { color: var(--gold-bright); }
 
@@ -342,6 +347,11 @@
 
     /* ------- join ------- */
     .join { text-align: center; }
+    .join-note {
+      max-width: 36em; margin: 28px auto 22px;
+      color: var(--muted); font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 1.25rem;
+    }
     .join-form { display: flex; gap: 12px; max-width: 480px; margin: 40px auto 0; }
     .join-form input {
       flex: 1; background: var(--ink); border: 1px solid var(--gold-faint);
@@ -395,9 +405,31 @@
       .hero-logo { width: min(200px, 52vw); margin-bottom: 12px; }
       .hero-title { font-size: clamp(1.7rem, 7vw, 2.2rem); margin-bottom: 10px; }
       .hero-sub { font-size: 1.15rem; margin-bottom: 8px; }
-      .hero-locale { margin-bottom: 18px; }
-      .hero-hours { margin-top: 16px; }
-      .hero .btn { padding: 14px 18px; }
+      .hero-locale {
+        margin-bottom: 16px;
+        letter-spacing: 0.06em;
+        font-size: 0.68rem;
+        white-space: nowrap;
+      }
+      .hero-hours {
+        margin-top: 12px;
+        gap: 4px 12px;
+        letter-spacing: 0.06em;
+        font-size: 0.68rem;
+      }
+      header.hero .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+        max-width: 340px;
+      }
+      .hero .btn {
+        padding: 13px 8px;
+        letter-spacing: 0.08em;
+        text-align: center;
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -442,11 +474,12 @@
       <source srcset="/images/logo-sunburst.webp" type="image/webp">
       <img class="hero-logo" src="/images/logo-sunburst.png" width="1280" height="801" alt="Sober Bar" fetchpriority="high" />
     </picture>
-    <h1 class="hero-title">Coffee, NOLA kitchen &amp; alcohol-free cocktails in Gulfport</h1>
-    <p class="hero-sub">Open daily at 7am · Breakfast, lunch, Sunday jazz brunch &amp; zero-proof nights · Walk-ins welcome</p>
-    <p class="hero-locale">3062 Beach Blvd S &nbsp;◆&nbsp; Gulfport, Florida</p>
+    <h1 class="hero-title">Coffee, New Orleans-inspired kitchen &amp; alcohol-free cocktails in Gulfport</h1>
+    <p class="hero-sub">Open daily at 7am · Breakfast, lunch, Sunday jazz brunch &amp; evening cocktails · Walk-ins welcome</p>
+    <p class="hero-locale">3062 Beach Blvd S &nbsp;·&nbsp; Gulfport</p>
     <div class="hero-actions">
       <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a class="btn btn-line" href="#menu">View menu</a>
       <a class="btn btn-line" href="tel:+18135861660">Call</a>
       <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
     </div>
@@ -475,7 +508,7 @@
         <div class="copy reveal">
           <span class="eyebrow">The Cocktails</span>
           <h2 class="title">Full ritual,<br><em>zero proof.</em></h2>
-          <p>Every drink is built like it belongs on a top-shelf menu — layered, garnished, and worth slowing down for. NA spirits, fresh ingredients, real craft. No spirits, wine or beer with alcohol. Our NA beers are labeled 0.0% or &lt;0.5% ABV.</p>
+          <p>Every drink is built like it belongs on a top-shelf menu — layered, garnished, and worth slowing down for. NA spirits, fresh ingredients, real craft. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.</p>
           <p>Each signature pour is the work of one of our own bartenders, built on house syrups and fresh-pressed juice. Ask about adding functional botanicals to any beverage.</p>
         </div>
       </div>
@@ -508,7 +541,7 @@
         <div class="menu-col reveal">
           <h3>Beer &amp; Kombucha</h3>
           <p class="served">Full menu from open to close</p>
-          <div class="mi"><div class="mi-name">Run Wild IPA</div><div class="mi-desc">Crisp, hoppy, citrus-forward NA IPA · 16 oz draft</div></div>
+          <div class="mi"><div class="mi-name">Run Wild IPA</div><div class="mi-desc">Crisp, hoppy, citrus-forward NA IPA · 16 oz draft · &lt;0.5% ABV</div></div>
           <div class="mi"><div class="mi-name">Guinness 0.0</div><div class="mi-desc">Smooth, roasted coffee and chocolate notes</div></div>
           <div class="mi"><div class="mi-name">Heineken 0.0</div><div class="mi-desc">Crisp, clean, and lightly malty</div></div>
           <div class="mi"><div class="mi-name">Beech Kombucha</div><div class="mi-desc">Bright, sparkling fermented tea on draft</div></div>
@@ -556,7 +589,7 @@
           <div class="mi"><div class="mi-name">Spicy Mardi Gras Salad</div><div class="mi-desc">Greens, hot capicola, Genoa salami, egg, blue cheese</div></div>
         </div>
       </div>
-      <p class="menu-note">Full menu from open to close · No spirits, wine, or beer with alcohol · NA beers labeled 0.0% or &lt;0.5% ABV<br>Gluten-free options available · Please tell us about allergies before ordering<br>Follow <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">@sipsoberbar</a> for seasonal pours</p>
+      <p class="menu-note">Full menu from open to close · We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.<br>Gluten-free options available · Please tell us about allergies before ordering<br>Follow <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">@sipsoberbar</a> for seasonal pours</p>
     </div>
   </section>
 
@@ -592,7 +625,7 @@
         <span class="eyebrow">Sunday at Sober Bar</span>
         <h2 class="title">Jazz, brunch<br><em>&amp; a slower Sunday.</em></h2>
         <div class="deco-rule" style="margin-bottom: 28px;"><span class="gem"></span></div>
-        <p class="brunch-copy">Live gypsy jazz, blues, and bossa nova from Western Gypsies, paired with a New Orleans-inspired brunch menu made just for Sundays.</p>
+        <p class="brunch-copy">Live jazz every Sunday brunch, with a New Orleans-inspired brunch menu made just for Sundays.</p>
         <div class="brunch-notes" aria-label="Event highlights">
           <span>Live music</span>
           <span>Sunday-only menu</span>
@@ -610,8 +643,8 @@
         <h2 class="title">Good company.<br><em>A different kind of gathering.</em></h2>
         <p class="brunch-copy">Team outings, birthdays, book clubs, and private celebrations in the heart of Gulfport. Start with your date and guest count; we’ll help you explore the details.</p>
         <div class="hero-actions">
-          <a class="btn btn-solid" data-cta="private-events" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-          <a class="btn btn-line" href="/private-events.html">Explore Private Events</a>
+          <a class="btn btn-solid" href="/private-events.html#inquire">Plan your gathering</a>
+          <a class="btn btn-line" data-cta="private-events" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
         </div>
       </div>
     </div>
@@ -696,7 +729,7 @@
       </div>
       <div class="visit-grid reveal" style="margin-bottom: 70px;">
         <div class="visit-cell"><p><strong>The Gabber</strong><br>Local Gulfport coverage and neighborhood discovery.</p></div>
-        <div class="visit-cell"><p><strong>I Love the Burg</strong><br>St. Pete food, drink, and things-to-do audience.</p></div>
+        <div class="visit-cell"><p><strong>I Love the Burg</strong><br>St. Pete stories about food, drinks, and places to go.</p></div>
         <div class="visit-cell"><p><strong>St. Pete Rising</strong><br>Opening story for Gulfport's zero-proof cocktail lounge and caf&eacute;.</p></div>
         <div class="visit-cell"><p><strong>FOX 13</strong><br>Regional TV feature on the Sober Bar concept.</p></div>
       </div>
@@ -773,8 +806,8 @@
       </div>
       <div class="faq-wrap reveal">
         <details open>
-          <summary>Is everything really alcohol-free?</summary>
-          <p>No spirits, wine or beer with alcohol. Cocktails are built on NA spirits with fresh ingredients. Our NA beers are labeled 0.0% or &lt;0.5% ABV.</p>
+          <summary>Can drinks contain trace alcohol?</summary>
+          <p>We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.</p>
         </details>
         <details>
           <summary>What are your hours?</summary>
@@ -790,7 +823,7 @@
         </details>
         <details>
           <summary>Do you host private events or buyouts?</summary>
-          <p>Yes. Sober Bar hosts baby showers, book clubs, office happy hours, recovery milestones, sober-curious meetups, and private celebrations — coffee, zero-proof cocktails, NA beer, kombucha, and the full menu from open to close. No spirits, wine or beer with alcohol. Our NA beers are labeled 0.0% or &lt;0.5% ABV.</p>
+          <p>Yes. Sober Bar hosts baby showers, book clubs, office happy hours, recovery milestones, sober-curious meetups, and private celebrations — coffee, alcohol-free cocktails, NA beer, kombucha, and the full menu from open to close. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.</p>
         </details>
         <details>
           <summary>Do you take walk-ins?</summary>
@@ -806,12 +839,9 @@
       <div class="reveal">
         <span class="eyebrow">Stay in the loop</span>
         <h2 class="title" style="margin-top:18px;">Keep up with <em>what's pouring.</em></h2>
-        <!-- TODO(owner): Replace this mailto signup with the provider Sean chooses (Mailchimp, Klaviyo, or Formspree). Do not add the "free beignet" incentive until beignets are confirmed on the menu. -->
-        <form class="join-form" id="joinForm">
-          <input type="email" id="joinEmail" placeholder="your@email.com" required aria-label="Email address" />
-          <button class="btn btn-solid" type="submit">Subscribe</button>
-        </form>
-        <p class="join-ok" id="joinOk">We opened an email draft for you — just hit send. See you at the bar.</p>
+        <!-- TODO(owner): Replace this mailto with the provider Sean chooses (Mailchimp, Klaviyo, or Formspree). Do not add the "free beignet" incentive until beignets are confirmed on the menu. -->
+        <p class="join-note">There’s no list on this page yet. Email us and we’ll add you when we set one up.</p>
+        <a class="btn btn-solid" href="mailto:Sean@sipsoberbar.com?subject=Sober%20Bar%20mailing%20list&amp;body=Hi%20Sean%2C%0A%0APlease%20add%20me%20to%20the%20Sober%20Bar%20list.%0A%0AThanks!">Email us to join the list</a>
         <div class="join-social">
           <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Instagram</a>
           <a href="mailto:Sean@sipsoberbar.com">Email</a>
@@ -883,18 +913,6 @@
       document.body.style.overflow = '';
     }));
 
-    // No backend on GitHub Pages — deliver signups as a prefilled email.
-    const joinForm = document.getElementById('joinForm');
-    joinForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('joinEmail').value.trim();
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
-      const subject = encodeURIComponent('Sober Bar mailing list signup');
-      const body = encodeURIComponent(`Hi Sean,\n\nPlease add me to the Sober Bar list.\n\nEmail: ${email}\n\nThanks!`);
-      window.location.href = `mailto:Sean@sipsoberbar.com?subject=${subject}&body=${body}`;
-      joinForm.style.display = 'none';
-      document.getElementById('joinOk').style.display = 'block';
-    });
   </script>
 
   <script type="application/ld+json">
@@ -904,7 +922,7 @@
     "@id": "https://www.sipsoberbar.com/#business",
     "name": "Sober Bar & Kitchen",
     "alternateName": "Sober Bar",
-    "description": "Coffee, breakfast, lunch, and alcohol-free cocktails in Gulfport, Florida. Open daily at 7am. Walk-ins welcome. No spirits, wine or beer with alcohol. NA beers are labeled 0.0% or less than 0.5% ABV.",
+    "description": "Coffee, breakfast, lunch, and alcohol-free cocktails in Gulfport, Florida. Open daily at 7am. Walk-ins welcome. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.",
     "telephone": "+1-813-586-1660",
     "slogan": "Full ritual, zero proof.",
     "url": "https://www.sipsoberbar.com",
@@ -1010,8 +1028,8 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Is everything at Sober Bar really alcohol-free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No spirits, wine or beer with alcohol. Cocktails are built on non-alcoholic spirits with fresh ingredients. NA beers are labeled 0.0% or less than 0.5% ABV." }
+        "name": "Can drinks contain trace alcohol?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV." }
       },
       {
         "@type": "Question",
