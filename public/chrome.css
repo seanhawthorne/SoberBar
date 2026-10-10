@@ -233,6 +233,16 @@ body.has-site-nav .container { padding-top: 28px; }
 body.has-site-nav a.btn:not(.line):not(.btn-line) {
   color: #060504;
   font-weight: 600;
+  white-space: nowrap;
+}
+body.has-site-nav a.btn.line,
+body.has-site-nav a.btn-line { white-space: nowrap; }
+.inquiry-address { margin: 4px 0 22px; }
+body.has-site-nav figure img {
+  width: 100%;
+  height: min(62vh, 560px);
+  object-fit: cover;
+  object-position: center 30%;
 }
 @media (max-width: 1100px) {
   .site-links, .site-phone, .site-cta { display: none; }

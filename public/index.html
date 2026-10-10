@@ -800,7 +800,6 @@ html { scroll-padding-top: 84px; }
     <a href="#visit">Visit</a>
     <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
     <a href="tel:+18135861660">(813) 586-1660</a>
-    <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Instagram</a>
   </div>
 
   <main id="main">
@@ -1020,7 +1019,10 @@ html { scroll-padding-top: 84px; }
           "id": "sunday-jazz-brunch",
           "name": "Sunday Jazz Brunch",
           "when": "Every Sunday",
-          "detail": "Live jazz every Sunday brunch. The start time is not published yet.",
+          "detail": "Call ",
+          "phoneHref": "tel:+18135861660",
+          "phoneLabel": "(813) 586-1660",
+          "phoneAfter": " for this Sunday's jazz time.",
           "href": "/sunday-jazz-brunch.html",
           "cta": "Reserve a table",
           "ctaHref": "https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home"
@@ -1034,7 +1036,7 @@ html { scroll-padding-top: 84px; }
             <a class="upcoming-name" href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>
           </div>
           <a class="btn btn-solid" data-cta="upcoming" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-          <p class="upcoming-detail">Live jazz every Sunday brunch. The start time is not published yet.</p>
+          <p class="upcoming-detail">Call <a href="tel:+18135861660">(813) 586-1660</a> for this Sunday's jazz time.</p>
         </li>
       </ul>
       <script>
@@ -1068,7 +1070,16 @@ html { scroll-padding-top: 84px; }
             ctaWrap.appendChild(cta);
             var detail = document.createElement('p');
             detail.className = 'upcoming-detail';
-            detail.textContent = event.detail;
+            if (event.phoneHref) {
+              detail.appendChild(document.createTextNode(event.detail));
+              var tel = document.createElement('a');
+              tel.href = event.phoneHref;
+              tel.textContent = event.phoneLabel;
+              detail.appendChild(tel);
+              if (event.phoneAfter) detail.appendChild(document.createTextNode(event.phoneAfter));
+            } else {
+              detail.textContent = event.detail;
+            }
             item.appendChild(copy);
             item.appendChild(ctaWrap);
             item.appendChild(detail);
@@ -1098,24 +1109,6 @@ html { scroll-padding-top: 84px; }
         <div class="deco-rule"><span class="gem"></span></div>
       </div>
       <p class="rating-summary reveal"><a href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><strong>4.9★</strong> <span class="rating-stars" aria-label="4.9 out of 5 stars">★★★★★</span><br>128 Google reviews</a></p>
-      <div class="reviews-grid">
-        <article class="review-card reveal">
-          <div class="rating-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>Absolutely adore Sober Bar! What a great third space. Whether you want to go in and socialize or camp out and get some work done on your computer, you will not be disappointed.</blockquote>
-          <p class="reviewer">Erin Nester · Google Review</p>
-        </article>
-        <article class="review-card reveal">
-          <div class="rating-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>Absolutely love this place. Food options, vegan gluten-free, for carnivores as well great and fabulous drinks.</blockquote>
-          <p class="reviewer">Dawn Brackett · Google Review</p>
-        </article>
-        <article class="review-card reveal">
-          <div class="rating-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>From its New Orleans-inspired exterior to its classy, upscale interior, Sober Bar is an exceptional non-alcoholic establishment.</blockquote>
-          <p class="reviewer">Kathleen Hess · Google Review</p>
-        </article>
-      </div>
-      <p class="menu-note reveal">We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.</p>
       <div class="reviews-action reveal">
         <a class="btn btn-line" href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener">Read All Google Reviews</a>
       </div>
@@ -1158,7 +1151,7 @@ html { scroll-padding-top: 84px; }
         <span class="eyebrow">Sunday at Sober Bar</span>
         <h2 class="title">Jazz, brunch<br><em>&amp; a slower Sunday.</em></h2>
         <div class="deco-rule" style="margin-bottom: 28px;"><span class="gem"></span></div>
-        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>. Live jazz every Sunday brunch. Call (813) 586-1660 for this Sunday’s jazz time.</p>
+        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>. Live jazz every Sunday brunch. Call <a href="tel:+18135861660">(813) 586-1660</a> for this Sunday's jazz time.</p>
         <div class="brunch-notes" aria-label="Event highlights">
           <span>Live music</span>
           <span>Open at 7am</span>
@@ -1254,7 +1247,7 @@ html { scroll-padding-top: 84px; }
         </details>
         <details>
           <summary>When is jazz brunch?</summary>
-          <p>Live jazz every Sunday brunch at Sober Bar &amp; Kitchen in Gulfport, FL. Call (813) 586-1660 for this Sunday’s jazz time.</p>
+          <p>Live jazz every Sunday brunch at Sober Bar &amp; Kitchen in Gulfport, FL. Call <a href="tel:+18135861660">(813) 586-1660</a> for this Sunday's jazz time.</p>
         </details>
         <details>
           <summary>Do you take walk-ins?</summary>

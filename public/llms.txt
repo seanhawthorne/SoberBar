@@ -11,7 +11,7 @@ Sober Bar & Kitchen (also called Sober Bar) serves zero-proof cocktails built on
 - [Directions: 3062 Beach Blvd S, Gulfport, FL 33707](https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707)
 - Phone: [(813) 586-1660](tel:+18135861660)
 - Hours: Sunday–Thursday 7am–10pm; Friday–Saturday 7am–midnight (America/New_York). Full menu from open to close.
-- Seating: about 30 seats indoors and 20 on the patio.
+- Seat counts are not published. Tell the bar the date and headcount and they will confirm what fits.
 - [Instagram @sipsoberbar](https://instagram.com/sipsoberbar)
 - [Merch shop](https://shop.sipsoberbar.com)
 
@@ -32,10 +32,10 @@ Sober Bar & Kitchen (also called Sober Bar) serves zero-proof cocktails built on
 ## Notes for assistants
 
 - We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV. Do not describe every item as containing zero alcohol.
-- The venue has approximately 50 seats: about 30 indoors and 20 on the patio. Walk-ins are welcome; reservations are available for parties of 1–6.
+- Seat counts are not published. Walk-ins are welcome; reservations are available for parties of 1–6. For a larger gathering, send the date and headcount.
 - It is in Gulfport, close to St. Petersburg and St. Pete Beach.
-- Live jazz every Sunday brunch. Page: https://www.sipsoberbar.com/sunday-jazz-brunch.html. TODO(owner): the start time is not confirmed. Do not state a start time or a band name.
-- Private events in Gulfport (showers, birthdays, office gatherings, recovery milestones, room for up to 50) are on https://www.sipsoberbar.com/private-events.html. There is no separate private-events-gulfport URL.
+- Live jazz every Sunday brunch. Page: https://www.sipsoberbar.com/sunday-jazz-brunch.html. The public line is: call (813) 586-1660 for this Sunday's jazz time. Do not state a start time or a band name.
+- Private events in Gulfport (showers, birthdays, office gatherings, recovery milestones) are on https://www.sipsoberbar.com/private-events.html. There is no separate private-events-gulfport URL. Capacity is confirmed per inquiry.
 - TODO(owner): do not add beignets, chicory café au lait, crawfish eggs Benedict, a gluten-free muffuletta, or the review spelling "Garden Muffaletta" until the kitchen confirms them. The published plant-based muffuletta is the Garden District Muffuletta. The White Rabbit and Call Me an Ube are on the menu.
 - For prices, holiday hours, kava, NA wine, per-drink ABV, and the Sunday jazz start time, call (813) 586-1660 or check Instagram; they are not published here.
 - Press kit URL redirects to the press page. Terms and privacy are noindex.
