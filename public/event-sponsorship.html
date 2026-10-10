@@ -11,22 +11,24 @@
   <link rel="stylesheet" href="/fonts.css">
   <link rel="stylesheet" href="/chrome.css">
   <style>
-    body { font-family: 'Inter', system-ui, sans-serif; margin: 0; color: #111; background: #fff; line-height: 1.6; }
-    .container { max-width: 760px; margin: 0 auto; padding: 40px 20px; }
-    h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 0.3em; }
-    h2 { font-size: 1.4rem; font-weight: 700; margin-top: 2em; border-bottom: 2px solid #111; padding-bottom: 6px; }
-    h3 { font-size: 1.1rem; font-weight: 700; margin-top: 1.5em; }
-    p { margin: 0.9em 0; }
+    body { font-family: 'Josefin Sans', sans-serif; font-weight: 300; margin: 0; color: #f4ead8; background: #070605; line-height: 1.7; }
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 20px 88px; }
+    h1, h2, h3, p, li { text-wrap: pretty; }
+    h1 { font-family: 'Poiret One', sans-serif; font-weight: 400; letter-spacing: .06em; text-transform: uppercase; color: #d4af6a; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.15; margin-bottom: 0.4em; }
+    h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.7rem; color: #eed9a4; margin-top: 1.6em; border: 0; padding: 0; }
+    h3 { font-family: 'Josefin Sans', sans-serif; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: #d4af6a; margin-top: 1.4em; }
+    p { margin: 0.9em 0; color: rgba(244,234,216,.78); }
     ul { padding-left: 1.2em; }
-    li { margin: 0.5em 0; }
-    .intro { font-size: 1.1rem; color: #333; }
-    .package { background: #f6f6f6; padding: 20px; border-radius: 8px; margin: 1em 0; }
+    li { margin: 0.5em 0; color: rgba(244,234,216,.78); }
+    a { color: #eed9a4; }
+    .intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem; color: #f4ead8; }
+    .package { background: #12100c; padding: 20px; border: 1px solid rgba(212,175,106,.22); margin: 1em 0; }
     .package h3 { margin-top: 0; }
-    .cta-box { background: #111; color: #fff; padding: 24px; border-radius: 8px; margin: 2em 0; }
-    .cta-box a { color: #fff; font-weight: 700; }
-    .btn { display: inline-block; background: #fff; color: #111; padding: 10px 18px; text-decoration: none; border-radius: 6px; font-weight: 700; margin-top: 0.5em; }
-    footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid #ddd; color: #555; font-size: 0.9rem; }
-    @media (max-width: 500px) { h1 { font-size: 1.8rem; } }
+    .cta-box { background: #12100c; color: #f4ead8; padding: 24px; border: 1px solid rgba(212,175,106,.28); margin: 2em 0; }
+    .cta-box a { color: #eed9a4; }
+    .btn { display: inline-block; background: #d4af6a; color: #070605; padding: 12px 18px; text-decoration: none; letter-spacing: .12em; text-transform: uppercase; font-size: .75rem; margin-top: 0.5em; }
+    footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid rgba(212,175,106,.25); color: rgba(244,234,216,.6); font-size: 0.9rem; }
+    footer a { color: #d4af6a; text-decoration: none; }
   </style>
 </head>
 <body>
@@ -103,7 +105,6 @@
   </footer>
   </div>
   <nav class="mobile-actions" aria-label="Call, reserve, or directions">
-    <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
     <a href="tel:+18135861660">Call</a>
     <a class="is-primary" data-cta="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve</a>
     <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>

@@ -665,6 +665,7 @@ html { scroll-padding-top: 84px; }
     header.hero .btn-line:hover { background: #d4af6a; border-color: #d4af6a; color: #060504; }
     .hero-status { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
     .hero-status.is-open::before { content:''; width:7px; height:7px; border-radius:50%; background:#7fd88f; box-shadow:0 0 0 0 rgba(127,216,143,.5); animation: pulse 2.2s infinite; flex: none; }
+    .hero-title, .hero-sub, .title, h2, p { text-wrap: pretty; }
     .hero-title { margin: 0 0 16px; max-width: 13em; font-size: clamp(2.4rem, 4.4vw, 4.15rem); line-height: 0.98; letter-spacing: -0.018em; }
     .hero-title em { font-style: italic; color: var(--gold-bright); }
     .hero-sub { margin: 0 0 28px; max-width: 26em; font-size: clamp(1.2rem, 2vw, 1.55rem); color: rgba(244,234,216,.88); }
@@ -725,6 +726,21 @@ html { scroll-padding-top: 84px; }
     .nw { white-space: nowrap; }
     .hero-call { display: none; }
     @media (min-width: 901px) { header.hero .hero-actions { gap: 14px; } header.hero .btn { padding: 17px 30px; } }
+    .hero-cta-row { display: contents; }
+    @media (min-width: 1024px) {
+      header.hero .hero-cta-row {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 10px;
+      }
+      header.hero .hero-cta-row .btn {
+        flex: none;
+        white-space: nowrap;
+        padding: 15px 20px;
+        letter-spacing: 0.14em;
+      }
+    }
     @media (prefers-reduced-motion: reduce) {
       .hero-status.is-open::before, .marquee-track, .hero-slide { animation: none !important; }
       .hero-slide-2, .hero-slide-3 { display: none; }
@@ -799,13 +815,15 @@ html { scroll-padding-top: 84px; }
       <h1 class="hero-title">Coffee, New Orleans-inspired kitchen &amp; <em><span class="nw">alcohol-free</span> cocktails</em> in Gulfport, FL</h1>
       <p class="hero-sub">Espresso at sunrise. Muffulettas at noon. Zero-proof cocktails under the chandeliers after dark.</p>
       <div class="hero-actions">
-        <a class="btn btn-solid" data-cta="hero" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+        <div class="hero-cta-row">
+          <a class="btn btn-solid" data-cta="hero" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+          <a class="btn btn-line" href="/menu.html">View menu</a>
+          <a class="btn btn-line hero-call" href="tel:+18135861660">Call</a>
+          <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+        </div>
         <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
-        <a class="btn btn-line" href="/menu.html">View menu</a>
-        <a class="btn btn-line hero-call" href="tel:+18135861660">Call</a>
-        <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
       </div>
-      <p class="hero-proof"><a href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener"><span aria-hidden="true">★★★★★</span> 4.9 on Google · 128+ reviews</a></p>
+      <p class="hero-proof"><a href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener"><span aria-hidden="true">★★★★★</span> 4.9 on Google · 128 reviews</a></p>
       <div class="hero-hours">
         <span><b>Sun – Thu</b> 7 am – 10 pm</span>
         <span><b>Fri – Sat</b> 7 am – Midnight</span>
