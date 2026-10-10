@@ -36,6 +36,9 @@
 .actions .party-link {
   flex: 1 1 100%;
   order: 5;
+  align-self: center;
+  height: auto;
+  min-height: 0;
   margin: 6px 0 0;
   margin-left: 0;
   text-align: center;
@@ -97,12 +100,12 @@
   }
   .mobile-actions a.is-primary:hover,
   .mobile-actions a.is-primary:focus-visible { background: #eed9a4; color: #060504; }
-  .mobile-actions a:not(.is-primary):hover,
-  .mobile-actions a:not(.is-primary):focus-visible {
+  .mobile-actions a:not(.is-primary):not(.party-link):hover,
+  .mobile-actions a:not(.is-primary):not(.party-link):focus-visible {
     color: #f4ead8;
     background: rgba(212, 175, 106, 0.08);
   }
-  .mobile-actions .party-link {
+  .mobile-actions a.party-link {
     grid-column: 1 / -1;
     height: 28px;
     min-height: 28px;
