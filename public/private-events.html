@@ -7,9 +7,10 @@
   <meta name="description" content="Host your next private party, corporate event, or alcohol-free happy hour at Sober Bar. Zero-proof cocktails, coffee, and New Orleans-inspired small plates in Gulfport, FL.">
   <link rel="canonical" href="https://www.sipsoberbar.com/private-events.html">
   <script src="/analytics.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/poiret-one-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/chrome.css">
   <style>
     :root { --black:#070605; --ink:#12100c; --gold:#d4af6a; --gold-bright:#eed9a4; --cream:#f4ead8; --muted:rgba(244,234,216,.66); }
     * { box-sizing:border-box; margin:0; padding:0; }
@@ -38,6 +39,7 @@
 </head>
 <body>
   <div class="shell">
+    <p style="text-align:right;font-size:.78rem;letter-spacing:.08em;margin-bottom:18px;"><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="header" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a></p>
     <span class="eyebrow">Private Events</span>
     <h1>Host Your Event at Sober Bar</h1>
     <p class="lead">Corporate happy hours, team off-sites, showers, rehearsal dinners, birthday parties, and alcohol-free weddings — built around real drinks and real atmosphere.</p>
@@ -47,7 +49,8 @@
     <div class="cta" style="margin:28px 0 40px">
       <p class="lead" style="margin-bottom:12px">Your next gathering starts here.</p>
       <p>Planning an October team outing, birthday, book club, or celebration? Tell us what you have in mind.</p>
-      <a class="btn" href="#inquire">Plan Your Gathering</a>
+      <a class="btn" data-cta="private-events" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a class="btn" href="#inquire" style="margin-left:10px;background:transparent;color:var(--gold);border:1px solid rgba(212,175,106,.45);">Plan Your Gathering</a>
       <p style="margin-top:16px;margin-bottom:0">Just need a table? <a href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Check table availability</a>.</p>
     </div>
     <h2>Ways to Gather</h2>
@@ -120,26 +123,23 @@
 
     <h2>What guests drink</h2>
 
-    <p>Our bar program uses non-alcoholic spirits, wines, beers, fresh juices, bitters, shrubs, and house syrups. Popular builds include the <strong>Call Me an Ube</strong>, <strong>Jinn & Juniper</strong>, and <strong>Satsuma-Basil Smash</strong>. We can design a custom cocktail for your event or brand.</p>
+    <p>Our bar program uses non-alcoholic spirits, wines, beers, fresh juices, bitters, shrubs, and house syrups. No spirits, wine or beer with alcohol. Our NA beers are labeled 0.0% or &lt;0.5% ABV. Popular builds include the <strong>Call Me an Ube</strong>, <strong>Jinn &amp; Juniper</strong>, and <strong>Satsuma-Basil Smash</strong>. We can design a custom cocktail for your event or brand.</p>
 
     <div class="cta" id="inquire">
       <h2 style="margin-top:0">Tell Us About Your Gathering</h2>
       <p>Include your preferred date and time, guest count, occasion, and food-and-drink budget. Let us know if you need indoor seating or are flexible on dates.</p>
-      <a class="btn" href="mailto:Sean@sipsoberbar.com?subject=Group%20Event%20Inquiry%20%7C%20Website&amp;body=Hi%20Sober%20Bar%2C%0A%0AI%27d%20like%20to%20plan%20a%20gathering.%0A%0APreferred%20date%20and%20time%3A%0AGuest%20count%3A%0AOccasion%3A%0AFood%20and%20drink%20budget%3A%0AIndoor%20seating%20needed%3A%0AFlexible%20dates%3A%0AContact%20name%20and%20phone%3A%0AHow%20I%20heard%20about%20you%3A%0A">Start an Email Inquiry</a>
-      <p style="margin-top:16px">Prefer to call? <a href="tel:+18135861660">813-586-1660</a><br>Email directly: <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
+      <a class="btn" data-cta="private-events-inquiry" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a class="btn" href="mailto:Sean@sipsoberbar.com?subject=Group%20Event%20Inquiry%20%7C%20Website&amp;body=Hi%20Sober%20Bar%2C%0A%0AI%27d%20like%20to%20plan%20a%20gathering.%0A%0APreferred%20date%20and%20time%3A%0AGuest%20count%3A%0AOccasion%3A%0AFood%20and%20drink%20budget%3A%0AIndoor%20seating%20needed%3A%0AFlexible%20dates%3A%0AContact%20name%20and%20phone%3A%0AHow%20I%20heard%20about%20you%3A%0A" style="margin-left:10px;background:transparent;color:var(--gold);border:1px solid rgba(212,175,106,.45);">Start an Email Inquiry</a>
+      <p style="margin-top:16px">Prefer to call? <a href="tel:+18135861660">(813) 586-1660</a><br>Email directly: <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
       <p class="price-note">The email button opens your email app; send the message to submit your inquiry. An inquiry does not reserve a date. Final pricing, menu, staffing, and availability are confirmed separately.</p>
     </div>
   </div>
 
   <footer>
-    <p>
-      <a href="/">Home</a>
-      <a href="/best-non-alcoholic-bars-florida.html">Florida NA Bars Guide</a>
-      <a href="/press-kit.html">Press Kit</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-    </p>
-    <p style="margin-top:12px;">&copy; 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
+    <p><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="footer" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> · <a href="/#menu">Menu</a> · <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
+    <p><a href="/things-to-do-in-gulfport.html">Things to Do</a> · <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> · <a href="/best-non-alcoholic-bars-florida.html">NA Bars in Florida</a> · <a href="/as-seen-in.html">As Seen In</a> · <a href="/event-sponsorship.html">Event Sponsorship</a> · <a href="/private-events.html">Private Events</a></p>
+    <p><a href="/">Home</a> · <a href="/reservations.html">Reservations</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+    <p>&copy; 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
   </footer>
 
   <script type="application/ld+json">
@@ -147,10 +147,15 @@
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Sober Bar Private Events & Corporate Wellness",
-    "provider": { "@type": "BarOrPub", "name": "Sober Bar", "url": "https://www.sipsoberbar.com" },
+    "provider": { "@type": "BarOrPub", "name": "Sober Bar & Kitchen", "alternateName": "Sober Bar", "telephone": "+1-813-586-1660", "url": "https://www.sipsoberbar.com" },
     "description": "Private events, corporate happy hours, mocktail classes, and mobile zero-proof bar catering in Gulfport, FL.",
     "areaServed": { "@type": "City", "name": "Gulfport", "containedInPlace": { "@type": "State", "name": "Florida" } }
   }
   </script>
+  <nav class="mobile-actions" aria-label="Call, reserve, or directions">
+    <a href="tel:+18135861660">Call</a>
+    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
+    <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+  </nav>
 </body>
 </html>

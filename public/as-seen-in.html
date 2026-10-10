@@ -7,9 +7,10 @@
   <title>As Seen In — Sober Bar | Gulfport, FL</title>
   <meta name="description" content="Sober Bar in Gulfport, FL has been featured by FOX 13 Tampa Bay, I Love the Burg, St. Pete Rising, and The Gabber.">
   <link rel="canonical" href="https://www.sipsoberbar.com/as-seen-in.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/poiret-one-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/chrome.css">
   <style>
     :root { --black:#070605; --ink:#12100c; --gold:#d4af6a; --gold-bright:#eed9a4; --cream:#f4ead8; --muted:rgba(244,234,216,.66); }
     * { box-sizing:border-box; margin:0; padding:0; }
@@ -35,6 +36,7 @@
 </head>
 <body>
   <div class="shell">
+    <p style="text-align:right;font-size:.78rem;letter-spacing:.08em;margin-bottom:18px;"><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="header" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a></p>
     <span class="eyebrow">Press & Media</span>
     <h1>As Seen In</h1>
     <p class="lead">Sober Bar is Gulfport's zero-proof cocktail bar and coffee house. Here's where the story has been told so far.</p>
@@ -71,24 +73,20 @@
     </div>
 
     <h2>For press & partners</h2>
-    <p>Looking for high-res photos, founder quotes, or a fact sheet? Visit our press kit or email Sean directly.</p>
+    <p>Looking for founder quotes or a fact sheet? Email Sean directly, or call the bar.</p>
 
     <div class="cta">
-      <a class="btn" href="/press-kit.html">View Press Kit</a>
+      <a class="btn" data-cta="as-seen-in" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
       <a class="btn" href="mailto:Sean@sipsoberbar.com?subject=Press%20Inquiry">Contact Sean</a>
+      <p style="margin-top:14px"><a href="tel:+18135861660">(813) 586-1660</a></p>
     </div>
   </div>
 
   <footer>
-    <p>
-      <a href="/">Home</a>
-      <a href="/best-non-alcoholic-bars-florida.html">Florida NA Bars Guide</a>
-      <a href="/private-events.html">Private Events</a>
-      <a href="/press-kit.html">Press Kit</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-    </p>
-    <p style="margin-top:12px;">&copy; 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
+    <p><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="footer" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> · <a href="/#menu">Menu</a> · <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
+    <p><a href="/things-to-do-in-gulfport.html">Things to Do</a> · <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> · <a href="/best-non-alcoholic-bars-florida.html">NA Bars in Florida</a> · <a href="/as-seen-in.html">As Seen In</a> · <a href="/event-sponsorship.html">Event Sponsorship</a> · <a href="/private-events.html">Private Events</a></p>
+    <p><a href="/">Home</a> · <a href="/reservations.html">Reservations</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+    <p>&copy; 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
   </footer>
 
   <script type="application/ld+json">
@@ -100,5 +98,10 @@
     "url": "https://www.sipsoberbar.com/as-seen-in.html"
   }
   </script>
+  <nav class="mobile-actions" aria-label="Call, reserve, or directions">
+    <a href="tel:+18135861660">Call</a>
+    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
+    <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+  </nav>
 </body>
 </html>

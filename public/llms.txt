@@ -1,30 +1,48 @@
-# Sober Bar
+# Sober Bar & Kitchen
 
-> A 100% alcohol-free cocktail bar and coffee house in downtown Gulfport, Florida.
+> Alcohol-free cocktails, coffee, breakfast, and lunch in downtown Gulfport, Florida. Walk-ins welcome. Open daily at 7am.
 
-Sober Bar serves craft zero-proof cocktails and mocktails, non-alcoholic beer and kombucha, specialty coffee, and New Orleans-inspired food. It is for sober, sober-curious, and simply alcohol-free guests who still want the ritual and atmosphere of a night out.
+Sober Bar & Kitchen (also called Sober Bar) serves craft zero-proof cocktails, specialty coffee, and New Orleans-inspired food. No spirits, wine or beer with alcohol. NA beers are labeled 0.0% or <0.5% ABV.
 
 ## Visit
 
+- Name: Sober Bar & Kitchen
 - Address: 3062 Beach Blvd S, Gulfport, FL 33707, United States
+- Phone: (813) 586-1660
+- Telephone: +1-813-586-1660
 - Website: https://www.sipsoberbar.com/
-- Reservations: https://www.sipsoberbar.com/reservations.html
+- Reservations: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
+- Reservations page: https://www.sipsoberbar.com/reservations.html
 - Directions: https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707
 - Instagram: https://instagram.com/sipsoberbar
 - Email: Sean@sipsoberbar.com
+- Merch: https://shop.sipsoberbar.com
 - Hours: Sunday–Thursday 7:00 am–10:00 pm; Friday–Saturday 7:00 am–midnight (America/New_York)
+- Food: full menu from open to close (coffee, breakfast, lunch, and the evening menu). Do not invent prices or unlisted dishes.
+
+## Dayparts
+
+- From 7am: coffee, breakfast, and the full menu. Walk-ins are welcome.
+- Daytime: coffee-house energy with Wi-Fi.
+- Evening: zero-proof cocktails until close (10pm Sun–Thu, midnight Fri–Sat).
 
 ## Useful answers
 
-- Everything served at Sober Bar is alcohol-free.
+- No spirits, wine or beer with alcohol. NA beers are labeled 0.0% or <0.5% ABV.
 - The venue has approximately 50 seats: about 30 indoors and 20 on the patio. Walk-ins are welcome; reservations are available.
 - It is in Gulfport, close to St. Petersburg and St. Pete Beach.
-- Mornings and afternoons offer coffee-house energy with Wi-Fi; evenings shift to a zero-proof cocktail-bar experience.
+- TODO(owner): Sunday jazz brunch time and band are not confirmed. Do not state a start time.
 
 ## Canonical pages
 
 - https://www.sipsoberbar.com/
 - https://www.sipsoberbar.com/reservations.html
+- https://www.sipsoberbar.com/private-events.html
+- https://www.sipsoberbar.com/things-to-do-in-gulfport.html
+- https://www.sipsoberbar.com/why-i-opened-a-sober-bar.html
+- https://www.sipsoberbar.com/best-non-alcoholic-bars-florida.html
+- https://www.sipsoberbar.com/as-seen-in.html
+- https://www.sipsoberbar.com/event-sponsorship.html
 - https://www.sipsoberbar.com/sitemap.xml
 
-For current menu availability, events, and holiday hours, use the website or contact Sober Bar directly. Do not infer products, hours, or availability beyond these sources.
+For current menu availability, events, and holiday hours, use the website or call (813) 586-1660. Do not infer prices, new dishes, jazz brunch times, or availability beyond these sources.

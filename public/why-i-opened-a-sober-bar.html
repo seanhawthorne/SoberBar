@@ -7,9 +7,10 @@
   <title>Why I Opened a Sober Bar in Gulfport, Florida — Sober Bar</title>
   <meta name="description" content="Sean Hawthorne on why he opened Sober Bar, a zero-proof cocktail bar and coffee house in Gulfport, Florida — and what it says about the future of going out.">
   <link rel="canonical" href="https://www.sipsoberbar.com/why-i-opened-a-sober-bar.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/poiret-one-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/chrome.css">
   <style>
     :root { --black:#070605; --ink:#12100c; --gold:#d4af6a; --gold-bright:#eed9a4; --cream:#f4ead8; --muted:rgba(244,234,216,.66); }
     * { box-sizing:border-box; margin:0; padding:0; }
@@ -31,6 +32,7 @@
 </head>
 <body>
   <div class="shell">
+    <p style="text-align:right;font-size:.78rem;letter-spacing:.08em;margin-bottom:18px;"><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="header" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a></p>
     <span class="eyebrow">Founder Story</span>
     <h1>Why I Opened a Sober Bar in Gulfport, Florida</h1>
     <p class="byline">By Sean Hawthorne, owner of Sober Bar · July 2026</p>
@@ -43,7 +45,7 @@
 
     <h2>We didn't want a juice bar. We wanted a bar.</h2>
 
-    <p>Sober Bar at 3062 Beach Blvd S is a coffee house by day and a zero-proof speakeasy by night. The espresso program is serious. The kitchen is New Orleans-inspired. The drinks are built like craft cocktails — glassware, garnish, bitters, botanicals, the whole thing. Nothing on the menu contains alcohol.</p>
+    <p>Sober Bar at 3062 Beach Blvd S is a coffee house by day and a zero-proof speakeasy by night. The espresso program is serious. The kitchen is New Orleans-inspired. The drinks are built like craft cocktails — glassware, garnish, bitters, botanicals, the whole thing. No spirits, wine or beer with alcohol. Our NA beers are labeled 0.0% or &lt;0.5% ABV.</p>
 
     <p>We get a lot of people who walk in skeptical. They think "sober bar" means fluorescent lights and herbal tea. Then they see the room, taste a Call Me an Ube, and realize this is a real bar experience. The only thing missing is the hangover.</p>
 
@@ -73,20 +75,16 @@
 
     <div class="cta">
       <p>Visit Sober Bar on Beach Blvd in Gulfport.</p>
-      <a class="btn" href="/">View the Menu</a>
-      <a class="btn" href="/press-kit.html">Press Kit</a>
+      <a class="btn" data-cta="why-opened" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a class="btn" href="/#menu">View the Menu</a>
     </div>
   </div>
 
   <footer>
-    <p>
-      <a href="/">Home</a>
-      <a href="/best-non-alcoholic-bars-florida.html">Florida NA Bars Guide</a>
-      <a href="/press-kit.html">Press Kit</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-    </p>
-    <p style="margin-top:12px;">&copy; 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
+    <p><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="footer" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> · <a href="/#menu">Menu</a> · <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
+    <p><a href="/things-to-do-in-gulfport.html">Things to Do</a> · <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> · <a href="/best-non-alcoholic-bars-florida.html">NA Bars in Florida</a> · <a href="/as-seen-in.html">As Seen In</a> · <a href="/event-sponsorship.html">Event Sponsorship</a> · <a href="/private-events.html">Private Events</a></p>
+    <p><a href="/">Home</a> · <a href="/reservations.html">Reservations</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+    <p>&copy; 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
   </footer>
 
   <script type="application/ld+json">
@@ -102,5 +100,10 @@
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.sipsoberbar.com/why-i-opened-a-sober-bar.html" }
   }
   </script>
+  <nav class="mobile-actions" aria-label="Call, reserve, or directions">
+    <a href="tel:+18135861660">Call</a>
+    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
+    <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+  </nav>
 </body>
 </html>

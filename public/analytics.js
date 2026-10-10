@@ -27,7 +27,13 @@
     var label = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100);
 
     if (/getseat\.net/i.test(href)) {
-      sendEvent('reservation_started', { link_url: href, link_text: label });
+      sendEvent('reservation_started', {
+        link_url: href,
+        link_text: label,
+        cta_location: link.getAttribute('data-cta') || 'unspecified'
+      });
+    } else if (/shop\.sipsoberbar\.com/i.test(href)) {
+      sendEvent('merch_clicked', { link_url: href, link_text: label });
     } else if (/maps\.google\.com|google\.com\/maps/i.test(href)) {
       sendEvent('directions_clicked', { link_url: href, link_text: label });
     } else if (/^tel:/i.test(href)) {

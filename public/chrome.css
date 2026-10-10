@@ -1,0 +1,51 @@
+/* Sticky mobile actions: Call, Reserve, Directions. */
+.mobile-actions { display: none; }
+
+@media (max-width: 768px) {
+  .mobile-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: fixed;
+    z-index: 80;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(7, 6, 5, 0.96);
+    border-top: 1px solid rgba(212, 175, 106, 0.35);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    backdrop-filter: blur(12px);
+  }
+  .mobile-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 2px;
+    text-align: center;
+    text-decoration: none;
+    color: #eed9a4;
+    font-family: "Josefin Sans", Futura, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(212, 175, 106, 0.16);
+  }
+  .mobile-actions a:last-child { border-right: 0; }
+  .mobile-actions a.is-primary {
+    background: #d4af6a;
+    color: #060504;
+    font-weight: 600;
+  }
+  .mobile-actions a:hover,
+  .mobile-actions a:focus-visible {
+    color: #f4ead8;
+    background: rgba(212, 175, 106, 0.08);
+  }
+  body { padding-bottom: calc(48px + env(safe-area-inset-bottom, 0px)); }
+}
+
+@media print {
+  .mobile-actions { display: none !important; }
+  body { padding-bottom: 0 !important; }
+}

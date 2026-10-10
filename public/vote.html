@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script src="/analytics.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vote for Sober Bar | Gulfport, FL</title>
   <meta name="description" content="Vote for Sober Bar in local Best Of awards. Help Gulfport's first alcohol-free cocktail bar win Best New Bar, Best Mocktails, and more.">
   <link rel="canonical" href="https://www.sipsoberbar.com/vote.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/inter-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/chrome.css">
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; margin: 0; color: #111; background: #fff; line-height: 1.6; }
     .container { max-width: 720px; margin: 0 auto; padding: 40px 20px; text-align: center; }
@@ -25,6 +26,7 @@
 </head>
 <body>
   <div class="container">
+    <p style="text-align:right;font-size:.9rem;"><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="header" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a></p>
     <h1>Vote for Sober Bar</h1>
     <p>Help Gulfport's first alcohol-free cocktail bar win local "Best Of" awards.</p>
 
@@ -51,8 +53,16 @@
     </div>
 
     <footer>
-      &copy; 2026 Sober Bar. All rights reserved.
-    </footer>
+    <p><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="footer" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> · <a href="/#menu">Menu</a> · <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
+    <p><a href="/things-to-do-in-gulfport.html">Things to Do</a> · <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> · <a href="/best-non-alcoholic-bars-florida.html">NA Bars in Florida</a> · <a href="/as-seen-in.html">As Seen In</a> · <a href="/event-sponsorship.html">Event Sponsorship</a> · <a href="/private-events.html">Private Events</a></p>
+    <p><a href="/">Home</a> · <a href="/reservations.html">Reservations</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+    <p>&copy; 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
+  </footer>
   </div>
+  <nav class="mobile-actions" aria-label="Call, reserve, or directions">
+    <a href="tel:+18135861660">Call</a>
+    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
+    <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+  </nav>
 </body>
 </html>
