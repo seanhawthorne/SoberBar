@@ -11,7 +11,8 @@ Sober Bar & Kitchen (also called Sober Bar) serves craft alcohol-free cocktails,
 - Phone: (813) 586-1660
 - Telephone: +1-813-586-1660
 - Website: https://www.sipsoberbar.com/
-- Reservations: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
+- Reservations: https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web
+- Online booking covers parties of 1–6 only. Parties of 7 or more use the event inquiry: https://www.sipsoberbar.com/private-events.html#inquire
 - Reservations page: https://www.sipsoberbar.com/reservations.html
 - Directions: https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707
 - Instagram: https://instagram.com/sipsoberbar
@@ -39,7 +40,7 @@ Sober Bar & Kitchen (also called Sober Bar) serves craft alcohol-free cocktails,
 
 Edit the JSON array `#upcoming-events` in index.html, and keep the matching list item so the homepage stays crawlable. Current list:
 
-- Sunday Jazz Brunch — every Sunday. Live jazz every Sunday brunch. Start time not published. Reserve: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
+- Sunday Jazz Brunch — every Sunday. Live jazz every Sunday brunch. Start time not published. Reserve: https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web
 
 ## Canonical pages
 

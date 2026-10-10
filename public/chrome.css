@@ -2,6 +2,45 @@
    Header styles often set `nav { top: 0 }`. top and bottom together would
    stretch this bar over the whole screen, so top stays auto and the height
    is explicit. */
+.party-link {
+  font-family: "Josefin Sans", Futura, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-left: 0.5em;
+  opacity: 0.85;
+}
+.nav-reserve {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  flex: none;
+}
+.nav-reserve .party-link {
+  margin-left: 0;
+  font-size: 0.62rem;
+  white-space: nowrap;
+}
+.mobile-menu .party-link {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+.hero-actions .party-link,
+.visit-actions .party-link,
+.actions .party-link {
+  flex: 1 1 100%;
+  order: 5;
+  margin: 6px 0 0;
+  margin-left: 0;
+  text-align: center;
+}
+
 .mobile-actions {
   display: none;
   top: auto;
@@ -12,7 +51,7 @@
   .mobile-actions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 60px;
+    grid-template-rows: 28px 60px;
     align-content: start;
     position: fixed;
     top: auto;
@@ -20,8 +59,8 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: calc(60px + env(safe-area-inset-bottom, 0px));
-    max-height: calc(64px + env(safe-area-inset-bottom, 0px));
+    height: calc(88px + env(safe-area-inset-bottom, 0px));
+    max-height: calc(92px + env(safe-area-inset-bottom, 0px));
     box-sizing: border-box;
     margin: 0;
     z-index: 80;
@@ -61,10 +100,33 @@
     color: #f4ead8;
     background: rgba(212, 175, 106, 0.08);
   }
-  html body {
-    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)) !important;
+  .mobile-actions .party-link {
+    grid-column: 1 / -1;
+    height: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    margin: 0;
+    padding: 0 10px;
+    border-right: 0;
+    font-size: 0.68rem;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    text-decoration: none;
+    color: #cbb892;
+    background: transparent;
+    opacity: 1;
+    white-space: nowrap;
   }
-  html { scroll-padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)); }
+  .mobile-actions .party-link:hover,
+  .mobile-actions .party-link:focus-visible {
+    color: #f4ead8;
+    background: transparent;
+  }
+  .nav-reserve .party-link { display: none; }
+  html body {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  html { scroll-padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
 }
 
 html { scroll-padding-top: 84px; }

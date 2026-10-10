@@ -109,7 +109,7 @@
       width: min(100% - 48px, 1180px); margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
       gap: 28px;
-      height: 76px;
+      min-height: 76px; height: auto; padding: 8px 0;
     }
     .nav-brand { flex: none; }
     .nav-brand img { height: 52px; width: auto; }
@@ -312,9 +312,19 @@
     .upcoming-name:hover { color: var(--gold-bright); }
     .upcoming-detail { grid-column: 1 / -1; color: var(--muted); margin: 0; }
     .upcoming-list .btn { justify-self: end; }
+    .upcoming-cta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+    .upcoming-cta .party-link { margin-left: 0; font-size: 0.68rem; white-space: nowrap; }
+    .mobile-menu .party-link {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: none;
+      color: var(--gold-bright);
+    }
     @media (max-width: 640px) {
       .upcoming-list li { grid-template-columns: 1fr; }
       .upcoming-list .btn { justify-self: start; }
+      .upcoming-cta { align-items: flex-start; }
     }
     /* ------- reviews ------- */
     .rating-summary { text-align: center; margin: -30px auto 44px; color: var(--muted); }
@@ -445,6 +455,12 @@
         width: 100%;
         max-width: 340px;
       }
+      header.hero .hero-actions .party-link {
+        grid-column: 1 / -1;
+        order: 5;
+        width: auto;
+        white-space: normal;
+      }
       .hero .btn {
         padding: 13px 8px;
         letter-spacing: 0.08em;
@@ -471,13 +487,13 @@
         <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
       </ul>
       <a class="nav-phone" href="tel:+18135861660">(813) 586-1660</a>
-      <a class="nav-cta" data-cta="header" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a><a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a></div>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+    <a data-cta="mobile-menu" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
     <a href="#bar">Cocktails</a>
     <a href="#menu">Menu</a>
     <a href="/private-events.html">Private Events</a>
@@ -499,7 +515,7 @@
     <p class="hero-sub">Open daily at 7am · Breakfast, lunch, Sunday jazz brunch &amp; evening cocktails · Walk-ins welcome</p>
     <p class="hero-locale">3062 Beach Blvd S &nbsp;·&nbsp; Gulfport</p>
     <div class="hero-actions">
-      <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a class="btn btn-solid" data-cta="hero" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
       <a class="btn btn-line" href="#menu">View menu</a>
       <a class="btn btn-line" href="tel:+18135861660">Call</a>
       <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
@@ -652,7 +668,7 @@
           <span>Sunday-only menu</span>
           <span>Free RSVP</span>
         </div>
-        <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" rel="noopener noreferrer" target="_blank">Reserve a table</a>
+        <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" rel="noopener noreferrer" target="_blank">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
       </div>
     </div>
   </section>
@@ -674,7 +690,7 @@
           "detail": "Live jazz every Sunday brunch. The start time is not published yet.",
           "href": "/sunday-jazz-brunch.html",
           "cta": "Reserve a table",
-          "ctaHref": "https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637"
+          "ctaHref": "https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web"
         }
       ]
       </script>
@@ -684,7 +700,7 @@
             <div class="upcoming-when">Every Sunday</div>
             <a class="upcoming-name" href="/sunday-jazz-brunch.html">Sunday Jazz Brunch</a>
           </div>
-          <a class="btn btn-solid" data-cta="upcoming" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+          <a class="btn btn-solid" data-cta="upcoming" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
           <p class="upcoming-detail">Live jazz every Sunday brunch. The start time is not published yet.</p>
         </li>
       </ul>
@@ -707,6 +723,8 @@
             name.textContent = event.name;
             copy.appendChild(when);
             copy.appendChild(name);
+            var ctaWrap = document.createElement('div');
+            ctaWrap.className = 'upcoming-cta';
             var cta = document.createElement('a');
             cta.className = 'btn btn-solid';
             cta.setAttribute('data-cta', 'upcoming');
@@ -714,11 +732,17 @@
             cta.target = '_blank';
             cta.rel = 'noopener noreferrer';
             cta.textContent = event.cta;
+            var party = document.createElement('a');
+            party.className = 'party-link';
+            party.href = '/private-events.html#inquire';
+            party.textContent = 'Party of 7+? Plan a gathering';
+            ctaWrap.appendChild(cta);
+            ctaWrap.appendChild(party);
             var detail = document.createElement('p');
             detail.className = 'upcoming-detail';
             detail.textContent = event.detail;
             item.appendChild(copy);
-            item.appendChild(cta);
+            item.appendChild(ctaWrap);
             item.appendChild(detail);
             list.appendChild(item);
           });
@@ -735,7 +759,7 @@
         <p class="brunch-copy">Team outings, birthdays, book clubs, and private celebrations in the heart of Gulfport. Start with your date and guest count; we’ll help you explore the details.</p>
         <div class="hero-actions">
           <a class="btn btn-solid" href="/private-events.html#inquire">Plan your gathering</a>
-          <a class="btn btn-line" data-cta="private-events" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+          <a class="btn btn-line" data-cta="private-events" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
         </div>
       </div>
     </div>
@@ -772,11 +796,11 @@
           <div style="font-size: 2rem; margin-bottom: 10px;">📅</div>
           <span class="eyebrow">Powered by SeatOn</span>
           <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); margin: 14px 0 10px;">Reserve your spot — instant booking, real-time availability.</p>
-          <p style="color: var(--muted-2); font-size: 0.85rem; margin-bottom: 18px;">50 seats total. Walk-ins always welcome.</p>
+          <p style="color: var(--muted-2); font-size: 0.85rem; margin-bottom: 18px;">50 seats total. Walk-ins always welcome. Online booking is for parties of 1–6.</p>
         </div>
       </div>
       <div class="visit-actions reveal">
-        <a class="btn btn-solid" data-cta="reservations" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+        <a class="btn btn-solid" data-cta="reservations" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
         <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
       </div>
       <p class="menu-note reveal" style="margin-top: 26px;">Planning a baby shower, book club, office happy hour, sober celebration, recovery milestone, or team gathering? <a href="/private-events.html">Explore private events &amp; group bookings</a>.</p>
@@ -881,7 +905,7 @@
         </div>
       </div>
       <div class="visit-actions reveal">
-        <a class="btn btn-solid" data-cta="visit" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+        <a class="btn btn-solid" data-cta="visit" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
         <a class="btn btn-line" href="tel:+18135861660">Call</a>
         <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
       </div>
@@ -948,7 +972,7 @@
       <img class="foot-logo" src="/images/logo-sunburst.webp" alt="Sober Bar" width="1280" height="801" loading="lazy" />
       <div class="deco-rule" style="margin-bottom: 26px;"><span class="gem"></span></div>
       <p class="fine"><a href="tel:+18135861660">(813) 586-1660</a> · 3062 Beach Blvd S, Gulfport, FL 33707</p>
-      <p class="fine"><a data-cta="footer" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> &nbsp;·&nbsp; <a href="/#menu">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a> &nbsp;·&nbsp; <a href="/private-events.html">Private Events</a></p>
+      <p class="fine"><a data-cta="footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a> &nbsp;·&nbsp; <a href="/#menu">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a> &nbsp;·&nbsp; <a href="/private-events.html">Private Events</a></p>
       <p class="fine"><a href="/breakfast-gulfport.html">Breakfast &amp; Coffee</a> &nbsp;·&nbsp; <a href="/sunday-jazz-brunch.html">Sunday Jazz Brunch</a> &nbsp;·&nbsp; <a href="/private-events.html">Private Events</a> &nbsp;·&nbsp; <a href="/reservations.html">Reservations</a></p>
       <p class="fine"><a href="/things-to-do-in-gulfport.html">Things to Do</a> &nbsp;·&nbsp; <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> &nbsp;·&nbsp; <a href="/best-non-alcoholic-bars-florida.html">NA Bars in Florida</a> &nbsp;·&nbsp; <a href="/as-seen-in.html">As Seen In</a> &nbsp;·&nbsp; <a href="/event-sponsorship.html">Event Sponsorship</a></p>
       <p class="fine"><a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></p>
@@ -957,8 +981,9 @@
   </footer>
 
   <nav class="mobile-actions" aria-label="Call, reserve, or directions">
+    <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
     <a href="tel:+18135861660">Call</a>
-    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
+    <a class="is-primary" data-cta="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve</a>
     <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
   </nav>
 
