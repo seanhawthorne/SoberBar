@@ -633,11 +633,12 @@ html { scroll-padding-top: 84px; }
     .hero-photo::after {
       content:''; position:absolute; inset:0; z-index: 2; border:0; border-radius:0; pointer-events:none;
       background:
-        linear-gradient(90deg, rgba(7,6,5,.88) 0%, rgba(7,6,5,.62) 26%, rgba(7,6,5,.28) 48%, rgba(7,6,5,.08) 68%, rgba(7,6,5,0) 100%),
-        linear-gradient(180deg, rgba(7,6,5,.5) 0%, rgba(7,6,5,.08) 24%, rgba(7,6,5,.22) 62%, rgba(7,6,5,.82) 100%);
+        linear-gradient(90deg, rgba(7,6,5,.86) 0%, rgba(7,6,5,.55) 18%, rgba(7,6,5,.16) 34%, rgba(7,6,5,0) 52%),
+        linear-gradient(180deg, rgba(7,6,5,.4) 0%, rgba(7,6,5,.04) 16%, rgba(7,6,5,0) 38%, rgba(7,6,5,.2) 64%, rgba(7,6,5,.78) 100%);
     }
     .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
-    .hero-slide.is-lead { z-index: 0; object-position: 46% 48%; animation: hero-drift 32s ease-in-out infinite alternate; }
+    .hero-slide.is-lead { z-index: 0; object-position: 42% 46%; }
+    .hero-photo.is-live .hero-slide.is-lead { animation: hero-drift 32s ease-in-out infinite alternate; }
     .hero-slide-2, .hero-slide-3 { z-index: 1; opacity: 0; }
     .hero-slide-2 { object-position: center 16%; animation: hero-cross-a 36s ease-in-out infinite; }
     .hero-slide-3 { object-position: center 38%; animation: hero-cross-b 36s ease-in-out infinite; }
@@ -735,8 +736,7 @@ html { scroll-padding-top: 84px; }
       .hero-photo::after {
         inset: 0; border: 0; border-radius: 0;
         background:
-          linear-gradient(90deg, rgba(7,6,5,.78) 0%, rgba(7,6,5,.42) 46%, rgba(7,6,5,.16) 100%),
-          linear-gradient(180deg, rgba(7,6,5,.42) 0%, rgba(7,6,5,.1) 28%, rgba(7,6,5,.5) 68%, rgba(7,6,5,.94) 100%);
+          linear-gradient(180deg, rgba(7,6,5,.4) 0%, rgba(7,6,5,0) 18%, rgba(7,6,5,0) 46%, rgba(7,6,5,.58) 70%, rgba(7,6,5,.94) 100%);
       }
       .hero-slide.is-lead { object-position: 42% 46%; }
       .hero-copy { padding: 0; max-width: none; width: 100%; }
@@ -791,10 +791,8 @@ html { scroll-padding-top: 84px; }
     <div class="hero-photo">
       <picture>
         <source type="image/webp" srcset="/images/space/bar-wide-480.webp 480w, /images/space/bar-wide-800.webp 800w, /images/space/bar-wide-1400.webp 1400w" sizes="100vw">
-        <img class="hero-slide is-lead" src="/images/space/bar-wide-1400.jpg" width="1400" height="794" alt="The bar at Sober Bar at night, pendant lights over the stools" fetchpriority="high" decoding="async" />
+        <img class="hero-slide is-lead" src="/images/space/bar-wide-1400.jpg" width="1400" height="794" alt="The bar at Sober Bar at night, pendant lights over the stools" fetchpriority="high" />
       </picture>
-      <img class="hero-slide hero-slide-2" src="/images/parlor-800.webp" width="800" height="1067" alt="" loading="lazy" decoding="async" />
-      <img class="hero-slide hero-slide-3" src="/images/space/bartenders-800.webp" width="800" height="1067" alt="" loading="lazy" decoding="async" />
     </div>
     <div class="hero-copy">
       <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
@@ -1287,6 +1285,29 @@ html { scroll-padding-top: 84px; }
   </nav>
 
   <script>
+    (function () {
+      var photo = document.querySelector('.hero-photo');
+      if (!photo || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      window.addEventListener('load', function () {
+        window.setTimeout(function () {
+          [
+            { cls: 'hero-slide hero-slide-2', src: '/images/parlor-800.webp', w: 800, h: 1067 },
+            { cls: 'hero-slide hero-slide-3', src: '/images/space/bartenders-800.webp', w: 800, h: 1067 }
+          ].forEach(function (s) {
+            var img = document.createElement('img');
+            img.className = s.cls;
+            img.alt = '';
+            img.width = s.w;
+            img.height = s.h;
+            img.decoding = 'async';
+            img.src = s.src;
+            photo.appendChild(img);
+          });
+          photo.classList.add('is-live');
+        }, 1400);
+      }, { once: true });
+    })();
+
     const nav = document.getElementById('nav');
     function onScroll() {
       nav.classList.toggle('scrolled', window.scrollY > 40);
