@@ -183,7 +183,7 @@ html { scroll-padding-top: 84px; }
     ::-webkit-scrollbar-thumb { background: var(--gold-dim); }
     img { display: block; max-width: 100%; }
     .hero picture { display: block; }
-    .arch picture, .visit-photo picture { display: block; width: 100%; height: 100%; }
+    .arch picture, .visit-photo picture, .menu-lead picture { display: block; width: 100%; height: auto; }
     a { color: inherit; }
     .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
@@ -248,6 +248,7 @@ html { scroll-padding-top: 84px; }
       text-decoration: none; font-size: 0.72rem; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--muted);
       transition: color 0.25s ease; font-weight: 400;
+      white-space: nowrap;
     }
     .nav-links a:hover { color: var(--gold-bright); }
     .nav-cta {
@@ -266,6 +267,7 @@ html { scroll-padding-top: 84px; }
       text-underline-offset: 2px;
       margin-left: 0.5em;
       color: #cbb892;
+      white-space: nowrap;
     }
     .nav-reserve {
       display: flex;
@@ -383,7 +385,7 @@ html { scroll-padding-top: 84px; }
       padding: 12px;
       background: var(--ink);
     }
-    .arch img { border-radius: 999px 999px 12px 12px; width: 100%; height: 100%; object-fit: cover; }
+    .arch img { border-radius: 999px 999px 12px 12px; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
 
     .feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
     .feature .copy p { color: var(--muted); margin-bottom: 18px; font-size: 1.02rem; }
@@ -412,7 +414,7 @@ html { scroll-padding-top: 84px; }
     .mi.has-photo img { width: 72px; height: 72px; object-fit: cover; display: block; }
     .mi .mi-name { font-family: 'Cormorant Garamond', serif; font-size: 1.32rem; color: var(--cream); }
     .menu-lead { max-width: 980px; margin: 0 auto 36px; }
-    .menu-lead img { width: 100%; height: auto; display: block; }
+    .menu-lead img { width: 100%; height: auto; aspect-ratio: 1200 / 623; display: block; object-fit: cover; }
     .mi .mi-desc { font-size: 0.85rem; color: var(--muted-2); margin-top: 2px; }
     .menu-note { text-align: center; margin-top: 60px; color: var(--muted-2); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; }
     .menu-note a { color: var(--gold); }
@@ -507,7 +509,7 @@ html { scroll-padding-top: 84px; }
 
     /* ------- visit ------- */
     .visit-photo { border: 1px solid var(--gold-dim); padding: 12px; background: var(--ink); max-width: 980px; margin: 0 auto 70px; }
-    .visit-photo img { width: 100%; object-fit: cover; }
+    .visit-photo img { width: 100%; height: auto; aspect-ratio: 1400 / 748; object-fit: cover; display: block; }
     .visit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gold-faint); border: 1px solid var(--gold-faint); max-width: 980px; margin: 0 auto; }
     .visit-cell { background: var(--black); padding: 38px 30px; text-align: center; }
     .visit-cell .eyebrow { display: block; margin-bottom: 16px; }
@@ -692,7 +694,7 @@ html { scroll-padding-top: 84px; }
     .gallery .arch { aspect-ratio: 3/4; }
     .gallery figcaption { text-align: center; margin-top: 14px; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
     .press-grid { grid-template-columns: repeat(4, 1fr); max-width: 1080px; }
-    .foot-logo { width: 150px !important; }
+    .foot-logo { display: block; width: 150px !important; max-width: 180px; height: auto !important; }
     @media (max-width: 900px) {
       .gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; padding: 0 4px 8px; -webkit-overflow-scrolling: touch; }
       .gallery figure { flex: 0 0 72%; scroll-snap-align: center; }
@@ -921,7 +923,7 @@ html { scroll-padding-top: 84px; }
       <figure class="menu-lead reveal">
         <picture>
           <source srcset="/images/food/dish-composition-480.webp 480w, /images/food/dish-composition-800.webp 800w, /images/food/dish-composition-1200.webp 1200w" sizes="(max-width: 900px) 92vw, 900px" type="image/webp">
-          <img src="/images/food/dish-composition-1200.jpg" width="1200" height="623" alt="A table of Sober Bar plates and a zero-proof cocktail" loading="lazy" decoding="async" />
+          <img src="/images/food/dish-composition-1200.jpg" width="1200" height="623" alt="A table of Sober Bar plates and a zero-proof cocktail" loading="eager" fetchpriority="low" decoding="async" />
         </picture>
       </figure>
       <div class="menu-grid">
@@ -1002,7 +1004,7 @@ html { scroll-padding-top: 84px; }
         <div class="arch reveal" style="aspect-ratio: 3/4;">
           <picture>
             <source srcset="/images/cafe-480.webp 480w, /images/cafe-800.webp 800w, /images/cafe.webp 1100w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
-            <img src="/images/cafe.jpg" width="1100" height="1466" alt="The café room in the morning, marble tables and a red banquette by the front window" loading="lazy" decoding="async" />
+            <img src="/images/cafe.jpg" width="1100" height="1466" alt="The café room in the morning, marble tables and a red banquette by the front window" loading="eager" fetchpriority="low" decoding="async" />
           </picture>
         </div>
       </div>
@@ -1193,7 +1195,7 @@ html { scroll-padding-top: 84px; }
       <div class="visit-photo reveal">
         <picture>
           <source srcset="/images/storefront-480.webp 480w, /images/storefront-800.webp 800w, /images/storefront.webp 1400w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
-          <img src="/images/storefront.jpg" width="1400" height="748" alt="The Sober Bar storefront at 3062 Beach Blvd S with its glowing art-deco sign" loading="lazy" decoding="async" />
+          <img src="/images/storefront.jpg" width="1400" height="748" alt="The Sober Bar storefront at 3062 Beach Blvd S with its glowing art-deco sign" loading="eager" fetchpriority="low" decoding="async" />
         </picture>
       </div>
       <div class="visit-grid reveal">

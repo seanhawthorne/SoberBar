@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/fonts.css">
   <link rel="stylesheet" href="/chrome.css">
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
     body { font-family: 'Josefin Sans', sans-serif; font-weight: 300; margin: 0; color: #f4ead8; background: #070605; line-height: 1.7; }
     .container { max-width: 760px; margin: 0 auto; padding: 48px 20px 88px; }
     h1, h2, h3, p, li { text-wrap: pretty; }
@@ -29,9 +30,9 @@
     .btn { display: inline-block; background: #d4af6a; color: #060504; font-weight: 600; padding: 14px 18px; text-decoration: none; letter-spacing: .14em; text-transform: uppercase; font-size: .72rem; white-space: nowrap; text-align: center; border: 0; cursor: pointer; font-family: 'Josefin Sans', sans-serif; }
     .btn.line { background: transparent; color: #d4af6a; border: 1px solid rgba(212,175,106,.45); }
     .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0 28px; }
-    .inquire-form { display: grid; gap: 12px; margin-top: 12px; }
+    .inquire-form { display: grid; gap: 12px; margin-top: 12px; min-width: 0; max-width: 100%; }
     .inquire-form label { display: block; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: #d4af6a; margin-bottom: 6px; }
-    .inquire-form input, .inquire-form textarea { width: 100%; background: transparent; color: #f4ead8; border: 1px solid rgba(212,175,106,.35); padding: 12px 14px; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; }
+    .inquire-form input, .inquire-form textarea { box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; background: transparent; color: #f4ead8; border: 1px solid rgba(212,175,106,.35); padding: 12px 14px; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; }
     .inquire-form textarea { min-height: 96px; resize: vertical; }
     footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid rgba(212,175,106,.25); color: rgba(244,234,216,.6); font-size: 0.9rem; }
     footer a { color: #d4af6a; text-decoration: none; }
@@ -72,10 +73,9 @@
     <h1>Event Sponsorship &amp; Pop-Up Bar</h1>
     <p class="intro">Bring Sober Bar to your festival, market, corporate event, or community gathering. We serve zero-proof cocktails that get people talking.</p>
     <div class="actions">
-      <a class="btn" href="mailto:Sean@sipsoberbar.com?subject=Event%20Sponsorship%20Inquiry">Email us</a>
+      <a class="btn" href="#inquire">Discuss sponsorship</a>
       <a class="btn line" data-cta="sponsorship" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve a table</a>
     </div>
-    <p class="inquiry-address"><a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
     <figure style="margin:0 0 28px;">
       <picture>
         <source srcset="/images/space/market-480.webp 480w, /images/space/market-800.webp 800w, /images/space/market-1400.webp 1400w" sizes="(max-width: 800px) 92vw, 720px" type="image/webp">
@@ -159,7 +159,7 @@
           <label for="sp-notes">Notes</label>
           <textarea id="sp-notes" name="notes"></textarea>
         </div>
-        <button class="btn" type="submit">Email us</button>
+        <button class="btn" type="submit">Open email inquiry</button>
       </form>
       <p>No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>, or call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
     </div>

@@ -104,14 +104,17 @@
     .nav-inner {
       width: min(100% - 48px, 1180px); margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
+      gap: 28px;
       min-height: 76px; height: auto; padding: 8px 0;
     }
+    .nav-brand { flex: none; }
     .nav-brand img { height: 52px; width: auto; }
-    .nav-links { display: flex; gap: 36px; align-items: center; list-style: none; }
+    .nav-links { display: flex; gap: 16px; align-items: center; list-style: none; flex: 1; justify-content: center; min-width: 0; }
     .nav-links a {
-      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.28em;
+      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.14em;
       text-transform: uppercase; color: var(--muted);
       transition: color 0.25s ease; font-weight: 400;
+      white-space: nowrap;
     }
     .nav-links a:hover { color: var(--gold-bright); }
     .nav-links a.active { color: var(--gold-bright); }
@@ -121,6 +124,7 @@
       transition: all 0.3s ease; font-weight: 400; white-space: nowrap;
     }
     .nav-cta:hover { background: var(--gold); color: #000; }
+    .nav-reserve { display: flex; align-items: center; flex: none; }
     .nav-phone {
       text-decoration: none; font-size: 0.72rem; letter-spacing: 0.08em;
       color: var(--gold-bright); font-weight: 400; white-space: nowrap; margin-right: 8px;
@@ -225,6 +229,12 @@
     details p a { color: var(--gold); text-decoration: none; }
     details p a:hover { color: var(--gold-bright); }
 
+    footer { border-top: 1px solid var(--gold-faint); padding: 70px 0 46px; text-align: center; }
+    .foot-logo { display: block; width: 150px; max-width: 180px; height: auto; margin: 0 auto 30px; }
+    footer .fine { color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px; }
+    footer .fine a { color: var(--muted-2); text-decoration: none; }
+    footer .fine a:hover { color: var(--gold); }
+
     /* ------- reveal ------- */
     .reveal { opacity: 1; transform: none; transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
     .reveal.visible { opacity: 1; transform: none; }
@@ -252,7 +262,7 @@
   <nav id="nav" aria-label="Primary">
     <div class="nav-inner">
       <a class="nav-brand" href="/" aria-label="Sober Bar home">
-        <img src="/images/logo-sunburst.webp" alt="Sober Bar" width="1280" height="801" />
+        <img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801" />
       </a>
       <ul class="nav-links">
         <li><a href="/#bar">Cocktails</a></li>
@@ -377,10 +387,6 @@
           <p>Yes. Select your seating preference during booking and we'll always try to accommodate it.</p>
         </details>
         <details>
-          <summary>What's your cancellation policy?</summary>
-          <p>Free cancellation up to 2 hours before your reservation. Late cancellations and no-shows may affect future bookings.</p>
-        </details>
-        <details>
           <summary>Do you host private events?</summary>
           <p>We do. Tell us the date and headcount and we’ll confirm what fits. See <a href="/private-events.html">private events</a>, or email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>.</p>
         </details>
@@ -390,14 +396,16 @@
 
   <footer>
     <div class="shell">
-      <img class="foot-logo" src="/images/logo-sunburst.webp" alt="Sober Bar" width="1280" height="801" loading="lazy" style="width: 240px; margin: 0 auto 30px;" />
+      <img class="foot-logo" src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801" />
       <div class="deco-rule" style="margin-bottom: 26px;"><span class="gem"></span></div>
-      <p class="fine" style="color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px;"><a href="tel:+18135861660" style="color: var(--gold);">(813) 586-1660</a> · 3062 Beach Blvd S, Gulfport, FL 33707 · Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
-      <p class="fine" style="color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px;"><a data-cta="footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=reservations" target="_blank" rel="noopener noreferrer" style="color: var(--muted-2);">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a> &nbsp;·&nbsp; <a href="/menu.html" style="color: var(--muted-2);">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener" style="color: var(--muted-2);">Merch</a> &nbsp;·&nbsp; <a href="/private-events.html" style="color: var(--muted-2);">Private Events</a></p>
-      <p class="fine" style="color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px;"><a href="/breakfast-gulfport.html" style="color: var(--muted-2);">Breakfast &amp; Coffee</a> &nbsp;·&nbsp; <a href="/sunday-jazz-brunch.html" style="color: var(--muted-2);">Sunday Jazz Brunch</a> &nbsp;·&nbsp; <a href="/private-events.html" style="color: var(--muted-2);">Private Events</a></p>
-      <p class="fine" style="color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px;"><a href="/things-to-do-in-gulfport.html" style="color: var(--muted-2);">Things to Do</a> &nbsp;·&nbsp; <a href="/why-i-opened-a-sober-bar.html" style="color: var(--muted-2);">Why I Opened</a> &nbsp;·&nbsp; <a href="/best-non-alcoholic-bars-florida.html" style="color: var(--muted-2);">NA Bars in Florida</a> &nbsp;·&nbsp; <a href="/as-seen-in.html" style="color: var(--muted-2);">As Seen In</a> &nbsp;·&nbsp; <a href="/event-sponsorship.html" style="color: var(--muted-2);">Event Sponsorship</a></p>
-      <p class="fine" style="color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px;"><a href="/privacy.html" style="color: var(--muted-2);">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html" style="color: var(--muted-2);">Terms</a></p>
-      <p class="fine" style="color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px;">© 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
+      <p class="fine">Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
+      <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
+      <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
+      <p class="fine"><a data-cta="footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=reservations" target="_blank" rel="noopener noreferrer">Reserve a table</a> &nbsp;·&nbsp; <a href="/menu.html">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
+      <p class="fine"><a href="/breakfast-gulfport.html">Breakfast in Gulfport</a> &nbsp;·&nbsp; <a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a> &nbsp;·&nbsp; <a href="/private-events.html">Private events in Gulfport</a> &nbsp;·&nbsp; <a href="/reservations.html">Reservations</a> &nbsp;·&nbsp; <a href="/mocktails-st-petersburg.html">Mocktails near St. Pete</a></p>
+      <p class="fine"><a href="/things-to-do-in-gulfport.html">Things to Do</a> &nbsp;·&nbsp; <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> &nbsp;·&nbsp; <a href="/best-non-alcoholic-bars-florida.html">NA Bars in Florida</a> &nbsp;·&nbsp; <a href="/as-seen-in.html">As Seen In</a> &nbsp;·&nbsp; <a href="/event-sponsorship.html">Event Sponsorship</a></p>
+      <p class="fine"><a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></p>
+      <p class="fine">© 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
     </div>
   </footer>
 

@@ -249,6 +249,33 @@ body.has-site-nav figure img {
   .site-burger { display: inline-flex; align-items: center; justify-content: center; }
 }
 @media (max-width: 420px) {
+  .cta {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .cta > .btn,
+  .cta > .party-link {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .cta > .party-link,
+  .shell > p > a.party-link,
+  .container > p > a.party-link,
+  .hero-actions > .party-link,
+  .visit-actions > .party-link,
+  .actions > .party-link {
+    display: block;
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .party-link { white-space: nowrap; }
   .actions,
   .intro-actions,
   .stack-actions {

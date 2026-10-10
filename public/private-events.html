@@ -45,7 +45,7 @@
     .facts dd { margin:4px 0 0; color:var(--cream); }
     .inquire-form { text-align:left; max-width:560px; margin:8px auto 0; display:grid; gap:12px; }
     .inquire-form label { display:block; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
-    .inquire-form input, .inquire-form select, .inquire-form textarea { width:100%; background:transparent; color:var(--cream); border:1px solid rgba(212,175,106,.35); padding:12px 14px; font-family:'Josefin Sans', sans-serif; font-size:1rem; }
+    .inquire-form input, .inquire-form select, .inquire-form textarea { box-sizing:border-box; width:100%; max-width:100%; min-width:0; background:transparent; color:var(--cream); border:1px solid rgba(212,175,106,.35); padding:12px 14px; font-family:'Josefin Sans', sans-serif; font-size:1rem; }
     .inquire-form textarea { min-height:96px; resize:vertical; }
     .inquire-form button { border:0; cursor:pointer; font-family:'Josefin Sans', sans-serif; }
     .actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; align-items:center; }
@@ -90,10 +90,9 @@
     <h1>Private events in Gulfport, FL</h1>
     <p class="lead">Showers, birthdays, office gatherings, and recovery milestones in the room and on the patio. Tell us the date and headcount and we’ll confirm what fits.</p>
     <div class="actions intro-actions">
-      <a class="btn" href="mailto:Sean@sipsoberbar.com?subject=Group%20Event%20Inquiry">Email us</a>
+      <a class="btn" href="#inquire">Plan your gathering</a>
       <a class="btn line" data-cta="private-events" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=private-events" target="_blank" rel="noopener noreferrer">Reserve a table</a>
     </div>
-    <p class="inquiry-address"><a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
     <figure class="room">
       <picture>
         <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 820px" type="image/webp">
@@ -131,57 +130,29 @@
       <div class="card">
         <span class="tag">Corporate</span>
         <h3>Alcohol-Free Happy Hour</h3>
-        <p>2-hour hosted reception with a curated zero-proof cocktail menu, NA beer, and light bites. Great for team-building, ERG events, or wellness initiatives.</p>
-        <ul>
-          <li>Custom cocktail menu</li>
-          <li>Bartender + server</li>
-          <li>Light bites / charcuterie</li>
-          <li>Group size confirmed for your layout</li>
-        </ul>
+        <p>Team time, ERG gatherings, and wellness outings in the room. Tell us the date and headcount and we’ll confirm what fits.</p>
         <p class="price">Request a custom quote</p>
-        <p class="price-note">Minimums apply. Tax & gratuity additional.</p>
       </div>
 
       <div class="card">
-        <span class="tag">Interactive</span>
-        <h3>Mocktail 101 Class</h3>
-        <p>Led by our bar team. Guests learn to build three zero-proof cocktails with spirit alternatives, fresh juices, bitters, and garnishes.</p>
-        <ul>
-          <li>60–90 minute class</li>
-          <li>3 cocktails per guest</li>
-          <li>Recipe cards to take home</li>
-          <li>Tell us the headcount and we’ll confirm what fits</li>
-        </ul>
+        <span class="tag">Celebration</span>
+        <h3>Showers &amp; Birthdays</h3>
+        <p>Baby showers, bridal showers, birthdays, and other private celebrations. Menus and timing are part of the quote.</p>
         <p class="price">Request a custom quote</p>
-        <p class="price-note">Can be hosted at Sober Bar or your office.</p>
       </div>
 
       <div class="card">
         <span class="tag">Private</span>
-        <h3>Semi-Private Celebration</h3>
-        <p>Birthdays, bridal showers, baby showers, anniversaries, or any reason to gather. Reserve a section or buy out the space.</p>
-        <ul>
-          <li>Reserved seating</li>
-          <li>Custom drink menu</li>
-          <li>New Orleans-inspired food</li>
-          <li>Indoor and patio options, subject to availability</li>
-        </ul>
-        <p class="price">Custom quote</p>
-        <p class="price-note">Food & beverage minimum based on date/time.</p>
+        <h3>A Reserved Section</h3>
+        <p>Book clubs, anniversaries, and other reasons to gather. Tell us the date and headcount and we’ll confirm what fits.</p>
+        <p class="price">Request a custom quote</p>
       </div>
 
       <div class="card">
-        <span class="tag">Off-Site</span>
-        <h3>Mobile Zero-Proof Bar</h3>
-        <p>We bring the sober bar to you. Weddings, corporate events, festivals, and private parties anywhere in Tampa Bay.</p>
-        <ul>
-          <li>Bar setup + glassware</li>
-          <li>Bartenders + menu design</li>
-          <li>Custom signage</li>
-          <li>Travel fee outside Gulfport</li>
-        </ul>
-        <p class="price">Custom quote</p>
-        <p class="price-note">Tell us the date and headcount and we’ll confirm what fits.</p>
+        <span class="tag">Recovery</span>
+        <h3>Recovery Milestones</h3>
+        <p>A celebration that does not put a drink in front of the guest of honor. Tell us the date and headcount and we’ll confirm what fits.</p>
+        <p class="price">Request a custom quote</p>
       </div>
     </div>
 
@@ -196,7 +167,7 @@
 
     <h2>What guests drink</h2>
 
-    <p>Our bar program uses non-alcoholic spirits, fresh juices, bitters, shrubs, and house syrups. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV. Popular builds include the <strong>Call Me an Ube</strong>, <strong>Jinn &amp; Juniper</strong>, and <strong>Satsuma-Basil Smash</strong>. We can design a custom cocktail for your event or brand.</p>
+    <p>Our bar program uses non-alcoholic spirits, fresh juices, bitters, shrubs, and house syrups. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV. Popular builds on the menu include the <strong>Call Me an Ube</strong> and <strong>Jinn &amp; Juniper</strong>.</p>
 
     <h2>Gatherings we host</h2>
     <ul>
@@ -246,7 +217,7 @@
           <label for="inq-notes">Notes</label>
           <textarea id="inq-notes" name="notes" placeholder="Indoor seating, food, or anything else we should know"></textarea>
         </div>
-        <button class="btn" type="submit">Email us</button>
+        <button class="btn" type="submit">Open email inquiry</button>
       </form>
       <p class="price-note">No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>, or call <a href="tel:+18135861660">(813) 586-1660</a>. For a regular table, <a data-cta="private-events-inquiry" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=private-events" target="_blank" rel="noopener noreferrer">reserve a table</a>.</p>
     </div>
