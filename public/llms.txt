@@ -23,7 +23,7 @@ Sober Bar & Kitchen (also called Sober Bar) serves craft alcohol-free cocktails,
 ## Dayparts
 
 - From 7am: coffee, breakfast, and the full menu. Walk-ins are welcome.
-- Daytime: coffee-house energy with Wi-Fi.
+- Daytime: coffee-house energy with free Wi-Fi. Coffee, espresso, cold brew, chai, and breakfast are covered at https://www.sipsoberbar.com/breakfast-gulfport.html (there is no separate coffee-shop URL).
 - Evening: zero-proof cocktails until close (10pm Sun–Thu, midnight Fri–Sat).
 
 ## Useful answers
@@ -31,12 +31,22 @@ Sober Bar & Kitchen (also called Sober Bar) serves craft alcohol-free cocktails,
 - We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.
 - The venue has approximately 50 seats: about 30 indoors and 20 on the patio. Walk-ins are welcome; reservations are available.
 - It is in Gulfport, close to St. Petersburg and St. Pete Beach.
-- Live jazz every Sunday brunch. TODO(owner): the start time is not confirmed. Do not state a start time or a band name.
+- Live jazz every Sunday brunch. Page: https://www.sipsoberbar.com/sunday-jazz-brunch.html. TODO(owner): the start time is not confirmed. Do not state a start time or a band name.
+- Private events in Gulfport (showers, birthdays, office gatherings, recovery milestones, room for up to 50) are on https://www.sipsoberbar.com/private-events.html. There is no separate private-events-gulfport URL.
+- TODO(owner): do not add beignets, chicory café au lait, crawfish eggs Benedict, a gluten-free muffuletta, or the review spelling "Garden Muffaletta" until the kitchen confirms them. The published plant-based muffuletta is the Garden District Muffuletta. The White Rabbit and Call Me an Ube are on the menu.
+
+## Weekly events
+
+Edit the JSON array `#upcoming-events` in index.html, and keep the matching list item so the homepage stays crawlable. Current list:
+
+- Sunday Jazz Brunch — every Sunday. Live jazz every Sunday brunch. Start time not published. Reserve: https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637
 
 ## Canonical pages
 
 - https://www.sipsoberbar.com/
 - https://www.sipsoberbar.com/reservations.html
+- https://www.sipsoberbar.com/breakfast-gulfport.html
+- https://www.sipsoberbar.com/sunday-jazz-brunch.html
 - https://www.sipsoberbar.com/private-events.html
 - https://www.sipsoberbar.com/things-to-do-in-gulfport.html
 - https://www.sipsoberbar.com/why-i-opened-a-sober-bar.html

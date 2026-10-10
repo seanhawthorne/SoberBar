@@ -267,6 +267,7 @@
     .timeline li:last-child { border-bottom: none; }
     .timeline .t { font-family: 'Poiret One', sans-serif; color: var(--gold-bright); letter-spacing: 0.1em; font-size: 1.05rem; white-space: nowrap; }
     .timeline .d { color: var(--muted); font-size: 0.98rem; }
+    .timeline a, .brunch-copy a { color: var(--gold-bright); }
 
     /* ------- Sunday jazz brunch ------- */
     .brunch-panel {
@@ -295,6 +296,26 @@
     }
     .brunch-notes span { position: relative; }
     .brunch-notes span + span::before { content: '◆'; position: absolute; left: -18px; color: var(--gold-dim); font-size: 0.48rem; }
+
+    /* ------- upcoming events (edit the JSON in #upcoming) ------- */
+    .upcoming-list { list-style: none; max-width: 760px; margin: 10px auto 0; }
+    .upcoming-list li {
+      display: grid; grid-template-columns: 1fr auto; gap: 6px 24px;
+      align-items: center; text-align: left;
+      padding: 22px 0; border-bottom: 1px solid var(--gold-faint);
+    }
+    .upcoming-when { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+    .upcoming-name {
+      display: block; margin-top: 4px; font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--cream); text-decoration: none; line-height: 1.15;
+    }
+    .upcoming-name:hover { color: var(--gold-bright); }
+    .upcoming-detail { grid-column: 1 / -1; color: var(--muted); margin: 0; }
+    .upcoming-list .btn { justify-self: end; }
+    @media (max-width: 640px) {
+      .upcoming-list li { grid-template-columns: 1fr; }
+      .upcoming-list .btn { justify-self: start; }
+    }
     /* ------- reviews ------- */
     .rating-summary { text-align: center; margin: -30px auto 44px; color: var(--muted); }
     .rating-summary strong { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--cream); font-weight: 500; }
@@ -601,7 +622,7 @@
           <h2 class="title">Coffee house by day,<br><em>speakeasy by night.</em></h2>
           <p>One room, two lives. Sunlight and espresso in the morning; warm lights, music, and cocktails after dark. Designed for a 7 am meeting and a Friday night that runs till midnight.</p>
           <ul class="timeline">
-            <li><span class="t">7 am</span><span class="d">Doors open — coffee, breakfast, and the full menu. Walk-ins welcome.</span></li>
+            <li><span class="t">7 am</span><span class="d">Doors open — <a href="/breakfast-gulfport.html">coffee and breakfast</a>, and the full menu. Walk-ins welcome.</span></li>
             <li><span class="t">All day</span><span class="d">Full menu from open to close — coffee, breakfast, lunch, and zero-proof cocktails.</span></li>
             <li><span class="t">5 pm</span><span class="d">The lights drop, the bar wakes up — cocktail hour begins</span></li>
             <li><span class="t">Close</span><span class="d">Sun–Thu 10 pm · Fri &amp; Sat midnight</span></li>
@@ -625,7 +646,7 @@
         <span class="eyebrow">Sunday at Sober Bar</span>
         <h2 class="title">Jazz, brunch<br><em>&amp; a slower Sunday.</em></h2>
         <div class="deco-rule" style="margin-bottom: 28px;"><span class="gem"></span></div>
-        <p class="brunch-copy">Live jazz every Sunday brunch, with a New Orleans-inspired brunch menu made just for Sundays.</p>
+        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Live jazz every Sunday brunch</a>, with a New Orleans-inspired brunch menu made just for Sundays.</p>
         <div class="brunch-notes" aria-label="Event highlights">
           <span>Live music</span>
           <span>Sunday-only menu</span>
@@ -633,6 +654,76 @@
         </div>
         <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" rel="noopener noreferrer" target="_blank">Reserve a table</a>
       </div>
+    </div>
+  </section>
+
+  <section id="upcoming">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">This week</span>
+        <h2 class="title">Upcoming at <em>Sober Bar.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
+      </div>
+      <!-- Add a weekly event by appending an object to this JSON and a matching li below, so the list stays crawlable without JavaScript. Do not invent a jazz start time or a band name. -->
+      <script type="application/json" id="upcoming-events">
+      [
+        {
+          "id": "sunday-jazz-brunch",
+          "name": "Sunday Jazz Brunch",
+          "when": "Every Sunday",
+          "detail": "Live jazz every Sunday brunch. The start time is not published yet.",
+          "href": "/sunday-jazz-brunch.html",
+          "cta": "Reserve a table",
+          "ctaHref": "https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637"
+        }
+      ]
+      </script>
+      <ul class="upcoming-list" id="upcoming-list">
+        <li>
+          <div>
+            <div class="upcoming-when">Every Sunday</div>
+            <a class="upcoming-name" href="/sunday-jazz-brunch.html">Sunday Jazz Brunch</a>
+          </div>
+          <a class="btn btn-solid" data-cta="upcoming" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+          <p class="upcoming-detail">Live jazz every Sunday brunch. The start time is not published yet.</p>
+        </li>
+      </ul>
+      <script>
+        (function () {
+          var node = document.getElementById('upcoming-events');
+          var list = document.getElementById('upcoming-list');
+          if (!node || !list) return;
+          var events = JSON.parse(node.textContent);
+          list.textContent = '';
+          events.forEach(function (event) {
+            var item = document.createElement('li');
+            var copy = document.createElement('div');
+            var when = document.createElement('div');
+            when.className = 'upcoming-when';
+            when.textContent = event.when;
+            var name = document.createElement('a');
+            name.className = 'upcoming-name';
+            name.href = event.href;
+            name.textContent = event.name;
+            copy.appendChild(when);
+            copy.appendChild(name);
+            var cta = document.createElement('a');
+            cta.className = 'btn btn-solid';
+            cta.setAttribute('data-cta', 'upcoming');
+            cta.href = event.ctaHref;
+            cta.target = '_blank';
+            cta.rel = 'noopener noreferrer';
+            cta.textContent = event.cta;
+            var detail = document.createElement('p');
+            detail.className = 'upcoming-detail';
+            detail.textContent = event.detail;
+            item.appendChild(copy);
+            item.appendChild(cta);
+            item.appendChild(detail);
+            list.appendChild(item);
+          });
+        })();
+      </script>
     </div>
   </section>
 
@@ -858,6 +949,7 @@
       <div class="deco-rule" style="margin-bottom: 26px;"><span class="gem"></span></div>
       <p class="fine"><a href="tel:+18135861660">(813) 586-1660</a> · 3062 Beach Blvd S, Gulfport, FL 33707</p>
       <p class="fine"><a data-cta="footer" href="https://getseat.net?channel=merchant_web#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> &nbsp;·&nbsp; <a href="/#menu">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a> &nbsp;·&nbsp; <a href="/private-events.html">Private Events</a></p>
+      <p class="fine"><a href="/breakfast-gulfport.html">Breakfast &amp; Coffee</a> &nbsp;·&nbsp; <a href="/sunday-jazz-brunch.html">Sunday Jazz Brunch</a> &nbsp;·&nbsp; <a href="/private-events.html">Private Events</a> &nbsp;·&nbsp; <a href="/reservations.html">Reservations</a></p>
       <p class="fine"><a href="/things-to-do-in-gulfport.html">Things to Do</a> &nbsp;·&nbsp; <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> &nbsp;·&nbsp; <a href="/best-non-alcoholic-bars-florida.html">NA Bars in Florida</a> &nbsp;·&nbsp; <a href="/as-seen-in.html">As Seen In</a> &nbsp;·&nbsp; <a href="/event-sponsorship.html">Event Sponsorship</a></p>
       <p class="fine"><a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></p>
       <p class="fine">© 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
