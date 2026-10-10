@@ -23,7 +23,10 @@
     ul { margin-left:24px; }
     a { color:var(--gold-bright); }
     .eyebrow { font-family:'Josefin Sans', sans-serif; font-size:.72rem; letter-spacing:.4em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:block; }
-    .lead { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.5rem; color:var(--cream); line-height:1.4; margin-bottom:36px; }
+    .lead { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.5rem; color:var(--cream); line-height:1.4; margin-bottom:28px; }
+    .room { margin: 0 0 36px; }
+    .room img { width: 100%; height: auto; display: block; }
+    .room figcaption { margin-top: 10px; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
     .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:20px; }
     .card { background:var(--ink); border:1px solid rgba(212,175,106,.18); padding:24px; }
     .card h3 { margin-top:0; }
@@ -55,6 +58,13 @@
     <span class="eyebrow">Private Events</span>
     <h1>Private events in Gulfport</h1>
     <p class="lead">Showers, birthdays, office gatherings, and recovery milestones in a room of about 50 seats. Tell us the date and the headcount.</p>
+    <figure class="room">
+      <picture>
+        <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 820px" type="image/webp">
+        <img src="/images/space/lounge-1400.jpg" width="1400" height="1050" alt="The lounge at Sober Bar, curved booths under the chandelier, where private gatherings sit" loading="lazy" decoding="async">
+      </picture>
+      <figcaption>The lounge. About 30 seats inside, 20 more on the patio.</figcaption>
+    </figure>
 
     <section class="facts" aria-label="Hours, address, and phone">
       <h2>Visit</h2>

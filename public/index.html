@@ -15,16 +15,16 @@
   <meta property="og:title" content="Sober Bar &amp; Kitchen — Coffee, Breakfast, Lunch &amp; Alcohol-Free Cocktails in Gulfport" />
   <meta property="og:description" content="Open daily at 7am in Gulfport. Coffee, breakfast, lunch, and alcohol-free cocktails. Walk-ins welcome. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV." />
   <meta property="og:url" content="https://www.sipsoberbar.com/" />
-  <meta property="og:image" content="https://www.sipsoberbar.com/images/food/call-me-an-ube-1200.jpg" />
+  <meta property="og:image" content="https://www.sipsoberbar.com/images/space/lounge-1400.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sober Bar &amp; Kitchen — Coffee, Breakfast, Lunch &amp; Alcohol-Free Cocktails in Gulfport" />
   <meta name="twitter:description" content="Open daily at 7am in Gulfport. Coffee, breakfast, lunch, and alcohol-free cocktails. Walk-ins welcome. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV." />
-  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/food/call-me-an-ube-1200.jpg" />
+  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/space/lounge-1400.jpg" />
 
   <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/cormorant-garamond-italic-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/cormorant-garamond-normal-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/webp" imagesrcset="/images/food/call-me-an-ube-480.webp 480w, /images/food/call-me-an-ube-800.webp 800w, /images/food/call-me-an-ube-1200.webp 1200w" imagesizes="(max-width: 900px) 100vw, 42vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" imagesizes="100vw" fetchpriority="high">
   <style>
 /* Self-hosted Latin subsets (SIL Open Font License). Variable files cover the listed weights. */
 
@@ -655,14 +655,14 @@ html { scroll-padding-top: 84px; }
       }
     }
 
-    /* ------- hero v2: photo-led ------- */
-    header.hero { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); gap: clamp(32px,5vw,80px); align-items: center; text-align: left; padding: 110px max(24px, calc((100% - 1180px)/2)) 70px; min-height: 100svh; }
-    header.hero::before { -webkit-mask-image: linear-gradient(180deg,#000 0%,transparent 70%); mask-image: linear-gradient(180deg,#000 0%,transparent 70%); }
-    .hero-copy { position: relative; z-index: 2; order: 1; }
-    .hero-photo { order: 2; position: relative; z-index: 1; border-radius: 999px 999px 0 0; overflow: hidden; aspect-ratio: 3/4; max-height: 78svh; justify-self: end; width: min(100%, 520px); box-shadow: 0 40px 120px rgba(0,0,0,.6), 0 0 0 1px var(--gold-dim); }
-    .hero-photo::after { content:''; position:absolute; inset:10px; border:1px solid rgba(238,217,164,.35); border-radius: 999px 999px 0 0; pointer-events:none; }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
-    .hero-logo { width: 190px; margin: 0 0 26px; }
+    /* ------- hero: full-bleed room ------- */
+    header.hero { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; text-align: left; position: relative; overflow: hidden; min-height: 100svh; padding: 120px max(28px, calc((100% - 1120px)/2)) 64px; }
+    header.hero::before { display: none; }
+    .hero-copy { position: relative; z-index: 2; max-width: 40rem; }
+    .hero-photo { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; border-radius: 0; overflow: hidden; box-shadow: none; }
+    .hero-photo::after { content:''; position:absolute; inset:0; border:0; border-radius:0; pointer-events:none; background: linear-gradient(180deg, rgba(7,6,5,.28) 0%, rgba(7,6,5,.05) 32%, rgba(7,6,5,.28) 58%, rgba(7,6,5,.92) 100%); }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 36%; }
+    .hero-logo { width: 120px; margin: 0 0 14px; }
     .hero-status { font-size: .74rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
     .hero-status.is-open::before { content:''; width:7px; height:7px; border-radius:50%; background:#7fd88f; box-shadow:0 0 0 0 rgba(127,216,143,.5); animation: pulse 2.2s infinite; flex: none; }
     .hero-title { margin: 0 0 18px; max-width: 14em; font-size: clamp(2.3rem, 4.6vw, 3.9rem); line-height: 1.04; }
@@ -679,6 +679,12 @@ html { scroll-padding-top: 84px; }
     .res-cell p { color: var(--muted); font-size: .92rem; margin-top: 10px; }
     .abv-note { font-size: .86rem; color: var(--muted-2); border-left: 1px solid var(--gold-dim); padding-left: 14px; margin-top: 18px; }
     @media (max-width: 700px) { .res-grid { grid-template-columns: 1fr; } .res-cell { padding: 24px 20px; } }
+    .night-band { position: relative; padding: 0; margin: 0; overflow: hidden; }
+    .night-band picture, .night-band img { display: block; width: 100%; height: min(78vh, 820px); min-height: 420px; object-fit: cover; object-position: center 42%; }
+    .night-band::after { content:''; position:absolute; inset:0; pointer-events:none; background: linear-gradient(180deg, rgba(7,6,5,.2) 0%, transparent 28%, transparent 62%, rgba(7,6,5,.72) 100%); }
+    .night-caption { position:absolute; z-index:1; left: max(24px, calc((100% - 1120px) / 2)); bottom: 36px; margin: 0; }
+    .night-caption span { display:block; font-size:.72rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+    .night-caption strong { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(2rem, 4vw, 3.2rem); color:var(--cream); letter-spacing:0; }
     .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 2vw, 28px); max-width: 1080px; margin: 0 auto; }
     .gallery figure { margin: 0; }
     .gallery .arch { aspect-ratio: 3/4; }
@@ -721,18 +727,19 @@ html { scroll-padding-top: 84px; }
     @media (min-width: 901px) { header.hero .hero-actions { gap: 14px; } header.hero .btn { padding: 17px 30px; } }
     @media (prefers-reduced-motion: reduce) { .hero-status.is-open::before, .marquee-track { animation: none !important; } html { scroll-behavior: auto; } }
     @media (max-width: 900px) {
-      header.hero { display: block; text-align: center; padding: 76px 0 18px; min-height: auto; }
-      .hero-photo { position: relative; inset: auto; width: 100%; max-height: 168px; aspect-ratio: 16 / 9; border-radius: 0; box-shadow: none; }
-      .hero-photo::after { inset: auto; border: 0; border-radius: 0; background: none; }
-      .hero-photo img { object-position: center 42%; }
-      .hero-copy { padding: 12px 20px 0; }
+      header.hero { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; text-align: left; min-height: 100svh; padding: 88px 18px calc(108px + env(safe-area-inset-bottom, 0px)); }
+      .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; }
+      .hero-photo::after { inset: 0; border: 0; border-radius: 0; background: linear-gradient(180deg, rgba(7,6,5,.22) 0%, rgba(7,6,5,.06) 26%, rgba(7,6,5,.5) 62%, rgba(7,6,5,.94) 100%); }
+      .hero-photo img { object-position: 68% 32%; }
+      .hero-copy { padding: 0; max-width: none; width: 100%; }
+      .night-band img { height: 62vh; min-height: 320px; }
       .hero-logo { display: none; }
-      .hero-status { justify-content: center; letter-spacing: .12em; font-size: .64rem; margin-bottom: 8px; }
-      .hero-title { margin: 0 auto 8px; font-size: clamp(1.7rem, 7.2vw, 2.15rem); }
-      .hero-sub { margin: 0 auto 12px; font-size: 1.05rem; color: rgba(244,234,216,.82); }
-      header.hero .hero-actions { margin: 0 auto; gap: 8px; }
-      .hero-proof { margin-top: 10px; font-size: .68rem; letter-spacing: .04em; }
-      header.hero .hero-hours { justify-content: center; margin-top: 6px; gap: 4px 12px; }
+      .hero-status { justify-content: flex-start; letter-spacing: .14em; font-size: .64rem; margin-bottom: 8px; }
+      .hero-title { margin: 0 0 8px; font-size: clamp(1.85rem, 8vw, 2.35rem); max-width: 12em; }
+      .hero-sub { margin: 0 0 14px; font-size: 1.08rem; color: rgba(244,234,216,.88); }
+      header.hero .hero-actions { margin: 0; gap: 8px; max-width: 340px; }
+      .hero-proof { margin-top: 12px; font-size: .68rem; letter-spacing: .04em; }
+      header.hero .hero-hours { justify-content: flex-start; margin-top: 8px; gap: 4px 14px; }
     }
   </style>
 </head>
@@ -776,8 +783,8 @@ html { scroll-padding-top: 84px; }
   <header class="hero" id="top">
     <div class="hero-photo">
       <picture>
-        <source type="image/webp" srcset="/images/food/call-me-an-ube-480.webp 480w, /images/food/call-me-an-ube-800.webp 800w, /images/food/call-me-an-ube-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 42vw">
-        <img src="/images/food/call-me-an-ube-1200.jpg" width="1200" height="623" alt="Call Me an Ube, a purple zero-proof cocktail in a ribbed coupe glass" fetchpriority="high" />
+        <source type="image/webp" srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="100vw">
+        <img src="/images/space/lounge-1400.jpg" width="1400" height="1050" alt="The lounge at Sober Bar, a chandelier over curved booths" fetchpriority="high" />
       </picture>
     </div>
     <div class="hero-copy">
@@ -812,8 +819,8 @@ html { scroll-padding-top: 84px; }
       <div class="feature">
         <div class="arch reveal" style="aspect-ratio: 3/4;">
           <picture>
-            <source srcset="/images/food/bees-bouquet-480.webp 480w, /images/food/bees-bouquet-800.webp 800w, /images/food/bees-bouquet-1200.webp 1200w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
-            <img src="/images/food/bees-bouquet-1200.jpg" width="1200" height="623" alt="Bee's Bouquet, a yellow zero-proof cocktail with a lemon twist" loading="lazy" decoding="async" />
+            <source srcset="/images/space/bartenders-480.webp 480w, /images/space/bartenders-800.webp 800w, /images/space/bartenders-1400.webp 1400w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
+            <img src="/images/space/bartenders-1400.jpg" width="1050" height="1400" alt="Bartenders mixing drinks behind the bar at Sober Bar" loading="lazy" decoding="async" />
           </picture>
         </div>
         <div class="copy reveal">
@@ -827,29 +834,37 @@ html { scroll-padding-top: 84px; }
     </div>
   </section>
 
+  <section class="night-band" aria-label="The bar at night">
+    <picture>
+      <source srcset="/images/space/bar-wide-480.webp 480w, /images/space/bar-wide-800.webp 800w, /images/space/bar-wide-1400.webp 1400w" sizes="100vw" type="image/webp">
+      <img src="/images/space/bar-wide-1400.jpg" width="1400" height="794" alt="The bar at Sober Bar at night, a wide view down the room" loading="lazy" decoding="async" />
+    </picture>
+    <p class="night-caption"><span>After dark</span><strong>The bar at night.</strong></p>
+  </section>
+
   <section class="gallery-sec">
     <div class="shell">
       <div class="sec-head reveal">
-        <span class="eyebrow">The Details</span>
-        <h2 class="title">Shaped with <em>intention.</em></h2>
+        <span class="eyebrow">The Room</span>
+        <h2 class="title">Chandeliers, velvet, <em>and the patio.</em></h2>
         <div class="deco-rule"><span class="gem"></span></div>
       </div>
       <div class="gallery">
         <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/food/cafe-au-lait-480.webp 480w, /images/food/cafe-au-lait-800.webp 800w, /images/food/cafe-au-lait-1200.webp 1200w" sizes="(max-width: 900px) 72vw, 340px" type="image/webp"><img src="/images/food/cafe-au-lait-1200.jpg" width="1200" height="623" alt="Café au Lait in a glass mug" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>Café au Lait</figcaption>
+          <div class="arch"><picture><source srcset="/images/bar-480.webp 480w, /images/bar-800.webp 800w, /images/bar.webp 1100w" sizes="(max-width: 900px) 72vw, 280px" type="image/webp"><img src="/images/bar.jpg" width="1100" height="1466" alt="The bar at Sober Bar, bottles and brass along the back bar" loading="lazy" decoding="async" /></picture></div>
+          <figcaption>The bar</figcaption>
         </figure>
         <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/food/muffuletta-480.webp 480w, /images/food/muffuletta-800.webp 800w, /images/food/muffuletta-1200.webp 1200w" sizes="(max-width: 900px) 72vw, 340px" type="image/webp"><img src="/images/food/muffuletta-1200.jpg" width="1200" height="623" alt="The Muffuletta on a dark plate" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>The Muffuletta</figcaption>
+          <div class="arch"><picture><source srcset="/images/parlor-480.webp 480w, /images/parlor-800.webp 800w, /images/parlor.webp 809w" sizes="(max-width: 900px) 72vw, 280px" type="image/webp"><img src="/images/parlor.jpg" width="809" height="1079" alt="The parlor, velvet sofas and a chandelier" loading="lazy" decoding="async" /></picture></div>
+          <figcaption>The parlor</figcaption>
         </figure>
         <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/food/spicy-margarita-480.webp 480w, /images/food/spicy-margarita-800.webp 800w, /images/food/spicy-margarita-1200.webp 1200w" sizes="(max-width: 900px) 72vw, 340px" type="image/webp"><img src="/images/food/spicy-margarita-1200.jpg" width="1200" height="623" alt="Spicy Margarita, a zero-proof cocktail with a salted rim" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>Spicy Margarita</figcaption>
+          <div class="arch"><picture><source srcset="/images/patio-480.webp 480w, /images/patio-800.webp 800w" sizes="(max-width: 900px) 72vw, 280px" type="image/webp"><img src="/images/patio.jpg" width="1100" height="1466" alt="The patio at Sober Bar in daylight" loading="lazy" decoding="async" /></picture></div>
+          <figcaption>The patio</figcaption>
         </figure>
         <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/food/angus-sliders-480.webp 480w, /images/food/angus-sliders-800.webp 800w, /images/food/angus-sliders-1200.webp 1200w" sizes="(max-width: 900px) 72vw, 340px" type="image/webp"><img src="/images/food/angus-sliders-1200.jpg" width="1200" height="623" alt="Angus Sliders" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>Angus Sliders</figcaption>
+          <div class="arch"><picture><source srcset="/images/space/porch-480.webp 480w, /images/space/porch-800.webp 800w, /images/space/porch-1400.webp 1400w" sizes="(max-width: 900px) 72vw, 280px" type="image/webp"><img src="/images/space/porch-1400.jpg" width="1400" height="1006" alt="The front porch of Sober Bar at night, string lights and an Open sign" loading="lazy" decoding="async" /></picture></div>
+          <figcaption>The porch</figcaption>
         </figure>
       </div>
     </div>
@@ -957,8 +972,8 @@ html { scroll-padding-top: 84px; }
         </div>
         <div class="arch reveal" style="aspect-ratio: 3/4;">
           <picture>
-            <source srcset="/images/food/classic-morning-melt-480.webp 480w, /images/food/classic-morning-melt-800.webp 800w, /images/food/classic-morning-melt-1200.webp 1200w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
-            <img src="/images/food/classic-morning-melt-1200.jpg" width="1200" height="623" alt="The Classic Morning Melt, a breakfast sandwich on an English muffin" loading="lazy" decoding="async" />
+            <source srcset="/images/cafe-480.webp 480w, /images/cafe-800.webp 800w, /images/cafe.webp 1100w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
+            <img src="/images/cafe.jpg" width="1100" height="1466" alt="The café room in the morning, marble tables and a red banquette by the front window" loading="lazy" decoding="async" />
           </picture>
         </div>
       </div>
@@ -1326,8 +1341,8 @@ html { scroll-padding-top: 84px; }
     "slogan": "Full ritual, zero proof.",
     "url": "https://www.sipsoberbar.com",
     "image": [
-      "https://www.sipsoberbar.com/images/food/call-me-an-ube-1200.jpg",
-      "https://www.sipsoberbar.com/images/food/muffuletta-1200.jpg",
+      "https://www.sipsoberbar.com/images/space/lounge-1400.jpg",
+      "https://www.sipsoberbar.com/images/parlor.jpg",
       "https://www.sipsoberbar.com/images/storefront.jpg"
     ],
     "logo": "https://www.sipsoberbar.com/images/logo-sunburst.png",
