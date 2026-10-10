@@ -646,7 +646,7 @@ html { scroll-padding-top: 84px; }
     body { font-size: 17px; }
     :root { --muted: rgba(244, 234, 216, 0.8); --muted-2: rgba(244, 234, 216, 0.68); }
     .mi .mi-desc, .feature .copy p, .faq-wrap details p, .res-cell p, .brunch-copy { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; font-weight: 400; }
-    .mi .mi-desc { font-size: .9rem; line-height: 1.55; color: #cfc5b4; }
+    .mi .mi-desc { font-size: 1rem; line-height: 1.55; color: #cfc5b4; }
     .feature .copy p, .faq-wrap details p { font-size: 1rem; line-height: 1.7; color: #d6ccbb; }
     .hero-proof a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--gold-faint); }
     .res-top { margin: 0 auto 40px; }
@@ -991,7 +991,7 @@ html { scroll-padding-top: 84px; }
         <h2 class="title">Gulfport is <em>glowing.</em></h2>
         <div class="deco-rule"><span class="gem"></span></div>
       </div>
-      <p class="rating-summary reveal"><strong>4.9★</strong> <span class="rating-stars" aria-label="4.9 out of 5 stars">★★★★★</span><br>128 Google reviews</p>
+      <p class="rating-summary reveal"><a href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><strong>4.9★</strong> <span class="rating-stars" aria-label="4.9 out of 5 stars">★★★★★</span><br>128 Google reviews</a></p>
       <div class="reviews-grid">
         <article class="review-card reveal">
           <div class="rating-stars" aria-label="5 out of 5 stars">★★★★★</div>
@@ -1228,6 +1228,7 @@ html { scroll-padding-top: 84px; }
       if (open) { var f = mobileMenu.querySelector('a'); if (f) f.focus(); } else if (restore) burger.focus();
     }
     burger.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open'), true));
+    window.matchMedia('(min-width: 1201px)').addEventListener('change', (m) => { if (m.matches && mobileMenu.classList.contains('open')) setMenu(false, false); });
     mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false, false)));
     document.addEventListener('keydown', (e) => {
       if (!mobileMenu.classList.contains('open')) return;

@@ -40,6 +40,8 @@
       });
     } else if (/shop\.sipsoberbar\.com/i.test(href)) {
       sendEvent('merch_clicked', { link_url: href, link_text: label });
+    } else if (/maps\?cid=/i.test(href)) {
+      sendEvent('reviews_clicked', { link_url: href, link_text: label });
     } else if (/maps\.google\.com|google\.com\/maps/i.test(href)) {
       sendEvent('directions_clicked', { link_url: href, link_text: label });
     } else if (/^tel:/i.test(href)) {
