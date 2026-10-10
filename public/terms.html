@@ -42,7 +42,7 @@
     .deco-rule::before, .deco-rule::after { content: ''; height: 1px; width: min(120px, 20vw); background: linear-gradient(90deg, transparent, var(--gold-dim)); }
     .deco-rule::after { background: linear-gradient(90deg, var(--gold-dim), transparent); }
     .deco-rule .gem { transform: rotate(45deg); display: inline-block; border: 1px solid var(--gold); width: 8px; height: 8px; }
-    nav { position: sticky; top: 0; z-index: 60; background: rgba(7,6,5,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--gold-faint); }
+    nav[aria-label="Primary"] { position: sticky; top: 0; z-index: 60; background: rgba(7,6,5,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--gold-faint); }
     .nav-inner { width: min(100% - 48px, 1180px); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 76px; }
     .nav-brand img { height: 52px; width: auto; }
     .nav-links { display: flex; gap: 32px; align-items: center; list-style: none; }
