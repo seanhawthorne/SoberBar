@@ -10,10 +10,16 @@
     transport_type: 'beacon'
   });
 
-  var tag = document.createElement('script');
-  tag.async = true;
-  tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
-  document.head.appendChild(tag);
+  // Load gtag after the page has painted so it never competes with the hero photo.
+  // Events fired before it arrives wait in dataLayer and are sent once it loads.
+  function loadTag() {
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
+    document.head.appendChild(tag);
+  }
+  if (document.readyState === 'complete') setTimeout(loadTag, 1500);
+  else window.addEventListener('load', function () { setTimeout(loadTag, 1500); });
 
   function sendEvent(name, parameters) {
     window.gtag('event', name, Object.assign({ transport_type: 'beacon' }, parameters || {}));

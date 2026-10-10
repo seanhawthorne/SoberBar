@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sober Bar &amp; Kitchen — Coffee, Breakfast, Lunch &amp; Alcohol-Free Cocktails in Gulfport</title>
+  <title>Sober Bar &amp; Kitchen | Zero-Proof Cocktails, Coffee &amp; NOLA Kitchen in Gulfport, FL</title>
   <meta name="description" content="Coffee, breakfast, lunch, and alcohol-free cocktails in Gulfport, FL. Open daily at 7am, walk-ins welcome. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV." />
   <meta name="theme-color" content="#070605" />
   <link rel="canonical" href="https://www.sipsoberbar.com/" />
@@ -23,10 +23,135 @@
 
   <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/cormorant-garamond-italic-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/poiret-one-normal-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="/images/logo-sunburst.webp" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="/fonts.css">
-  <link rel="stylesheet" href="/chrome.css">
+    <link rel="preload" href="/fonts/cormorant-garamond-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" type="image/webp" imagesrcset="/images/bar-night-480.webp 480w, /images/bar-night-800.webp 800w, /images/bar-night.webp 1300w" imagesizes="(max-width: 900px) 100vw, 42vw" fetchpriority="high">
+  <style>
+/* Self-hosted Latin subsets (SIL Open Font License). Variable files cover the listed weights. */
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-italic-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-normal-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/inter-normal-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url('/fonts/josefin-sans-normal-300.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/poiret-one-normal-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Sticky mobile actions: Call, Reserve, Directions.
+   Header styles often set `nav { top: 0 }`. top and bottom together would
+   stretch this bar over the whole screen, so top stays auto and the height
+   is explicit. */
+.mobile-actions {
+  display: none;
+  top: auto;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .mobile-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 60px;
+    align-content: start;
+    position: fixed;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(60px + env(safe-area-inset-bottom, 0px));
+    max-height: calc(64px + env(safe-area-inset-bottom, 0px));
+    box-sizing: border-box;
+    margin: 0;
+    z-index: 80;
+    overflow: hidden;
+    background: rgba(7, 6, 5, 0.96);
+    border-top: 1px solid rgba(212, 175, 106, 0.35);
+    padding: 0 0 env(safe-area-inset-bottom, 0px);
+    backdrop-filter: blur(12px);
+  }
+  .mobile-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    min-height: 60px;
+    max-height: 60px;
+    padding: 0 4px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: #eed9a4;
+    font-family: "Josefin Sans", Futura, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(212, 175, 106, 0.16);
+  }
+  .mobile-actions a:last-child { border-right: 0; }
+  .mobile-actions a.is-primary {
+    background: #d4af6a;
+    color: #060504;
+    font-weight: 600;
+  }
+  .mobile-actions a.is-primary:hover,
+  .mobile-actions a.is-primary:focus-visible { background: #eed9a4; color: #060504; }
+  .mobile-actions a:not(.is-primary):hover,
+  .mobile-actions a:not(.is-primary):focus-visible {
+    color: #f4ead8;
+    background: rgba(212, 175, 106, 0.08);
+  }
+  html body {
+    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  html { scroll-padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)); }
+}
+
+html { scroll-padding-top: 84px; }
+
+@media print {
+  .mobile-actions { display: none !important; }
+  body { padding-bottom: 0 !important; }
+}
+
+  </style>
 
   <style>
     :root {
@@ -468,14 +593,95 @@
         width: 100%;
       }
     }
+
+    /* ------- hero v2: photo-led ------- */
+    header.hero { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); gap: clamp(32px,5vw,80px); align-items: center; text-align: left; padding: 110px max(24px, calc((100% - 1180px)/2)) 70px; min-height: 100svh; }
+    header.hero::before { -webkit-mask-image: linear-gradient(180deg,#000 0%,transparent 70%); mask-image: linear-gradient(180deg,#000 0%,transparent 70%); }
+    .hero-copy { position: relative; z-index: 2; order: 1; }
+    .hero-photo { order: 2; position: relative; z-index: 1; border-radius: 999px 999px 0 0; overflow: hidden; aspect-ratio: 3/4; max-height: 78svh; justify-self: end; width: min(100%, 520px); box-shadow: 0 40px 120px rgba(0,0,0,.6), 0 0 0 1px var(--gold-dim); }
+    .hero-photo::after { content:''; position:absolute; inset:10px; border:1px solid rgba(238,217,164,.35); border-radius: 999px 999px 0 0; pointer-events:none; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-logo { width: 190px; margin: 0 0 26px; }
+    .hero-status { font-size: .74rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    .hero-status.is-open::before { content:''; width:7px; height:7px; border-radius:50%; background:#7fd88f; box-shadow:0 0 0 0 rgba(127,216,143,.5); animation: pulse 2.2s infinite; flex: none; }
+    .hero-title { margin: 0 0 18px; max-width: 14em; font-size: clamp(2.3rem, 4.6vw, 3.9rem); line-height: 1.04; }
+    .hero-title em { font-style: italic; color: var(--gold-bright); }
+    .hero-sub { margin: 0 0 32px; max-width: 30em; }
+    header.hero .hero-actions { justify-content: flex-start; }
+    .hero-proof { margin-top: 26px; font-size: .78rem; letter-spacing: .12em; color: var(--muted); font-weight: 400; }
+    .hero-proof span { color: var(--gold); letter-spacing: .1em; margin-right: 6px; }
+    header.hero .hero-hours { justify-content: flex-start; margin-top: 14px; gap: 28px; }
+    .res-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gold-faint); border: 1px solid var(--gold-faint); max-width: 900px; margin: 0 auto 44px; }
+    .res-cell { background: var(--black); padding: 34px 26px; text-align: center; }
+    .res-num { display: block; font-family: 'Cormorant Garamond', serif; font-size: 3rem; line-height: 1; color: var(--gold-bright); margin-bottom: 10px; }
+    .res-num small { font-size: .45em; margin-left: 2px; }
+    .res-cell p { color: var(--muted); font-size: .92rem; margin-top: 10px; }
+    .abv-note { font-size: .86rem; color: var(--muted-2); border-left: 1px solid var(--gold-dim); padding-left: 14px; margin-top: 18px; }
+    @media (max-width: 700px) { .res-grid { grid-template-columns: 1fr; } .res-cell { padding: 24px 20px; } }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(18px, 3vw, 36px); max-width: 1080px; margin: 0 auto; }
+    .gallery figure { margin: 0; }
+    .gallery .arch { aspect-ratio: 3/4; }
+    .gallery figcaption { text-align: center; margin-top: 14px; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+    .press-grid { grid-template-columns: repeat(4, 1fr); max-width: 1080px; }
+    .foot-logo { width: 150px !important; }
+    @media (max-width: 900px) {
+      .gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; padding: 0 4px 8px; -webkit-overflow-scrolling: touch; }
+      .gallery figure { flex: 0 0 72%; scroll-snap-align: center; }
+      .press-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .menu-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 0 auto 18px; }
+    .menu-tabs[hidden] { display: none; }
+    .menu-tabs button { background: transparent; border: 1px solid var(--gold-dim); color: var(--cream); font: inherit; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding: 12px 18px; cursor: pointer; min-height: 44px; }
+    .menu-tabs button[aria-pressed="true"] { background: var(--gold); color: #060504; border-color: var(--gold); }
+    .menu-tabs button:focus-visible, .btn:focus-visible, a:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+    .menu-served { text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--muted); font-size: 1.1rem; margin-bottom: 34px; }
+    .menu-col[data-hidden] { display: none; }
+    .menu-grid.single { grid-template-columns: 1fr; max-width: 620px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 900px) { .menu-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 4px; } .menu-tabs button { flex: none; padding: 11px 14px; letter-spacing: .12em; } .visit-photo img { aspect-ratio: 16/10; object-position: 68% 50%; height: auto !important; } .visit-photo picture { height: auto; } }
+    .foot-logo { height: auto !important; }
+    .skip-link { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--gold); color: #060504; padding: 10px 16px; text-decoration: none; font-weight: 400; }
+    .skip-link:focus { top: 12px; }
+    .res-call { text-align: center; margin-top: 22px; color: var(--cream); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; }
+    .res-call a { color: var(--gold-bright); }
+    body { font-size: 17px; }
+    :root { --muted: rgba(244, 234, 216, 0.8); --muted-2: rgba(244, 234, 216, 0.68); }
+    .mi .mi-desc, .feature .copy p, .faq-wrap details p, .res-cell p, .brunch-copy { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; font-weight: 400; }
+    .mi .mi-desc { font-size: .9rem; line-height: 1.55; color: #cfc5b4; }
+    .feature .copy p, .faq-wrap details p { font-size: 1rem; line-height: 1.7; color: #d6ccbb; }
+    .hero-proof a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--gold-faint); }
+    .res-top { margin: 0 auto 40px; }
+    header.hero .hero-actions .hero-call { display: none; }
+    @media (max-width: 900px) {
+      header.hero .hero-actions { grid-template-columns: 1fr 1fr; }
+      header.hero .hero-actions .btn-solid { grid-column: 1 / -1; padding: 16px 8px; font-size: .8rem; }
+    }
+    .nw { white-space: nowrap; }
+    .hero-call { display: none; }
+    @media (min-width: 901px) { header.hero .hero-actions { gap: 14px; } header.hero .btn { padding: 17px 30px; } }
+    @media (prefers-reduced-motion: reduce) { .hero-status.is-open::before, .marquee-track { animation: none !important; } html { scroll-behavior: auto; } }
+    @media (max-width: 900px) {
+      header.hero { display: block; text-align: center; padding: 0 0 26px; min-height: auto; }
+      .hero-photo { position: absolute; inset: 0; width: 100%; max-height: none; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+      .hero-photo::after { inset: 0; border: 0; border-radius: 0; background: linear-gradient(180deg, rgba(7,6,5,.35) 0%, rgba(7,6,5,.15) 18%, rgba(7,6,5,.78) 42%, rgba(7,6,5,.97) 72%); }
+      .hero-photo img { object-position: 50% 30%; }
+      .hero-copy { padding: 210px 20px 0; }
+      .hero-logo { display: none; }
+      .hero-status { justify-content: center; letter-spacing: .16em; font-size: .68rem; margin-bottom: 12px; }
+      .hero-title { margin: 0 auto 12px; font-size: clamp(1.85rem, 8vw, 2.4rem); }
+      .hero-sub { margin: 0 auto 20px; font-size: 1.12rem; color: rgba(244,234,216,.82); }
+      header.hero .hero-actions { margin: 0 auto; }
+      .hero-proof { margin-top: 16px; font-size: .7rem; letter-spacing: .06em; }
+      header.hero .hero-hours { justify-content: center; margin-top: 8px; gap: 4px 16px; }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <nav id="nav" aria-label="Primary">
     <div class="nav-inner">
       <a class="nav-brand" href="#top" aria-label="Sober Bar home">
-        <img src="/images/logo-sunburst.webp" alt="Sober Bar" width="1280" height="801" />
+        <img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801" />
       </a>
       <ul class="nav-links">
         <li><a href="#bar">Cocktails</a></li>
@@ -488,7 +694,7 @@
       </ul>
       <a class="nav-phone" href="tel:+18135861660">(813) 586-1660</a>
       <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a><a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a></div>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
     </div>
   </nav>
 
@@ -505,24 +711,31 @@
     <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Instagram</a>
   </div>
 
-  <main>
+  <main id="main">
   <header class="hero" id="top">
-    <picture>
-      <source srcset="/images/logo-sunburst.webp" type="image/webp">
-      <img class="hero-logo" src="/images/logo-sunburst.png" width="1280" height="801" alt="Sober Bar" fetchpriority="high" />
-    </picture>
-    <h1 class="hero-title">Coffee, New Orleans-inspired kitchen &amp; alcohol-free cocktails in Gulfport</h1>
-    <p class="hero-sub">Open daily at 7am · Breakfast, lunch, Sunday jazz brunch &amp; evening cocktails · Walk-ins welcome</p>
-    <p class="hero-locale">3062 Beach Blvd S &nbsp;·&nbsp; Gulfport</p>
-    <div class="hero-actions">
-      <a class="btn btn-solid" data-cta="hero" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
-      <a class="btn btn-line" href="#menu">View menu</a>
-      <a class="btn btn-line" href="tel:+18135861660">Call</a>
-      <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+    <div class="hero-photo">
+      <picture>
+        <source type="image/webp" srcset="/images/bar-night-480.webp 480w, /images/bar-night-800.webp 800w, /images/bar-night.webp 1300w" sizes="(max-width: 900px) 100vw, 42vw">
+        <img src="/images/bar-night.jpg" width="1300" height="1734" alt="A ribbed coupe cocktail glowing on the black marble bar at night, gold mirror and sconces behind" fetchpriority="high" />
+      </picture>
     </div>
-    <div class="hero-hours">
-      <span><b>Sun – Thu</b> 7 am – 10 pm</span>
-      <span><b>Fri – Sat</b> 7 am – Midnight</span>
+    <div class="hero-copy">
+      <img class="hero-logo" src="/images/logo-sunburst-400.webp" width="1280" height="801" alt="Sober Bar" />
+      <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
+      <h1 class="hero-title">Coffee, New Orleans-inspired kitchen &amp; <em><span class="nw">alcohol-free</span> cocktails</em> in Gulfport</h1>
+      <p class="hero-sub">Espresso at sunrise. Muffulettas at noon. Zero-proof cocktails under the chandeliers after dark.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" data-cta="hero" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+        <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+        <a class="btn btn-line" href="#menu">View menu</a>
+        <a class="btn btn-line hero-call" href="tel:+18135861660">Call</a>
+        <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+      </div>
+      <p class="hero-proof"><a href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener"><span aria-hidden="true">★★★★★</span> 4.9 on Google · 128+ reviews</a></p>
+      <div class="hero-hours">
+        <span><b>Sun – Thu</b> 7 am – 10 pm</span>
+        <span><b>Fri – Sat</b> 7 am – Midnight</span>
+      </div>
     </div>
   </header>
 
@@ -538,16 +751,41 @@
       <div class="feature">
         <div class="arch reveal" style="aspect-ratio: 3/4;">
           <picture>
-            <source srcset="/images/cocktail-trio.webp" type="image/webp">
+            <source srcset="/images/cocktail-trio-480.webp 480w, /images/cocktail-trio-800.webp 800w, /images/cocktail-trio.webp 1400w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
             <img src="/images/cocktail-trio.jpg" width="1400" height="1866" alt="Three craft zero-proof cocktails on a marble table at Sober Bar" loading="lazy" decoding="async" />
           </picture>
         </div>
         <div class="copy reveal">
           <span class="eyebrow">The Cocktails</span>
           <h2 class="title">Full ritual,<br><em>zero proof.</em></h2>
-          <p>Every drink is built like it belongs on a top-shelf menu — layered, garnished, and worth slowing down for. NA spirits, fresh ingredients, real craft. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.</p>
+          <p>Every drink is built like it belongs on a top-shelf menu — layered, garnished, and worth slowing down for. NA spirits, fresh-pressed juice, real craft.</p>
           <p>Each signature pour is the work of one of our own bartenders, built on house syrups and fresh-pressed juice. Ask about adding functional botanicals to any beverage.</p>
+          <p class="abv-note">Honest pour: our cocktails are built on non-alcoholic spirits. Some NA beers carry trace alcohol, under 0.5% ABV. Ask us anything.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-sec">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">The Details</span>
+        <h2 class="title">Shaped with <em>intention.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
+      </div>
+      <div class="gallery">
+        <figure class="reveal">
+          <div class="arch"><picture><source srcset="/images/bar-480.webp 480w, /images/bar-800.webp 800w, /images/bar.webp 1100w" sizes="(max-width: 900px) 72vw, 340px" type="image/webp"><img src="/images/bar.jpg" width="1100" height="1466" alt="The black marble bar lined with brass barware and bitters, bottle shelves against white subway tile under warm track lighting" loading="lazy" decoding="async" /></picture></div>
+          <figcaption>The bar</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="arch"><picture><source srcset="/images/parlor-480.webp 480w, /images/parlor-800.webp 800w, /images/parlor.webp 809w" sizes="(max-width: 900px) 72vw, 340px" type="image/webp"><img src="/images/parlor.jpg" width="809" height="1079" alt="The parlor — leather chesterfield sofas around a carved coffee table, red velvet curtains and a stained-glass window under a brass chandelier" loading="lazy" decoding="async" /></picture></div>
+          <figcaption>The parlor</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="arch"><picture><source srcset="/images/patio-480.webp 480w, /images/patio-800.webp 800w" sizes="(max-width: 900px) 72vw, 340px" type="image/webp"><img src="/images/patio.jpg" width="1100" height="1466" alt="A cocktail beside the Buddha statue on the sunny back patio" loading="lazy" decoding="async" /></picture></div>
+          <figcaption>The patio</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -563,10 +801,17 @@
       <!-- TODO(owner): Add beignets, crawfish eggs benedict (note if it is Sunday brunch only), and rename Café au Lait to chicory café au lait only after the kitchen confirms those items. Do not invent dishes. -->
       <!-- TODO(owner): Label GF and vegan items from a confirmed menu. A few plates already say plant-based in the description; do not guess the rest. -->
       <!-- TODO(owner): Badge each beverage 0.0% or &lt;0.5% ABV after verifying Run Wild, kombucha, and bitters. Guinness 0.0 and Heineken 0.0 already say 0.0 in the name. -->
+      <div class="menu-tabs" role="group" aria-label="Filter the menu" hidden>
+        <button type="button" data-tab="all" aria-pressed="false">Full menu</button>
+        <button type="button" data-tab="drinks" aria-pressed="false">Cocktails &amp; NA beer</button>
+        <button type="button" data-tab="coffee" aria-pressed="false">Coffee</button>
+        <button type="button" data-tab="breakfast" aria-pressed="false">Breakfast</button>
+        <button type="button" data-tab="kitchen" aria-pressed="false">Kitchen</button>
+      </div>
+      <p class="menu-served">Everything below is served from open to close, every day.</p>
       <div class="menu-grid">
-        <div class="menu-col reveal">
+        <div class="menu-col reveal" data-cat="drinks">
           <h3>Zero-Proof Cocktails</h3>
-          <p class="served">Full menu from open to close</p>
           <div class="mi"><div class="mi-name">Call Me an Ube</div><div class="mi-desc">Ritual gin alt, ube, coconut cream, key lime, pineapple</div></div>
           <div class="mi"><div class="mi-name">Hot Mami</div><div class="mi-desc">Reposado tequila alt, jalape&ntilde;o, lime, pineapple ginger, chili</div></div>
           <div class="mi"><div class="mi-name">Jinn &amp; Juniper</div><div class="mi-desc">Gin alt, cucumber, juniper, ashwagandha — crisp and garden-fresh</div></div>
@@ -575,17 +820,15 @@
           <div class="mi"><div class="mi-name">Moonlit Meringue</div><div class="mi-desc">Gin alt, NA limoncello, egg white, lavender bitters — cloud-soft</div></div>
           <div class="mi"><div class="mi-name">Espresso Martini</div><div class="mi-desc">Reposado tequila alt, cold brew espresso, agave, fig &amp; walnut bitters</div></div>
         </div>
-        <div class="menu-col reveal">
+        <div class="menu-col reveal" data-cat="drinks">
           <h3>Beer &amp; Kombucha</h3>
-          <p class="served">Full menu from open to close</p>
           <div class="mi"><div class="mi-name">Run Wild IPA</div><div class="mi-desc">Crisp, hoppy, citrus-forward NA IPA · 16 oz draft · &lt;0.5% ABV</div></div>
           <div class="mi"><div class="mi-name">Guinness 0.0</div><div class="mi-desc">Smooth, roasted coffee and chocolate notes</div></div>
           <div class="mi"><div class="mi-name">Heineken 0.0</div><div class="mi-desc">Crisp, clean, and lightly malty</div></div>
           <div class="mi"><div class="mi-name">Beech Kombucha</div><div class="mi-desc">Bright, sparkling fermented tea on draft</div></div>
         </div>
-        <div class="menu-col reveal">
+        <div class="menu-col reveal" data-cat="coffee">
           <h3>Coffee &amp; Espresso</h3>
-          <p class="served">Full menu from open to close</p>
           <div class="mi"><div class="mi-name">Cortado</div><div class="mi-desc">Espresso with a small pour of steamed milk</div></div>
           <div class="mi"><div class="mi-name">Cappuccino</div><div class="mi-desc">Espresso, steamed milk, and a thick cap of foam</div></div>
           <div class="mi"><div class="mi-name">Americano</div><div class="mi-desc">Espresso and hot water</div></div>
@@ -596,9 +839,8 @@
           <div class="mi"><div class="mi-name">Nitro Cold Brew</div><div class="mi-desc">Cascading nitro pour, naturally creamy</div></div>
           <div class="mi"><div class="mi-name">Chai Latte</div><div class="mi-desc">Spiced chai with steamed milk</div></div>
         </div>
-        <div class="menu-col reveal">
+        <div class="menu-col reveal" data-cat="breakfast">
           <h3>Breakfast Sandwiches</h3>
-          <p class="served">Full menu from open to close</p>
           <div class="mi"><div class="mi-name">The Classic Morning Melt</div><div class="mi-desc">English muffin, egg, American cheese, bacon, sausage, or ham</div></div>
           <div class="mi"><div class="mi-name">The Beach Blvd Bodega</div><div class="mi-desc">Everything bagel, egg, American cheese, choice of meat</div></div>
           <div class="mi"><div class="mi-name">The White Rabbit</div><div class="mi-desc">Plain bagel, egg, brie, fig spread, prosciutto, hot honey</div></div>
@@ -606,17 +848,15 @@
           <div class="mi"><div class="mi-name">Breakfast Muffuletta</div><div class="mi-desc">Toasted focaccia, pesto cream cheese, egg, sausage, bacon, smoked provolone</div></div>
           <div class="mi"><div class="mi-name">Hot Honey Breakfast Flatbread</div><div class="mi-desc">Pesto cream cheese, mozzarella, sausage, bacon, egg, hot honey drizzle</div></div>
         </div>
-        <div class="menu-col reveal">
+        <div class="menu-col reveal" data-cat="breakfast kitchen">
           <h3>Bagels &amp; Bowls</h3>
-          <p class="served">Full menu from open to close</p>
           <div class="mi"><div class="mi-name">Bagel &amp; Cream Cheese</div><div class="mi-desc">Plain or everything — house ube, fig &amp; honey, or vegan spreads</div></div>
           <div class="mi"><div class="mi-name">Yogurt Parfait</div><div class="mi-desc">Greek yogurt, raw honey, mixed berries, Ryker's Granola</div></div>
           <div class="mi"><div class="mi-name">Pretzel Bites</div><div class="mi-desc">Soft-baked, with spicy beer cheese</div></div>
           <div class="mi"><div class="mi-name">Naan Dippers</div><div class="mi-desc">Warm naan, roasted red pepper hummus, carrots, celery</div></div>
         </div>
-        <div class="menu-col reveal">
+        <div class="menu-col reveal" data-cat="kitchen">
           <h3>Provisions &amp; Salads</h3>
-          <p class="served">Full menu from open to close</p>
           <div class="mi"><div class="mi-name">The Muffuletta</div><div class="mi-desc">Genoa salami, capicola, mozzarella, olive salad, basil pesto, toasted focaccia</div></div>
           <div class="mi"><div class="mi-name">Hot Honey Soppressata Flatbread</div><div class="mi-desc">Whipped ricotta, mozzarella, spicy soppressata, hot honey</div></div>
           <div class="mi"><div class="mi-name">Fig, Brie &amp; Prosciutto Flatbread</div><div class="mi-desc">Brie, fig jam, prosciutto, toasted pecans, arugula, hot honey</div></div>
@@ -626,7 +866,7 @@
           <div class="mi"><div class="mi-name">Spicy Mardi Gras Salad</div><div class="mi-desc">Greens, hot capicola, Genoa salami, egg, blue cheese</div></div>
         </div>
       </div>
-      <p class="menu-note">Full menu from open to close · We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.<br>Gluten-free options available · Please tell us about allergies before ordering<br>Follow <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">@sipsoberbar</a> for seasonal pours</p>
+      <p class="menu-note">Some NA beers contain trace alcohol, under 0.5% ABV.<br>Gluten-free options available · Please tell us about allergies before ordering<br>Follow <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">@sipsoberbar</a> for seasonal pours</p>
     </div>
   </section>
 
@@ -640,38 +880,20 @@
           <ul class="timeline">
             <li><span class="t">7 am</span><span class="d">Doors open — <a href="/breakfast-gulfport.html">coffee and breakfast</a>, and the full menu. Walk-ins welcome.</span></li>
             <li><span class="t">All day</span><span class="d">Full menu from open to close — coffee, breakfast, lunch, and zero-proof cocktails.</span></li>
-            <li><span class="t">5 pm</span><span class="d">The lights drop, the bar wakes up — cocktail hour begins</span></li>
+            <li><span class="t">Evenings</span><span class="d">The lights drop, the bar wakes up — cocktail hour begins</span></li>
             <li><span class="t">Close</span><span class="d">Sun–Thu 10 pm · Fri &amp; Sat midnight</span></li>
           </ul>
         </div>
         <div class="arch reveal" style="aspect-ratio: 3/4;">
           <picture>
-            <source srcset="/images/bar-night.webp" type="image/webp">
-            <img src="/images/bar-night.jpg" width="1300" height="1734" alt="A ribbed coupe cocktail on the black marble bar at night, gold mirror and sconces glowing behind" loading="lazy" decoding="async" />
+            <source srcset="/images/cafe-480.webp 480w, /images/cafe-800.webp 800w, /images/cafe.webp 1100w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
+            <img src="/images/cafe.jpg" width="1100" height="1466" alt="Morning light through the front window across marble café tables and a red velvet banquette" loading="lazy" decoding="async" />
           </picture>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sunday Jazz Brunch -->
-  <!-- TODO(owner): Publish the Sunday jazz brunch start time and the band only after Sean confirms both. Do not invent a time. -->
-  <section id="jazz-brunch">
-    <div class="shell">
-      <div class="brunch-panel reveal">
-        <span class="eyebrow">Sunday at Sober Bar</span>
-        <h2 class="title">Jazz, brunch<br><em>&amp; a slower Sunday.</em></h2>
-        <div class="deco-rule" style="margin-bottom: 28px;"><span class="gem"></span></div>
-        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Live jazz every Sunday brunch</a>, with a New Orleans-inspired brunch menu made just for Sundays.</p>
-        <div class="brunch-notes" aria-label="Event highlights">
-          <span>Live music</span>
-          <span>Sunday-only menu</span>
-          <span>Free RSVP</span>
-        </div>
-        <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" rel="noopener noreferrer" target="_blank">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
-      </div>
-    </div>
-  </section>
 
   <section id="upcoming">
     <div class="shell">
@@ -751,90 +973,6 @@
     </div>
   </section>
 
-  <section id="groups" class="menu-bg">
-    <div class="shell">
-      <div class="brunch-panel reveal">
-        <span class="eyebrow">Bring Your People</span>
-        <h2 class="title">Good company.<br><em>A different kind of gathering.</em></h2>
-        <p class="brunch-copy">Team outings, birthdays, book clubs, and private celebrations in the heart of Gulfport. Start with your date and guest count; we’ll help you explore the details.</p>
-        <div class="hero-actions">
-          <a class="btn btn-solid" href="/private-events.html#inquire">Plan your gathering</a>
-          <a class="btn btn-line" data-cta="private-events" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reservations -->
-  <section id="reservations" class="menu-bg">
-    <div class="shell">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Reservations</span>
-        <h2 class="title">Book a table.<br><em>We'll save your spot.</em></h2>
-        <div class="deco-rule"><span class="gem"></span></div>
-      </div>
-
-      <div class="duo" style="max-width: 700px; margin: 0 auto 60px;">
-        <div class="visit-cell reveal" style="text-align: center;">
-          <div style="font-size: 2.4rem; margin-bottom: 12px;">🏠</div>
-          <span class="eyebrow" style="font-size: 0.65rem;">Indoor</span>
-          <p style="font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--gold-bright); margin: 10px 0;">30</p>
-          <p style="color: var(--muted-2); font-size: 0.85rem;">seats · bar + tables</p>
-          <p style="color: var(--muted); font-size: 0.9rem; margin-top: 8px;">Moody, candlelit — the full Sober Bar experience.</p>
-        </div>
-        <div class="visit-cell reveal" style="text-align: center;">
-          <div style="font-size: 2.4rem; margin-bottom: 12px;">🌿</div>
-          <span class="eyebrow" style="font-size: 0.65rem;">Outdoor</span>
-          <p style="font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; color: var(--gold-bright); margin: 10px 0;">20</p>
-          <p style="color: var(--muted-2); font-size: 0.85rem;">patio seats</p>
-          <p style="color: var(--muted); font-size: 0.9rem; margin-top: 8px;">Beach Boulevard people-watching included.</p>
-        </div>
-      </div>
-
-      <div class="visit-grid reveal" style="max-width: 700px; margin: 0 auto;">
-        <div class="visit-cell" style="text-align: center; grid-column: 1 / -1;">
-          <div style="font-size: 2rem; margin-bottom: 10px;">📅</div>
-          <span class="eyebrow">Powered by SeatOn</span>
-          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); margin: 14px 0 10px;">Reserve your spot — instant booking, real-time availability.</p>
-          <p style="color: var(--muted-2); font-size: 0.85rem; margin-bottom: 18px;">50 seats total. Walk-ins always welcome. Online booking is for parties of 1–6.</p>
-        </div>
-      </div>
-      <div class="visit-actions reveal">
-        <a class="btn btn-solid" data-cta="reservations" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
-        <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
-      </div>
-      <p class="menu-note reveal" style="margin-top: 26px;">Planning a baby shower, book club, office happy hour, sober celebration, recovery milestone, or team gathering? <a href="/private-events.html">Explore private events &amp; group bookings</a>.</p>
-    </div>
-  </section>
-
-  <section class="menu-bg">
-    <div class="shell">
-      <div class="sec-head reveal">
-        <span class="eyebrow">The Details</span>
-        <h2 class="title">Shaped with <em>intention.</em></h2>
-        <div class="deco-rule"><span class="gem"></span></div>
-      </div>
-      <div class="duo duo--quad">
-        <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/bar.webp" type="image/webp"><img src="/images/bar.jpg" width="1100" height="1466" alt="The black marble bar lined with brass barware and bitters, bottle shelves against white subway tile under warm track lighting" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>The bar</figcaption>
-        </figure>
-        <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/cafe.webp" type="image/webp"><img src="/images/cafe.jpg" width="1100" height="1466" alt="The café room — round marble tables along a red velvet banquette, with sunlight through the front window" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>The caf&eacute;</figcaption>
-        </figure>
-        <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/parlor.webp" type="image/webp"><img src="/images/parlor.jpg" width="809" height="1079" alt="The parlor — leather chesterfield sofas around a carved coffee table, red velvet curtains and a stained-glass window under a brass chandelier" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>The parlor</figcaption>
-        </figure>
-        <figure class="reveal">
-          <div class="arch"><img src="/images/patio.jpg" width="1100" height="1466" alt="A cocktail beside the Buddha statue on the sunny back patio" loading="lazy" decoding="async" /></div>
-          <figcaption>The patio</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
   <section id="reviews">
     <div class="shell">
       <div class="sec-head reveal">
@@ -842,7 +980,7 @@
         <h2 class="title">The sober-curious story<br><em>Tampa Bay is noticing.</em></h2>
         <div class="deco-rule"><span class="gem"></span></div>
       </div>
-      <div class="visit-grid reveal" style="margin-bottom: 70px;">
+      <div class="visit-grid press-grid reveal" style="margin-bottom: 70px;">
         <div class="visit-cell"><p><strong>The Gabber</strong><br>Local Gulfport coverage and neighborhood discovery.</p></div>
         <div class="visit-cell"><p><strong>I Love the Burg</strong><br>St. Pete stories about food, drinks, and places to go.</p></div>
         <div class="visit-cell"><p><strong>St. Pete Rising</strong><br>Opening story for Gulfport's zero-proof cocktail lounge and caf&eacute;.</p></div>
@@ -872,7 +1010,70 @@
         </article>
       </div>
       <div class="reviews-action reveal">
-        <a class="btn btn-line" href="https://www.google.com/search?q=Sober+Bar+3062+Beach+Blvd+S+Gulfport+FL+reviews" target="_blank" rel="noopener">Read All Google Reviews</a>
+        <a class="btn btn-line" href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener">Read All Google Reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservations -->
+  <section id="reservations" class="menu-bg">
+    <div class="shell">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Reservations</span>
+        <h2 class="title">Book a table.<br><em>We'll save your spot.</em></h2>
+        <div class="deco-rule"><span class="gem"></span></div>
+      </div>
+
+      <div class="visit-actions res-top reveal">
+        <a class="btn btn-solid" data-cta="reservations" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+        <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+      </div>
+      <div class="res-grid reveal">
+        <div class="res-cell"><span class="res-num">30</span><span class="eyebrow">Seats inside</span><p>Candlelit bar, café tables &amp; the velvet parlor.</p></div>
+        <div class="res-cell"><span class="res-num">20</span><span class="eyebrow">On the patio</span><p>Open air, Beach Boulevard people-watching included.</p></div>
+        <div class="res-cell"><span class="res-num">7<small>am</small></span><span class="eyebrow">Every day</span><p>Book brunch, a date night, or a table for the crew. Walk-ins always welcome.</p></div>
+      </div>
+
+      <p class="res-call reveal">Walk-ins always welcome. Online booking is for parties of 1–6. Questions or a big group? Call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
+      <p class="menu-note reveal" style="margin-top: 26px;">Planning a baby shower, book club, office happy hour, sober celebration, recovery milestone, or team gathering? <a href="/private-events.html">Explore private events &amp; group bookings</a>.</p>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Sunday Jazz Brunch -->
+  <!-- TODO(owner): Publish the Sunday jazz brunch start time and the band only after Sean confirms both. Do not invent a time. -->
+  <section id="jazz-brunch">
+    <div class="shell">
+      <div class="brunch-panel reveal">
+        <span class="eyebrow">Sunday at Sober Bar</span>
+        <h2 class="title">Jazz, brunch<br><em>&amp; a slower Sunday.</em></h2>
+        <div class="deco-rule" style="margin-bottom: 28px;"><span class="gem"></span></div>
+        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Live jazz every Sunday brunch</a>, with a New Orleans-inspired brunch menu made just for Sundays.</p>
+        <div class="brunch-notes" aria-label="Event highlights">
+          <span>Live music</span>
+          <span>Sunday-only menu</span>
+          <span>Reserve ahead</span>
+        </div>
+        <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" rel="noopener noreferrer" target="_blank">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="groups" class="menu-bg">
+    <div class="shell">
+      <div class="brunch-panel reveal">
+        <span class="eyebrow">Bring Your People</span>
+        <h2 class="title">Good company.<br><em>A different kind of gathering.</em></h2>
+        <p class="brunch-copy">Team outings, birthdays, book clubs, and private celebrations in the heart of Gulfport. Start with your date and guest count; we’ll help you explore the details.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="/private-events.html#inquire">Plan your gathering</a>
+          <a class="btn btn-line" data-cta="private-events" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+        </div>
       </div>
     </div>
   </section>
@@ -886,7 +1087,7 @@
       </div>
       <div class="visit-photo reveal">
         <picture>
-          <source srcset="/images/storefront.webp" type="image/webp">
+          <source srcset="/images/storefront-480.webp 480w, /images/storefront-800.webp 800w, /images/storefront.webp 1400w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
           <img src="/images/storefront.jpg" width="1400" height="748" alt="The Sober Bar storefront at 3062 Beach Blvd S with its glowing art-deco sign" loading="lazy" decoding="async" />
         </picture>
       </div>
@@ -955,9 +1156,9 @@
         <span class="eyebrow">Stay in the loop</span>
         <h2 class="title" style="margin-top:18px;">Keep up with <em>what's pouring.</em></h2>
         <!-- TODO(owner): Replace this mailto with the provider Sean chooses (Mailchimp, Klaviyo, or Formspree). Do not add the "free beignet" incentive until beignets are confirmed on the menu. -->
-        <p class="join-note">There’s no list on this page yet. Email us and we’ll add you when we set one up.</p>
-        <a class="btn btn-solid" href="mailto:Sean@sipsoberbar.com?subject=Sober%20Bar%20mailing%20list&amp;body=Hi%20Sean%2C%0A%0APlease%20add%20me%20to%20the%20Sober%20Bar%20list.%0A%0AThanks!">Email us to join the list</a>
-        <div class="join-social">
+        <p class="join-note">New cocktails, Sunday jazz and weeknight specials land on Instagram first.</p>
+      <a class="btn btn-solid" href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Follow @sipsoberbar</a>
+      <div class="join-social">
           <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Instagram</a>
           <a href="mailto:Sean@sipsoberbar.com">Email</a>
           <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Maps</a>
@@ -969,7 +1170,7 @@
 
   <footer>
     <div class="shell">
-      <img class="foot-logo" src="/images/logo-sunburst.webp" alt="Sober Bar" width="1280" height="801" loading="lazy" />
+      <img class="foot-logo" src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801" loading="lazy" />
       <div class="deco-rule" style="margin-bottom: 26px;"><span class="gem"></span></div>
       <p class="fine"><a href="tel:+18135861660">(813) 586-1660</a> · 3062 Beach Blvd S, Gulfport, FL 33707</p>
       <p class="fine"><a data-cta="footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a> &nbsp;·&nbsp; <a href="/#menu">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a> &nbsp;·&nbsp; <a href="/private-events.html">Private Events</a></p>
@@ -1017,18 +1218,27 @@
 
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');
-    burger.addEventListener('click', () => {
-      const open = mobileMenu.classList.toggle('open');
+    function setMenu(open, restore) {
+      mobileMenu.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       burger.textContent = open ? '✕' : '☰';
       document.body.style.overflow = open ? 'hidden' : '';
+      var main = document.getElementById('main'); if (main) main.inert = open;
+      if (open) { var f = mobileMenu.querySelector('a'); if (f) f.focus(); } else if (restore) burger.focus();
+    }
+    burger.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open'), true));
+    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false, false)));
+    document.addEventListener('keydown', (e) => {
+      if (!mobileMenu.classList.contains('open')) return;
+      if (e.key === 'Escape') { setMenu(false, true); return; }
+      if (e.key === 'Tab') {
+        var items = [burger].concat(Array.from(mobileMenu.querySelectorAll('a')));
+        var i = items.indexOf(document.activeElement);
+        if (e.shiftKey && i <= 0) { e.preventDefault(); items[items.length - 1].focus(); }
+        else if (!e.shiftKey && i === items.length - 1) { e.preventDefault(); items[0].focus(); }
+      }
     });
-    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
-      burger.textContent = '☰';
-      document.body.style.overflow = '';
-    }));
 
   </script>
 
@@ -1098,7 +1308,6 @@
     "knowsAbout": ["Non-alcoholic cocktails", "Zero-proof spirits", "Mocktails", "Specialty coffee", "Sober-curious lifestyle"],
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Serves alcohol", "value": false },
       { "@type": "LocationFeatureSpecification", "name": "Family friendly", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Outdoor seating", "value": true }
     ],
@@ -1171,5 +1380,35 @@
     ]
   }
   </script>
+<script>
+(function () {
+  var tabs = document.querySelector('.menu-tabs'); if (!tabs) return;
+  var cols = document.querySelectorAll('.menu-col[data-cat]');
+  function show(cat) {
+    tabs.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.tab === cat)); });
+    var n = 0;
+    cols.forEach(function (c) { var on = cat === 'all' || c.dataset.cat.split(' ').indexOf(cat) > -1; if (on) { n++; c.removeAttribute('data-hidden'); c.classList.add('visible'); } else c.setAttribute('data-hidden', ''); });
+    var g = document.querySelector('.menu-grid'); if (g) g.classList.toggle('single', n === 1);
+  }
+  tabs.hidden = false;
+  tabs.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) show(b.dataset.tab); });
+  var h = 12; try { h = parseInt(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(new Date()), 10) % 24; } catch (e) {}
+  show(h < 11 ? 'breakfast' : h >= 17 ? 'drinks' : 'kitchen');
+})();
+</script>
+<script>
+(function () {
+  var el = document.getElementById('openStatus'); if (!el) return;
+  try {
+    var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
+    var get = function (t) { return (parts.find(function (p) { return p.type === t; }) || {}).value; };
+    var day = get('weekday'), h = parseInt(get('hour'), 10) % 24, m = parseInt(get('minute'), 10);
+    var late = (day === 'Fri' || day === 'Sat'), closeH = late ? 24 : 22, t = h + m / 60;
+    if (t >= 7 && t < closeH) { el.textContent = 'Open now · until ' + (late ? 'midnight' : '10 pm') + ' tonight'; el.classList.add('is-open'); }
+    else if (t < 7) { el.textContent = 'Opens at 7 am · coffee & breakfast'; }
+    else { el.textContent = 'Closed now · opens 7 am tomorrow'; }
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
