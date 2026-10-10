@@ -15,16 +15,16 @@
   <meta property="og:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails" />
   <meta property="og:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
   <meta property="og:url" content="https://www.sipsoberbar.com/" />
-  <meta property="og:image" content="https://www.sipsoberbar.com/images/space/lounge-1400.jpg" />
+  <meta property="og:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails" />
   <meta name="twitter:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
-  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/space/lounge-1400.jpg" />
+  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg" />
 
   <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/cormorant-garamond-italic-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/cormorant-garamond-normal-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/webp" imagesrcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" imagesrcset="/images/space/bar-wide-480.webp 480w, /images/space/bar-wide-800.webp 800w, /images/space/bar-wide-1400.webp 1400w" imagesizes="100vw" fetchpriority="high">
   <style>
 /* Self-hosted Latin subsets (SIL Open Font License). Variable files cover the listed weights. */
 
@@ -87,7 +87,7 @@
   .mobile-actions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 28px 60px;
+    grid-template-rows: 60px;
     align-content: start;
     position: fixed;
     top: auto;
@@ -95,8 +95,8 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: calc(88px + env(safe-area-inset-bottom, 0px));
-    max-height: calc(92px + env(safe-area-inset-bottom, 0px));
+    height: calc(60px + env(safe-area-inset-bottom, 0px));
+    max-height: calc(64px + env(safe-area-inset-bottom, 0px));
     box-sizing: border-box;
     margin: 0;
     z-index: 80;
@@ -133,37 +133,15 @@
   }
   .mobile-actions a.is-primary:hover,
   .mobile-actions a.is-primary:focus-visible { background: #eed9a4; color: #060504; }
-  .mobile-actions a:not(.is-primary):not(.party-link):hover,
-  .mobile-actions a:not(.is-primary):not(.party-link):focus-visible {
+  .mobile-actions a:not(.is-primary):hover,
+  .mobile-actions a:not(.is-primary):focus-visible {
     color: #f4ead8;
     background: rgba(212, 175, 106, 0.08);
   }
-  .mobile-actions a.party-link {
-    grid-column: 1 / -1;
-    height: 28px;
-    min-height: 28px;
-    max-height: 28px;
-    margin: 0;
-    padding: 0 10px;
-    border-right: 0;
-    font-size: 0.68rem;
-    letter-spacing: 0.01em;
-    text-transform: none;
-    text-decoration: none;
-    color: #cbb892;
-    background: transparent;
-    white-space: nowrap;
-  }
-  .mobile-actions a.party-link:hover,
-  .mobile-actions a.party-link:focus-visible {
-    color: #f4ead8;
-    background: transparent;
-  }
-  .nav-reserve .party-link { display: none; }
   html body {
-    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
   }
-  html { scroll-padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+  html { scroll-padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
 }
 
 html { scroll-padding-top: 84px; }
@@ -291,15 +269,8 @@ html { scroll-padding-top: 84px; }
     }
     .nav-reserve {
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 3px;
+      align-items: center;
       flex: none;
-    }
-    .nav-reserve .party-link {
-      margin-left: 0;
-      font-size: 0.62rem;
-      white-space: nowrap;
     }
     .hero-actions .party-link,
     .visit-actions .party-link,
@@ -320,7 +291,7 @@ html { scroll-padding-top: 84px; }
       background: rgba(7, 6, 5, 0.97); backdrop-filter: blur(16px);
       flex-direction: column; align-items: center; justify-content: flex-start; gap: 16px;
       overflow-y: auto; -webkit-overflow-scrolling: touch;
-      padding: 96px 20px calc(96px + env(safe-area-inset-bottom, 0px));
+      padding: 96px 20px calc(72px + env(safe-area-inset-bottom, 0px));
     }
     .mobile-menu.open { display: flex; }
     .mobile-menu a {
@@ -346,7 +317,6 @@ html { scroll-padding-top: 84px; }
       -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
       mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
     }
-    .hero-logo { width: min(420px, 72vw); height: auto; margin-bottom: 28px; }
     .hero-title {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-weight: 500;
@@ -619,7 +589,6 @@ html { scroll-padding-top: 84px; }
         justify-content: flex-start;
         padding: 92px 18px 28px;
       }
-      .hero-logo { width: min(200px, 52vw); margin-bottom: 12px; }
       .hero-title { font-size: clamp(1.7rem, 7vw, 2.2rem); margin-bottom: 10px; }
       .hero-sub { font-size: 1.15rem; margin-bottom: 8px; }
       .hero-locale {
@@ -656,18 +625,48 @@ html { scroll-padding-top: 84px; }
     }
 
     /* ------- hero: full-bleed room ------- */
-    header.hero { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; text-align: left; position: relative; overflow: hidden; min-height: 100svh; padding: 120px max(28px, calc((100% - 1120px)/2)) 64px; }
+    header.hero { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; text-align: left; position: relative; overflow: hidden; min-height: 100svh; padding: 120px max(28px, calc((100% - 1120px)/2)) 72px; }
     header.hero::before { display: none; }
-    .hero-copy { position: relative; z-index: 2; max-width: 40rem; }
+    .hero-copy { position: relative; z-index: 2; max-width: 36rem; }
     .hero-photo { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; border-radius: 0; overflow: hidden; box-shadow: none; }
-    .hero-photo::after { content:''; position:absolute; inset:0; border:0; border-radius:0; pointer-events:none; background: linear-gradient(180deg, rgba(7,6,5,.28) 0%, rgba(7,6,5,.05) 32%, rgba(7,6,5,.28) 58%, rgba(7,6,5,.92) 100%); }
-    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 36%; }
-    .hero-logo { width: 120px; margin: 0 0 14px; }
-    .hero-status { font-size: .74rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+    .hero-photo picture { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero-photo::after {
+      content:''; position:absolute; inset:0; z-index: 2; border:0; border-radius:0; pointer-events:none;
+      background:
+        linear-gradient(90deg, rgba(7,6,5,.88) 0%, rgba(7,6,5,.62) 26%, rgba(7,6,5,.28) 48%, rgba(7,6,5,.08) 68%, rgba(7,6,5,0) 100%),
+        linear-gradient(180deg, rgba(7,6,5,.5) 0%, rgba(7,6,5,.08) 24%, rgba(7,6,5,.22) 62%, rgba(7,6,5,.82) 100%);
+    }
+    .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+    .hero-slide.is-lead { z-index: 0; object-position: 46% 48%; animation: hero-drift 32s ease-in-out infinite alternate; }
+    .hero-slide-2, .hero-slide-3 { z-index: 1; opacity: 0; }
+    .hero-slide-2 { object-position: center 16%; animation: hero-cross-a 36s ease-in-out infinite; }
+    .hero-slide-3 { object-position: center 38%; animation: hero-cross-b 36s ease-in-out infinite; }
+    @keyframes hero-drift {
+      from { transform: scale(1) translate3d(0,0,0); }
+      to { transform: scale(1.055) translate3d(-1.1%, 0, 0); }
+    }
+    @keyframes hero-cross-a {
+      0%, 24% { opacity: 0; }
+      34%, 46% { opacity: 1; }
+      56%, 100% { opacity: 0; }
+    }
+    @keyframes hero-cross-b {
+      0%, 58% { opacity: 0; }
+      68%, 80% { opacity: 1; }
+      90%, 100% { opacity: 0; }
+    }
+    header.hero .btn-line {
+      background: rgba(7, 6, 5, 0.62);
+      border-color: rgba(238, 217, 164, 0.92);
+      color: #f4ead8;
+      backdrop-filter: blur(8px);
+    }
+    header.hero .btn-line:hover { background: #d4af6a; border-color: #d4af6a; color: #060504; }
+    .hero-status { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
     .hero-status.is-open::before { content:''; width:7px; height:7px; border-radius:50%; background:#7fd88f; box-shadow:0 0 0 0 rgba(127,216,143,.5); animation: pulse 2.2s infinite; flex: none; }
-    .hero-title { margin: 0 0 18px; max-width: 14em; font-size: clamp(2.3rem, 4.6vw, 3.9rem); line-height: 1.04; }
+    .hero-title { margin: 0 0 16px; max-width: 13em; font-size: clamp(2.4rem, 4.4vw, 4.15rem); line-height: 0.98; letter-spacing: -0.018em; }
     .hero-title em { font-style: italic; color: var(--gold-bright); }
-    .hero-sub { margin: 0 0 32px; max-width: 30em; }
+    .hero-sub { margin: 0 0 28px; max-width: 26em; font-size: clamp(1.2rem, 2vw, 1.55rem); color: rgba(244,234,216,.88); }
     header.hero .hero-actions { justify-content: flex-start; }
     .hero-proof { margin-top: 26px; font-size: .78rem; letter-spacing: .12em; color: var(--muted); font-weight: 400; }
     .hero-proof span { color: var(--gold); letter-spacing: .1em; margin-right: 6px; }
@@ -725,15 +724,23 @@ html { scroll-padding-top: 84px; }
     .nw { white-space: nowrap; }
     .hero-call { display: none; }
     @media (min-width: 901px) { header.hero .hero-actions { gap: 14px; } header.hero .btn { padding: 17px 30px; } }
-    @media (prefers-reduced-motion: reduce) { .hero-status.is-open::before, .marquee-track { animation: none !important; } html { scroll-behavior: auto; } }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-status.is-open::before, .marquee-track, .hero-slide { animation: none !important; }
+      .hero-slide-2, .hero-slide-3 { display: none; }
+      html { scroll-behavior: auto; }
+    }
     @media (max-width: 900px) {
-      header.hero { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; text-align: left; min-height: 100svh; padding: 88px 18px calc(108px + env(safe-area-inset-bottom, 0px)); }
+      header.hero { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; text-align: left; min-height: 100svh; padding: 88px 18px calc(80px + env(safe-area-inset-bottom, 0px)); }
       .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; }
-      .hero-photo::after { inset: 0; border: 0; border-radius: 0; background: linear-gradient(180deg, rgba(7,6,5,.22) 0%, rgba(7,6,5,.06) 26%, rgba(7,6,5,.5) 62%, rgba(7,6,5,.94) 100%); }
-      .hero-photo img { object-position: 68% 32%; }
+      .hero-photo::after {
+        inset: 0; border: 0; border-radius: 0;
+        background:
+          linear-gradient(90deg, rgba(7,6,5,.78) 0%, rgba(7,6,5,.42) 46%, rgba(7,6,5,.16) 100%),
+          linear-gradient(180deg, rgba(7,6,5,.42) 0%, rgba(7,6,5,.1) 28%, rgba(7,6,5,.5) 68%, rgba(7,6,5,.94) 100%);
+      }
+      .hero-slide.is-lead { object-position: 42% 46%; }
       .hero-copy { padding: 0; max-width: none; width: 100%; }
       .night-band img { height: 62vh; min-height: 320px; }
-      .hero-logo { display: none; }
       .hero-status { justify-content: flex-start; letter-spacing: .14em; font-size: .64rem; margin-bottom: 8px; }
       .hero-title { margin: 0 0 8px; font-size: clamp(1.85rem, 8vw, 2.35rem); max-width: 12em; }
       .hero-sub { margin: 0 0 14px; font-size: 1.08rem; color: rgba(244,234,216,.88); }
@@ -761,13 +768,13 @@ html { scroll-padding-top: 84px; }
         <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
       </ul>
       <a class="nav-phone" href="tel:+18135861660">(813) 586-1660</a>
-      <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a><a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a></div>
+      <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a></div>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a data-cta="mobile-menu" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+    <a data-cta="mobile-menu" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
     <a href="#bar">Cocktails</a>
     <a href="/menu.html">Menu</a>
     <a href="/private-events.html">Private Events</a>
@@ -783,12 +790,13 @@ html { scroll-padding-top: 84px; }
   <header class="hero" id="top">
     <div class="hero-photo">
       <picture>
-        <source type="image/webp" srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="100vw">
-        <img src="/images/space/lounge-1400.jpg" width="1400" height="1050" alt="The lounge at Sober Bar, a chandelier over curved booths" fetchpriority="high" />
+        <source type="image/webp" srcset="/images/space/bar-wide-480.webp 480w, /images/space/bar-wide-800.webp 800w, /images/space/bar-wide-1400.webp 1400w" sizes="100vw">
+        <img class="hero-slide is-lead" src="/images/space/bar-wide-1400.jpg" width="1400" height="794" alt="The bar at Sober Bar at night, pendant lights over the stools" fetchpriority="high" decoding="async" />
       </picture>
+      <img class="hero-slide hero-slide-2" src="/images/parlor-800.webp" width="800" height="1067" alt="" loading="lazy" decoding="async" />
+      <img class="hero-slide hero-slide-3" src="/images/space/bartenders-800.webp" width="800" height="1067" alt="" loading="lazy" decoding="async" />
     </div>
     <div class="hero-copy">
-      <img class="hero-logo" src="/images/logo-sunburst-400.webp" width="1280" height="801" alt="Sober Bar" />
       <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
       <h1 class="hero-title">Coffee, New Orleans-inspired kitchen &amp; <em><span class="nw">alcohol-free</span> cocktails</em> in Gulfport, FL</h1>
       <p class="hero-sub">Espresso at sunrise. Muffulettas at noon. Zero-proof cocktails under the chandeliers after dark.</p>
@@ -834,12 +842,12 @@ html { scroll-padding-top: 84px; }
     </div>
   </section>
 
-  <section class="night-band" aria-label="The bar at night">
+  <section class="night-band" aria-label="The porch at night">
     <picture>
-      <source srcset="/images/space/bar-wide-480.webp 480w, /images/space/bar-wide-800.webp 800w, /images/space/bar-wide-1400.webp 1400w" sizes="100vw" type="image/webp">
-      <img src="/images/space/bar-wide-1400.jpg" width="1400" height="794" alt="The bar at Sober Bar at night, a wide view down the room" loading="lazy" decoding="async" />
+      <source srcset="/images/space/porch-480.webp 480w, /images/space/porch-800.webp 800w, /images/space/porch-1400.webp 1400w" sizes="100vw" type="image/webp">
+      <img src="/images/space/porch-1400.jpg" width="1400" height="1006" alt="The front porch of Sober Bar at night" loading="lazy" decoding="async" />
     </picture>
-    <p class="night-caption"><span>After dark</span><strong>The bar at night.</strong></p>
+    <p class="night-caption"><span>After dark</span><strong>The porch, lit.</strong></p>
   </section>
 
   <section class="gallery-sec">
@@ -998,7 +1006,7 @@ html { scroll-padding-top: 84px; }
           "detail": "Live jazz every Sunday brunch. The start time is not published yet.",
           "href": "/sunday-jazz-brunch.html",
           "cta": "Reserve a table",
-          "ctaHref": "https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web"
+          "ctaHref": "https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home"
         }
       ]
       </script>
@@ -1008,7 +1016,7 @@ html { scroll-padding-top: 84px; }
             <div class="upcoming-when">Every Sunday</div>
             <a class="upcoming-name" href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>
           </div>
-          <a class="btn btn-solid" data-cta="upcoming" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+          <a class="btn btn-solid" data-cta="upcoming" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
           <p class="upcoming-detail">Live jazz every Sunday brunch. The start time is not published yet.</p>
         </li>
       </ul>
@@ -1040,12 +1048,7 @@ html { scroll-padding-top: 84px; }
             cta.target = '_blank';
             cta.rel = 'noopener noreferrer';
             cta.textContent = event.cta;
-            var party = document.createElement('a');
-            party.className = 'party-link';
-            party.href = '/private-events.html#inquire';
-            party.textContent = 'Party of 7+? Plan a gathering';
             ctaWrap.appendChild(cta);
-            ctaWrap.appendChild(party);
             var detail = document.createElement('p');
             detail.className = 'upcoming-detail';
             detail.textContent = event.detail;
@@ -1143,7 +1146,7 @@ html { scroll-padding-top: 84px; }
           <span>Sunday-only menu</span>
           <span>Reserve ahead</span>
         </div>
-        <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" rel="noopener noreferrer" target="_blank">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+        <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" rel="noopener noreferrer" target="_blank">Reserve a table</a>
       </div>
     </div>
   </section>
@@ -1158,7 +1161,7 @@ html { scroll-padding-top: 84px; }
         <p class="brunch-copy">Team outings, birthdays, book clubs, and private celebrations in the heart of Gulfport. Start with your date and guest count; we’ll help you explore the details.</p>
         <div class="hero-actions">
           <a class="btn btn-solid" href="/private-events.html#inquire">Plan your gathering</a>
-          <a class="btn btn-line" data-cta="private-events" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+          <a class="btn btn-line" data-cta="private-events" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
         </div>
       </div>
     </div>
@@ -1192,7 +1195,7 @@ html { scroll-padding-top: 84px; }
         </div>
       </div>
       <div class="visit-actions reveal">
-        <a class="btn btn-solid" data-cta="visit" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+        <a class="btn btn-solid" data-cta="visit" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
         <a class="btn btn-line" href="tel:+18135861660">Call</a>
         <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
       </div>
@@ -1269,7 +1272,7 @@ html { scroll-padding-top: 84px; }
       <p class="fine">Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
       <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
       <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
-      <p class="fine"><a data-cta="footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a> &nbsp;·&nbsp; <a href="/menu.html">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
+      <p class="fine"><a data-cta="footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a> &nbsp;·&nbsp; <a href="/menu.html">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
       <p class="fine"><a href="/breakfast-gulfport.html">Breakfast in Gulfport</a> &nbsp;·&nbsp; <a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a> &nbsp;·&nbsp; <a href="/private-events.html">Private events in Gulfport</a> &nbsp;·&nbsp; <a href="/reservations.html">Reservations</a> &nbsp;·&nbsp; <a href="/mocktails-st-petersburg.html">Mocktails near St. Pete</a></p>
       <p class="fine"><a href="/things-to-do-in-gulfport.html">Things to Do</a> &nbsp;·&nbsp; <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> &nbsp;·&nbsp; <a href="/best-non-alcoholic-bars-florida.html">NA Bars in Florida</a> &nbsp;·&nbsp; <a href="/as-seen-in.html">As Seen In</a> &nbsp;·&nbsp; <a href="/event-sponsorship.html">Event Sponsorship</a></p>
       <p class="fine"><a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></p>
@@ -1278,7 +1281,6 @@ html { scroll-padding-top: 84px; }
   </footer>
 
   <nav class="mobile-actions" aria-label="Call, reserve, or directions">
-    <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
     <a href="tel:+18135861660">Call</a>
     <a class="is-primary" data-cta="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve</a>
     <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
@@ -1352,7 +1354,7 @@ html { scroll-padding-top: 84px; }
     "email": "Sean@sipsoberbar.com",
     "priceRange": "$$",
     "image": [
-      "https://www.sipsoberbar.com/images/space/lounge-1400.jpg",
+      "https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg",
       "https://www.sipsoberbar.com/images/parlor.jpg",
       "https://www.sipsoberbar.com/images/storefront.jpg"
     ],
