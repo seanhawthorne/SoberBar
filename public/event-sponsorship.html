@@ -26,16 +26,61 @@
     .package h3 { margin-top: 0; }
     .cta-box { background: #12100c; color: #f4ead8; padding: 24px; border: 1px solid rgba(212,175,106,.28); margin: 2em 0; }
     .cta-box a { color: #eed9a4; }
-    .btn { display: inline-block; background: #d4af6a; color: #070605; padding: 12px 18px; text-decoration: none; letter-spacing: .12em; text-transform: uppercase; font-size: .75rem; margin-top: 0.5em; }
+    .btn { display: inline-block; background: #d4af6a; color: #060504; font-weight: 600; padding: 14px 18px; text-decoration: none; letter-spacing: .14em; text-transform: uppercase; font-size: .72rem; white-space: nowrap; text-align: center; border: 0; cursor: pointer; font-family: 'Josefin Sans', sans-serif; }
+    .btn.line { background: transparent; color: #d4af6a; border: 1px solid rgba(212,175,106,.45); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0 28px; }
+    .inquire-form { display: grid; gap: 12px; margin-top: 12px; }
+    .inquire-form label { display: block; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: #d4af6a; margin-bottom: 6px; }
+    .inquire-form input, .inquire-form textarea { width: 100%; background: transparent; color: #f4ead8; border: 1px solid rgba(212,175,106,.35); padding: 12px 14px; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; }
+    .inquire-form textarea { min-height: 96px; resize: vertical; }
     footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid rgba(212,175,106,.25); color: rgba(244,234,216,.6); font-size: 0.9rem; }
     footer a { color: #d4af6a; text-decoration: none; }
   </style>
 </head>
-<body>
+<body class="has-site-nav">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <div class="site-nav-inner">
+        <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801"></a>
+        <ul class="site-links">
+          <li><a href="/#bar">Cocktails</a></li>
+          <li><a href="/menu.html">Menu</a></li>
+          <li><a href="/private-events.html">Private Events</a></li>
+          <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
+          <li><a href="/reservations.html">Reservations</a></li>
+          <li><a href="/#visit">Visit</a></li>
+          <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+        <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
+        <a class="site-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+        <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
+      </div>
+    </nav>
+    <div class="site-menu" id="siteMenu">
+      <a data-cta="mobile-menu" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a href="/#bar">Cocktails</a>
+      <a href="/menu.html">Menu</a>
+      <a href="/private-events.html">Private Events</a>
+      <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
+      <a href="/reservations.html">Reservations</a>
+      <a href="/#visit">Visit</a>
+      <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
+      <a href="tel:+18135861660">(813) 586-1660</a>
+    </div>
+  </header>
   <div class="container">
-    <p style="text-align:right;font-size:.9rem;"><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a></p>
-    <h1>Event Sponsorship & Pop-Up Bar</h1>
+    <h1>Event Sponsorship &amp; Pop-Up Bar</h1>
     <p class="intro">Bring Sober Bar to your festival, market, corporate event, or community gathering. We serve zero-proof cocktails that get people talking.</p>
+    <div class="actions">
+      <a class="btn" href="#inquire">Discuss sponsorship</a>
+      <a class="btn line" data-cta="sponsorship" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+    </div>
+    <figure style="margin:0 0 28px;">
+      <picture>
+        <source srcset="/images/space/market-480.webp 480w, /images/space/market-800.webp 800w, /images/space/market-1400.webp 1400w" sizes="(max-width: 800px) 92vw, 720px" type="image/webp">
+        <img src="/images/space/market-1400.jpg" width="1120" height="1400" alt="Sober Bar staff pouring drinks for guests at an outdoor market booth" style="width:100%;height:auto;display:block;">
+      </picture>
+    </figure>
 
     <h2>Who We Partner With</h2>
     <ul>
@@ -59,27 +104,29 @@
 
     <h2>Sponsorship Packages</h2>
 
+    <p>Packages are quoted for the event. We do not publish a price until we know the date and the crowd.</p>
+
     <div class="package">
-      <h3>Hydration Sponsor — $200–500</h3>
+      <h3>Hydration Sponsor</h3>
       <ul>
-        <li>Logo on event page and 1 social mention</li>
-        <li>Branded mocktail/water station</li>
-        <li>50 sample pours</li>
+        <li>Logo on the event page and a social mention</li>
+        <li>Branded mocktail or water station</li>
+        <li>Sample pours for guests</li>
       </ul>
     </div>
 
     <div class="package">
-      <h3>Beverage Partner — $500–1,500</h3>
+      <h3>Beverage Partner</h3>
       <ul>
-        <li>Booth space at event</li>
-        <li>Logo on signage + 2 social posts</li>
-        <li>200 sample pours or full menu service</li>
-        <li>Passport signups + email capture</li>
+        <li>Booth space at the event</li>
+        <li>Logo on signage and social posts</li>
+        <li>Sample pours or full menu service</li>
+        <li>Passport signups and email capture</li>
       </ul>
     </div>
 
     <div class="package">
-      <h3>Presenting Sponsor — $1,500–5,000</h3>
+      <h3>Presenting Sponsor</h3>
       <ul>
         <li>Named lounge or stage area</li>
         <li>Prominent logo placement</li>
@@ -89,12 +136,31 @@
     </div>
 
     <h2>Why Sober Bar?</h2>
-    <p>We're Gulfport's first alcohol-free cocktail bar, featured by FOX 13, I Love the Burg, St. Pete Rising, and The Gabber. Our drinks look, taste, and feel like real cocktails — because they are. We give event attendees something they can't get anywhere else.</p>
+    <p>Sober Bar &amp; Kitchen is an alcohol-free cocktail bar on Beach Boulevard in Gulfport, featured by <a href="https://www.fox13news.com/video/fmc-tcdaujvlcx10y2dc">FOX 13</a>, <a href="https://ilovetheburg.com/sober-bar-cocktails-coffee-gulfport/">I Love the Burg</a>, <a href="https://stpeterising.com/home/sober-bar-opening-next-month-in-downtown-gulfport-with-zero-proof-cocktails-and-kava">St. Pete Rising</a>, and <a href="https://thegabber.com/south-pinellas-business-news-roundup-for-june-2026/">The Gabber</a>. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.</p>
 
-    <div class="cta-box">
-      <h3 style="margin-top:0;color:#fff;">Let's Partner</h3>
-      <p>Email Sean to discuss your event and build a custom activation.</p>
-      <a class="btn" href="mailto:sean@sipsoberbar.com?subject=Event%20Sponsorship%20Inquiry">Email sean@sipsoberbar.com</a>
+    <div class="cta-box" id="inquire">
+      <h3 style="margin-top:0;">Discuss sponsorship</h3>
+      <p>This form opens an email to Sean@sipsoberbar.com. It does not send by itself, and this page does not store what you type.</p>
+      <form class="inquire-form" id="sponsorForm">
+        <div>
+          <label for="sp-name">Name</label>
+          <input id="sp-name" name="name" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="sp-email">Email</label>
+          <input id="sp-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="sp-event">Event</label>
+          <input id="sp-event" name="event" required>
+        </div>
+        <div>
+          <label for="sp-notes">Notes</label>
+          <textarea id="sp-notes" name="notes"></textarea>
+        </div>
+        <button class="btn" type="submit">Open email inquiry</button>
+      </form>
+      <p>No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>, or call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
     </div>
 
     <footer>
@@ -104,6 +170,25 @@
     <p>&copy; 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707 · Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
   </footer>
   </div>
+  <script>
+    document.getElementById('sponsorForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var form = event.currentTarget;
+      function value(key) { return form.elements[key].value.trim(); }
+      var body = [
+        'Hi Sober Bar,',
+        '',
+        'I would like to discuss sponsorship.',
+        '',
+        'Name: ' + value('name'),
+        'Email: ' + value('email'),
+        'Event: ' + value('event'),
+        'Notes: ' + value('notes')
+      ].join('\n');
+      window.location.href = 'mailto:Sean@sipsoberbar.com?subject=' + encodeURIComponent('Event Sponsorship Inquiry | Website') + '&body=' + encodeURIComponent(body);
+    });
+  </script>
+  <script src="/nav.js" defer></script>
   <nav class="mobile-actions" aria-label="Call, reserve, or directions">
     <a href="tel:+18135861660">Call</a>
     <a class="is-primary" data-cta="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve</a>

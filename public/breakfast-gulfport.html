@@ -9,7 +9,7 @@
   <meta property="og:title" content="Breakfast &amp; Coffee in Gulfport, FL from 7am · Sober Bar">
   <meta property="og:description" content="Espresso, Kyoto cold brew, chai, and breakfast sandwiches from 7am in Gulfport, FL. Walk-ins welcome.">
   <meta property="og:url" content="https://www.sipsoberbar.com/breakfast-gulfport.html">
-  <meta property="og:image" content="https://www.sipsoberbar.com/images/food/cafe-au-lait-1200.jpg">
+  <meta property="og:image" content="https://www.sipsoberbar.com/images/space/lounge-1400.jpg">
   <script src="/analytics.js" defer></script>
   <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/cormorant-garamond-italic-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -28,9 +28,9 @@
     a { color:var(--gold-bright); }
     .eyebrow { font-size:.72rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:12px; }
     .lead { font-family:'Cormorant Garamond', Georgia, serif; font-style:italic; font-size:clamp(1.3rem, 2.4vw, 1.6rem); color:var(--cream); line-height:1.4; margin-bottom:22px; }
-    .actions { display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 28px; }
-    .btn { display:inline-block; padding:14px 22px; background:var(--gold); color:var(--black); text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; text-align:center; }
-    .btn.line { background:transparent; color:var(--gold); border:1px solid rgba(212,175,106,.45); }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 28px; align-items:center; }
+    .btn { display:inline-block; padding:14px 22px; background:var(--gold); color:#060504; font-weight:600; text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; text-align:center; white-space:nowrap; }
+    .btn.line { background:transparent; color:var(--gold); border:1px solid rgba(212,175,106,.45); font-weight:600; }
     .facts { border:1px solid rgba(212,175,106,.28); padding:22px 22px 8px; margin:8px 0 28px; }
     .facts h2 { margin-top:0; }
     .facts dl { display:grid; grid-template-columns:1fr 1fr; gap:16px 28px; margin-bottom:18px; }
@@ -48,21 +48,54 @@
     footer p { margin-bottom:8px; }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
-      .actions .btn { flex:1 1 140px; }
+    }
+    @media (max-width:420px) {
+      .actions { flex-direction:column; align-items:stretch; }
+      .actions .btn { width:100%; }
     }
   </style>
 </head>
-<body>
+<body class="has-site-nav">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <div class="site-nav-inner">
+        <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801"></a>
+        <ul class="site-links">
+          <li><a href="/#bar">Cocktails</a></li>
+          <li><a href="/menu.html">Menu</a></li>
+          <li><a href="/private-events.html">Private Events</a></li>
+          <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
+          <li><a href="/reservations.html">Reservations</a></li>
+          <li><a href="/#visit">Visit</a></li>
+          <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+        <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
+        <a class="site-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=breakfast" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+        <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
+      </div>
+    </nav>
+    <div class="site-menu" id="siteMenu">
+      <a data-cta="mobile-menu" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=breakfast" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a href="/#bar">Cocktails</a>
+      <a href="/menu.html">Menu</a>
+      <a href="/private-events.html">Private Events</a>
+      <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
+      <a href="/reservations.html">Reservations</a>
+      <a href="/#visit">Visit</a>
+      <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
+      <a href="tel:+18135861660">(813) 586-1660</a>
+    </div>
+  </header>
   <div class="shell">
-    <p style="text-align:right;font-size:.78rem;letter-spacing:.06em;margin-bottom:18px;"><a href="/">Sober Bar &amp; Kitchen</a></p>
     <!-- Coffee-shop searches use this page. A separate coffee-shop URL would repeat the same morning menu. -->
     <!-- TODO(owner): Add beignets, chicory café au lait, crawfish eggs Benedict, a gluten-free muffuletta, and the review name "Garden Muffaletta" only after the kitchen confirms them. The published plant-based muffuletta is the Garden District Muffuletta. Do not invent prices. -->
     <span class="eyebrow">Open daily at 7am</span>
     <h1>Breakfast and coffee in Gulfport, FL</h1>
     <p class="lead">Espresso, cold brew, chai, and a New Orleans-inspired breakfast, starting when the doors open. Walk-ins are welcome.</p>
     <div class="actions">
-      <a class="btn" data-cta="breakfast" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=breakfast" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
-      <a class="btn line" href="tel:+18135861660">Call (813) 586-1660</a>
+      <a class="btn" data-cta="breakfast" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=breakfast" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a class="btn line" href="tel:+18135861660">Call</a>
+      <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
     </div>
 
     <section class="facts" aria-label="Hours, address, and phone">
@@ -89,24 +122,24 @@
 
     <figure>
       <picture>
-        <source srcset="/images/food/cafe-au-lait-480.webp 480w, /images/food/cafe-au-lait-800.webp 800w, /images/food/cafe-au-lait-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
-        <img src="/images/food/cafe-au-lait-1200.jpg" width="1200" height="623" alt="Café au Lait in a glass mug" loading="lazy" decoding="async">
+        <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
+        <img src="/images/space/lounge-1400.jpg" width="1400" height="1050" alt="The lounge at Sober Bar, curved booths under the chandelier" loading="lazy" decoding="async">
       </picture>
-      <figcaption>Café au Lait</figcaption>
+      <figcaption>The lounge</figcaption>
     </figure>
     <figure>
       <picture>
-        <source srcset="/images/food/classic-morning-melt-480.webp 480w, /images/food/classic-morning-melt-800.webp 800w, /images/food/classic-morning-melt-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
-        <img src="/images/food/classic-morning-melt-1200.jpg" width="1200" height="623" alt="The Classic Morning Melt breakfast sandwich" loading="lazy" decoding="async">
+        <source srcset="/images/space/porch-480.webp 480w, /images/space/porch-800.webp 800w, /images/space/porch-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
+        <img src="/images/space/porch-1400.jpg" width="1400" height="1006" alt="The porch at Sober Bar at night, string lights over the outdoor seating" loading="lazy" decoding="async">
       </picture>
-      <figcaption>The Classic Morning Melt</figcaption>
+      <figcaption>The porch</figcaption>
     </figure>
     <figure>
       <picture>
-        <source srcset="/images/food/white-rabbit-480.webp 480w, /images/food/white-rabbit-800.webp 800w, /images/food/white-rabbit-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
-        <img src="/images/food/white-rabbit-1200.jpg" width="1200" height="623" alt="The White Rabbit breakfast sandwich" loading="lazy" decoding="async">
+        <source srcset="/images/space/bartenders-480.webp 480w, /images/space/bartenders-800.webp 800w, /images/space/bartenders-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
+        <img src="/images/space/bartenders-1400.jpg" width="1400" height="1867" alt="Bartenders working behind the bar at Sober Bar" loading="lazy" decoding="async">
       </picture>
-      <figcaption>The White Rabbit</figcaption>
+      <figcaption>Behind the bar</figcaption>
     </figure>
 
     <h2>The coffee shop</h2>
@@ -163,8 +196,9 @@
     <p><a href="/sunday-jazz-brunch.html">Live jazz every Sunday brunch</a>. <a href="/private-events.html">Private events</a> for showers, birthdays, office gatherings, and recovery milestones. <a href="/reservations.html">Reservations</a> are on SeatOn. A wider look at the neighborhood is on <a href="/things-to-do-in-gulfport.html">things to do in Gulfport</a>.</p>
 
     <div class="actions">
-      <a class="btn" data-cta="breakfast-footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=breakfast" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+      <a class="btn" data-cta="breakfast-footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=breakfast" target="_blank" rel="noopener noreferrer">Reserve a table</a>
       <a class="btn line" href="tel:+18135861660">Call</a>
+      <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
     </div>
 
     <footer>
@@ -189,7 +223,7 @@
     "url": "https://www.sipsoberbar.com/breakfast-gulfport.html",
     "description": "Espresso, Kyoto cold brew, chai, and breakfast sandwiches from 7am at Sober Bar & Kitchen in Gulfport.",
     "about": { "@id": "https://www.sipsoberbar.com/#business" },
-    "primaryImageOfPage": "https://www.sipsoberbar.com/images/food/cafe-au-lait-1200.jpg"
+    "primaryImageOfPage": "https://www.sipsoberbar.com/images/space/lounge-1400.jpg"
   }
   </script>
   <script type="application/ld+json">
@@ -264,5 +298,6 @@
   ]
 }
   </script>
+  <script src="/nav.js" defer></script>
 </body>
 </html>

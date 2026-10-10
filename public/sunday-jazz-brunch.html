@@ -9,7 +9,7 @@
   <meta property="og:title" content="Sunday Jazz Brunch in Gulfport, FL · Sober Bar">
   <meta property="og:description" content="Live jazz every Sunday brunch on Beach Blvd in Gulfport, FL. Reserve a table. Open from 7am.">
   <meta property="og:url" content="https://www.sipsoberbar.com/sunday-jazz-brunch.html">
-  <meta property="og:image" content="https://www.sipsoberbar.com/images/food/beignets-1200.jpg">
+  <meta property="og:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg">
   <script src="/analytics.js" defer></script>
   <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/cormorant-garamond-italic-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -27,9 +27,9 @@
     a { color:var(--gold-bright); }
     .eyebrow { font-size:.72rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:12px; }
     .lead { font-family:'Cormorant Garamond', Georgia, serif; font-style:italic; font-size:clamp(1.3rem, 2.4vw, 1.65rem); color:var(--cream); line-height:1.4; margin-bottom:22px; }
-    .actions { display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 28px; }
-    .btn { display:inline-block; padding:14px 22px; background:var(--gold); color:var(--black); text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; text-align:center; }
-    .btn.line { background:transparent; color:var(--gold); border:1px solid rgba(212,175,106,.45); }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 28px; align-items:center; }
+    .btn { display:inline-block; padding:14px 22px; background:var(--gold); color:#060504; font-weight:600; text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; text-align:center; white-space:nowrap; }
+    .btn.line { background:transparent; color:var(--gold); border:1px solid rgba(212,175,106,.45); font-weight:600; }
     .facts { border:1px solid rgba(212,175,106,.28); padding:22px 22px 8px; margin:8px 0 28px; }
     .facts h2 { margin-top:0; }
     .facts dl { display:grid; grid-template-columns:1fr 1fr; gap:16px 28px; margin-bottom:18px; }
@@ -46,21 +46,54 @@
     footer p { margin-bottom:8px; }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
-      .actions .btn { flex:1 1 140px; }
+    }
+    @media (max-width:420px) {
+      .actions { flex-direction:column; align-items:stretch; }
+      .actions .btn { width:100%; }
     }
   </style>
 </head>
-<body>
+<body class="has-site-nav">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <div class="site-nav-inner">
+        <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801"></a>
+        <ul class="site-links">
+          <li><a href="/#bar">Cocktails</a></li>
+          <li><a href="/menu.html">Menu</a></li>
+          <li><a href="/private-events.html">Private Events</a></li>
+          <li><a href="/sunday-jazz-brunch.html" aria-current="page">Jazz Brunch</a></li>
+          <li><a href="/reservations.html">Reservations</a></li>
+          <li><a href="/#visit">Visit</a></li>
+          <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+        <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
+        <a class="site-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=jazz" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+        <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
+      </div>
+    </nav>
+    <div class="site-menu" id="siteMenu">
+      <a data-cta="mobile-menu" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=jazz" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a href="/#bar">Cocktails</a>
+      <a href="/menu.html">Menu</a>
+      <a href="/private-events.html">Private Events</a>
+      <a href="/sunday-jazz-brunch.html" aria-current="page">Jazz Brunch</a>
+      <a href="/reservations.html">Reservations</a>
+      <a href="/#visit">Visit</a>
+      <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
+      <a href="tel:+18135861660">(813) 586-1660</a>
+    </div>
+  </header>
   <div class="shell">
-    <p style="text-align:right;font-size:.78rem;letter-spacing:.06em;margin-bottom:18px;"><a href="/">Sober Bar &amp; Kitchen</a></p>
     <!-- TODO(owner): Publish the Sunday jazz brunch start time only after Sean confirms it. Do not invent a time or a band name. -->
     <!-- TODO(owner): Name Sunday-only dishes only after they are on the menu. Do not add beignets, chicory café au lait, crawfish eggs Benedict, or a gluten-free muffuletta until the kitchen confirms them. -->
     <span class="eyebrow">Every Sunday</span>
     <h1>Sunday jazz brunch in Gulfport, FL</h1>
-    <p class="lead">A slower Sunday at Sober Bar &amp; Kitchen: live jazz with a New Orleans-inspired brunch menu made for the day. Reserve a table if you want it held.</p>
+    <p class="lead">A slower Sunday at Sober Bar &amp; Kitchen: live jazz in the room. Reserve a table if you want it held.</p>
     <div class="actions">
-      <a class="btn" data-cta="jazz-brunch-page" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=jazz" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
-      <a class="btn line" href="tel:+18135861660">Call (813) 586-1660</a>
+      <a class="btn" data-cta="jazz-brunch-page" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=jazz" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a class="btn line" href="tel:+18135861660">Call</a>
+      <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
     </div>
 
     <section class="facts" aria-label="Hours, address, and phone">
@@ -80,36 +113,35 @@
         </div>
         <div>
           <dt>This Sunday</dt>
-          <dd>Live jazz during Sunday brunch. Call (813) 586-1660 or reserve and we’ll confirm this week’s set time.</dd>
+          <dd>Call (813) 586-1660 for this Sunday’s jazz time.</dd>
         </div>
       </dl>
     </section>
 
     <figure>
       <picture>
-        <source srcset="/images/food/beignets-480.webp 480w, /images/food/beignets-800.webp 800w, /images/food/beignets-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
-        <img src="/images/food/beignets-1200.jpg" width="1200" height="623" alt="Beignets dusted with powdered sugar" loading="lazy" decoding="async">
+        <source srcset="/images/space/bar-wide-480.webp 480w, /images/space/bar-wide-800.webp 800w, /images/space/bar-wide-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
+        <img src="/images/space/bar-wide-1400.jpg" width="1400" height="794" alt="The bar at Sober Bar at night, pendant lights over the stools" loading="lazy" decoding="async">
       </picture>
-      <figcaption>Beignets</figcaption>
+      <figcaption>The bar</figcaption>
     </figure>
     <figure>
       <picture>
-        <source srcset="/images/food/cafe-au-lait-480.webp 480w, /images/food/cafe-au-lait-800.webp 800w, /images/food/cafe-au-lait-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
-        <img src="/images/food/cafe-au-lait-1200.jpg" width="1200" height="623" alt="Café au Lait in a glass mug" loading="lazy" decoding="async">
+        <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
+        <img src="/images/space/lounge-1400.jpg" width="1400" height="1050" alt="The lounge at Sober Bar under the chandelier" loading="lazy" decoding="async">
       </picture>
-      <figcaption>Café au Lait</figcaption>
+      <figcaption>Under the chandelier</figcaption>
     </figure>
     <figure>
       <picture>
-        <source srcset="/images/food/beignet-brekkie-sliders-480.webp 480w, /images/food/beignet-brekkie-sliders-800.webp 800w, /images/food/beignet-brekkie-sliders-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
-        <img src="/images/food/beignet-brekkie-sliders-1200.jpg" width="1200" height="623" alt="Beignet breakfast sliders" loading="lazy" decoding="async">
+        <source srcset="/images/space/owners-480.webp 480w, /images/space/owners-800.webp 800w, /images/space/owners-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
+        <img src="/images/space/owners-1400.jpg" width="1050" height="1400" alt="Two people standing together in the Sober Bar dining room" loading="lazy" decoding="async">
       </picture>
-      <figcaption>Beignet breakfast sliders</figcaption>
+      <figcaption>In the room</figcaption>
     </figure>
 
     <h2>What Sunday is</h2>
-    <p>Live jazz every Sunday brunch. The kitchen makes a New Orleans-inspired brunch menu for Sundays, and the doors are already open at 7am if you want coffee first. Walk-ins are welcome. A reservation is the way to hold a table while the music is on.</p>
-    <p>The start time is not on this page yet. That is intentional until it is confirmed. Use Reserve a table, or call <a href="tel:+18135861660">(813) 586-1660</a>, and we will give you the time for the Sunday you want.</p>
+    <p>Live jazz every Sunday brunch. The doors are already open at 7am if you want coffee first. Walk-ins are welcome. A reservation holds a table. Call <a href="tel:+18135861660">(813) 586-1660</a> for this Sunday’s jazz time.</p>
 
     <h2>What you can order</h2>
     <p>The full menu runs from open to close, including on Sunday. Confirmed plates include <strong>The White Rabbit</strong> (plain bagel, egg, brie, fig spread, prosciutto, hot honey) and the plant-based <strong>Garden District Muffuletta</strong>. Coffee starts with espresso, Kyoto cold brew, and chai. Later, the bar pours alcohol-free cocktails, including <strong>Call Me an Ube</strong>.</p>
@@ -118,7 +150,7 @@
     <h2>Questions</h2>
     <details>
       <summary>When is jazz brunch?</summary>
-      <p>Every Sunday. Live jazz during brunch. Call or reserve and we’ll confirm this week’s set time.</p>
+      <p>Every Sunday. Call (813) 586-1660 for this Sunday’s jazz time. Reserve a table if you want one held.</p>
     </details>
     <details>
       <summary>How do I reserve?</summary>
@@ -134,11 +166,12 @@
     </details>
 
     <h2>While you are here</h2>
-    <p>About 50 seats: roughly 30 indoors and 20 on the patio. <a href="/private-events.html">Private events</a> use the same room for showers, birthdays, office gatherings, and recovery milestones. <a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a> is the neighborhood guide.</p>
+    <p>The room and the Beach Boulevard patio are both open. Tell us the date and headcount and we’ll confirm what fits. <a href="/private-events.html">Private events</a> use the same room for showers, birthdays, office gatherings, and recovery milestones. <a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a> is the neighborhood guide.</p>
 
     <div class="actions">
-      <a class="btn" data-cta="jazz-brunch-page-end" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=jazz" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+      <a class="btn" data-cta="jazz-brunch-page-end" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=jazz" target="_blank" rel="noopener noreferrer">Reserve a table</a>
       <a class="btn line" href="tel:+18135861660">Call</a>
+      <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
     </div>
 
     <footer>
@@ -184,7 +217,7 @@
       {
         "@type": "Question",
         "name": "When is jazz brunch?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Every Sunday. Live jazz during brunch. Call or reserve and we’ll confirm this week’s set time." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Every Sunday. Call (813) 586-1660 for this Sunday's jazz time. Reserve a table if you want one held." }
       },
       {
         "@type": "Question",
@@ -204,5 +237,6 @@
     ]
   }
   </script>
+  <script src="/nav.js" defer></script>
 </body>
 </html>
