@@ -256,6 +256,10 @@ def build_home():
         <p><a href="tel:{TEL}">Call {PHONE}</a></p>
         <p><a href="{FACTS["maps"]}">Directions</a></p>
         <p class="fine">{e(ALC)}</p>
+        <details>
+          <summary>{e(FACTS["faq"][0]["q"])}</summary>
+          <p>{e(FACTS["faq"][0]["a"])}</p>
+        </details>
       </div>
       <a class="map-link" href="{FACTS["maps"]}"><img src="/images/v3/map.svg" width="800" height="360" alt="Map pin for 3062 Beach Blvd S, Gulfport"></a>
     </div>
@@ -293,6 +297,17 @@ def build_home():
   }},
   "openingHoursSpecification": [{schema_hours}],
   "sameAs": ["{FACTS["instagram"]}", "{RATING["url"]}"]
+}}
+</script>
+<script type="application/ld+json">
+{{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{{
+    "@type": "Question",
+    "name": {json.dumps(FACTS["faq"][0]["q"])},
+    "acceptedAnswer": {{ "@type": "Answer", "text": {json.dumps(FACTS["faq"][0]["a"])} }}
+  }}]
 }}
 </script>
 '''
@@ -404,7 +419,7 @@ def build_rest():
         "Zero-proof cocktails at Sober Bar in Gulfport, on Beach Boulevard near St. Petersburg.",
         "/mocktails-st-petersburg.html",
         "Zero-proof cocktails near St. Pete",
-        "Sober Bar pours alcohol-free cocktails in Gulfport, on Beach Boulevard.",
+        "Sober Bar pours zero-proof cocktails in Gulfport, on Beach Boulevard.",
         f"<p>No drive time is published. Come for the room, then the list.</p>{menu_list(['cocktails'])}<p>{e(ALC)}</p>",
         "mocktails",
     )
@@ -635,7 +650,11 @@ def build_llms_and_sitemap():
 
 
 def check():
-    banned = ["nothing contains alcohol", "100% alcohol-free", "50 seats", "sipsisoberbar", "closed Monday"]
+    banned = [
+        "nothing contains alcohol", "nothing on the menu", "nothing on our menu",
+        "100% alcohol-free", "yes — 100", "50 seats", "30 indoor", "20 outdoor",
+        "sipsisoberbar", "closed monday", "2 hours before", "serves alcohol",
+    ]
     party_ok = {"reservations.html", "private-events.html"}
     for path in PUBLIC.glob("*.html"):
         text = path.read_text().lower()

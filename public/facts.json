@@ -25,7 +25,13 @@
       "label": "Friday–Saturday 7am–midnight"
     }
   ],
-  "alcohol": "Non-alcoholic drinks. Some NA beers contain trace alcohol (<0.5% ABV).",
+  "alcohol": "We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.",
+  "faq": [
+    {
+      "q": "Can drinks contain trace alcohol?",
+      "a": "We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV."
+    }
+  ],
   "rating": {
     "value": "4.9",
     "count": 128,
