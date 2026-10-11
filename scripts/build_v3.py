@@ -489,8 +489,6 @@ def build_rest():
     </ul>
     <h2>On Beach Boulevard</h2>
     <p><a href="/">Sober Bar &amp; Kitchen</a> is the zero-proof bar at {e(ADDR)}. Call <a href="tel:{TEL}">{PHONE}</a>. <a href="/mocktails-st-petersburg.html">Non-alcoholic cocktails near St. Pete</a> are poured here. <a href="/breakfast-gulfport.html">Breakfast in Gulfport</a> starts at 7am and is walk-in.</p>
-    <h2>GeckoFest</h2>
-    <p><a href="https://visitgulfportflorida.com/event/gecko-fest/">GeckoFest</a> is Gulfport’s annual street festival. The chamber listed the 2026 festival for Saturday, September 5, 10 a.m.–8 p.m., at 3101 Beach Blvd S.</p>
     '''
     article(
         "Things to do in Gulfport — Sober Bar",
