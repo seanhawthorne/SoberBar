@@ -1,6 +1,6 @@
 # Sober Bar
 
-> A 100% alcohol-free cocktail bar and coffee house in downtown Gulfport, Florida.
+> A cocktail bar and coffee house in downtown Gulfport, Florida. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.
 
 Sober Bar serves craft zero-proof cocktails and mocktails, non-alcoholic beer and kombucha, specialty coffee, and New Orleans-inspired food. It is for sober, sober-curious, and simply alcohol-free guests who still want the ritual and atmosphere of a night out.
 
@@ -16,8 +16,8 @@ Sober Bar serves craft zero-proof cocktails and mocktails, non-alcoholic beer an
 
 ## Useful answers
 
-- Everything served at Sober Bar is alcohol-free.
-- The venue has approximately 50 seats: about 30 indoors and 20 on the patio. Walk-ins are welcome; reservations are available.
+- We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.
+- Walk-ins are welcome; reserve a table online.
 - It is in Gulfport, close to St. Petersburg and St. Pete Beach.
 - Mornings and afternoons offer coffee-house energy with Wi-Fi; evenings shift to a zero-proof cocktail-bar experience.
 
