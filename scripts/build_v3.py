@@ -221,15 +221,15 @@ def build_home():
         % (",".join(f'"{d}"' for d in h["days"]), h["opens"], h["closes"])
         for h in FACTS["hours"]
     )
-    preload = '''<link rel="preload" as="image" href="/images/v3/hero-m-768.avif" type="image/avif" media="(max-width: 767px)" fetchpriority="high">
+    preload = '''<link rel="preload" as="image" href="/images/v3/hero-night-m-768.avif" type="image/avif" media="(max-width: 767px)" fetchpriority="high">
   <link rel="preload" as="image" href="/images/v3/hero-night-1800.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">'''
     main = f'''<main id="main">
   <section class="hero" id="top">
     <picture>
-      <source media="(max-width: 767px)" type="image/avif" srcset="/images/v3/hero-m-480.avif 480w, /images/v3/hero-m-768.avif 768w" sizes="100vw">
-      <source media="(max-width: 767px)" type="image/webp" srcset="/images/v3/hero-m-480.webp 480w, /images/v3/hero-m-768.webp 768w" sizes="100vw">
+      <source media="(max-width: 767px)" type="image/avif" srcset="/images/v3/hero-night-m-480.avif 480w, /images/v3/hero-night-m-768.avif 768w" sizes="100vw">
+      <source media="(max-width: 767px)" type="image/webp" srcset="/images/v3/hero-night-m-480.webp 480w, /images/v3/hero-night-m-768.webp 768w, /images/v3/hero-night-m-1200.webp 1200w" sizes="100vw">
       <source type="image/webp" srcset="/images/v3/hero-night-768.webp 768w, /images/v3/hero-night-1200.webp 1200w, /images/v3/hero-night-1800.webp 1800w, /images/v3/hero-night-2400.webp 2400w" sizes="100vw">
-      <img src="/images/v3/hero-night-2400.webp" width="2400" height="1500" alt="Sober Bar at night" fetchpriority="high">
+      <img src="/images/v3/hero-night-2400.webp" width="2400" height="1500" alt="The front porch at Sober Bar at night" fetchpriority="high">
     </picture>
     <div class="hero-scrim"></div>
     <div class="hero-copy">
@@ -240,7 +240,6 @@ def build_home():
         <span data-hero-cta>{reserve("hero")}</span>
         <a class="text-link" href="/menu.html">View menu →</a>
       </div>
-      <p class="fine">{e(BOOKING)}</p>
     </div>
   </section>
 
@@ -248,7 +247,7 @@ def build_home():
     <div class="wrap">
       <span class="eyebrow">The Room</span>
       <h2>The chandelier, then the front porch.</h2>
-      <p class="room-copy">Curved booths under the chandelier, the bar, and the front porch.</p>
+      <p class="room-copy">Marble café tables by day, a brass-lit bar at night, and a front porch on Beach Boulevard.</p>
       <div class="room-grid">
         <figure class="wipe"><img src="/images/v3/hero-m-768.webp" width="768" height="960" alt="Curved booths under the chandelier" loading="lazy" decoding="async"><figcaption class="cap">Under the chandelier</figcaption></figure>
         <figure class="wipe"><img src="/images/v3/bar-sq-768.webp" width="768" height="768" alt="Pendant lights over the bar at night" loading="lazy" decoding="async"><figcaption class="cap">The bar</figcaption></figure>
@@ -258,7 +257,7 @@ def build_home():
   </section>
 
   <section class="bleed" aria-label="Behind the bar">
-    <img src="/images/v3/behind-1200.webp" width="1200" height="675" alt="Bartenders working the rail at Sober Bar" loading="lazy" decoding="async">
+    <img src="/images/v3/behind-1200.webp" width="1200" height="675" alt="Two of the team behind the bar, polishing a coupe." loading="lazy" decoding="async">
     <div class="scrim"></div>
     <p class="pull">We didn’t want a juice bar. <em>We wanted a bar.</em></p>
   </section>
@@ -376,7 +375,6 @@ def build_menu():
     {''.join(sections)}
     <p>Tell us about allergies before you order.</p>
     <p>{reserve("menu", "Reserve dinner")} <a class="text-link" href="/reservations.html" style="margin-left:16px">Reservations →</a></p>
-    <p style="color:#3c342c">{e(BOOKING)}</p>
   </div>
 </main>'''
     write("menu.html", shell(
@@ -392,7 +390,7 @@ def build_reservations():
     main = f'''<main id="main" class="page">
   <div class="wrap book">
     <h1>Reserve a table</h1>
-    <p class="lead">Dinner, 4 to 9:30. Sunday brunch, 10 to 1. Every other hour, walk in and we’ll seat you.</p>
+    <p class="lead">{e(BOOKING)}</p>
     <div class="hero-actions">
       <span data-hero-cta>{reserve("res", "Reserve dinner")}</span>
       <a class="text-link" data-placement="res-brunch" href="{e(BRUNCH)}">Reserve Sunday brunch</a>
@@ -403,7 +401,7 @@ def build_reservations():
 </main>'''
     write("reservations.html", shell(
         "Reserve a table — Sober Bar",
-        "Dinner books from 4 to 9:30. Sunday brunch, 10 to 1. Parties of 1–6. Daytime is walk-in.",
+        BOOKING,
         "/reservations.html",
         main,
         "res",
@@ -415,13 +413,9 @@ def article(title, desc, path, h1, lead, body, placement, kind="dinner", book=Tr
         actions = (
             f'<p style="margin-top:22px"><span data-hero-cta>{reserve(placement, label, kind)}</span> '
             f'<a class="text-link" href="/menu.html" style="margin-left:16px">View menu →</a></p>'
-            f'<p class="fine">{e(BOOKING)}</p>'
         )
     else:
-        actions = (
-            f'<p style="margin-top:22px">{e(BOOKING)}</p>'
-            f'<p><a class="text-link" href="/menu.html">View menu →</a></p>'
-        )
+        actions = f'<p style="margin-top:22px"><a class="text-link" href="/menu.html">View menu →</a></p>'
     main = f'''<main id="main" class="page">
   <div class="wrap">
     <h1>{h1}</h1>
@@ -763,8 +757,12 @@ def check():
             raise SystemExit(f"{path.name} mentions phone {phones}, address {streets}")
         if visible.count(ALC) > 1:
             raise SystemExit(f"{path.name} repeats the alcohol line")
-        if visible.count(BOOKING) > 1:
-            raise SystemExit(f"{path.name} repeats the booking line")
+        bookings = visible.count(BOOKING)
+        if path.name == "reservations.html":
+            if bookings != 1:
+                raise SystemExit(f"reservations booking count {bookings}")
+        elif bookings:
+            raise SystemExit(f"booking line on {path.name}")
         low = visible.lower()
         for b in ("geckofest", "speakeasy", "10% off", "kratom"):
             if b in low:
