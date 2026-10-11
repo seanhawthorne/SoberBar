@@ -300,6 +300,16 @@ body.has-site-nav figure img {
     align-items: stretch !important;
   }
 }
+footer .fine {
+  color: #f4ead8;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+footer .fine a { color: #f4ead8; text-decoration: none; }
+footer .fine a:hover { color: #d4af6a; }
+
 @media print {
   .site-nav, .site-menu { display: none !important; }
   body.has-site-nav { padding-top: 0; }
