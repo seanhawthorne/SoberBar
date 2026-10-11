@@ -414,12 +414,13 @@ html { scroll-padding-top: 84px; }
       font-weight: 400;
     }
     .mi { margin-bottom: 20px; }
-    .mi.has-photo { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 12px; align-items: center; }
-    .mi.has-photo picture { display: contents; }
-    .mi.has-photo img { width: 72px; height: 72px; object-fit: cover; display: block; }
+    .mi.has-photo { display: grid; grid-template-columns: 72px 1fr; gap: 14px; align-items: start; }
+    .mi.has-photo picture { display: block; width: 72px; height: 72px; }
+    .mi.has-photo img { width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
+    .mi.has-photo > div { min-width: 0; }
     .mi .mi-name { font-family: 'Cormorant Garamond', serif; font-size: 1.32rem; color: var(--cream); }
     .menu-lead { max-width: 980px; margin: 0 auto 36px; }
-    .menu-lead img { width: 100%; height: auto; aspect-ratio: 1200 / 623; display: block; object-fit: cover; }
+    .menu-lead img { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; object-fit: cover; }
     .mi .mi-desc { font-size: 0.85rem; color: var(--muted-2); margin-top: 2px; }
     .menu-note { text-align: center; margin-top: 60px; color: var(--muted-2); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; }
     .menu-note a { color: var(--gold); }
@@ -898,8 +899,8 @@ html { scroll-padding-top: 84px; }
           <figcaption>The front porch</figcaption>
         </figure>
         <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/space/porch-480.webp 480w, /images/space/porch-800.webp 800w, /images/space/porch-1400.webp 1400w" sizes="(max-width: 900px) 72vw, 280px" type="image/webp"><img src="/images/space/porch-1400.jpg" width="1400" height="1006" alt="The front porch of Sober Bar at night, string lights and an Open sign" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>The porch</figcaption>
+          <div class="arch"><picture><source srcset="/images/bar-night-480.webp 480w, /images/bar-night-800.webp 800w, /images/bar-night.webp 1300w" sizes="(max-width: 900px) 72vw, 280px" type="image/webp"><img src="/images/bar-night.jpg" width="1300" height="1734" alt="The bar at night, brass pendants over the stools" loading="lazy" decoding="async" /></picture></div>
+          <figcaption>The bar at night</figcaption>
         </figure>
       </div>
     </div>
@@ -926,8 +927,8 @@ html { scroll-padding-top: 84px; }
       <p class="menu-served">Everything below is served from open to close, every day. The same list is on the <a href="/menu.html">menu page</a>.</p>
       <figure class="menu-lead reveal">
         <picture>
-          <source srcset="/images/food/dish-composition-480.webp 480w, /images/food/dish-composition-800.webp 800w" sizes="(max-width: 900px) 92vw, 800px" type="image/webp">
-          <img src="/images/food/dish-composition-1200.jpg" width="800" height="623" alt="A table of Sober Bar plates" loading="eager" fetchpriority="low" decoding="async" />
+          <source srcset="/images/food/dd-muffuletta-lead-480.webp 480w, /images/food/dd-muffuletta-lead-800.webp 800w, /images/food/dd-muffuletta-lead-1120.webp 1120w" sizes="(max-width: 900px) 92vw, 800px" type="image/webp">
+          <img src="/images/food/dd-muffuletta-lead-1120.jpg" width="1120" height="630" alt="The Muffuletta" loading="eager" fetchpriority="low" decoding="async" />
         </picture>
       </figure>
       <div class="menu-grid">
@@ -943,7 +944,7 @@ html { scroll-padding-top: 84px; }
         </div>
         <div class="menu-col reveal" data-cat="drinks">
           <h3>Beer &amp; Kombucha</h3>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-run-wild-ipa-160.avif 160w, /images/food/ue-run-wild-ipa-320.avif 320w" sizes="72px"><img src="/images/food/ue-run-wild-ipa-160.webp" srcset="/images/food/ue-run-wild-ipa-160.webp 160w, /images/food/ue-run-wild-ipa-320.webp 320w" sizes="72px" width="72" height="72" alt="RUN WILD IPA (Athletic Brewing Co.) 16 oz Draft" loading="lazy" decoding="async"></picture><div><div class="mi-name">RUN WILD IPA (Athletic Brewing Co.) 16 oz Draft</div><div class="mi-desc">Crisp, hoppy, citrus-forward NA IPA · 16 oz draft · &lt;0.5% ABV</div></div></div>
+          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-run-wild-ipa-160.avif 160w, /images/food/ue-run-wild-ipa-320.avif 320w" sizes="72px"><img src="/images/food/ue-run-wild-ipa-160.webp" srcset="/images/food/ue-run-wild-ipa-160.webp 160w, /images/food/ue-run-wild-ipa-320.webp 320w" sizes="72px" width="72" height="72" alt="Run Wild IPA" loading="lazy" decoding="async"></picture><div><div class="mi-name">Run Wild IPA</div><div class="mi-desc">Crisp, hoppy, citrus-forward NA IPA · 16 oz draft · &lt;0.5% ABV</div></div></div>
           <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-guinness-0-0-160.avif 160w, /images/food/ue-guinness-0-0-320.avif 320w" sizes="72px"><img src="/images/food/ue-guinness-0-0-160.webp" srcset="/images/food/ue-guinness-0-0-160.webp 160w, /images/food/ue-guinness-0-0-320.webp 320w" sizes="72px" width="72" height="72" alt="Guinness 0.0" loading="lazy" decoding="async"></picture><div><div class="mi-name">Guinness 0.0</div><div class="mi-desc">Smooth, roasted coffee and chocolate notes</div></div></div>
           <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-heineken-zero-160.avif 160w, /images/food/ue-heineken-zero-320.avif 320w" sizes="72px"><img src="/images/food/ue-heineken-zero-160.webp" srcset="/images/food/ue-heineken-zero-160.webp 160w, /images/food/ue-heineken-zero-320.webp 320w" sizes="72px" width="72" height="72" alt="Heineken Zero" loading="lazy" decoding="async"></picture><div><div class="mi-name">Heineken Zero</div><div class="mi-desc">Crisp, clean, and lightly malty</div></div></div>
           <div class="mi"><div class="mi-name">Beech Kombucha</div><div class="mi-desc">Bright, sparkling fermented tea on draft</div></div>
