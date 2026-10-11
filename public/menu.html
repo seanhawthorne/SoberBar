@@ -10,11 +10,11 @@
   <meta property="og:title" content="Menu · Sober Bar &amp; Kitchen, Gulfport FL">
   <meta property="og:description" content="Alcohol-free cocktails, alcohol-free beer, coffee, breakfast, and New Orleans-inspired plates in Gulfport, FL. Open daily from 7am.">
   <meta property="og:url" content="https://www.sipsoberbar.com/menu.html">
-  <meta property="og:image" content="https://www.sipsoberbar.com/images/food/spread-lead-800.jpg">
+  <meta property="og:image" content="https://www.sipsoberbar.com/images/food/spread-lead-2560.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Menu · Sober Bar &amp; Kitchen, Gulfport FL">
   <meta name="twitter:description" content="Alcohol-free cocktails, alcohol-free beer, coffee, breakfast, and New Orleans-inspired plates in Gulfport, FL.">
-  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/food/spread-lead-800.jpg">
+  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/food/spread-lead-2560.jpg">
   <script src="/analytics.js" defer></script>
   <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/cormorant-garamond-italic-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -40,19 +40,21 @@
     .btn.line { background:#f4ead8; color:#060504; border:0; font-weight:600; }
     .menu-jumps { display:flex; flex-wrap:wrap; gap:8px 10px; margin:0 0 22px; }
     .menu-jumps a { display:inline-flex; align-items:center; min-height:44px; padding:8px 2px; color:var(--gold-bright); font-size:16px; line-height:1.3; text-decoration:none; border-bottom:1px solid rgba(212,175,106,.5); }
-    .menu-lead { margin:8px auto 28px; width:100%; max-width:none; }
+    .menu-lead { margin:8px auto 28px; width:min(100%, 2560px); text-align:center; }
+    .menu-lead picture { display:block; }
     .menu-lead figcaption, .cat-photo figcaption { margin-top:8px; font-family:'Josefin Sans',sans-serif; font-size:16px; letter-spacing:.04em; text-transform:uppercase; color:var(--gold); line-height:1.35; text-align:center; }
     .cat-split { display:grid; grid-template-columns:1fr; gap:12px; align-items:start; margin-top:8px; }
     .cat-split > div, .cat-split > .cat-photo { grid-column:auto; grid-row:auto; min-width:0; margin:0; }
     .cat-split h2 { margin-top:8px; }
     .grid section, #hot-honey, #garden-mezze, #classic-melt { scroll-margin-top:96px; }
-    body.has-site-nav .menu-lead img { width:100%; height:auto; aspect-ratio:800 / 320; object-fit:cover; object-position:center; display:block; border-radius:6px; }
+    body.has-site-nav .menu-lead img { width:auto; max-width:min(100%, 2560px); height:auto; margin:0 auto; aspect-ratio:auto; object-fit:contain; display:block; border-radius:6px; }
     body.has-site-nav .cat-photo img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; object-position:center; display:block; border-radius:6px; }
     @media (max-width:768px) {
       body, .lead, .mi-desc, .note { font-size:17px; line-height:1.55; }
       .menu-lead figcaption, .cat-photo figcaption { font-size:17px; }
     }
-    .grid { display:grid; grid-template-columns:1fr 1fr; gap:8px 48px; }
+    .grid { columns:2; column-gap:48px; }
+    .grid > section { break-inside:avoid; display:block; width:100%; margin:0 0 12px; }
     ul { list-style:none; }
     .mi { display:block; margin:0 0 16px; }
     .mi.has-photo { display:grid; grid-template-columns:72px 1fr; gap:14px; align-items:start; }
@@ -65,7 +67,7 @@
     footer { text-align:center; padding:12px 0 8px; font-size:.78rem; color:var(--muted); }
     footer a { color:var(--gold); text-decoration:none; }
     footer p { margin-bottom:8px; }
-    @media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+    @media (max-width:760px) { .grid { columns:1; } }
   </style>
 </head>
 <body class="has-site-nav">
@@ -74,7 +76,7 @@
       <div class="site-nav-inner">
         <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801"></a>
         <ul class="site-links">
-          <li><a href="/#day-night">Cocktails</a></li>
+          <li><a href="/menu.html#cocktails">Cocktails</a></li>
           <li><a href="/menu.html" aria-current="page">Menu</a></li>
           <li><a href="/private-events.html">Private Events</a></li>
           <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
@@ -89,7 +91,7 @@
     </nav>
     <div class="site-menu" id="siteMenu">
       <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-      <a href="/#day-night">Cocktails</a>
+      <a href="/menu.html#cocktails">Cocktails</a>
       <a href="/menu.html" aria-current="page">Menu</a>
       <a href="/private-events.html">Private Events</a>
       <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
@@ -120,8 +122,8 @@
     </nav>
     <figure class="menu-lead">
       <picture>
-        <source srcset="/images/food/spread-lead-400.webp 400w, /images/food/spread-lead-480.webp 480w, /images/food/spread-lead-640.webp 640w, /images/food/spread-lead-800.webp 800w" sizes="(max-width: 700px) 92vw, 940px" type="image/webp">
-        <img src="/images/food/spread-lead-800.jpg" width="800" height="320" alt="" fetchpriority="high">
+        <source srcset="/images/food/spread-lead-400.webp 400w, /images/food/spread-lead-640.webp 640w, /images/food/spread-lead-800.webp 800w, /images/food/spread-lead-1200.webp 1200w, /images/food/spread-lead-1600.webp 1600w, /images/food/spread-lead-2000.webp 2000w, /images/food/spread-lead-2560.webp 2560w" sizes="(max-width: 760px) calc(100vw - 40px), 980px" type="image/webp">
+        <img src="/images/food/spread-lead-2560.jpg" width="2560" height="840" alt="" fetchpriority="high">
       </picture>
       <figcaption>Plates from the kitchen</figcaption>
     </figure>
@@ -137,7 +139,7 @@
     <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
     <p class="fine"><a href="/menu.html">Menu</a> · <a href="/reservations.html">Reservations</a> · <a href="/sunday-jazz-brunch.html">Jazz brunch</a> · <a href="/private-events.html">Private events</a></p>
     <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
-    <p class="fine">© 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
+    <p class="fine">© 2026 Sober Bar</p>
   </footer>
   <nav class="mobile-actions" aria-label="Call, reserve, or directions">
     <a href="tel:+18135861660">Call</a>

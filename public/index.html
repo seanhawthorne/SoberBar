@@ -166,9 +166,12 @@ html { scroll-padding-top: 84px; }
     .rating-link { color: var(--gold-bright); font-size: 1.15rem; text-decoration: none; border-bottom: 1px solid rgba(238,217,164,.45); }
     .press-row { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 34px; }
     .press-row a { color: #f4ead8; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; text-decoration: none; border-bottom: 1px solid rgba(212,175,106,.5); }
-    .highlights { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0; padding: 0; list-style: none; }
-    .highlights a { color: #f4ead8; font-size: 1.2rem; line-height: 1.4; text-underline-offset: 3px; }
-    .highlights a:hover { color: var(--gold-bright); }
+    .highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .highlights a { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 8px 10px; color: #f4ead8; font-size: 1.05rem; line-height: 1.25; text-align: center; text-decoration: none; border: 1px solid rgba(212,175,106,.55); }
+    .highlights a:hover { color: var(--gold-bright); border-color: var(--gold-bright); }
+    .menu-go { margin-top: 18px; }
+    #day-night { padding-bottom: 28px; }
+    #reviews { padding-top: 28px; }
     .visit-split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: center; }
     .visit-split .visit-grid { grid-template-columns: 1fr; gap: 18px; }
     .visit-split .visit-photo { margin: 0; padding: 0; border: 0; background: transparent; }
@@ -608,7 +611,7 @@ html { scroll-padding-top: 84px; }
     .join-social a:hover { color: var(--gold-bright); }
 
     /* ------- footer ------- */
-    footer { border-top: 1px solid var(--gold-faint); padding: 70px 0 46px; text-align: center; }
+    footer { border-top: 1px solid var(--gold-faint); padding: 32px 0 24px; text-align: center; }
     .foot-logo { width: 240px; margin: 0 auto 30px; }
     footer .fine { color: #f4ead8; font-size: 16px; letter-spacing: 0.03em; margin-top: 8px; line-height: 1.5; }
     footer .fine a { color: #f4ead8; }
@@ -722,8 +725,7 @@ html { scroll-padding-top: 84px; }
     .hero-title, .hero-sub, .title, h2, p { text-wrap: pretty; }
     .hero-title { margin: 0 0 16px; max-width: 13em; font-size: clamp(2.4rem, 4.4vw, 4.15rem); line-height: 0.98; letter-spacing: -0.018em; }
     .hero-title em { font-style: italic; color: var(--gold-bright); }
-    .hero-sub { margin: 0 0 12px; max-width: 26em; font-size: clamp(1.2rem, 2vw, 1.55rem); color: rgba(244,234,216,.88); }
-    .hero-wifi { margin-bottom: 28px; font-size: clamp(1.05rem, 1.6vw, 1.25rem); }
+    .hero-sub { margin: 0 0 28px; max-width: 26em; font-size: clamp(1.2rem, 2vw, 1.55rem); color: rgba(244,234,216,.88); }
     header.hero .hero-actions { justify-content: flex-start; }
     .hero-proof { margin-top: 26px; font-size: .78rem; letter-spacing: .12em; color: var(--muted); font-weight: 400; }
     .hero-proof span { color: var(--gold); letter-spacing: .1em; margin-right: 6px; }
@@ -819,8 +821,7 @@ html { scroll-padding-top: 84px; }
       .night-band img { height: 62vh; min-height: 320px; }
       .hero-status { justify-content: flex-start; letter-spacing: .14em; font-size: .64rem; margin-bottom: 8px; }
       .hero-title { margin: 0 0 8px; font-size: clamp(1.85rem, 8vw, 2.35rem); max-width: 12em; }
-      .hero-sub { margin: 0 0 8px; font-size: 1.08rem; color: rgba(244,234,216,.88); }
-      .hero-wifi { margin-bottom: 14px; font-size: 1.02rem; }
+      .hero-sub { margin: 0 0 14px; font-size: 1.08rem; color: rgba(244,234,216,.88); }
       header.hero .hero-actions { margin: 0; gap: 8px; max-width: 340px; }
       .hero-proof { margin-top: 12px; font-size: .68rem; letter-spacing: .04em; }
       header.hero .hero-hours { justify-content: flex-start; margin-top: 8px; gap: 4px 14px; }
@@ -840,7 +841,7 @@ html { scroll-padding-top: 84px; }
         <img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801" />
       </a>
       <ul class="nav-links">
-        <li><a href="#day-night">Cocktails</a></li>
+        <li><a href="/menu.html#cocktails">Cocktails</a></li>
         <li><a href="/menu.html">Menu</a></li>
         <li><a href="/private-events.html">Private Events</a></li>
         <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
@@ -856,7 +857,7 @@ html { scroll-padding-top: 84px; }
 
   <div class="mobile-menu" id="mobileMenu">
     <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-    <a href="#day-night">Cocktails</a>
+    <a href="/menu.html#cocktails">Cocktails</a>
     <a href="/menu.html">Menu</a>
     <a href="/private-events.html">Private Events</a>
     <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
@@ -878,7 +879,6 @@ html { scroll-padding-top: 84px; }
       <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
       <h1 class="hero-title">Coffee by day. Cocktails after dark.</h1>
       <p class="hero-sub">Coffee, New Orleans-inspired kitchen &amp; <em>alcohol-free</em> cocktails in Gulfport, FL</p>
-      <p class="hero-sub hero-wifi">Espresso and free WiFi from 7am. Alcohol-free cocktails under the chandeliers after dark.</p>
       <div class="hero-actions">
         <div class="hero-cta-row">
           <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
@@ -899,7 +899,7 @@ html { scroll-padding-top: 84px; }
       <div class="morning">
         <div>
           <h2 class="story-line">Your morning headquarters</h2>
-          <p>Free, fast WiFi and espresso from 7am on Beach Boulevard. Alcohol-free cocktails after dark.</p>
+          <p>Espresso and free, fast WiFi from 7am.</p>
         </div>
         <figure class="daynight">
           <picture>
@@ -946,14 +946,14 @@ html { scroll-padding-top: 84px; }
     <div class="shell">
       <div class="sec-head">
         <span class="eyebrow">The menu</span>
-        <h2 class="title">Cocktails, coffee, <em>and the kitchen.</em></h2>
+        <h2 class="title">Something good, <em>all day.</em></h2>
       </div>
       <ul class="highlights">
-        <li><a href="/menu.html#cocktails">Alcohol-free cocktails</a></li>
-        <li><a href="/menu.html#coffee">Coffee &amp; espresso</a></li>
-        <li><a href="/menu.html#provisions">Provisions &amp; salads</a></li>
+        <li><a href="/menu.html#cocktails">Cocktails</a></li>
+        <li><a href="/menu.html#coffee">Coffee &amp; breakfast</a></li>
+        <li><a href="/menu.html#provisions">The kitchen</a></li>
       </ul>
-      <p class="menu-note"><a href="/menu.html">Full menu</a></p>
+      <p class="menu-go"><a class="btn btn-solid" href="/menu.html">Explore the menu</a></p>
     </div>
   </section>
 
@@ -1046,7 +1046,7 @@ html { scroll-padding-top: 84px; }
       <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
       <p class="fine"><a href="/menu.html">Menu</a> · <a href="/reservations.html">Reservations</a> · <a href="/sunday-jazz-brunch.html">Jazz brunch</a> · <a href="/private-events.html">Private events</a></p>
       <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
-      <p class="fine">© 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
+      <p class="fine">© 2026 Sober Bar</p>
     </div>
   </footer>
 
