@@ -1,159 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="/analytics.js" defer></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Sponsorship & Pop-Up Bar | Sober Bar</title>
-  <meta name="description" content="Every sponsorship with Sober Bar is custom. Tell us about your Gulfport or Tampa Bay event and we'll put together what fits.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event sponsorship — Sober Bar</title>
+  <meta name="description" content="Custom event sponsorship with Sober Bar in Gulfport. Tell us about the event.">
   <link rel="canonical" href="https://www.sipsoberbar.com/event-sponsorship.html">
-  <link rel="preload" href="/fonts/inter-normal-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/fonts.css">
-  <link rel="stylesheet" href="/chrome.css">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    body { font-family: 'Josefin Sans', sans-serif; font-weight: 300; margin: 0; color: #f4ead8; background: #070605; line-height: 1.7; }
-    .container { max-width: 760px; margin: 0 auto; padding: 48px 20px 88px; }
-    h1, h2, h3, p, li { text-wrap: pretty; }
-    h1 { font-family: 'Poiret One', sans-serif; font-weight: 400; letter-spacing: .06em; text-transform: uppercase; color: #d4af6a; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.15; margin-bottom: 0.4em; }
-    h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.7rem; color: #eed9a4; margin-top: 1.6em; border: 0; padding: 0; }
-    h3 { font-family: 'Josefin Sans', sans-serif; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: #d4af6a; margin-top: 1.4em; }
-    p { margin: 0.9em 0; color: rgba(244,234,216,.78); }
-    ul { padding-left: 1.2em; }
-    li { margin: 0.5em 0; color: rgba(244,234,216,.78); }
-    a { color: #eed9a4; }
-    .intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem; color: #f4ead8; }
-    .package { background: #12100c; padding: 20px; border: 1px solid rgba(212,175,106,.22); margin: 1em 0; }
-    .package h3 { margin-top: 0; }
-    .cta-box { background: #12100c; color: #f4ead8; padding: 24px; border: 1px solid rgba(212,175,106,.28); margin: 2em 0; }
-    .cta-box a { color: #eed9a4; }
-    .btn { display: inline-block; background: #d4af6a; color: #060504; font-weight: 600; padding: 14px 18px; text-decoration: none; letter-spacing: .14em; text-transform: uppercase; font-size: .72rem; white-space: nowrap; text-align: center; border: 0; cursor: pointer; font-family: 'Josefin Sans', sans-serif; }
-    .btn.line { background: transparent; color: #d4af6a; border: 1px solid rgba(212,175,106,.45); }
-    .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0 28px; }
-    .inquire-form { display: grid; gap: 12px; margin-top: 12px; min-width: 0; max-width: 100%; }
-    .inquire-form label { display: block; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: #d4af6a; margin-bottom: 6px; }
-    .inquire-form input, .inquire-form textarea { box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; background: transparent; color: #f4ead8; border: 1px solid rgba(212,175,106,.35); padding: 12px 14px; font-family: 'Josefin Sans', sans-serif; font-size: 1rem; }
-    .inquire-form textarea { min-height: 96px; resize: vertical; }
-    footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid rgba(212,175,106,.25); color: rgba(244,234,216,.6); font-size: 0.9rem; }
-    footer a { color: #d4af6a; text-decoration: none; }
-  </style>
+  <link rel="icon" href="/favicon.svg">
+  <meta name="theme-color" content="#0E0C0A">
+  
+  <link rel="stylesheet" href="/v3.css">
+  <script src="/analytics.js" defer></script>
 </head>
-<body class="has-site-nav">
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
-      <div class="site-nav-inner">
-        <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801"></a>
-        <ul class="site-links">
-          <li><a href="/#bar">Cocktails</a></li>
-          <li><a href="/menu.html">Menu</a></li>
-          <li><a href="/private-events.html">Private Events</a></li>
-          <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
-          <li><a href="/reservations.html">Reservations</a></li>
-          <li><a href="/#visit">Visit</a></li>
-          <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
-        </ul>
-        <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
-        <a class="site-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-        <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
-      </div>
-    </nav>
-    <div class="site-menu" id="siteMenu">
-      <a data-cta="mobile-menu" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-      <a href="/#bar">Cocktails</a>
-      <a href="/menu.html">Menu</a>
-      <a href="/private-events.html">Private Events</a>
-      <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
-      <a href="/reservations.html">Reservations</a>
-      <a href="/#visit">Visit</a>
-      <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
-      <a href="tel:+18135861660">(813) 586-1660</a>
-    </div>
-  </header>
-  <div class="container">
-    <h1>Event Sponsorship &amp; Pop-Up Bar</h1>
-    <p class="intro">Bring Sober Bar to your festival, market, corporate event, or community gathering. We serve zero-proof cocktails that get people talking.</p>
-    <div class="actions">
-      <a class="btn" href="#inquire">Discuss sponsorship</a>
-      <a class="btn line" data-cta="sponsorship" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-    </div>
-    <figure style="margin:0 0 28px;">
-      <picture>
-        <source srcset="/images/space/market-480.webp 480w, /images/space/market-800.webp 800w, /images/space/market-1400.webp 1400w" sizes="(max-width: 800px) 92vw, 720px" type="image/webp">
-        <img src="/images/space/market-1400.jpg" width="1120" height="1400" alt="Sober Bar staff pouring drinks for guests at an outdoor market booth">
-      </picture>
-    </figure>
-
-    <h2>Who We Partner With</h2>
-    <ul>
-      <li>Festivals & street fairs (GeckoFest, Art Walk, Pride)</li>
-      <li>Farmers markets & community markets</li>
-      <li>Corporate wellness events & team happy hours</li>
-      <li>Wedding expos & vendor fairs</li>
-      <li>5Ks, yoga events, and wellness retreats</li>
-      <li>Chamber of Commerce networking events</li>
-    </ul>
-
-    <h2>Sponsorship</h2>
-    <p>Every sponsorship is custom. Tell us about your event and we'll put together what fits.</p>
-
-    <h2>Why Sober Bar?</h2>
-    <p>Sober Bar &amp; Kitchen is an alcohol-free cocktail bar on Beach Boulevard in Gulfport, featured by <a href="https://www.fox13news.com/video/fmc-tcdaujvlcx10y2dc">FOX 13</a>, <a href="https://ilovetheburg.com/sober-bar-cocktails-coffee-gulfport/">I Love the Burg</a>, <a href="https://stpeterising.com/home/sober-bar-opening-next-month-in-downtown-gulfport-with-zero-proof-cocktails-and-kava">St. Pete Rising</a>, and <a href="https://thegabber.com/south-pinellas-business-news-roundup-for-june-2026/">The Gabber</a>. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.</p>
-
-    <div class="cta-box" id="inquire">
-      <h3 style="margin-top:0;">Discuss sponsorship</h3>
-      <p>This form opens an email to Sean@sipsoberbar.com. It does not send by itself, and this page does not store what you type.</p>
-      <form class="inquire-form" id="sponsorForm">
-        <div>
-          <label for="sp-name">Name</label>
-          <input id="sp-name" name="name" autocomplete="name" required>
-        </div>
-        <div>
-          <label for="sp-email">Email</label>
-          <input id="sp-email" name="email" type="email" autocomplete="email" required>
-        </div>
-        <div>
-          <label for="sp-event">Event</label>
-          <input id="sp-event" name="event" required>
-        </div>
-        <div>
-          <label for="sp-notes">Notes</label>
-          <textarea id="sp-notes" name="notes"></textarea>
-        </div>
-        <button class="btn" type="submit">Open email inquiry</button>
-      </form>
-      <p>No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>, or call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
-    </div>
-
-    <footer>
-    <p><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a> · <a href="/menu.html">Menu</a> · <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
-    <p><a href="/things-to-do-in-gulfport.html">Things to Do</a> · <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> · <a href="/as-seen-in.html">As Seen In</a> · <a href="/event-sponsorship.html">Event Sponsorship</a> · <a href="/private-events.html">Private Events</a></p>
-    <p><a href="/">Home</a> · <a href="/reservations.html">Reservations</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
-    <p>&copy; 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707 · Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
-  </footer>
+<body class="pad">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="nav">
+  <a class="mark" href="/">Sober Bar</a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="/menu.html">Menu</a>
+    <a href="/#the-room">The Room</a>
+    <a href="/#visit">Visit</a>
+    <a class="reserve" data-placement="nav" href="https://getseat.net/#/public/online/reservation/8B932637?channel=site&placement=nav">Reserve a table</a>
+  </nav>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
+</header>
+<div class="drawer" id="drawer">
+  <a href="/menu.html">Menu</a>
+  <a href="/#the-room">The Room</a>
+  <a href="/#visit">Visit</a>
+  <a class="reserve" data-placement="nav" href="https://getseat.net/#/public/online/reservation/8B932637?channel=site&placement=nav">Reserve a table</a>
+  <a href="tel:+18135861660">(813) 586-1660</a>
+</div>
+<main id="main" class="page">
+  <div class="wrap">
+    <h1>Event sponsorship</h1>
+    <p class="lead">Tell us about the event. We’ll put together what fits.</p>
+    <figure class="room-top wipe"><img src="/images/v3/bar-wide-1200.webp" width="1400" height="788" alt="The bar at Sober Bar" loading="lazy" decoding="async"></figure>
+    <p>Non-alcoholic drinks. Some NA beers contain trace alcohol (&lt;0.5% ABV).</p>
+    <div class="card" id="inquire">
+    <h2>Discuss sponsorship</h2>
+    <p>Every sponsorship is custom. This form opens an email to Sean@sipsoberbar.com. It does not send by itself.</p>
+    <form class="form" id="sponsorForm">
+      <div><label for="sp-name">Name</label><input id="sp-name" name="name" required></div>
+      <div><label for="sp-email">Email</label><input id="sp-email" name="email" type="email" required></div>
+      <div><label for="sp-event">Event</label><input id="sp-event" name="event" required></div>
+      <div><label for="sp-notes">Notes</label><textarea id="sp-notes" name="notes"></textarea></div>
+      <button class="reserve" type="submit">Open email inquiry</button>
+    </form>
+    <p>No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a> or call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
   </div>
   <script>
     document.getElementById('sponsorForm').addEventListener('submit', function (event) {
       event.preventDefault();
       var form = event.currentTarget;
       function value(key) { return form.elements[key].value.trim(); }
-      var body = [
-        'Hi Sober Bar,',
-        '',
-        'I would like to discuss sponsorship.',
-        '',
-        'Name: ' + value('name'),
-        'Email: ' + value('email'),
-        'Event: ' + value('event'),
-        'Notes: ' + value('notes')
-      ].join('\n');
-      window.location.href = 'mailto:Sean@sipsoberbar.com?subject=' + encodeURIComponent('Event Sponsorship Inquiry | Website') + '&body=' + encodeURIComponent(body);
+      var body = ['Name: '+value('name'),'Email: '+value('email'),'Event: '+value('event'),'Notes: '+value('notes')].join('\n');
+      window.location.href = 'mailto:Sean@sipsoberbar.com?subject=' + encodeURIComponent('Sponsorship inquiry') + '&body=' + encodeURIComponent(body);
     });
   </script>
-  <script src="/nav.js" defer></script>
-  <nav class="mobile-actions" aria-label="Call, reserve, or directions">
-    <a href="tel:+18135861660">Call</a>
-    <a class="is-primary" data-cta="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=sponsorship" target="_blank" rel="noopener noreferrer">Reserve</a>
-    <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
-  </nav>
+  </div>
+</main><footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-mark"><img src="/images/logo-sunburst-400.webp" alt="" width="128" height="80" loading="lazy"><span>Sober Bar</span></div>
+    <ul class="foot-links">
+      <li><a href="/why-i-opened-a-sober-bar.html">Our story</a></li>
+      <li><a href="/as-seen-in.html">As seen in</a></li>
+      <li><a href="/mocktails-st-petersburg.html">Mocktails in St. Pete</a></li>
+      <li><a href="/breakfast-gulfport.html">Breakfast in Gulfport</a></li>
+      <li><a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a></li>
+      <li><a href="https://shop.sipsoberbar.com">Shop</a></li>
+      <li><a href="/sunday-jazz-brunch.html">Sunday jazz</a></li>
+      <li><a href="/private-events.html">Private events</a></li>
+      <li><a href="/event-sponsorship.html">Sponsorship</a></li>
+    </ul>
+    <p class="fine"><a href="https://instagram.com/sipsoberbar">Instagram</a> · <a href="https://www.facebook.com/p/Sober-Bar-61582670395782/">Facebook</a></p>
+    <p class="fine">Non-alcoholic drinks. Some NA beers contain trace alcohol (&lt;0.5% ABV).</p>
+    <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="tel:+18135861660">(813) 586-1660</a> · Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
+    <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+<nav class="sticky" aria-label="Call, reserve, or directions">
+  <a href="tel:+18135861660">Call</a>
+  <a class="reserve" data-placement="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=site&placement=sticky">Reserve</a>
+  <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707">Directions</a>
+</nav>
+<script src="/site.js" defer></script>
 </body>
 </html>

@@ -1,101 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — Sober Bar</title>
+  <meta name="description" content="That page is not on the Sober Bar site.">
+  <link rel="canonical" href="https://www.sipsoberbar.com/404.html">
+  <link rel="icon" href="/favicon.svg">
+  <meta name="theme-color" content="#0E0C0A">
+  
+  <link rel="stylesheet" href="/v3.css">
   <script src="/analytics.js" defer></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page Not Found — Sober Bar</title>
-  <meta name="robots" content="noindex" />
-  <meta name="theme-color" content="#070605" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/poiret-one-normal-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/fonts.css">
-  <link rel="stylesheet" href="/chrome.css">
-  <style>
-    :root {
-      --black: #070605; --gold: #d4af6a; --gold-bright: #eed9a4;
-      --gold-dim: rgba(212, 175, 106, 0.35); --gold-faint: rgba(212, 175, 106, 0.16);
-      --cream: #f4ead8; --muted: rgba(244, 234, 216, 0.66); --muted-2: rgba(244, 234, 216, 0.45);
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: var(--black); color: var(--cream);
-      font-family: 'Josefin Sans', 'Futura', sans-serif; font-weight: 300;
-      line-height: 1.7; -webkit-font-smoothing: antialiased;
-      min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 40px 24px; position: relative; overflow: hidden;
-    }
-    body::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background:
-        repeating-conic-gradient(from -90deg at 50% -12%, rgba(212,175,106,0.055) 0deg 1.1deg, transparent 1.1deg 7deg),
-        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(212,175,106,0.14), transparent 60%);
-      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
-      mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
-    }
-    ::selection { background: var(--gold); color: #000; }
-    img { display: block; max-width: 100%; }
-    .logo { width: min(360px, 76vw); height: auto; margin-bottom: 40px; position: relative; }
-    .code { font-family: 'Poiret One', sans-serif; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-size: 0.75rem; margin-bottom: 18px; position: relative; }
-    h1 {
-      font-family: 'Poiret One', sans-serif; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
-      font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.15; color: var(--cream); position: relative;
-    }
-    h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; color: var(--gold-bright); font-size: 1.15em; }
-    p.sub { color: var(--muted); max-width: 34rem; margin: 20px auto 0; position: relative; }
-    .actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 38px; position: relative; }
-    .btn { text-decoration: none; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; padding: 15px 30px; transition: all 0.3s ease; }
-    .btn-solid { background: var(--gold); color: #000; }
-    .btn-solid:hover { background: var(--gold-bright); }
-    .btn-line { color: var(--gold); border: 1px solid var(--gold-dim); }
-    .btn-line:hover { background: var(--gold); color: #000; }
-  </style>
 </head>
-<body class="has-site-nav">
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
-      <div class="site-nav-inner">
-        <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="400" height="250"></a>
-        <ul class="site-links">
-          <li><a href="/#bar">Cocktails</a></li>
-          <li><a href="/menu.html">Menu</a></li>
-          <li><a href="/private-events.html">Private Events</a></li>
-          <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
-          <li><a href="/reservations.html">Reservations</a></li>
-          <li><a href="/#visit">Visit</a></li>
-          <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
-        </ul>
-        <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
-        <a class="site-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=404" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-        <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
-      </div>
-    </nav>
-    <div class="site-menu" id="siteMenu">
-      <a data-cta="mobile-menu" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=404" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-      <a href="/#bar">Cocktails</a>
-      <a href="/menu.html">Menu</a>
-      <a href="/private-events.html">Private Events</a>
-      <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
-      <a href="/reservations.html">Reservations</a>
-      <a href="/#visit">Visit</a>
-      <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
-      <a href="tel:+18135861660">(813) 586-1660</a>
-    </div>
-  </header>
-  <p class="code">404 · Page not found</p>
-  <h1>This page slipped <em>off the menu.</em></h1>
-  <p class="sub">The link may be old or mistyped — but the bar is very real. Head back and we'll point you to the door on Beach Boulevard.</p>
-  <div class="actions">
-    <a class="btn btn-solid" data-cta="404" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=404" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
-    <a class="btn btn-line" href="tel:+18135861660">Call</a>
-    <a class="btn btn-line" href="/">Back to Home</a>
-  </div>
-  <nav class="mobile-actions" aria-label="Call, reserve, or directions">
-    <a href="tel:+18135861660">Call</a>
-    <a class="is-primary" data-cta="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=404" target="_blank" rel="noopener noreferrer">Reserve</a>
-    <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+<body class="pad">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="nav">
+  <a class="mark" href="/">Sober Bar</a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="/menu.html">Menu</a>
+    <a href="/#the-room">The Room</a>
+    <a href="/#visit">Visit</a>
+    <a class="reserve" data-placement="nav" href="https://getseat.net/#/public/online/reservation/8B932637?channel=site&placement=nav">Reserve a table</a>
   </nav>
-  <script src="/nav.js" defer></script>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
+</header>
+<div class="drawer" id="drawer">
+  <a href="/menu.html">Menu</a>
+  <a href="/#the-room">The Room</a>
+  <a href="/#visit">Visit</a>
+  <a class="reserve" data-placement="nav" href="https://getseat.net/#/public/online/reservation/8B932637?channel=site&placement=nav">Reserve a table</a>
+  <a href="tel:+18135861660">(813) 586-1660</a>
+</div>
+<main id="main" class="page"><div class="wrap"><h1>That page is off the menu.</h1><p class="lead"><a href="/">Back to Sober Bar</a> · <a href="/menu.html">View the menu</a></p></div></main><footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-mark"><img src="/images/logo-sunburst-400.webp" alt="" width="128" height="80" loading="lazy"><span>Sober Bar</span></div>
+    <ul class="foot-links">
+      <li><a href="/why-i-opened-a-sober-bar.html">Our story</a></li>
+      <li><a href="/as-seen-in.html">As seen in</a></li>
+      <li><a href="/mocktails-st-petersburg.html">Mocktails in St. Pete</a></li>
+      <li><a href="/breakfast-gulfport.html">Breakfast in Gulfport</a></li>
+      <li><a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a></li>
+      <li><a href="https://shop.sipsoberbar.com">Shop</a></li>
+      <li><a href="/sunday-jazz-brunch.html">Sunday jazz</a></li>
+      <li><a href="/private-events.html">Private events</a></li>
+      <li><a href="/event-sponsorship.html">Sponsorship</a></li>
+    </ul>
+    <p class="fine"><a href="https://instagram.com/sipsoberbar">Instagram</a> · <a href="https://www.facebook.com/p/Sober-Bar-61582670395782/">Facebook</a></p>
+    <p class="fine">Non-alcoholic drinks. Some NA beers contain trace alcohol (&lt;0.5% ABV).</p>
+    <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="tel:+18135861660">(813) 586-1660</a> · Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
+    <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+<nav class="sticky" aria-label="Call, reserve, or directions">
+  <a href="tel:+18135861660">Call</a>
+  <a class="reserve" data-placement="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=site&placement=sticky">Reserve</a>
+  <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707">Directions</a>
+</nav>
+<script src="/site.js" defer></script>
 </body>
 </html>

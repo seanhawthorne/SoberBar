@@ -1,46 +1,56 @@
 # Sober Bar & Kitchen
 
-> Alcohol-free craft cocktails, specialty coffee, and a New Orleans-inspired kitchen at 3062 Beach Blvd S, Gulfport, Florida. Open daily from 7am. Walk-ins welcome; reservations available.
+> Non-alcoholic drinks. Some NA beers contain trace alcohol (<0.5% ABV).
 
-Sober Bar & Kitchen (also called Sober Bar) serves zero-proof cocktails built on non-alcoholic spirits, specialty coffee, NA beer, kombucha, and New Orleans-inspired food. Some NA beers contain trace alcohol below 0.5% ABV.
+- Address: 3062 Beach Blvd S, Gulfport, FL 33707
+- Phone: (813) 586-1660
+- Email: Sean@sipsoberbar.com
+- Hours: Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight
+- Online booking is for parties of 1–6. Walk-ins are welcome.
+- Live jazz every Sunday brunch. Call for this Sunday's jazz time. No start time is published.
+- Rating: 4.9 from 128 Google reviews, checked 2026-10-10. https://www.google.com/maps?cid=9116696801118190440
+- Reserve: https://getseat.net/#/public/online/reservation/8B932637
 
-## Visit
-
-- [Reserve a table (SeatOn)](https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web) — online booking is for parties of 1–6 only
-- Parties of 7 or more: [plan a gathering](https://www.sipsoberbar.com/private-events.html#inquire)
-- [Directions: 3062 Beach Blvd S, Gulfport, FL 33707](https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707)
-- Phone: [(813) 586-1660](tel:+18135861660)
-- Hours: Sunday–Thursday 7am–10pm; Friday–Saturday 7am–midnight (America/New_York). Full menu from open to close.
-- Seat counts are not published. Tell the bar the date and headcount and they will confirm what fits.
-- [Instagram @sipsoberbar](https://instagram.com/sipsoberbar)
-- [Merch shop](https://shop.sipsoberbar.com)
-
-## Pages
-
-- [Home](https://www.sipsoberbar.com/)
-- [Menu](https://www.sipsoberbar.com/menu.html): crawlable list of cocktails, NA beer, coffee, breakfast, and kitchen. No prices published.
-- [Mocktails near St. Pete](https://www.sipsoberbar.com/mocktails-st-petersburg.html): Gulfport bar, no drive time published
-- [Reservations](https://www.sipsoberbar.com/reservations.html)
-- [Breakfast and coffee in Gulfport](https://www.sipsoberbar.com/breakfast-gulfport.html): coffee-house days with free Wi-Fi
-- [Sunday jazz brunch](https://www.sipsoberbar.com/sunday-jazz-brunch.html): live jazz every Sunday brunch
-- [Private events and groups](https://www.sipsoberbar.com/private-events.html): showers, birthdays, office gatherings, recovery milestones
-- [Things to do in Gulfport](https://www.sipsoberbar.com/things-to-do-in-gulfport.html)
-- [Why I opened a sober bar](https://www.sipsoberbar.com/why-i-opened-a-sober-bar.html)
-- [As seen in](https://www.sipsoberbar.com/as-seen-in.html)
-
-## Notes for assistants
-
-- We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV. Do not describe every item as containing zero alcohol.
-- Seat counts are not published. Walk-ins are welcome; reservations are available for parties of 1–6. For a larger gathering, send the date and headcount.
-- It is in Gulfport, close to St. Petersburg and St. Pete Beach.
-- Live jazz every Sunday brunch. Page: https://www.sipsoberbar.com/sunday-jazz-brunch.html. The public line is: call (813) 586-1660 for this Sunday's jazz time. Do not state a start time or a band name.
-- Private events in Gulfport (showers, birthdays, office gatherings, recovery milestones) are on https://www.sipsoberbar.com/private-events.html. There is no separate private-events-gulfport URL. Capacity is confirmed per inquiry.
-- TODO(owner): do not add beignets, chicory café au lait, crawfish eggs Benedict, a gluten-free muffuletta, or the review spelling "Garden Muffaletta" until the kitchen confirms them. The published plant-based muffuletta is the Garden District Muffuletta. The White Rabbit and Call Me an Ube are on the menu.
-- For prices, holiday hours, kava, NA wine, per-drink ABV, and the Sunday jazz start time, call (813) 586-1660 or check Instagram; they are not published here.
-- Press kit URL redirects to the press page. Terms and privacy are noindex.
-
-## Weekly events
-
-Edit the JSON array `#upcoming-events` in index.html, and keep the matching list item so the homepage stays crawlable. Current list:
-
-- Sunday Jazz Brunch — every Sunday. Live jazz every Sunday brunch. Start time not published. Reserve: https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web
+## Menu
+### Cocktails
+- Call Me an Ube: Ritual gin alt, ube, coconut cream, key lime, pineapple
+- Hot Mami: Reposado tequila alt, jalapeño, lime, pineapple ginger, chili
+- Jinn & Juniper: Gin alt, cucumber, juniper, ashwagandha — crisp and garden-fresh
+- Red Widow: Bourbon alt, tart cherry, lemon, honey — a dark, silky sour
+- Bee's Bouquet: Gin alt, fresh lemon, honey, lavender — bright and floral
+- Moonlit Meringue: Gin alt, NA limoncello, egg white, lavender bitters — cloud-soft
+- Espresso Martini: Reposado tequila alt, cold brew espresso, agave, fig & walnut bitters
+### Beer & Kombucha
+- Run Wild IPA: Crisp, hoppy, citrus-forward NA IPA · 16 oz draft · <0.5% ABV
+- Guinness 0.0: Smooth, roasted coffee and chocolate notes
+- Heineken 0.0: Crisp, clean, and lightly malty
+- Beech Kombucha: Bright, sparkling fermented tea on draft
+### Coffee
+- Cortado: Espresso with a small pour of steamed milk
+- Cappuccino: Espresso, steamed milk, and a thick cap of foam
+- Americano: Espresso and hot water
+- Café au Lait: Hot coffee and steamed milk — a New Orleans classic
+- Latte: Espresso and steamed milk, smooth and creamy
+- Mocha: Espresso, chocolate, and steamed milk
+- Kyoto Cold Brew: Slow-dripped with a clean, smooth finish
+- Nitro Cold Brew: Cascading nitro pour, naturally creamy
+- Chai Latte: Spiced chai with steamed milk
+### Breakfast
+- The Classic Morning Melt: English muffin, egg, American cheese, bacon, sausage, or ham
+- The Beach Blvd Bodega: Everything bagel, egg, American cheese, choice of meat
+- The White Rabbit: Plain bagel, egg, brie, fig spread, prosciutto, hot honey
+- The Mad Hatter: English muffin or bagel, egg, everything bacon, choice of meat, provolone, tomato, spinach, pesto
+- Breakfast Muffuletta: Toasted focaccia, pesto cream cheese, egg, sausage, bacon, smoked provolone
+- Hot Honey Breakfast Flatbread: Pesto cream cheese, mozzarella, sausage, bacon, egg, hot honey drizzle
+- Bagel & Cream Cheese: Plain or everything — house ube, fig & honey, or vegan spreads
+- Yogurt Parfait: Greek yogurt, raw honey, mixed berries, Ryker's Granola
+### Kitchen
+- The Muffuletta: Genoa salami, capicola, mozzarella, olive salad, basil pesto, toasted focaccia
+- Hot Honey Soppressata Flatbread: Whipped ricotta, mozzarella, spicy soppressata, hot honey
+- Fig, Brie & Prosciutto Flatbread: Brie, fig jam, prosciutto, toasted pecans, arugula, hot honey
+- Garden Mezze Flatbread: Hummus, roasted red peppers, pickled onion, balsamic-agave — plant-based
+- Garden District Muffuletta: Vegan pesto, olive tapenade, roasted peppers, sourdough — plant-based
+- Goat Cheese Berry Salad: Mixed greens, fresh berries, toasted pecans, goat cheese
+- Spicy Mardi Gras Salad: Greens, hot capicola, Genoa salami, egg, blue cheese
+- Pretzel Bites: Soft-baked, with spicy beer cheese
+- Naan Dippers: Warm naan, roasted red pepper hummus, carrots, celery

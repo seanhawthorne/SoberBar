@@ -1,0 +1,16 @@
+name: Facts
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild from facts.json and fail if the site drifts
+        run: |
+          python3 scripts/build_v3.py
+          git diff --exit-code

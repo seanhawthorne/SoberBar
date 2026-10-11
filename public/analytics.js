@@ -33,10 +33,10 @@
     var label = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100);
 
     if (/getseat\.net/i.test(href)) {
-      sendEvent('reservation_started', {
-        link_url: href,
-        link_text: label,
-        cta_location: link.getAttribute('data-cta') || 'unspecified'
+      var placement = link.getAttribute('data-placement') || link.getAttribute('data-cta') || 'unspecified';
+      sendEvent('reserve_click', {
+        placement: placement,
+        page: location.pathname || '/'
       });
     } else if (/shop\.sipsoberbar\.com/i.test(href)) {
       sendEvent('merch_clicked', { link_url: href, link_text: label });

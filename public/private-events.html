@@ -1,343 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Private Events in Gulfport, FL · Sober Bar &amp; Kitchen</title>
-  <meta name="description" content="Showers, birthdays, and office gatherings at Sober Bar &amp; Kitchen in Gulfport, FL. Tell us the date and headcount and we'll confirm what fits.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Private events in Gulfport — Sober Bar</title>
+  <meta name="description" content="Showers, birthdays, office gatherings, and recovery milestones at Sober Bar in Gulfport.">
   <link rel="canonical" href="https://www.sipsoberbar.com/private-events.html">
+  <link rel="icon" href="/favicon.svg">
+  <meta name="theme-color" content="#0E0C0A">
+  
+  <link rel="stylesheet" href="/v3.css">
   <script src="/analytics.js" defer></script>
-  <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/poiret-one-normal-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/fonts.css">
-  <link rel="stylesheet" href="/chrome.css">
-  <style>
-    :root { --black:#070605; --ink:#12100c; --gold:#d4af6a; --gold-bright:#eed9a4; --cream:#f4ead8; --muted:rgba(244,234,216,.66); }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { background:var(--black); color:var(--cream); font-family:'Josefin Sans', sans-serif; font-weight:300; line-height:1.7; }
-    .shell { width:min(100% - 48px, 820px); margin:0 auto; padding:80px 0; }
-    h1 { font-family:'Poiret One', sans-serif; font-size:clamp(2rem,5vw,3rem); letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:18px; line-height:1.15; }
-    h2 { font-family:'Poiret One', sans-serif; font-size:1.4rem; color:var(--gold-bright); margin:48px 0 18px; letter-spacing:.08em; text-transform:uppercase; }
-    h3 { font-family:'Josefin Sans', sans-serif; font-size:.78rem; letter-spacing:.25em; text-transform:uppercase; color:var(--gold); margin:28px 0 8px; }
-    p, li { color:var(--muted); margin-bottom:16px; }
-    ul { margin-left:24px; }
-    a { color:var(--gold-bright); }
-    .eyebrow { font-family:'Josefin Sans', sans-serif; font-size:.72rem; letter-spacing:.4em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:block; }
-    .lead { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.5rem; color:var(--cream); line-height:1.4; margin-bottom:28px; }
-    .room { margin: 0 0 36px; }
-    .room img { width: 100%; height: auto; display: block; }
-    .room figcaption { margin-top: 10px; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:20px; }
-    .card { background:var(--ink); border:1px solid rgba(212,175,106,.18); padding:24px; }
-    .card h3 { margin-top:0; }
-    .card ul { margin-left:18px; }
-    .price { font-family:'Poiret One', sans-serif; font-size:1.4rem; color:var(--gold); margin:12px 0; }
-    .price-note { font-size:.75rem; color:var(--muted); }
-    .tag { display:inline-block; background:rgba(212,175,106,.12); color:var(--gold); font-size:.65rem; letter-spacing:.14em; text-transform:uppercase; padding:4px 10px; margin-right:8px; margin-bottom:8px; }
-    .cta { margin-top:48px; padding:28px; border:1px solid rgba(212,175,106,.25); text-align:center; }
-    .btn { display:inline-block; margin-top:0; padding:14px 32px; background:var(--gold); color:#060504; font-weight:600; text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; white-space:nowrap; text-align:center; }
-    .btn.line { background:transparent; color:var(--gold); border:1px solid rgba(212,175,106,.45); font-weight:600; }
-    .intro-actions { justify-content:flex-start; margin:0 0 28px; }
-    .facts { border:1px solid rgba(212,175,106,.28); padding:22px 22px 6px; margin:0 0 28px; text-align:left; }
-    .facts h2 { margin-top:0; }
-    .facts dl { display:grid; grid-template-columns:1fr 1fr; gap:16px 28px; }
-    .facts dt { font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
-    .facts dd { margin:4px 0 0; color:var(--cream); }
-    .inquire-form { text-align:left; max-width:560px; margin:8px auto 0; display:grid; gap:12px; }
-    .inquire-form label { display:block; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
-    .inquire-form input, .inquire-form select, .inquire-form textarea { box-sizing:border-box; width:100%; max-width:100%; min-width:0; background:transparent; color:var(--cream); border:1px solid rgba(212,175,106,.35); padding:12px 14px; font-family:'Josefin Sans', sans-serif; font-size:1rem; }
-    .inquire-form textarea { min-height:96px; resize:vertical; }
-    .inquire-form button { border:0; cursor:pointer; font-family:'Josefin Sans', sans-serif; }
-    .actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; align-items:center; }
-    @media (max-width:640px) { .facts dl { grid-template-columns:1fr; } .cta .btn { margin-left:0 !important; } }
-    footer { text-align:center; padding:40px 0; font-size:.75rem; color:var(--muted); }
-    footer a { color:var(--gold); text-decoration:none; margin:0 10px; }
-  </style>
 </head>
-<body class="has-site-nav">
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
-      <div class="site-nav-inner">
-        <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801"></a>
-        <ul class="site-links">
-          <li><a href="/#bar">Cocktails</a></li>
-          <li><a href="/menu.html">Menu</a></li>
-          <li><a href="/private-events.html" aria-current="page">Private Events</a></li>
-          <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
-          <li><a href="/reservations.html">Reservations</a></li>
-          <li><a href="/#visit">Visit</a></li>
-          <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
-        </ul>
-        <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
-        <a class="site-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=private-events" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-        <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
-      </div>
-    </nav>
-    <div class="site-menu" id="siteMenu">
-      <a data-cta="mobile-menu" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=private-events" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-      <a href="/#bar">Cocktails</a>
-      <a href="/menu.html">Menu</a>
-      <a href="/private-events.html" aria-current="page">Private Events</a>
-      <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
-      <a href="/reservations.html">Reservations</a>
-      <a href="/#visit">Visit</a>
-      <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
-      <a href="tel:+18135861660">(813) 586-1660</a>
-    </div>
-  </header>
-  <div class="shell">
-    <span class="eyebrow">Private Events</span>
-    <h1>Private events in Gulfport, FL</h1>
-    <p class="lead">Showers, birthdays, office gatherings, and recovery milestones in the room and on the patio. Tell us the date and headcount and we’ll confirm what fits.</p>
-    <div class="actions intro-actions">
-      <a class="btn" href="#inquire">Plan your gathering</a>
-      <a class="btn line" data-cta="private-events" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=private-events" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-    </div>
-    <figure class="room">
-      <picture>
-        <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 820px" type="image/webp">
-        <img src="/images/space/lounge-1400.jpg" width="1400" height="1050" alt="The lounge at Sober Bar, curved booths under the chandelier, where private gatherings sit" loading="lazy" decoding="async">
-      </picture>
-      <figcaption>The lounge</figcaption>
-    </figure>
-
-    <section class="facts" aria-label="Hours, address, and phone">
-      <h2>Visit</h2>
-      <dl>
-        <div>
-          <dt>Address</dt>
-          <dd>3062 Beach Blvd S<br>Gulfport, FL 33707</dd>
-        </div>
-        <div>
-          <dt>Phone</dt>
-          <dd><a href="tel:+18135861660">(813) 586-1660</a></dd>
-        </div>
-        <div>
-          <dt>Hours</dt>
-          <dd>Sunday–Thursday 7am–10pm<br>Friday–Saturday 7am–12am</dd>
-        </div>
-        <div>
-          <dt>Room</dt>
-          <dd>Tell us the date and headcount and we’ll confirm what fits.</dd>
-        </div>
-      </dl>
-    </section>
-
-    <p>Sober Bar &amp; Kitchen is a coffee house by day and an alcohol-free cocktail bar by night in downtown Gulfport. Gatherings use the same room: baby showers, birthdays, office happy hours, book clubs, recovery milestones, and other private celebrations. Menus, staffing, pricing, and availability are confirmed in your event quote. An inquiry does not hold the date.</p>
-
-    <h2>Ways to Gather</h2>
-    <div class="grid">
-      <div class="card">
-        <span class="tag">Corporate</span>
-        <h3>Alcohol-Free Happy Hour</h3>
-        <p>Team time, ERG gatherings, and wellness outings in the room. Tell us the date and headcount and we’ll confirm what fits.</p>
-        <p class="price">Request a custom quote</p>
-      </div>
-
-      <div class="card">
-        <span class="tag">Celebration</span>
-        <h3>Showers &amp; Birthdays</h3>
-        <p>Baby showers, bridal showers, birthdays, and other private celebrations. Menus and timing are part of the quote.</p>
-        <p class="price">Request a custom quote</p>
-      </div>
-
-      <div class="card">
-        <span class="tag">Private</span>
-        <h3>A Reserved Section</h3>
-        <p>Book clubs, anniversaries, and other reasons to gather. Tell us the date and headcount and we’ll confirm what fits.</p>
-        <p class="price">Request a custom quote</p>
-      </div>
-
-      <div class="card">
-        <span class="tag">Recovery</span>
-        <h3>Recovery Milestones</h3>
-        <p>A celebration that does not put a drink in front of the guest of honor. Tell us the date and headcount and we’ll confirm what fits.</p>
-        <p class="price">Request a custom quote</p>
-      </div>
-    </div>
-
-    <h2>Why alcohol-free events work</h2>
-
-    <ul>
-      <li><strong>Welcoming.</strong> A social setting for anyone choosing an alcohol-free outing.</li>
-      <li><strong>Memorable.</strong> Guests remember the drinks and the atmosphere, not the hangover.</li>
-      <li><strong>Productive.</strong> Corporate groups stay sharp and conversational.</li>
-      <li><strong>Flexible.</strong> Start with your occasion and build a gathering around it.</li>
-    </ul>
-
-    <h2>What guests drink</h2>
-
-    <p>Our bar program uses non-alcoholic spirits, fresh juices, bitters, shrubs, and house syrups. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV. Popular builds on the menu include the <strong>Call Me an Ube</strong> and <strong>Jinn &amp; Juniper</strong>.</p>
-
-    <h2>Gatherings we host</h2>
-    <ul>
-      <li><strong>Showers.</strong> Baby showers and bridal showers, with coffee, alcohol-free cocktails, and the kitchen menu.</li>
-      <li><strong>Birthdays.</strong> A reserved section or the full room, depending on the headcount.</li>
-      <li><strong>Office gatherings.</strong> Happy hours and team time without a liquor bill.</li>
-      <li><strong>Recovery milestones.</strong> A celebration that does not put a drink in front of the guest of honor.</li>
-    </ul>
-    <p>Book clubs and sober-curious meetups use the room the same way. Just need a table for brunch or dinner, not a buyout? <a href="/sunday-jazz-brunch.html">Sunday jazz brunch</a> and <a href="/breakfast-gulfport.html">coffee and breakfast</a> are open for walk-ins, or <a data-cta="private-events" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=private-events" target="_blank" rel="noopener noreferrer">reserve a table</a>.</p>
-
-    <div class="cta" id="inquire">
-      <h2 style="margin-top:0">Plan your gathering</h2>
-      <p>This form opens an email to Sean@sipsoberbar.com. It does not send by itself, and this page does not store what you type. Send the draft from your mail app. An inquiry does not reserve the date.</p>
-      <form class="inquire-form" id="inquireForm" action="mailto:Sean@sipsoberbar.com" method="post" enctype="text/plain">
-        <div>
-          <label for="inq-name">Name</label>
-          <input id="inq-name" name="name" autocomplete="name" required>
-        </div>
-        <div>
-          <label for="inq-phone">Phone</label>
-          <input id="inq-phone" name="phone" type="tel" autocomplete="tel" required>
-        </div>
-        <div>
-          <label for="inq-email">Email</label>
-          <input id="inq-email" name="email" type="email" autocomplete="email" required>
-        </div>
-        <div>
-          <label for="inq-when">Preferred date and time</label>
-          <input id="inq-when" name="when" required>
-        </div>
-        <div>
-          <label for="inq-guests">Guest count</label>
-          <input id="inq-guests" name="guests" inputmode="numeric" required>
-        </div>
-        <div>
-          <label for="inq-occasion">Occasion</label>
-          <select id="inq-occasion" name="occasion">
-            <option>Shower</option>
-            <option>Birthday</option>
-            <option>Office gathering</option>
-            <option>Recovery milestone</option>
-            <option>Book club</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label for="inq-notes">Notes</label>
-          <textarea id="inq-notes" name="notes" placeholder="Indoor seating, food, or anything else we should know"></textarea>
-        </div>
-        <button class="btn" type="submit">Open email inquiry</button>
-      </form>
-      <p class="price-note">No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>, or call <a href="tel:+18135861660">(813) 586-1660</a>. For a regular table, <a data-cta="private-events-inquiry" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=private-events" target="_blank" rel="noopener noreferrer">reserve a table</a>.</p>
-    </div>
+<body class="pad">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="nav">
+  <a class="mark" href="/">Sober Bar</a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="/menu.html">Menu</a>
+    <a href="/#the-room">The Room</a>
+    <a href="/#visit">Visit</a>
+    <a class="reserve" data-placement="nav" href="https://getseat.net/#/public/online/reservation/8B932637?channel=site&placement=nav">Reserve a table</a>
+  </nav>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
+</header>
+<div class="drawer" id="drawer">
+  <a href="/menu.html">Menu</a>
+  <a href="/#the-room">The Room</a>
+  <a href="/#visit">Visit</a>
+  <a class="reserve" data-placement="nav" href="https://getseat.net/#/public/online/reservation/8B932637?channel=site&placement=nav">Reserve a table</a>
+  <a href="tel:+18135861660">(813) 586-1660</a>
+</div>
+<main id="main" class="page">
+  <div class="wrap">
+    <h1>Private events in Gulfport</h1>
+    <p class="lead">Tell us the date and headcount. We’ll confirm what fits.</p>
+    <figure class="room-top wipe"><img src="/images/v3/hero-d-1200.webp" width="1400" height="875" alt="The lounge, where private gatherings sit" loading="lazy" decoding="async"></figure>
+    <p><a class="reserve" href="#inquire">Plan your gathering</a></p>
+    <p>Showers, birthdays, office gatherings, and recovery milestones use the same room and patio. Tell us the date and headcount and we’ll confirm what fits. Menus and pricing are in the quote.</p>
+    <p>Non-alcoholic drinks. Some NA beers contain trace alcohol (&lt;0.5% ABV). Popular builds include Call Me an Ube and Jinn &amp; Juniper.</p>
+    <p><a href="/sunday-jazz-brunch.html">Sunday jazz brunch</a> is the same room, not a separate venue.</p>
+    <div class="card" id="inquire">
+    <h2>Plan your gathering</h2>
+    <p>This form opens an email to Sean@sipsoberbar.com. It does not send by itself, and this page does not store what you type. An inquiry does not reserve the date.</p>
+    <form class="form" id="inquireForm">
+      <div><label for="inq-name">Name</label><input id="inq-name" name="name" autocomplete="name" required></div>
+      <div><label for="inq-phone">Phone</label><input id="inq-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      <div><label for="inq-email">Email</label><input id="inq-email" name="email" type="email" autocomplete="email" required></div>
+      <div><label for="inq-when">Preferred date and time</label><input id="inq-when" name="when" required></div>
+      <div><label for="inq-guests">Guest count</label><input id="inq-guests" name="guests" inputmode="numeric" required></div>
+      <div><label for="inq-occasion">Occasion</label><select id="inq-occasion" name="occasion"><option>Shower</option><option>Birthday</option><option>Office gathering</option><option>Recovery milestone</option><option>Book club</option><option>Other</option></select></div>
+      <div><label for="inq-notes">Notes</label><textarea id="inq-notes" name="notes"></textarea></div>
+      <button class="reserve" type="submit">Open email inquiry</button>
+    </form>
+    <p>No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a> or call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
+    <a class="party" href="#inquire">Party of 7+? Plan a gathering</a>
   </div>
-
-  <footer>
-    <p><a href="tel:+18135861660">(813) 586-1660</a> · <a data-cta="footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=private-events" target="_blank" rel="noopener noreferrer">Reserve a table</a> · <a href="/menu.html">Menu</a> · <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
-    <p><a href="/breakfast-gulfport.html">Breakfast &amp; Coffee</a> · <a href="/sunday-jazz-brunch.html">Sunday Jazz Brunch</a> · <a href="/private-events.html">Private Events</a> · <a href="/reservations.html">Reservations</a></p>
-    <p><a href="/things-to-do-in-gulfport.html">Things to Do</a> · <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> · <a href="/as-seen-in.html">As Seen In</a> · <a href="/event-sponsorship.html">Event Sponsorship</a></p>
-    <p><a href="/">Home</a> · <a href="/reservations.html">Reservations</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
-    <p>&copy; 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707 · Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
-  </footer>
-
   <script>
     document.getElementById('inquireForm').addEventListener('submit', function (event) {
       event.preventDefault();
       var form = event.currentTarget;
       function value(key) { return form.elements[key].value.trim(); }
-      var body = [
-        'Hi Sober Bar,',
-        '',
-        'I would like to plan a gathering.',
-        '',
-        'Name: ' + value('name'),
-        'Phone: ' + value('phone'),
-        'Email: ' + value('email'),
-        'Preferred date and time: ' + value('when'),
-        'Guest count: ' + value('guests'),
-        'Occasion: ' + value('occasion'),
-        'Notes: ' + value('notes')
-      ].join('\n');
+      var body = ['Hi Sober Bar,','','I would like to plan a gathering.','','Name: '+value('name'),'Phone: '+value('phone'),'Email: '+value('email'),'Preferred date and time: '+value('when'),'Guest count: '+value('guests'),'Occasion: '+value('occasion'),'Notes: '+value('notes')].join('\n');
       window.location.href = 'mailto:Sean@sipsoberbar.com?subject=' + encodeURIComponent('Group Event Inquiry | Website') + '&body=' + encodeURIComponent(body);
     });
   </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://www.sipsoberbar.com/#business",
-    "name": "Sober Bar & Kitchen",
-    "telephone": "+1-813-586-1660",
-    "url": "https://www.sipsoberbar.com/private-events.html",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "3062 Beach Blvd S",
-      "addressLocality": "Gulfport",
-      "addressRegion": "FL",
-      "postalCode": "33707",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "07:00", "closes": "22:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "07:00", "closes": "00:00" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Private events at Sober Bar & Kitchen",
-    "provider": { "@id": "https://www.sipsoberbar.com/#business" },
-    "description": "Showers, birthdays, office gatherings, and recovery milestones at Sober Bar & Kitchen in Gulfport. Tell us the date and headcount and we'll confirm what fits.",
-    "areaServed": { "@type": "City", "name": "Gulfport", "containedInPlace": { "@type": "State", "name": "Florida" } }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How many people can a private event at Sober Bar hold?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Tell us the date and headcount and we'll confirm what fits. Call (813) 586-1660 or send an inquiry." }
-      },
-      {
-        "@type": "Question",
-        "name": "What private events does Sober Bar host in Gulfport?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Showers, birthdays, office gatherings, recovery milestones, book clubs, and other private celebrations." }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I inquire about a private event?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Use the inquiry form on this page. It opens an email to Sean@sipsoberbar.com and does not reserve the date. You can also call (813) 586-1660." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can drinks at a Sober Bar event contain trace alcohol?",
-        "acceptedAnswer": { "@type": "Answer", "text": "We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV." }
-      }
-    ]
-  }
-  </script>
-  <nav class="mobile-actions" aria-label="Call, reserve, or directions">
-    <a href="tel:+18135861660">Call</a>
-    <a class="is-primary" data-cta="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=private-events" target="_blank" rel="noopener noreferrer">Reserve</a>
-    <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
-  </nav>
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.sipsoberbar.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Private events in Gulfport",
-      "item": "https://www.sipsoberbar.com/private-events.html"
-    }
-  ]
-}
-  </script>
-  <script src="/nav.js" defer></script>
+    <p style="margin-top:22px"><a class="reserve" data-placement="private-events" href="https://getseat.net/#/public/online/reservation/8B932637?channel=site&placement=private-events">Reserve a table</a></p>
+    <div class="card" id="visit-card">
+    <h2>Visit</h2>
+    <p>3062 Beach Blvd S<br>Gulfport, FL 33707</p>
+    <p>Sunday–Thursday 7am–10pm<br>Friday–Saturday 7am–midnight</p>
+    <p><a href="tel:+18135861660">(813) 586-1660</a> · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707">Directions</a></p>
+  </div>
+  </div>
+</main><footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-mark"><img src="/images/logo-sunburst-400.webp" alt="" width="128" height="80" loading="lazy"><span>Sober Bar</span></div>
+    <ul class="foot-links">
+      <li><a href="/why-i-opened-a-sober-bar.html">Our story</a></li>
+      <li><a href="/as-seen-in.html">As seen in</a></li>
+      <li><a href="/mocktails-st-petersburg.html">Mocktails in St. Pete</a></li>
+      <li><a href="/breakfast-gulfport.html">Breakfast in Gulfport</a></li>
+      <li><a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a></li>
+      <li><a href="https://shop.sipsoberbar.com">Shop</a></li>
+      <li><a href="/sunday-jazz-brunch.html">Sunday jazz</a></li>
+      <li><a href="/private-events.html">Private events</a></li>
+      <li><a href="/event-sponsorship.html">Sponsorship</a></li>
+    </ul>
+    <p class="fine"><a href="https://instagram.com/sipsoberbar">Instagram</a> · <a href="https://www.facebook.com/p/Sober-Bar-61582670395782/">Facebook</a></p>
+    <p class="fine">Non-alcoholic drinks. Some NA beers contain trace alcohol (&lt;0.5% ABV).</p>
+    <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="tel:+18135861660">(813) 586-1660</a> · Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
+    <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  </div>
+</footer>
+<nav class="sticky" aria-label="Call, reserve, or directions">
+  <a href="tel:+18135861660">Call</a>
+  <a class="reserve" data-placement="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=site&placement=sticky">Reserve</a>
+  <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707">Directions</a>
+</nav>
+<script src="/site.js" defer></script>
 </body>
 </html>
