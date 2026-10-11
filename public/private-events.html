@@ -49,7 +49,13 @@
     .inquire-form textarea { min-height:96px; resize:vertical; }
     .inquire-form button { border:0; cursor:pointer; font-family:'Josefin Sans', sans-serif; }
     .actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; align-items:center; }
-    @media (max-width:640px) { .facts dl { grid-template-columns:1fr; } .cta .btn { margin-left:0 !important; } }
+    @media (max-width:640px) {
+      .facts dl { grid-template-columns:1fr; }
+      .cta .btn { margin-left:0 !important; }
+      .intro-actions { flex-direction:column; align-items:stretch; }
+      .intro-actions .btn { width:100%; white-space:normal; box-sizing:border-box; }
+      .intro-actions .party-link { display:block; margin:6px 0 0; line-height:1.45; }
+    }
     footer { text-align:center; padding:40px 0; font-size:.75rem; color:var(--muted); }
     footer a { color:var(--gold); text-decoration:none; margin:0 10px; }
   </style>

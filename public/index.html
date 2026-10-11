@@ -159,17 +159,22 @@ html { scroll-padding-top: 84px; }
     .daynight figcaption { margin-top: 10px; letter-spacing: .22em; text-transform: uppercase; font-size: .72rem; color: var(--gold); }
     .story-line { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.12; color: var(--cream); max-width: 18em; margin: 0; }
     .story-line + p { max-width: 40em; margin-top: 14px; color: #f4ead8; }
-    .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
-    .quotes blockquote { padding: 22px; border: 1px solid var(--gold-faint); background: #12100c; }
+    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
+    .quotes .quote-card { display: block; height: 100%; color: inherit; text-decoration: none; }
+    .quotes .quote-card:hover p { color: var(--gold-bright); }
+    .quotes blockquote { height: 100%; padding: 22px; border: 1px solid var(--gold-faint); background: #12100c; }
     .quotes p { color: #f4ead8; margin: 0; }
     .quotes footer { border: 0; padding: 14px 0 0; text-align: left; color: var(--gold-bright); font-size: .95rem; letter-spacing: .02em; background: transparent; }
     .rating-link { color: var(--gold-bright); font-size: 1.15rem; text-decoration: none; border-bottom: 1px solid rgba(238,217,164,.45); }
     .press-row { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 34px; }
     .press-row a { color: #f4ead8; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; text-decoration: none; border-bottom: 1px solid rgba(212,175,106,.5); }
     .highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .highlights a { color: inherit; text-decoration: none; }
-    .highlights img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; border-radius: 6px; }
-    .highlights span { display: block; margin-top: 10px; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--cream); }
+    .highlights a {
+      display: flex; align-items: flex-end; min-height: 140px; padding: 22px 18px;
+      border: 1px solid var(--gold-faint); background: #12100c; color: var(--cream);
+      text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.2;
+    }
+    .highlights a:hover { border-color: var(--gold); color: var(--gold-bright); }
     .visit-split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: center; }
     .visit-split .visit-grid { grid-template-columns: 1fr; gap: 18px; }
     .visit-split .visit-photo img { aspect-ratio: 1400 / 1006; height: auto; object-fit: cover; }
@@ -182,7 +187,7 @@ html { scroll-padding-top: 84px; }
       .hero-title-desk { display: none; }
       .hero-title-mob { display: inline; }
       .hero-title { font-size: 2rem; max-width: 12em; }
-      section { padding: 40px 0; }
+      section { padding: 28px 0; }
       p, li, .brunch-copy, .visit-cell p, .quotes p, .story-line + p, .faq-wrap details p, .mi .mi-desc {
         font-size: 17px;
         line-height: 1.55;
@@ -489,6 +494,7 @@ html { scroll-padding-top: 84px; }
       mask-image: linear-gradient(180deg, #000, transparent 75%);
     }
     .brunch-panel h2 { margin: 20px 0 24px; }
+    .brunch-panel .btn { display: inline-block; margin-top: 28px; max-width: 100%; box-sizing: border-box; line-height: 1.35; }
     .brunch-copy {
       max-width: 700px; margin: 0 auto; color: var(--muted);
       font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.18rem, 2.3vw, 1.45rem);
@@ -604,8 +610,8 @@ html { scroll-padding-top: 84px; }
     /* ------- footer ------- */
     footer { border-top: 1px solid var(--gold-faint); padding: 70px 0 46px; text-align: center; }
     .foot-logo { width: 240px; margin: 0 auto 30px; }
-    footer .fine { color: var(--muted-2); font-size: 0.78rem; letter-spacing: 0.12em; margin-top: 8px; }
-    footer .fine a { color: var(--muted-2); }
+    footer .fine { color: #f4ead8; font-size: 16px; letter-spacing: 0.03em; margin-top: 8px; line-height: 1.5; }
+    footer .fine a { color: #f4ead8; }
     footer .fine a:hover { color: var(--gold); }
 
     /* ------- reveal ------- */
@@ -817,7 +823,9 @@ html { scroll-padding-top: 84px; }
       header.hero .hero-actions { margin: 0; gap: 8px; max-width: 340px; }
       .hero-proof { margin-top: 12px; font-size: .68rem; letter-spacing: .04em; }
       header.hero .hero-hours { justify-content: flex-start; margin-top: 8px; gap: 4px 14px; }
-      section { padding: 40px 0; }
+      section { padding: 28px 0; }
+      .brunch-panel { padding: 36px 18px; }
+      .brunch-panel .btn { display: flex; width: 100%; align-items: center; justify-content: center; letter-spacing: 0.12em; padding: 16px 14px; }
     }
   </style>
 </head>
@@ -867,7 +875,7 @@ html { scroll-padding-top: 84px; }
     <div class="hero-copy">
       <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
       <h1 class="hero-title"><span class="hero-title-desk">Coffee, New Orleans-inspired kitchen &amp; <em>alcohol-free</em> cocktails in Gulfport, FL</span><span class="hero-title-mob">Coffee by day. Cocktails after dark.</span></h1>
-      <p class="hero-sub">Espresso and free WiFi from 7am. Muffulettas at noon. Alcohol-free cocktails under the chandeliers after dark.</p>
+      <p class="hero-sub">Espresso and free WiFi from 7am. Alcohol-free cocktails under the chandeliers after dark.</p>
       <div class="hero-actions">
         <div class="hero-cta-row">
           <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
@@ -896,8 +904,8 @@ html { scroll-padding-top: 84px; }
         </figure>
         <figure>
           <picture>
-            <source srcset="/images/space/bartenders-480.webp 480w, /images/space/bartenders-800.webp 800w, /images/space/bartenders-1400.webp 1400w" sizes="(max-width: 800px) 92vw, 46vw" type="image/webp">
-            <img src="/images/space/bartenders-1400.jpg" width="1400" height="1867" alt="Bartenders mixing drinks behind the bar at Sober Bar" loading="lazy" decoding="async">
+            <source srcset="/images/bar-night-480.webp 480w, /images/bar-night-800.webp 800w, /images/bar-night.webp 1300w" sizes="(max-width: 800px) 92vw, 46vw" type="image/webp">
+            <img src="/images/bar-night.jpg" width="1300" height="1734" alt="The bar at night, bottles on the back bar under two pendant lights" loading="lazy" decoding="async">
           </picture>
           <figcaption>Night</figcaption>
         </figure>
@@ -915,18 +923,18 @@ html { scroll-padding-top: 84px; }
       </div>
       <p><a class="rating-link" href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">4.9 ★ on Google · 129 reviews</a></p>
       <div class="quotes">
-        <blockquote>
-          <p>Great vibes, jazz music playing. Very accommodating and cozy for a ladies brunch. Food and drinks on point. Great service.</p>
-          <footer>Angela Terrio</footer>
-        </blockquote>
-        <blockquote>
-          <p>So grateful to have this gem in Gulfport. An upscale vibe meets comfort… We needed somewhere like this.</p>
-          <footer>Jenna Kirkpatrick</footer>
-        </blockquote>
-        <blockquote>
-          <p>I was surprised, in a good way. The service was great, the vibe and atmosphere were wonderful… You won't be disappointed.</p>
-          <footer>Gerald Goldberg</footer>
-        </blockquote>
+        <a class="quote-card" href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">
+          <blockquote>
+            <p>Great vibes, jazz music playing. Very accommodating and cozy for a ladies brunch. Food and drinks on point. Great service.</p>
+            <footer>Angela Terrio</footer>
+          </blockquote>
+        </a>
+        <a class="quote-card" href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">
+          <blockquote>
+            <p>So grateful to have this gem in Gulfport. An upscale vibe meets comfort… We needed somewhere like this.</p>
+            <footer>Jenna Kirkpatrick</footer>
+          </blockquote>
+        </a>
       </div>
       <nav class="press-row" aria-label="Press">
         <a href="https://www.fox13news.com/video/fmc-tcdaujvlcx10y2dc" target="_blank" rel="noopener">FOX 13</a>
@@ -945,18 +953,9 @@ html { scroll-padding-top: 84px; }
         <h2 class="title">Three plates, <em>then the rest.</em></h2>
       </div>
       <div class="highlights">
-        <a href="/menu.html">
-          <img src="/images/food/dd-hot-honey-lead-640.webp" srcset="/images/food/dd-hot-honey-lead-640.webp 640w, /images/food/dd-hot-honey-lead-960.webp 960w" sizes="(max-width: 800px) 92vw, 300px" width="960" height="720" alt="" loading="lazy" decoding="async">
-          <span>Hot Honey Soppressata Flatbread</span>
-        </a>
-        <a href="/menu.html">
-          <img src="/images/food/dd-garden-mezze-lead-640.webp" srcset="/images/food/dd-garden-mezze-lead-640.webp 640w, /images/food/dd-garden-mezze-lead-960.webp 960w" sizes="(max-width: 800px) 92vw, 300px" width="960" height="719" alt="" loading="lazy" decoding="async">
-          <span>Garden Mezze Flatbread (V)</span>
-        </a>
-        <a href="/menu.html">
-          <img src="/images/food/dd-classic-melt-lead-640.webp" srcset="/images/food/dd-classic-melt-lead-640.webp 640w, /images/food/dd-classic-melt-lead-960.webp 960w" sizes="(max-width: 800px) 92vw, 300px" width="960" height="719" alt="" loading="lazy" decoding="async">
-          <span>The Classic Morning Melt</span>
-        </a>
+        <a href="/menu.html#hot-honey">Hot Honey Soppressata Flatbread</a>
+        <a href="/menu.html#garden-mezze">Garden Mezze Flatbread (V)</a>
+        <a href="/menu.html#classic-melt">The Classic Morning Melt</a>
       </div>
       <p class="menu-note"><a href="/menu.html">Full menu</a></p>
     </div>
@@ -1056,10 +1055,8 @@ html { scroll-padding-top: 84px; }
       <p class="fine">Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
       <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
       <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
-      <p class="fine"><a data-cta="footer" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> &nbsp;·&nbsp; <a href="/menu.html">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
-      <p class="fine"><a href="/breakfast-gulfport.html">Breakfast in Gulfport</a> &nbsp;·&nbsp; <a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a> &nbsp;·&nbsp; <a href="/private-events.html">Private events in Gulfport</a> &nbsp;·&nbsp; <a href="/reservations.html">Reservations</a> &nbsp;·&nbsp; <a href="/mocktails-st-petersburg.html">Mocktails near St. Pete</a></p>
-      <p class="fine"><a href="/things-to-do-in-gulfport.html">Things to Do</a> &nbsp;·&nbsp; <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> &nbsp;·&nbsp; <a href="/as-seen-in.html">As Seen In</a> &nbsp;·&nbsp; <a href="/event-sponsorship.html">Event Sponsorship</a></p>
-      <p class="fine"><a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></p>
+      <p class="fine"><a href="/menu.html">Menu</a> · <a href="/reservations.html">Reservations</a> · <a href="/sunday-jazz-brunch.html">Jazz brunch</a> · <a href="/private-events.html">Private events</a></p>
+      <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
       <p class="fine">© 2026 Sober Bar · 3062 Beach Blvd S, Gulfport, FL 33707</p>
     </div>
   </footer>
@@ -1071,29 +1068,6 @@ html { scroll-padding-top: 84px; }
   </nav>
 
   <script>
-    (function () {
-      var photo = document.querySelector('.hero-photo');
-      if (!photo || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      window.addEventListener('load', function () {
-        window.setTimeout(function () {
-          [
-            { cls: 'hero-slide hero-slide-2', src: '/images/parlor-800.webp', w: 800, h: 1067 },
-            { cls: 'hero-slide hero-slide-3', src: '/images/bar-night-800.webp', w: 800, h: 1067 }
-          ].forEach(function (s) {
-            var img = document.createElement('img');
-            img.className = s.cls;
-            img.alt = '';
-            img.width = s.w;
-            img.height = s.h;
-            img.decoding = 'async';
-            img.src = s.src;
-            photo.appendChild(img);
-          });
-          photo.classList.add('is-live');
-        }, 1400);
-      }, { once: true });
-    })();
-
     const nav = document.getElementById('nav');
     function onScroll() {
       nav.classList.toggle('scrolled', window.scrollY > 40);
