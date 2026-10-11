@@ -36,7 +36,7 @@ Sober Bar & Kitchen (also called Sober Bar) serves zero-proof cocktails built on
 - It is in Gulfport, close to St. Petersburg and St. Pete Beach.
 - Live jazz every Sunday brunch. Page: https://www.sipsoberbar.com/sunday-jazz-brunch.html. The public line is: call (813) 586-1660 for this Sunday's jazz time. Do not state a start time or a band name.
 - Private events in Gulfport (showers, birthdays, office gatherings, recovery milestones) are on https://www.sipsoberbar.com/private-events.html. There is no separate private-events-gulfport URL. Capacity is confirmed per inquiry.
-- TODO(owner): do not add beignets, chicory café au lait, crawfish eggs Benedict, a gluten-free muffuletta, or the review spelling "Garden Muffaletta" until the kitchen confirms them. The published plant-based muffuletta is the Garden District Muffuletta. The White Rabbit and Call Me an Ube are on the menu.
+- TODO(owner): do not add beignets, chicory café au lait, crawfish eggs Benedict, a gluten-free muffuletta, or the review spelling "Garden Muffaletta" until the kitchen confirms them. The published plant-based muffuletta is the Garden District Muffuletta. The White Rabbit and Call Me An Ube are on the menu.
 - For prices, holiday hours, kava, NA wine, per-drink ABV, and the Sunday jazz start time, call (813) 586-1660 or check Instagram; they are not published here.
 - Press kit URL redirects to the press page. Terms and privacy are noindex.
 
