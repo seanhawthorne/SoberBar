@@ -33,9 +33,9 @@
     }
   ],
   "drinks": "zero-proof cocktails",
-  "alcohol": "We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.",
+  "alcohol": "We serve non-alcoholic drinks. Some NA beers and the kombucha contain trace alcohol below 0.5% ABV.",
   "amenityFeature": "Free WiFi",
-  "wifi": "fast WiFi, good for working",
+  "wifi": "free, fast WiFi, good for working",
   "menu": "https://www.sipsoberbar.com/menu.html",
   "seatOnDinner": "https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637",
   "seatOnBrunch": "https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637",
