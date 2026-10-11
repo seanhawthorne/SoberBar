@@ -85,7 +85,8 @@ def header(kind="dinner"):
 '''
 
 
-def footer():
+def footer(show_alcohol=True):
+    alcohol = f'\n    <p class="fine">{e(ALC)}</p>' if show_alcohol else ""
     return f'''<footer class="site-footer">
   <div class="wrap">
     <div class="foot-mark"><img src="/images/logo-sunburst-400.webp" alt="" width="128" height="80" loading="lazy"><span>Sober Bar</span></div>
@@ -99,8 +100,7 @@ def footer():
       <li><a href="/sunday-jazz-brunch.html">Sunday jazz</a></li>
       <li><a href="/private-events.html">Private events</a></li>
     </ul>
-    <p class="fine"><a href="{FACTS["instagram"]}">Instagram</a> · <a href="{FACTS["facebook"]}">Facebook</a></p>
-    <p class="fine">{e(ALC)}</p>
+    <p class="fine"><a href="{FACTS["instagram"]}">Instagram</a> · <a href="{FACTS["facebook"]}">Facebook</a></p>{alcohol}
     <p class="fine">{e(ADDR)} · <a href="tel:{TEL}">{PHONE}</a> · {e(HOURS)}</p>
     <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
   </div>
@@ -120,8 +120,8 @@ def sticky(kind="dinner"):
 '''
 
 
-def shell(title, desc, path, main, placement, preload="", body_class="pad", kind="dinner"):
-    return head(title, desc, path, preload, body_class) + header(kind) + main + footer() + sticky(kind)
+def shell(title, desc, path, main, placement, preload="", body_class="pad", kind="dinner", show_alcohol=True):
+    return head(title, desc, path, preload, body_class) + header(kind) + main + footer(show_alcohol) + sticky(kind)
 
 
 def thumb(stem, alt):
@@ -221,15 +221,15 @@ def build_home():
         % (",".join(f'"{d}"' for d in h["days"]), h["opens"], h["closes"])
         for h in FACTS["hours"]
     )
-    preload = '''<link rel="preload" as="image" href="/images/v3/hero-night-m-768.avif" type="image/avif" media="(max-width: 767px)" fetchpriority="high">
+    preload = '''<link rel="preload" as="image" href="/images/v3/hero-m-768.avif" type="image/avif" media="(max-width: 767px)" fetchpriority="high">
   <link rel="preload" as="image" href="/images/v3/hero-night-1800.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">'''
     main = f'''<main id="main">
   <section class="hero" id="top">
     <picture>
-      <source media="(max-width: 767px)" type="image/avif" srcset="/images/v3/hero-night-m-480.avif 480w, /images/v3/hero-night-m-768.avif 768w" sizes="100vw">
-      <source media="(max-width: 767px)" type="image/webp" srcset="/images/v3/hero-night-m-480.webp 480w, /images/v3/hero-night-m-768.webp 768w, /images/v3/hero-night-m-1200.webp 1200w" sizes="100vw">
+      <source media="(max-width: 767px)" type="image/avif" srcset="/images/v3/hero-m-480.avif 480w, /images/v3/hero-m-768.avif 768w" sizes="100vw">
+      <source media="(max-width: 767px)" type="image/webp" srcset="/images/v3/hero-m-480.webp 480w, /images/v3/hero-m-768.webp 768w" sizes="100vw">
       <source type="image/webp" srcset="/images/v3/hero-night-768.webp 768w, /images/v3/hero-night-1200.webp 1200w, /images/v3/hero-night-1800.webp 1800w, /images/v3/hero-night-2400.webp 2400w" sizes="100vw">
-      <img src="/images/v3/hero-night-2400.webp" width="2400" height="1500" alt="The Beach Boulevard porch at Sober Bar at night, string lights and guests outside" fetchpriority="high" decoding="async">
+      <img src="/images/v3/hero-night-2400.webp" width="2400" height="1500" alt="Sober Bar at night" fetchpriority="high">
     </picture>
     <div class="hero-scrim"></div>
     <div class="hero-copy">
@@ -247,12 +247,12 @@ def build_home():
   <section id="the-room">
     <div class="wrap">
       <span class="eyebrow">The Room</span>
-      <h2>Chandeliers, then the patio.</h2>
-      <p class="room-copy">Velvet booths, one chandelier, and a porch when you want the air.</p>
+      <h2>The chandelier, then the front porch.</h2>
+      <p class="room-copy">Curved booths under the chandelier, the bar, and the front porch.</p>
       <div class="room-grid">
-        <figure class="wipe"><img src="/images/v3/hero-m-768.webp" width="768" height="960" alt="Curved velvet booths under the chandelier"><figcaption class="cap">Under the chandelier</figcaption></figure>
-        <figure class="wipe"><img src="/images/v3/bar-sq-768.webp" width="768" height="768" alt="Pendant lights over the bar at night"><figcaption class="cap">The bar</figcaption></figure>
-        <figure class="wipe"><img src="/images/v3/patio-754.webp" width="754" height="1006" alt="The porch at night, string lights over outdoor seats"><figcaption class="cap">The patio</figcaption></figure>
+        <figure class="wipe"><img src="/images/v3/hero-m-768.webp" width="768" height="960" alt="Curved booths under the chandelier" loading="lazy" decoding="async"><figcaption class="cap">Under the chandelier</figcaption></figure>
+        <figure class="wipe"><img src="/images/v3/bar-sq-768.webp" width="768" height="768" alt="Pendant lights over the bar at night" loading="lazy" decoding="async"><figcaption class="cap">The bar</figcaption></figure>
+        <figure class="wipe"><img src="/images/v3/patio-754.webp" width="754" height="1006" alt="The front porch at night" loading="lazy" decoding="async"><figcaption class="cap">The front porch</figcaption></figure>
       </div>
     </div>
   </section>
@@ -346,6 +346,7 @@ def build_home():
         "home",
         preload,
         "home pad",
+        show_alcohol=False,
     ))
 
 
@@ -369,18 +370,18 @@ def build_menu():
     main = f'''<main id="main" class="page cream">
   <div class="wrap">
     <h1>Menu</h1>
-    <p class="lead" style="color:#3c342c">From the first coffee to the last cocktail. Ask us what it costs today.</p>
+    <p class="lead" style="color:#3c342c">From the first coffee to the last cocktail. Prices are at the counter.</p>
     {room("/images/v3/bar-wide-1200.webp", 1400, 788, "The bar at Sober Bar at night")}
     <nav class="chips" aria-label="Menu categories">{chips}</nav>
     {''.join(sections)}
-    <p>{e(ALC)} Tell us about allergies before you order.</p>
+    <p>Tell us about allergies before you order.</p>
     <p>{reserve("menu", "Reserve dinner")} <a class="text-link" href="/reservations.html" style="margin-left:16px">Reservations →</a></p>
     <p style="color:#3c342c">{e(BOOKING)}</p>
   </div>
 </main>'''
     write("menu.html", shell(
         "Menu — Sober Bar & Kitchen",
-        "Cocktails, coffee, breakfast, and the kitchen in Gulfport. Prices at the table.",
+        "Cocktails, coffee, breakfast, and the kitchen in Gulfport. Prices are at the counter.",
         "/menu.html",
         main,
         "menu",
@@ -484,29 +485,37 @@ def build_rest():
     '''
     article(
         "Things to do in Gulfport — Sober Bar",
-        "Williams Pier, the beach, the markets, and a porch on Beach Boulevard.",
+        "Williams Pier, the beach, the markets, and the front porch on Beach Boulevard.",
         "/things-to-do-in-gulfport.html",
         "Things to do in Gulfport",
-        "The pier, the beach, the night market — and our porch when you’re walked out.",
+        "The pier, the beach, the night market — and the front porch when you’re walked out.",
         gulf,
         "gulfport",
     )
-    story = '''
-    <p>I kept asking a simple question: why does going out have to come with alcohol?</p>
-    <p>Gulfport already had the art walk, the night market, and good food. Skip the drink and your choices were a coffee shop or a sad soda at someone else’s bar.</p>
-    <h2>So I built the bar I wanted to walk into.</h2>
-    <p>The kitchen is New Orleans-inspired. The drinks are built like the cocktails you already order. The room does the rest of the convincing.</p>
-    <p>People walk in skeptical. Then they taste a Call Me an Ube and stay for the room.</p>
-    <h2>Who it’s for</h2>
-    <p>Designated drivers. Pregnant friends. People in recovery. People who simply don’t feel like it tonight. They still want the night out.</p>
-    <p>The hard part wasn’t the recipes. It was proving a sober bar could still feel like a bar.</p>
+    story = f'''
+    <p>I live in Gulfport, a town with real personality — art walks, night markets, live music, great food. But if you weren’t drinking, your options were basically coffee shops or soda at a regular bar. There was no place built around the ritual of a night out that happened to be alcohol-free.</p>
+    <h2>So I built one.</h2>
+    <p>We didn’t want a juice bar. We wanted a bar.</p>
+    <p>Sober Bar at {e(A["street"])} is a coffee house by day and a cocktail bar by night. The espresso program is serious. The kitchen is New Orleans-inspired. The drinks are built like craft cocktails — glassware, garnish, bitters, botanicals, the whole thing.</p>
+    <p>We get a lot of people who walk in skeptical. They think “sober bar” means fluorescent lights and herbal tea. Then they see the room, taste a Call Me an Ube, and realize this is a real bar experience. The only thing missing is the hangover.</p>
+    <h2>Who comes here</h2>
+    <p>Designated drivers. Pregnant guests. People in recovery. People doing Dry January or Sober October. People who just don’t feel like drinking tonight. First dates where both people actually want to talk. Remote workers who camp out with a cortado at 8am and come back for a nightcap at 9pm.</p>
+    <p>The common thread isn’t sobriety. It’s choice. People want the option to go out, be social, celebrate, and not have alcohol be the price of admission.</p>
+    <h2>What surprised me most</h2>
+    <p>I thought the hardest part would be convincing people to try alcohol-free drinks. It wasn’t. The hardest part was convincing them a sober bar could still feel like a bar.</p>
+    <p>Once people sit down, that part takes care of itself. The real work is in the language, the design, the staff training, the menu architecture. Every detail has to say: this is a legitimate night out, not a consolation prize.</p>
+    <h2>Why Gulfport?</h2>
+    <p>Gulfport already had the vibe. It’s artsy, independent, a little weird in the best way. It just needed a place for people who wanted all of that without the booze.</p>
+    <h2>The future of going out</h2>
+    <p>I don’t think alcohol is going away. I think choice is arriving. The best bars and restaurants of the next decade will treat non-alcoholic drinks as equals, not afterthoughts. They’ll build menus, train bartenders, and design spaces around the idea that not drinking is a normal, respectable decision.</p>
+    <p>Sober Bar is my bet that Gulfport — and Tampa Bay — is ready for that.</p>
     '''
     article(
         "Why I opened a sober bar — Sober Bar",
-        "Sean Hawthorne on opening a cocktail bar and coffee house in Gulfport.",
+        "Sean Hawthorne on why he opened Sober Bar in Gulfport.",
         "/why-i-opened-a-sober-bar.html",
         "Why I opened a sober bar",
-        "Gulfport had plenty of nights out. None of them were for people skipping the drink.",
+        "The idea for Sober Bar started with a simple question: why does going out have to come with alcohol?",
         story,
         "story",
     )
@@ -553,9 +562,8 @@ def build_private():
       window.location.href = 'mailto:{EMAIL}?subject=' + encodeURIComponent('Group Event Inquiry | Website') + '&body=' + encodeURIComponent(body);
     }});
   </script>'''
-    body = f'''<p>Showers, birthdays, office gatherings, recovery milestones. Same room, same patio. Menus and pricing come back in the quote.</p>
-    <p>The orders people request first: Call Me an Ube and Jinn &amp; Juniper.</p>
-    <p><a href="/sunday-jazz-brunch.html">Sunday jazz</a> is this room, not a second venue.</p>
+    body = f'''<p>Showers, birthdays, office gatherings, recovery milestones. Same room, same front porch. Menus and pricing come back in the quote.</p>
+    <p><a href="/sunday-jazz-brunch.html">Sunday jazz brunch</a> uses this room, not a second venue.</p>
     {form}'''
     main = f'''<main id="main" class="page">
   <div class="wrap">
@@ -753,10 +761,16 @@ def check():
         streets = visible.count("3062")
         if phones > 3 or streets > 3:
             raise SystemExit(f"{path.name} mentions phone {phones}, address {streets}")
+        if visible.count(ALC) > 1:
+            raise SystemExit(f"{path.name} repeats the alcohol line")
+        if visible.count(BOOKING) > 1:
+            raise SystemExit(f"{path.name} repeats the booking line")
         low = visible.lower()
-        for b in ("geckofest", "speakeasy", "free drink", "10% off", "kratom"):
+        for b in ("geckofest", "speakeasy", "10% off", "kratom"):
             if b in low:
                 raise SystemExit(f"{b} in {path.name}")
+        if re.search(r"(?<!alcohol-)free drink", low):
+            raise SystemExit(f"free drink in {path.name}")
     if "kratom" in (PUBLIC / "review-tent.html").read_text().lower():
         raise SystemExit("review tent still lists kratom")
     print("facts check ok")
