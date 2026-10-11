@@ -120,7 +120,7 @@ h1, h2, h3, p, li, .lead, .title { text-wrap: pretty; }
     background: rgba(212, 175, 106, 0.08);
   }
   html body {
-    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important;
   }
   html { scroll-padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
 }
@@ -171,7 +171,7 @@ body.has-site-nav .container { padding-top: 28px; }
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(244, 234, 216, 0.72);
+  color: #f4ead8;
   white-space: nowrap;
 }
 .site-links a:hover,

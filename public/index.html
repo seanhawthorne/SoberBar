@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails</title>
-  <meta name="description" content="Zero-proof cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am. Reserve a table." />
+  <meta name="description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am. Reserve a table." />
   <meta name="theme-color" content="#070605" />
   <link rel="canonical" href="https://www.sipsoberbar.com/" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -13,12 +13,12 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails" />
-  <meta property="og:description" content="Zero-proof cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
+  <meta property="og:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
   <meta property="og:url" content="https://www.sipsoberbar.com/" />
   <meta property="og:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails" />
-  <meta name="twitter:description" content="Zero-proof cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
+  <meta name="twitter:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
   <meta name="twitter:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg" />
 
   <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
@@ -151,6 +151,45 @@ html { scroll-padding-top: 84px; }
   body { padding-bottom: 0 !important; }
 }
 
+
+    .hero-title-mob { display: none; }
+    .daynight { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 28px; }
+    .daynight figure, .quotes blockquote { margin: 0; }
+    .daynight img { width: 100%; height: 460px; object-fit: cover; display: block; }
+    .daynight figcaption { margin-top: 10px; letter-spacing: .22em; text-transform: uppercase; font-size: .72rem; color: var(--gold); }
+    .story-line { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.12; color: var(--cream); max-width: 18em; margin: 0; }
+    .story-line + p { max-width: 40em; margin-top: 14px; color: #f4ead8; }
+    .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+    .quotes blockquote { padding: 22px; border: 1px solid var(--gold-faint); background: #12100c; }
+    .quotes p { color: #f4ead8; margin: 0; }
+    .quotes footer { border: 0; padding: 14px 0 0; text-align: left; color: var(--gold-bright); font-size: .95rem; letter-spacing: .02em; background: transparent; }
+    .rating-link { color: var(--gold-bright); font-size: 1.15rem; text-decoration: none; border-bottom: 1px solid rgba(238,217,164,.45); }
+    .press-row { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 34px; }
+    .press-row a { color: #f4ead8; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; text-decoration: none; border-bottom: 1px solid rgba(212,175,106,.5); }
+    .highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .highlights a { color: inherit; text-decoration: none; }
+    .highlights img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; border-radius: 6px; }
+    .highlights span { display: block; margin-top: 10px; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--cream); }
+    .visit-split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: center; }
+    .visit-split .visit-grid { grid-template-columns: 1fr; gap: 18px; }
+    .visit-split .visit-photo img { aspect-ratio: 1400 / 1006; height: auto; object-fit: cover; }
+    #visit .party-link { display: block; margin: 18px 0 14px; color: #f4ead8; font-size: 1rem; }
+    @media (max-width: 900px) {
+      .daynight, .quotes, .highlights, .visit-split { grid-template-columns: 1fr; }
+      .daynight img { height: 260px; }
+    }
+    @media (max-width: 768px) {
+      .hero-title-desk { display: none; }
+      .hero-title-mob { display: inline; }
+      .hero-title { font-size: 2rem; max-width: 12em; }
+      section { padding: 40px 0; }
+      p, li, .brunch-copy, .visit-cell p, .quotes p, .story-line + p, .faq-wrap details p, .mi .mi-desc {
+        font-size: 17px;
+        line-height: 1.55;
+      }
+      footer .fine { font-size: 16px; letter-spacing: .03em; color: #f4ead8; }
+      footer .fine a { color: #f4ead8; }
+    }
   </style>
 
   <style>
@@ -722,7 +761,7 @@ html { scroll-padding-top: 84px; }
     .res-call { text-align: center; margin-top: 22px; color: var(--cream); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; }
     .res-call a { color: var(--gold-bright); }
     body { font-size: 17px; }
-    :root { --muted: rgba(244, 234, 216, 0.8); --muted-2: rgba(244, 234, 216, 0.68); }
+    :root { --muted: #e7dcc8; --muted-2: #d9ccb8; }
     .mi .mi-desc, .feature .copy p, .faq-wrap details p, .res-cell p, .brunch-copy { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; font-weight: 400; }
     .mi .mi-desc { font-size: 1rem; line-height: 1.55; color: #cfc5b4; }
     .feature .copy p, .faq-wrap details p { font-size: 1rem; line-height: 1.7; color: #d6ccbb; }
@@ -790,7 +829,7 @@ html { scroll-padding-top: 84px; }
         <img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801" />
       </a>
       <ul class="nav-links">
-        <li><a href="#bar">Cocktails</a></li>
+        <li><a href="#day-night">Cocktails</a></li>
         <li><a href="/menu.html">Menu</a></li>
         <li><a href="/private-events.html">Private Events</a></li>
         <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
@@ -806,7 +845,7 @@ html { scroll-padding-top: 84px; }
 
   <div class="mobile-menu" id="mobileMenu">
     <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-    <a href="#bar">Cocktails</a>
+    <a href="#day-night">Cocktails</a>
     <a href="/menu.html">Menu</a>
     <a href="/private-events.html">Private Events</a>
     <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
@@ -826,8 +865,8 @@ html { scroll-padding-top: 84px; }
     </div>
     <div class="hero-copy">
       <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
-      <h1 class="hero-title">Coffee, New Orleans-inspired kitchen &amp; <em><span class="nw">zero-proof</span> cocktails</em> in Gulfport, FL</h1>
-      <p class="hero-sub">Espresso and free WiFi from 7am. Muffulettas at noon. Zero-proof cocktails under the chandeliers after dark.</p>
+      <h1 class="hero-title"><span class="hero-title-desk">Coffee, New Orleans-inspired kitchen &amp; <em>alcohol-free</em> cocktails in Gulfport, FL</span><span class="hero-title-mob">Coffee by day. Cocktails after dark.</span></h1>
+      <p class="hero-sub">Espresso and free WiFi from 7am. Muffulettas at noon. Alcohol-free cocktails under the chandeliers after dark.</p>
       <div class="hero-actions">
         <div class="hero-cta-row">
           <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
@@ -836,7 +875,7 @@ html { scroll-padding-top: 84px; }
           <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
         </div>
       </div>
-      <p class="hero-proof"><a href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener">Read our Google reviews</a></p>
+      <p class="hero-proof"><a href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">4.9 ★ on Google · 129 reviews</a></p>
       <div class="hero-hours">
         <span><b>Sun – Thu</b> 7 am – 10 pm</span>
         <span><b>Fri – Sat</b> 7 am – Midnight</span>
@@ -844,441 +883,175 @@ html { scroll-padding-top: 84px; }
     </div>
   </header>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Zero-Proof Cocktails</span><span>Specialty Coffee</span><span>NOLA Kitchen</span><span>Beer &amp; Kombucha</span><span>Open 7 Days</span><span>Beach Blvd, Gulfport</span>
-      <span>Zero-Proof Cocktails</span><span>Specialty Coffee</span><span>NOLA Kitchen</span><span>Beer &amp; Kombucha</span><span>Open 7 Days</span><span>Beach Blvd, Gulfport</span>
-    </div>
-  </div>
-
-  <section id="bar">
+  <section id="day-night">
     <div class="shell">
-      <div class="feature">
-        <div class="arch reveal" style="aspect-ratio: 3/4;">
+      <div class="daynight">
+        <figure>
           <picture>
-            <source srcset="/images/space/bartenders-480.webp 480w, /images/space/bartenders-800.webp 800w, /images/space/bartenders-1400.webp 1400w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
-            <img src="/images/space/bartenders-1400.jpg" width="1050" height="1400" alt="Bartenders mixing drinks behind the bar at Sober Bar" loading="lazy" decoding="async" />
+            <source srcset="/images/cafe-480.webp 480w, /images/cafe-800.webp 800w, /images/cafe.webp 1100w" sizes="(max-width: 800px) 92vw, 46vw" type="image/webp">
+            <img src="/images/cafe.jpg" width="1100" height="1466" alt="The café room in the morning, marble tables by the front window" loading="lazy" decoding="async">
           </picture>
-        </div>
-        <div class="copy reveal">
-          <span class="eyebrow">The Cocktails</span>
-          <h2 class="title">Full ritual,<br><em>zero proof.</em></h2>
-          <p>Every drink is built like it belongs on a top-shelf menu — layered, garnished, and worth slowing down for. NA spirits, fresh-pressed juice, real craft.</p>
-          <p>Each signature pour is the work of one of our own bartenders, built on house syrups and fresh-pressed juice. Ask about adding functional botanicals to any beverage.</p>
-          <p class="abv-note">Honest pour: our cocktails are built on non-alcoholic spirits. Some NA beers and the kombucha carry trace alcohol, under 0.5% ABV. Ask us anything.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="night-band" aria-label="The porch at night">
-    <picture>
-      <source srcset="/images/space/porch-480.webp 480w, /images/space/porch-800.webp 800w, /images/space/porch-1400.webp 1400w" sizes="100vw" type="image/webp">
-      <img src="/images/space/porch-1400.jpg" width="1400" height="1006" alt="The front porch of Sober Bar at night" loading="lazy" decoding="async" />
-    </picture>
-    <p class="night-caption"><span>After dark</span><strong>The porch, lit.</strong></p>
-  </section>
-
-  <section class="gallery-sec">
-    <div class="shell">
-      <div class="sec-head reveal">
-        <span class="eyebrow">The Room</span>
-        <h2 class="title">Chandeliers, leather, <em>and the front porch.</em></h2>
-        <div class="deco-rule"><span class="gem"></span></div>
-      </div>
-      <div class="gallery">
-        <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/bar-480.webp 480w, /images/bar-800.webp 800w, /images/bar.webp 1100w" sizes="(max-width: 900px) 72vw, 280px" type="image/webp"><img src="/images/bar.jpg" width="1100" height="1466" alt="The bar at Sober Bar, bottles and brass along the back bar" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>The bar</figcaption>
+          <figcaption>Day</figcaption>
         </figure>
-        <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/parlor-480.webp 480w, /images/parlor-800.webp 800w, /images/parlor.webp 809w" sizes="(max-width: 900px) 72vw, 280px" type="image/webp"><img src="/images/parlor.jpg" width="809" height="1079" alt="The parlor, leather sofas and a chandelier" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>The parlor</figcaption>
-        </figure>
-        <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/storefront-480.webp 480w, /images/storefront-800.webp 800w, /images/storefront.webp 1400w" sizes="(max-width: 900px) 72vw, 280px" type="image/webp"><img src="/images/storefront.jpg" width="1400" height="748" alt="The front porch of Sober Bar on Beach Boulevard" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>The front porch</figcaption>
-        </figure>
-        <figure class="reveal">
-          <div class="arch"><picture><source srcset="/images/bar-night-480.webp 480w, /images/bar-night-800.webp 800w, /images/bar-night.webp 1300w" sizes="(max-width: 900px) 72vw, 280px" type="image/webp"><img src="/images/bar-night.jpg" width="1300" height="1734" alt="The bar at night, brass pendants over the stools" loading="lazy" decoding="async" /></picture></div>
-          <figcaption>The bar at night</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section id="menu" class="menu-bg">
-    <div class="shell">
-      <div class="sec-head reveal">
-        <span class="eyebrow">The Menu</span>
-        <h2 class="title">From the bar <em>&amp; the kitchen.</em></h2>
-        <div class="deco-rule"><span class="gem"></span></div>
-      </div>
-      <!-- TODO(owner): Add verified prices to every item. Do not publish prices until Sean confirms them. -->
-      <!-- TODO(owner): Add beignets, crawfish eggs benedict (note if it is Sunday brunch only), and rename Cafe Au Lait to chicory café au lait only after the kitchen confirms those items. Do not invent dishes. -->
-      <!-- TODO(owner): Label GF and vegan items from a confirmed menu. A few plates already say plant-based in the description; do not guess the rest. -->
-      <!-- TODO(owner): Badge Run Wild and bitters 0.0% or &lt;0.5% ABV only after Sean confirms those labels. Kombucha stays on the menu and is covered by the trace-ABV note; do not call it alcohol-free. Guinness 0.0 says 0.0 in the name. Heineken is listed as Heineken Zero, the Uber Eats name. -->
-      <div class="menu-tabs" role="group" aria-label="Filter the menu" hidden>
-        <button type="button" data-tab="all" aria-pressed="false">Full menu</button>
-        <button type="button" data-tab="drinks" aria-pressed="false">Cocktails &amp; NA beer</button>
-        <button type="button" data-tab="coffee" aria-pressed="false">Coffee</button>
-        <button type="button" data-tab="breakfast" aria-pressed="false">Breakfast</button>
-        <button type="button" data-tab="kitchen" aria-pressed="false">Kitchen</button>
-      </div>
-      <p class="menu-served">Everything below is served from open to close, every day. The same list is on the <a href="/menu.html">menu page</a>.</p>
-      <figure class="menu-lead reveal">
-        <picture>
-          <source srcset="/images/food/dd-muffuletta-lead-480.webp 480w, /images/food/dd-muffuletta-lead-800.webp 800w, /images/food/dd-muffuletta-lead-1120.webp 1120w" sizes="(max-width: 900px) 92vw, 800px" type="image/webp">
-          <img src="/images/food/dd-muffuletta-lead-1120.jpg" width="1120" height="630" alt="The Muffuletta" loading="eager" fetchpriority="low" decoding="async" />
-        </picture>
-      </figure>
-      <div class="menu-grid">
-        <div class="menu-col reveal" data-cat="drinks">
-          <h3>Zero-Proof Cocktails</h3>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-call-me-an-ube-160.avif 160w, /images/food/ue-call-me-an-ube-320.avif 320w" sizes="72px"><img src="/images/food/ue-call-me-an-ube-160.webp" srcset="/images/food/ue-call-me-an-ube-160.webp 160w, /images/food/ue-call-me-an-ube-320.webp 320w" sizes="72px" width="72" height="72" alt="Call Me An Ube" loading="lazy" decoding="async"></picture><div><div class="mi-name">Call Me An Ube</div><div class="mi-desc">Ritual gin alt, ube, coconut cream, key lime, pineapple</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-hot-mami-160.avif 160w, /images/food/ue-hot-mami-320.avif 320w" sizes="72px"><img src="/images/food/ue-hot-mami-160.webp" srcset="/images/food/ue-hot-mami-160.webp 160w, /images/food/ue-hot-mami-320.webp 320w" sizes="72px" width="72" height="72" alt="Hot Mami" loading="lazy" decoding="async"></picture><div><div class="mi-name">Hot Mami</div><div class="mi-desc">Reposado tequila alt, jalape&ntilde;o, lime, pineapple ginger, chili</div></div></div>
-          <div class="mi"><div class="mi-name">Jinn &amp; Juniper</div><div class="mi-desc">Gin alt, cucumber, juniper, ashwagandha — crisp and garden-fresh</div></div>
-          <div class="mi"><div class="mi-name">Red Widow</div><div class="mi-desc">Bourbon alt, tart cherry, lemon, honey — a dark, silky sour</div></div>
-          <div class="mi"><div><div class="mi-name">Bee's Bouquet</div><div class="mi-desc">Gin alt, fresh lemon, honey, lavender — bright and floral</div></div></div>
-          <div class="mi"><div class="mi-name">Moonlit Meringue</div><div class="mi-desc">Gin alt, NA limoncello, egg white, lavender bitters — cloud-soft</div></div>
-          <div class="mi"><div class="mi-name">Espresso Martini</div><div class="mi-desc">Reposado tequila alt, cold brew espresso, agave, fig &amp; walnut bitters</div></div>
-        </div>
-        <div class="menu-col reveal" data-cat="drinks">
-          <h3>Beer &amp; Kombucha</h3>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-run-wild-ipa-160.avif 160w, /images/food/ue-run-wild-ipa-320.avif 320w" sizes="72px"><img src="/images/food/ue-run-wild-ipa-160.webp" srcset="/images/food/ue-run-wild-ipa-160.webp 160w, /images/food/ue-run-wild-ipa-320.webp 320w" sizes="72px" width="72" height="72" alt="Run Wild IPA" loading="lazy" decoding="async"></picture><div><div class="mi-name">Run Wild IPA</div><div class="mi-desc">Crisp, hoppy, citrus-forward NA IPA · 16 oz draft · &lt;0.5% ABV</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-guinness-0-0-160.avif 160w, /images/food/ue-guinness-0-0-320.avif 320w" sizes="72px"><img src="/images/food/ue-guinness-0-0-160.webp" srcset="/images/food/ue-guinness-0-0-160.webp 160w, /images/food/ue-guinness-0-0-320.webp 320w" sizes="72px" width="72" height="72" alt="Guinness 0.0" loading="lazy" decoding="async"></picture><div><div class="mi-name">Guinness 0.0</div><div class="mi-desc">Smooth, roasted coffee and chocolate notes</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-heineken-zero-160.avif 160w, /images/food/ue-heineken-zero-320.avif 320w" sizes="72px"><img src="/images/food/ue-heineken-zero-160.webp" srcset="/images/food/ue-heineken-zero-160.webp 160w, /images/food/ue-heineken-zero-320.webp 320w" sizes="72px" width="72" height="72" alt="Heineken Zero" loading="lazy" decoding="async"></picture><div><div class="mi-name">Heineken Zero</div><div class="mi-desc">Crisp, clean, and lightly malty</div></div></div>
-          <div class="mi"><div class="mi-name">Beech Kombucha</div><div class="mi-desc">Bright, sparkling fermented tea on draft</div></div>
-        </div>
-        <div class="menu-col reveal" data-cat="coffee">
-          <h3>Coffee &amp; Espresso</h3>
-          <div class="mi"><div class="mi-name">Cortado</div><div class="mi-desc">Espresso with a small pour of steamed milk</div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cappuccino-160.avif 160w, /images/food/ue-cappuccino-320.avif 320w" sizes="72px"><img src="/images/food/ue-cappuccino-160.webp" srcset="/images/food/ue-cappuccino-160.webp 160w, /images/food/ue-cappuccino-320.webp 320w" sizes="72px" width="72" height="72" alt="Cappuccino" loading="lazy" decoding="async"></picture><div><div class="mi-name">Cappuccino</div><div class="mi-desc">Espresso, steamed milk, and a thick cap of foam</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-americano-160.avif 160w, /images/food/ue-americano-320.avif 320w" sizes="72px"><img src="/images/food/ue-americano-160.webp" srcset="/images/food/ue-americano-160.webp 160w, /images/food/ue-americano-320.webp 320w" sizes="72px" width="72" height="72" alt="Americano" loading="lazy" decoding="async"></picture><div><div class="mi-name">Americano</div><div class="mi-desc">Espresso and hot water</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cafe-au-lait-160.avif 160w, /images/food/ue-cafe-au-lait-320.avif 320w" sizes="72px"><img src="/images/food/ue-cafe-au-lait-160.webp" srcset="/images/food/ue-cafe-au-lait-160.webp 160w, /images/food/ue-cafe-au-lait-320.webp 320w" sizes="72px" width="72" height="72" alt="Cafe Au Lait" loading="lazy" decoding="async"></picture><div><div class="mi-name">Cafe Au Lait</div><div class="mi-desc">Hot coffee and steamed milk — a New Orleans classic</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-latte-160.avif 160w, /images/food/ue-latte-320.avif 320w" sizes="72px"><img src="/images/food/ue-latte-160.webp" srcset="/images/food/ue-latte-160.webp 160w, /images/food/ue-latte-320.webp 320w" sizes="72px" width="72" height="72" alt="Latte" loading="lazy" decoding="async"></picture><div><div class="mi-name">Latte</div><div class="mi-desc">Espresso and steamed milk, smooth and creamy</div></div></div>
-          <div class="mi"><div class="mi-name">Mocha</div><div class="mi-desc">Espresso, chocolate, and steamed milk</div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cold-brew-kyoto-160.avif 160w, /images/food/ue-cold-brew-kyoto-320.avif 320w" sizes="72px"><img src="/images/food/ue-cold-brew-kyoto-160.webp" srcset="/images/food/ue-cold-brew-kyoto-160.webp 160w, /images/food/ue-cold-brew-kyoto-320.webp 320w" sizes="72px" width="72" height="72" alt="Cold Brew-Kyoto" loading="lazy" decoding="async"></picture><div><div class="mi-name">Cold Brew-Kyoto</div><div class="mi-desc">Slow-dripped with a clean, smooth finish</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cold-brew-nitro-160.avif 160w, /images/food/ue-cold-brew-nitro-320.avif 320w" sizes="72px"><img src="/images/food/ue-cold-brew-nitro-160.webp" srcset="/images/food/ue-cold-brew-nitro-160.webp 160w, /images/food/ue-cold-brew-nitro-320.webp 320w" sizes="72px" width="72" height="72" alt="Cold Brew-Nitro" loading="lazy" decoding="async"></picture><div><div class="mi-name">Cold Brew-Nitro</div><div class="mi-desc">Cascading nitro pour, naturally creamy</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-chai-latte-160.avif 160w, /images/food/dd-chai-latte-320.avif 320w" sizes="72px"><img src="/images/food/dd-chai-latte-160.webp" srcset="/images/food/dd-chai-latte-160.webp 160w, /images/food/dd-chai-latte-320.webp 320w" sizes="72px" width="72" height="72" alt="Chai Latte" loading="lazy" decoding="async"></picture><div><div class="mi-name">Chai Latte</div><div class="mi-desc">Spiced chai with steamed milk</div></div></div>
-        </div>
-        <div class="menu-col reveal" data-cat="breakfast">
-          <h3>Breakfast Sandwiches</h3>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-classic-morning-melt-160.avif 160w, /images/food/dd-classic-morning-melt-320.avif 320w" sizes="72px"><img src="/images/food/dd-classic-morning-melt-160.webp" srcset="/images/food/dd-classic-morning-melt-160.webp 160w, /images/food/dd-classic-morning-melt-320.webp 320w" sizes="72px" width="72" height="72" alt="The Classic Morning Melt" loading="lazy" decoding="async"></picture><div><div class="mi-name">The Classic Morning Melt</div><div class="mi-desc">English muffin, egg, American cheese, bacon, sausage, or ham</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-beach-blvd-bodega-160.avif 160w, /images/food/ue-beach-blvd-bodega-320.avif 320w" sizes="72px"><img src="/images/food/ue-beach-blvd-bodega-160.webp" srcset="/images/food/ue-beach-blvd-bodega-160.webp 160w, /images/food/ue-beach-blvd-bodega-320.webp 320w" sizes="72px" width="72" height="72" alt="Beach Blvd Bodega" loading="lazy" decoding="async"></picture><div><div class="mi-name">Beach Blvd Bodega</div><div class="mi-desc">Everything bagel, egg, American cheese, choice of meat</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-the-white-rabbit-160.avif 160w, /images/food/ue-the-white-rabbit-320.avif 320w" sizes="72px"><img src="/images/food/ue-the-white-rabbit-160.webp" srcset="/images/food/ue-the-white-rabbit-160.webp 160w, /images/food/ue-the-white-rabbit-320.webp 320w" sizes="72px" width="72" height="72" alt="The White Rabbit" loading="lazy" decoding="async"></picture><div><div class="mi-name">The White Rabbit</div><div class="mi-desc">Plain bagel, egg, brie, fig spread, prosciutto, hot honey</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-the-mad-hatter-160.avif 160w, /images/food/ue-the-mad-hatter-320.avif 320w" sizes="72px"><img src="/images/food/ue-the-mad-hatter-160.webp" srcset="/images/food/ue-the-mad-hatter-160.webp 160w, /images/food/ue-the-mad-hatter-320.webp 320w" sizes="72px" width="72" height="72" alt="The Mad Hatter" loading="lazy" decoding="async"></picture><div><div class="mi-name">The Mad Hatter</div><div class="mi-desc">English muffin or bagel, egg, everything bacon, choice of meat, provolone, tomato, spinach, pesto</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-the-breakfast-muffaletta-160.avif 160w, /images/food/ue-the-breakfast-muffaletta-320.avif 320w" sizes="72px"><img src="/images/food/ue-the-breakfast-muffaletta-160.webp" srcset="/images/food/ue-the-breakfast-muffaletta-160.webp 160w, /images/food/ue-the-breakfast-muffaletta-320.webp 320w" sizes="72px" width="72" height="72" alt="The Breakfast Muffaletta" loading="lazy" decoding="async"></picture><div><div class="mi-name">The Breakfast Muffaletta</div><div class="mi-desc">Toasted focaccia, pesto cream cheese, egg, sausage, bacon, smoked provolone</div></div></div>
-          <div class="mi"><div class="mi-name">Hot Honey Breakfast Flatbread</div><div class="mi-desc">Pesto cream cheese, mozzarella, sausage, bacon, egg, hot honey drizzle</div></div>
-        </div>
-        <div class="menu-col reveal" data-cat="breakfast kitchen">
-          <h3>Bagels &amp; Bowls</h3>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-bagel-cream-cheese-160.avif 160w, /images/food/dd-bagel-cream-cheese-320.avif 320w" sizes="72px"><img src="/images/food/dd-bagel-cream-cheese-160.webp" srcset="/images/food/dd-bagel-cream-cheese-160.webp 160w, /images/food/dd-bagel-cream-cheese-320.webp 320w" sizes="72px" width="72" height="72" alt="Bagel + Cream Cheese" loading="lazy" decoding="async"></picture><div><div class="mi-name">Bagel + Cream Cheese</div><div class="mi-desc">Plain or everything — house ube, fig &amp; honey, or vegan spreads</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-parfait-160.avif 160w, /images/food/ue-parfait-320.avif 320w" sizes="72px"><img src="/images/food/ue-parfait-160.webp" srcset="/images/food/ue-parfait-160.webp 160w, /images/food/ue-parfait-320.webp 320w" sizes="72px" width="72" height="72" alt="Parfait" loading="lazy" decoding="async"></picture><div><div class="mi-name">Parfait</div><div class="mi-desc">Greek yogurt, raw honey, mixed berries, Ryker's Granola</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-pretzel-bites-160.avif 160w, /images/food/ue-pretzel-bites-320.avif 320w" sizes="72px"><img src="/images/food/ue-pretzel-bites-160.webp" srcset="/images/food/ue-pretzel-bites-160.webp 160w, /images/food/ue-pretzel-bites-320.webp 320w" sizes="72px" width="72" height="72" alt="Pretzel Bites" loading="lazy" decoding="async"></picture><div><div class="mi-name">Pretzel Bites</div><div class="mi-desc">Soft-baked, with spicy beer cheese</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-naan-dippers-160.avif 160w, /images/food/ue-naan-dippers-320.avif 320w" sizes="72px"><img src="/images/food/ue-naan-dippers-160.webp" srcset="/images/food/ue-naan-dippers-160.webp 160w, /images/food/ue-naan-dippers-320.webp 320w" sizes="72px" width="72" height="72" alt="Naan Dippers" loading="lazy" decoding="async"></picture><div><div class="mi-name">Naan Dippers</div><div class="mi-desc">Warm naan, roasted red pepper hummus, carrots, celery</div></div></div>
-        </div>
-        <div class="menu-col reveal" data-cat="kitchen">
-          <h3>Provisions &amp; Salads</h3>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-muffuletta-160.avif 160w, /images/food/dd-muffuletta-320.avif 320w" sizes="72px"><img src="/images/food/dd-muffuletta-160.webp" srcset="/images/food/dd-muffuletta-160.webp 160w, /images/food/dd-muffuletta-320.webp 320w" sizes="72px" width="72" height="72" alt="The Muffuletta" loading="lazy" decoding="async"></picture><div><div class="mi-name">The Muffuletta</div><div class="mi-desc">Genoa salami, capicola, mozzarella, olive salad, basil pesto, toasted focaccia</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-hot-honey-soppressata-160.avif 160w, /images/food/dd-hot-honey-soppressata-320.avif 320w" sizes="72px"><img src="/images/food/dd-hot-honey-soppressata-160.webp" srcset="/images/food/dd-hot-honey-soppressata-160.webp 160w, /images/food/dd-hot-honey-soppressata-320.webp 320w" sizes="72px" width="72" height="72" alt="Hot Honey Soppressata Flatbread" loading="lazy" decoding="async"></picture><div><div class="mi-name">Hot Honey Soppressata Flatbread</div><div class="mi-desc">Whipped ricotta, mozzarella, spicy soppressata, hot honey</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-fig-brie-prosciutto-160.avif 160w, /images/food/dd-fig-brie-prosciutto-320.avif 320w" sizes="72px"><img src="/images/food/dd-fig-brie-prosciutto-160.webp" srcset="/images/food/dd-fig-brie-prosciutto-160.webp 160w, /images/food/dd-fig-brie-prosciutto-320.webp 320w" sizes="72px" width="72" height="72" alt="Fig, Brie &amp; Prosciutto Flatbread" loading="lazy" decoding="async"></picture><div><div class="mi-name">Fig, Brie &amp; Prosciutto Flatbread</div><div class="mi-desc">Brie, fig jam, prosciutto, toasted pecans, arugula, hot honey</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-garden-mezze-160.avif 160w, /images/food/dd-garden-mezze-320.avif 320w" sizes="72px"><img src="/images/food/dd-garden-mezze-160.webp" srcset="/images/food/dd-garden-mezze-160.webp 160w, /images/food/dd-garden-mezze-320.webp 320w" sizes="72px" width="72" height="72" alt="Garden Mezze Flatbread (V)" loading="lazy" decoding="async"></picture><div><div class="mi-name">Garden Mezze Flatbread (V)</div><div class="mi-desc">Hummus, roasted red peppers, pickled onion, balsamic-agave — plant-based</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-garden-district-muffuletta-160.avif 160w, /images/food/ue-garden-district-muffuletta-320.avif 320w" sizes="72px"><img src="/images/food/ue-garden-district-muffuletta-160.webp" srcset="/images/food/ue-garden-district-muffuletta-160.webp 160w, /images/food/ue-garden-district-muffuletta-320.webp 320w" sizes="72px" width="72" height="72" alt="Garden District Muffuletta" loading="lazy" decoding="async"></picture><div><div class="mi-name">Garden District Muffuletta</div><div class="mi-desc">Vegan pesto, olive tapenade, roasted peppers, sourdough — plant-based</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-goat-cheese-berry-salad-160.avif 160w, /images/food/ue-goat-cheese-berry-salad-320.avif 320w" sizes="72px"><img src="/images/food/ue-goat-cheese-berry-salad-160.webp" srcset="/images/food/ue-goat-cheese-berry-salad-160.webp 160w, /images/food/ue-goat-cheese-berry-salad-320.webp 320w" sizes="72px" width="72" height="72" alt="Goat Cheese Berry Salad" loading="lazy" decoding="async"></picture><div><div class="mi-name">Goat Cheese Berry Salad</div><div class="mi-desc">Mixed greens, fresh berries, toasted pecans, goat cheese</div></div></div>
-          <div class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-spicy-mardi-gras-salad-160.avif 160w, /images/food/ue-spicy-mardi-gras-salad-320.avif 320w" sizes="72px"><img src="/images/food/ue-spicy-mardi-gras-salad-160.webp" srcset="/images/food/ue-spicy-mardi-gras-salad-160.webp 160w, /images/food/ue-spicy-mardi-gras-salad-320.webp 320w" sizes="72px" width="72" height="72" alt="Spicy Mardi Gras Salad" loading="lazy" decoding="async"></picture><div><div class="mi-name">Spicy Mardi Gras Salad</div><div class="mi-desc">Greens, hot capicola, Genoa salami, egg, blue cheese</div></div></div>
-        </div>
-      </div>
-      <p class="menu-note">Some NA beers and the kombucha contain trace alcohol, under 0.5% ABV.<br>Gluten-free options available · Please tell us about allergies before ordering<br>Follow <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">@sipsoberbar</a> for seasonal pours</p>
-    </div>
-  </section>
-
-  <section id="rhythm">
-    <div class="shell">
-      <div class="feature">
-        <div class="copy reveal">
-          <span class="eyebrow">The Rhythm</span>
-          <h2 class="title">Coffee house by day,<br><em>speakeasy by night.</em></h2>
-          <p>One room, two lives. Sunlight and espresso in the morning; warm lights, music, and cocktails after dark. Designed for a 7 am meeting and a Friday night that runs till midnight.</p>
-          <ul class="timeline">
-            <li><span class="t">7 am</span><span class="d">Doors open — <a href="/breakfast-gulfport.html">breakfast and coffee in Gulfport</a>, and the <a href="/menu.html">full menu</a>. Walk-ins welcome.</span></li>
-            <li><span class="t">All day</span><span class="d">Full menu from open to close — coffee, breakfast, lunch, and zero-proof cocktails.</span></li>
-            <li><span class="t">Evenings</span><span class="d">The lights drop, the bar wakes up — cocktail hour begins</span></li>
-            <li><span class="t">Close</span><span class="d">Sun–Thu 10 pm · Fri &amp; Sat midnight</span></li>
-          </ul>
-        </div>
-        <div class="arch reveal" style="aspect-ratio: 3/4;">
+        <figure>
           <picture>
-            <source srcset="/images/cafe-480.webp 480w, /images/cafe-800.webp 800w, /images/cafe.webp 1100w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
-            <img src="/images/cafe.jpg" width="1100" height="1466" alt="The café room in the morning, marble tables and a red banquette by the front window" loading="eager" fetchpriority="low" decoding="async" />
+            <source srcset="/images/space/bartenders-480.webp 480w, /images/space/bartenders-800.webp 800w, /images/space/bartenders-1400.webp 1400w" sizes="(max-width: 800px) 92vw, 46vw" type="image/webp">
+            <img src="/images/space/bartenders-1400.jpg" width="1400" height="1867" alt="Bartenders mixing drinks behind the bar at Sober Bar" loading="lazy" decoding="async">
           </picture>
-        </div>
+          <figcaption>Night</figcaption>
+        </figure>
       </div>
-    </div>
-  </section>
-
-
-  <section id="upcoming">
-    <div class="shell">
-      <div class="sec-head reveal">
-        <span class="eyebrow">This week</span>
-        <h2 class="title">Upcoming at <em>Sober Bar.</em></h2>
-        <div class="deco-rule"><span class="gem"></span></div>
-      </div>
-      <!-- Add a weekly event by appending an object to this JSON and a matching li below, so the list stays crawlable without JavaScript. Do not invent a jazz start time or a band name. -->
-      <script type="application/json" id="upcoming-events">
-      [
-        {
-          "id": "sunday-jazz-brunch",
-          "name": "Sunday Jazz Brunch",
-          "when": "Every Sunday",
-          "detail": "Call ",
-          "phoneHref": "tel:+18135861660",
-          "phoneLabel": "(813) 586-1660",
-          "phoneAfter": " for this Sunday's jazz time.",
-          "href": "/sunday-jazz-brunch.html",
-          "cta": "Reserve Sunday brunch",
-          "ctaHref": "https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637"
-        }
-      ]
-      </script>
-      <ul class="upcoming-list" id="upcoming-list">
-        <li>
-          <div>
-            <div class="upcoming-when">Every Sunday</div>
-            <a class="upcoming-name" href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>
-          </div>
-          <a class="btn btn-solid" data-cta="upcoming" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve Sunday brunch</a>
-          <p class="upcoming-detail">Call <a href="tel:+18135861660">(813) 586-1660</a> for this Sunday's jazz time.</p>
-        </li>
-      </ul>
-      <script>
-        (function () {
-          var node = document.getElementById('upcoming-events');
-          var list = document.getElementById('upcoming-list');
-          if (!node || !list) return;
-          var events = JSON.parse(node.textContent);
-          list.textContent = '';
-          events.forEach(function (event) {
-            var item = document.createElement('li');
-            var copy = document.createElement('div');
-            var when = document.createElement('div');
-            when.className = 'upcoming-when';
-            when.textContent = event.when;
-            var name = document.createElement('a');
-            name.className = 'upcoming-name';
-            name.href = event.href;
-            name.textContent = event.name;
-            copy.appendChild(when);
-            copy.appendChild(name);
-            var ctaWrap = document.createElement('div');
-            ctaWrap.className = 'upcoming-cta';
-            var cta = document.createElement('a');
-            cta.className = 'btn btn-solid';
-            cta.setAttribute('data-cta', 'upcoming');
-            cta.href = event.ctaHref;
-            cta.target = '_blank';
-            cta.rel = 'noopener noreferrer';
-            cta.textContent = event.cta;
-            ctaWrap.appendChild(cta);
-            var detail = document.createElement('p');
-            detail.className = 'upcoming-detail';
-            if (event.phoneHref) {
-              detail.appendChild(document.createTextNode(event.detail));
-              var tel = document.createElement('a');
-              tel.href = event.phoneHref;
-              tel.textContent = event.phoneLabel;
-              detail.appendChild(tel);
-              if (event.phoneAfter) detail.appendChild(document.createTextNode(event.phoneAfter));
-            } else {
-              detail.textContent = event.detail;
-            }
-            item.appendChild(copy);
-            item.appendChild(ctaWrap);
-            item.appendChild(detail);
-            list.appendChild(item);
-          });
-        })();
-      </script>
+      <h2 class="story-line">Your daytime coffee spot. Your evening cocktail bar.</h2>
+      <p>Free, fast WiFi and espresso from 7am on Beach Boulevard. Alcohol-free cocktails after dark.</p>
     </div>
   </section>
 
   <section id="reviews">
     <div class="shell">
-      <div class="sec-head reveal">
-        <span class="eyebrow">As Seen In</span>
-        <h2 class="title">The sober-curious story<br><em>Tampa Bay is noticing.</em></h2>
-        <div class="deco-rule"><span class="gem"></span></div>
+      <div class="sec-head">
+        <span class="eyebrow">Google reviews</span>
+        <h2 class="title">Guests, in <em>their words.</em></h2>
       </div>
-      <div class="visit-grid press-grid reveal" style="margin-bottom: 70px;">
-        <div class="visit-cell"><p><strong><a href="https://thegabber.com/south-pinellas-business-news-roundup-for-june-2026/">The Gabber</a></strong><br>June 2026 South Pinellas business roundup, including the Beach Boulevard opening.</p></div>
-        <div class="visit-cell"><p><strong><a href="https://ilovetheburg.com/sober-bar-cocktails-coffee-gulfport/">I Love the Burg</a></strong><br>Opening story on the zero-proof cocktail lounge and caf&eacute;.</p></div>
-        <div class="visit-cell"><p><strong><a href="https://stpeterising.com/home/sober-bar-opening-next-month-in-downtown-gulfport-with-zero-proof-cocktails-and-kava">St. Pete Rising</a></strong><br>Opening story for the Gulfport lounge and caf&eacute;.</p></div>
-        <div class="visit-cell"><p><strong><a href="https://www.fox13news.com/video/fmc-tcdaujvlcx10y2dc">FOX 13</a></strong><br>Florida Tonight segment with Haley Hinds.</p></div>
+      <p><a class="rating-link" href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">4.9 ★ on Google · 129 reviews</a></p>
+      <div class="quotes">
+        <blockquote>
+          <p>Great vibes, jazz music playing. Very accommodating and cozy for a ladies brunch. Food and drinks on point. Great service.</p>
+          <footer>Angela Terrio</footer>
+        </blockquote>
+        <blockquote>
+          <p>So grateful to have this gem in Gulfport. An upscale vibe meets comfort… We needed somewhere like this.</p>
+          <footer>Jenna Kirkpatrick</footer>
+        </blockquote>
+        <blockquote>
+          <p>I was surprised, in a good way. The service was great, the vibe and atmosphere were wonderful… You won't be disappointed.</p>
+          <footer>Gerald Goldberg</footer>
+        </blockquote>
       </div>
+      <nav class="press-row" aria-label="Press">
+        <a href="https://www.fox13news.com/video/fmc-tcdaujvlcx10y2dc" target="_blank" rel="noopener">FOX 13</a>
+        <a href="https://ilovetheburg.com/sober-bar-cocktails-coffee-gulfport/" target="_blank" rel="noopener">I Love the Burg</a>
+        <a href="https://stpeterising.com/home/sober-bar-opening-next-month-in-downtown-gulfport-with-zero-proof-cocktails-and-kava" target="_blank" rel="noopener">St. Pete Rising</a>
+        <a href="https://thegabber.com/south-pinellas-business-news-roundup-for-april-2026/" target="_blank" rel="noopener">Gabber, April 2026</a>
+        <a href="https://thegabber.com/south-pinellas-business-news-roundup-for-june-2026/" target="_blank" rel="noopener">Gabber, June 2026</a>
+      </nav>
     </div>
   </section>
 
-  <!-- Reservations -->
-  <section id="reservations" class="menu-bg">
+  <section id="menu" class="menu-bg">
     <div class="shell">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Reservations</span>
-        <h2 class="title">Book a table.<br><em>We'll save your spot.</em></h2>
-        <div class="deco-rule"><span class="gem"></span></div>
+      <div class="sec-head">
+        <span class="eyebrow">The menu</span>
+        <h2 class="title">Three plates, <em>then the rest.</em></h2>
       </div>
-
-      <div class="visit-actions res-top reveal">
-        <a class="btn btn-solid" data-cta="reservations" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> <span class="party-link">Booking online for 1–6. For 7 or more, call <a href="tel:+18135861660">(813) 586-1660</a></span>
-        <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+      <div class="highlights">
+        <a href="/menu.html">
+          <img src="/images/food/dd-hot-honey-lead-640.webp" srcset="/images/food/dd-hot-honey-lead-640.webp 640w, /images/food/dd-hot-honey-lead-960.webp 960w" sizes="(max-width: 800px) 92vw, 300px" width="960" height="720" alt="Hot Honey Soppressata Flatbread" loading="lazy" decoding="async">
+          <span>Hot Honey Soppressata Flatbread</span>
+        </a>
+        <a href="/menu.html">
+          <img src="/images/food/dd-garden-mezze-lead-640.webp" srcset="/images/food/dd-garden-mezze-lead-640.webp 640w, /images/food/dd-garden-mezze-lead-960.webp 960w" sizes="(max-width: 800px) 92vw, 300px" width="960" height="719" alt="Garden Mezze Flatbread (V)" loading="lazy" decoding="async">
+          <span>Garden Mezze Flatbread (V)</span>
+        </a>
+        <a href="/menu.html">
+          <img src="/images/food/dd-classic-melt-lead-640.webp" srcset="/images/food/dd-classic-melt-lead-640.webp 640w, /images/food/dd-classic-melt-lead-960.webp 960w" sizes="(max-width: 800px) 92vw, 300px" width="960" height="719" alt="The Classic Morning Melt" loading="lazy" decoding="async">
+          <span>The Classic Morning Melt</span>
+        </a>
       </div>
-      <div class="res-grid reveal">
-        <div class="res-cell"><span class="res-label">Inside</span><span class="eyebrow">The room</span><p>Candlelit bar, café tables, and the lounge. Tell us the date and headcount and we’ll confirm what fits.</p></div>
-        <div class="res-cell"><span class="res-label">Patio</span><span class="eyebrow">Beach Blvd</span><p>Open air on Beach Boulevard.</p></div>
-        <div class="res-cell"><span class="res-num">7<small>am</small></span><span class="eyebrow">Every day</span><p>Walk in from 7am. Dinner and Sunday brunch book online.</p></div>
-      </div>
-
-      <p class="menu-note reveal" style="margin-top: 26px;">Planning a baby shower, book club, office happy hour, sober celebration, recovery milestone, or team gathering? <a href="/private-events.html">Private events in Gulfport</a>.</p>
+      <p class="menu-note"><a href="/menu.html">Full menu</a></p>
     </div>
   </section>
 
-
-
-
-
-  <!-- Sunday Jazz Brunch -->
-  <!-- TODO(owner): Publish the Sunday jazz brunch start time and the band only after Sean confirms both. Do not invent a time. -->
   <section id="jazz-brunch">
     <div class="shell">
-      <div class="brunch-panel reveal">
+      <div class="brunch-panel">
         <span class="eyebrow">Sunday at Sober Bar</span>
-        <h2 class="title">Jazz, brunch<br><em>&amp; a slower Sunday.</em></h2>
-        <div class="deco-rule" style="margin-bottom: 28px;"><span class="gem"></span></div>
-        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>. Live jazz every Sunday brunch. Call <a href="tel:+18135861660">(813) 586-1660</a> for this Sunday's jazz time.</p>
-        <div class="brunch-notes" aria-label="Event highlights">
-          <span>Live music</span>
-          <span>Brunch 10am–1pm</span>
-          <span>Reserve a table</span>
-        </div>
+        <h2 class="title">Jazz brunch<br><em>&amp; a slower Sunday.</em></h2>
+        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>. Live jazz every Sunday, 10am–1pm. Call <a href="tel:+18135861660">(813) 586-1660</a> for this Sunday's jazz time.</p>
         <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" rel="noopener noreferrer" target="_blank">Reserve Sunday brunch</a>
       </div>
     </div>
   </section>
 
-
-
   <section id="groups" class="menu-bg">
     <div class="shell">
-      <div class="brunch-panel reveal">
-        <span class="eyebrow">Bring Your People</span>
-        <h2 class="title">Good company.<br><em>A different kind of gathering.</em></h2>
-        <p class="brunch-copy">Team outings, birthdays, book clubs, and private celebrations in the heart of Gulfport. Start with your date and guest count; we’ll help you explore the details.</p>
-        <div class="hero-actions">
-          <a class="btn btn-solid" href="/private-events.html#inquire">Plan your gathering</a>
-          <a class="btn btn-line" data-cta="private-events" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-        </div>
+      <div class="brunch-panel">
+        <span class="eyebrow">Private events</span>
+        <h2 class="title">Bring your people.</h2>
+        <p class="brunch-copy">Showers, birthdays, book clubs, and office gatherings in Gulfport. Tell us the date and headcount and we’ll confirm what fits.</p>
+        <a class="btn btn-solid" href="/private-events.html#inquire">Plan a gathering</a>
       </div>
     </div>
   </section>
 
   <section id="visit">
     <div class="shell">
-      <div class="sec-head reveal">
+      <div class="sec-head">
         <span class="eyebrow">Visit</span>
         <h2 class="title">Right on <em>Beach Boulevard.</em></h2>
-        <div class="deco-rule"><span class="gem"></span></div>
       </div>
-      <div class="visit-photo reveal">
-        <picture>
-          <source srcset="/images/storefront-480.webp 480w, /images/storefront-800.webp 800w, /images/storefront.webp 1400w" sizes="(max-width: 900px) 92vw, 45vw" type="image/webp">
-          <img src="/images/storefront.jpg" width="1400" height="748" alt="The Sober Bar storefront at 3062 Beach Blvd S with its glowing art-deco sign" loading="eager" fetchpriority="low" decoding="async" />
-        </picture>
-      </div>
-      <div class="visit-grid reveal">
-        <div class="visit-cell">
-          <span class="eyebrow">Address</span>
-          <p>3062 Beach Blvd S<br>Gulfport, FL 33707</p>
+      <div class="visit-split">
+        <figure class="visit-photo">
+          <picture>
+            <source srcset="/images/space/porch-480.webp 480w, /images/space/porch-800.webp 800w, /images/space/porch-1400.webp 1400w" sizes="(max-width: 800px) 92vw, 52vw" type="image/webp">
+            <img src="/images/space/porch-1400.jpg" width="1400" height="1006" alt="The front porch of Sober Bar at night" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+        <div>
+          <div class="visit-grid">
+            <div class="visit-cell">
+              <span class="eyebrow">Address</span>
+              <p>3062 Beach Blvd S<br>Gulfport, FL 33707</p>
+            </div>
+            <div class="visit-cell">
+              <span class="eyebrow">Hours</span>
+              <p>Sun – Thu · 7 am – 10 pm<br>Fri – Sat · 7 am – Midnight</p>
+            </div>
+            <div class="visit-cell">
+              <span class="eyebrow">Contact</span>
+              <p><a href="tel:+18135861660">(813) 586-1660</a><br><a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
+            </div>
+          </div>
+          <p class="party-link">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Daytime? Walk right in.</p>
+          <div class="visit-actions">
+            <a class="btn btn-solid" data-cta="visit" href="/reservations.html">Reservations</a>
+            <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+          </div>
         </div>
-        <div class="visit-cell">
-          <span class="eyebrow">Hours</span>
-          <p>Sun – Thu · 7 am – 10 pm<br>Fri – Sat · 7 am – Midnight</p>
-        </div>
-        <div class="visit-cell">
-          <span class="eyebrow">Contact</span>
-          <p><a href="tel:+18135861660">(813) 586-1660</a><br><a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a><br><a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">@sipsoberbar</a></p>
-        </div>
-      </div>
-      <div class="visit-actions reveal">
-        <a class="btn btn-solid" data-cta="visit" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-        <a class="btn btn-line" href="tel:+18135861660">Call</a>
-        <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
       </div>
     </div>
   </section>
 
-  <section class="menu-bg">
+  <section id="faq" class="menu-bg">
     <div class="shell">
-      <div class="sec-head reveal">
+      <div class="sec-head">
         <span class="eyebrow">Questions</span>
         <h2 class="title">Before you <em>come through.</em></h2>
-        <div class="deco-rule"><span class="gem"></span></div>
       </div>
-      <div class="faq-wrap reveal">
-        <details open>
-          <summary>Can drinks contain trace alcohol?</summary>
-          <p>We serve non-alcoholic drinks. Some NA beers and the kombucha contain trace alcohol below 0.5% ABV.</p>
-        </details>
+      <div class="faq-wrap">
         <details>
           <summary>What are your hours?</summary>
-          <p>Open daily. Sunday through Thursday 7 am – 10 pm, Friday and Saturday 7 am – midnight. Coffee and breakfast start at 7 am; the full menu runs open to close.</p>
+          <p>Open daily. Sunday through Thursday 7 am – 10 pm, Friday and Saturday 7 am – midnight.</p>
         </details>
-        <details open>
+        <details>
           <summary>Can I work here during the day?</summary>
-          <p>Absolutely. Mornings and afternoons are coffee-house energy — free, fast WiFi, good seats, great espresso. The room shifts to bar energy as the sun goes down.</p>
+          <p>Yes. Mornings are coffee-house energy: free, fast WiFi, good seats, and espresso.</p>
         </details>
         <details>
           <summary>Do you serve food all day?</summary>
-          <p>Yes. Breakfast sandwiches, bagels, flatbreads, muffulettas, and shareable plates from open to close — pretzel bites at 11 pm on a Saturday are encouraged.</p>
-        </details>
-        <details>
-          <summary>Do you host private events or buyouts?</summary>
-          <p>Yes. Tell us the date and headcount and we’ll confirm what fits. Call (813) 586-1660.</p>
-        </details>
-        <details>
-          <summary>When is jazz brunch?</summary>
-          <p>Live jazz every Sunday brunch at Sober Bar &amp; Kitchen in Gulfport, FL. Call <a href="tel:+18135861660">(813) 586-1660</a> for this Sunday's jazz time.</p>
+          <p>Yes. Breakfast, flatbreads, muffulettas, and shareable plates from open to close.</p>
         </details>
         <details>
           <summary>Do you take walk-ins?</summary>
-          <p>Yes. Walk-ins are welcome every day we are open. Reserve a table if you want one held, especially on Friday and Saturday nights.</p>
+          <p>Yes. Walk in any day we are open. Reserve a table if you want one held on a Friday or Saturday night.</p>
         </details>
-        <!-- TODO(owner): Add parking and dogs-on-the-patio answers only after Sean confirms them. -->
       </div>
     </div>
   </section>
 
-  <section class="join" id="join">
-    <div class="shell">
-      <div class="reveal">
-        <span class="eyebrow">Stay in the loop</span>
-        <h2 class="title" style="margin-top:18px;">Keep up with <em>what's pouring.</em></h2>
-        <!-- TODO(owner): Replace this mailto with the provider Sean chooses (Mailchimp, Klaviyo, or Formspree). Do not add the "free beignet" incentive until beignets are confirmed on the menu. -->
-        <p class="join-note">New cocktails, Sunday jazz and weeknight specials land on Instagram first.</p>
-      <a class="btn btn-solid" href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Follow @sipsoberbar</a>
-      <div class="join-social">
-          <a href="https://instagram.com/sipsoberbar" target="_blank" rel="noopener">Instagram</a>
-          <a href="mailto:Sean@sipsoberbar.com">Email</a>
-          <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Maps</a>
-        </div>
-      </div>
-    </div>
-  </section>
   </main>
 
   <footer>
     <div class="shell">
-      <img class="foot-logo" src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801" loading="lazy" />
-      <div class="deco-rule" style="margin-bottom: 26px;"><span class="gem"></span></div>
       <p class="fine">Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
       <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
       <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
@@ -1382,14 +1155,14 @@ html { scroll-padding-top: 84px; }
     "name": "Sober Bar & Kitchen",
     "alternateName": ["Sober Bar", "Sip Sober Bar"],
     "url": "https://www.sipsoberbar.com/",
-    "description": "Zero-proof cocktails, coffee, and a New Orleans-inspired kitchen in Gulfport, Florida. Open daily at 7am. We serve non-alcoholic drinks. Some NA beers and the kombucha contain trace alcohol below 0.5% ABV.",
+    "description": "Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen in Gulfport, Florida. Open daily at 7am.",
     "telephone": "+1-813-586-1660",
     "email": "Sean@sipsoberbar.com",
     "priceRange": "$$",
     "image": [
       "https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg",
-      "https://www.sipsoberbar.com/images/parlor.jpg",
-      "https://www.sipsoberbar.com/images/storefront.jpg"
+      "https://www.sipsoberbar.com/images/cafe.jpg",
+      "https://www.sipsoberbar.com/images/space/porch-1400.jpg"
     ],
     "logo": "https://www.sipsoberbar.com/images/logo-sunburst.png",
     "address": {
@@ -1437,38 +1210,23 @@ html { scroll-padding-top: 84px; }
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Can drinks contain trace alcohol?",
-        "acceptedAnswer": { "@type": "Answer", "text": "We serve non-alcoholic drinks. Some NA beers and the kombucha contain trace alcohol below 0.5% ABV." }
-      },
-      {
-        "@type": "Question",
         "name": "What are your hours?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Open daily. Sunday through Thursday 7 am – 10 pm, Friday and Saturday 7 am – midnight. Coffee and breakfast start at 7 am; the full menu runs open to close." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Open daily. Sunday through Thursday 7 am – 10 pm, Friday and Saturday 7 am – midnight." }
       },
       {
         "@type": "Question",
         "name": "Can I work here during the day?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Mornings and afternoons are coffee-house energy — free, fast WiFi, good seats, great espresso. The room shifts to bar energy as the sun goes down." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Mornings are coffee-house energy: free, fast WiFi, good seats, and espresso." }
       },
       {
         "@type": "Question",
         "name": "Do you serve food all day?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Breakfast sandwiches, bagels, flatbreads, muffulettas, and shareable plates from open to close — pretzel bites at 11 pm on a Saturday are encouraged." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you host private events or buyouts?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tell us the date and headcount and we'll confirm what fits. Call (813) 586-1660." }
-      },
-      {
-        "@type": "Question",
-        "name": "When is jazz brunch?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Live jazz every Sunday brunch at Sober Bar & Kitchen in Gulfport, FL. Call (813) 586-1660 for this Sunday's jazz time." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Breakfast, flatbreads, muffulettas, and shareable plates from open to close." }
       },
       {
         "@type": "Question",
         "name": "Do you take walk-ins?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Walk-ins are welcome every day we are open. Reserve a table if you want one held, especially on Friday and Saturday nights." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Walk in any day we are open. Reserve a table if you want one held on a Friday or Saturday night." }
       }
     ]
   }

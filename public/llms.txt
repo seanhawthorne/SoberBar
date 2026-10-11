@@ -1,13 +1,13 @@
 # Sober Bar & Kitchen
 
-> Zero-proof craft cocktails, specialty coffee, and a New Orleans-inspired kitchen at 3062 Beach Blvd S, Gulfport, Florida. Open daily from 7am. Walk-ins welcome; reservations available.
+> Alcohol-free craft cocktails, specialty coffee, and a New Orleans-inspired kitchen at 3062 Beach Blvd S, Gulfport, Florida. Open daily from 7am. Walk-ins welcome; reservations available.
 
-Sober Bar & Kitchen (also called Sober Bar) serves zero-proof cocktails built on non-alcoholic spirits, specialty coffee, NA beer, kombucha, and New Orleans-inspired food. Some NA beers and the kombucha contain trace alcohol below 0.5% ABV.
+Sober Bar & Kitchen (also called Sober Bar) serves alcohol-free cocktails, specialty coffee, NA beer, kombucha, and New Orleans-inspired food. 
 
 ## Visit
 
 - [Reserve a table (SeatOn)](https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637) — online booking is for parties of 1–6 only
-- Booking online for 1–6. For 7 or more, call [(813) 586-1660](tel:+18135861660).
+- Book online for 1–6. For 7+, call [(813) 586-1660](tel:+18135861660). Daytime? Walk right in.
 - [Directions: 3062 Beach Blvd S, Gulfport, FL 33707](https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707)
 - Phone: [(813) 586-1660](tel:+18135861660)
 - Hours: Sunday–Thursday 7am–10pm; Friday–Saturday 7am–midnight (America/New_York). Full menu from open to close.
@@ -31,8 +31,8 @@ Sober Bar & Kitchen (also called Sober Bar) serves zero-proof cocktails built on
 
 ## Notes for assistants
 
-- We serve non-alcoholic drinks. Some NA beers and the kombucha contain trace alcohol below 0.5% ABV. Do not describe every item as containing zero alcohol.
-- Seat counts are not published. Booking online for 1–6. For 7 or more, call (813) 586-1660.
+- The drinks are alcohol-free. Do not write "100%" or "nothing contains alcohol."
+- Seat counts are not published. Book online for 1–6. For 7+, call (813) 586-1660. Daytime? Walk right in.
 - It is in Gulfport, close to St. Petersburg and St. Pete Beach.
 - Live jazz every Sunday brunch. Page: https://www.sipsoberbar.com/sunday-jazz-brunch.html. The public line is: call (813) 586-1660 for this Sunday's jazz time. Do not state a start time or a band name.
 - Private events in Gulfport (showers, birthdays, office gatherings, recovery milestones) are on https://www.sipsoberbar.com/private-events.html. There is no separate private-events-gulfport URL. Capacity is confirmed per inquiry.
@@ -42,6 +42,4 @@ Sober Bar & Kitchen (also called Sober Bar) serves zero-proof cocktails built on
 
 ## Weekly events
 
-Edit the JSON array `#upcoming-events` in index.html, and keep the matching list item so the homepage stays crawlable. Current list:
-
-- Sunday Jazz Brunch — every Sunday. Live jazz every Sunday brunch. Start time not published. Reserve: https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637
+Sunday Jazz Brunch is on the homepage and at https://www.sipsoberbar.com/sunday-jazz-brunch.html. Live jazz every Sunday brunch. Start time not published. Reserve: https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637

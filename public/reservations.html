@@ -256,6 +256,16 @@
     @media (max-width: 768px) {
       .nav-phone, .nav-cta { display: none; }
     }
+
+    .reserve-pair { display:grid; grid-template-columns:1fr 1fr; gap:12px; width:min(100%, 640px); margin:0 auto 16px; }
+    .reserve-pair .btn { display:flex; align-items:center; justify-content:center; text-align:center; min-height:56px; width:100%; }
+    .reserve-note { color:#f4ead8; font-size:17px; line-height:1.5; max-width:40em; margin:8px auto 0; }
+    header.hero { text-align:center; }
+    @media (max-width:700px) {
+      .reserve-pair { grid-template-columns:1fr; }
+      p, li, .hero-sub, .step p, .faq-wrap details p { font-size:17px; line-height:1.55; }
+      section { padding:40px 0; }
+    }
   </style>
 </head>
 <body>
@@ -266,7 +276,7 @@
         <img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801" />
       </a>
       <ul class="nav-links">
-        <li><a href="/#bar">Cocktails</a></li>
+        <li><a href="/#day-night">Cocktails</a></li>
         <li><a href="/menu.html">Menu</a></li>
         <li><a href="/private-events.html">Private Events</a></li>
         <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
@@ -283,7 +293,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
     <a href="tel:+18135861660">(813) 586-1660</a>
-    <a href="/#bar">Cocktails</a>
+    <a href="/#day-night">Cocktails</a>
     <a href="/menu.html">Menu</a>
     <a href="/private-events.html">Private Events</a>
     <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
@@ -293,49 +303,13 @@
   </div>
 
   <header class="hero" id="top">
-    <h1 class="visually-hidden">Book a table</h1>
-    <div class="hero-badge">Reservations · SeatOn</div>
-    <h2 class="title" style="font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 20px;">Book a <em>table.</em></h2>
-    <p class="hero-sub">Reserve your spot at Gulfport's zero-proof cocktail bar. Date night, a small group, or a table for one.</p>
-    <div class="hero-actions">
-      <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> <span class="party-link">Booking online for 1–6. For 7 or more, call <a href="tel:+18135861660">(813) 586-1660</a></span>
-      <a class="btn btn-line" href="tel:+18135861660">Call</a>
-      <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
-      <a class="btn btn-line back-home" href="/">← Back to Sober Bar</a>
+    <h1 class="title" style="font-size: clamp(2.2rem, 5vw, 3.8rem); margin-bottom: 22px;">Reservations</h1>
+    <div class="reserve-pair">
+      <a class="btn btn-solid" data-cta="dinner" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve dinner</a>
+      <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve Sunday Jazz Brunch</a>
     </div>
+    <p class="reserve-note">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Daytime? Walk right in.</p>
   </header>
-
-  <!-- Widget Placeholder -->
-  <section id="widget" class="menu-bg">
-    <div class="shell">
-      <div class="sec-head reveal">
-        <span class="eyebrow">SeatOn Reservations</span>
-        <h2 class="title">Book your<br><em>table.</em></h2>
-        <div class="deco-rule"><span class="gem"></span></div>
-      </div>
-
-      <div class="visit-grid reveal">
-        <div class="visit-cell">
-          <span class="eyebrow" style="font-size: 0.65rem;">Inside</span>
-          <p style="font-family: 'Poiret One', sans-serif; font-size: 1.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-bright);">The room</p>
-          <p style="color: var(--muted); font-size: 0.95rem; margin-top: 6px;">Bar and tables. Tell us the date and headcount and we’ll confirm what fits.</p>
-        </div>
-        <div class="visit-cell">
-          <span class="eyebrow" style="font-size: 0.65rem;">Outside</span>
-          <p style="font-family: 'Poiret One', sans-serif; font-size: 1.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-bright);">The patio</p>
-          <p style="color: var(--muted); font-size: 0.95rem; margin-top: 6px;">Open air on Beach Boulevard.</p>
-        </div>
-      </div>
-
-      <div style="max-width: 700px; margin: 50px auto 0; text-align: center;" class="reveal">
-        <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 30px;"><a data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&amp;productId=101285#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve Sunday jazz brunch</a>.</p>
-        <div class="visit-actions">
-          <a class="btn btn-solid" data-cta="reservations" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-          <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Get Directions</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- How It Works -->
   <section>
@@ -360,7 +334,7 @@
         <div class="step">
           <div class="num">3</div>
           <h3>Show Up &amp; Enjoy</h3>
-          <p>Your table is ready. Order craft zero-proof cocktails, NOLA-inspired food, and settle in.</p>
+          <p>Your table is ready. Order craft alcohol-free cocktails, NOLA-inspired food, and settle in.</p>
         </div>
       </div>
     </div>
@@ -393,7 +367,6 @@
 
   <footer>
     <div class="shell">
-      <img class="foot-logo" src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801" />
       <div class="deco-rule" style="margin-bottom: 26px;"><span class="gem"></span></div>
       <p class="fine">Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
       <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
@@ -457,7 +430,7 @@
     "name": "Sober Bar & Kitchen",
     "alternateName": "Sober Bar",
     "telephone": "+1-813-586-1660",
-    "description": "Coffee, breakfast, lunch, and zero-proof cocktails in Gulfport. Booking online for 1–6. For 7 or more, call (813) 586-1660. We serve non-alcoholic drinks. Some NA beers and the kombucha contain trace alcohol below 0.5% ABV.",
+    "description": "Coffee, breakfast, lunch, and alcohol-free cocktails in Gulfport. Book online for 1–6. For 7+, call (813) 586-1660. Daytime? Walk right in. ",
     "url": "https://www.sipsoberbar.com/",
     "image": "https://www.sipsoberbar.com/images/cocktail-trio.jpg",
     "logo": "https://www.sipsoberbar.com/images/logo-sunburst.png",

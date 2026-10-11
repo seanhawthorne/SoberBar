@@ -26,8 +26,9 @@
     .press h3 { font-family:'Josefin Sans', sans-serif; font-size:.78rem; letter-spacing:.25em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
     .press p { margin-bottom:8px; }
     .press a { font-size:.9rem; }
-    .logo-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:16px; margin:32px 0; }
-    .logo-cell { border:1px solid rgba(212,175,106,.18); padding:20px; text-align:center; font-size:.8rem; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; }
+    .press-row { display:flex; flex-wrap:wrap; gap:14px 22px; margin:28px 0 36px; }
+    .press-row a { color:#f4ead8; text-decoration:none; border-bottom:1px solid rgba(212,175,106,.5); letter-spacing:.04em; text-transform:uppercase; font-size:16px; }
+    @media (max-width:768px) { p, li, .lead { font-size:17px; line-height:1.55; } }
     .cta { margin-top:40px; padding:24px; border:1px solid rgba(212,175,106,.25); text-align:center; }
     .btn { display:inline-block; margin-top:12px; padding:12px 28px; background:var(--gold); color:var(--black); text-decoration:none; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; }
     footer { text-align:center; padding:40px 0; font-size:.75rem; color:var(--muted); }
@@ -40,7 +41,7 @@
       <div class="site-nav-inner">
         <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801"></a>
         <ul class="site-links">
-          <li><a href="/#bar">Cocktails</a></li>
+          <li><a href="/#day-night">Cocktails</a></li>
           <li><a href="/menu.html">Menu</a></li>
           <li><a href="/private-events.html">Private Events</a></li>
           <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
@@ -55,7 +56,7 @@
     </nav>
     <div class="site-menu" id="siteMenu">
       <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
-      <a href="/#bar">Cocktails</a>
+      <a href="/#day-night">Cocktails</a>
       <a href="/menu.html">Menu</a>
       <a href="/private-events.html">Private Events</a>
       <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
@@ -70,39 +71,15 @@
 
     <span class="eyebrow">Press & Media</span>
     <h1>Press</h1>
-    <p class="lead">Sober Bar is Gulfport's zero-proof cocktail bar and coffee house. Here's where the story has been told so far.</p>
+    <p class="lead">Sober Bar is Gulfport's alcohol-free cocktail bar and coffee house. Here's where the story has been told so far.</p>
 
-    <div class="logo-grid">
-      <div class="logo-cell">FOX 13 Tampa Bay</div>
-      <div class="logo-cell">I Love the Burg</div>
-      <div class="logo-cell">St. Pete Rising</div>
-      <div class="logo-cell">The Gabber</div>
-    </div>
-
-    <div class="press">
-      <h3>FOX 13 Tampa Bay</h3>
-      <p>Florida Tonight's Haley Hinds visited Sober Bar for a segment on Gulfport's zero-proof cocktail scene.</p>
-      <p><a href="https://www.fox13news.com/video/fmc-tcdaujvlcx10y2dc" target="_blank" rel="noopener">Watch the segment →</a></p>
-    </div>
-
-    <div class="press">
-      <h3>I Love the Burg</h3>
-      <p>Featured as an elevated zero-proof cocktail lounge and café opening in Gulfport.</p>
-      <p><a href="https://ilovetheburg.com/sober-bar-cocktails-coffee-gulfport/" target="_blank" rel="noopener">Read the article →</a></p>
-    </div>
-
-    <div class="press">
-      <h3>St. Pete Rising</h3>
-      <p>Local news coverage of Sober Bar's opening in downtown Gulfport with zero-proof cocktails.</p>
-      <p><a href="https://stpeterising.com/home/sober-bar-opening-next-month-in-downtown-gulfport-with-zero-proof-cocktails-and-kava" target="_blank" rel="noopener">Read the article →</a></p>
-    </div>
-
-    <div class="press">
-      <h3>The Gabber</h3>
-      <p>Mentioned in the South Pinellas Business News Roundup for April 2026.</p>
-      <p>Also covered in the <a href="https://thegabber.com/south-pinellas-business-news-roundup-for-june-2026/" target="_blank" rel="noopener">June 2026 roundup</a> after opening.</p>
-      <p><a href="https://thegabber.com/south-pinellas-business-news-roundup-for-april-2026/" target="_blank" rel="noopener">Read the April roundup →</a></p>
-    </div>
+    <nav class="press-row" aria-label="Press links">
+      <a href="https://www.fox13news.com/video/fmc-tcdaujvlcx10y2dc" target="_blank" rel="noopener">FOX 13</a>
+      <a href="https://ilovetheburg.com/sober-bar-cocktails-coffee-gulfport/" target="_blank" rel="noopener">I Love the Burg</a>
+      <a href="https://stpeterising.com/home/sober-bar-opening-next-month-in-downtown-gulfport-with-zero-proof-cocktails-and-kava" target="_blank" rel="noopener">St. Pete Rising</a>
+      <a href="https://thegabber.com/south-pinellas-business-news-roundup-for-april-2026/" target="_blank" rel="noopener">Gabber, April 2026</a>
+      <a href="https://thegabber.com/south-pinellas-business-news-roundup-for-june-2026/" target="_blank" rel="noopener">Gabber, June 2026</a>
+    </nav>
 
     <h2>Fact sheet</h2>
     <ul>
@@ -110,7 +87,7 @@
       <li>Address: 3062 Beach Blvd S, Gulfport, FL 33707 · Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight.</li>
       <li>Phone: (813) 586-1660. Email: Sean@sipsoberbar.com.</li>
       <li>Hours: Sunday–Thursday 7am–10pm. Friday–Saturday 7am–midnight.</li>
-      <li>We serve non-alcoholic drinks. Some NA beers and the kombucha contain trace alcohol below 0.5% ABV.</li>
+      <li></li>
       <li>Larger gatherings use the private-events inquiry.</li>
     </ul>
     <p>For photos of the room, email Sean. Please do not reuse food photos as pictures of the interior.</p>
@@ -119,7 +96,7 @@
     <p>Looking for founder quotes? Email Sean directly, or call the bar.</p>
 
     <div class="cta">
-      <a class="btn" data-cta="as-seen-in" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> <span class="party-link">Booking online for 1–6. For 7 or more, call <a href="tel:+18135861660">(813) 586-1660</a></span>
+      <a class="btn" data-cta="as-seen-in" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> <span class="party-link">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Daytime? Walk right in.</span>
       <a class="btn" href="mailto:Sean@sipsoberbar.com?subject=Press%20Inquiry">Contact Sean</a>
       <p style="margin-top:14px"><a href="tel:+18135861660">(813) 586-1660</a></p>
     </div>
