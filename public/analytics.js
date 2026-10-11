@@ -10,10 +10,16 @@
     transport_type: 'beacon'
   });
 
-  var tag = document.createElement('script');
-  tag.async = true;
-  tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
-  document.head.appendChild(tag);
+  // Load gtag after the page has painted so it never competes with the hero photo.
+  // Events fired before it arrives wait in dataLayer and are sent once it loads.
+  function loadTag() {
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(measurementId);
+    document.head.appendChild(tag);
+  }
+  if (document.readyState === 'complete') setTimeout(loadTag, 1500);
+  else window.addEventListener('load', function () { setTimeout(loadTag, 1500); });
 
   function sendEvent(name, parameters) {
     window.gtag('event', name, Object.assign({ transport_type: 'beacon' }, parameters || {}));
@@ -27,7 +33,15 @@
     var label = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100);
 
     if (/getseat\.net/i.test(href)) {
-      sendEvent('reservation_started', { link_url: href, link_text: label });
+      var placement = link.getAttribute('data-placement') || link.getAttribute('data-cta') || 'unspecified';
+      sendEvent('reserve_click', {
+        placement: placement,
+        page: location.pathname || '/'
+      });
+    } else if (/shop\.sipsoberbar\.com/i.test(href)) {
+      sendEvent('merch_clicked', { link_url: href, link_text: label });
+    } else if (/maps\?cid=/i.test(href)) {
+      sendEvent('reviews_clicked', { link_url: href, link_text: label });
     } else if (/maps\.google\.com|google\.com\/maps/i.test(href)) {
       sendEvent('directions_clicked', { link_url: href, link_text: label });
     } else if (/^tel:/i.test(href)) {
@@ -38,12 +52,6 @@
       sendEvent('instagram_clicked', { link_url: href, link_text: label });
     } else if (/private-events\.html/i.test(href)) {
       sendEvent('private_events_viewed', { link_url: href, link_text: label });
-    }
-  });
-
-  document.addEventListener('submit', function (event) {
-    if (event.target && event.target.id === 'joinForm') {
-      sendEvent('email_signup_started', { form_id: 'joinForm' });
     }
   });
 })();

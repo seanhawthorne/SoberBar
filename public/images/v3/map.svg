@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" aria-label="Map pin for 3062 Beach Blvd S, Gulfport">
+  <rect width="800" height="360" fill="#1A1714"/>
+  <path d="M40 280 H760" stroke="#C9A45C" stroke-width="1" opacity=".45"/>
+  <path d="M120 40 V320" stroke="#C9A45C" stroke-width="1" opacity=".2"/>
+  <path d="M400 40 V320" stroke="#C9A45C" stroke-width="1" opacity=".2"/>
+  <circle cx="430" cy="168" r="10" fill="#C9A45C"/>
+  <text x="452" y="164" fill="#F3EDE2" font-family="Georgia, serif" font-size="28">3062 Beach Blvd S</text>
+  <text x="452" y="198" fill="#B9AFA2" font-family="system-ui, sans-serif" font-size="16">Gulfport, Florida</text>
+</svg>

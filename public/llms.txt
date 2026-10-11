@@ -1,30 +1,62 @@
-# Sober Bar
+# Sober Bar & Kitchen
 
-> A 100% alcohol-free cocktail bar and coffee house in downtown Gulfport, Florida.
+> We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.
 
-Sober Bar serves craft zero-proof cocktails and mocktails, non-alcoholic beer and kombucha, specialty coffee, and New Orleans-inspired food. It is for sober, sober-curious, and simply alcohol-free guests who still want the ritual and atmosphere of a night out.
-
-## Visit
-
-- Address: 3062 Beach Blvd S, Gulfport, FL 33707, United States
-- Website: https://www.sipsoberbar.com/
-- Reservations: https://www.sipsoberbar.com/reservations.html
-- Directions: https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707
-- Instagram: https://instagram.com/sipsoberbar
+- Address: 3062 Beach Blvd S, Gulfport, FL 33707
+- Phone: (813) 586-1660
 - Email: Sean@sipsoberbar.com
-- Hours: Sunday–Thursday 7:00 am–10:00 pm; Friday–Saturday 7:00 am–midnight (America/New_York)
+- Hours: Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight
+- Online booking is dinner, 4–9:30pm, and Sunday brunch, 10am–1pm. Daytime is walk-in.
+- Online booking is for parties of 1–6. For 7 or more, call (813) 586-1660.
+- Friday and Saturday close at midnight.
+- Live jazz every Sunday brunch. Call (813) 586-1660 for this Sunday's jazz time. No band or start time is published.
+- Reserve dinner: https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637
+- Reserve Sunday brunch: https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637
+- Website: https://www.sipsoberbar.com
+- Mocktails: https://www.sipsoberbar.com/mocktails-st-petersburg.html
+- Breakfast: https://www.sipsoberbar.com/breakfast-gulfport.html
+- Gulfport guide: https://www.sipsoberbar.com/things-to-do-in-gulfport.html
 
-## Useful answers
-
-- Everything served at Sober Bar is alcohol-free.
-- The venue has approximately 50 seats: about 30 indoors and 20 on the patio. Walk-ins are welcome; reservations are available.
-- It is in Gulfport, close to St. Petersburg and St. Pete Beach.
-- Mornings and afternoons offer coffee-house energy with Wi-Fi; evenings shift to a zero-proof cocktail-bar experience.
-
-## Canonical pages
-
-- https://www.sipsoberbar.com/
-- https://www.sipsoberbar.com/reservations.html
-- https://www.sipsoberbar.com/sitemap.xml
-
-For current menu availability, events, and holiday hours, use the website or contact Sober Bar directly. Do not infer products, hours, or availability beyond these sources.
+## Menu
+### Cocktails
+- Call Me an Ube: Ritual gin alt, ube, coconut cream, key lime, pineapple
+- Hot Mami: Reposado tequila alt, jalapeño, lime, pineapple ginger, chili
+- Jinn & Juniper: Gin alt, cucumber, juniper, ashwagandha — crisp and garden-fresh
+- Red Widow: Bourbon alt, tart cherry, lemon, honey — a dark, silky sour
+- Bee's Bouquet: Gin alt, fresh lemon, honey, lavender — bright and floral
+- Moonlit Meringue: Gin alt, NA limoncello, egg white, lavender bitters — cloud-soft
+- Espresso Martini: Reposado tequila alt, cold brew espresso, agave, fig & walnut bitters
+### Beer & Kombucha
+- Run Wild IPA: Crisp, hoppy, citrus-forward NA IPA · 16 oz draft · <0.5% ABV
+- Guinness 0.0: Smooth, roasted coffee and chocolate notes
+- Heineken 0.0: Crisp, clean, and lightly malty
+- Beech Kombucha: Bright, sparkling fermented tea on draft
+### Coffee
+- Cortado: Espresso with a small pour of steamed milk
+- Cappuccino: Espresso, steamed milk, and a thick cap of foam
+- Americano: Espresso and hot water
+- Café au Lait: Hot coffee and steamed milk — a New Orleans classic
+- Latte: Espresso and steamed milk, smooth and creamy
+- Mocha: Espresso, chocolate, and steamed milk
+- Kyoto Cold Brew: Slow-dripped with a clean, smooth finish
+- Nitro Cold Brew: Cascading nitro pour, naturally creamy
+- Chai Latte: Spiced chai with steamed milk
+### Breakfast
+- The Classic Morning Melt: English muffin, egg, American cheese, bacon, sausage, or ham
+- The Beach Blvd Bodega: Everything bagel, egg, American cheese, choice of meat
+- The White Rabbit: Plain bagel, egg, brie, fig spread, prosciutto, hot honey
+- The Mad Hatter: English muffin or bagel, egg, everything bacon, choice of meat, provolone, tomato, spinach, pesto
+- Breakfast Muffuletta: Toasted focaccia, pesto cream cheese, egg, sausage, bacon, smoked provolone
+- Hot Honey Breakfast Flatbread: Pesto cream cheese, mozzarella, sausage, bacon, egg, hot honey drizzle
+- Bagel & Cream Cheese: Plain or everything — house ube, fig & honey, or vegan spreads
+- Yogurt Parfait: Greek yogurt, raw honey, mixed berries, Ryker's Granola
+### Kitchen
+- The Muffuletta: Genoa salami, capicola, mozzarella, olive salad, basil pesto, toasted focaccia
+- Hot Honey Soppressata Flatbread: Whipped ricotta, mozzarella, spicy soppressata, hot honey
+- Fig, Brie & Prosciutto Flatbread: Brie, fig jam, prosciutto, toasted pecans, arugula, hot honey
+- Garden Mezze Flatbread: Hummus, roasted red peppers, pickled onion, balsamic-agave — plant-based
+- Garden District Muffuletta: Vegan pesto, olive tapenade, roasted peppers, sourdough — plant-based
+- Goat Cheese Berry Salad: Mixed greens, fresh berries, toasted pecans, goat cheese
+- Spicy Mardi Gras Salad: Greens, hot capicola, Genoa salami, egg, blue cheese
+- Pretzel Bites: Soft-baked, with spicy beer cheese
+- Naan Dippers: Warm naan, roasted red pepper hummus, carrots, celery

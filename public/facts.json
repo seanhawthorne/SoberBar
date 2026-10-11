@@ -1,0 +1,123 @@
+{
+  "name": "Sober Bar & Kitchen",
+  "shortName": "Sober Bar",
+  "domain": "https://www.sipsoberbar.com",
+  "address": {
+    "street": "3062 Beach Blvd S",
+    "city": "Gulfport",
+    "region": "FL",
+    "postal": "33707"
+  },
+  "phoneDisplay": "(813) 586-1660",
+  "phoneTel": "+18135861660",
+  "email": "Sean@sipsoberbar.com",
+  "hours": [
+    {
+      "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "07:00",
+      "closes": "22:00",
+      "label": "Sunday–Thursday 7am–10pm"
+    },
+    {
+      "days": ["Friday", "Saturday"],
+      "opens": "07:00",
+      "closes": "00:00",
+      "label": "Friday–Saturday 7am–midnight"
+    }
+  ],
+  "alcohol": "We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.",
+  "faq": [
+    {
+      "q": "Can drinks contain trace alcohol?",
+      "a": "We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV."
+    }
+  ],
+  "listing": "https://www.google.com/maps?cid=9116696801118190440",
+  "seatOnDinner": "https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637",
+  "seatOnBrunch": "https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637",
+  "booking": "Online booking is dinner, 4–9:30pm, and Sunday brunch, 10am–1pm. Daytime is walk-in.",
+  "partyLimit": "Online booking is for parties of 1–6. For 7 or more, call (813) 586-1660.",
+  "maps": "https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707",
+  "instagram": "https://instagram.com/sipsoberbar",
+  "facebook": "https://www.facebook.com/p/Sober-Bar-61582670395782/",
+  "shop": "https://shop.sipsoberbar.com",
+  "jazz": "Live jazz every Sunday brunch. Call (813) 586-1660 for this Sunday's jazz time. No band or start time is published.",
+  "hero": "Sharpest night interior on file: lounge-1400.jpg (chandelier lounge). Not upscaled. No night bartender original exists.",
+  "imageNotes": "DoorDash garden-mezze and hot-honey files were checked by center color. The garden-named file is red with no green pixels (soppressata). The honey-named file has green pixels (peppers and greens). Exports follow the photo, not the swapped filename.",
+  "menu": [
+    {
+      "id": "cocktails",
+      "name": "Cocktails",
+      "food": false,
+      "items": [
+        {"name": "Call Me an Ube", "desc": "Ritual gin alt, ube, coconut cream, key lime, pineapple", "image": "ube-pro"},
+        {"name": "Hot Mami", "desc": "Reposado tequila alt, jalapeño, lime, pineapple ginger, chili", "image": "hot-mami"},
+        {"name": "Jinn & Juniper", "desc": "Gin alt, cucumber, juniper, ashwagandha — crisp and garden-fresh"},
+        {"name": "Red Widow", "desc": "Bourbon alt, tart cherry, lemon, honey — a dark, silky sour"},
+        {"name": "Bee's Bouquet", "desc": "Gin alt, fresh lemon, honey, lavender — bright and floral", "image": "bouquet-pro"},
+        {"name": "Moonlit Meringue", "desc": "Gin alt, NA limoncello, egg white, lavender bitters — cloud-soft"},
+        {"name": "Espresso Martini", "desc": "Reposado tequila alt, cold brew espresso, agave, fig & walnut bitters"}
+      ]
+    },
+    {
+      "id": "beer",
+      "name": "Beer & Kombucha",
+      "food": false,
+      "items": [
+        {"name": "Run Wild IPA", "desc": "Crisp, hoppy, citrus-forward NA IPA · 16 oz draft · <0.5% ABV", "image": "run-wild"},
+        {"name": "Guinness 0.0", "desc": "Smooth, roasted coffee and chocolate notes", "image": "guinness"},
+        {"name": "Heineken 0.0", "desc": "Crisp, clean, and lightly malty", "image": "heineken"},
+        {"name": "Beech Kombucha", "desc": "Bright, sparkling fermented tea on draft"}
+      ]
+    },
+    {
+      "id": "coffee",
+      "name": "Coffee",
+      "food": false,
+      "items": [
+        {"name": "Cortado", "desc": "Espresso with a small pour of steamed milk"},
+        {"name": "Cappuccino", "desc": "Espresso, steamed milk, and a thick cap of foam", "image": "cappuccino"},
+        {"name": "Americano", "desc": "Espresso and hot water", "image": "americano"},
+        {"name": "Café au Lait", "desc": "Hot coffee and steamed milk — a New Orleans classic", "image": "cafe-au-lait"},
+        {"name": "Latte", "desc": "Espresso and steamed milk, smooth and creamy", "image": "latte"},
+        {"name": "Mocha", "desc": "Espresso, chocolate, and steamed milk"},
+        {"name": "Kyoto Cold Brew", "desc": "Slow-dripped with a clean, smooth finish", "image": "kyoto"},
+        {"name": "Nitro Cold Brew", "desc": "Cascading nitro pour, naturally creamy"},
+        {"name": "Chai Latte", "desc": "Spiced chai with steamed milk", "image": "chai"}
+      ]
+    },
+    {
+      "id": "breakfast",
+      "name": "Breakfast",
+      "food": true,
+      "wide": "morning-melt",
+      "items": [
+        {"name": "The Classic Morning Melt", "desc": "English muffin, egg, American cheese, bacon, sausage, or ham", "image": "morning-melt"},
+        {"name": "The Beach Blvd Bodega", "desc": "Everything bagel, egg, American cheese, choice of meat", "image": "bodega"},
+        {"name": "The White Rabbit", "desc": "Plain bagel, egg, brie, fig spread, prosciutto, hot honey", "image": "white-rabbit"},
+        {"name": "The Mad Hatter", "desc": "English muffin or bagel, egg, everything bacon, choice of meat, provolone, tomato, spinach, pesto", "image": "mad-hatter"},
+        {"name": "Breakfast Muffuletta", "desc": "Toasted focaccia, pesto cream cheese, egg, sausage, bacon, smoked provolone", "image": "breakfast-muff"},
+        {"name": "Hot Honey Breakfast Flatbread", "desc": "Pesto cream cheese, mozzarella, sausage, bacon, egg, hot honey drizzle"},
+        {"name": "Bagel & Cream Cheese", "desc": "Plain or everything — house ube, fig & honey, or vegan spreads", "image": "bagel"},
+        {"name": "Yogurt Parfait", "desc": "Greek yogurt, raw honey, mixed berries, Ryker's Granola", "image": "parfait"}
+      ]
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "food": true,
+      "wide": "muffuletta",
+      "items": [
+        {"name": "The Muffuletta", "desc": "Genoa salami, capicola, mozzarella, olive salad, basil pesto, toasted focaccia", "image": "muffuletta"},
+        {"name": "Hot Honey Soppressata Flatbread", "desc": "Whipped ricotta, mozzarella, spicy soppressata, hot honey", "image": "hot-honey"},
+        {"name": "Fig, Brie & Prosciutto Flatbread", "desc": "Brie, fig jam, prosciutto, toasted pecans, arugula, hot honey", "image": "fig-brie"},
+        {"name": "Garden Mezze Flatbread", "desc": "Hummus, roasted red peppers, pickled onion, balsamic-agave — plant-based", "image": "garden-mezze"},
+        {"name": "Garden District Muffuletta", "desc": "Vegan pesto, olive tapenade, roasted peppers, sourdough — plant-based", "image": "garden-muff"},
+        {"name": "Goat Cheese Berry Salad", "desc": "Mixed greens, fresh berries, toasted pecans, goat cheese", "image": "goat-salad"},
+        {"name": "Spicy Mardi Gras Salad", "desc": "Greens, hot capicola, Genoa salami, egg, blue cheese", "image": "mardi-salad"},
+        {"name": "Pretzel Bites", "desc": "Soft-baked, with spicy beer cheese", "image": "pretzel"},
+        {"name": "Naan Dippers", "desc": "Warm naan, roasted red pepper hummus, carrots, celery", "image": "naan"}
+      ]
+    }
+  ]
+}
