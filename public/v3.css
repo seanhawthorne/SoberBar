@@ -14,7 +14,9 @@ a:hover{background-size:100% 1px}
 .site-header{position:fixed;inset:0 0 auto 0;z-index:30;height:var(--header);display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(14,12,10,.94);transition:height .2s var(--ease),background .2s}
 body.home .site-header{background:linear-gradient(180deg,rgba(14,12,10,.82),rgba(14,12,10,0))}
 .site-header.is-shrunk{height:64px;background:rgba(14,12,10,.92)}
-.mark{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:28px;letter-spacing:-.015em;color:var(--cream);background:none}
+.mark{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:28px;letter-spacing:-.015em;color:var(--cream);background:none;white-space:nowrap}
+.header-end{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.header-reserve{padding:0 14px;white-space:nowrap;flex:0 0 auto}
 .nav-links{display:none;gap:28px;align-items:center}
 .nav-links a{color:var(--cream);font-size:15px;font-weight:600;letter-spacing:.04em}
 .nav-links a.reserve,.drawer a.reserve,.sticky a.reserve{color:var(--ink);background:var(--brass);background-image:none}
@@ -128,6 +130,7 @@ summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:
 @media (min-width:768px){
   body{font-size:17px}
   .burger{display:none}
+  .header-reserve{display:none}
   .nav-links{display:flex}
   .hero{min-height:min(100svh,860px);align-items:flex-start}
   .hero-scrim{background:linear-gradient(90deg,rgba(14,12,10,.7) 0%,rgba(14,12,10,0) 45%)}
@@ -153,4 +156,9 @@ summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:
 }
 @media (max-width:767px){
   .sticky.is-on{display:grid}
+}
+@media (max-width:390px){
+  .site-header{padding:0 12px}
+  .mark{font-size:24px}
+  .header-reserve{padding:0 10px}
 }

@@ -6,9 +6,12 @@
 - Phone: (813) 586-1660
 - Email: Sean@sipsoberbar.com
 - Hours: Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight
-- Online booking is for parties of 1–6. For 7 or more, call (813) 586-1660. Walk-ins are welcome.
+- Online booking is dinner, 4–9:30pm, and Sunday brunch, 10am–1pm. Daytime is walk-in.
+- Online booking is for parties of 1–6. For 7 or more, call (813) 586-1660.
+- Friday and Saturday close at midnight.
 - Live jazz every Sunday brunch. Call (813) 586-1660 for this Sunday's jazz time. No band or start time is published.
-- Reserve: https://getseat.net/#/public/online/reservation/8B932637
+- Reserve dinner: https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637
+- Reserve Sunday brunch: https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637
 
 ## Menu
 ### Cocktails

@@ -33,7 +33,9 @@
     }
   ],
   "listing": "https://www.google.com/maps?cid=9116696801118190440",
-  "seatOn": "https://getseat.net/#/public/online/reservation/8B932637",
+  "seatOnDinner": "https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637",
+  "seatOnBrunch": "https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637",
+  "booking": "Online booking is dinner, 4–9:30pm, and Sunday brunch, 10am–1pm. Daytime is walk-in.",
   "partyLimit": "Online booking is for parties of 1–6. For 7 or more, call (813) 586-1660.",
   "maps": "https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707",
   "instagram": "https://instagram.com/sipsoberbar",

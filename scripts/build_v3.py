@@ -2,6 +2,7 @@
 """Render static pages from public/facts.json."""
 import html
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,13 +23,19 @@ def e(text):
     return html.escape(text, quote=True)
 
 
-def seat(placement):
-    return f'{FACTS["seatOn"]}?channel=site&placement={e(placement)}'
+DINNER = FACTS["seatOnDinner"]
+BRUNCH = FACTS["seatOnBrunch"]
+BOOKING = FACTS["booking"]
 
 
-def reserve(placement, label="Reserve a table", extra=""):
+def seat(kind="dinner"):
+    return BRUNCH if kind == "brunch" else DINNER
+
+
+def reserve(placement, label="Reserve a table", kind="dinner", extra_class=""):
+    cls = "reserve" if not extra_class else f"reserve {extra_class}"
     return (
-        f'<a class="reserve" data-placement="{e(placement)}" href="{seat(placement)}"{extra}>'
+        f'<a class="{cls}" data-placement="{e(placement)}" href="{e(seat(kind))}">'
         f'{label}</a>'
     )
 
@@ -54,23 +61,26 @@ def head(title, desc, path, preload="", body_class="pad"):
 '''
 
 
-def header():
-    return '''<header class="site-header" id="nav">
+def header(kind="dinner"):
+    return f'''<header class="site-header" id="nav">
   <a class="mark" href="/">Sober Bar</a>
-  <nav class="nav-links" aria-label="Primary">
-    <a href="/menu.html">Menu</a>
-    <a href="/#the-room">The Room</a>
-    <a href="/#visit">Visit</a>
-    ''' + reserve("nav") + '''
-  </nav>
-  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
+  <div class="header-end">
+    {reserve("nav", "Reserve", kind, "header-reserve")}
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/menu.html">Menu</a>
+      <a href="/#the-room">The Room</a>
+      <a href="/#visit">Visit</a>
+      {reserve("nav", kind=kind)}
+    </nav>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
+  </div>
 </header>
 <nav class="drawer" id="drawer" aria-label="Mobile">
   <a href="/menu.html">Menu</a>
   <a href="/#the-room">The Room</a>
   <a href="/#visit">Visit</a>
-  ''' + reserve("nav") + '''
-  <a href="tel:''' + TEL + '''">''' + PHONE + '''</a>
+  {reserve("nav", kind=kind)}
+  <a href="tel:{TEL}">{PHONE}</a>
 </nav>
 '''
 
@@ -98,10 +108,10 @@ def footer():
 '''
 
 
-def sticky(placement):
+def sticky(kind="dinner"):
     return f'''<nav class="sticky" aria-label="Call, reserve, or directions">
   <a href="tel:{TEL}">Call</a>
-  {reserve("sticky", "Reserve")}
+  {reserve("sticky", "Reserve", kind)}
   <a href="{FACTS["maps"]}">Directions</a>
 </nav>
 <script src="/site.js" defer></script>
@@ -110,8 +120,8 @@ def sticky(placement):
 '''
 
 
-def shell(title, desc, path, main, placement, preload="", body_class="pad"):
-    return head(title, desc, path, preload, body_class) + header() + main + footer() + sticky(placement)
+def shell(title, desc, path, main, placement, preload="", body_class="pad", kind="dinner"):
+    return head(title, desc, path, preload, body_class) + header(kind) + main + footer() + sticky(kind)
 
 
 def thumb(stem, alt):
@@ -206,6 +216,7 @@ def build_home():
         <span data-hero-cta>{reserve("hero")}</span>
         <a class="text-link" href="/menu.html">View menu →</a>
       </div>
+      <p class="fine">{e(BOOKING)}</p>
     </div>
   </section>
 
@@ -259,6 +270,7 @@ def build_home():
         <p>{e(HOURS)}</p>
         <p><a href="tel:{TEL}">Call {PHONE}</a></p>
         <p><a href="{FACTS["maps"]}">Directions</a></p>
+        <p class="fine">{e(BOOKING)}</p>
         <p class="fine">{e(ALC)}</p>
         <details>
           <summary>{e(FACTS["faq"][0]["q"])}</summary>
@@ -287,7 +299,7 @@ def build_home():
   "telephone": "{TEL}",
   "email": "{EMAIL}",
   "servesCuisine": "New Orleans-inspired",
-  "acceptsReservations": "{FACTS["seatOn"]}",
+  "acceptsReservations": "{DINNER}",
   "hasMenu": "{FACTS["domain"]}/menu.html",
   "image": "{FACTS["domain"]}/images/v3/hero-night-2400.webp",
   "description": {json.dumps(ALC)},
@@ -351,7 +363,8 @@ def build_menu():
     <nav class="chips" aria-label="Menu categories">{chips}</nav>
     {''.join(sections)}
     <p>{e(ALC)} Ask for today’s prices. Tell us about allergies before you order.</p>
-    <p>{reserve("menu")} <a class="text-link" href="/reservations.html" style="margin-left:16px">Reservations →</a></p>
+    <p>{reserve("menu", "Reserve dinner")} <a class="text-link" href="/reservations.html" style="margin-left:16px">Reservations →</a></p>
+    <p style="color:#3c342c">{e(BOOKING)}</p>
   </div>
 </main>'''
     write("menu.html", shell(
@@ -367,34 +380,47 @@ def build_reservations():
     main = f'''<main id="main" class="page">
   <div class="wrap book">
     <h1>Reserve a table</h1>
-    <p class="lead">Booking opens on SeatOn.</p>
-    <span data-hero-cta>{reserve("res")}</span>
+    <p class="lead">Dinner online is 4–9:30pm. Sunday brunch online is 10am–1pm. Daytime is walk-in.</p>
+    <div class="hero-actions">
+      <span data-hero-cta>{reserve("res", "Reserve dinner")}</span>
+      <a class="text-link" data-placement="res-brunch" href="{e(BRUNCH)}">Reserve Sunday brunch</a>
+    </div>
     {party_note()}
-    <p class="fine">Walk-ins are welcome.</p>
     {visit_card()}
   </div>
 </main>'''
     write("reservations.html", shell(
         "Reserve a table — Sober Bar",
-        "Book a table at Sober Bar in Gulfport. Walk-ins welcome. Online booking opens on SeatOn.",
+        "Book dinner online from 4–9:30pm, or Sunday brunch from 10am–1pm. Daytime is walk-in. Parties of 1–6.",
         "/reservations.html",
         main,
         "res",
     ))
 
 
-def article(title, desc, path, h1, lead, body, placement):
+def article(title, desc, path, h1, lead, body, placement, kind="dinner", book=True, label="Reserve a table"):
+    if book:
+        actions = (
+            f'<p style="margin-top:22px"><span data-hero-cta>{reserve(placement, label, kind)}</span> '
+            f'<a class="text-link" href="/menu.html" style="margin-left:16px">View menu →</a></p>'
+            f'<p class="fine">{e(BOOKING)}</p>'
+        )
+    else:
+        actions = (
+            f'<p style="margin-top:22px">{e(BOOKING)}</p>'
+            f'<p><a class="text-link" href="/menu.html">View menu →</a></p>'
+        )
     main = f'''<main id="main" class="page">
   <div class="wrap">
     <h1>{h1}</h1>
     <p class="lead">{lead}</p>
     {room("/images/v3/hero-d-1200.webp", 1400, 875, "The lounge at Sober Bar under the chandelier")}
     {body}
-    <p style="margin-top:22px"><span data-hero-cta>{reserve(placement)}</span> <a class="text-link" href="/menu.html" style="margin-left:16px">View menu →</a></p>
+    {actions}
     {visit_card()}
   </div>
 </main>'''
-    write(path.lstrip("/"), shell(title, desc, path, main, placement))
+    write(path.lstrip("/"), shell(title, desc, path, main, placement, kind=kind))
 
 
 def build_rest():
@@ -403,20 +429,23 @@ def build_rest():
         "Espresso, cold brew, chai, and a New Orleans-inspired breakfast from 7am at Sober Bar in Gulfport.",
         "/breakfast-gulfport.html",
         "Breakfast and coffee in Gulfport",
-        "Espresso, cold brew, and a New Orleans-inspired breakfast from 7am. Walk-ins are welcome.",
-        "<p>The espresso bar is open with the doors. The full menu runs open to close.</p>" + menu_list(["coffee", "breakfast"]) + f"<p>{e(ALC)}</p>",
+        "Espresso, cold brew, and a New Orleans-inspired breakfast from 7am. Daytime is walk-in.",
+        "<p>The espresso bar is open with the doors. The full menu runs open to close. Daytime tables are walk-in.</p>" + menu_list(["coffee", "breakfast"]) + f"<p>{e(ALC)}</p>",
         "breakfast",
+        book=False,
     )
     article(
         "Sunday jazz brunch in Gulfport — Sober Bar",
         "Live jazz every Sunday brunch at Sober Bar in Gulfport. Call (813) 586-1660 for this Sunday's jazz time.",
         "/sunday-jazz-brunch.html",
         "Sunday jazz brunch in Gulfport",
-        "Live jazz in the room every Sunday brunch. Reserve a table if you want it held.",
-        f'''<p>The doors are already open at 7am if you want coffee first. Walk-ins are welcome. Call <a href="tel:{TEL}">{PHONE}</a> for this Sunday’s jazz time. No band or start time is published.</p>
+        "Live jazz in the room every Sunday brunch. Online brunch booking is 10am–1pm. Call (813) 586-1660 for this Sunday's jazz time.",
+        f'''<p>The doors are already open at 7am if you want coffee first. Daytime is walk-in. Call <a href="tel:{TEL}">{PHONE}</a> for this Sunday’s jazz time. No band or start time is published. Online brunch booking is 10am–1pm.</p>
         <p>The full menu runs on Sunday, including <strong>The White Rabbit</strong> and the plant-based <strong>Garden District Muffuletta</strong>. Later, the bar pours <strong>Call Me an Ube</strong>.</p>
         <p>{e(ALC)}</p>''',
         "jazz",
+        kind="brunch",
+        label="Reserve Sunday brunch",
     )
     article(
         "Mocktails near St. Pete — Sober Bar",
@@ -622,9 +651,12 @@ def build_llms_and_sitemap():
         f"- Phone: {PHONE}",
         f"- Email: {EMAIL}",
         f"- Hours: {HOURS}",
-        f"- {FACTS['partyLimit']} Walk-ins are welcome.",
+        f"- {FACTS['booking']}",
+        f"- {FACTS['partyLimit']}",
+        f"- Friday and Saturday close at midnight.",
         f"- {FACTS['jazz']}",
-        f"- Reserve: {FACTS['seatOn']}",
+        f"- Reserve dinner: {DINNER}",
+        f"- Reserve Sunday brunch: {BRUNCH}",
         "",
         "## Menu",
     ]
@@ -658,13 +690,25 @@ def check():
         "100% alcohol-free", "yes — 100", "50 seats", "30 indoor", "20 outdoor",
         "sipsisoberbar", "closed monday", "2 hours before", "serves alcohol",
         "party of 7", "wi-fi", "wifi", "4.9", "google reviews",
+        "up to 12", "12 guests",
+        "inside or out", "indoor or outdoor",
     ]
+    # "11 a.m." must not match a 1am close. Require the 1 not to follow a digit.
+    late_close = re.compile(r"(?<!\d)1\s*a\.?\s*m\b|(?<!\d)01:00", re.I)
     party_ok = set()
-    for path in PUBLIC.glob("*.html"):
-        text = path.read_text().lower()
+    allowed = {DINNER, BRUNCH}
+    files = list(PUBLIC.glob("*.html")) + [PUBLIC / "llms.txt", PUBLIC / "facts.json"]
+    for path in files:
+        raw = path.read_text()
+        text = raw.lower()
         for b in banned:
             if b in text:
                 raise SystemExit(f"banned {b} in {path.name}")
+        if late_close.search(text):
+            raise SystemExit(f"banned late close in {path.name}")
+        for url in re.findall(r"https://getseat\.net[^\"<\s]*", raw):
+            if html.unescape(url) not in allowed:
+                raise SystemExit(f"unexpected seat link in {path.name}: {url}")
         if "party of 7" in text and path.name not in party_ok:
             raise SystemExit(f"party of 7 on {path.name}")
     print("facts check ok")
