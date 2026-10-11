@@ -17,6 +17,7 @@ body.home .site-header{background:linear-gradient(180deg,rgba(14,12,10,.82),rgba
 .mark{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:28px;letter-spacing:-.015em;color:var(--cream);background:none}
 .nav-links{display:none;gap:28px;align-items:center}
 .nav-links a{color:var(--cream);font-size:15px;font-weight:600;letter-spacing:.04em}
+.nav-links a.reserve,.drawer a.reserve,.sticky a.reserve{color:var(--ink);background:var(--brass);background-image:none}
 .reserve{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;background:var(--brass);color:var(--ink);font-weight:600;font-size:15px;letter-spacing:.04em;border:0;cursor:pointer;background-image:none}
 .reserve:hover{background:#d7b56e;background-image:none}
 .burger{width:44px;height:44px;background:transparent;color:var(--cream);border:1px solid var(--line);font-size:13px;letter-spacing:.08em;font-weight:600}

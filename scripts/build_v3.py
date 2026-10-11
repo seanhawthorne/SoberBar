@@ -65,13 +65,13 @@ def header():
   </nav>
   <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
 </header>
-<div class="drawer" id="drawer">
+<nav class="drawer" id="drawer" aria-label="Mobile">
   <a href="/menu.html">Menu</a>
   <a href="/#the-room">The Room</a>
   <a href="/#visit">Visit</a>
   ''' + reserve("nav") + '''
   <a href="tel:''' + TEL + '''">''' + PHONE + '''</a>
-</div>
+</nav>
 '''
 
 
