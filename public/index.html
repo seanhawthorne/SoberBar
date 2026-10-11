@@ -166,24 +166,30 @@ html { scroll-padding-top: 84px; }
     .rating-link { color: var(--gold-bright); font-size: 1.15rem; text-decoration: none; border-bottom: 1px solid rgba(238,217,164,.45); }
     .press-row { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 34px; }
     .press-row a { color: #f4ead8; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; text-decoration: none; border-bottom: 1px solid rgba(212,175,106,.5); }
+    .band-photo { width: min(100%, 960px); margin: 0 auto 16px; }
+    .band-photo img { width: 100%; max-width: 960px; height: auto; display: block; margin: 0 auto; }
+    .band-line { margin: 0 auto 18px; max-width: 22em; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: normal; font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.25; color: #f4ead8; }
     .highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
     .highlights a { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 8px 10px; color: #f4ead8; font-size: 1.05rem; line-height: 1.25; text-align: center; text-decoration: none; border: 1px solid rgba(212,175,106,.55); }
     .highlights a:hover { color: var(--gold-bright); border-color: var(--gold-bright); }
     .menu-go { margin-top: 18px; }
     #day-night { padding-bottom: 28px; }
     #reviews { padding-top: 28px; }
-    .visit-split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: center; }
+    .visit-split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; align-items: center; }
     .visit-split .visit-grid { grid-template-columns: 1fr; gap: 18px; }
     .visit-split .visit-photo { margin: 0; padding: 0; border: 0; background: transparent; }
     .visit-split .visit-photo img { aspect-ratio: 1400 / 1006; height: auto; object-fit: cover; }
-    #visit .sec-head, #faq .sec-head { margin-bottom: 28px; }
-    #visit, #faq { padding: 64px 0; }
-    #visit .party-link { display: block; margin: 18px 0 14px; color: #f4ead8; font-size: 1rem; }
+    #visit .sec-head { margin-bottom: 14px; gap: 8px; }
+    #faq .sec-head { margin-bottom: 28px; }
+    #visit { padding: 36px 0; }
+    #faq { padding: 64px 0; }
+    #visit .party-link { display: block; margin: 10px 0 8px; color: #f4ead8; font-size: 1rem; }
     @media (max-width: 900px) {
       .morning { grid-template-columns: 1fr; gap: 16px; }
       .quotes, .visit-split { grid-template-columns: 1fr; }
       .visit-split { gap: 0; }
-      #visit, #faq { padding: 28px 0; }
+      #visit { padding: 28px 0; }
+      #faq { padding: 28px 0; }
       .visit-split .visit-photo { margin: 0 0 16px; padding: 0; border: 0; background: transparent; }
     }
     @media (max-width: 768px) {
@@ -193,6 +199,7 @@ html { scroll-padding-top: 84px; }
         font-size: 17px;
         line-height: 1.55;
       }
+      .highlights { grid-template-columns: 1fr; }
       footer .fine { font-size: 16px; letter-spacing: .03em; color: #f4ead8; }
       footer .fine a { color: #f4ead8; }
     }
@@ -261,8 +268,8 @@ html { scroll-padding-top: 84px; }
     }
 
     h2.title {
-      font-family: 'Poiret One', sans-serif; font-weight: 400;
-      letter-spacing: 0.1em; text-transform: uppercase;
+      font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500;
+      letter-spacing: 0; text-transform: none;
       font-size: clamp(1.9rem, 4.4vw, 3.1rem);
       line-height: 1.15; color: var(--cream);
     }
@@ -387,7 +394,7 @@ html { scroll-padding-top: 84px; }
     .pulse { width: 7px; height: 7px; border-radius: 50%; background: #7fd88f; box-shadow: 0 0 0 0 rgba(127,216,143,0.5); animation: pulse 2.2s infinite; }
     @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(127,216,143,0); } 100% { box-shadow: 0 0 0 0 rgba(127,216,143,0); } }
     .hero-sub {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-family: 'Cormorant Garamond', serif; font-style: normal; font-weight: 500;
       font-size: clamp(1.35rem, 2.6vw, 1.9rem); color: var(--muted);
       max-width: 42em; margin: 0 auto 14px;
     }
@@ -566,11 +573,11 @@ html { scroll-padding-top: 84px; }
     .visit-photo { border: 1px solid var(--gold-dim); padding: 12px; background: var(--ink); max-width: 980px; margin: 0 auto 70px; }
     .visit-photo img { width: 100%; height: auto; aspect-ratio: 1400 / 748; object-fit: cover; display: block; }
     .visit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gold-faint); border: 1px solid var(--gold-faint); max-width: 980px; margin: 0 auto; }
-    .visit-cell { background: var(--black); padding: 22px 18px; text-align: center; }
-    .visit-cell .eyebrow { display: block; margin-bottom: 16px; }
+    .visit-cell { background: var(--black); padding: 14px 12px; text-align: center; }
+    .visit-cell .eyebrow { display: block; margin-bottom: 6px; }
     .visit-cell p, .visit-cell a { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); text-decoration: none; line-height: 1.45; }
     .visit-cell a:hover { color: var(--gold-bright); }
-    .visit-actions { display: flex; justify-content: center; gap: 18px; margin-top: 22px; flex-wrap: wrap; }
+    .visit-actions { display: flex; justify-content: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
 
     /* ------- faq ------- */
     .faq-wrap { max-width: 760px; margin: 0 auto; }
@@ -611,7 +618,7 @@ html { scroll-padding-top: 84px; }
     .join-social a:hover { color: var(--gold-bright); }
 
     /* ------- footer ------- */
-    footer { border-top: 1px solid var(--gold-faint); padding: 32px 0 24px; text-align: center; }
+    footer { border-top: 1px solid var(--gold-faint); padding: 12px 0 8px; text-align: center; }
     .foot-logo { width: 240px; margin: 0 auto 30px; }
     footer .fine { color: #f4ead8; font-size: 16px; letter-spacing: 0.03em; margin-top: 8px; line-height: 1.5; }
     footer .fine a { color: #f4ead8; }
@@ -725,7 +732,7 @@ html { scroll-padding-top: 84px; }
     .hero-title, .hero-sub, .title, h2, p { text-wrap: pretty; }
     .hero-title { margin: 0 0 16px; max-width: 13em; font-size: clamp(2.4rem, 4.4vw, 4.15rem); line-height: 0.98; letter-spacing: -0.018em; }
     .hero-title em { font-style: italic; color: var(--gold-bright); }
-    .hero-sub { margin: 0 0 28px; max-width: 26em; font-size: clamp(1.2rem, 2vw, 1.55rem); color: rgba(244,234,216,.88); }
+    .hero-sub { margin: 0 0 28px; max-width: 26em; font-size: clamp(1.2rem, 2vw, 1.55rem); font-style: normal; font-weight: 500; color: rgba(244,234,216,.88); }
     header.hero .hero-actions { justify-content: flex-start; }
     .hero-proof { margin-top: 26px; font-size: .78rem; letter-spacing: .12em; color: var(--muted); font-weight: 400; }
     .hero-proof span { color: var(--gold); letter-spacing: .1em; margin-right: 6px; }
@@ -878,7 +885,7 @@ html { scroll-padding-top: 84px; }
     <div class="hero-copy">
       <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
       <h1 class="hero-title">Coffee by day. Cocktails after dark.</h1>
-      <p class="hero-sub">Coffee, New Orleans-inspired kitchen &amp; <em>alcohol-free</em> cocktails in Gulfport, FL</p>
+      <p class="hero-sub">Coffee, New Orleans-inspired kitchen &amp; alcohol-free cocktails in Gulfport, FL</p>
       <div class="hero-actions">
         <div class="hero-cta-row">
           <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
@@ -948,6 +955,13 @@ html { scroll-padding-top: 84px; }
         <span class="eyebrow">The menu</span>
         <h2 class="title">Something good, <em>all day.</em></h2>
       </div>
+      <figure class="band-photo">
+        <picture>
+          <source srcset="/images/food/dd-hot-honey-lead-400.webp 400w, /images/food/dd-hot-honey-lead-640.webp 640w, /images/food/dd-hot-honey-lead-800.webp 800w, /images/food/dd-hot-honey-lead-960.webp 960w" sizes="(max-width: 1008px) calc(100vw - 48px), 960px" type="image/webp">
+          <img src="/images/food/dd-hot-honey-lead-960.jpg" width="960" height="720" alt="Hot honey flatbread" loading="lazy" decoding="async">
+        </picture>
+      </figure>
+      <p class="band-line">Espresso. Hot honey. Something with a little kick.</p>
       <ul class="highlights">
         <li><a href="/menu.html#cocktails">Cocktails</a></li>
         <li><a href="/menu.html#coffee">Coffee &amp; breakfast</a></li>
