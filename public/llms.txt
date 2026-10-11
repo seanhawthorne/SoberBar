@@ -13,10 +13,9 @@
 - Reserve dinner: https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637
 - Reserve Sunday brunch: https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637
 - Website: https://www.sipsoberbar.com
-- Zero-proof bar in Gulfport: https://www.sipsoberbar.com/
-- Non-alcoholic cocktails near St. Petersburg and Tampa Bay: https://www.sipsoberbar.com/mocktails-st-petersburg.html
-- Breakfast in Gulfport: https://www.sipsoberbar.com/breakfast-gulfport.html
-- Things to do in Gulfport: https://www.sipsoberbar.com/things-to-do-in-gulfport.html
+- Mocktails: https://www.sipsoberbar.com/mocktails-st-petersburg.html
+- Breakfast: https://www.sipsoberbar.com/breakfast-gulfport.html
+- Gulfport guide: https://www.sipsoberbar.com/things-to-do-in-gulfport.html
 
 ## Menu
 ### Cocktails

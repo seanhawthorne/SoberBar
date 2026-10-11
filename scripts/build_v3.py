@@ -80,6 +80,7 @@ def header(kind="dinner"):
   <a href="/#the-room">The Room</a>
   <a href="/#visit">Visit</a>
   {reserve("nav", kind=kind)}
+  <a href="tel:{TEL}">{PHONE}</a>
 </nav>
 '''
 
@@ -170,13 +171,14 @@ def faq_schema(items):
     return f'<script type="application/ld+json">\n{json.dumps(data, indent=2)}\n</script>'
 
 
-def visit_card():
+def visit_card(show_phone=True):
     hours = "<br>".join(e(h["label"]) for h in FACTS["hours"])
+    phone = f'<a href="tel:{TEL}">{PHONE}</a> · ' if show_phone else ""
     return f'''<div class="card" id="visit-card">
     <h2>Visit</h2>
     <p>{e(A["street"])}<br>{e(A["city"])}, {e(A["region"])} {e(A["postal"])}</p>
     <p>{hours}</p>
-    <p><a href="tel:{TEL}">{PHONE}</a> · <a href="{FACTS["maps"]}">Directions</a></p>
+    <p>{phone}<a href="{FACTS["maps"]}">Directions</a></p>
   </div>'''
 
 
@@ -227,13 +229,13 @@ def build_home():
       <source media="(max-width: 767px)" type="image/avif" srcset="/images/v3/hero-night-m-480.avif 480w, /images/v3/hero-night-m-768.avif 768w" sizes="100vw">
       <source media="(max-width: 767px)" type="image/webp" srcset="/images/v3/hero-night-m-480.webp 480w, /images/v3/hero-night-m-768.webp 768w, /images/v3/hero-night-m-1200.webp 1200w" sizes="100vw">
       <source type="image/webp" srcset="/images/v3/hero-night-768.webp 768w, /images/v3/hero-night-1200.webp 1200w, /images/v3/hero-night-1800.webp 1800w, /images/v3/hero-night-2400.webp 2400w" sizes="100vw">
-      <img src="/images/v3/hero-night-2400.webp" width="2400" height="1500" alt="The Beach Boulevard porch at Sober Bar at night, string lights and guests outside" fetchpriority="high">
+      <img src="/images/v3/hero-night-2400.webp" width="2400" height="1500" alt="The Beach Boulevard porch at Sober Bar at night, string lights and guests outside" fetchpriority="high" decoding="async">
     </picture>
     <div class="hero-scrim"></div>
     <div class="hero-copy">
       <span class="eyebrow">Gulfport, FL</span>
       <h1>A bar for staying out, minus the hangover.</h1>
-      <p class="lead">Zero-proof cocktails after dark. Coffee and New Orleans-inspired plates from 7am.</p>
+      <p class="lead">Espresso at 7. A proper cocktail after dark.</p>
       <div class="hero-actions">
         <span data-hero-cta>{reserve("hero")}</span>
         <a class="text-link" href="/menu.html">View menu →</a>
@@ -246,11 +248,11 @@ def build_home():
     <div class="wrap">
       <span class="eyebrow">The Room</span>
       <h2>Chandeliers, then the patio.</h2>
-      <p class="room-copy">We wanted a bar, not a juice bar. Coffee at open. The room turns after dark.</p>
+      <p class="room-copy">Velvet booths, one chandelier, and a porch when you want the air.</p>
       <div class="room-grid">
-        <figure class="wipe"><img src="/images/v3/hero-m-768.webp" width="768" height="960" alt="Curved velvet booths under the chandelier" loading="lazy" decoding="async"><figcaption class="cap">Under the chandelier</figcaption></figure>
-        <figure class="wipe"><img src="/images/v3/bar-sq-768.webp" width="768" height="768" alt="Pendant lights over the bar at night" loading="lazy" decoding="async"><figcaption class="cap">The bar</figcaption></figure>
-        <figure class="wipe"><img src="/images/v3/patio-754.webp" width="754" height="1006" alt="The porch at night, string lights over outdoor seats" loading="lazy" decoding="async"><figcaption class="cap">The patio</figcaption></figure>
+        <figure class="wipe"><img src="/images/v3/hero-m-768.webp" width="768" height="960" alt="Curved velvet booths under the chandelier"><figcaption class="cap">Under the chandelier</figcaption></figure>
+        <figure class="wipe"><img src="/images/v3/bar-sq-768.webp" width="768" height="768" alt="Pendant lights over the bar at night"><figcaption class="cap">The bar</figcaption></figure>
+        <figure class="wipe"><img src="/images/v3/patio-754.webp" width="754" height="1006" alt="The porch at night, string lights over outdoor seats"><figcaption class="cap">The patio</figcaption></figure>
       </div>
     </div>
   </section>
@@ -273,9 +275,13 @@ def build_home():
   <section class="cream" id="menu-teaser">
     <div class="wrap">
       <span class="eyebrow" style="color:#6b5a32">Morning to late</span>
-      <h2>Plates from 7am.</h2>
-      <p class="room-copy muted">The kitchen stays open with the bar. Same list, open to close. Daytime is walk-in.</p>
-      <p><a href="/breakfast-gulfport.html">Breakfast in Gulfport</a> · <a href="/menu.html#breakfast">Breakfast menu</a> · <a href="/menu.html#kitchen">Kitchen</a></p>
+      <h2>Breakfast doesn’t clock out.</h2>
+      <p class="room-copy muted">The kitchen stays with the bar. Same plates at 8am and 8pm.</p>
+      <div class="food-row">
+        <img src="/images/v3/morning-melt-800.webp" width="800" height="600" alt="The Classic Morning Melt breakfast sandwich" loading="lazy">
+        <img src="/images/v3/muffuletta-800.webp" width="800" height="600" alt="The Muffuletta on toasted focaccia" loading="lazy">
+      </div>
+      <p style="margin-top:18px"><a href="/menu.html#breakfast">Breakfast</a> · <a href="/menu.html#kitchen">Kitchen</a></p>
     </div>
   </section>
 
@@ -288,12 +294,9 @@ def build_home():
         <p>{e(HOURS)}</p>
         <p><a href="tel:{TEL}">Call {PHONE}</a></p>
         <p><a href="{FACTS["maps"]}">Directions</a></p>
-        <p class="fine">{e(BOOKING)}</p>
-        <p class="fine">{e(ALC)}</p>
-        <p>Out from St. Pete for the night? <a href="/things-to-do-in-gulfport.html">The pier and the beach</a> are a short walk from here.</p>
-        {faq_html(FACTS["faq"])}
+        {faq_html(FACTS["faq"][:1])}
       </div>
-      <a class="map-link" href="{FACTS["maps"]}"><img src="/images/v3/map.svg" width="800" height="360" alt="Map of Sober Bar on Beach Boulevard in Gulfport"></a>
+      <a class="map-link" href="{FACTS["maps"]}"><img src="/images/v3/map.svg" width="800" height="360" alt="Map pin for 3062 Beach Blvd S, Gulfport"></a>
     </div>
   </section>
 
@@ -301,7 +304,7 @@ def build_home():
     <img src="/images/v3/bar-wide-1200.webp" width="1400" height="788" alt="The bar at night, pendant lights over the stools" loading="lazy">
     <div class="scrim"></div>
     <div class="wrap">
-      <h2>Your table’s waiting.</h2>
+      <h2>Pull up a stool.</h2>
       <div class="hero-actions">{reserve("close")}</div>
     </div>
   </section>
@@ -333,11 +336,11 @@ def build_home():
   "sameAs": ["{FACTS["instagram"]}", "{FACTS["facebook"]}", "{LISTING}"]
 }}
 </script>
-{faq_schema(FACTS["faq"])}
+{faq_schema(FACTS["faq"][:1])}
 '''
     write("index.html", shell(
         "Sober Bar & Kitchen — Gulfport",
-        "A bar for staying out, minus the hangover. Zero-proof cocktails and coffee in Gulfport.",
+        "Espresso at 7, zero-proof cocktails after dark, on Beach Boulevard in Gulfport.",
         "/",
         main,
         "home",
@@ -366,19 +369,18 @@ def build_menu():
     main = f'''<main id="main" class="page cream">
   <div class="wrap">
     <h1>Menu</h1>
-    <p class="lead" style="color:#3c342c">Served from open to close, every day. No prices on this page.</p>
+    <p class="lead" style="color:#3c342c">From the first coffee to the last cocktail. Ask us what it costs today.</p>
     {room("/images/v3/bar-wide-1200.webp", 1400, 788, "The bar at Sober Bar at night")}
     <nav class="chips" aria-label="Menu categories">{chips}</nav>
     {''.join(sections)}
-    <p>{e(ALC)} Ask for today’s prices. Tell us about allergies before you order.</p>
-    <p>Same list from the first coffee to the last cocktail. <a href="/mocktails-st-petersburg.html">Coming from St. Pete</a>, start with a drink.</p>
+    <p>{e(ALC)} Tell us about allergies before you order.</p>
     <p>{reserve("menu", "Reserve dinner")} <a class="text-link" href="/reservations.html" style="margin-left:16px">Reservations →</a></p>
     <p style="color:#3c342c">{e(BOOKING)}</p>
   </div>
 </main>'''
     write("menu.html", shell(
         "Menu — Sober Bar & Kitchen",
-        "Cocktails, NA beer, coffee, breakfast, and the kitchen at Sober Bar in Gulfport. No prices published.",
+        "Cocktails, coffee, breakfast, and the kitchen in Gulfport. Prices at the table.",
         "/menu.html",
         main,
         "menu",
@@ -389,25 +391,25 @@ def build_reservations():
     main = f'''<main id="main" class="page">
   <div class="wrap book">
     <h1>Reserve a table</h1>
-    <p class="lead">Dinner online is 4–9:30pm. Sunday brunch online is 10am–1pm. Daytime is walk-in.</p>
+    <p class="lead">Dinner, 4 to 9:30. Sunday brunch, 10 to 1. Every other hour, walk in and we’ll seat you.</p>
     <div class="hero-actions">
       <span data-hero-cta>{reserve("res", "Reserve dinner")}</span>
       <a class="text-link" data-placement="res-brunch" href="{e(BRUNCH)}">Reserve Sunday brunch</a>
     </div>
     {party_note()}
-    {visit_card()}
+    {visit_card(show_phone=False)}
   </div>
 </main>'''
     write("reservations.html", shell(
         "Reserve a table — Sober Bar",
-        "Book dinner online from 4–9:30pm, or Sunday brunch from 10am–1pm. Daytime is walk-in. Parties of 1–6.",
+        "Dinner books from 4 to 9:30. Sunday brunch, 10 to 1. Parties of 1–6. Daytime is walk-in.",
         "/reservations.html",
         main,
         "res",
     ))
 
 
-def article(title, desc, path, h1, lead, body, placement, kind="dinner", book=True, label="Reserve a table"):
+def article(title, desc, path, h1, lead, body, placement, kind="dinner", book=True, label="Reserve a table", show_phone=True):
     if book:
         actions = (
             f'<p style="margin-top:22px"><span data-hero-cta>{reserve(placement, label, kind)}</span> '
@@ -426,7 +428,7 @@ def article(title, desc, path, h1, lead, body, placement, kind="dinner", book=Tr
     {room("/images/v3/hero-d-1200.webp", 1400, 875, "The lounge at Sober Bar under the chandelier")}
     {body}
     {actions}
-    {visit_card()}
+    {visit_card(show_phone)}
   </div>
 </main>'''
     write(path.lstrip("/"), shell(title, desc, path, main, placement, kind=kind))
@@ -435,43 +437,37 @@ def article(title, desc, path, h1, lead, body, placement, kind="dinner", book=Tr
 def build_rest():
     article(
         "Breakfast and coffee in Gulfport — Sober Bar",
-        "Breakfast and coffee from 7am at Sober Bar & Kitchen, 3062 Beach Blvd S, Gulfport, FL 33707. Daytime is walk-in. Call (813) 586-1660.",
+        "Espresso, cold brew, and a New Orleans-inspired breakfast from 7am in Gulfport. Daytime is walk-in.",
         "/breakfast-gulfport.html",
         "Breakfast and coffee in Gulfport",
-        "Espresso, cold brew, and a New Orleans-inspired breakfast from 7am at Sober Bar & Kitchen, 3062 Beach Blvd S. Daytime is walk-in.",
-        f"<p>The espresso bar is open with the doors at {e(ADDR)}. Call <a href=\"tel:{TEL}\">{PHONE}</a>. The full menu runs open to close. Daytime tables are walk-in. After dark, the <a href=\"/mocktails-st-petersburg.html\">non-alcoholic cocktails</a> are the reason to stay.</p>" + menu_list(["coffee", "breakfast"]) + f"<p>{e(ALC)}</p>",
+        "Espresso, cold brew, and breakfast with a New Orleans accent. Doors at 7.",
+        "<p>The rest of the menu stays up until close.</p>" + menu_list(["coffee", "breakfast"]),
         "breakfast",
         book=False,
     )
     article(
         "Sunday jazz brunch in Gulfport — Sober Bar",
-        "Live jazz every Sunday brunch at Sober Bar in Gulfport. Call (813) 586-1660 for this Sunday's jazz time.",
+        "Live jazz every Sunday brunch at Sober Bar in Gulfport. Call for this Sunday’s set.",
         "/sunday-jazz-brunch.html",
         "Sunday jazz brunch in Gulfport",
-        "Live jazz in the room every Sunday brunch. Online brunch booking is 10am–1pm. Call (813) 586-1660 for this Sunday's jazz time.",
-        f'''<p>The doors are already open at 7am if you want coffee first. Daytime is walk-in. Call <a href="tel:{TEL}">{PHONE}</a> for this Sunday’s jazz time. No band or start time is published. Online brunch booking is 10am–1pm.</p>
-        <p>The full menu runs on Sunday, including <strong>The White Rabbit</strong> and the plant-based <strong>Garden District Muffuletta</strong>. Later, the bar pours <strong>Call Me an Ube</strong>.</p>
-        <p>{e(ALC)}</p>''',
+        "Coffee’s on at 7. The set is why you stay.",
+        f'''<p>Call <a href="tel:{TEL}">{PHONE}</a> for this Sunday’s set. We don’t publish the band or the start time.</p>
+        <p>The full menu is on, including <strong>The White Rabbit</strong> and the plant-based <strong>Garden District Muffuletta</strong>. Stay late enough and order a <strong>Call Me an Ube</strong>.</p>''',
         "jazz",
         kind="brunch",
         label="Reserve Sunday brunch",
+        show_phone=False,
     )
     article(
-        "Non-alcoholic cocktails near St. Pete — Sober Bar & Kitchen",
-        "Non-alcoholic cocktails at Sober Bar & Kitchen in Gulfport, next to St. Petersburg.",
+        "Mocktails — Sober Bar",
+        "Zero-proof cocktails in Gulfport, a few minutes from St. Pete.",
         "/mocktails-st-petersburg.html",
-        "Non-alcoholic cocktails near St. Pete",
-        "We pour them in Gulfport, just across the line from St. Petersburg.",
-        f'''<p>Gulfport borders St. Petersburg, in the Tampa Bay area. Coffee when the doors open. Cocktails once the room turns.</p>
-        <h2>In the Tampa Bay area</h2>
-        <p>The drinks are built like bar cocktails, just zero-proof. {e(ALC)} Dinner books online from 4–9:30pm. Daytime is walk-in. <a href="/breakfast-gulfport.html">Mornings are for coffee</a>.</p>
-        <p><span data-hero-cta>{reserve("mocktails")}</span></p>
-        {menu_list(['cocktails'])}
-        {faq_html([FACTS["nearFaq"]])}
-        {faq_schema([FACTS["nearFaq"]])}''',
+        "A proper cocktail. Zero proof.",
+        "Poured in Gulfport, a few minutes from St. Pete.",
+        f"<p>Start with a Call Me an Ube.</p>{menu_list(['cocktails'])}",
         "mocktails",
     )
-    gulf = f'''
+    gulf = '''
     <h2>Waterfront</h2>
     <ul class="list">
       <li><a href="https://mygulfport.us/waterfront-redevelopment-district/">Williams Pier</a> — The Walter and Bert Williams Fishing Pier, at 54th Street South and Shore Boulevard. Free admission, with fishing access, benches, and lighting.</li>
@@ -485,34 +481,32 @@ def build_rest():
       <li><a href="https://visitgulfportflorida.com/event/gulfport-fresh-market/">Gulfport Tuesday Fresh Market</a> — A year-round Tuesday market on Beach Boulevard, 9 a.m.–2 p.m.</li>
       <li><a href="https://www.gulfportbeachbazaar.com/">Gulfport Beach Bazaar</a> — Coastal gifts and souvenirs on Beach Boulevard.</li>
     </ul>
-    <h2>On Beach Boulevard</h2>
-    <p>When the walk is done, the bar is on Beach Boulevard. <a href="/mocktails-st-petersburg.html">Cocktails</a> come out after dark, and coffee starts at 7am.</p>
     '''
     article(
         "Things to do in Gulfport — Sober Bar",
-        "Gulfport's pier, beach, and markets, plus Sober Bar & Kitchen at 3062 Beach Blvd S. Call (813) 586-1660.",
+        "Williams Pier, the beach, the markets, and a porch on Beach Boulevard.",
         "/things-to-do-in-gulfport.html",
         "Things to do in Gulfport",
-        "The pier, the beach, and a table on Beach Boulevard.",
+        "The pier, the beach, the night market — and our porch when you’re walked out.",
         gulf,
         "gulfport",
     )
-    story = f'''
-    <p>The idea started with a simple question: why does going out have to come with alcohol?</p>
-    <p>Gulfport already had art walks, night markets, and good food. If you were not drinking, the options were a coffee shop or a soda at a regular bar.</p>
-    <h2>We didn’t want a juice bar. We wanted a bar.</h2>
-    <p>Sober Bar at {e(A["street"])} is a coffee house by day and a cocktail bar by night. The kitchen is New Orleans-inspired. The drinks are built like craft cocktails. {e(ALC)} <a href="/mocktails-st-petersburg.html">The cocktail list</a> is where most people start.</p>
-    <p>People walk in skeptical. Then they see the room, taste a Call Me an Ube, and stay.</p>
-    <h2>Who comes in</h2>
-    <p>Designated drivers. Pregnant guests. People in recovery. People who just do not feel like drinking tonight. The common thread is choice.</p>
-    <p>The hardest part was not the drinks. It was convincing people a sober bar could still feel like a bar.</p>
+    story = '''
+    <p>I kept asking a simple question: why does going out have to come with alcohol?</p>
+    <p>Gulfport already had the art walk, the night market, and good food. Skip the drink and your choices were a coffee shop or a sad soda at someone else’s bar.</p>
+    <h2>So I built the bar I wanted to walk into.</h2>
+    <p>The kitchen is New Orleans-inspired. The drinks are built like the cocktails you already order. The room does the rest of the convincing.</p>
+    <p>People walk in skeptical. Then they taste a Call Me an Ube and stay for the room.</p>
+    <h2>Who it’s for</h2>
+    <p>Designated drivers. Pregnant friends. People in recovery. People who simply don’t feel like it tonight. They still want the night out.</p>
+    <p>The hard part wasn’t the recipes. It was proving a sober bar could still feel like a bar.</p>
     '''
     article(
         "Why I opened a sober bar — Sober Bar",
-        "Sean Hawthorne on opening Sober Bar, a cocktail bar and coffee house in Gulfport, Florida.",
+        "Sean Hawthorne on opening a cocktail bar and coffee house in Gulfport.",
         "/why-i-opened-a-sober-bar.html",
         "Why I opened a sober bar",
-        "A Gulfport bar for the night out, without the hangover.",
+        "Gulfport had plenty of nights out. None of them were for people skipping the drink.",
         story,
         "story",
     )
@@ -524,11 +518,11 @@ def build_rest():
     '''
     article(
         "As seen in — Sober Bar",
-        "Press for Sober Bar in Gulfport: FOX 13, I Love the Burg, St. Pete Rising, and The Gabber.",
+        "FOX 13, I Love the Burg, St. Pete Rising, and The Gabber on Sober Bar in Gulfport.",
         "/as-seen-in.html",
         "As seen in",
-        "Four outlets, linked. Email Sean for room photos.",
-        press + f"<p>Email <a href=\"mailto:{EMAIL}\">{EMAIL}</a> or call <a href=\"tel:{TEL}\">{PHONE}</a>.</p>",
+        "Four stories worth reading. Room photos, ask Sean.",
+        press + f"<p>Email <a href=\"mailto:{EMAIL}\">{EMAIL}</a> for photos.</p>",
         "press",
     )
 
@@ -547,7 +541,7 @@ def build_private():
       <div><label for="inq-notes">Notes</label><textarea id="inq-notes" name="notes"></textarea></div>
       <button class="reserve" type="submit">Open email inquiry</button>
     </form>
-    <p>No mail app? Email <a href="mailto:{EMAIL}">{EMAIL}</a> or call <a href="tel:{TEL}">{PHONE}</a>.</p>
+    <p>No mail app? Email <a href="mailto:{EMAIL}">{EMAIL}</a> or <a href="tel:{TEL}">call the bar</a>.</p>
     {party_note()}
   </div>
   <script>
@@ -559,24 +553,24 @@ def build_private():
       window.location.href = 'mailto:{EMAIL}?subject=' + encodeURIComponent('Group Event Inquiry | Website') + '&body=' + encodeURIComponent(body);
     }});
   </script>'''
-    body = f'''<p>Showers, birthdays, office gatherings, and recovery milestones use the same room and patio. Tell us the date and headcount and we’ll confirm what fits. Menus and pricing are in the quote.</p>
-    <p>{e(ALC)} Popular builds include Call Me an Ube and Jinn &amp; Juniper.</p>
-    <p><a href="/sunday-jazz-brunch.html">Sunday jazz brunch</a> is the same room, not a separate venue.</p>
+    body = f'''<p>Showers, birthdays, office gatherings, recovery milestones. Same room, same patio. Menus and pricing come back in the quote.</p>
+    <p>The orders people request first: Call Me an Ube and Jinn &amp; Juniper.</p>
+    <p><a href="/sunday-jazz-brunch.html">Sunday jazz</a> is this room, not a second venue.</p>
     {form}'''
     main = f'''<main id="main" class="page">
   <div class="wrap">
     <h1>Private events in Gulfport</h1>
-    <p class="lead">Tell us the date and headcount. We’ll confirm what fits.</p>
+    <p class="lead">Give us a date and a headcount. We’ll tell you if the room can throw it.</p>
     {room("/images/v3/hero-d-1200.webp", 1400, 875, "The lounge, where private gatherings sit")}
     <p><a class="reserve" href="#inquire">Plan your gathering</a></p>
     {body}
     <p style="margin-top:22px">{reserve("private-events")}</p>
-    {visit_card()}
+    {visit_card(show_phone=False)}
   </div>
 </main>'''
     write("private-events.html", shell(
         "Private events in Gulfport — Sober Bar",
-        "Showers, birthdays, office gatherings, and recovery milestones at Sober Bar in Gulfport.",
+        "Showers, birthdays, and gatherings in the Gulfport room. Tell us the date.",
         "/private-events.html",
         main,
         "private-events",
@@ -608,15 +602,14 @@ def build_sponsor():
     main = f'''<main id="main" class="page">
   <div class="wrap">
     <h1>Event sponsorship</h1>
-    <p class="lead">Tell us about the event. We’ll put together what fits.</p>
+    <p class="lead">Tell us the event. We’ll tell you what we can actually bring.</p>
     {room("/images/v3/bar-wide-1200.webp", 1400, 788, "The bar at Sober Bar")}
-    <p>{e(ALC)}</p>
     {form}
   </div>
 </main>'''
     write("event-sponsorship.html", shell(
         "Event sponsorship — Sober Bar",
-        "Custom event sponsorship with Sober Bar in Gulfport. Tell us about the event.",
+        "Custom event sponsorship with Sober Bar in Gulfport.",
         "/event-sponsorship.html",
         main,
         "sponsorship",
@@ -673,10 +666,9 @@ def build_llms_and_sitemap():
         f"- Reserve dinner: {DINNER}",
         f"- Reserve Sunday brunch: {BRUNCH}",
         f"- Website: {FACTS['domain']}",
-        f"- Zero-proof bar in Gulfport: {FACTS['domain']}/",
-        f"- Non-alcoholic cocktails near St. Petersburg and Tampa Bay: {FACTS['domain']}/mocktails-st-petersburg.html",
-        f"- Breakfast in Gulfport: {FACTS['domain']}/breakfast-gulfport.html",
-        f"- Things to do in Gulfport: {FACTS['domain']}/things-to-do-in-gulfport.html",
+        f"- Mocktails: {FACTS['domain']}/mocktails-st-petersburg.html",
+        f"- Breakfast: {FACTS['domain']}/breakfast-gulfport.html",
+        f"- Gulfport guide: {FACTS['domain']}/things-to-do-in-gulfport.html",
         "",
         "## Menu",
     ]
@@ -693,11 +685,7 @@ def build_llms_and_sitemap():
     ]
     body = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
-        pri = "1.0" if u == "/" else "0.8" if u in {
-            "/mocktails-st-petersburg.html",
-            "/breakfast-gulfport.html",
-            "/things-to-do-in-gulfport.html",
-        } else "0.7"
+        pri = "1.0" if u == "/" else "0.7"
         body.append(f"  <url><loc>{FACTS['domain']}{u if u != '/' else '/'}</loc><lastmod>2026-10-11</lastmod><priority>{pri}</priority></url>")
     body.append("</urlset>\n")
     (PUBLIC / "sitemap.xml").write_text("\n".join(body))
@@ -736,13 +724,39 @@ def check():
         if "party of 7" in text and path.name not in party_ok:
             raise SystemExit(f"party of 7 on {path.name}")
     home = (PUBLIC / "index.html").read_text()
-    if "morning-melt" in home or "muffuletta-" in home:
-        raise SystemExit("food photo on homepage")
+    if "morning-melt" not in home or "muffuletta-" not in home:
+        raise SystemExit("homepage food row missing")
     if "productId=101287" not in home or "productId=101285" in home:
         raise SystemExit("homepage seat link drifted")
     mock = (PUBLIC / "mocktails-st-petersburg.html").read_text()
-    if "Non-alcoholic cocktails near St. Pete" not in mock or "productId=101287" not in mock:
+    if "productId=101287" not in mock or "In the Tampa Bay area" in mock:
         raise SystemExit("mocktails page drifted")
+    breakfast_main = (PUBLIC / "breakfast-gulfport.html").read_text().split("<main", 1)[-1].split("</main", 1)[0]
+    if "productId=" in breakfast_main:
+        raise SystemExit("breakfast body has a seat link")
+    jazz = (PUBLIC / "sunday-jazz-brunch.html").read_text()
+    if "productId=101285" not in jazz:
+        raise SystemExit("jazz should book brunch")
+    skip_counts = {
+        "concierge-card.html", "passport-card.html", "review-tent.html",
+        "press-kit.html", "vote.html",
+    }
+    for path in PUBLIC.glob("*.html"):
+        if path.name in skip_counts:
+            continue
+        visible = re.sub(r"<script[\s\S]*?</script>", " ", path.read_text(), flags=re.I)
+        visible = re.sub(r"<head[\s\S]*?</head>", " ", visible, flags=re.I)
+        visible = re.sub(r"\s(?:href|src|srcset|content)=\"[^\"]*\"", " ", visible)
+        visible = re.sub(r"<[^>]+>", " ", visible)
+        visible = html.unescape(visible)
+        phones = visible.count(PHONE)
+        streets = visible.count("3062")
+        if phones > 3 or streets > 3:
+            raise SystemExit(f"{path.name} mentions phone {phones}, address {streets}")
+        low = visible.lower()
+        for b in ("geckofest", "speakeasy", "free drink", "10% off", "kratom"):
+            if b in low:
+                raise SystemExit(f"{b} in {path.name}")
     if "kratom" in (PUBLIC / "review-tent.html").read_text().lower():
         raise SystemExit("review tent still lists kratom")
     print("facts check ok")
