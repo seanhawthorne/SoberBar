@@ -30,8 +30,24 @@
     {
       "q": "Can drinks contain trace alcohol?",
       "a": "We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV."
+    },
+    {
+      "q": "Where is the zero-proof bar in Gulfport?",
+      "a": "Sober Bar & Kitchen is at 3062 Beach Blvd S, Gulfport, FL 33707. Call (813) 586-1660. The website is sipsoberbar.com."
+    },
+    {
+      "q": "What are the hours?",
+      "a": "Sunday–Thursday 7am–10pm. Friday and Saturday 7am–midnight."
+    },
+    {
+      "q": "When can I book a table online?",
+      "a": "Online booking is dinner, 4–9:30pm, and Sunday brunch, 10am–1pm. Daytime is walk-in. Online booking is for parties of 1–6. For 7 or more, call (813) 586-1660."
     }
   ],
+  "nearFaq": {
+    "q": "Where can I get non-alcoholic cocktails near St. Petersburg?",
+    "a": "Sober Bar & Kitchen is in Gulfport, which borders St. Petersburg and is in the Tampa Bay area, at 3062 Beach Blvd S, Gulfport, FL 33707. Call (813) 586-1660. The cocktails are zero-proof. Some NA beers contain trace alcohol below 0.5% ABV."
+  },
   "listing": "https://www.google.com/maps?cid=9116696801118190440",
   "seatOnDinner": "https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637",
   "seatOnBrunch": "https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637",

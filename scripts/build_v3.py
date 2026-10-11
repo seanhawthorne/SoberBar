@@ -148,6 +148,29 @@ def party_note():
     )
 
 
+def faq_html(items):
+    return "".join(
+        f'<details><summary>{e(item["q"])}</summary><p>{e(item["a"])}</p></details>'
+        for item in items
+    )
+
+
+def faq_schema(items):
+    data = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": item["q"],
+                "acceptedAnswer": {"@type": "Answer", "text": item["a"]},
+            }
+            for item in items
+        ],
+    }
+    return f'<script type="application/ld+json">\n{json.dumps(data, indent=2)}\n</script>'
+
+
 def visit_card():
     hours = "<br>".join(e(h["label"]) for h in FACTS["hours"])
     return f'''<div class="card" id="visit-card">
@@ -211,12 +234,13 @@ def build_home():
     <div class="hero-copy">
       <span class="eyebrow">Gulfport, FL</span>
       <h1>A bar for staying out, minus the hangover.</h1>
-      <p class="lead">Zero-proof cocktails after dark. Coffee and New Orleans-inspired plates from 7am.</p>
+      <p class="lead">A zero-proof bar in Gulfport. Cocktails after dark. Coffee and New Orleans-inspired plates from 7am.</p>
       <div class="hero-actions">
         <span data-hero-cta>{reserve("hero")}</span>
         <a class="text-link" href="/menu.html">View menu →</a>
       </div>
       <p class="fine">{e(BOOKING)}</p>
+      <p class="fine">{e(FACTS["name"])} · {e(ADDR)} · <a href="tel:{TEL}">{PHONE}</a></p>
     </div>
   </section>
 
@@ -252,12 +276,8 @@ def build_home():
     <div class="wrap">
       <span class="eyebrow" style="color:#6b5a32">Morning to late</span>
       <h2>Plates from 7am.</h2>
-      <p class="room-copy muted">The kitchen stays open with the bar. Same list, open to close.</p>
-      <div class="food-row">
-        <img src="/images/v3/morning-melt-800.webp" width="800" height="600" alt="The Classic Morning Melt breakfast sandwich" loading="lazy">
-        <img src="/images/v3/muffuletta-800.webp" width="800" height="600" alt="The Muffuletta on toasted focaccia" loading="lazy">
-      </div>
-      <p style="margin-top:18px"><a href="/menu.html#breakfast">Breakfast</a> · <a href="/menu.html#kitchen">Kitchen</a></p>
+      <p class="room-copy muted">The kitchen stays open with the bar. Same list, open to close. Daytime is walk-in.</p>
+      <p><a href="/breakfast-gulfport.html">Breakfast in Gulfport</a> · <a href="/menu.html#breakfast">Breakfast menu</a> · <a href="/menu.html#kitchen">Kitchen</a></p>
     </div>
   </section>
 
@@ -272,10 +292,8 @@ def build_home():
         <p><a href="{FACTS["maps"]}">Directions</a></p>
         <p class="fine">{e(BOOKING)}</p>
         <p class="fine">{e(ALC)}</p>
-        <details>
-          <summary>{e(FACTS["faq"][0]["q"])}</summary>
-          <p>{e(FACTS["faq"][0]["a"])}</p>
-        </details>
+        <p><a href="/mocktails-st-petersburg.html">Non-alcoholic cocktails near St. Pete</a> · <a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a></p>
+        {faq_html(FACTS["faq"])}
       </div>
       <a class="map-link" href="{FACTS["maps"]}"><img src="/images/v3/map.svg" width="800" height="360" alt="Map pin for 3062 Beach Blvd S, Gulfport"></a>
     </div>
@@ -295,10 +313,12 @@ def build_home():
   "@context": "https://schema.org",
   "@type": ["BarOrPub", "Restaurant"],
   "name": "Sober Bar & Kitchen",
+  "alternateName": "Sober Bar",
   "url": "{FACTS["domain"]}/",
   "telephone": "{TEL}",
   "email": "{EMAIL}",
   "servesCuisine": "New Orleans-inspired",
+  "areaServed": ["Gulfport, FL", "St. Petersburg, FL", "Tampa Bay"],
   "acceptsReservations": "{DINNER}",
   "hasMenu": "{FACTS["domain"]}/menu.html",
   "image": "{FACTS["domain"]}/images/v3/hero-night-2400.webp",
@@ -312,24 +332,14 @@ def build_home():
     "addressCountry": "US"
   }},
   "openingHoursSpecification": [{schema_hours}],
-  "sameAs": ["{FACTS["instagram"]}", "{LISTING}"]
+  "sameAs": ["{FACTS["instagram"]}", "{FACTS["facebook"]}", "{LISTING}"]
 }}
 </script>
-<script type="application/ld+json">
-{{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{{
-    "@type": "Question",
-    "name": {json.dumps(FACTS["faq"][0]["q"])},
-    "acceptedAnswer": {{ "@type": "Answer", "text": {json.dumps(FACTS["faq"][0]["a"])} }}
-  }}]
-}}
-</script>
+{faq_schema(FACTS["faq"])}
 '''
     write("index.html", shell(
-        "Sober Bar & Kitchen — Gulfport",
-        "A bar for staying out, minus the hangover. Zero-proof cocktails, coffee, and New Orleans-inspired plates on Beach Boulevard.",
+        "Zero-proof bar in Gulfport — Sober Bar & Kitchen",
+        "Sober Bar & Kitchen is a zero-proof bar at 3062 Beach Blvd S, Gulfport, FL 33707. Call (813) 586-1660. sipsoberbar.com.",
         "/",
         main,
         "home",
@@ -363,6 +373,7 @@ def build_menu():
     <nav class="chips" aria-label="Menu categories">{chips}</nav>
     {''.join(sections)}
     <p>{e(ALC)} Ask for today’s prices. Tell us about allergies before you order.</p>
+    <p>This menu is for the <a href="/">zero-proof bar in Gulfport</a>. <a href="/mocktails-st-petersburg.html">Non-alcoholic cocktails near St. Pete</a> are poured at this address.</p>
     <p>{reserve("menu", "Reserve dinner")} <a class="text-link" href="/reservations.html" style="margin-left:16px">Reservations →</a></p>
     <p style="color:#3c342c">{e(BOOKING)}</p>
   </div>
@@ -426,11 +437,11 @@ def article(title, desc, path, h1, lead, body, placement, kind="dinner", book=Tr
 def build_rest():
     article(
         "Breakfast and coffee in Gulfport — Sober Bar",
-        "Espresso, cold brew, chai, and a New Orleans-inspired breakfast from 7am at Sober Bar in Gulfport.",
+        "Breakfast and coffee from 7am at Sober Bar & Kitchen, 3062 Beach Blvd S, Gulfport, FL 33707. Daytime is walk-in. Call (813) 586-1660.",
         "/breakfast-gulfport.html",
         "Breakfast and coffee in Gulfport",
-        "Espresso, cold brew, and a New Orleans-inspired breakfast from 7am. Daytime is walk-in.",
-        "<p>The espresso bar is open with the doors. The full menu runs open to close. Daytime tables are walk-in.</p>" + menu_list(["coffee", "breakfast"]) + f"<p>{e(ALC)}</p>",
+        "Espresso, cold brew, and a New Orleans-inspired breakfast from 7am at Sober Bar & Kitchen, 3062 Beach Blvd S. Daytime is walk-in.",
+        f"<p>The espresso bar is open with the doors at {e(ADDR)}. Call <a href=\"tel:{TEL}\">{PHONE}</a>. The full menu runs open to close. Daytime tables are walk-in. After dark, the <a href=\"/mocktails-st-petersburg.html\">non-alcoholic cocktails</a> are the reason to stay.</p>" + menu_list(["coffee", "breakfast"]) + f"<p>{e(ALC)}</p>",
         "breakfast",
         book=False,
     )
@@ -448,15 +459,21 @@ def build_rest():
         label="Reserve Sunday brunch",
     )
     article(
-        "Mocktails near St. Pete — Sober Bar",
-        "Zero-proof cocktails at Sober Bar in Gulfport, on Beach Boulevard near St. Petersburg.",
+        "Non-alcoholic cocktails near St. Pete — Sober Bar & Kitchen",
+        "Non-alcoholic cocktails at Sober Bar & Kitchen in Gulfport, which borders St. Petersburg and is in the Tampa Bay area. 3062 Beach Blvd S. Call (813) 586-1660.",
         "/mocktails-st-petersburg.html",
-        "Zero-proof cocktails near St. Pete",
-        "Sober Bar pours zero-proof cocktails in Gulfport, on Beach Boulevard.",
-        f"<p>No drive time is published. Come for the room, then the list.</p>{menu_list(['cocktails'])}<p>{e(ALC)}</p>",
+        "Non-alcoholic cocktails near St. Pete",
+        "Sober Bar & Kitchen pours them in Gulfport, at 3062 Beach Blvd S, which borders St. Petersburg.",
+        f'''<p>Gulfport borders St. Petersburg and is in the Tampa Bay area. There is one address: {e(FACTS["name"])}, {e(ADDR)}. Call <a href="tel:{TEL}">{PHONE}</a>. The website is sipsoberbar.com.</p>
+        <h2>In the Tampa Bay area</h2>
+        <p>The cocktail list is zero-proof. {e(ALC)} Dinner books online from 4–9:30pm. Daytime is walk-in. <a href="/breakfast-gulfport.html">Breakfast in Gulfport</a> starts at 7am. <a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a> covers the pier and the beach. The <a href="/">zero-proof bar in Gulfport</a> is this room.</p>
+        <p><span data-hero-cta>{reserve("mocktails")}</span></p>
+        {menu_list(['cocktails'])}
+        {faq_html([FACTS["nearFaq"]])}
+        {faq_schema([FACTS["nearFaq"]])}''',
         "mocktails",
     )
-    gulf = '''
+    gulf = f'''
     <h2>Waterfront</h2>
     <ul class="list">
       <li><a href="https://mygulfport.us/waterfront-redevelopment-district/">Williams Pier</a> — The Walter and Bert Williams Fishing Pier, at 54th Street South and Shore Boulevard. Free admission, with fishing access, benches, and lighting.</li>
@@ -470,12 +487,14 @@ def build_rest():
       <li><a href="https://visitgulfportflorida.com/event/gulfport-fresh-market/">Gulfport Tuesday Fresh Market</a> — A year-round Tuesday market on Beach Boulevard, 9 a.m.–2 p.m.</li>
       <li><a href="https://www.gulfportbeachbazaar.com/">Gulfport Beach Bazaar</a> — Coastal gifts and souvenirs on Beach Boulevard.</li>
     </ul>
+    <h2>On Beach Boulevard</h2>
+    <p><a href="/">Sober Bar &amp; Kitchen</a> is the zero-proof bar at {e(ADDR)}. Call <a href="tel:{TEL}">{PHONE}</a>. <a href="/mocktails-st-petersburg.html">Non-alcoholic cocktails near St. Pete</a> are poured here. <a href="/breakfast-gulfport.html">Breakfast in Gulfport</a> starts at 7am and is walk-in.</p>
     <h2>GeckoFest</h2>
-    <p><a href="https://visitgulfportflorida.com/event/gecko-fest/">GeckoFest</a> is Gulfport’s annual street festival. The chamber lists the 2026 festival for Saturday, September 5, 10 a.m.–8 p.m.</p>
+    <p><a href="https://visitgulfportflorida.com/event/gecko-fest/">GeckoFest</a> is Gulfport’s annual street festival. The chamber listed the 2026 festival for Saturday, September 5, 10 a.m.–8 p.m., at 3101 Beach Blvd S.</p>
     '''
     article(
         "Things to do in Gulfport — Sober Bar",
-        "A local guide to Gulfport's pier, beach, markets, and Sober Bar on Beach Boulevard.",
+        "Gulfport's pier, beach, and markets, plus Sober Bar & Kitchen at 3062 Beach Blvd S. Call (813) 586-1660.",
         "/things-to-do-in-gulfport.html",
         "Things to do in Gulfport",
         "The pier, the beach, and a table on Beach Boulevard.",
@@ -486,7 +505,7 @@ def build_rest():
     <p>The idea started with a simple question: why does going out have to come with alcohol?</p>
     <p>Gulfport already had art walks, night markets, and good food. If you were not drinking, the options were a coffee shop or a soda at a regular bar.</p>
     <h2>We didn’t want a juice bar. We wanted a bar.</h2>
-    <p>Sober Bar at {e(A["street"])} is a coffee house by day and a cocktail bar by night. The kitchen is New Orleans-inspired. The drinks are built like craft cocktails. {e(ALC)}</p>
+    <p>Sober Bar &amp; Kitchen at {e(ADDR)} is a coffee house by day and a cocktail bar by night. Call <a href="tel:{TEL}">{PHONE}</a>. The kitchen is New Orleans-inspired. The drinks are built like craft cocktails. {e(ALC)} <a href="/mocktails-st-petersburg.html">Non-alcoholic cocktails near St. Pete</a> are on that list.</p>
     <p>People walk in skeptical. Then they see the room, taste a Call Me an Ube, and stay.</p>
     <h2>Who comes in</h2>
     <p>Designated drivers. Pregnant guests. People in recovery. People who just do not feel like drinking tonight. The common thread is choice.</p>
@@ -657,6 +676,11 @@ def build_llms_and_sitemap():
         f"- {FACTS['jazz']}",
         f"- Reserve dinner: {DINNER}",
         f"- Reserve Sunday brunch: {BRUNCH}",
+        f"- Website: {FACTS['domain']}",
+        f"- Zero-proof bar in Gulfport: {FACTS['domain']}/",
+        f"- Non-alcoholic cocktails near St. Petersburg and Tampa Bay: {FACTS['domain']}/mocktails-st-petersburg.html",
+        f"- Breakfast in Gulfport: {FACTS['domain']}/breakfast-gulfport.html",
+        f"- Things to do in Gulfport: {FACTS['domain']}/things-to-do-in-gulfport.html",
         "",
         "## Menu",
     ]
@@ -673,7 +697,11 @@ def build_llms_and_sitemap():
     ]
     body = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
-        pri = "1.0" if u == "/" else "0.7"
+        pri = "1.0" if u == "/" else "0.8" if u in {
+            "/mocktails-st-petersburg.html",
+            "/breakfast-gulfport.html",
+            "/things-to-do-in-gulfport.html",
+        } else "0.7"
         body.append(f"  <url><loc>{FACTS['domain']}{u if u != '/' else '/'}</loc><lastmod>2026-10-11</lastmod><priority>{pri}</priority></url>")
     body.append("</urlset>\n")
     (PUBLIC / "sitemap.xml").write_text("\n".join(body))
@@ -711,6 +739,16 @@ def check():
                 raise SystemExit(f"unexpected seat link in {path.name}: {url}")
         if "party of 7" in text and path.name not in party_ok:
             raise SystemExit(f"party of 7 on {path.name}")
+    home = (PUBLIC / "index.html").read_text()
+    if "morning-melt" in home or "muffuletta-" in home:
+        raise SystemExit("food photo on homepage")
+    if "productId=101287" not in home or "productId=101285" in home:
+        raise SystemExit("homepage seat link drifted")
+    mock = (PUBLIC / "mocktails-st-petersburg.html").read_text()
+    if "Non-alcoholic cocktails near St. Pete" not in mock or "productId=101287" not in mock:
+        raise SystemExit("mocktails page drifted")
+    if "kratom" in (PUBLIC / "review-tent.html").read_text().lower():
+        raise SystemExit("review tent still lists kratom")
     print("facts check ok")
 
 
