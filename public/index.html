@@ -152,41 +152,33 @@ html { scroll-padding-top: 84px; }
 }
 
 
-    .hero-title-mob { display: none; }
-    .daynight { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 28px; }
-    .daynight figure, .quotes blockquote { margin: 0; }
-    .daynight img { width: 100%; height: 460px; object-fit: cover; display: block; }
-    .daynight figcaption { margin-top: 10px; letter-spacing: .22em; text-transform: uppercase; font-size: .72rem; color: var(--gold); }
+    .daynight { margin: 22px 0 0; }
+    .daynight img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 28%; display: block; }
     .story-line { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.12; color: var(--cream); max-width: 18em; margin: 0; }
     .story-line + p { max-width: 40em; margin-top: 14px; color: #f4ead8; }
     .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 22px; }
     .quotes .quote-card { display: block; height: 100%; color: inherit; text-decoration: none; }
     .quotes .quote-card:hover p { color: var(--gold-bright); }
-    .quotes blockquote { height: 100%; padding: 22px; border: 1px solid var(--gold-faint); background: #12100c; }
+    .quotes blockquote { height: 100%; margin: 0; padding: 22px; border: 1px solid var(--gold-faint); background: #12100c; }
     .quotes p { color: #f4ead8; margin: 0; }
     .quotes footer { border: 0; padding: 14px 0 0; text-align: left; color: var(--gold-bright); font-size: .95rem; letter-spacing: .02em; background: transparent; }
     .rating-link { color: var(--gold-bright); font-size: 1.15rem; text-decoration: none; border-bottom: 1px solid rgba(238,217,164,.45); }
     .press-row { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 34px; }
     .press-row a { color: #f4ead8; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; text-decoration: none; border-bottom: 1px solid rgba(212,175,106,.5); }
-    .highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .highlights a {
-      display: flex; align-items: flex-end; min-height: 140px; padding: 22px 18px;
-      border: 1px solid var(--gold-faint); background: #12100c; color: var(--cream);
-      text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.2;
-    }
-    .highlights a:hover { border-color: var(--gold); color: var(--gold-bright); }
+    .highlights { display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 0; padding: 0; list-style: none; }
+    .highlights a { color: #f4ead8; font-size: 1.2rem; line-height: 1.4; text-underline-offset: 3px; }
+    .highlights a:hover { color: var(--gold-bright); }
     .visit-split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: center; }
     .visit-split .visit-grid { grid-template-columns: 1fr; gap: 18px; }
     .visit-split .visit-photo img { aspect-ratio: 1400 / 1006; height: auto; object-fit: cover; }
     #visit .party-link { display: block; margin: 18px 0 14px; color: #f4ead8; font-size: 1rem; }
     @media (max-width: 900px) {
-      .daynight, .quotes, .highlights, .visit-split { grid-template-columns: 1fr; }
-      .daynight img { height: 260px; }
+      .quotes, .visit-split { grid-template-columns: 1fr; }
+      .visit-split { gap: 0; }
+      .visit-split .visit-photo { margin: 0 0 16px; padding: 0; border: 0; background: transparent; }
     }
     @media (max-width: 768px) {
-      .hero-title-desk { display: none; }
-      .hero-title-mob { display: inline; }
-      .hero-title { font-size: 2rem; max-width: 12em; }
+      .hero-title { font-size: clamp(1.85rem, 8vw, 2.35rem); max-width: 14em; }
       section { padding: 28px 0; }
       p, li, .brunch-copy, .visit-cell p, .quotes p, .story-line + p, .faq-wrap details p, .mi .mi-desc {
         font-size: 17px;
@@ -495,6 +487,8 @@ html { scroll-padding-top: 84px; }
     }
     .brunch-panel h2 { margin: 20px 0 24px; }
     .brunch-panel .btn { display: inline-block; margin-top: 28px; max-width: 100%; box-sizing: border-box; line-height: 1.35; }
+    .brunch-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+    .brunch-actions .btn { margin-top: 0; }
     .brunch-copy {
       max-width: 700px; margin: 0 auto; color: var(--muted);
       font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.18rem, 2.3vw, 1.45rem);
@@ -825,6 +819,7 @@ html { scroll-padding-top: 84px; }
       header.hero .hero-hours { justify-content: flex-start; margin-top: 8px; gap: 4px 14px; }
       section { padding: 28px 0; }
       .brunch-panel { padding: 36px 18px; }
+      .brunch-actions { grid-template-columns: 1fr; }
       .brunch-panel .btn { display: flex; width: 100%; align-items: center; justify-content: center; letter-spacing: 0.12em; padding: 16px 14px; }
     }
   </style>
@@ -874,7 +869,7 @@ html { scroll-padding-top: 84px; }
     </div>
     <div class="hero-copy">
       <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
-      <h1 class="hero-title"><span class="hero-title-desk">Coffee, New Orleans-inspired kitchen &amp; <em>alcohol-free</em> cocktails in Gulfport, FL</span><span class="hero-title-mob">Coffee by day. Cocktails after dark.</span></h1>
+      <h1 class="hero-title">Coffee, New Orleans-inspired kitchen &amp; <em>alcohol-free</em> cocktails in Gulfport, FL</h1>
       <p class="hero-sub">Espresso and free WiFi from 7am. Alcohol-free cocktails under the chandeliers after dark.</p>
       <div class="hero-actions">
         <div class="hero-cta-row">
@@ -894,24 +889,14 @@ html { scroll-padding-top: 84px; }
 
   <section id="day-night">
     <div class="shell">
-      <div class="daynight">
-        <figure>
-          <picture>
-            <source srcset="/images/cafe-480.webp 480w, /images/cafe-800.webp 800w, /images/cafe.webp 1100w" sizes="(max-width: 800px) 92vw, 46vw" type="image/webp">
-            <img src="/images/cafe.jpg" width="1100" height="1466" alt="The café room in the morning, marble tables by the front window" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Day</figcaption>
-        </figure>
-        <figure>
-          <picture>
-            <source srcset="/images/bar-night-480.webp 480w, /images/bar-night-800.webp 800w, /images/bar-night.webp 1300w" sizes="(max-width: 800px) 92vw, 46vw" type="image/webp">
-            <img src="/images/bar-night.jpg" width="1300" height="1734" alt="The bar at night, bottles on the back bar under two pendant lights" loading="lazy" decoding="async">
-          </picture>
-          <figcaption>Night</figcaption>
-        </figure>
-      </div>
       <h2 class="story-line">Your daytime coffee spot. Your evening cocktail bar.</h2>
       <p>Free, fast WiFi and espresso from 7am on Beach Boulevard. Alcohol-free cocktails after dark.</p>
+      <figure class="daynight">
+        <picture>
+          <source srcset="/images/cafe-480.webp 480w, /images/cafe-800.webp 800w, /images/cafe.webp 1100w" sizes="(max-width: 800px) 92vw, 980px" type="image/webp">
+          <img src="/images/cafe.jpg" width="1100" height="1466" alt="The café room in the morning, marble tables by the front window" loading="lazy" decoding="async">
+        </picture>
+      </figure>
     </div>
   </section>
 
@@ -952,11 +937,11 @@ html { scroll-padding-top: 84px; }
         <span class="eyebrow">The menu</span>
         <h2 class="title">Three plates, <em>then the rest.</em></h2>
       </div>
-      <div class="highlights">
-        <a href="/menu.html#hot-honey">Hot Honey Soppressata Flatbread</a>
-        <a href="/menu.html#garden-mezze">Garden Mezze Flatbread (V)</a>
-        <a href="/menu.html#classic-melt">The Classic Morning Melt</a>
-      </div>
+      <ul class="highlights">
+        <li><a href="/menu.html#hot-honey">Hot Honey Soppressata Flatbread</a></li>
+        <li><a href="/menu.html#garden-mezze">Garden Mezze Flatbread (V)</a></li>
+        <li><a href="/menu.html#classic-melt">The Classic Morning Melt</a></li>
+      </ul>
       <p class="menu-note"><a href="/menu.html">Full menu</a></p>
     </div>
   </section>
@@ -964,21 +949,14 @@ html { scroll-padding-top: 84px; }
   <section id="jazz-brunch">
     <div class="shell">
       <div class="brunch-panel">
-        <span class="eyebrow">Sunday at Sober Bar</span>
-        <h2 class="title">Jazz brunch<br><em>&amp; a slower Sunday.</em></h2>
-        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>. Live jazz every Sunday, 10am–1pm. Call <a href="tel:+18135861660">(813) 586-1660</a> for this Sunday's jazz time.</p>
-        <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" rel="noopener noreferrer" target="_blank">Reserve Sunday brunch</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="groups" class="menu-bg">
-    <div class="shell">
-      <div class="brunch-panel">
-        <span class="eyebrow">Private events</span>
-        <h2 class="title">Bring your people.</h2>
-        <p class="brunch-copy">Showers, birthdays, book clubs, and office gatherings in Gulfport. Tell us the date and headcount and we’ll confirm what fits.</p>
-        <a class="btn btn-solid" href="/private-events.html#inquire">Plan a gathering</a>
+        <span class="eyebrow">Sunday and gatherings</span>
+        <h2 class="title">Jazz brunch<br><em>&amp; private events.</em></h2>
+        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>. Live jazz every Sunday. Call <a href="tel:+18135861660">(813) 586-1660</a> for details.</p>
+        <p class="brunch-copy">Showers, birthdays, book clubs, and office gatherings. Tell us the date and headcount and we’ll confirm what fits.</p>
+        <div class="brunch-actions">
+          <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" rel="noopener noreferrer" target="_blank">Reserve Sunday brunch</a>
+          <a class="btn btn-solid" href="/private-events.html#inquire">Plan a gathering</a>
+        </div>
       </div>
     </div>
   </section>
