@@ -43,6 +43,7 @@
     .menu-lead { margin:0 auto 22px; width:min(100%, 2560px); text-align:center; }
     .menu-lead picture { display:block; }
     .menu-lead figcaption, .cat-photo figcaption { margin-top:8px; font-family:'Josefin Sans',sans-serif; font-size:16px; letter-spacing:.04em; text-transform:uppercase; color:var(--gold); line-height:1.35; text-align:center; }
+    .menu-lead figcaption { font-size:15px; letter-spacing:0; text-transform:none; }
     .cat-split { display:grid; grid-template-columns:1fr; gap:12px; align-items:start; margin-top:8px; }
     .cat-split > div, .cat-split > .cat-photo { grid-column:auto; grid-row:auto; min-width:0; margin:0; }
     .cat-split h3 { margin-top:8px; }
@@ -52,7 +53,8 @@
     @media (max-width:768px) {
       body, .mi-desc, .note { font-size:17px; line-height:1.55; }
       .lead { font-size:1.35rem; line-height:1.35; }
-      .menu-lead figcaption, .cat-photo figcaption { font-size:17px; }
+      .cat-photo figcaption { font-size:17px; }
+      .menu-lead figcaption { font-size:15px; }
       body.has-site-nav .menu-lead img { width:100%; max-width:100%; aspect-ratio:4 / 3; height:auto; object-fit:cover; object-position:center; }
     }
     .menu-board { display:grid; grid-template-columns:1fr 1fr; column-gap:48px; align-items:start; }
