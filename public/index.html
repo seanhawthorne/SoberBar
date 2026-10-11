@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails</title>
-  <meta name="description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am. Reserve a table." />
+  <meta name="description" content="Zero-proof cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am. Reserve a table." />
   <meta name="theme-color" content="#070605" />
   <link rel="canonical" href="https://www.sipsoberbar.com/" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -13,12 +13,12 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails" />
-  <meta property="og:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
+  <meta property="og:description" content="Zero-proof cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
   <meta property="og:url" content="https://www.sipsoberbar.com/" />
   <meta property="og:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails" />
-  <meta name="twitter:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
+  <meta name="twitter:description" content="Zero-proof cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
   <meta name="twitter:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg" />
 
   <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
@@ -263,11 +263,15 @@ html { scroll-padding-top: 84px; }
       font-weight: 400;
       letter-spacing: 0.02em;
       text-transform: none;
-      text-decoration: underline;
-      text-underline-offset: 2px;
+      text-decoration: none;
       margin-left: 0.5em;
       color: #cbb892;
-      white-space: nowrap;
+      white-space: normal;
+    }
+    .party-link a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
     .nav-reserve {
       display: flex;
@@ -471,7 +475,7 @@ html { scroll-padding-top: 84px; }
     .upcoming-detail { grid-column: 1 / -1; color: var(--muted); margin: 0; }
     .upcoming-list .btn { justify-self: end; }
     .upcoming-cta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-    .upcoming-cta .party-link { margin-left: 0; font-size: 0.68rem; white-space: nowrap; }
+    .upcoming-cta .party-link { margin-left: 0; font-size: 0.68rem; white-space: normal; }
     .mobile-menu .party-link {
       font-family: 'Josefin Sans', sans-serif;
       font-size: 0.95rem;
@@ -792,13 +796,13 @@ html { scroll-padding-top: 84px; }
         <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
       </ul>
       <a class="nav-phone" href="tel:+18135861660">(813) 586-1660</a>
-      <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a></div>
+      <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a></div>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a data-cta="mobile-menu" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+    <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
     <a href="#bar">Cocktails</a>
     <a href="/menu.html">Menu</a>
     <a href="/private-events.html">Private Events</a>
@@ -819,19 +823,18 @@ html { scroll-padding-top: 84px; }
     </div>
     <div class="hero-copy">
       <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
-      <h1 class="hero-title">Coffee, New Orleans-inspired kitchen &amp; <em><span class="nw">alcohol-free</span> cocktails</em> in Gulfport, FL</h1>
+      <h1 class="hero-title">Coffee, New Orleans-inspired kitchen &amp; <em><span class="nw">zero-proof</span> cocktails</em> in Gulfport, FL</h1>
       <p class="hero-sub">Espresso at sunrise. Muffulettas at noon. Zero-proof cocktails under the chandeliers after dark.</p>
       <div class="hero-actions">
         <div class="hero-cta-row">
-          <a class="btn btn-solid" data-cta="hero" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+          <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
           <a class="btn btn-line" href="/menu.html">View menu</a>
           <a class="btn btn-line hero-call" href="tel:+18135861660">Call</a>
           <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
         </div>
-        <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+        <span class="party-link">Booking online for 1–6. For 7 or more, call <a href="tel:+18135861660">(813) 586-1660</a></span>
       </div>
-      <!-- 4.9 from 128 Google reviews verified 2026-10-10 from the Google Maps listing, CID 9116696801118190440. -->
-      <p class="hero-proof"><a href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener"><span aria-hidden="true">★★★★★</span> 4.9 from 128 Google reviews</a></p>
+      <p class="hero-proof"><a href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener">Read our Google reviews</a></p>
       <div class="hero-hours">
         <span><b>Sun – Thu</b> 7 am – 10 pm</span>
         <span><b>Fri – Sat</b> 7 am – Midnight</span>
@@ -1033,7 +1036,7 @@ html { scroll-padding-top: 84px; }
           "phoneAfter": " for this Sunday's jazz time.",
           "href": "/sunday-jazz-brunch.html",
           "cta": "Reserve a table",
-          "ctaHref": "https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home"
+          "ctaHref": "https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637"
         }
       ]
       </script>
@@ -1043,7 +1046,7 @@ html { scroll-padding-top: 84px; }
             <div class="upcoming-when">Every Sunday</div>
             <a class="upcoming-name" href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>
           </div>
-          <a class="btn btn-solid" data-cta="upcoming" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+          <a class="btn btn-solid" data-cta="upcoming" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
           <p class="upcoming-detail">Call <a href="tel:+18135861660">(813) 586-1660</a> for this Sunday's jazz time.</p>
         </li>
       </ul>
@@ -1116,8 +1119,7 @@ html { scroll-padding-top: 84px; }
         <h2 class="title">Gulfport is <em>glowing.</em></h2>
         <div class="deco-rule"><span class="gem"></span></div>
       </div>
-      <!-- 4.9 from 128 Google reviews verified 2026-10-10 from the Google Maps listing, CID 9116696801118190440. -->
-      <p class="rating-summary reveal"><a href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><strong>4.9</strong> <span class="rating-stars" aria-label="4.9 out of 5 stars">★★★★★</span><br>from 128 Google reviews</a></p>
+      <p class="rating-summary reveal"><a href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener">Read our Google reviews</a></p>
       <div class="reviews-action reveal">
         <a class="btn btn-line" href="https://www.google.com/maps?cid=9116696801118190440" target="_blank" rel="noopener">Read All Google Reviews</a>
       </div>
@@ -1134,7 +1136,7 @@ html { scroll-padding-top: 84px; }
       </div>
 
       <div class="visit-actions res-top reveal">
-        <a class="btn btn-solid" data-cta="reservations" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a> <a class="party-link" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+        <a class="btn btn-solid" data-cta="reservations" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> <span class="party-link">Booking online for 1–6. For 7 or more, call <a href="tel:+18135861660">(813) 586-1660</a></span>
         <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
       </div>
       <div class="res-grid reveal">
@@ -1166,7 +1168,7 @@ html { scroll-padding-top: 84px; }
           <span>Open at 7am</span>
           <span>Reserve a table</span>
         </div>
-        <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" rel="noopener noreferrer" target="_blank">Reserve a table</a>
+        <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" rel="noopener noreferrer" target="_blank">Reserve a table</a>
       </div>
     </div>
   </section>
@@ -1181,7 +1183,7 @@ html { scroll-padding-top: 84px; }
         <p class="brunch-copy">Team outings, birthdays, book clubs, and private celebrations in the heart of Gulfport. Start with your date and guest count; we’ll help you explore the details.</p>
         <div class="hero-actions">
           <a class="btn btn-solid" href="/private-events.html#inquire">Plan your gathering</a>
-          <a class="btn btn-line" data-cta="private-events" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+          <a class="btn btn-line" data-cta="private-events" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
         </div>
       </div>
     </div>
@@ -1215,7 +1217,7 @@ html { scroll-padding-top: 84px; }
         </div>
       </div>
       <div class="visit-actions reveal">
-        <a class="btn btn-solid" data-cta="visit" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+        <a class="btn btn-solid" data-cta="visit" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
         <a class="btn btn-line" href="tel:+18135861660">Call</a>
         <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
       </div>
@@ -1240,7 +1242,7 @@ html { scroll-padding-top: 84px; }
         </details>
         <details>
           <summary>Can I work here during the day?</summary>
-          <p>Absolutely. Mornings and afternoons are coffee-house energy — fast WiFi, good seats, great espresso. The room shifts to bar energy as the sun goes down.</p>
+          <p>Absolutely. Mornings and afternoons are coffee-house energy — great espresso. The room shifts to bar energy as the sun goes down.</p>
         </details>
         <details>
           <summary>Do you serve food all day?</summary>
@@ -1252,7 +1254,7 @@ html { scroll-padding-top: 84px; }
         </details>
         <details>
           <summary>Do you take reservations?</summary>
-          <p>Yes. Book online through SeatOn for parties of 1–6. Walk-ins are welcome. Call (813) 586-1660. A party of 7 or more should plan a gathering.</p>
+          <p>Booking online for 1–6. For 7 or more, call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
         </details>
         <details>
           <summary>When is jazz brunch?</summary>
@@ -1292,7 +1294,7 @@ html { scroll-padding-top: 84px; }
       <p class="fine">Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
       <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
       <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
-      <p class="fine"><a data-cta="footer" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve a table</a> &nbsp;·&nbsp; <a href="/menu.html">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
+      <p class="fine"><a data-cta="footer" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a> &nbsp;·&nbsp; <a href="/menu.html">Menu</a> &nbsp;·&nbsp; <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></p>
       <p class="fine"><a href="/breakfast-gulfport.html">Breakfast in Gulfport</a> &nbsp;·&nbsp; <a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a> &nbsp;·&nbsp; <a href="/private-events.html">Private events in Gulfport</a> &nbsp;·&nbsp; <a href="/reservations.html">Reservations</a> &nbsp;·&nbsp; <a href="/mocktails-st-petersburg.html">Mocktails near St. Pete</a></p>
       <p class="fine"><a href="/things-to-do-in-gulfport.html">Things to Do</a> &nbsp;·&nbsp; <a href="/why-i-opened-a-sober-bar.html">Why I Opened</a> &nbsp;·&nbsp; <a href="/as-seen-in.html">As Seen In</a> &nbsp;·&nbsp; <a href="/event-sponsorship.html">Event Sponsorship</a></p>
       <p class="fine"><a href="/privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a></p>
@@ -1302,7 +1304,7 @@ html { scroll-padding-top: 84px; }
 
   <nav class="mobile-actions" aria-label="Call, reserve, or directions">
     <a href="tel:+18135861660">Call</a>
-    <a class="is-primary" data-cta="sticky" href="https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web&utm_source=site&utm_campaign=home" target="_blank" rel="noopener noreferrer">Reserve</a>
+    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
     <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
   </nav>
 
@@ -1392,7 +1394,7 @@ html { scroll-padding-top: 84px; }
     "name": "Sober Bar & Kitchen",
     "alternateName": ["Sober Bar", "Sip Sober Bar"],
     "url": "https://www.sipsoberbar.com/",
-    "description": "Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen in Gulfport, Florida. Open daily at 7am. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.",
+    "description": "Zero-proof cocktails, coffee, and a New Orleans-inspired kitchen in Gulfport, Florida. Open daily at 7am. We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV.",
     "telephone": "+1-813-586-1660",
     "email": "Sean@sipsoberbar.com",
     "priceRange": "$$",
@@ -1423,7 +1425,7 @@ html { scroll-padding-top: 84px; }
       "@type": "ReserveAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://getseat.net/#/public/online/reservation/8B932637?channel=merchant_web",
+        "urlTemplate": "https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637",
         "actionPlatform": ["https://schema.org/DesktopWebPlatform", "https://schema.org/MobileWebPlatform"]
       },
       "result": { "@type": "FoodEstablishmentReservation", "name": "Table reservation" }
@@ -1455,7 +1457,7 @@ html { scroll-padding-top: 84px; }
       {
         "@type": "Question",
         "name": "Can I work here during the day?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Mornings and afternoons are coffee-house energy — fast WiFi, good seats, great espresso. The room shifts to bar energy as the sun goes down." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Mornings and afternoons are coffee-house energy — great espresso. The room shifts to bar energy as the sun goes down." }
       },
       {
         "@type": "Question",
@@ -1470,7 +1472,7 @@ html { scroll-padding-top: 84px; }
       {
         "@type": "Question",
         "name": "Do you take reservations?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Book online through SeatOn for parties of 1–6. Walk-ins are welcome. Call (813) 586-1660. A party of 7 or more should plan a gathering." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Booking online for 1–6. For 7 or more, call (813) 586-1660." }
       },
       {
         "@type": "Question",

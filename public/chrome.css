@@ -8,10 +8,15 @@
   font-weight: 400;
   letter-spacing: 0.02em;
   text-transform: none;
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration: none;
   margin-left: 0.5em;
   opacity: 0.85;
+  white-space: normal;
+}
+.party-link a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 .nav-reserve {
   display: flex;
@@ -23,7 +28,7 @@
 .nav-reserve .party-link {
   margin-left: 0;
   font-size: 0.62rem;
-  white-space: nowrap;
+  white-space: normal;
 }
 .mobile-menu .party-link {
   font-family: "Josefin Sans", sans-serif;
@@ -261,8 +266,8 @@ body.has-site-nav figure img {
     margin-top: 0;
   }
   .cta > .party-link,
-  .shell > p > a.party-link,
-  .container > p > a.party-link,
+  .shell > p > .party-link,
+  .container > p > .party-link,
   .hero-actions > .party-link,
   .visit-actions > .party-link,
   .actions > .party-link {
@@ -271,11 +276,11 @@ body.has-site-nav figure img {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    white-space: nowrap;
+    white-space: normal;
     text-align: center;
     box-sizing: border-box;
   }
-  .party-link { white-space: nowrap; }
+  .party-link { white-space: normal; }
   .actions,
   .intro-actions,
   .stack-actions {
