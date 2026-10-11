@@ -32,20 +32,14 @@
       "a": "We serve non-alcoholic drinks. Some NA beers contain trace alcohol below 0.5% ABV."
     }
   ],
-  "rating": {
-    "value": "4.9",
-    "count": 128,
-    "checked": "2026-10-10",
-    "source": "Google Maps listing, CID 9116696801118190440",
-    "url": "https://www.google.com/maps?cid=9116696801118190440"
-  },
+  "listing": "https://www.google.com/maps?cid=9116696801118190440",
   "seatOn": "https://getseat.net/#/public/online/reservation/8B932637",
-  "partyLimit": "Online booking is for parties of 1–6.",
+  "partyLimit": "Online booking is for parties of 1–6. For 7 or more, call (813) 586-1660.",
   "maps": "https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707",
   "instagram": "https://instagram.com/sipsoberbar",
   "facebook": "https://www.facebook.com/p/Sober-Bar-61582670395782/",
   "shop": "https://shop.sipsoberbar.com",
-  "jazz": "Live jazz every Sunday brunch. Call for this Sunday's jazz time. No start time is published.",
+  "jazz": "Live jazz every Sunday brunch. Call (813) 586-1660 for this Sunday's jazz time. No band or start time is published.",
   "hero": "Sharpest night interior on file: lounge-1400.jpg (chandelier lounge). Not upscaled. No night bartender original exists.",
   "imageNotes": "DoorDash garden-mezze and hot-honey files were checked by center color. The garden-named file is red with no green pixels (soppressata). The honey-named file has green pixels (peppers and greens). Exports follow the photo, not the swapped filename.",
   "menu": [

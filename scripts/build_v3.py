@@ -15,7 +15,7 @@ TEL = FACTS["phoneTel"]
 EMAIL = FACTS["email"]
 ALC = FACTS["alcohol"]
 HOURS = " · ".join(h["label"] for h in FACTS["hours"])
-RATING = FACTS["rating"]
+LISTING = FACTS["listing"]
 
 
 def e(text):
@@ -88,7 +88,6 @@ def footer():
       <li><a href="{FACTS["shop"]}">Shop</a></li>
       <li><a href="/sunday-jazz-brunch.html">Sunday jazz</a></li>
       <li><a href="/private-events.html">Private events</a></li>
-      <li><a href="/event-sponsorship.html">Sponsorship</a></li>
     </ul>
     <p class="fine"><a href="{FACTS["instagram"]}">Instagram</a> · <a href="{FACTS["facebook"]}">Facebook</a></p>
     <p class="fine">{e(ALC)}</p>
@@ -130,6 +129,13 @@ def room(src, w, h, alt, cap=None):
     if cap:
         fig += f'<figcaption class="cap">{e(cap)}</figcaption>'
     return fig + "</figure>"
+
+
+def party_note():
+    return (
+        f'<p class="fine">Online booking is for parties of 1–6. For 7 or more, call '
+        f'<a href="tel:{TEL}">{PHONE}</a>.</p>'
+    )
 
 
 def visit_card():
@@ -181,15 +187,15 @@ def build_home():
         % (",".join(f'"{d}"' for d in h["days"]), h["opens"], h["closes"])
         for h in FACTS["hours"]
     )
-    preload = '''<link rel="preload" as="image" href="/images/v3/hero-m-768.avif" type="image/avif" media="(max-width: 767px)" fetchpriority="high">
-  <link rel="preload" as="image" href="/images/v3/hero-d-1200.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">'''
+    preload = '''<link rel="preload" as="image" href="/images/v3/hero-night-m-768.avif" type="image/avif" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/v3/hero-night-1800.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">'''
     main = f'''<main id="main">
   <section class="hero" id="top">
     <picture>
-      <source media="(max-width: 767px)" type="image/avif" srcset="/images/v3/hero-m-480.avif 480w, /images/v3/hero-m-768.avif 768w" sizes="100vw">
-      <source media="(max-width: 767px)" type="image/webp" srcset="/images/v3/hero-m-480.webp 480w, /images/v3/hero-m-768.webp 768w" sizes="100vw">
-      <source type="image/webp" srcset="/images/v3/hero-d-768.webp 768w, /images/v3/hero-d-1200.webp 1200w, /images/v3/hero-d-1400.webp 1400w" sizes="100vw">
-      <img src="/images/v3/hero-d-1200.webp" width="1400" height="875" alt="The lounge at Sober Bar at night, chandelier over curved velvet booths" fetchpriority="high" decoding="async">
+      <source media="(max-width: 767px)" type="image/avif" srcset="/images/v3/hero-night-m-480.avif 480w, /images/v3/hero-night-m-768.avif 768w" sizes="100vw">
+      <source media="(max-width: 767px)" type="image/webp" srcset="/images/v3/hero-night-m-480.webp 480w, /images/v3/hero-night-m-768.webp 768w, /images/v3/hero-night-m-1200.webp 1200w" sizes="100vw">
+      <source type="image/webp" srcset="/images/v3/hero-night-768.webp 768w, /images/v3/hero-night-1200.webp 1200w, /images/v3/hero-night-1800.webp 1800w, /images/v3/hero-night-2400.webp 2400w" sizes="100vw">
+      <img src="/images/v3/hero-night-2400.webp" width="2400" height="1500" alt="The Beach Boulevard porch at Sober Bar at night, string lights and guests outside" fetchpriority="high" decoding="async">
     </picture>
     <div class="hero-scrim"></div>
     <div class="hero-copy">
@@ -200,8 +206,6 @@ def build_home():
         <span data-hero-cta>{reserve("hero")}</span>
         <a class="text-link" href="/menu.html">View menu →</a>
       </div>
-      <!-- {RATING["value"]} from {RATING["count"]} Google reviews verified {RATING["checked"]} from {RATING["source"]}. -->
-      <p class="rating"><a href="{RATING["url"]}">{RATING["value"]} · {RATING["count"]} Google reviews ↗</a></p>
     </div>
   </section>
 
@@ -285,7 +289,7 @@ def build_home():
   "servesCuisine": "New Orleans-inspired",
   "acceptsReservations": "{FACTS["seatOn"]}",
   "hasMenu": "{FACTS["domain"]}/menu.html",
-  "image": "{FACTS["domain"]}/images/v3/hero-d-1200.webp",
+  "image": "{FACTS["domain"]}/images/v3/hero-night-2400.webp",
   "description": {json.dumps(ALC)},
   "address": {{
     "@type": "PostalAddress",
@@ -296,7 +300,7 @@ def build_home():
     "addressCountry": "US"
   }},
   "openingHoursSpecification": [{schema_hours}],
-  "sameAs": ["{FACTS["instagram"]}", "{RATING["url"]}"]
+  "sameAs": ["{FACTS["instagram"]}", "{LISTING}"]
 }}
 </script>
 <script type="application/ld+json">
@@ -365,8 +369,8 @@ def build_reservations():
     <h1>Reserve a table</h1>
     <p class="lead">Booking opens on SeatOn.</p>
     <span data-hero-cta>{reserve("res")}</span>
-    <p class="fine" style="margin-top:16px">{e(FACTS["partyLimit"])} Walk-ins are welcome.</p>
-    <a class="party" href="/private-events.html#inquire">Party of 7+? Plan a gathering</a>
+    {party_note()}
+    <p class="fine">Walk-ins are welcome.</p>
     {visit_card()}
   </div>
 </main>'''
@@ -400,16 +404,16 @@ def build_rest():
         "/breakfast-gulfport.html",
         "Breakfast and coffee in Gulfport",
         "Espresso, cold brew, and a New Orleans-inspired breakfast from 7am. Walk-ins are welcome.",
-        "<p>The espresso bar is open with the doors. Free Wi-Fi if you are working. The full menu runs open to close.</p>" + menu_list(["coffee", "breakfast"]) + f"<p>{e(ALC)}</p>",
+        "<p>The espresso bar is open with the doors. The full menu runs open to close.</p>" + menu_list(["coffee", "breakfast"]) + f"<p>{e(ALC)}</p>",
         "breakfast",
     )
     article(
         "Sunday jazz brunch in Gulfport — Sober Bar",
-        "Live jazz every Sunday brunch at Sober Bar in Gulfport. Call for this Sunday's jazz time.",
+        "Live jazz every Sunday brunch at Sober Bar in Gulfport. Call (813) 586-1660 for this Sunday's jazz time.",
         "/sunday-jazz-brunch.html",
         "Sunday jazz brunch in Gulfport",
         "Live jazz in the room every Sunday brunch. Reserve a table if you want it held.",
-        f'''<p>The doors are already open at 7am if you want coffee first. Walk-ins are welcome. Call <a href="tel:{TEL}">{PHONE}</a> for this Sunday’s jazz time. No start time is published.</p>
+        f'''<p>The doors are already open at 7am if you want coffee first. Walk-ins are welcome. Call <a href="tel:{TEL}">{PHONE}</a> for this Sunday’s jazz time. No band or start time is published.</p>
         <p>The full menu runs on Sunday, including <strong>The White Rabbit</strong> and the plant-based <strong>Garden District Muffuletta</strong>. Later, the bar pours <strong>Call Me an Ube</strong>.</p>
         <p>{e(ALC)}</p>''',
         "jazz",
@@ -500,7 +504,7 @@ def build_private():
       <button class="reserve" type="submit">Open email inquiry</button>
     </form>
     <p>No mail app? Email <a href="mailto:{EMAIL}">{EMAIL}</a> or call <a href="tel:{TEL}">{PHONE}</a>.</p>
-    <a class="party" href="#inquire">Party of 7+? Plan a gathering</a>
+    {party_note()}
   </div>
   <script>
     document.getElementById('inquireForm').addEventListener('submit', function (event) {{
@@ -620,7 +624,6 @@ def build_llms_and_sitemap():
         f"- Hours: {HOURS}",
         f"- {FACTS['partyLimit']} Walk-ins are welcome.",
         f"- {FACTS['jazz']}",
-        f"- Rating: {RATING['value']} from {RATING['count']} Google reviews, checked {RATING['checked']}. {RATING['url']}",
         f"- Reserve: {FACTS['seatOn']}",
         "",
         "## Menu",
@@ -634,7 +637,7 @@ def build_llms_and_sitemap():
         "/", "/menu.html", "/reservations.html", "/breakfast-gulfport.html",
         "/sunday-jazz-brunch.html", "/private-events.html", "/mocktails-st-petersburg.html",
         "/things-to-do-in-gulfport.html", "/why-i-opened-a-sober-bar.html",
-        "/as-seen-in.html", "/event-sponsorship.html",
+        "/as-seen-in.html",
     ]
     body = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
@@ -654,8 +657,9 @@ def check():
         "nothing contains alcohol", "nothing on the menu", "nothing on our menu",
         "100% alcohol-free", "yes — 100", "50 seats", "30 indoor", "20 outdoor",
         "sipsisoberbar", "closed monday", "2 hours before", "serves alcohol",
+        "party of 7", "wi-fi", "wifi", "4.9", "google reviews",
     ]
-    party_ok = {"reservations.html", "private-events.html"}
+    party_ok = set()
     for path in PUBLIC.glob("*.html"):
         text = path.read_text().lower()
         for b in banned:
