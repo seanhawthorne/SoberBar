@@ -1389,7 +1389,7 @@ html { scroll-padding-top: 84px; }
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["Restaurant", "BarOrPub", "CafeOrCoffeeShop"],
+    "@type": ["BarOrPub", "CafeOrCoffeeShop"],
     "@id": "https://www.sipsoberbar.com/#business",
     "name": "Sober Bar & Kitchen",
     "alternateName": ["Sober Bar", "Sip Sober Bar"],
@@ -1417,6 +1417,9 @@ html { scroll-padding-top: 84px; }
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "07:00", "closes": "22:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "07:00", "closes": "00:00" }
+    ],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true }
     ],
     "servesCuisine": ["Breakfast", "Brunch", "Coffee", "New Orleans"],
     "acceptsReservations": true,

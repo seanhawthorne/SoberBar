@@ -255,11 +255,12 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["BarOrPub", "CafeOrCoffeeShop"],
     "@id": "https://www.sipsoberbar.com/#business",
     "name": "Sober Bar & Kitchen",
     "telephone": "+1-813-586-1660",
-    "url": "https://www.sipsoberbar.com/private-events.html",
+    "url": "https://www.sipsoberbar.com/",
+    "description": "Zero-proof cocktails and coffee in Gulfport. Booking online for 1–6. For 7 or more, call (813) 586-1660.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "3062 Beach Blvd S",
@@ -268,10 +269,29 @@
       "postalCode": "33707",
       "addressCountry": "US"
     },
+    "geo": { "@type": "GeoCoordinates", "latitude": 27.7391, "longitude": -82.7077 },
+    "sameAs": [
+      "https://www.instagram.com/sipsoberbar",
+      "https://www.facebook.com/p/Sober-Bar-61582670395782/",
+      "https://www.yelp.com/biz/sober-bar-gulfport-2",
+      "https://www.google.com/maps?cid=9116696801118190440"
+    ],
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "07:00", "closes": "22:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "07:00", "closes": "00:00" }
-    ]
+    ],
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true }
+    ],
+    "hasMenu": "https://www.sipsoberbar.com/menu.html",
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637",
+        "actionPlatform": ["https://schema.org/DesktopWebPlatform", "https://schema.org/MobileWebPlatform"]
+      }
+    }
   }
   </script>
   <script type="application/ld+json">
