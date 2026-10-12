@@ -229,7 +229,7 @@
     summary::-webkit-details-marker { display: none; }
     summary::after { content: '+'; color: var(--gold); font-family: 'Josefin Sans', sans-serif; font-size: 1.3rem; font-weight: 300; }
     details[open] summary::after { content: '–'; }
-    details p { color: #f4ead8; padding-bottom: 24px; font-size: 1.08rem; line-height: 1.65; }
+    .faq-wrap details p { color: #f4ead8; padding-bottom: 24px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; font-weight: 400; font-size: 17px; letter-spacing: normal; line-height: 1.6; }
     details p a { color: var(--gold); text-decoration: none; }
     details p a:hover { color: var(--gold-bright); }
 
@@ -268,7 +268,7 @@
     header.hero { text-align:center; }
     @media (max-width:700px) {
       .reserve-pair { grid-template-columns:1fr; }
-      p, li, .hero-sub, .step p, .faq-wrap details p { font-size:17px; line-height:1.55; }
+      p, li, .hero-sub, .step p { font-size:17px; line-height:1.55; }
       section { padding:40px 0; }
     }
   </style>
@@ -331,7 +331,7 @@
       <div class="faq-wrap reveal">
         <details open>
           <summary>Do I need a reservation?</summary>
-          <p>Not required — walk-ins are always welcome. But reservations are recommended for Friday and Saturday evenings, and for groups of 4+.</p>
+          <p>Not required — walk-ins are always welcome. Book ahead for Friday and Saturday evenings.</p>
         </details>
         <details>
           <summary>Where will we sit?</summary>
