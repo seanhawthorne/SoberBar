@@ -157,14 +157,14 @@ html { scroll-padding-top: 84px; }
     .daynight { margin: 0; }
     .daynight img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 28%; display: block; }
     .story-line { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.12; color: var(--cream); max-width: 18em; margin: 0; }
-    .story-line + p { max-width: 40em; margin-top: 14px; color: #f4ead8; }
+    .morning p { max-width: 40em; margin: 0; color: #f4ead8; }
     .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 22px; }
     #reviews .sec-head { margin-bottom: 24px; }
     #reviews .quotes blockquote { border: 0; background: transparent; padding: 20px 0; }
     .quotes .quote-card { display: block; height: 100%; color: inherit; text-decoration: none; }
     .quotes .quote-card:hover p { color: var(--gold-bright); }
     .quotes blockquote { height: 100%; margin: 0; padding: 22px; border: 1px solid var(--gold-faint); background: #12100c; }
-    .quotes blockquote p { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: normal; font-size: clamp(1.55rem, 2.6vw, 2.05rem); line-height: 1.3; color: #f4ead8; margin: 0; }
+    .quotes blockquote p { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: normal; font-size: 24px; line-height: 1.35; text-align: left; color: #f4ead8; margin: 0; }
     .quotes footer { border: 0; padding: 14px 0 0; text-align: left; color: var(--gold-bright); font-family: 'Josefin Sans', sans-serif; font-size: .95rem; letter-spacing: .02em; background: transparent; }
     .press-link { margin-top: 22px; }
     .press-link a { color: #f4ead8; font-size: 1.05rem; letter-spacing: 0; text-transform: none; text-decoration: none; border-bottom: 1px solid rgba(212,175,106,.5); }
@@ -225,7 +225,7 @@ html { scroll-padding-top: 84px; }
         font-size: 17px;
         line-height: 1.55;
       }
-      .quotes blockquote p { font-size: 1.65rem; line-height: 1.3; }
+      .quotes blockquote p { font-size: 24px; line-height: 1.35; text-align: left; }
       footer .fine { font-size: 16px; letter-spacing: .03em; color: #f4ead8; }
       footer .fine a { color: #f4ead8; }
     }
@@ -522,7 +522,7 @@ html { scroll-padding-top: 84px; }
     .brunch-panel::before { content: none; }
     .brunch-panel h2 { margin: 0 0 16px; }
     .brunch-panel .btn { display: inline-block; margin-top: 28px; max-width: 100%; box-sizing: border-box; line-height: 1.35; }
-    .brunch-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .brunch-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; }
     .gathering { border-top: 1px solid #30281c; margin-top: 28px; padding-top: 24px; }
     .gathering .btn { margin-top: 16px; }
     .brunch-actions .btn { margin-top: 0; }
@@ -927,8 +927,7 @@ html { scroll-padding-top: 84px; }
     <div class="shell">
       <div class="morning">
         <div>
-          <h2 class="story-line">Your morning headquarters</h2>
-          <p>Espresso and free, fast WiFi from 7am.<br>Your laptop’s morning spot.</p>
+          <p>Espresso and free, fast WiFi from 7am. Settle in.</p>
         </div>
         <figure class="daynight">
           <picture>

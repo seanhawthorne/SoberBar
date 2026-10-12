@@ -27,7 +27,7 @@
     body { background:var(--black); color:var(--cream); font-family:'Josefin Sans', sans-serif; font-weight:300; line-height:1.6; }
     a { color:#eed9a4; }
     .party-link { color:#eed9a4; opacity:1; }
-    .shell { width:min(100% - 40px, 980px); margin:0 auto; padding:48px 0 64px; }
+    .shell { width:min(100% - 40px, 1120px); margin:0 auto; padding:48px 0 64px; }
     .crumbs { font-size:.78rem; letter-spacing:.06em; margin-bottom:22px; }
     .crumbs a { color:var(--gold); text-decoration:none; }
     h1 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(2.2rem,5vw,3.2rem); letter-spacing:0; text-transform:none; color:var(--cream); margin-bottom:12px; line-height:1.1; }
@@ -40,7 +40,7 @@
     .btn.line { background:transparent; color:#f4ead8; border:1px solid rgba(244,234,216,.72); font-weight:500; }
     .menu-jumps { display:flex; flex-wrap:wrap; gap:8px 10px; margin:0 0 22px; }
     .menu-jumps a { display:inline-flex; align-items:center; min-height:44px; padding:8px 2px; color:var(--gold-bright); font-size:16px; line-height:1.3; text-decoration:none; border-bottom:1px solid rgba(212,175,106,.5); }
-    .menu-lead { margin:0 auto 22px; width:min(100%, 2560px); text-align:center; }
+    .menu-lead { margin:0 0 22px; width:100%; text-align:left; }
     .menu-lead picture { display:block; }
     .menu-lead figcaption, .cat-photo figcaption { margin-top:8px; font-family:'Josefin Sans',sans-serif; font-size:13px; letter-spacing:.04em; text-transform:uppercase; color:var(--gold); line-height:1.35; text-align:center; }
     .menu-lead figcaption { font-size:13px; letter-spacing:0; text-transform:none; }
@@ -48,7 +48,7 @@
     .cat-split > div, .cat-split > .cat-photo { grid-column:auto; grid-row:auto; min-width:0; margin:0; }
     .cat-split h3 { margin-top:8px; }
     .menu-board section, #hot-honey, #garden-mezze, #classic-melt { scroll-margin-top:96px; }
-    body.has-site-nav .menu-lead img { width:auto; max-width:min(100%, 2560px); height:auto; margin:0 auto; aspect-ratio:auto; object-fit:contain; display:block; border-radius:6px; }
+    body.has-site-nav .menu-lead img { width:100%; max-width:100%; height:auto; margin:0; aspect-ratio:auto; object-fit:contain; display:block; border-radius:6px; }
     body.has-site-nav .cat-photo img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; object-position:center; display:block; border-radius:6px; }
     @media (max-width:768px) {
       body, .mi-desc, .note { font-size:17px; line-height:1.55; }
@@ -58,16 +58,16 @@
       .actions .btn { display:none; }
       body.has-site-nav .menu-lead img { width:100%; max-width:100%; aspect-ratio:4 / 3; height:auto; object-fit:cover; object-position:center; }
     }
-    .menu-board { display:block; width:min(1120px, calc(100vw - 40px)); position:relative; left:50%; transform:translateX(-50%); container-type:inline-size; }
+    .menu-board { display:block; }
     .menu-chapter { margin:0 0 48px; }
     .menu-chapter > h2 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(2rem, 4vw, 2.75rem); letter-spacing:0; text-transform:none; color:var(--cream); margin:8px 0 18px; }
-    .menu-chapter + .menu-chapter > h2 { margin-top:12px; }
+    .chapter-kicker { margin:4px 0 20px; padding-top:22px; border-top:1px solid rgba(212,175,106,.4); font-family:'Cormorant Garamond', Georgia, serif; font-style:italic; font-weight:500; font-size:clamp(1.4rem, 2.6vw, 1.85rem); line-height:1.3; color:var(--gold); }
     .chapter-grid { display:grid; grid-template-columns:1fr; gap:36px; align-items:start; }
-    @container (min-width: 708px) {
+    @media (min-width:761px) {
       .chapter-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:32px; }
-    }
-    @container (min-width: 1076px) {
-      .chapter-grid { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+      .chapter-grid > :nth-child(3) { grid-column:1 / -1; }
+      .chapter-grid > :nth-child(3) ul { column-count:2; column-gap:32px; }
+      .chapter-grid > :nth-child(3) .mi { break-inside:avoid; }
     }
     .menu-board h3 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.7rem; letter-spacing:0; text-transform:none; color:var(--gold); margin:8px 0 12px; }
     ul { list-style:none; }
@@ -86,6 +86,8 @@
     }
     @media (max-width:760px) {
       .chapter-grid { grid-template-columns:1fr; }
+      .chapter-grid > :nth-child(3) { grid-column:auto; }
+      .chapter-grid > :nth-child(3) ul { column-count:1; }
       .menu-jumps { position:sticky; top:76px; z-index:20; background:#070605; flex-wrap:nowrap; overflow-x:auto; padding:8px 0; margin-bottom:20px; }
       .menu-jumps a { flex:0 0 auto; }
       .menu-board section { scroll-margin-top:148px; }
@@ -135,7 +137,7 @@
       <picture>
         <source media="(max-width: 768px)" srcset="/images/food/spread-lead-43-720.webp 720w, /images/food/spread-lead-43-800.webp 800w, /images/food/spread-lead-43-1120.webp 1120w" sizes="calc(100vw - 40px)" type="image/webp">
         <source media="(max-width: 768px)" srcset="/images/food/spread-lead-43-1120.jpg" type="image/jpeg">
-        <source srcset="/images/food/spread-lead-400.webp 400w, /images/food/spread-lead-640.webp 640w, /images/food/spread-lead-800.webp 800w, /images/food/spread-lead-1200.webp 1200w, /images/food/spread-lead-1600.webp 1600w, /images/food/spread-lead-2000.webp 2000w, /images/food/spread-lead-2560.webp 2560w" sizes="(max-width: 760px) calc(100vw - 40px), 980px" type="image/webp">
+        <source srcset="/images/food/spread-lead-400.webp 400w, /images/food/spread-lead-640.webp 640w, /images/food/spread-lead-800.webp 800w, /images/food/spread-lead-1200.webp 1200w, /images/food/spread-lead-1600.webp 1600w, /images/food/spread-lead-2000.webp 2000w, /images/food/spread-lead-2560.webp 2560w" sizes="(max-width: 760px) calc(100vw - 40px), 1120px" type="image/webp">
         <img src="/images/food/spread-lead-2560.jpg" width="2560" height="840" alt="" fetchpriority="high">
       </picture>
       <figcaption>Plates from the kitchen</figcaption>
@@ -163,6 +165,7 @@
         <section id="coffee"><h3>Coffee &amp; Espresso</h3><ul><li class="mi"><div><p class="mi-name">Cortado</p><p class="mi-desc">Espresso with a small pour of steamed milk</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cappuccino-160.avif 160w, /images/food/ue-cappuccino-320.avif 320w" sizes="72px"><img src="/images/food/ue-cappuccino-160.webp" srcset="/images/food/ue-cappuccino-160.webp 160w, /images/food/ue-cappuccino-320.webp 320w" sizes="72px" width="72" height="72" alt="Cappuccino" loading="lazy" decoding="async"></picture><div><p class="mi-name">Cappuccino</p><p class="mi-desc">Espresso, steamed milk, and a thick cap of foam</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-americano-160.avif 160w, /images/food/ue-americano-320.avif 320w" sizes="72px"><img src="/images/food/ue-americano-160.webp" srcset="/images/food/ue-americano-160.webp 160w, /images/food/ue-americano-320.webp 320w" sizes="72px" width="72" height="72" alt="Americano" loading="lazy" decoding="async"></picture><div><p class="mi-name">Americano</p><p class="mi-desc">Espresso and hot water</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cafe-au-lait-160.avif 160w, /images/food/ue-cafe-au-lait-320.avif 320w" sizes="72px"><img src="/images/food/ue-cafe-au-lait-160.webp" srcset="/images/food/ue-cafe-au-lait-160.webp 160w, /images/food/ue-cafe-au-lait-320.webp 320w" sizes="72px" width="72" height="72" alt="Café au Lait" loading="lazy" decoding="async"></picture><div><p class="mi-name">Café au Lait</p><p class="mi-desc">Hot coffee and steamed milk — a New Orleans classic</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-latte-160.avif 160w, /images/food/ue-latte-320.avif 320w" sizes="72px"><img src="/images/food/ue-latte-160.webp" srcset="/images/food/ue-latte-160.webp 160w, /images/food/ue-latte-320.webp 320w" sizes="72px" width="72" height="72" alt="Latte" loading="lazy" decoding="async"></picture><div><p class="mi-name">Latte</p><p class="mi-desc">Espresso and steamed milk, smooth and creamy</p></div></li><li class="mi"><div><p class="mi-name">Mocha</p><p class="mi-desc">Espresso, chocolate, and steamed milk</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cold-brew-kyoto-160.avif 160w, /images/food/ue-cold-brew-kyoto-320.avif 320w" sizes="72px"><img src="/images/food/ue-cold-brew-kyoto-160.webp" srcset="/images/food/ue-cold-brew-kyoto-160.webp 160w, /images/food/ue-cold-brew-kyoto-320.webp 320w" sizes="72px" width="72" height="72" alt="Kyoto Cold Brew" loading="lazy" decoding="async"></picture><div><p class="mi-name">Kyoto Cold Brew</p><p class="mi-desc">Slow-dripped with a clean, smooth finish</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cold-brew-nitro-160.avif 160w, /images/food/ue-cold-brew-nitro-320.avif 320w" sizes="72px"><img src="/images/food/ue-cold-brew-nitro-160.webp" srcset="/images/food/ue-cold-brew-nitro-160.webp 160w, /images/food/ue-cold-brew-nitro-320.webp 320w" sizes="72px" width="72" height="72" alt="Nitro Cold Brew" loading="lazy" decoding="async"></picture><div><p class="mi-name">Nitro Cold Brew</p><p class="mi-desc">Cascading nitro pour, naturally creamy</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-chai-latte-160.avif 160w, /images/food/dd-chai-latte-320.avif 320w" sizes="72px"><img src="/images/food/dd-chai-latte-160.webp" srcset="/images/food/dd-chai-latte-160.webp 160w, /images/food/dd-chai-latte-320.webp 320w" sizes="72px" width="72" height="72" alt="Chai Latte" loading="lazy" decoding="async"></picture><div><p class="mi-name">Chai Latte</p><p class="mi-desc">Spiced chai with steamed milk</p></div></li></ul></section>
       </div>
     </section>
+    <p class="chapter-kicker">A little New Orleans. A lot to linger over.</p>
     <section class="menu-chapter">
       <h2>From the kitchen</h2>
       <div class="chapter-grid">
