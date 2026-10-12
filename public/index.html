@@ -179,6 +179,10 @@ html { scroll-padding-top: 84px; }
     #menu .band-photo { max-width: 760px; margin: 24px auto; }
     #menu .band-photo figcaption { font-size: 13px; letter-spacing: .02em; }
     #menu .menu-go { margin-top: 24px; text-align: center; }
+    #menu .menu-hint { display: none; margin: 18px 0 0; text-align: center; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .04em; color: var(--gold); }
+    @media (max-width: 899px) {
+      #menu .menu-hint { display: block; }
+    }
     @media (min-width: 900px) {
       #menu .shell { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); column-gap: 56px; row-gap: 12px; align-items: center; }
       #menu .sec-head { grid-column: 1; grid-row: 1; margin-bottom: 0; text-align: left; justify-items: start; }
@@ -510,20 +514,13 @@ html { scroll-padding-top: 84px; }
 
     /* ------- Sunday jazz brunch ------- */
     .brunch-panel {
-      position: relative; isolation: isolate; overflow: hidden;
-      max-width: 980px; margin: 0 auto; padding: clamp(64px, 9vw, 100px) clamp(28px, 8vw, 90px);
-      text-align: center; border: 1px solid var(--gold-dim);
-      background:
-        radial-gradient(circle at 50% 0%, rgba(212,175,106,0.19), transparent 48%),
-        linear-gradient(145deg, #15110c, #090807 70%);
+      position: relative;
+      max-width: 760px; margin: 0 auto; padding: 28px 0 0;
+      text-align: center; border: 0; border-top: 1px solid rgba(212, 175, 106, 0.4);
+      background: none;
     }
-    .brunch-panel::before {
-      content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-      background: repeating-conic-gradient(from -90deg at 50% -10%, rgba(212,175,106,0.055) 0deg 1deg, transparent 1deg 9deg);
-      -webkit-mask-image: linear-gradient(180deg, #000, transparent 75%);
-      mask-image: linear-gradient(180deg, #000, transparent 75%);
-    }
-    .brunch-panel h2 { margin: 20px 0 24px; }
+    .brunch-panel::before { content: none; }
+    .brunch-panel h2 { margin: 0 0 16px; }
     .brunch-panel .btn { display: inline-block; margin-top: 28px; max-width: 100%; box-sizing: border-box; line-height: 1.35; }
     .brunch-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
     .gathering { border-top: 1px solid #30281c; margin-top: 28px; padding-top: 24px; }
@@ -754,8 +751,8 @@ html { scroll-padding-top: 84px; }
     .hero-status { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
     .hero-status.is-open::before { content:''; width:7px; height:7px; border-radius:50%; background:#7fd88f; box-shadow:0 0 0 0 rgba(127,216,143,.5); animation: pulse 2.2s infinite; flex: none; }
     .hero-title, .hero-sub, .title, h2, p { text-wrap: pretty; }
-    .hero-title { margin: 0 0 16px; max-width: 13em; font-size: clamp(2.4rem, 4.4vw, 4.15rem); line-height: 0.98; letter-spacing: -0.018em; }
-    .hero-title em { font-style: italic; color: var(--gold-bright); }
+    .hero-title { margin: 0 0 16px; max-width: 13em; font-size: clamp(2.4rem, 4.4vw, 4.15rem); line-height: 1.12; letter-spacing: -0.018em; }
+    .hero-title em { font-style: italic; color: var(--gold); }
     .hero-sub { margin: 0 0 28px; max-width: 26em; font-size: clamp(1.2rem, 2vw, 1.55rem); font-style: normal; font-weight: 500; color: rgba(244,234,216,.88); }
     header.hero .hero-actions { justify-content: flex-start; }
     .hero-proof { margin-top: 26px; font-size: .78rem; letter-spacing: .12em; color: var(--muted); font-weight: 400; }
@@ -851,13 +848,13 @@ html { scroll-padding-top: 84px; }
       .hero-copy { padding: 0; max-width: none; width: 100%; }
       .night-band img { height: 62vh; min-height: 320px; }
       .hero-status { justify-content: flex-start; letter-spacing: .14em; font-size: .64rem; margin-bottom: 8px; }
-      .hero-title { margin: 0 0 8px; font-size: clamp(1.85rem, 8vw, 2.35rem); max-width: 12em; }
+      .hero-title { margin: 0 0 8px; font-size: 34px; line-height: 1.15; max-width: 12em; }
       .hero-sub { margin: 0 0 14px; font-size: 1.08rem; color: rgba(244,234,216,.88); }
       header.hero .hero-actions { margin: 0; gap: 8px; max-width: 340px; }
       .hero-proof { margin-top: 12px; font-size: .68rem; letter-spacing: .04em; }
       header.hero .hero-hours { justify-content: flex-start; margin-top: 8px; gap: 4px 14px; }
       section { padding: 28px 0; }
-      .brunch-panel { padding: 36px 18px; }
+      .brunch-panel { padding: 24px 0 0; }
       .brunch-actions { grid-template-columns: 1fr; }
       .brunch-panel .btn { display: flex; width: 100%; align-items: center; justify-content: center; letter-spacing: 0.12em; padding: 16px 14px; }
     }
@@ -909,7 +906,7 @@ html { scroll-padding-top: 84px; }
     </div>
     <div class="hero-copy">
       <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
-      <h1 class="hero-title">Coffee by day. Cocktails after dark.</h1>
+      <h1 class="hero-title">Coffee by day.<br><em>Cocktails after dark.</em></h1>
       <p class="hero-sub">Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen in Gulfport, FL.</p>
       <div class="hero-actions">
         <div class="hero-cta-row">
@@ -982,6 +979,7 @@ html { scroll-padding-top: 84px; }
         </picture>
         <figcaption>Hot Honey Soppressata Flatbread</figcaption>
       </figure>
+      <p class="menu-hint">Browse the menu →</p>
       <ul class="band-rows">
         <li><a href="/menu.html#cocktails"><span>Cocktails</span><span class="arrow" aria-hidden="true">→</span></a></li>
         <li><a href="/menu.html#coffee"><span>Coffee</span><span class="arrow" aria-hidden="true">→</span></a></li>
@@ -996,9 +994,8 @@ html { scroll-padding-top: 84px; }
   <section id="jazz-brunch">
     <div class="shell">
       <div class="brunch-panel">
-        <span class="eyebrow">Sundays at Sober</span>
         <h2 class="title">Sunday Jazz <em>Brunch</em></h2>
-        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>. Call <a href="tel:+18135861660">(813) 586-1660</a> for details.</p>
+        <p class="brunch-copy">Meet your Sunday plans.<br>Call <a href="tel:+18135861660">(813) 586-1660</a> for details.</p>
         <div class="brunch-actions">
           <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" rel="noopener noreferrer" target="_blank">Reserve Sunday brunch</a>
         </div>
