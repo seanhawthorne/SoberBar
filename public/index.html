@@ -177,8 +177,16 @@ html { scroll-padding-top: 84px; }
     #menu .sec-head { margin-bottom: 24px; gap: 12px; }
     #menu .band-line { margin: 0 auto; max-width: 36em; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: normal; font-size: 18px; line-height: 1.5; color: #f4ead8; }
     #menu .band-photo { max-width: 760px; margin: 24px auto; }
-    #menu .band-photo figcaption { font-size: 14px; letter-spacing: .02em; }
+    #menu .band-photo figcaption { font-size: 13px; letter-spacing: .02em; }
     #menu .menu-go { margin-top: 24px; text-align: center; }
+    @media (min-width: 900px) {
+      #menu .shell { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); column-gap: 56px; row-gap: 12px; align-items: center; }
+      #menu .sec-head { grid-column: 1; grid-row: 1; margin-bottom: 0; text-align: left; justify-items: start; }
+      #menu .band-line { grid-column: 1; grid-row: 2; margin: 0; max-width: none; text-align: left; }
+      #menu .band-rows { grid-column: 1; grid-row: 3; margin: 8px 0 0; max-width: none; }
+      #menu .menu-go { grid-column: 1; grid-row: 4; margin-top: 16px; text-align: left; }
+      #menu .band-photo { grid-column: 2; grid-row: 1 / span 4; max-width: none; margin: 0; align-self: center; }
+    }
     .band-rows { list-style: none; margin: 8px auto 0; max-width: 640px; padding: 0; }
     .band-rows a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding: 8px 2px; color: #f4ead8; font-size: 1.15rem; line-height: 1.25; text-decoration: none; border-bottom: 1px solid rgba(212,175,106,.45); }
     .band-rows a:hover { color: var(--gold-bright); }
@@ -902,7 +910,7 @@ html { scroll-padding-top: 84px; }
     <div class="hero-copy">
       <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
       <h1 class="hero-title">Coffee by day. Cocktails after dark.</h1>
-      <p class="hero-sub">A New Orleans-inspired kitchen and alcohol-free cocktails in Gulfport, FL.</p>
+      <p class="hero-sub">Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen in Gulfport, FL.</p>
       <div class="hero-actions">
         <div class="hero-cta-row">
           <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
@@ -923,7 +931,7 @@ html { scroll-padding-top: 84px; }
       <div class="morning">
         <div>
           <h2 class="story-line">Your morning headquarters</h2>
-          <p>Espresso and free, fast WiFi from 7am.</p>
+          <p>Espresso and free, fast WiFi from 7am.<br>Your laptop’s morning spot.</p>
         </div>
         <figure class="daynight">
           <picture>
@@ -969,15 +977,17 @@ html { scroll-padding-top: 84px; }
       <p class="band-line">Espresso. Hot honey. Something with a little kick.</p>
       <figure class="band-photo">
         <picture>
-          <source srcset="/images/food/dd-hot-honey-lead-400.webp 400w, /images/food/dd-hot-honey-lead-640.webp 640w, /images/food/dd-hot-honey-lead-800.webp 800w, /images/food/dd-hot-honey-lead-960.webp 960w" sizes="(max-width: 808px) calc(100vw - 48px), 760px" type="image/webp">
+          <source srcset="/images/food/dd-hot-honey-lead-400.webp 400w, /images/food/dd-hot-honey-lead-640.webp 640w, /images/food/dd-hot-honey-lead-800.webp 800w, /images/food/dd-hot-honey-lead-960.webp 960w" sizes="(max-width: 900px) calc(100vw - 48px), 560px" type="image/webp">
           <img src="/images/food/dd-hot-honey-lead-960.jpg" width="960" height="720" alt="Hot Honey Soppressata Flatbread" loading="lazy" decoding="async">
         </picture>
         <figcaption>Hot Honey Soppressata Flatbread</figcaption>
       </figure>
       <ul class="band-rows">
         <li><a href="/menu.html#cocktails"><span>Cocktails</span><span class="arrow" aria-hidden="true">→</span></a></li>
-        <li><a href="/menu.html#coffee"><span>Coffee &amp; breakfast</span><span class="arrow" aria-hidden="true">→</span></a></li>
-        <li><a href="/menu.html#provisions"><span>The kitchen</span><span class="arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="/menu.html#coffee"><span>Coffee</span><span class="arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="/menu.html#breakfast"><span>Breakfast</span><span class="arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="/menu.html#bagels"><span>Bagels</span><span class="arrow" aria-hidden="true">→</span></a></li>
+        <li><a href="/menu.html#provisions"><span>Provisions</span><span class="arrow" aria-hidden="true">→</span></a></li>
       </ul>
       <p class="menu-go"><a class="btn btn-solid" href="/menu.html">Explore the menu</a></p>
     </div>
@@ -986,7 +996,7 @@ html { scroll-padding-top: 84px; }
   <section id="jazz-brunch">
     <div class="shell">
       <div class="brunch-panel">
-        <span class="eyebrow">Sunday and gatherings</span>
+        <span class="eyebrow">Sundays at Sober</span>
         <h2 class="title">Sunday Jazz <em>Brunch</em></h2>
         <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Sunday jazz brunch in Gulfport</a>. Call <a href="tel:+18135861660">(813) 586-1660</a> for details.</p>
         <div class="brunch-actions">
