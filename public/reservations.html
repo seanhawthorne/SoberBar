@@ -216,11 +216,12 @@
     /* ------- faq ------- */
     .faq-wrap { max-width: 760px; margin: 0 auto; }
     details {
-      border: 1px solid rgba(244, 234, 216, 0.2); background: #3a3228;
-      margin-bottom: 12px; padding: 0 28px;
+      border: 0; border-top: 1px solid rgba(244, 234, 216, 0.28); background: transparent;
+      margin-bottom: 0; padding: 0 4px;
       transition: border-color 0.3s ease;
     }
-    details[open] { border-color: rgba(244, 234, 216, 0.32); background: #463e32; }
+    details:last-child { border-bottom: 1px solid rgba(244, 234, 216, 0.28); }
+    details[open] { border-color: rgba(244, 234, 216, 0.28); background: transparent; }
     summary {
       cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
       padding: 22px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.28rem; color: var(--cream);
@@ -228,7 +229,7 @@
     summary::-webkit-details-marker { display: none; }
     summary::after { content: '+'; color: var(--gold); font-family: 'Josefin Sans', sans-serif; font-size: 1.3rem; font-weight: 300; }
     details[open] summary::after { content: '–'; }
-    details p { color: var(--muted); padding-bottom: 24px; font-size: 0.95rem; }
+    details p { color: #f4ead8; padding-bottom: 24px; font-size: 1.08rem; line-height: 1.65; }
     details p a { color: var(--gold); text-decoration: none; }
     details p a:hover { color: var(--gold-bright); }
 
