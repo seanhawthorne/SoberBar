@@ -157,11 +157,7 @@
     }
     header.hero::before {
       content: ''; position: absolute; inset: 0; pointer-events: none;
-      background:
-        repeating-conic-gradient(from -90deg at 50% -12%, rgba(212,175,106,0.045) 0deg 1.1deg, transparent 1.1deg 7deg),
-        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(212,175,106,0.10), transparent 60%);
-      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
-      mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
+      background: radial-gradient(ellipse 46% 52% at 50% 34%, rgba(212,175,106,0.28) 0%, rgba(212,175,106,0.10) 42%, transparent 72%);
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 12px;
@@ -306,7 +302,7 @@
 
   <main id="main">
   <header class="hero" id="top">
-    <h1 class="title" style="font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 14px;">Reservations</h1>
+    <h1 class="title" style="font-size: clamp(2.85rem, 6.4vw, 5rem); line-height: 0.9; letter-spacing: -0.02em; margin-bottom: 14px;">Reservations</h1>
     <div class="reserve-pair">
       <a class="btn btn-solid" data-cta="dinner" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve dinner</a>
       <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve Sunday brunch</a>

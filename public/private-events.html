@@ -176,7 +176,7 @@
 
     <div class="cta" id="inquire">
       <div class="inquire-intro">
-        <h2 class="rise" style="margin-top:0">Tell us what you're planning.</h2>
+        <h2 class="rise" id="inquire-heading" style="margin-top:0">Tell us what you're planning.</h2>
         <p>Menus, staffing, pricing, and availability are confirmed in your event quote. An inquiry does not hold the date.</p>
         <p class="price-note">No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>, or call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
       </div>
@@ -250,6 +250,24 @@
   </footer>
 
   <script>
+    var occasionHeadings = {
+      'Office gathering': 'An office gathering? Let\u2019s plan it.',
+      'Shower': 'A shower? Let\u2019s plan it.',
+      'Book club': 'A book club night? Let\u2019s plan it.',
+      'Recovery milestone': 'A recovery milestone? Let\u2019s mark it.'
+    };
+    var inquireHeading = document.getElementById('inquire-heading');
+    var defaultInquireHeading = inquireHeading ? inquireHeading.textContent : '';
+    function setOccasionHeading(value) {
+      if (!inquireHeading) return;
+      inquireHeading.textContent = occasionHeadings[value] || defaultInquireHeading;
+    }
+    var occasionSelect = document.getElementById('inq-occasion');
+    if (occasionSelect) {
+      occasionSelect.addEventListener('change', function () {
+        setOccasionHeading(occasionSelect.value);
+      });
+    }
     document.querySelectorAll('.plan-link').forEach(function (link) {
       link.addEventListener('click', function () {
         var occasion = link.getAttribute('data-occasion');
@@ -258,6 +276,7 @@
         var match = Array.prototype.some.call(select.options, function (opt) { return opt.value === occasion; });
         if (!match) return;
         select.value = occasion;
+        setOccasionHeading(occasion);
         window.setTimeout(function () { select.focus({ preventScroll: true }); }, 0);
       });
     });
