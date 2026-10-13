@@ -75,12 +75,13 @@
       .split > h2 { margin:0; }
       .split.order-chapter {
         display:block;
-        max-width:40rem;
+        max-width:none;
         border-top:1px solid rgba(244,234,216,.28);
         padding:52px 0 8px;
         margin-top:56px;
       }
       .split.order-chapter > h2 { margin:0 0 18px; }
+      .split.order-chapter .split-copy { max-width:40rem; }
     }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
