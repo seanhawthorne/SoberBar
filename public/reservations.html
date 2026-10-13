@@ -354,28 +354,13 @@
     </div>
   </footer>
 
+  <script src="/nav.js" defer></script>
   <script>
     const nav = document.getElementById('nav');
     function onScroll() {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }
     window.addEventListener('scroll', onScroll, { passive: true });
-
-    const revealEls = document.querySelectorAll('.reveal');
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        });
-      }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
-      revealEls.forEach((el) => {
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight * 0.9 && top > -el.offsetHeight) return;
-        io.observe(el);
-      });
-    }
 
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');

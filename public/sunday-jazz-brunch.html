@@ -45,9 +45,14 @@
     figure img { width:100%; height:auto; display:block; }
     body.has-site-nav figure.lounge-shot img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; object-position:center 42%; }
     figcaption { font-family:'Josefin Sans', sans-serif; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-top:8px; }
-    details { border-top:1px solid rgba(212,175,106,.2); padding:12px 0; }
-    summary { cursor:pointer; color:var(--cream); }
-    details p { margin:10px 0 4px; }
+    details { border:0; border-top:1px solid rgba(244,234,216,.28); background:transparent; margin:0; padding:0 4px; }
+    details:last-child { border-bottom:1px solid rgba(244,234,216,.28); }
+    summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.28rem; color:var(--cream); }
+    summary::-webkit-details-marker { display:none; }
+    summary::marker { content:''; }
+    summary::after { content:'+'; color:var(--gold); font-family:'Josefin Sans', sans-serif; font-size:1.3rem; font-weight:300; }
+    details[open] summary::after { content:'–'; }
+    details p { margin:0; padding-bottom:24px; }
     footer { text-align:center; padding:12px 0 8px; font-size:.78rem; }
     footer a { color:var(--gold); text-decoration:none; }
     footer p { margin-bottom:8px; }
@@ -137,7 +142,7 @@
     <section class="split">
       <h2 class="rise">A little breakfast. A little New Orleans.</h2>
       <div class="split-copy">
-        <p>The full menu runs from open to close, including on Sunday. Confirmed plates include <strong>The White Rabbit</strong> (plain bagel, egg, brie, fig spread, prosciutto, hot honey) and the plant-based <strong>Garden District Muffuletta</strong>. Coffee starts with espresso, Kyoto Cold Brew, and chai. Later, the bar pours alcohol-free cocktails, including <strong>Call Me An Ube</strong>.</p>
+        <p>The White Rabbit brings egg, brie, fig spread, prosciutto, and hot honey. Garden District Muffuletta keeps it plant-based. Add espresso, Kyoto Cold Brew, chai, or an alcohol-free Call Me An Ube.</p>
         <p> The posted list is the <a href="/menu.html">menu</a>. <a href="/breakfast-gulfport.html">Breakfast and coffee in Gulfport</a> has the morning dishes in one place.</p>
       </div>
     </section>
@@ -159,7 +164,7 @@
     <section class="split">
       <h2 class="rise">While you are here</h2>
       <div class="split-copy">
-        <p>The room and the Beach Boulevard patio are both open. Tell us the date and headcount and we’ll confirm what fits. <a href="/private-events.html">Private events</a> use the same room for showers, birthdays, office gatherings, and recovery milestones. <a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a> is the neighborhood guide.</p>
+        <p>Tell us the date and headcount and we’ll confirm what fits. <a href="/private-events.html">Private events</a> use the same room for showers, birthdays, office gatherings, and recovery milestones. <a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a> is the neighborhood guide.</p>
       </div>
     </section>
 

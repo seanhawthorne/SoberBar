@@ -1084,22 +1084,6 @@ html { scroll-padding-top: 84px; }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    const revealEls = document.querySelectorAll('.rise');
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window && revealEls.length) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          e.target.classList.add('is-in');
-          io.unobserve(e.target);
-        });
-      }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
-      revealEls.forEach((el) => {
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight * 0.9 && top > -el.offsetHeight) return;
-        io.observe(el);
-      });
-    }
-
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');
     function setMenu(open, restore) {
@@ -1241,5 +1225,6 @@ html { scroll-padding-top: 84px; }
   } catch (e) {}
 })();
 </script>
+<script src="/nav.js" defer></script>
 </body>
 </html>

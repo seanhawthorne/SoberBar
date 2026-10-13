@@ -40,7 +40,7 @@
     .actions { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:8px 0 22px; }
     .btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:14px 22px; background:var(--gold); color:var(--black); text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; }
     .btn.line { background:transparent; color:#f4ead8; border:1px solid rgba(244,234,216,.72); font-weight:500; }
-    .menu-jumps { display:flex; flex-wrap:wrap; gap:8px 10px; margin:0 0 22px; }
+    .menu-jumps { display:flex; flex-wrap:wrap; gap:8px 10px; position:sticky; top:84px; z-index:20; background:#070605; padding:8px 0; margin:0 0 20px; }
     .menu-jumps a { display:inline-flex; align-items:center; min-height:44px; padding:8px 2px; color:var(--gold-bright); font-size:16px; line-height:1.3; text-decoration:none; border-bottom:1px solid rgba(212,175,106,.5); }
     .menu-jumps a:hover { color:var(--cream); border-bottom-color:var(--gold-bright); }
     .menu-jumps a:focus-visible { color:var(--cream); outline:2px solid var(--gold-bright); outline-offset:3px; }
@@ -52,9 +52,9 @@
     .cat-split { display:grid; grid-template-columns:1fr; gap:12px; align-items:start; margin-top:8px; }
     .cat-split > div, .cat-split > .cat-photo { grid-column:auto; grid-row:auto; min-width:0; margin:0; }
     .cat-split h3 { margin-top:8px; }
-    .menu-board section, #hot-honey, #garden-mezze, #classic-melt { scroll-margin-top:96px; }
+    .menu-board section, #hot-honey, #garden-mezze, #classic-melt { scroll-margin-top:156px; }
     body.has-site-nav .menu-lead img { width:100%; max-width:100%; height:auto; margin:0; aspect-ratio:auto; object-fit:contain; display:block; border-radius:6px; }
-    body.has-site-nav .cat-photo img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; object-position:center; display:block; border-radius:6px; }
+    body.has-site-nav .cat-photo img { width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; object-position:center; display:block; border-radius:6px; }
     @media (max-width:768px) {
       body, .mi-desc, .note { font-size:17px; line-height:1.55; }
       .lead { font-size:1.35rem; line-height:1.35; }

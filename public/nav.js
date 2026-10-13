@@ -22,7 +22,7 @@
 })();
 
 (function () {
-  var nodes = document.querySelectorAll(".rise");
+  var nodes = document.querySelectorAll(".rise, .reveal");
   if (!nodes.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (!("IntersectionObserver" in window)) return;
 

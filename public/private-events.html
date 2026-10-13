@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Private Events in Gulfport, FL · Sober Bar &amp; Kitchen</title>
-  <meta name="description" content="Showers, birthdays, and office gatherings at Sober Bar &amp; Kitchen in Gulfport, FL. Tell us the date and headcount and we'll confirm what fits.">
+  <meta name="description" content="Showers, birthdays, and office gatherings at Sober Bar &amp; Kitchen in Gulfport, FL.">
   <link rel="canonical" href="https://www.sipsoberbar.com/private-events.html">
   <script src="/analytics.js" defer></script>
   <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
@@ -40,7 +40,8 @@
     .plan-link:focus-visible { outline:2px solid var(--gold-bright); outline-offset:3px; }
     .price-note { font-size:.85rem; color:var(--muted); line-height:1.6; }
     .tag { display:inline-block; background:rgba(212,175,106,.12); color:var(--gold); font-size:.65rem; letter-spacing:.14em; text-transform:uppercase; padding:4px 10px; margin-right:8px; margin-bottom:8px; }
-    .cta { margin-top:40px; padding:0; border:0; text-align:left; max-width:720px; }
+    .cta { margin-top:40px; padding:0; border:0; text-align:left; max-width:none; }
+    .inquire-intro { max-width:36rem; }
     .btn { display:inline-block; margin-top:0; padding:14px 32px; background:var(--gold); color:#060504; font-weight:600; text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; white-space:nowrap; text-align:center; }
     .btn.line { background:transparent; color:var(--gold); border:1px solid rgba(212,175,106,.45); font-weight:600; }
     .intro-actions { justify-content:flex-start; margin:0 0 28px; }
@@ -58,6 +59,9 @@
     @media (min-width:900px) {
       .opener { grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:40px; align-items:center; }
       h1 { font-size:clamp(3.4rem, 4.8vw, 4.75rem); }
+      .cta { display:grid; grid-template-columns:minmax(0,0.9fr) minmax(280px,1.1fr); gap:28px 48px; align-items:start; }
+      .inquire-form { max-width:none; margin:0; }
+      .cta .price-note { grid-column:1 / -1; margin:0; }
     }
     @media (min-width:761px) {
       .grid { grid-template-columns:1fr 1fr; }
@@ -109,7 +113,7 @@
       <div class="opener-copy">
         <span class="eyebrow">Private Events</span>
         <h1>Private events in Gulfport, FL</h1>
-        <p class="lead">Showers, birthdays, office gatherings, and recovery milestones in the room and on the patio. Tell us the date and headcount and we’ll confirm what fits.</p>
+        <p class="lead">Showers, birthdays, office gatherings, and recovery milestones in the room and on the patio.</p>
         <div class="actions intro-actions">
           <a class="btn" href="#inquire">Plan your gathering</a>
           <a class="btn line" data-cta="private-events" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
@@ -125,35 +129,35 @@
       </figure>
     </div>
 
-    <p>Sober Bar &amp; Kitchen is a coffee house by day and an alcohol-free cocktail bar by night in downtown Gulfport. Gatherings use the same room: baby showers, birthdays, office happy hours, book clubs, recovery milestones, and other private celebrations. Menus, staffing, pricing, and availability are confirmed in your event quote. An inquiry does not hold the date.</p>
+    <p>Sober Bar &amp; Kitchen is a coffee house by day and an alcohol-free cocktail bar by night in downtown Gulfport. Gatherings use the same room: baby showers, birthdays, office happy hours, book clubs, recovery milestones, and other private celebrations.</p>
 
     <h2 class="rise">Ways to Gather</h2>
     <div class="grid">
       <div class="card">
         <span class="tag">Corporate</span>
         <h3>Alcohol-Free Happy Hour</h3>
-        <p>Team time, ERG gatherings, and wellness outings in the room. Tell us the date and headcount and we’ll confirm what fits.</p>
+        <p>Team time, with alcohol-free cocktails.</p>
         <a class="plan-link" href="#inquire">Plan this gathering →</a>
       </div>
 
       <div class="card">
         <span class="tag">Celebration</span>
         <h3>Showers &amp; Birthdays</h3>
-        <p>Baby showers, bridal showers, birthdays, and other private celebrations. Menus and timing are part of the quote.</p>
+        <p>Showers, birthdays, and a reason to get everyone together.</p>
         <a class="plan-link" href="#inquire">Plan this gathering →</a>
       </div>
 
       <div class="card">
         <span class="tag">Private</span>
         <h3>A Reserved Section</h3>
-        <p>Book clubs, anniversaries, and other reasons to gather. Tell us the date and headcount and we’ll confirm what fits.</p>
+        <p>Book clubs, anniversaries, and room to catch up.</p>
         <a class="plan-link" href="#inquire">Plan this gathering →</a>
       </div>
 
       <div class="card">
         <span class="tag">Recovery</span>
         <h3>Recovery Milestones</h3>
-        <p>A celebration that does not put a drink in front of the guest of honor. Tell us the date and headcount and we’ll confirm what fits.</p>
+        <p>Mark the milestone with good company and alcohol-free cocktails.</p>
         <a class="plan-link" href="#inquire">Plan this gathering →</a>
       </div>
     </div>
@@ -169,8 +173,10 @@
     <p>Book clubs and sober-curious meetups use the room the same way. Just need a table for brunch or dinner, not a buyout? <a href="/sunday-jazz-brunch.html">Sunday jazz brunch</a> and <a href="/breakfast-gulfport.html">coffee and breakfast</a> are open for walk-ins, or <a data-cta="private-events" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">reserve a table</a>.</p>
 
     <div class="cta" id="inquire">
-      <h2 class="rise" style="margin-top:0">Tell us what you're planning.</h2>
-      <p>This opens an email draft. Send it from your mail app; we’ll confirm the date separately.</p>
+      <div class="inquire-intro">
+        <h2 class="rise" style="margin-top:0">Tell us what you're planning.</h2>
+        <p>Menus, staffing, pricing, and availability are confirmed in your event quote. An inquiry does not hold the date.</p>
+      </div>
       <form class="inquire-form" id="inquireForm" action="mailto:Sean@sipsoberbar.com" method="post" enctype="text/plain">
         <div>
           <label for="inq-name">Name</label>
@@ -226,10 +232,6 @@
         <div>
           <dt>Hours</dt>
           <dd>Sunday–Thursday 7am–10pm<br>Friday–Saturday 7am–midnight</dd>
-        </div>
-        <div>
-          <dt>Room</dt>
-          <dd>Tell us the date and headcount and we’ll confirm what fits.</dd>
         </div>
       </dl>
     </section>
@@ -313,7 +315,7 @@
     "@type": "Service",
     "name": "Private events at Sober Bar & Kitchen",
     "provider": { "@id": "https://www.sipsoberbar.com/#business" },
-    "description": "Showers, birthdays, office gatherings, and recovery milestones at Sober Bar & Kitchen in Gulfport. Tell us the date and headcount and we'll confirm what fits.",
+    "description": "Showers, birthdays, office gatherings, and recovery milestones at Sober Bar & Kitchen in Gulfport.",
     "areaServed": { "@type": "City", "name": "Gulfport", "containedInPlace": { "@type": "State", "name": "Florida" } }
   }
   </script>
@@ -325,7 +327,7 @@
       {
         "@type": "Question",
         "name": "How many people can a private event at Sober Bar hold?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Tell us the date and headcount and we'll confirm what fits. Call (813) 586-1660 or send an inquiry." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Call (813) 586-1660 or send an inquiry." }
       },
       {
         "@type": "Question",
