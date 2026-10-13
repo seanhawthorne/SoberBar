@@ -650,22 +650,6 @@ html { scroll-padding-top: 84px; }
     footer .fine a { color: #f4ead8; }
     footer .fine a:hover { color: var(--gold); }
 
-    /* ------- reveal ------- */
-    @media (prefers-reduced-motion: no-preference) {
-      .rise.is-in { animation: rise-in 0.55s cubic-bezier(0.16,1,0.3,1) both; }
-    }
-    @keyframes rise-in {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: none; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .rise { animation: none; opacity: 1; transform: none; }
-      .marquee-track { animation: none; }
-    }
-    @media print {
-      .rise { animation: none !important; opacity: 1 !important; transform: none !important; }
-    }
-
     /* ------- responsive ------- */
     @media (max-width: 1200px) {
       .nav-links { display: none; }

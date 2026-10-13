@@ -36,7 +36,6 @@
     .btn:hover { background:var(--gold-bright); color:#060504; }
     .btn.line { background:transparent; color:var(--gold); border:1px solid rgba(212,175,106,.45); font-weight:600; }
     .btn.line:hover { background:rgba(212,175,106,.12); border-color:var(--gold); color:var(--cream); }
-    .btn:focus-visible { outline:2px solid var(--gold-bright); outline-offset:3px; }
     .facts { border:1px solid rgba(212,175,106,.28); padding:22px 22px 8px; margin:8px 0 28px; }
     .facts h2 { margin-top:0; }
     .facts dl { display:grid; grid-template-columns:1fr 1fr; gap:16px 28px; margin-bottom:18px; }
@@ -52,9 +51,18 @@
     footer { text-align:center; padding:12px 0 8px; font-size:.78rem; }
     footer a { color:var(--gold); text-decoration:none; }
     footer p { margin-bottom:8px; }
+    .split-copy > :last-child { margin-bottom:0; }
     @media (min-width:900px) {
       .opener { grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:40px; align-items:center; }
       h1 { font-size:clamp(3.4rem, 4.8vw, 4.75rem); }
+      .split {
+        display:grid;
+        grid-template-columns:minmax(12rem, 17rem) minmax(0, 36rem);
+        column-gap:48px;
+        align-items:start;
+        margin-top:36px;
+      }
+      .split > h2 { margin:0; }
     }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
@@ -97,7 +105,7 @@
     </div>
   </header>
   <div class="shell">
-    <!-- TODO(owner): Publish the Sunday jazz brunch start time only after Sean confirms it. Do not invent a time or a band name. -->
+    <!-- TODO(owner): Brunch hours are Sundays 10am–1pm. Do not add a separate jazz set time or a band name. -->
     <!-- TODO(owner): Name Sunday-only dishes only after they are on the menu. Do not add beignets, chicory café au lait, crawfish eggs Benedict, or a gluten-free muffuletta until the kitchen confirms them. -->
     <div class="opener">
       <div class="opener-copy">
@@ -119,27 +127,43 @@
       </figure>
     </div>
 
-    <h2 class="rise">What Sunday is</h2>
-    <p>The doors are already open at 7am if you want coffee first. Walk-ins are welcome. A reservation holds a table. Call <a href="tel:+18135861660">(813) 586-1660</a> for details.</p>
+    <section class="split">
+      <h2 class="rise">Ease into Sunday.</h2>
+      <div class="split-copy">
+        <p>Brunch runs Sundays, 10am to 1pm. Book a table, then settle in. Call <a href="tel:+18135861660">(813) 586-1660</a> for details.</p>
+      </div>
+    </section>
 
-    <h2 class="rise">What you can order</h2>
-    <p>The full menu runs from open to close, including on Sunday. Confirmed plates include <strong>The White Rabbit</strong> (plain bagel, egg, brie, fig spread, prosciutto, hot honey) and the plant-based <strong>Garden District Muffuletta</strong>. Coffee starts with espresso, Kyoto Cold Brew, and chai. Later, the bar pours alcohol-free cocktails, including <strong>Call Me An Ube</strong>.</p>
-    <p> The posted list is the <a href="/menu.html">menu</a>. <a href="/breakfast-gulfport.html">Breakfast and coffee in Gulfport</a> has the morning dishes in one place.</p>
+    <section class="split">
+      <h2 class="rise">A little breakfast. A little New Orleans.</h2>
+      <div class="split-copy">
+        <p>The full menu runs from open to close, including on Sunday. Confirmed plates include <strong>The White Rabbit</strong> (plain bagel, egg, brie, fig spread, prosciutto, hot honey) and the plant-based <strong>Garden District Muffuletta</strong>. Coffee starts with espresso, Kyoto Cold Brew, and chai. Later, the bar pours alcohol-free cocktails, including <strong>Call Me An Ube</strong>.</p>
+        <p> The posted list is the <a href="/menu.html">menu</a>. <a href="/breakfast-gulfport.html">Breakfast and coffee in Gulfport</a> has the morning dishes in one place.</p>
+      </div>
+    </section>
 
-    <h2 class="rise">Questions</h2>
-    <details>
-      <summary>When is jazz brunch?</summary>
-      <p>Every Sunday. Call <a href="tel:+18135861660">(813) 586-1660</a> for details.</p>
-    </details>
-    <details>
-      <summary>Are you open before the music?</summary>
-      <p>Yes. Sunday hours are 7am–10pm. Coffee and the full menu start at open.</p>
-    </details>
+    <section class="split">
+      <h2 class="rise">Questions</h2>
+      <div class="split-copy">
+        <details>
+          <summary>When is jazz brunch?</summary>
+          <p>Every Sunday. Call <a href="tel:+18135861660">(813) 586-1660</a> for details.</p>
+        </details>
+        <details>
+          <summary>Are you open before the music?</summary>
+          <p>Yes. Sunday hours are 7am–10pm. Coffee and the full menu start at open.</p>
+        </details>
+      </div>
+    </section>
 
-    <h2 class="rise">While you are here</h2>
-    <p>The room and the Beach Boulevard patio are both open. Tell us the date and headcount and we’ll confirm what fits. <a href="/private-events.html">Private events</a> use the same room for showers, birthdays, office gatherings, and recovery milestones. <a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a> is the neighborhood guide.</p>
+    <section class="split">
+      <h2 class="rise">While you are here</h2>
+      <div class="split-copy">
+        <p>The room and the Beach Boulevard patio are both open. Tell us the date and headcount and we’ll confirm what fits. <a href="/private-events.html">Private events</a> use the same room for showers, birthdays, office gatherings, and recovery milestones. <a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a> is the neighborhood guide.</p>
+      </div>
+    </section>
 
-    <section class="facts" aria-label="Hours, address, and phone">
+    <section class="facts split" aria-label="Hours, address, and phone">
       <h2 class="rise">Visit</h2>
       <dl>
         <div>

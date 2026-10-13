@@ -330,7 +330,7 @@ button.btn:hover,
 button.btn:focus-visible,
 .btn-solid:hover,
 .btn-solid:focus-visible {
-  background: #eed9a4;
+  background: #f0ddb0;
   color: #060504;
 }
 a.btn.line:hover,
@@ -358,6 +358,8 @@ button.btn:focus-visible,
 .mobile-actions a.is-primary:focus-visible {
   outline: 2px solid #f4ead8;
   outline-offset: 3px;
+  background: #f0ddb0;
+  color: #060504;
 }
 a[data-cta].btn:not(.line):hover,
 button.btn:hover,
@@ -366,21 +368,6 @@ button.btn:hover,
 .nav-cta:hover {
   background: #f0ddb0;
   color: #060504;
-}
-
-/* Visible by default. A short fade-up runs only after JS marks an entering element. */
-@media (prefers-reduced-motion: no-preference) {
-  .rise.is-in,
-  .reveal.visible {
-    animation: rise-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-}
-@keyframes rise-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .rise, .reveal { animation: none; }
 }
 
 @media print {

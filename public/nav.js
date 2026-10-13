@@ -51,6 +51,9 @@
   if (!sections.length) return;
 
   var current = "";
+  var pinned = "";
+  var pinArrived = false;
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function setCurrent(id) {
     if (!id || id === current) return;
     current = id;
@@ -62,25 +65,61 @@
     var active = nav.querySelector("[aria-current='true']");
     if (active && nav.scrollWidth > nav.clientWidth) {
       var left = active.offsetLeft - (nav.clientWidth - active.offsetWidth) / 2;
-      nav.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+      nav.scrollTo({ left: Math.max(0, left), behavior: reduceMotion ? "auto" : "smooth" });
     }
   }
 
+  links.forEach(function (link) {
+    link.addEventListener("click", function () {
+      pinned = link.getAttribute("href").slice(1);
+      pinArrived = false;
+      setCurrent(pinned);
+    });
+  });
+
+  function band() {
+    return {
+      top: window.innerWidth < 761 ? 150 : 80,
+      bottom: Math.max(280, window.innerHeight * 0.62)
+    };
+  }
+
   function pick() {
-    var line = window.innerWidth < 761 ? 170 : 120;
-    var started = [];
+    var zone = band();
+    if (pinned) {
+      setCurrent(pinned);
+      var pinnedBox = document.getElementById(pinned).getBoundingClientRect();
+      var inZone = pinnedBox.bottom > zone.top && pinnedBox.top < zone.bottom;
+      if (inZone) pinArrived = true;
+      else if (pinArrived) pinned = "";
+      if (pinned) return;
+    }
+    var hits = [];
     sections.forEach(function (section) {
       var box = section.getBoundingClientRect();
-      if (box.top <= line) started.push({ id: section.id, top: box.top, left: box.left });
+      if (box.bottom <= zone.top || box.top >= zone.bottom) return;
+      var visibleTop = Math.max(box.top, zone.top);
+      var visibleBottom = Math.min(box.bottom, zone.bottom);
+      hits.push({
+        id: section.id,
+        height: Math.max(0, visibleBottom - visibleTop),
+        total: box.height
+      });
     });
-    if (!started.length) {
-      setCurrent(sections[0].id);
+    if (!hits.length) {
+      var passed = null;
+      sections.forEach(function (section) {
+        var box = section.getBoundingClientRect();
+        if (box.top > zone.top) return;
+        if (!passed || box.bottom > passed.bottom) passed = { id: section.id, bottom: box.bottom };
+      });
+      setCurrent(passed ? passed.id : sections[0].id);
       return;
     }
-    var newest = started.reduce(function (max, item) { return Math.max(max, item.top); }, -1e9);
-    var group = started.filter(function (item) { return item.top >= newest - 48; });
-    group.sort(function (a, b) { return a.left - b.left; });
-    setCurrent(group[0].id);
+    var tallest = hits.reduce(function (max, item) { return Math.max(max, item.height); }, 0);
+    var tied = hits.filter(function (item) { return tallest - item.height < 12; });
+    tied.sort(function (a, b) { return b.total - a.total; });
+    setCurrent(tied[0].id);
   }
 
   var spy = new IntersectionObserver(function () { pick(); }, {
