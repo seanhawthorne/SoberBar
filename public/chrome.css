@@ -324,6 +324,9 @@ button.btn,
 .nav-cta {
   transition: color 0.2s ease;
 }
+summary { transition: color 0.2s ease; }
+summary:hover,
+summary:focus-visible { color: #eed9a4; }
 a.btn:not(.line):not(.btn-line):hover,
 a.btn:not(.line):not(.btn-line):focus-visible,
 button.btn:hover,
