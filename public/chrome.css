@@ -322,9 +322,9 @@ button.btn,
 .btn-solid,
 .btn-line,
 .nav-cta {
-  transition: color 0.2s ease;
+  transition: color 160ms ease;
 }
-summary { transition: color 0.2s ease; }
+summary { transition: color 160ms ease; }
 summary:hover,
 summary:focus-visible { color: #eed9a4; }
 a.btn:not(.line):not(.btn-line):hover,

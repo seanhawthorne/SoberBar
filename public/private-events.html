@@ -37,7 +37,7 @@
     .card h3 { margin-top:0; }
     .card p:last-child { margin-bottom:0; }
     .card ul { margin-left:18px; }
-    .plan-link { display:inline-block; margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; font-weight:400; letter-spacing:normal; line-height:1.6; color:var(--gold-bright); text-decoration:underline; text-underline-offset:0.15em; }
+    .plan-link { display:inline-block; margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; font-weight:400; letter-spacing:normal; line-height:1.6; color:var(--gold-bright); text-decoration:underline; text-underline-offset:0.15em; transition:color 160ms ease; }
     .plan-link:hover { color:var(--cream); }
     .plan-link:focus-visible { outline:2px solid var(--gold-bright); outline-offset:3px; }
     .price-note { font-size:.85rem; color:var(--muted); line-height:1.6; }
@@ -55,6 +55,7 @@
     .inquire-form { text-align:left; width:100%; max-width:720px; margin:8px 0 0; display:grid; gap:14px; }
     .inquire-form label { display:block; font-family:'Josefin Sans', sans-serif; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
     .inquire-form input, .inquire-form select, .inquire-form textarea { box-sizing:border-box; width:100%; max-width:100%; min-width:0; background:transparent; color:var(--cream); border:1px solid rgba(212,175,106,.35); padding:0 16px; min-height:48px; height:48px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:16px; line-height:1.4; }
+    .inquire-form input:focus, .inquire-form select:focus, .inquire-form textarea:focus { outline:2px solid #d4af6a; outline-offset:2px; border-color:#d4af6a; }
     .inquire-form textarea { height:auto; min-height:120px; padding:14px 16px; resize:vertical; }
     .inquire-form button { border:0; cursor:pointer; font-family:'Josefin Sans', sans-serif; min-height:48px; }
     .actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-start; align-items:center; }
@@ -63,7 +64,8 @@
       h1 { font-size:clamp(3.4rem, 4.8vw, 4.75rem); }
       .cta { display:grid; grid-template-columns:minmax(0,0.9fr) minmax(280px,1.1fr); gap:28px 48px; align-items:start; }
       .inquire-intro { grid-column:1; grid-row:1; }
-      .inquire-form { max-width:none; margin:0; grid-column:2; grid-row:1; }
+      .inquire-form { max-width:none; margin:0; grid-column:2; grid-row:1; grid-template-columns:1fr 1fr; gap:14px 16px; }
+      .inquire-form .is-wide, .inquire-form button { grid-column:1 / -1; }
     }
     @media (min-width:761px) {
       .grid { grid-template-columns:1fr 1fr; }
@@ -208,7 +210,7 @@
             <option>Other</option>
           </select>
         </div>
-        <div>
+        <div class="is-wide">
           <label for="inq-notes">Notes</label>
           <textarea id="inq-notes" name="notes" placeholder="Indoor seating, food, or anything else we should know"></textarea>
         </div>
