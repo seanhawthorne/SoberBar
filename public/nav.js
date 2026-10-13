@@ -67,15 +67,20 @@
   }
 
   function pick() {
-    var line = window.innerWidth < 761 ? 150 : 108;
-    var hit = null;
+    var line = window.innerWidth < 761 ? 170 : 120;
+    var started = [];
     sections.forEach(function (section) {
       var box = section.getBoundingClientRect();
-      if (box.top <= line && box.bottom > line) {
-        if (!hit || box.left < hit.left - 8) hit = { id: section.id, left: box.left };
-      }
+      if (box.top <= line) started.push({ id: section.id, top: box.top, left: box.left });
     });
-    setCurrent(hit ? hit.id : sections[0].id);
+    if (!started.length) {
+      setCurrent(sections[0].id);
+      return;
+    }
+    var newest = started.reduce(function (max, item) { return Math.max(max, item.top); }, -1e9);
+    var group = started.filter(function (item) { return item.top >= newest - 48; });
+    group.sort(function (a, b) { return a.left - b.left; });
+    setCurrent(group[0].id);
   }
 
   var spy = new IntersectionObserver(function () { pick(); }, {
