@@ -1,0 +1,12 @@
+/* Room photos share one warm grade. Food photos use a lighter one.
+   Thumbnails and the phone hero stay untreated. */
+.tone-room img {
+  filter: sepia(0.15) saturate(1.06) hue-rotate(-6deg);
+}
+.tone-food img {
+  filter: sepia(0.06) saturate(1.02);
+}
+.mi img,
+.hero-photo img {
+  filter: none;
+}

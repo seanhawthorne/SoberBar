@@ -11,6 +11,7 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <script src="/analytics.js" defer></script>
+  <link rel="stylesheet" href="/grade.css">
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails" />
@@ -176,7 +177,7 @@ html { scroll-padding-top: 84px; }
     .band-photo img { width: 100%; max-width: 960px; height: auto; display: block; margin: 0 auto; }
     .band-photo figcaption { margin: 12px auto 0; max-width: 22em; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: normal; font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.25; color: #f4ead8; }
     #menu .sec-head { margin-bottom: 24px; gap: 12px; }
-    #menu .band-line { margin: 0 auto; max-width: 36em; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: normal; font-size: 18px; line-height: 1.5; color: #f4ead8; }
+    #menu .band-line { margin: 0 auto; max-width: 36em; text-align: center; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-weight: 400; font-style: normal; font-size: 17px; line-height: 1.6; letter-spacing: normal; color: #f4ead8; }
     #menu .band-photo { max-width: 760px; margin: 24px auto; }
     #menu .band-photo figcaption { font-size: 13px; letter-spacing: .02em; }
     #menu .menu-go { margin-top: 24px; text-align: center; }
@@ -301,6 +302,7 @@ html { scroll-padding-top: 84px; }
       font-size: clamp(1.9rem, 4.4vw, 3.1rem);
       line-height: 1.15; color: var(--cream);
     }
+    #menu h2.title { font-size: clamp(2.75rem, 6vw, 4.6rem); line-height: 1.02; }
     h2.title em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; letter-spacing: 0.01em; color: var(--gold-bright); font-size: 1.15em; }
 
     /* ------- nav ------- */
@@ -502,7 +504,7 @@ html { scroll-padding-top: 84px; }
     .menu-lead { max-width: 980px; margin: 0 auto 36px; }
     body.has-site-nav figure.menu-lead img,
     figure.menu-lead img { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; object-fit: cover; object-position: center; }
-    .mi .mi-desc { font-size: 0.85rem; color: var(--muted-2); margin-top: 2px; }
+    .mi .mi-desc { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 17px; font-weight: 400; line-height: 1.6; letter-spacing: normal; color: #f4ead8; margin-top: 2px; }
     .menu-note { text-align: center; margin-top: 60px; color: var(--muted-2); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; }
     .menu-note a { color: var(--gold); }
 
@@ -529,8 +531,9 @@ html { scroll-padding-top: 84px; }
     .gathering .btn { margin-top: 16px; }
     .brunch-actions .btn { margin-top: 0; }
     .brunch-copy {
-      max-width: 700px; margin: 0 auto; color: var(--muted);
-      font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.18rem, 2.3vw, 1.45rem);
+      max-width: 700px; margin: 0 auto; color: #f4ead8;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-weight: 400; font-size: 17px; line-height: 1.6; letter-spacing: normal;
     }
     .brunch-notes {
       display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 28px;
@@ -648,16 +651,19 @@ html { scroll-padding-top: 84px; }
     footer .fine a:hover { color: var(--gold); }
 
     /* ------- reveal ------- */
-    .tone-room img { filter: sepia(0.15) saturate(1.06) hue-rotate(-6deg); }
-    .tone-food img { filter: sepia(0.06) saturate(1.02); }
-    .hero-photo img, .mi img { filter: none; }
     @media (prefers-reduced-motion: no-preference) {
-      html.js-rise .rise { transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
-      html.js-rise .rise:not(.is-in) { opacity: 0; transform: translateY(12px); }
+      .rise.is-in { animation: rise-in 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+    }
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .rise { opacity: 1; transform: none; transition: none; }
+      .rise { animation: none; opacity: 1; transform: none; }
       .marquee-track { animation: none; }
+    }
+    @media print {
+      .rise { animation: none !important; opacity: 1 !important; transform: none !important; }
     }
 
     /* ------- responsive ------- */
@@ -731,22 +737,9 @@ html { scroll-padding-top: 84px; }
     .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
     .hero-slide.is-lead { z-index: 0; object-position: 42% 46%; }
     .hero-photo.is-live .hero-slide.is-lead { animation: hero-drift 32s ease-in-out infinite alternate; }
-    .hero-slide-2, .hero-slide-3 { z-index: 1; opacity: 0; }
-    .hero-slide-2 { object-position: center 16%; animation: hero-cross-a 36s ease-in-out infinite; }
-    .hero-slide-3 { object-position: center 38%; animation: hero-cross-b 36s ease-in-out infinite; }
     @keyframes hero-drift {
       from { transform: scale(1) translate3d(0,0,0); }
       to { transform: scale(1.055) translate3d(-1.1%, 0, 0); }
-    }
-    @keyframes hero-cross-a {
-      0%, 24% { opacity: 0; }
-      34%, 46% { opacity: 1; }
-      56%, 100% { opacity: 0; }
-    }
-    @keyframes hero-cross-b {
-      0%, 58% { opacity: 0; }
-      68%, 80% { opacity: 1; }
-      90%, 100% { opacity: 0; }
     }
     header.hero .btn-line {
       background: rgba(7, 6, 5, 0.62);
@@ -794,7 +787,9 @@ html { scroll-padding-top: 84px; }
     .menu-tabs[hidden] { display: none; }
     .menu-tabs button { background: transparent; border: 1px solid var(--gold-dim); color: var(--cream); font: inherit; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding: 12px 18px; cursor: pointer; min-height: 44px; }
     .menu-tabs button[aria-pressed="true"] { background: var(--gold); color: #060504; border-color: var(--gold); }
-    .menu-tabs button:focus-visible, .btn:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+    .menu-tabs button:focus-visible, a:focus-visible, button:focus-visible, .btn-line:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+    .btn-solid:hover, .nav-cta:hover, a[data-cta].btn-solid:hover { background: #f0ddb0; color: #060504; }
+    .btn-solid:focus-visible, .nav-cta:focus-visible, a[data-cta].btn-solid:focus-visible { outline: 2px solid #f4ead8; outline-offset: 3px; background: #f0ddb0; color: #060504; }
     .burger:hover, .burger:focus-visible { border-color: var(--gold-bright); color: var(--gold-bright); }
     .menu-served { text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--muted); font-size: 1.1rem; margin-bottom: 34px; }
     .menu-col[data-hidden] { display: none; }
@@ -807,9 +802,9 @@ html { scroll-padding-top: 84px; }
     .res-call a { color: var(--gold-bright); }
     body { font-size: 17px; }
     :root { --muted: #e7dcc8; --muted-2: #d9ccb8; }
-    .mi .mi-desc, .feature .copy p, .faq-wrap details p, .res-cell p, .brunch-copy { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; font-weight: 400; }
-    .mi .mi-desc { font-size: 1rem; line-height: 1.55; color: #cfc5b4; }
-    .feature .copy p, .faq-wrap details p { font-size: 1rem; line-height: 1.7; color: #d6ccbb; }
+    .mi .mi-desc, .feature .copy p, .faq-wrap details p, .res-cell p, .brunch-copy, .morning p, #menu .band-line { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; font-weight: 400; font-size: 17px; line-height: 1.6; letter-spacing: normal; }
+    .mi .mi-desc { color: #f4ead8; }
+    .feature .copy p, .faq-wrap details p, .morning p { color: #f4ead8; }
     .hero-proof a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--gold-faint); }
     .res-top { margin: 0 auto 40px; }
     header.hero .hero-actions .hero-call { display: none; }
@@ -842,7 +837,6 @@ html { scroll-padding-top: 84px; }
     }
     @media (prefers-reduced-motion: reduce) {
       .hero-status.is-open::before, .marquee-track, .hero-slide { animation: none !important; }
-      .hero-slide-2, .hero-slide-3 { display: none; }
       html { scroll-behavior: auto; }
     }
     @media (max-width: 900px) {
@@ -1107,31 +1101,19 @@ html { scroll-padding-top: 84px; }
     window.addEventListener('scroll', onScroll, { passive: true });
 
     const revealEls = document.querySelectorAll('.rise');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function markIn(el) { el.classList.add('is-in'); }
-    if (!reduceMotion && 'IntersectionObserver' in window && revealEls.length) {
-      revealEls.forEach((el) => {
-        if (el.getBoundingClientRect().top < window.innerHeight * 0.92) markIn(el);
-      });
-      document.documentElement.classList.add('js-rise');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window && revealEls.length) {
       const io = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) { markIn(e.target); io.unobserve(e.target); }
+          if (!e.isIntersecting) return;
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
         });
-      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
-      revealEls.forEach((el) => { if (!el.classList.contains('is-in')) io.observe(el); });
-      function revealSkipped() {
-        revealEls.forEach((el) => {
-          if (!el.classList.contains('is-in') && el.getBoundingClientRect().top < window.innerHeight) {
-            markIn(el);
-            io.unobserve(el);
-          }
-        });
-      }
-      window.addEventListener('scroll', revealSkipped, { passive: true });
-      window.addEventListener('load', revealSkipped);
-    } else {
-      revealEls.forEach(markIn);
+      }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+      revealEls.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight * 0.9 && top > -el.offsetHeight) return;
+        io.observe(el);
+      });
     }
 
     const burger = document.getElementById('burger');

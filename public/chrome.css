@@ -1,3 +1,5 @@
+@import url("/grade.css");
+
 /* Sticky mobile actions: Call, Reserve, Directions.
    Header styles often set `nav { top: 0 }`. top and bottom together would
    stretch this bar over the whole screen, so top stays auto and the height
@@ -341,42 +343,48 @@ a.btn-line:focus-visible,
   border-color: #d4af6a;
   color: #f4ead8;
 }
-a.btn:focus-visible,
-button.btn:focus-visible,
-.site-cta:focus-visible,
-.site-burger:focus-visible,
-.btn-solid:focus-visible,
+a.btn.line:focus-visible,
 .btn-line:focus-visible,
-.nav-cta:focus-visible,
-.mobile-actions a:focus-visible {
+.site-burger:focus-visible,
+.mobile-actions a:not(.is-primary):focus-visible {
   outline: 2px solid #eed9a4;
   outline-offset: 3px;
 }
+a.btn:not(.line):focus-visible,
+button.btn:focus-visible,
+.btn-solid:focus-visible,
+.site-cta:focus-visible,
+.nav-cta:focus-visible,
+.mobile-actions a.is-primary:focus-visible {
+  outline: 2px solid #f4ead8;
+  outline-offset: 3px;
+}
+a[data-cta].btn:not(.line):hover,
+button.btn:hover,
+.btn-solid:hover,
+.site-cta:hover,
+.nav-cta:hover {
+  background: #f0ddb0;
+  color: #060504;
+}
 
-/* Room photos share a warm grade. Food photos are lighter. Thumbnails stay plain. */
-body.has-site-nav .tone-room img {
-  filter: sepia(0.15) saturate(1.06) hue-rotate(-6deg);
-}
-body.has-site-nav .tone-food img,
-body.has-site-nav .menu-lead img,
-body.has-site-nav .cat-photo img {
-  filter: sepia(0.06) saturate(1.02);
-}
-body.has-site-nav .mi img {
-  filter: none;
-}
-
+/* Visible by default. A short fade-up runs only after JS marks an entering element. */
 @media (prefers-reduced-motion: no-preference) {
-  html.js-rise .rise {
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  .rise.is-in,
+  .reveal.visible {
+    animation: rise-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
-  html.js-rise .rise:not(.is-in) {
-    opacity: 0;
-    transform: translateY(12px);
-  }
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise, .reveal { animation: none; }
 }
 
 @media print {
   .site-nav, .site-menu { display: none !important; }
   body.has-site-nav { padding-top: 0; }
+  .rise, .reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
 }

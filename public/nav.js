@@ -26,23 +26,18 @@
   if (!nodes.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   if (!("IntersectionObserver" in window)) return;
 
-  function show(el) { el.classList.add("is-in"); }
-
-  nodes.forEach(function (el) {
-    if (el.getBoundingClientRect().top < window.innerHeight * 0.92) show(el);
-  });
-  document.documentElement.classList.add("js-rise");
-
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
-      show(entry.target);
+      entry.target.classList.add("is-in");
       io.unobserve(entry.target);
     });
-  }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
+  }, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
 
   nodes.forEach(function (el) {
-    if (!el.classList.contains("is-in")) io.observe(el);
+    var top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight * 0.9 && top > -el.offsetHeight) return;
+    io.observe(el);
   });
 })();
 
@@ -71,13 +66,23 @@
     }
   }
 
-  var spy = new IntersectionObserver(function (entries) {
-    var visible = entries.filter(function (entry) { return entry.isIntersecting; });
-    if (!visible.length) return;
-    visible.sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; });
-    setCurrent(visible[0].target.id);
-  }, { rootMargin: "-28% 0px -55% 0px", threshold: [0, 0.2, 0.5, 0.8] });
+  function pick() {
+    var line = window.innerWidth < 761 ? 150 : 108;
+    var hit = null;
+    sections.forEach(function (section) {
+      var box = section.getBoundingClientRect();
+      if (box.top <= line && box.bottom > line) {
+        if (!hit || box.left < hit.left - 8) hit = { id: section.id, left: box.left };
+      }
+    });
+    setCurrent(hit ? hit.id : sections[0].id);
+  }
 
+  var spy = new IntersectionObserver(function () { pick(); }, {
+    rootMargin: "-12% 0px -55% 0px",
+    threshold: [0, 0.25, 0.6]
+  });
   sections.forEach(function (section) { spy.observe(section); });
-  setCurrent(sections[0].id);
+  window.addEventListener("scroll", pick, { passive: true });
+  pick();
 })();

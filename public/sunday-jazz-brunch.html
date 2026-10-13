@@ -20,14 +20,17 @@
     :root { --black:#070605; --ink:#12100c; --gold:#d4af6a; --gold-bright:#eed9a4; --cream:#f4ead8; --muted:rgba(244,234,216,.72); }
     * { box-sizing:border-box; margin:0; padding:0; }
     body { background:var(--black); color:var(--cream); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-weight:400; line-height:1.6; }
-    .shell { width:min(100% - 40px, 820px); margin:0 auto; padding:56px 0 72px; }
-    h1 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(2.2rem,5vw,3.2rem); letter-spacing:0; text-transform:none; color:var(--cream); margin-bottom:16px; line-height:1.1; }
+    .shell { width:min(100% - 40px, 1080px); margin:0 auto; padding:56px 0 72px; }
+    h1 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(2.4rem,5vw,3rem); letter-spacing:0; text-transform:none; color:var(--cream); margin-bottom:16px; line-height:1.05; }
     h2 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.7rem; color:var(--gold-bright); margin:32px 0 12px; letter-spacing:0; text-transform:none; }
     p, li, dd { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; font-weight:400; letter-spacing:normal; line-height:1.6; color:#f4ead8; }
     p, li { margin-bottom:14px; }
     a { color:var(--gold-bright); }
     .eyebrow { font-family:'Josefin Sans', sans-serif; font-size:.72rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:12px; }
     .lead { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-style:normal; font-weight:400; font-size:17px; color:#f4ead8; line-height:1.6; margin-bottom:22px; }
+    .opener { display:grid; gap:22px; margin-bottom:8px; }
+    .opener .actions { margin-bottom:0; }
+    .opener figure { margin:0; }
     .actions { display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 28px; align-items:center; }
     .btn { display:inline-block; padding:14px 22px; background:var(--gold); color:#060504; font-family:'Josefin Sans', sans-serif; font-weight:600; text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; text-align:center; white-space:nowrap; }
     .btn:hover { background:var(--gold-bright); color:#060504; }
@@ -49,6 +52,10 @@
     footer { text-align:center; padding:12px 0 8px; font-size:.78rem; }
     footer a { color:var(--gold); text-decoration:none; }
     footer p { margin-bottom:8px; }
+    @media (min-width:900px) {
+      .opener { grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:40px; align-items:center; }
+      h1 { font-size:clamp(3.4rem, 4.8vw, 4.75rem); }
+    }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
     }
@@ -92,22 +99,25 @@
   <div class="shell">
     <!-- TODO(owner): Publish the Sunday jazz brunch start time only after Sean confirms it. Do not invent a time or a band name. -->
     <!-- TODO(owner): Name Sunday-only dishes only after they are on the menu. Do not add beignets, chicory café au lait, crawfish eggs Benedict, or a gluten-free muffuletta until the kitchen confirms them. -->
-    <span class="eyebrow">Every Sunday</span>
-    <h1>Sunday Jazz Brunch in Gulfport, FL</h1>
-    <p class="lead">Your Sunday plans, sorted. Live jazz, coffee, alcohol-free cocktails, and a table worth lingering at.</p>
-    <div class="actions">
-      <a class="btn" data-cta="jazz-brunch-page" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve Sunday brunch</a>
-      <a class="btn line" href="tel:+18135861660">Call</a>
-      <span class="party-link">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Daytime? Walk right in.</span>
+    <div class="opener">
+      <div class="opener-copy">
+        <span class="eyebrow">Every Sunday</span>
+        <h1>Sunday Jazz Brunch in Gulfport, FL</h1>
+        <p class="lead">Your Sunday plans, sorted. Live jazz, coffee, alcohol-free cocktails, and a table worth lingering at.</p>
+        <div class="actions">
+          <a class="btn" data-cta="jazz-brunch-page" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve Sunday brunch</a>
+          <a class="btn line" href="tel:+18135861660">Call</a>
+          <span class="party-link">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Daytime? Walk right in.</span>
+        </div>
+      </div>
+      <figure class="lounge-shot tone-room">
+        <picture>
+          <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 899px) 92vw, 520px" type="image/webp">
+          <img src="/images/space/lounge-1400.jpg" width="1400" height="788" alt="The lounge at Sober Bar under the chandelier" fetchpriority="high" decoding="async">
+        </picture>
+        <figcaption>Under the chandelier</figcaption>
+      </figure>
     </div>
-
-    <figure class="lounge-shot tone-room">
-      <picture>
-        <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 860px) 92vw, 780px" type="image/webp">
-        <img src="/images/space/lounge-1400.jpg" width="1400" height="788" alt="The lounge at Sober Bar under the chandelier" fetchpriority="high" decoding="async">
-      </picture>
-      <figcaption>Under the chandelier</figcaption>
-    </figure>
 
     <h2 class="rise">What Sunday is</h2>
     <p>The doors are already open at 7am if you want coffee first. Walk-ins are welcome. A reservation holds a table. Call <a href="tel:+18135861660">(813) 586-1660</a> for details.</p>
