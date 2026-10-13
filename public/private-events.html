@@ -33,6 +33,7 @@
     .room figcaption { margin-top: 10px; font-family:'Josefin Sans', sans-serif; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
     .grid { display:grid; grid-template-columns:1fr; gap:20px; }
     .card { background:transparent; border:0; border-top:1px solid rgba(244,234,216,.28); padding:22px 0 8px; }
+    .card:hover { background:rgba(212,175,106,.08); }
     .card:focus-within { background:rgba(212,175,106,.12); }
     .card h3 { margin-top:0; }
     .card p:last-child { margin-bottom:0; }
@@ -54,8 +55,8 @@
     .facts dd { margin:4px 0 0; color:var(--cream); }
     .inquire-form { text-align:left; width:100%; max-width:720px; margin:8px 0 0; display:grid; gap:14px; }
     .form-lead { grid-column:1 / -1; margin:0 0 8px; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.45rem; line-height:1.3; color:var(--cream); }
-    .occasion-ack { grid-column:1 / -1; margin:0 0 4px; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.15rem; line-height:1.3; color:var(--gold); }
-    .occasion-ack[hidden] { display:none; }
+    .occasion-ack { grid-column:1 / -1; margin:0 0 4px; min-height:calc(1.15rem * 1.3); font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.15rem; line-height:1.3; color:var(--gold); }
+    .occasion-ack[hidden] { display:block; visibility:hidden; }
     .inquire-form label { display:block; font-family:'Josefin Sans', sans-serif; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
     .inquire-form input, .inquire-form select, .inquire-form textarea { box-sizing:border-box; width:100%; max-width:100%; min-width:0; background:transparent; color:var(--cream); border:1px solid rgba(212,175,106,.35); padding:0 16px; min-height:48px; height:48px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:16px; line-height:1.4; }
     .inquire-form input:focus, .inquire-form select:focus, .inquire-form textarea:focus,
@@ -256,6 +257,7 @@
     var occasionLines = {
       'Office gathering': 'An office gathering? Let\u2019s plan it.',
       'Shower': 'A shower? Let\u2019s plan it.',
+      'Birthday': 'A birthday? Let\u2019s plan it.',
       'Book club': 'A book club night? Let\u2019s plan it.',
       'Recovery milestone': 'A recovery milestone? Let\u2019s mark it.'
     };
