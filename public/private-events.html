@@ -25,6 +25,7 @@
     a { color:var(--gold-bright); }
     .eyebrow { font-family:'Josefin Sans', sans-serif; font-size:.72rem; letter-spacing:.4em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:block; }
     .lead { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-style:normal; font-weight:400; font-size:17px; color:#f4ead8; line-height:1.6; margin-bottom:22px; }
+    .gather-line { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(1.85rem, 3.2vw, 2.65rem); line-height:1.22; color:var(--cream); margin:0 0 28px; }
     .opener { display:grid; gap:22px; margin-bottom:36px; }
     .opener-copy .actions { margin-bottom:0; }
     .room { margin:0; }
@@ -60,8 +61,9 @@
       .opener { grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:40px; align-items:center; }
       h1 { font-size:clamp(3.4rem, 4.8vw, 4.75rem); }
       .cta { display:grid; grid-template-columns:minmax(0,0.9fr) minmax(280px,1.1fr); gap:28px 48px; align-items:start; }
-      .inquire-form { max-width:none; margin:0; }
-      .cta .price-note { grid-column:1 / -1; margin:0; }
+      .inquire-intro { grid-column:1; grid-row:1; }
+      .inquire-form { max-width:none; margin:0; grid-column:2; grid-row:1 / span 2; }
+      .cta .price-note { grid-column:1; grid-row:2; margin:0; }
     }
     @media (min-width:761px) {
       .grid { grid-template-columns:1fr 1fr; }
@@ -129,7 +131,7 @@
       </figure>
     </div>
 
-    <p>Sober Bar &amp; Kitchen is a coffee house by day and an alcohol-free cocktail bar by night in downtown Gulfport. Gatherings use the same room: baby showers, birthdays, office happy hours, book clubs, recovery milestones, and other private celebrations.</p>
+    <p class="gather-line">Good company. Clear heads. Tell us what you’re celebrating; we’ll confirm what fits.</p>
 
     <h2 class="rise">Ways to Gather</h2>
     <div class="grid">
@@ -137,34 +139,30 @@
         <span class="tag">Corporate</span>
         <h3>Alcohol-Free Happy Hour</h3>
         <p>Team time, with alcohol-free cocktails.</p>
-        <a class="plan-link" href="#inquire">Plan this gathering →</a>
+        <a class="plan-link" href="#inquire" data-occasion="Office gathering">Plan this gathering →</a>
       </div>
 
       <div class="card">
         <span class="tag">Celebration</span>
         <h3>Showers &amp; Birthdays</h3>
         <p>Showers, birthdays, and a reason to get everyone together.</p>
-        <a class="plan-link" href="#inquire">Plan this gathering →</a>
+        <a class="plan-link" href="#inquire" data-occasion="Shower">Plan this gathering →</a>
       </div>
 
       <div class="card">
         <span class="tag">Private</span>
         <h3>A Reserved Section</h3>
         <p>Book clubs, anniversaries, and room to catch up.</p>
-        <a class="plan-link" href="#inquire">Plan this gathering →</a>
+        <a class="plan-link" href="#inquire" data-occasion="Book club">Plan this gathering →</a>
       </div>
 
       <div class="card">
         <span class="tag">Recovery</span>
         <h3>Recovery Milestones</h3>
         <p>Mark the milestone with good company and alcohol-free cocktails.</p>
-        <a class="plan-link" href="#inquire">Plan this gathering →</a>
+        <a class="plan-link" href="#inquire" data-occasion="Recovery milestone">Plan this gathering →</a>
       </div>
     </div>
-
-    <h2 class="rise">Good company. Clear heads.</h2>
-
-    <p>Coffee, alcohol-free cocktails, and room to catch up. Tell us your occasion; we’ll confirm the details.</p>
 
     <h2 class="rise">What guests drink</h2>
 
@@ -247,6 +245,15 @@
   </footer>
 
   <script>
+    document.querySelectorAll('.plan-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var occasion = link.getAttribute('data-occasion');
+        var select = document.getElementById('inq-occasion');
+        if (!occasion || !select) return;
+        var match = Array.prototype.some.call(select.options, function (opt) { return opt.value === occasion; });
+        if (match) select.value = occasion;
+      });
+    });
     document.getElementById('inquireForm').addEventListener('submit', function (event) {
       event.preventDefault();
       var form = event.currentTarget;
