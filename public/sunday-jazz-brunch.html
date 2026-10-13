@@ -70,11 +70,12 @@
       }
       .split > h2 { margin:0; }
       .split.order-chapter {
-        grid-template-columns:minmax(18rem, 28rem) minmax(0, 1fr);
+        grid-template-columns:max-content minmax(14rem, 1fr);
         border-top:1px solid rgba(244,234,216,.28);
         padding-top:28px;
         margin-top:40px;
       }
+      .split.order-chapter > h2 { white-space:nowrap; }
     }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
