@@ -1,8 +1,8 @@
-/* Separate warmth. Saturation stays at 1 or under. No grain or duotone.
+/* Daylight food and amber dishes stay two sets. No sepia, grain, or duotone on food.
    Thumbnails and the phone hero stay untreated. */
 .tone-room img { filter: saturate(0.97) sepia(0.05) contrast(1.02); }
-.tone-food img { filter: saturate(0.94) sepia(0.08) contrast(1.02); }
-.tone-dish img { filter: saturate(0.86) sepia(0.04) contrast(1.02); }
+.tone-food img,
+.tone-dish img,
 .mi img,
 .hero-photo img {
   filter: none;
@@ -62,6 +62,7 @@ button.btn,
 .menu-jumps a,
 .plan-link,
 .order-links a,
+.mobile-actions a,
 summary,
 .back {
   transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;

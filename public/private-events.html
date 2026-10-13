@@ -53,6 +53,7 @@
     .facts dt { font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); }
     .facts dd { margin:4px 0 0; color:var(--cream); }
     .inquire-form { text-align:left; width:100%; max-width:720px; margin:8px 0 0; display:grid; gap:14px; }
+    .form-lead { grid-column:1 / -1; margin:0 0 8px; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.45rem; line-height:1.3; color:var(--cream); }
     .inquire-form label { display:block; font-family:'Josefin Sans', sans-serif; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
     .inquire-form input, .inquire-form select, .inquire-form textarea { box-sizing:border-box; width:100%; max-width:100%; min-width:0; background:transparent; color:var(--cream); border:1px solid rgba(212,175,106,.35); padding:0 16px; min-height:48px; height:48px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:16px; line-height:1.4; }
     .inquire-form input:focus, .inquire-form select:focus, .inquire-form textarea:focus,
@@ -66,7 +67,7 @@
       .cta { display:grid; grid-template-columns:minmax(0,0.9fr) minmax(280px,1.1fr); gap:28px 48px; align-items:start; }
       .inquire-intro { grid-column:1; grid-row:1; }
       .inquire-form { max-width:none; margin:0; grid-column:2; grid-row:1; grid-template-columns:1fr 1fr; gap:14px 16px; }
-      .inquire-form .is-wide, .inquire-form button { grid-column:1 / -1; }
+      .inquire-form .is-wide, .inquire-form .form-lead, .inquire-form button { grid-column:1 / -1; }
     }
     @media (min-width:761px) {
       .grid { grid-template-columns:1fr 1fr; }
@@ -180,6 +181,7 @@
         <p class="price-note">No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>, or call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
       </div>
       <form class="inquire-form" id="inquireForm" action="mailto:Sean@sipsoberbar.com" method="post" enctype="text/plain">
+        <p class="form-lead">A few details. We’ll take it from there.</p>
         <div>
           <label for="inq-name">Name</label>
           <input id="inq-name" name="name" autocomplete="name" required>
@@ -254,7 +256,9 @@
         var select = document.getElementById('inq-occasion');
         if (!occasion || !select) return;
         var match = Array.prototype.some.call(select.options, function (opt) { return opt.value === occasion; });
-        if (match) select.value = occasion;
+        if (!match) return;
+        select.value = occasion;
+        window.setTimeout(function () { select.focus({ preventScroll: true }); }, 0);
       });
     });
     document.getElementById('inquireForm').addEventListener('submit', function (event) {
