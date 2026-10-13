@@ -48,7 +48,7 @@
     figcaption { font-family:'Josefin Sans', sans-serif; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-top:8px; }
     details { border:0; border-top:1px solid rgba(244,234,216,.28); background:transparent; margin:0; padding:0 4px; }
     details:last-child { border-bottom:1px solid rgba(244,234,216,.28); }
-    summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.28rem; color:var(--cream); }
+    summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.28rem; color:var(--cream); transition:color 0.2s ease; }
     summary::-webkit-details-marker { display:none; }
     summary::marker { content:''; }
     summary::after { content:'+'; color:var(--gold); font-family:'Josefin Sans', sans-serif; font-size:1.3rem; font-weight:300; }
@@ -69,6 +69,12 @@
         margin-top:36px;
       }
       .split > h2 { margin:0; }
+      .split.order-chapter {
+        grid-template-columns:minmax(18rem, 28rem) minmax(0, 1fr);
+        border-top:1px solid rgba(244,234,216,.28);
+        padding-top:28px;
+        margin-top:40px;
+      }
     }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
@@ -140,7 +146,7 @@
       </div>
     </section>
 
-    <section class="split">
+    <section class="split order-chapter">
       <h2 class="rise order-head">A little breakfast. A little New Orleans.</h2>
       <div class="split-copy">
         <p>The White Rabbit brings egg, brie, fig spread, prosciutto, and hot honey. Garden District Muffuletta keeps it plant-based. Add espresso, Kyoto Cold Brew, chai, or an alcohol-free Call Me An Ube.</p>
