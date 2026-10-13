@@ -40,8 +40,8 @@
     .actions { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:8px 0 22px; }
     .btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:14px 22px; background:var(--gold); color:var(--black); text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; }
     .btn.line { background:transparent; color:#f4ead8; border:1px solid rgba(244,234,216,.72); font-weight:500; }
-    .menu-jumps { display:flex; flex-wrap:wrap; gap:8px 10px; position:sticky; top:84px; z-index:20; background:#070605; padding:8px 0; margin:0 0 20px; }
-    .menu-jumps a { display:inline-flex; align-items:center; min-height:44px; padding:10px 14px; color:var(--gold-bright); font-size:16px; line-height:1.3; text-decoration:none; border-bottom:1px solid rgba(212,175,106,.5); transition:color 160ms ease; }
+    .menu-jumps { display:flex; flex-wrap:wrap; gap:8px 10px; position:sticky; top:84px; z-index:30; background:#070605; padding:12px 0 16px; margin:0 0 28px; border-bottom:1px solid rgba(212,175,106,.35); }
+    .menu-jumps a { display:inline-flex; align-items:center; min-height:44px; padding:10px 14px; color:var(--gold-bright); font-size:16px; line-height:1.3; text-decoration:none; border-bottom:1px solid rgba(212,175,106,.5); }
     .menu-jumps a:hover { color:var(--cream); border-bottom-color:var(--gold-bright); background:rgba(212,175,106,.16); }
     .menu-jumps a:focus-visible { color:var(--cream); outline:2px solid var(--gold-bright); outline-offset:3px; background:rgba(212,175,106,.16); }
     .menu-jumps a[aria-current="true"] { color:var(--cream); border-bottom-color:var(--gold); box-shadow:inset 0 -2px 0 var(--gold); }
@@ -53,7 +53,7 @@
     .cat-split { display:grid; grid-template-columns:1fr; gap:12px; align-items:start; margin-top:8px; }
     .cat-split > div, .cat-split > .cat-photo { grid-column:auto; grid-row:auto; min-width:0; margin:0; }
     .cat-split h3 { margin-top:8px; }
-    .menu-board section, #hot-honey, #garden-mezze, #classic-melt { scroll-margin-top:156px; }
+    .menu-board section, #hot-honey, #garden-mezze, #classic-melt, .cat-photo { scroll-margin-top:196px; }
     body.has-site-nav .menu-lead img { width:100%; max-width:100%; height:auto; margin:0; aspect-ratio:auto; object-fit:contain; display:block; border-radius:6px; }
     body.has-site-nav .cat-photo img { width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; object-position:center; display:block; border-radius:6px; }
     @media (max-width:768px) {
@@ -76,6 +76,7 @@
     }
     .chapter-grid { display:grid; grid-template-columns:1fr; gap:36px; align-items:start; }
     @media (min-width:761px) {
+      .menu-jumps { box-shadow: 100vmax 0 0 #070605, -100vmax 0 0 #070605; }
       .chapter-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:32px; }
       .chapter-grid > :nth-child(3) { grid-column:1 / -1; }
       .chapter-grid > :nth-child(3) ul { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:56px; row-gap:0; align-items:start; }
@@ -104,12 +105,12 @@
       .chapter-grid { grid-template-columns:1fr; }
       .chapter-grid > :nth-child(3) { grid-column:auto; }
       .chapter-grid > :nth-child(3) ul { display:block; grid-template-columns:none; }
-      .menu-jumps { position:sticky; top:76px; z-index:20; background:#070605; flex-wrap:nowrap; overflow-x:scroll; overscroll-behavior-x:contain; padding:12px 0 10px; margin-bottom:20px; scrollbar-width:thin; scrollbar-color:#d4af6a rgba(212,175,106,.28); }
+      .menu-jumps { top:76px; flex-wrap:nowrap; overflow-x:scroll; overscroll-behavior-x:contain; padding:12px 20px 10px; margin-bottom:20px; scrollbar-width:thin; scrollbar-color:#d4af6a rgba(212,175,106,.28); }
       .menu-jumps::-webkit-scrollbar { height:3px; }
       .menu-jumps::-webkit-scrollbar-track { background:rgba(212,175,106,.18); }
       .menu-jumps::-webkit-scrollbar-thumb { background:#d4af6a; }
       .menu-jumps a { flex:0 0 auto; padding:12px 18px; }
-      .menu-board section { scroll-margin-top:148px; }
+      .menu-board section, .cat-photo { scroll-margin-top:168px; }
     }
   </style>
 </head>

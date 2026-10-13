@@ -50,3 +50,19 @@ a[data-cta].btn-solid:focus-visible,
   outline: 2px solid #f4ead8;
   outline-offset: 3px;
 }
+
+/* One transition for buttons, category links, event links, and FAQ questions. Colour only — no movement. */
+a.btn,
+button.btn,
+.btn,
+.site-cta,
+.btn-solid,
+.btn-line,
+.nav-cta,
+.menu-jumps a,
+.plan-link,
+.order-links a,
+summary,
+.back {
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}

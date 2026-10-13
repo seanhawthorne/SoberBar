@@ -23,9 +23,9 @@
     .shell { width:min(100% - 40px, 1080px); margin:0 auto; padding:56px 0 72px; }
     h1 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(2.4rem,5vw,3rem); letter-spacing:0; text-transform:none; color:var(--cream); margin-bottom:16px; line-height:1.05; }
     h2 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.7rem; color:var(--gold-bright); margin:32px 0 12px; letter-spacing:0; text-transform:none; }
-    h2.order-head { font-size:clamp(2.6rem, 6vw, 3.5rem); line-height:1.05; }
+    h2.order-head { font-size:clamp(2.6rem, 6vw, 3.5rem); line-height:1.05; text-wrap:balance; }
     .order-links { display:flex; flex-wrap:wrap; gap:8px 22px; margin:4px 0 0; }
-    .order-links a { color:var(--gold); text-decoration:none; transition:color 160ms ease; }
+    .order-links a { color:var(--gold); text-decoration:none; }
     .order-links a:hover { color:var(--cream); }
     p, li, dd { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; font-weight:400; letter-spacing:normal; line-height:1.6; color:#f4ead8; }
     p, li { margin-bottom:14px; }
@@ -51,7 +51,7 @@
     figcaption { font-family:'Josefin Sans', sans-serif; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-top:8px; }
     details { border:0; border-top:1px solid rgba(244,234,216,.28); background:transparent; margin:0; padding:0 4px; }
     details:last-child { border-bottom:1px solid rgba(244,234,216,.28); }
-    summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.28rem; color:var(--cream); transition:color 160ms ease; }
+    summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.28rem; color:var(--cream); }
     summary:hover, summary:focus-visible { color:var(--gold-bright); }
     summary::-webkit-details-marker { display:none; }
     summary::marker { content:''; }
@@ -74,14 +74,17 @@
       }
       .split > h2 { margin:0; }
       .split.order-chapter {
-        display:block;
+        display:grid;
+        grid-template-columns:minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+        column-gap:48px;
+        align-items:start;
         max-width:none;
         border-top:1px solid rgba(244,234,216,.28);
         padding:52px 0 8px;
         margin-top:56px;
       }
-      .split.order-chapter > h2 { margin:0 0 18px; }
-      .split.order-chapter .split-copy { max-width:40rem; }
+      .split.order-chapter > h2 { margin:0; font-size:clamp(2.35rem, 3.8vw, 3.2rem); }
+      .split.order-chapter .split-copy { max-width:none; }
     }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
@@ -154,7 +157,7 @@
     </section>
 
     <section class="split order-chapter">
-      <h2 class="rise order-head">A little breakfast. A little New Orleans.</h2>
+      <h2 class="rise order-head">A little breakfast.<br>A little New Orleans.</h2>
       <div class="split-copy">
         <p>The White Rabbit brings egg, brie, fig spread, prosciutto, and hot honey. Garden District Muffuletta keeps it plant-based. Add espresso, Kyoto Cold Brew, chai, or an alcohol-free Call Me An Ube.</p>
         <p>The full menu runs from open to close.</p>
