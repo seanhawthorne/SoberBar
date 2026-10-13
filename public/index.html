@@ -303,6 +303,10 @@ html { scroll-padding-top: 84px; }
       line-height: 1.15; color: var(--cream);
     }
     #menu h2.title { font-size: clamp(3.85rem, 8.2vw, 6.6rem); line-height: 0.98; }
+    @media (min-width: 900px) {
+      #menu h2.title { font-size: clamp(2.35rem, 2.8vw, 3.4rem); line-height: 0.96; }
+      #menu h2.title .round-line { display: block; }
+    }
     h2.title em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; letter-spacing: 0.01em; color: var(--gold-bright); font-size: 1.15em; }
 
     /* ------- nav ------- */
@@ -956,7 +960,7 @@ html { scroll-padding-top: 84px; }
     <div class="shell">
       <div class="sec-head">
         <span class="eyebrow">The menu</span>
-        <h2 class="title rise">Stay for another round.</h2>
+        <h2 class="title rise">Stay for another <span class="round-line">round.</span></h2>
       </div>
       <p class="band-line">Espresso. Hot honey. Something with a little kick.</p>
       <figure class="band-photo tone-food rise">
