@@ -16,8 +16,8 @@
   <meta name="twitter:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails">
   <meta name="twitter:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am.">
   <script src="/analytics.js" defer></script>
-  <link rel="preload" as="image" href="/images/house/barloop-phone-poster-720.webp" media="(max-width: 800px)" fetchpriority="high">
-  <link rel="preload" as="image" href="/images/house/barloop-desktop-poster-1440.webp" media="(min-width: 801px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/house/parlor-800.webp" media="(max-width: 800px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/house/porch-night-1400.webp" media="(min-width: 801px)" fetchpriority="high">
 <style>
 /* Self-hosted Latin subsets (SIL Open Font License). Variable files cover the listed weights. */
 
@@ -136,7 +136,7 @@ body.house a.skip {
 body.house a.skip:focus { top: 12px; color: #1a120c; }
 
 body.home .site-nav {
-  background: rgba(7, 6, 5, 0.96);
+  background: #0a0806;
   border-bottom: 1px solid rgba(212, 175, 106, 0.28);
 }
 
@@ -206,17 +206,27 @@ body.house a.btn-line {
 .hero {
   min-height: 100svh;
   display: grid;
-  grid-template-columns: 55% 45%;
-  background: #070605;
+  grid-template-columns: minmax(0, 600px) minmax(0, 1fr);
+  background-color: #070605;
 }
-.hero-arch { min-height: 100svh; padding: 18px 0 18px 18px; }
+@media (min-width: 801px) {
+  .hero {
+    background-image: linear-gradient(90deg, rgba(7, 6, 5, 0.12) 0%, rgba(7, 6, 5, 0.45) 46%, rgba(7, 6, 5, 0.9) 70%), url("/images/house/porch-night-1400.webp");
+    background-size: cover;
+    background-position: center;
+  }
+}
+.hero-arch { min-height: 100svh; max-width: 600px; width: 100%; padding: 18px 0 0 18px; }
 .hero-frame {
   position: relative;
+  width: 100%;
+  max-width: 600px;
   height: calc(100svh - 36px);
   border-radius: 999px 999px 0 0;
   overflow: hidden;
   background: #120e0c;
 }
+.hero-frame picture { position: absolute; inset: 0; display: block; }
 .hero-frame img,
 .hero-frame video {
   position: absolute;
@@ -399,7 +409,9 @@ body.house a.btn-line {
   gap: 18px;
 }
 .door { color: inherit; text-decoration: none; }
+.door { overflow: hidden; }
 .door-frame {
+  position: relative;
   display: block;
   aspect-ratio: 3 / 4;
   overflow: hidden;
@@ -407,21 +419,33 @@ body.house a.btn-line {
   transition: clip-path 400ms ease;
   background: #14110e;
 }
+.door-frame picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 400ms ease;
+}
 .door-frame img { width: 100%; height: 100%; max-width: none; object-fit: cover; display: block; }
 .door:hover .door-frame,
 .door:focus-visible .door-frame,
 .door:active .door-frame,
 .door.is-open .door-frame { clip-path: polygon(0 100%, 0 22%, 8% 8%, 24% 1%, 50% 0, 76% 1%, 92% 8%, 100% 22%, 100% 100%); }
+.door:hover .door-frame picture,
+.door:focus-visible .door-frame picture,
+.door:active .door-frame picture,
+.door.is-open .door-frame picture { transform: scale(1.03); }
 .door-name {
   display: block;
   margin-top: 12px;
   font-family: "Poiret One", serif;
   font-weight: 400;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #d4af6a;
-  font-size: clamp(2rem, 3.4vw, 3.5rem);
-  line-height: 0.9;
+  font-size: clamp(1rem, 1.55vw, 2rem);
+  line-height: 1;
+  white-space: nowrap;
 }
 .door-cap { display: block; color: rgba(244, 234, 216, 0.8); font-size: 0.95rem; margin-top: 4px; }
 
@@ -500,14 +524,18 @@ body.house a.btn-line {
   border: 1px solid rgba(212, 175, 106, 0.45);
   padding: 16px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 8px;
   box-sizing: border-box;
   background: #120e0c;
 }
+.type-card .drink-name { font-size: clamp(1.45rem, 1.8vw, 2.1rem); }
 .type-card .cocktail-face p {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-style: italic;
-  font-size: clamp(1.15rem, 1.4vw, 1.45rem);
+  font-size: clamp(1.05rem, 1.3vw, 1.35rem);
   line-height: 1.25;
   color: #f4ead8;
 }
@@ -541,6 +569,7 @@ body.house a.btn-line {
 }
 .poster-photo { width: min(100%, 1080px); }
 .poster-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.poster-photo figcaption { margin: 0; padding: 12px 16px 16px; }
 .poster-copy { padding: 8vh 5vw; }
 .poster-giant { font-size: clamp(3.4rem, 7vw, 7.2rem); display: block; }
 .poster-band { font-size: clamp(1.8rem, 3vw, 3rem); display: block; margin-top: 10px; color: #f4ead8; }
@@ -626,10 +655,19 @@ footer.site-foot a { color: #f4ead8; }
 .menu-jumps a[aria-current="true"] { border-bottom-color: #d4af6a; color: #eed9a4; }
 .parchment {
   background: #efe6d4;
-  color: #1c140e;
+  color: #2a2118;
   padding: 28px 0 40px;
 }
-.parchment a { color: #6a3b12; }
+.parchment p,
+.parchment li,
+.parchment strong,
+.parchment a,
+.prose .parchment p,
+.prose .parchment li,
+.prose .parchment strong,
+.prose .parchment a { color: #2a2118; }
+.parchment a,
+.prose .parchment a { text-decoration: underline; }
 .parchment h2, .parchment h3 { color: #3a2412; }
 .food-list, .coffee-grid { list-style: none; margin: 0; padding: 0; }
 .coffee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; }
@@ -771,10 +809,12 @@ body.house .mast img { width: 100%; height: 40vh; min-height: 220px; max-height:
 @media (max-width: 800px) {
   .hero { display: flex; flex-direction: column; min-height: 0; }
   .hero-arch { min-height: 0; padding: 0; }
+  .hero { grid-template-columns: 1fr; }
   .hero-frame {
     height: min(62svh, calc(100svh - 380px));
     max-height: 62svh;
-    border-radius: 0;
+    max-width: 600px;
+    border-radius: 999px 999px 0 0;
   }
   .hero-copy {
     position: relative;
@@ -790,7 +830,7 @@ body.house .mast img { width: 100%; height: 40vh; min-height: 220px; max-height:
   .sun-wrap { display: none; }
   .doors { display: flex; flex-direction: column; align-items: center; gap: 28px; scroll-snap-type: y mandatory; }
   .door { width: min(80vw, 100%); scroll-snap-align: center; }
-  .door-name { font-size: clamp(2.4rem, 11vw, 3.4rem); }
+  .door-name { font-size: clamp(1.8rem, 8vw, 2.6rem); letter-spacing: 0.03em; }
   .porch-copy .room-name { font-size: clamp(2.5rem, 11vw, 3.6rem); max-width: 100%; }
   .office, .poster, .gather, .service-panels, .visit-grid, .quotes, .coffee-grid, .collage, .event-hero, .settings, .related, .cards, .inquire-form {
     grid-template-columns: 1fr;
@@ -818,7 +858,7 @@ body.house .mast img { width: 100%; height: 40vh; min-height: 220px; max-height:
 
 .site-nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 90;
-  background: rgba(7, 6, 5, 0.94);
+  background: #0a0806;
   border-bottom: 1px solid rgba(212, 175, 106, 0.28);
 }
 .site-nav-inner {
@@ -886,6 +926,7 @@ body.house .mast img { width: 100%; height: 40vh; min-height: 220px; max-height:
   .sunburst, .marquee-track { animation: none; }
   .porch-dim { opacity: 0; transition: none; }
   .door-frame { transition: none; clip-path: polygon(0 100%, 0 22%, 8% 8%, 24% 1%, 50% 0, 76% 1%, 92% 8%, 100% 22%, 100% 100%); }
+  .door-frame picture { transition: none; transform: none; }
   .porch img { filter: none; transition: none; }
   .drink img { transform: none !important; transition: none; }
   .hero-frame video { display: none; }
@@ -919,13 +960,10 @@ body.house .mast img { width: 100%; height: 40vh; min-height: 220px; max-height:
     <div class="hero-arch">
       <div class="hero-frame">
         <picture>
-<source media="(max-width: 800px)" type="image/webp" srcset="/images/house/barloop-phone-poster-720.webp">
-<source type="image/avif" srcset="/images/house/barloop-desktop-poster-960.avif 960w, /images/house/barloop-desktop-poster-1440.avif 1440w, /images/house/barloop-desktop-poster-1920.avif 1920w" sizes="55vw">
-<source type="image/webp" srcset="/images/house/barloop-desktop-poster-960.webp 960w, /images/house/barloop-desktop-poster-1440.webp 1440w, /images/house/barloop-desktop-poster-1920.webp 1920w" sizes="55vw">
-<img src="/images/house/barloop-desktop-poster-1920.jpg" width="1920" height="1080" alt="The bar room under the chandeliers" fetchpriority="high">
+<source type="image/avif" srcset="/images/house/parlor-480.avif 480w, /images/house/parlor-800.avif 800w" sizes="(max-width: 800px) 100vw, 600px">
+<source type="image/webp" srcset="/images/house/parlor-480.webp 480w, /images/house/parlor-800.webp 800w" sizes="(max-width: 800px) 100vw, 600px">
+<img src="/images/house/parlor-800.jpg" width="800" height="1067" alt="The parlor, red velvet and a chandelier" fetchpriority="high">
 </picture>
-        <video id="heroVideo" muted playsinline loop preload="none"></video>
-        <button type="button" class="media-pause" id="videoPause" hidden aria-pressed="false">Pause video</button>
       </div>
     </div>
     <div class="hero-copy">
@@ -1051,7 +1089,7 @@ body.house .mast img { width: 100%; height: 40vh; min-height: 220px; max-height:
 <source type="image/webp" srcset="/images/house/hot-mami-440.webp 440w" sizes="(max-width: 800px) 70vw, 440px">
 <img src="/images/house/hot-mami-440.jpg" width="440" height="330" alt="" loading="lazy" decoding="async">
 </picture><span><span class="drink-name">Hot Mami</span><p>Reposado tequila alt, jalapeño, lime, pineapple ginger, chili</p></span></a>
-        <a class="drink drink-ue" href="/menu.html#cocktails"><picture>
+        <a class="drink" href="/menu.html#cocktails"><picture>
 <source type="image/avif" srcset="/images/house/lilikoi-440.avif 440w" sizes="(max-width: 800px) 70vw, 440px">
 <source type="image/webp" srcset="/images/house/lilikoi-440.webp 440w" sizes="(max-width: 800px) 70vw, 440px">
 <img src="/images/house/lilikoi-440.jpg" width="440" height="330" alt="" loading="lazy" decoding="async">

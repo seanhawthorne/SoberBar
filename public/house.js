@@ -20,32 +20,6 @@
       }, { threshold: 0.45 }).observe(el);
     });
   }
-  var video = document.getElementById("heroVideo");
-  var videoBtn = document.getElementById("videoPause");
-  if (video && !reduce) {
-    var phone = window.matchMedia("(max-width: 800px)").matches;
-    var base = phone ? "/video/bar-phone" : "/video/bar-desktop";
-    video.innerHTML = '<source src="' + base + '.webm" type="video/webm"><source src="' + base + '.mp4" type="video/mp4">';
-    var start = function () {
-      var play = video.play();
-      if (play && play.then) play.then(function () { video.classList.add("is-playing"); if (videoBtn) videoBtn.hidden = false; }).catch(function () {});
-    };
-    if (document.readyState === "complete") start();
-    else window.addEventListener("load", start);
-    if (videoBtn) {
-      videoBtn.addEventListener("click", function () {
-        if (video.paused) {
-          video.play();
-          videoBtn.textContent = "Pause video";
-          videoBtn.setAttribute("aria-pressed", "false");
-        } else {
-          video.pause();
-          videoBtn.textContent = "Play video";
-          videoBtn.setAttribute("aria-pressed", "true");
-        }
-      });
-    }
-  }
   document.querySelectorAll("img[data-src]").forEach(function (img) {
     var load = function () {
       var pic = img.parentNode;
