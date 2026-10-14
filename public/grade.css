@@ -1,0 +1,69 @@
+/* Daylight food and amber dishes stay two sets. No sepia, grain, or duotone on food.
+   Thumbnails and the phone hero stay untreated. */
+.tone-room img { filter: saturate(0.97) sepia(0.05) contrast(1.02); }
+.tone-food img,
+.tone-dish img,
+.mi img,
+.hero-photo img {
+  filter: none;
+}
+
+/* Content stays visible. A short fade-up from 70% runs only after JS marks an entering element. */
+@media (prefers-reduced-motion: no-preference) {
+  .rise.is-in,
+  .reveal.is-in {
+    animation: rise-in 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+@keyframes rise-in {
+  from { opacity: 0.7; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .rise,
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+@media print {
+  .rise,
+  .reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* Same focus ring on every page. Solid booking controls use the lighter ring. */
+:focus-visible {
+  outline: 2px solid #eed9a4;
+  outline-offset: 3px;
+}
+a.btn:not(.line):not(.btn-line):focus-visible,
+button.btn:focus-visible,
+.btn-solid:focus-visible,
+.site-cta:focus-visible,
+.nav-cta:focus-visible,
+a[data-cta].btn-solid:focus-visible,
+.mobile-actions a.is-primary:focus-visible {
+  outline: 2px solid #f4ead8;
+  outline-offset: 3px;
+}
+
+/* One transition for buttons, category links, event links, and FAQ questions. Colour only — no movement. */
+a.btn,
+button.btn,
+.btn,
+.site-cta,
+.btn-solid,
+.btn-line,
+.nav-cta,
+.menu-jumps a,
+.plan-link,
+.order-links a,
+.mobile-actions a,
+summary,
+.back {
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}

@@ -8,9 +8,10 @@
   <meta name="robots" content="noindex" />
   <meta name="theme-color" content="#070605" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/poiret-one-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/chrome.css">
   <style>
     :root {
       --black: #070605; --gold: #d4af6a; --gold-bright: #eed9a4;
@@ -20,7 +21,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: var(--black); color: var(--cream);
-      font-family: 'Josefin Sans', 'Futura', sans-serif; font-weight: 300;
+      font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif; font-weight: 400; font-size: 17px;
       line-height: 1.7; -webkit-font-smoothing: antialiased;
       min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center; padding: 40px 24px; position: relative; overflow: hidden;
@@ -38,27 +39,71 @@
     .logo { width: min(360px, 76vw); height: auto; margin-bottom: 40px; position: relative; }
     .code { font-family: 'Poiret One', sans-serif; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-size: 0.75rem; margin-bottom: 18px; position: relative; }
     h1 {
-      font-family: 'Poiret One', sans-serif; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
-      font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.15; color: var(--cream); position: relative;
+      font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; letter-spacing: 0; text-transform: none;
+      font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; color: var(--cream); position: relative;
     }
     h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; color: var(--gold-bright); font-size: 1.15em; }
     p.sub { color: var(--muted); max-width: 34rem; margin: 20px auto 0; position: relative; }
     .actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 38px; position: relative; }
-    .btn { text-decoration: none; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; padding: 15px 30px; transition: all 0.3s ease; }
+    .btn { text-decoration: none; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; padding: 15px 30px; }
     .btn-solid { background: var(--gold); color: #000; }
     .btn-solid:hover { background: var(--gold-bright); }
     .btn-line { color: var(--gold); border: 1px solid var(--gold-dim); }
     .btn-line:hover { background: var(--gold); color: #000; }
   </style>
 </head>
-<body>
-  <a href="/" aria-label="Sober Bar home"><img class="logo" src="/images/logo-sunburst.png" alt="Sober Bar — art-deco sunburst logo" /></a>
+<body class="has-site-nav">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <div class="site-nav-inner">
+        <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="400" height="250"></a>
+        <ul class="site-links">
+          <li><a href="/menu.html#cocktails">Cocktails</a></li>
+          <li><a href="/menu.html">Menu</a></li>
+          <li><a href="/private-events.html">Private Events</a></li>
+          <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
+          <li><a href="/reservations.html">Reservations</a></li>
+          <li><a href="/#visit">Visit</a></li>
+          <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
+        </ul>
+        <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
+        <a class="site-cta" data-cta="header" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
+        <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
+      </div>
+    </nav>
+    <div class="site-menu" id="siteMenu">
+      <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
+      <a href="/menu.html#cocktails">Cocktails</a>
+      <a href="/menu.html">Menu</a>
+      <a href="/private-events.html">Private Events</a>
+      <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
+      <a href="/reservations.html">Reservations</a>
+      <a href="/#visit">Visit</a>
+      <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
+      <a href="tel:+18135861660">(813) 586-1660</a>
+    </div>
+  </header>
   <p class="code">404 · Page not found</p>
   <h1>This page slipped <em>off the menu.</em></h1>
   <p class="sub">The link may be old or mistyped — but the bar is very real. Head back and we'll point you to the door on Beach Boulevard.</p>
   <div class="actions">
-    <a class="btn btn-solid" href="/">Back to Home</a>
-    <a class="btn btn-line" href="/#menu">See the Menu</a>
+    <a class="btn btn-solid" data-cta="404" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a> <span class="party-link">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>.</span>
+    <a class="btn btn-line" href="tel:+18135861660">Call</a>
+    <a class="btn btn-line" href="/">Back to Home</a>
   </div>
+  <footer>
+    <p class="fine">Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
+    <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
+    <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
+    <p class="fine"><a href="/menu.html">Menu</a> · <a href="/reservations.html">Reservations</a> · <a href="/sunday-jazz-brunch.html">Jazz brunch</a> · <a href="/private-events.html">Private events</a> · <a href="/guides.html">Guides</a></p>
+    <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+    <p class="fine">© 2026 Sober Bar</p>
+  </footer>
+  <nav class="mobile-actions" aria-label="Call, reserve, or directions">
+    <a href="tel:+18135861660">Call</a>
+    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
+    <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+  </nav>
+  <script src="/nav.js" defer></script>
 </body>
 </html>

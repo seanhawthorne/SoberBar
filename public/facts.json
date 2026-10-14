@@ -1,0 +1,49 @@
+{
+  "name": "Sober Bar & Kitchen",
+  "shortName": "Sober Bar",
+  "domain": "https://www.sipsoberbar.com",
+  "description": "Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen in Gulfport, Florida.",
+  "schemaType": ["BarOrPub", "CafeOrCoffeeShop"],
+  "address": {
+    "street": "3062 Beach Blvd S",
+    "city": "Gulfport",
+    "region": "FL",
+    "postal": "33707",
+    "country": "US"
+  },
+  "geo": {
+    "latitude": 27.7391,
+    "longitude": -82.7077
+  },
+  "phoneDisplay": "(813) 586-1660",
+  "phoneTel": "+18135861660",
+  "email": "Sean@sipsoberbar.com",
+  "hours": [
+    {
+      "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "07:00",
+      "closes": "22:00",
+      "label": "Sunday–Thursday 7am–10pm"
+    },
+    {
+      "days": ["Friday", "Saturday"],
+      "opens": "07:00",
+      "closes": "00:00",
+      "label": "Friday–Saturday 7am–midnight"
+    }
+  ],
+  "drinks": "alcohol-free cocktails",
+  "alcohol": "Alcohol-free cocktails.",
+  "amenityFeature": "Free WiFi",
+  "wifi": "free, fast WiFi, good for working",
+  "menu": "https://www.sipsoberbar.com/menu.html",
+  "seatOnDinner": "https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637",
+  "seatOnBrunch": "https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637",
+  "partyLimit": "Book online for 1–6. For 7+, call (813) 586-1660.",
+  "sameAs": {
+    "instagram": "https://www.instagram.com/sipsoberbar",
+    "facebook": "https://www.facebook.com/p/Sober-Bar-61582670395782/",
+    "yelp": "https://www.yelp.com/biz/sober-bar-gulfport-2",
+    "googleMaps": "https://www.google.com/maps?cid=9116696801118190440"
+  }
+}

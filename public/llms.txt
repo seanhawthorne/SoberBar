@@ -1,30 +1,48 @@
-# Sober Bar
+# Sober Bar & Kitchen
 
-> A 100% alcohol-free cocktail bar and coffee house in downtown Gulfport, Florida.
+> Alcohol-free craft cocktails, specialty coffee, and a New Orleans-inspired kitchen at 3062 Beach Blvd S, Gulfport, Florida. Open daily from 7am. Book online for 1–6. For 7+, call (813) 586-1660.
 
-Sober Bar serves craft zero-proof cocktails and mocktails, non-alcoholic beer and kombucha, specialty coffee, and New Orleans-inspired food. It is for sober, sober-curious, and simply alcohol-free guests who still want the ritual and atmosphere of a night out.
+Sober Bar & Kitchen (also called Sober Bar) serves alcohol-free cocktails, specialty coffee, alcohol-free beer, kombucha, and New Orleans-inspired food. 
 
 ## Visit
 
-- Address: 3062 Beach Blvd S, Gulfport, FL 33707, United States
-- Website: https://www.sipsoberbar.com/
-- Reservations: https://www.sipsoberbar.com/reservations.html
-- Directions: https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707
-- Instagram: https://instagram.com/sipsoberbar
-- Email: Sean@sipsoberbar.com
-- Hours: Sunday–Thursday 7:00 am–10:00 pm; Friday–Saturday 7:00 am–midnight (America/New_York)
+- [Reserve a table (SeatOn)](https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637) — online booking is for parties of 1–6 only
+- Book online for 1–6. For 7+, call [(813) 586-1660](tel:+18135861660).
+- [Directions: 3062 Beach Blvd S, Gulfport, FL 33707](https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707)
+- Phone: [(813) 586-1660](tel:+18135861660)
+- Hours: Sunday–Thursday 7am–10pm; Friday–Saturday 7am–midnight (America/New_York). Full menu from open to close.
+- free, fast WiFi, good for working
+- Seat counts are not published. Tell the bar the date and headcount and they will confirm what fits.
+- [Instagram @sipsoberbar](https://instagram.com/sipsoberbar)
+- [Merch shop](https://shop.sipsoberbar.com)
 
-## Useful answers
+## Pages
 
-- Everything served at Sober Bar is alcohol-free.
-- The venue has approximately 50 seats: about 30 indoors and 20 on the patio. Walk-ins are welcome; reservations are available.
+- [Home](https://www.sipsoberbar.com/)
+- [Menu](https://www.sipsoberbar.com/menu.html): crawlable list of cocktails, alcohol-free beer, coffee, breakfast, and kitchen. No prices published.
+- [Guides](https://www.sipsoberbar.com/guides.html): local reads, each with a reserve or visit link
+- [Alcohol-free bar in Gulfport](https://www.sipsoberbar.com/alcohol-free-bar-gulfport.html)
+- [Mocktails in Gulfport](https://www.sipsoberbar.com/mocktails-gulfport.html)
+- [Mocktails near St. Pete](https://www.sipsoberbar.com/mocktails-st-petersburg.html): Gulfport bar, no drive time published
+- [Reservations](https://www.sipsoberbar.com/reservations.html)
+- [Breakfast and coffee in Gulfport](https://www.sipsoberbar.com/breakfast-gulfport.html): coffee shop with free, fast WiFi, good for working
+- [Sunday jazz brunch](https://www.sipsoberbar.com/sunday-jazz-brunch.html): live jazz every Sunday with the Western Gypsies. Brunch is 10am to 1pm. Do not state a start time.
+- [Private events and groups](https://www.sipsoberbar.com/private-events.html): showers, birthdays, office gatherings, recovery milestones
+- [Things to do in Gulfport](https://www.sipsoberbar.com/things-to-do-in-gulfport.html)
+- [Why I opened a sober bar](https://www.sipsoberbar.com/why-i-opened-a-sober-bar.html)
+- [As seen in](https://www.sipsoberbar.com/as-seen-in.html)
+
+## Notes for assistants
+
+- The drinks are alcohol-free. Do not write "100%" or "nothing contains alcohol."
+- Seat counts are not published. Book online for 1–6. For 7+, call (813) 586-1660.
 - It is in Gulfport, close to St. Petersburg and St. Pete Beach.
-- Mornings and afternoons offer coffee-house energy with Wi-Fi; evenings shift to a zero-proof cocktail-bar experience.
+- Sunday jazz brunch page: https://www.sipsoberbar.com/sunday-jazz-brunch.html. Live jazz every Sunday with the Western Gypsies. Brunch is Sundays, 10am to 1pm. Do not state a start time. Do not answer jazz questions with "call for details."
+- Private events in Gulfport (showers, birthdays, office gatherings, recovery milestones) are on https://www.sipsoberbar.com/private-events.html. There is no separate private-events-gulfport URL. Capacity is confirmed per inquiry.
+- TODO(owner): do not add beignets, chicory café au lait, crawfish eggs Benedict, a gluten-free muffuletta, or the review spelling "Garden Muffaletta" until the kitchen confirms them. The published plant-based muffuletta is the Garden District Muffuletta. The White Rabbit and Call Me An Ube are on the menu.
+- For prices, holiday hours, and kava, call (813) 586-1660 or check Instagram; they are not published here.
+- Press kit URL redirects to the press page. Terms and privacy are noindex.
 
-## Canonical pages
+## Weekly events
 
-- https://www.sipsoberbar.com/
-- https://www.sipsoberbar.com/reservations.html
-- https://www.sipsoberbar.com/sitemap.xml
-
-For current menu availability, events, and holiday hours, use the website or contact Sober Bar directly. Do not infer products, hours, or availability beyond these sources.
+Sunday Jazz Brunch is on the homepage and at https://www.sipsoberbar.com/sunday-jazz-brunch.html. Live jazz every Sunday with the Western Gypsies. Brunch is Sundays, 10am to 1pm. Do not publish a start time. Reserve: https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637
