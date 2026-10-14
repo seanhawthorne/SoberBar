@@ -28,9 +28,9 @@
     .gather-line { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(1.85rem, 3.2vw, 2.65rem); line-height:1.22; color:var(--cream); margin:0 0 28px; }
     .opener { display:grid; gap:22px; margin-bottom:36px; }
     .opener-copy .actions { margin-bottom:0; }
-    .room { margin:0; }
-    body.has-site-nav figure.room img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; object-position:center 42%; }
-    .room figcaption { margin-top: 10px; font-family:'Josefin Sans', sans-serif; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+    .event-still { margin:0; max-width:360px; }
+    body.has-site-nav figure.event-still img { width:100%; max-width:720px; height:auto; aspect-ratio:9 / 16; object-fit:cover; display:block; }
+    .event-still figcaption { margin-top: 10px; font-family:'Josefin Sans', sans-serif; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
     .grid { display:grid; grid-template-columns:1fr; gap:20px; }
     .card { background:transparent; border:0; border-top:1px solid rgba(244,234,216,.28); padding:22px 0 8px; }
     .card:hover { background:rgba(212,175,106,.08); }
@@ -88,6 +88,9 @@
     @media (min-width:761px) {
       .grid { grid-template-columns:1fr 1fr; }
     }
+    @media (max-width:899px) {
+      .event-still { margin-left:auto; margin-right:auto; }
+    }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
       .cta .btn { margin-left:0 !important; }
@@ -119,7 +122,7 @@
       </div>
     </nav>
     <div class="site-menu" id="siteMenu">
-      <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+      <a data-cta="mobile-menu" href="#inquiry">Plan a gathering</a>
       <a href="/menu.html#cocktails">Cocktails</a>
       <a href="/menu.html">Menu</a>
       <a href="/private-events.html" aria-current="page">Private Events</a>
@@ -137,17 +140,16 @@
         <h1>Private events in Gulfport, FL</h1>
         <p class="lead">Showers, birthdays, office gatherings, and recovery milestones, under the chandeliers.</p>
         <div class="actions intro-actions">
-          <a class="btn" href="#inquire">Plan your gathering</a>
-          <a class="btn line" data-cta="private-events" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+          <a class="btn" href="#inquiry">Plan a gathering</a>
           <span class="party-link">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Book ahead for Friday and Saturday evenings.</span>
         </div>
       </div>
-      <figure class="room tone-room">
+      <figure class="event-still">
         <picture>
-          <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 899px) 92vw, 520px" type="image/webp">
-          <img src="/images/space/lounge-1400.jpg" width="1400" height="788" alt="The lounge at Sober Bar, a straight bench under the chandelier, where private gatherings sit" fetchpriority="high" decoding="async">
+          <source srcset="/images/stills/events-dancing-chandelier-portrait-720.webp" type="image/webp">
+          <img src="/images/stills/events-dancing-chandelier-portrait-720.jpg" width="720" height="1280" alt="Guests dancing under the chandelier" fetchpriority="high" decoding="async">
         </picture>
-        <figcaption>The lounge</figcaption>
+        <figcaption>A moment in the lounge.</figcaption>
       </figure>
     </div>
 
@@ -188,7 +190,7 @@
 
     <p>Our bar program uses non-alcoholic spirits, fresh juices, bitters, shrubs, and house syrups.  Popular builds on the menu include the <strong>Call Me An Ube</strong> and <strong>Jinn &amp; Juniper</strong>.</p>
 
-    <p>Just coming for coffee? See <a href="/breakfast-gulfport.html">breakfast and coffee</a>. Making dinner plans? <a data-cta="private-events" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>.</p>
+    <p>Just coming for coffee? See <a href="/breakfast-gulfport.html">breakfast and coffee</a>. Making dinner plans? <a data-cta="private-events" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>.</p>
 
     <div class="cta" id="inquire">
       <div class="inquire-intro" id="inquiry">

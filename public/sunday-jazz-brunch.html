@@ -47,7 +47,13 @@
     .facts dd { margin:4px 0 0; color:var(--cream); }
     figure { margin:8px 0 28px; }
     figure img { width:100%; height:auto; display:block; }
-    body.has-site-nav figure.lounge-shot img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; object-position:center 42%; }
+    body.has-site-nav figure.jazz-lead,
+    body.has-site-nav figure.jazz-crowd { margin:0; max-width:1080px; }
+    body.has-site-nav figure.jazz-lead img,
+    body.has-site-nav figure.jazz-crowd img { width:100%; max-width:1080px; height:auto; object-fit:cover; }
+    body.has-site-nav figure.jazz-lead img { aspect-ratio:4 / 3; }
+    body.has-site-nav figure.jazz-crowd img { aspect-ratio:4 / 3; }
+    .jazz-crowd { margin:8px 0 8px; }
     figcaption { font-family:'Josefin Sans', sans-serif; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-top:8px; }
     details { border:0; border-top:1px solid rgba(244,234,216,.28); background:transparent; margin:0; padding:0 4px; }
     details:last-child { border-bottom:1px solid rgba(244,234,216,.28); }
@@ -85,13 +91,14 @@
         margin-top:112px;
       }
       .split.order-chapter > h2 { margin:0; font-size:clamp(2.35rem, 3.8vw, 3.2rem); }
-      body.has-site-nav figure.lounge-shot img { aspect-ratio:3 / 4; }
+      body.has-site-nav figure.jazz-crowd img { aspect-ratio:4 / 3; }
       .split.order-chapter .split-copy { max-width:none; }
       .actions .party-link { text-align:left; align-self:flex-start; margin-left:0; }
     }
     @media (max-width:899px) {
       .split.order-chapter { margin-top:24px; padding:16px 0 8px; border-top:1px solid rgba(244,234,216,.28); }
       .split.order-chapter > h2 { margin-top:0; }
+      body.has-site-nav figure.jazz-crowd img { aspect-ratio:9 / 16; }
     }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
@@ -147,12 +154,12 @@
           <span class="party-link">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>.</span>
         </div>
       </div>
-      <figure class="lounge-shot tone-room">
+      <figure class="jazz-lead">
         <picture>
-          <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 899px) 92vw, 520px" type="image/webp">
-          <img src="/images/space/lounge-1400.jpg" width="1400" height="788" alt="The lounge at Sober Bar under the chandelier" fetchpriority="high" decoding="async">
+          <source srcset="/images/stills/jazz-musicians-landscape-1080x810.webp" type="image/webp">
+          <img src="/images/stills/jazz-musicians-landscape-1080x810.jpg" width="1080" height="810" alt="Musicians playing by the windows" fetchpriority="high" decoding="async">
         </picture>
-        <figcaption>Under the chandelier</figcaption>
+        <figcaption>Live jazz by the windows.</figcaption>
       </figure>
     </div>
 
@@ -162,6 +169,15 @@
         <p>Brunch runs Sundays, 10am to 1pm. Book a table, then settle in. Call <a href="tel:+18135861660">(813) 586-1660</a> for details.</p>
       </div>
     </section>
+
+    <figure class="jazz-crowd">
+      <picture>
+        <source media="(max-width: 899px)" srcset="/images/stills/jazz-room-crowd-portrait-1080.webp" type="image/webp">
+        <source media="(max-width: 899px)" srcset="/images/stills/jazz-room-crowd-portrait-1080.jpg" type="image/jpeg">
+        <source srcset="/images/stills/jazz-room-crowd-landscape-1080x810.webp" type="image/webp">
+        <img src="/images/stills/jazz-room-crowd-landscape-1080x810.jpg" width="1080" height="810" alt="Guests in the room for Sunday jazz brunch" loading="lazy" decoding="async">
+      </picture>
+    </figure>
 
     <section class="split order-chapter">
       <h2 class="rise order-head">A little breakfast.<br>A little New Orleans.</h2>
@@ -189,7 +205,7 @@
     <section class="split">
       <h2 class="rise">While you are here</h2>
       <div class="split-copy">
-        <p>Tell us the date and headcount and we’ll confirm what fits. <a href="/private-events.html">Private events</a> use the same room for showers, birthdays, office gatherings, and recovery milestones. <a href="/things-to-do-in-gulfport.html">Things to do in Gulfport</a> is the neighborhood guide.</p>
+        <p>The same room hosts showers, birthdays, office gatherings, and recovery milestones. <a href="/private-events.html">Plan a gathering</a> and tell us the date and headcount.</p>
       </div>
     </section>
 

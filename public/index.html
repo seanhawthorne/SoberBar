@@ -165,8 +165,10 @@ html { scroll-padding-top: 84px; }
 
 
     .morning { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr); gap: 40px; align-items: center; }
-    .daynight { margin: 0; }
-    .daynight img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: center 28%; display: block; }
+    .daynight { margin: 0; max-width: 720px; justify-self: end; }
+    .daynight img { width: 100%; max-width: 720px; height: auto; aspect-ratio: 9 / 16; object-fit: cover; display: block; }
+    .guest-still { margin: 28px 0 0; max-width: 720px; }
+    .guest-still img { width: 100%; max-width: 720px; height: auto; aspect-ratio: 4 / 3; display: block; }
     .story-line { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.12; color: var(--cream); max-width: 18em; margin: 0; }
     .morning p { max-width: 40em; margin: 14px 0 0; color: #f4ead8; }
     .morning .day-directions { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 0.15em; }
@@ -884,13 +886,13 @@ html { scroll-padding-top: 84px; }
         <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
       </ul>
       <a class="nav-phone" href="tel:+18135861660">(813) 586-1660</a>
-      <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a></div>
+      <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a></div>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+    <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
     <a href="/menu.html#cocktails">Cocktails</a>
     <a href="/menu.html">Menu</a>
     <a href="/private-events.html">Private Events</a>
@@ -916,7 +918,7 @@ html { scroll-padding-top: 84px; }
       <p class="hero-sub">Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen in Gulfport, FL.</p>
       <div class="hero-actions">
         <div class="hero-cta-row">
-          <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+          <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
           <a class="btn btn-line" href="/menu.html">View menu</a>
           <a class="btn btn-line hero-call" href="tel:+18135861660">Call</a>
         </div>
@@ -937,10 +939,10 @@ html { scroll-padding-top: 84px; }
           <p>Espresso and free, fast WiFi from 7am. Settle in.</p>
           <p><a class="day-directions" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions →</a></p>
         </div>
-        <figure class="daynight tone-room rise">
+        <figure class="daynight rise">
           <picture>
-            <source srcset="/images/cafe-480.webp 480w, /images/cafe-800.webp 800w, /images/cafe.webp 1100w" sizes="(max-width: 900px) 92vw, 52vw" type="image/webp">
-            <img src="/images/cafe.jpg" width="1100" height="1466" alt="The café room in the morning, marble tables by the front window" loading="lazy" decoding="async">
+            <source srcset="/images/stills/daytime-laptop-portrait-720.webp" type="image/webp">
+            <img src="/images/stills/daytime-laptop-portrait-720.jpg" width="720" height="1280" alt="A laptop open beside a coffee in the morning" loading="lazy" decoding="async">
           </picture>
         </figure>
       </div>
@@ -968,6 +970,12 @@ html { scroll-padding-top: 84px; }
           </blockquote>
         </a>
       </div>
+      <figure class="guest-still">
+        <picture>
+          <source srcset="/images/stills/bar-guests-landscape-720x540.webp" type="image/webp">
+          <img src="/images/stills/bar-guests-landscape-720x540.jpg" width="720" height="540" alt="Guests seated along the bar" loading="lazy" decoding="async">
+        </picture>
+      </figure>
       <p class="press-link"><a href="/as-seen-in.html">In the press</a></p>
     </div>
   </section>
