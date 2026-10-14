@@ -25,7 +25,10 @@
     p { margin-bottom:14px; }
     a { color:var(--gold-bright); }
     .eyebrow { font-size:.72rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:12px; }
-    .lead { font-family:'Cormorant Garamond', Georgia, serif; font-style:italic; font-size:clamp(1.3rem, 2.4vw, 1.6rem); color:var(--cream); line-height:1.4; margin-bottom:28px; }
+    .lead { font-family:'Cormorant Garamond', Georgia, serif; font-style:italic; font-size:clamp(1.3rem, 2.4vw, 1.6rem); color:var(--cream); line-height:1.4; margin-bottom:22px; }
+    body.has-site-nav figure.guide-hero { margin:0 0 22px; }
+    body.has-site-nav figure.guide-hero img { width:100%; max-width:1400px; height:auto; max-height:none; aspect-ratio:4 / 3; object-fit:cover; display:block; }
+    .guide-hero figcaption { font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-top:8px; }
     .guide-list { list-style:none; margin:0 0 28px; }
     .guide-list li { border-top:1px solid rgba(212,175,106,.28); padding:18px 0; }
     .guide-list a { text-decoration:none; }
@@ -78,10 +81,20 @@
     <span class="eyebrow">From the bar</span>
     <h1>Gulfport guides</h1>
     <p class="lead">Where to find the alcohol-free bar, Sunday jazz, coffee with WiFi, and a few hours in Gulfport.</p>
+    <figure class="guide-hero">
+      <picture>
+        <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 40px), 820px" type="image/webp">
+        <img src="/images/space/lounge-1400.jpg" width="1400" height="1050" alt="The empty lounge at Sober Bar, a bench under the chandelier" fetchpriority="high" decoding="async">
+      </picture>
+      <figcaption>The lounge</figcaption>
+    </figure>
+    <div class="actions">
+      <a class="btn" data-cta="guides-hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
+    </div>
     <ul class="guide-list">
-      <li><a href="/alcohol-free-bar-gulfport.html"><h2>An alcohol-free bar in Gulfport</h2><p>What Sober Bar pours, when the doors open, and how to book a table on Beach Boulevard.</p></a></li>
-      <li><a href="/mocktails-gulfport.html"><h2>Mocktails in Gulfport</h2><p>The alcohol-free cocktail list, with the ingredients that are on the menu.</p></a></li>
-      <li><a href="/mocktails-st-petersburg.html"><h2>A sober bar near St. Petersburg</h2><p>Alcohol-free cocktails in Gulfport, near St. Petersburg.</p></a></li>
+      <li><a href="/alcohol-free-bar-gulfport.html"><h2>An alcohol-free bar in Gulfport</h2><p>The room on Beach Boulevard: coffee in the morning, cocktails later, and how a visit works.</p></a></li>
+      <li><a href="/mocktails-gulfport.html"><h2>Mocktails in Gulfport</h2><p>Each alcohol-free cocktail on the menu, with the ingredients we publish.</p></a></li>
+      <li><a href="/mocktails-st-petersburg.html"><h2>Mocktails near St. Petersburg</h2><p>The drive from St. Petersburg, where to look for parking, and why the trip is worth it.</p></a></li>
       <li><a href="/breakfast-gulfport.html"><h2>A coffee shop with WiFi in Gulfport</h2><p>Espresso, breakfast, and free WiFi from 7am.</p></a></li>
       <li><a href="/sunday-jazz-brunch.html"><h2>Jazz brunch in Gulfport</h2><p>Live jazz every Sunday with the Western Gypsies. Brunch is 10am to 1pm.</p></a></li>
       <li><a href="/things-to-do-in-gulfport.html"><h2>Things to do in Gulfport, FL</h2><p>The pier, the markets, and a stop on Beach Boulevard.</p></a></li>
