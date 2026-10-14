@@ -1,34 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>document.documentElement.classList.add("js");</script>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails</title>
-  <meta name="description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am. Reserve a table." />
-  <meta name="theme-color" content="#070605" />
-  <link rel="canonical" href="https://www.sipsoberbar.com/" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am. Reserve a table.">
+  <link rel="canonical" href="https://www.sipsoberbar.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails">
+  <meta property="og:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am.">
+  <meta property="og:url" content="https://www.sipsoberbar.com/">
+  <meta property="og:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg">
+  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails">
+  <meta name="twitter:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am.">
   <script src="/analytics.js" defer></script>
-  <link rel="stylesheet" href="/grade.css">
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails" />
-  <meta property="og:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
-  <meta property="og:url" content="https://www.sipsoberbar.com/" />
-  <meta property="og:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sober Bar &amp; Kitchen, Gulfport FL · Coffee &amp; Cocktails" />
-  <meta name="twitter:description" content="Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen on Beach Blvd, Gulfport FL. Open daily at 7am." />
-  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/space/bar-wide-1400.jpg" />
-
-  <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/cormorant-garamond-italic-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/cormorant-garamond-normal-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/webp" href="/images/space/bartenders-phone.webp" media="(max-width: 900px)" fetchpriority="high">
-  <link rel="preload" as="image" type="image/webp" imagesrcset="/images/space/bar-wide-480.webp 480w, /images/space/bar-wide-800.webp 800w, /images/space/bar-wide-1400.webp 1400w" imagesizes="100vw" media="(min-width: 901px)" fetchpriority="high">
-  <style>
+  <link rel="preload" as="image" href="/images/house/chandelier-phone-poster-720.webp" media="(max-width: 720px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/house/chandelier-desktop-poster-1440.webp" media="(min-width: 721px)" fetchpriority="high">
+<style>
 /* Self-hosted Latin subsets (SIL Open Font License). Variable files cover the listed weights. */
 
 @font-face {
@@ -85,891 +75,860 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Sticky mobile actions: Call, Reserve, Directions.
-   Header styles often set `nav { top: 0 }`. top and bottom together would
-   stretch this bar over the whole screen, so top stays auto and the height
-   is explicit. */
-.mobile-actions {
-  display: none;
-  top: auto;
-  height: auto;
+/* Body copy is Inter at 17px. Buttons, eyebrows, and nav stay Josefin. */
+body {
+  font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+.btn,
+.eyebrow,
+.crumbs,
+.nav-links a,
+.nav-cta,
+.nav-phone,
+.hero-badge,
+.hero-status,
+.hero-hours,
+.facts dt,
+.tag {
+  font-family: 'Josefin Sans', sans-serif;
 }
 
+/* House redesign: rooms, arches, poster type. Loaded after chrome.css. */
+
+body.house {
+  background: #070605;
+  color: #f4ead8;
+  font-family: "Inter", "Inter Fallback", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+body.house.has-site-nav { padding-top: 76px; }
+body.home.has-site-nav { padding-top: 0; }
+body.house a { color: #eed9a4; }
+body.house a:focus-visible,
+body.house button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+body.house a.skip {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  background: #d4af6a;
+  color: #1a120c;
+  padding: 8px 12px;
+  z-index: 100;
+  text-decoration: none;
+}
+body.house a.skip:focus { top: 12px; color: #1a120c; }
+
+body.home .site-nav {
+  background: linear-gradient(rgba(7, 6, 5, 0.72), rgba(7, 6, 5, 0));
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+}
+
+.room-name,
+.poster-giant,
+.poster-band,
+.drink-name,
+.card-name {
+  font-family: "Poiret One", "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #d4af6a;
+  line-height: 0.88;
+}
+.invite {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  color: #f4ead8;
+}
+.btn,
+body.house a.btn,
+body.house button.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  background: #d4af6a;
+  color: #1a120c;
+  font-family: "Inter", "Inter Fallback", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+}
+body.house a.btn.line,
+body.house a.btn-line {
+  background: transparent;
+  color: #f4ead8;
+  border: 1px solid rgba(212, 175, 106, 0.7);
+}
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 18px 0; }
+.shell { width: min(100% - 40px, 1120px); margin: 0 auto; }
+.prose { width: min(100% - 40px, 760px); margin: 0 auto; }
+.prose h2, .chapter h2 {
+  font-family: "Poiret One", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #d4af6a;
+  font-weight: 400;
+  margin: 36px 0 10px;
+}
+.prose p, .prose li { color: rgba(244, 234, 216, 0.88); }
+.crumbs { font-family: "Josefin Sans", sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; }
+.crumbs a { text-decoration: none; color: #d4af6a; }
+
+/* Hero */
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  background: #070605;
+}
+.hero-arch { min-height: 100svh; padding: 18px 0 18px 18px; }
+.hero-frame {
+  position: relative;
+  height: calc(100svh - 36px);
+  border-radius: 999px 999px 0 0;
+  overflow: hidden;
+  background: #120e0c;
+}
+.hero-frame img,
+.hero-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-frame video { z-index: 1; opacity: 0; }
+.hero-frame video.is-playing { opacity: 1; }
+.media-pause {
+  position: absolute;
+  z-index: 2;
+  right: 12px;
+  bottom: 12px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 12px;
+  background: rgba(7, 6, 5, 0.72);
+  color: #f4ead8;
+  border: 1px solid rgba(212, 175, 106, 0.6);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 88px 6vw 48px 4vw;
+  position: relative;
+}
+.sun-wrap {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.sunburst {
+  position: absolute;
+  inset: -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  animation: sun 20s ease-in-out infinite alternate;
+}
+.sun-logo { position: relative; width: 180px; height: auto; display: block; }
+@keyframes sun {
+  from { transform: rotate(0deg); filter: brightness(1); }
+  to { transform: rotate(1deg); filter: brightness(1.2); }
+}
+.hero-title {
+  font-family: "Poiret One", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 5.4vw, 6.4rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: #f4ead8;
+  margin: 8px 0 12px;
+}
+.hero-title em {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.58em;
+  letter-spacing: 0;
+  color: #eed9a4;
+}
+.hero-sub { max-width: 28rem; margin: 0 0 18px; color: rgba(244, 234, 216, 0.86); }
+.hero-proof { margin-top: 16px; }
+.hero-proof a { color: #f4ead8; }
+
+/* Marquee */
+.marquee {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+  border-top: 1px solid rgba(212, 175, 106, 0.35);
+  border-bottom: 1px solid rgba(212, 175, 106, 0.35);
+  background: #100e0b;
+  min-height: 52px;
+}
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: ticker 42s linear infinite;
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #eed9a4;
+}
+.marquee-track p { margin: 0; }
+.marquee.is-paused .marquee-track { animation-play-state: paused; }
+.marquee .media-pause { position: static; flex: none; margin-right: 10px; }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Porch */
+.porch {
+  position: relative;
+  background: #0b1424;
+  min-height: 88vh;
+  display: grid;
+  align-items: end;
+}
+.porch img { width: 100%; height: 88vh; object-fit: cover; display: block; }
+.porch-dim {
+  position: absolute;
+  inset: 0;
+  background: #02060f;
+  opacity: 0.62;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+.porch-lit.is-on .porch-dim { opacity: 0; }
+.porch-copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8vh 6vw 6vh;
+  background: linear-gradient(transparent, rgba(7, 10, 20, 0.78));
+}
+.porch-copy .room-name { font-size: clamp(4.2rem, 14vw, 11rem); }
+.porch-copy p { max-width: 36rem; font-size: 1.15rem; }
+
+/* Doors */
+.rooms { padding: 72px 0 40px; }
+.rooms-head { width: min(100% - 40px, 1120px); margin: 0 auto 28px; }
+.doors {
+  width: min(100% - 40px, 1180px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.door { color: inherit; text-decoration: none; }
+.door-frame {
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  clip-path: inset(7% 11% 0 11% round 200px);
+  transition: clip-path 400ms ease;
+  background: #14110e;
+}
+.door-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.door:hover .door-frame,
+.door:focus-visible .door-frame { clip-path: inset(0 0 0 0 round 160px); }
+.door-name {
+  display: block;
+  margin-top: 12px;
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+}
+.door-cap { display: block; color: rgba(244, 234, 216, 0.8); font-size: 0.95rem; margin-top: 4px; }
+
+/* Lounge / office */
+.office {
+  display: grid;
+  grid-template-columns: 1fr min(100%, 640px);
+  gap: 36px;
+  align-items: center;
+  padding: 72px 0;
+  background: #0c2f30;
+}
+.office-copy, .office figure { width: min(100% - 40px, 560px); }
+.office-copy { margin-left: auto; padding-right: 20px; }
+.office h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.05;
+  color: #f4ead8;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.office figure { margin: 0 auto; }
+.office img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+
+/* Drinks gallery */
+.bar-chapter { background: #070605; padding: 64px 0; }
+.drink-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 28px;
+}
+.drink { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 16px; align-items: end; color: inherit; text-decoration: none; }
+.drink img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; transform: scale(1); transition: transform 1.1s ease; }
+.drink.is-in img { transform: scale(1.03); }
+.drink-ue img { aspect-ratio: 587 / 440; max-width: 440px; }
+.drink-name { font-size: clamp(2rem, 3vw, 3.2rem); margin: 0 0 8px; }
+.drink p { margin: 0; color: rgba(244, 234, 216, 0.82); }
+.type-card {
+  aspect-ratio: 4 / 5;
+  border: 1px solid rgba(212, 175, 106, 0.45);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #120e0c;
+}
+
+/* Kitchen */
+.kitchen { padding: 0 0 48px; }
+.kitchen-bleed img { width: 100%; height: auto; max-height: none; object-fit: contain; display: block; }
+.crowd-cap { max-width: 1080px; margin: 0 auto; }
+.crowd-cap img { width: 100%; height: auto; max-height: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+.chips a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border: 1px solid rgba(212, 175, 106, 0.5);
+  text-decoration: none;
+  color: #f4ead8;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Sunday poster */
+.poster {
+  display: grid;
+  grid-template-columns: minmax(0, 60%) 1fr;
+  background: #1a0c10;
+  align-items: center;
+}
+.poster-photo { width: min(100%, 1080px); }
+.poster-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.poster-copy { padding: 8vh 5vw; }
+.poster-giant { font-size: clamp(3.4rem, 7vw, 7.2rem); display: block; }
+.poster-band { font-size: clamp(1.8rem, 3vw, 3rem); display: block; margin-top: 10px; color: #f4ead8; }
+.poster-when { font-family: "Josefin Sans", sans-serif; letter-spacing: 0.18em; margin: 14px 0 18px; color: #eed9a4; }
+
+/* Gather + reviews */
+.gather {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 64px 0;
+  background: #4a1218;
+}
+.gather img { width: 100%; max-width: 360px; height: auto; aspect-ratio: 9 / 16; object-fit: cover; }
+.quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.quote-card { display: block; text-decoration: none; color: inherit; border-top: 1px solid rgba(212, 175, 106, 0.4); padding-top: 12px; }
+.quote-card p { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.45rem; line-height: 1.3; color: #f4ead8; }
+.guest-still { width: min(100%, 640px); margin: 22px auto; }
+.guest-still img { width: 100%; height: auto; aspect-ratio: 4 / 3; }
+
+.visit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.visit-grid span { font-family: "Josefin Sans", sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #d4af6a; }
+details { border-top: 1px solid rgba(244, 234, 216, 0.2); padding: 12px 0; }
+summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+footer.site-foot { border-top: 1px solid rgba(212, 175, 106, 0.28); padding: 28px 0 88px; text-align: center; }
+footer.site-foot p { margin: 0 0 8px; }
+footer.site-foot a { color: #f4ead8; }
+
+/* Menu */
+.mast {
+  position: relative;
+  height: 40vh;
+  min-height: 220px;
+  overflow: hidden;
+}
+.mast img { width: 100%; height: 40vh; min-height: 220px; object-fit: cover; display: block; }
+.mast-title {
+  position: absolute;
+  inset: auto 0 18px 0;
+  width: min(100% - 40px, 1120px);
+  margin: 0 auto;
+}
+.mast-title h1 {
+  font-family: "Poiret One", serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: #f4ead8;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+}
+.menu-jumps {
+  position: sticky;
+  top: 76px;
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  background: rgba(7, 6, 5, 0.94);
+  padding: 8px 0;
+}
+.menu-jumps a {
+  flex: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  color: #f4ead8;
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+}
+.menu-jumps a[aria-current="true"] { border-bottom-color: #d4af6a; color: #eed9a4; }
+.parchment {
+  background: #efe6d4;
+  color: #1c140e;
+  padding: 28px 0 40px;
+}
+.parchment a { color: #6a3b12; }
+.parchment h2, .parchment h3 { color: #3a2412; }
+.food-list, .coffee-grid { list-style: none; margin: 0; padding: 0; }
+.coffee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; }
+.mi { display: grid; grid-template-columns: 120px 1fr; gap: 12px; align-items: center; margin: 0 0 14px; }
+.parchment .mi { grid-template-columns: 200px 1fr; }
+.parchment .mi.sm { grid-template-columns: 160px 1fr; }
+.parchment .mi.sm img { width: 160px; height: 128px; }
+.mi img { width: 120px; height: 120px; object-fit: cover; display: block; }
+.parchment .mi img { width: 200px; height: 160px; }
+.mi-name { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.45rem; margin: 0; color: inherit; }
+.mi-desc { margin: 0; font-size: 0.95rem; }
+.note { font-size: 0.95rem; }
+
+/* Panels */
+.service-panels { display: grid; grid-template-columns: 1fr 1fr; min-height: 78vh; }
+.service {
+  position: relative;
+  min-height: 70vh;
+  color: #f4ead8;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+}
+.service img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.service span { position: relative; z-index: 1; padding: 28px; background: linear-gradient(transparent, rgba(0,0,0,.62)); width: 100%; }
+.service strong { display: block; font-family: "Poiret One", serif; font-size: clamp(2.4rem, 5vw, 4.4rem); font-weight: 400; letter-spacing: 0.04em; }
+
+.collage { display: grid; grid-template-columns: minmax(0, 800px) 280px; gap: 0; align-items: end; justify-content: center; }
+.collage .dance { margin-left: -48px; }
+.collage img { width: 100%; height: auto; display: block; }
+.collage .parlor-shot { max-width: 800px; }
+.collage .dance img { max-width: 280px; aspect-ratio: 9 / 16; object-fit: cover; }
+.settings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.settings figure { margin: 0; }
+.settings img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.settings figcaption { font-family: "Poiret One", serif; letter-spacing: 0.08em; text-transform: uppercase; color: #d4af6a; margin-top: 6px; }
+
+.related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; list-style: none; padding: 0; }
+.related a { display: block; text-decoration: none; color: inherit; }
+.related img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.related h2 { font-size: 1.4rem; margin: 8px 0 0; }
+
+.inquire-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+.inquire-form label { font-family: "Josefin Sans", sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #eed9a4; }
+.inquire-form input, .inquire-form select, .inquire-form textarea {
+  width: 100%;
+  font-family: "Inter", "Inter Fallback", sans-serif;
+  font-size: 16px;
+  padding: 10px 12px;
+  background: #120e0c;
+  color: #f4ead8;
+  border: 1px solid rgba(212, 175, 106, 0.4);
+}
+.inquire-form .is-wide, .inquire-form .form-lead, .inquire-form .occasion-ack, .inquire-form .form-mail-note, .inquire-form button { grid-column: 1 / -1; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card { border: 1px solid rgba(212, 175, 106, 0.35); padding: 16px; }
+.card h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 1.6rem; margin: 6px 0; }
+.gather-line { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: clamp(1.8rem, 3vw, 2.6rem); }
+
+body.house.has-site-nav figure img { height: auto; max-height: none; object-position: center; }
+body.house .hero-frame img,
+body.house .service img { height: 100%; }
+body.house .porch > picture { display: block; }
+body.house .porch > picture img { width: 100%; height: 88vh; max-height: none; object-fit: cover; }
+body.house .mast img { width: 100%; height: 40vh; min-height: 220px; max-height: none; object-fit: cover; }
+
+@media (max-width: 800px) {
+  .hero { display: block; min-height: 100svh; }
+  .hero-arch { min-height: 100svh; padding: 0; }
+  .hero-frame { height: 100svh; border-radius: 0; }
+  .hero-copy {
+    position: absolute;
+    left: 0; right: 0; bottom: 64px;
+    padding: 24px 20px 16px;
+    background: linear-gradient(transparent, rgba(7, 6, 5, 0.82));
+  }
+  .hero-title { font-size: clamp(2.5rem, 12vw, 3.4rem); }
+  .sun-wrap { width: 96px; height: 96px; }
+  .sun-logo { width: 96px; }
+  .doors { display: flex; flex-direction: column; align-items: center; gap: 28px; scroll-snap-type: y mandatory; }
+  .door { width: 80vw; scroll-snap-align: center; }
+  .room-name { font-size: 22vw; }
+  .office, .poster, .gather, .drink, .service-panels, .visit-grid, .quotes, .coffee-grid, .collage, .settings, .related, .cards, .inquire-form {
+    grid-template-columns: 1fr;
+  }
+  .office-copy { margin: 0 auto; padding: 0 0 12px; }
+  .poster-photo { width: 100%; }
+  .gather img, .collage .dance { margin: 0 auto; }
+  .parchment .mi { grid-template-columns: 120px 1fr; }
+  .parchment .mi img { width: 120px; height: 96px; }
+  .drink-ue img { max-width: 100%; }
+}
+
+.site-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 90;
+  background: rgba(7, 6, 5, 0.94);
+  border-bottom: 1px solid rgba(212, 175, 106, 0.28);
+}
+.site-nav-inner {
+  width: min(100% - 32px, 1180px);
+  margin: 0 auto;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.site-brand img { height: 52px; width: auto; display: block; }
+.site-links {
+  display: flex; flex: 1; justify-content: center; align-items: center;
+  gap: 14px; list-style: none; margin: 0; padding: 0;
+}
+.site-links a, .site-phone, .site-cta {
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4ead8;
+  white-space: nowrap;
+}
+.site-cta {
+  color: #d4af6a;
+  border: 1px solid rgba(212, 175, 106, 0.55);
+  padding: 12px 16px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.site-burger {
+  display: none; background: none; border: 1px solid rgba(212, 175, 106, 0.45);
+  color: #d4af6a; width: 44px; height: 44px; margin-left: auto;
+}
+.site-menu {
+  display: none; position: fixed; inset: 0; z-index: 80;
+  background: rgba(7, 6, 5, 0.97); flex-direction: column; align-items: center;
+  gap: 16px; padding: 96px 20px; overflow: auto;
+}
+.site-menu.is-open { display: flex; }
+.site-menu a { color: #f4ead8; text-decoration: none; font-family: "Poiret One", serif; font-size: 1.25rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.mobile-actions { display: none; }
+@media (max-width: 1100px) {
+  .site-links, .site-phone, .site-cta { display: none; }
+  .site-burger { display: inline-flex; align-items: center; justify-content: center; }
+}
 @media (max-width: 768px) {
   .mobile-actions {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 60px;
-    align-content: start;
-    position: fixed;
-    top: auto;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: calc(60px + env(safe-area-inset-bottom, 0px));
-    max-height: calc(64px + env(safe-area-inset-bottom, 0px));
-    box-sizing: border-box;
-    margin: 0;
-    z-index: 80;
-    overflow: hidden;
-    background: rgba(7, 6, 5, 0.96);
-    border-top: 1px solid rgba(212, 175, 106, 0.35);
-    padding: 0 0 env(safe-area-inset-bottom, 0px);
-    backdrop-filter: blur(12px);
+    display: grid; grid-template-columns: repeat(3, 1fr); position: fixed;
+    right: 0; bottom: 0; left: 0; height: calc(60px + env(safe-area-inset-bottom, 0px));
+    z-index: 80; background: rgba(7, 6, 5, 0.96); border-top: 1px solid rgba(212, 175, 106, 0.35);
   }
   .mobile-actions a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-    min-height: 60px;
-    max-height: 60px;
-    padding: 0 4px;
-    box-sizing: border-box;
-    text-align: center;
-    text-decoration: none;
-    color: #eed9a4;
-    font-family: "Josefin Sans", Futura, sans-serif;
-    font-size: 0.68rem;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-right: 1px solid rgba(212, 175, 106, 0.16);
+    display: flex; align-items: center; justify-content: center; height: 60px;
+    text-decoration: none; color: #eed9a4; font-family: "Josefin Sans", sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
   }
-  .mobile-actions a:last-child { border-right: 0; }
-  .mobile-actions a.is-primary {
-    background: #d4af6a;
-    color: #060504;
-    font-weight: 600;
-  }
-  .mobile-actions a.is-primary:hover,
-  .mobile-actions a.is-primary:focus-visible { background: #eed9a4; color: #060504; }
-  .mobile-actions a:not(.is-primary):hover,
-  .mobile-actions a:not(.is-primary):focus-visible {
-    color: #f4ead8;
-    background: rgba(212, 175, 106, 0.08);
-  }
-  html body {
-    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important;
-  }
-  html { scroll-padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+  .mobile-actions a.is-primary { background: #d4af6a; color: #1a120c; }
+  body.house { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
 }
 
-html { scroll-padding-top: 84px; }
-
-@media print {
-  .mobile-actions { display: none !important; }
-  body { padding-bottom: 0 !important; }
+@media (prefers-reduced-motion: reduce) {
+  .sunburst, .marquee-track { animation: none; }
+  .porch-dim { opacity: 0; transition: none; }
+  .door-frame { transition: none; clip-path: inset(0 0 0 0 round 160px); }
+  .drink img { transform: none !important; transition: none; }
+  .hero-frame video { display: none; }
 }
 
-
-    .morning { display: grid; grid-template-columns: minmax(0, 1fr) min(100%, 520px); gap: 40px; align-items: center; }
-    .daynight { margin: 0; width: min(100%, 520px); max-width: 520px; justify-self: start; }
-    .daynight img { width: 100%; max-width: 1400px; height: auto; aspect-ratio: 4 / 3; display: block; }
-    .guide-note { margin: 28px 0 0; max-width: 42rem; }
-    .guide-note a { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 0.15em; }
-    .guest-still { margin: 28px auto 0; width: min(100%, 640px); max-width: 640px; }
-    .guest-still img { width: 100%; max-width: 720px; height: auto; aspect-ratio: 4 / 3; display: block; }
-    .story-line { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.12; color: var(--cream); max-width: 18em; margin: 0; }
-    .morning p { max-width: 40em; margin: 14px 0 0; color: #f4ead8; }
-    .morning .day-directions { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 0.15em; }
-    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 22px; }
-    #reviews .sec-head { margin-bottom: 24px; text-align: left; justify-items: start; }
-    #reviews .quotes blockquote { border: 0; background: transparent; padding: 20px 0; }
-    .quotes .quote-card { display: block; height: 100%; color: inherit; text-decoration: none; }
-    .quotes .quote-card:hover p { color: var(--gold-bright); }
-    .quotes blockquote { height: 100%; margin: 0; padding: 22px; border: 1px solid var(--gold-faint); background: #12100c; }
-    .quotes blockquote p { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: normal; font-size: 24px; line-height: 1.35; text-align: left; color: #f4ead8; margin: 0; }
-    .quotes footer { border: 0; padding: 14px 0 0; text-align: left; color: var(--gold-bright); font-family: 'Josefin Sans', sans-serif; font-size: .95rem; letter-spacing: .02em; background: transparent; }
-    .press-link { margin-top: 22px; }
-    .press-link a { color: #f4ead8; font-size: 1.05rem; letter-spacing: 0; text-transform: none; text-decoration: none; border-bottom: 1px solid rgba(212,175,106,.5); }
-    .rating-link { color: var(--gold-bright); font-size: 1.15rem; text-decoration: none; border-bottom: 1px solid rgba(238,217,164,.45); }
-    .press-row { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 34px; }
-    .press-row a { color: #f4ead8; letter-spacing: .06em; text-transform: uppercase; font-size: .78rem; text-decoration: none; border-bottom: 1px solid rgba(212,175,106,.5); }
-    .band-photo { width: min(100%, 960px); margin: 0 auto 8px; }
-    .band-photo img { width: 100%; max-width: 960px; height: auto; display: block; margin: 0 auto; }
-    .band-photo figcaption { margin: 12px auto 0; max-width: 22em; text-align: center; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-style: normal; font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.25; color: #f4ead8; }
-    #menu .sec-head { margin-bottom: 24px; gap: 12px; }
-    #menu .band-line { margin: 0 auto; max-width: 36em; text-align: center; font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif; font-weight: 400; font-style: normal; font-size: 17px; line-height: 1.6; letter-spacing: normal; color: #f4ead8; }
-    #menu .band-photo { max-width: 760px; margin: 24px auto; }
-    #menu .band-photo figcaption { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 20px; letter-spacing: 0; line-height: 1.3; color: var(--gold); }
-    #menu .menu-go { margin-top: 24px; text-align: center; }
-    #menu .menu-hint { display: none; margin: 18px 0 0; text-align: center; font-family: 'Josefin Sans', sans-serif; font-size: 13px; letter-spacing: .04em; color: var(--gold); }
-    @media (max-width: 899px) {
-      #menu .menu-hint { display: block; }
-    }
-    @media (min-width: 900px) {
-      #menu .shell { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); column-gap: 56px; row-gap: 12px; align-items: center; }
-      #menu .sec-head { grid-column: 1; grid-row: 1; margin-bottom: 0; text-align: left; justify-items: start; }
-      #menu .band-line { grid-column: 1; grid-row: 2; margin: 0; max-width: none; text-align: left; }
-      #menu .band-rows { grid-column: 1; grid-row: 3; margin: 8px 0 0; max-width: none; }
-      #menu .menu-go { grid-column: 1; grid-row: 4; margin-top: 16px; text-align: left; }
-      #menu .band-photo { grid-column: 2; grid-row: 1 / span 4; max-width: none; margin: 0; align-self: center; }
-      #menu .band-photo figcaption { text-align: left; margin-left: 0; margin-right: auto; }
-    }
-    .band-rows { list-style: none; margin: 8px auto 0; max-width: 640px; padding: 0; }
-    .band-rows a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; padding: 8px 2px; color: #f4ead8; font-size: 1.15rem; line-height: 1.25; text-decoration: none; border-bottom: 1px solid rgba(212,175,106,.45); transition: background-color 160ms ease, color 160ms ease; }
-    .band-rows a:hover, .band-rows a:focus, .band-rows a:focus-visible { color: var(--gold-bright); background-color: rgba(212,175,106,.16); }
-    .band-rows .arrow { display: inline-block; color: var(--gold); font-size: 1.25rem; line-height: 1; transition: transform 0.2s ease; }
-    .band-rows a:hover .arrow, .band-rows a:focus .arrow, .band-rows a:focus-visible .arrow { transform: translateX(4px); }
-    #day-night { padding-bottom: 28px; }
-    #reviews { padding-top: 28px; }
-    .visit-split { display: grid; grid-template-columns: 1.15fr .85fr; gap: 12px; align-items: center; }
-    .visit-split .visit-grid { grid-template-columns: 1fr; }
-    #visit .visit-grid { gap: 1px; }
-    .visit-split .visit-photo { margin: 0; padding: 0; border: 0; background: transparent; }
-    .visit-split .visit-photo img { aspect-ratio: 1400 / 1006; height: auto; object-fit: cover; }
-    #visit .sec-head { margin-bottom: 8px; gap: 4px; }
-    #faq .sec-head { margin-bottom: 28px; }
-    #visit { padding: 20px 0; }
-    #faq { padding: 64px 0; }
-    #visit .party-link { display: block; margin: 6px 0 4px; color: #f4ead8; font-size: 1rem; }
-    #visit .visit-cell { padding: 16px; text-align: left; }
-    #visit .visit-cell .eyebrow { margin-bottom: 8px; }
-    #visit .visit-actions { margin-top: 8px; }
-    @media (max-width: 900px) {
-      .morning { grid-template-columns: 1fr; gap: 16px; }
-      .quotes, .visit-split { grid-template-columns: 1fr; }
-      .visit-split { gap: 0; }
-      #visit { padding: 16px 0; }
-      #faq { padding: 28px 0; }
-      .visit-split .visit-photo { margin: 0 0 16px; padding: 0; border: 0; background: transparent; }
-    }
-    @media (max-width: 768px) {
-      .hero-title { font-size: clamp(1.85rem, 8vw, 2.35rem); max-width: 14em; }
-      section { padding: 28px 0; }
-      p, li, .brunch-copy, .visit-cell p, .story-line + p, .faq-wrap details p, .mi .mi-desc {
-        font-size: 17px;
-        line-height: 1.55;
-      }
-      .quotes blockquote p { font-size: 24px; line-height: 1.35; text-align: left; }
-      footer .fine { font-size: 16px; letter-spacing: .03em; color: #f4ead8; }
-      footer .fine a { color: #f4ead8; }
-    }
-  </style>
-
-  <style>
-    :root {
-      --black: #070605;
-      --ink: #0e0c09;
-      --panel: #12100c;
-      --gold: #d4af6a;
-      --gold-bright: #eed9a4;
-      --gold-dim: rgba(212, 175, 106, 0.35);
-      --gold-faint: rgba(212, 175, 106, 0.16);
-      --cream: #f4ead8;
-      --muted: rgba(244, 234, 216, 0.66);
-      --muted-2: rgba(244, 234, 216, 0.55);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--black);
-      color: var(--cream);
-      font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
-      font-weight: 400;
-      font-size: 17px;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-    ::selection { background: var(--gold); color: #000; }
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--black); }
-    ::-webkit-scrollbar-thumb { background: var(--gold-dim); }
-    img { display: block; max-width: 100%; }
-    .hero picture { display: block; }
-    .arch picture, .visit-photo picture, .menu-lead picture { display: block; width: 100%; height: auto; }
-    a { color: inherit; }
-    .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
-
-    .shell { width: min(100% - 48px, 1180px); margin: 0 auto; }
-
-    .display {
-      font-family: 'Poiret One', sans-serif;
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-    .serif-it { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; }
-
-    /* ------- deco ornaments ------- */
-    .deco-rule {
-      display: flex; align-items: center; justify-content: center;
-      gap: 14px; color: var(--gold);
-    }
-    .deco-rule::before, .deco-rule::after {
-      content: ''; height: 1px; width: min(120px, 20vw);
-      background: linear-gradient(90deg, transparent, var(--gold-dim));
-    }
-    .deco-rule::after { background: linear-gradient(90deg, var(--gold-dim), transparent); }
-    .deco-rule .gem { font-size: 0.7rem; transform: rotate(45deg); display: inline-block; border: 1px solid var(--gold); width: 8px; height: 8px; }
-
-    .eyebrow {
-      font-family: 'Josefin Sans', sans-serif; font-weight: 400;
-      letter-spacing: 0.42em; text-transform: uppercase;
-      font-size: 0.72rem; color: var(--gold);
-    }
-
-    h2.title {
-      font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500;
-      letter-spacing: 0; text-transform: none;
-      font-size: clamp(1.9rem, 4.4vw, 3.1rem);
-      line-height: 1.15; color: var(--cream);
-    }
-    #menu h2.title { font-size: clamp(3.85rem, 8.2vw, 6.6rem); line-height: 0.98; }
-    @media (min-width: 900px) {
-      #menu h2.title { font-size: clamp(5rem, 5.8vw, 5.4rem); line-height: 0.96; }
-      #menu h2.title .round-line { display: block; }
-    }
-    h2.title em { font-family: 'Cormorant Garamond', serif; font-style: italic; text-transform: none; letter-spacing: 0.01em; color: var(--gold-bright); font-size: 1.15em; }
-
-    /* ------- nav ------- */
-    #nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 60;
-      transition: background 0.4s ease, border-color 0.4s ease;
-      border-bottom: 1px solid transparent;
-    }
-    #nav.scrolled { background: rgba(7, 6, 5, 0.92); backdrop-filter: blur(14px); border-bottom-color: var(--gold-faint); }
-    .nav-inner {
-      width: min(100% - 48px, 1180px); margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 28px;
-      min-height: 76px; height: auto; padding: 8px 0;
-    }
-    .nav-brand { flex: none; }
-    .nav-brand img { height: 52px; width: auto; }
-    .nav-links { display: flex; gap: 16px; align-items: center; list-style: none; flex: 1; justify-content: center; min-width: 0; }
-    .nav-phone {
-      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.08em;
-      color: var(--gold-bright); font-weight: 400; white-space: nowrap; margin-right: 8px;
-    }
-    .nav-phone:hover { color: var(--cream); }
-    .nav-links a {
-      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--muted);
-      transition: color 0.25s ease; font-weight: 400;
-      white-space: nowrap;
-    }
-    .nav-links a:hover { color: var(--gold-bright); }
-    .nav-cta {
-      text-decoration: none; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
-      color: var(--gold); border: 1px solid var(--gold-dim); padding: 12px 22px;
-      font-weight: 400; white-space: nowrap;
-    }
-    .nav-cta:hover, .nav-cta:focus-visible { background: var(--gold); color: #060504; }
-    .party-link {
-      font-family: "Josefin Sans", Futura, sans-serif;
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      text-transform: none;
-      text-decoration: none;
-      margin-left: 0.5em;
-      color: #cbb892;
-      white-space: normal;
-    }
-    .party-link a {
-      color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    .nav-reserve {
-      display: flex;
-      align-items: center;
-      flex: none;
-    }
-    .hero-actions .party-link,
-    .visit-actions .party-link,
-    .actions .party-link {
-      flex: 1 1 100%;
-      order: 5;
-      align-self: center;
-      height: auto;
-      min-height: 0;
-      margin: 6px 0 0;
-      margin-left: 0;
-      text-align: center;
-    }
-    .burger { display: none; background: none; border: 1px solid var(--gold-dim); color: var(--gold); width: 44px; height: 44px; cursor: pointer; font-size: 1.1rem; }
-
-    .mobile-menu {
-      display: none; position: fixed; inset: 0; z-index: 55;
-      background: rgba(7, 6, 5, 0.97); backdrop-filter: blur(16px);
-      flex-direction: column; align-items: center; justify-content: flex-start; gap: 16px;
-      overflow-y: auto; -webkit-overflow-scrolling: touch;
-      padding: 96px 20px calc(72px + env(safe-area-inset-bottom, 0px));
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      text-decoration: none; color: var(--cream); font-family: 'Poiret One', sans-serif;
-      font-size: 1.25rem; letter-spacing: 0.12em; text-transform: uppercase;
-      flex: none;
-    }
-    .mobile-menu a:hover { color: var(--gold-bright); }
-
-    /* ------- hero ------- */
-    header.hero {
-      min-height: 100svh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; position: relative; overflow: hidden;
-      padding: 120px 24px 90px;
-    }
-    /* sunburst rays radiating from top center, echoing the logo */
-    header.hero::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background:
-        repeating-conic-gradient(from -90deg at 50% -12%, rgba(212,175,106,0.055) 0deg 1.1deg, transparent 1.1deg 7deg),
-        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(212,175,106,0.14), transparent 60%);
-      -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
-      mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 78%);
-    }
-    .hero-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 500;
-      font-size: clamp(2.05rem, 4.4vw, 3.25rem);
-      line-height: 1.12;
-      letter-spacing: 0.005em;
-      max-width: 18em;
-      margin: 0 auto 16px;
-      color: var(--cream);
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 12px;
-      border: 1px solid var(--gold-dim); padding: 10px 26px;
-      font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase;
-      color: var(--gold-bright); margin-bottom: 30px; font-weight: 400;
-    }
-    .pulse { width: 7px; height: 7px; border-radius: 50%; background: #7fd88f; box-shadow: 0 0 0 0 rgba(127,216,143,0.5); animation: pulse 2.2s infinite; }
-    @keyframes pulse { 70% { box-shadow: 0 0 0 9px rgba(127,216,143,0); } 100% { box-shadow: 0 0 0 0 rgba(127,216,143,0); } }
-    .hero-sub {
-      font-family: 'Cormorant Garamond', serif; font-style: normal; font-weight: 500;
-      font-size: clamp(1.35rem, 2.6vw, 1.9rem); color: var(--muted);
-      max-width: 42em; margin: 0 auto 14px;
-    }
-    .hero-locale { font-size: 0.74rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 42px; font-weight: 400; }
-    .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
-    .btn {
-      text-decoration: none; font-size: 0.74rem; letter-spacing: 0.28em; text-transform: uppercase;
-      padding: 17px 38px; font-weight: 400;
-    }
-    .btn-solid { background: var(--gold); color: #060504; font-weight: 600; }
-    .btn-solid:hover, .btn-solid:focus-visible { background: var(--gold-bright); color: #060504; }
-    .btn-line { border: 1px solid var(--gold-dim); color: var(--gold-bright); }
-    .btn-line:hover, .btn-line:focus-visible { border-color: var(--gold); background: rgba(212,175,106,0.08); color: var(--gold-bright); }
-    .hero-hours { margin-top: 46px; display: flex; gap: 40px; flex-wrap: wrap; justify-content: center; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted-2); font-weight: 400; }
-    .hero-hours b { color: var(--gold); font-weight: 400; margin-right: 8px; }
-
-    /* ------- marquee ------- */
-    .marquee {
-      border-top: 1px solid var(--gold-faint); border-bottom: 1px solid var(--gold-faint);
-      overflow: hidden; padding: 16px 0; background: var(--ink);
-    }
-    .marquee-track {
-      display: flex; gap: 0; width: max-content;
-      animation: slide 34s linear infinite;
-    }
-    .marquee span {
-      font-family: 'Poiret One', sans-serif; white-space: nowrap;
-      letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.82rem;
-      color: var(--gold); padding: 0 28px; position: relative;
-    }
-    .marquee span::after { content: '◆'; position: absolute; right: -7px; font-size: 0.5rem; top: 50%; transform: translateY(-50%); color: var(--gold-dim); }
-    @keyframes slide { to { transform: translateX(-50%); } }
-
-    /* ------- sections ------- */
-    section { padding: 110px 0; }
-    .sec-head { text-align: center; margin-bottom: 64px; display: grid; gap: 18px; justify-items: center; }
-
-    /* arch photo frame — echoes the sun arc in the logo */
-    .arch {
-      position: relative;
-      border-radius: 999px 999px 18px 18px;
-      overflow: hidden;
-      border: 1px solid var(--gold-dim);
-      padding: 12px;
-      background: var(--ink);
-    }
-    .arch img { border-radius: 999px 999px 12px 12px; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
-
-    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
-    .feature .copy p { color: var(--muted); margin-bottom: 18px; font-size: 1.02rem; }
-    .feature .copy .eyebrow { display: block; margin-bottom: 18px; }
-    .feature .copy h2 { margin-bottom: 26px; }
-
-    /* ------- menu board ------- */
-    .menu-bg { background: var(--ink); border-top: 1px solid var(--gold-faint); border-bottom: 1px solid var(--gold-faint); }
-    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(36px, 5vw, 70px); max-width: 980px; margin: 0 auto; }
-    .menu-col h3 {
-      font-family: 'Poiret One', sans-serif; font-weight: 400; letter-spacing: 0.22em;
-      text-transform: uppercase; font-size: 1.05rem; color: var(--gold);
-      display: flex; align-items: center; gap: 16px; margin-bottom: 22px;
-    }
-    .menu-col h3::after { content: ''; flex: 1; height: 1px; background: var(--gold-faint); }
-    .served {
-      margin: -8px 0 18px;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 400;
-    }
-    .mi { margin-bottom: 20px; }
-    .mi.has-photo { display: grid; grid-template-columns: 72px 1fr; gap: 14px; align-items: start; }
-    .mi.has-photo picture { display: block; width: 72px; height: 72px; }
-    .mi.has-photo img { width: 72px; height: 72px; object-fit: cover; border-radius: 6px; display: block; }
-    .mi.has-photo > div { min-width: 0; }
-    .mi .mi-name { font-family: 'Cormorant Garamond', serif; font-size: 1.32rem; color: var(--cream); }
-    .menu-lead { max-width: 980px; margin: 0 auto 36px; }
-    body.has-site-nav figure.menu-lead img,
-    figure.menu-lead img { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; object-fit: cover; object-position: center; }
-    .mi .mi-desc { font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif; font-size: 17px; font-weight: 400; line-height: 1.6; letter-spacing: normal; color: #f4ead8; margin-top: 2px; }
-    .menu-note { text-align: center; margin-top: 60px; color: var(--muted-2); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 400; }
-    .menu-note a { color: var(--gold); }
-
-    /* ------- rhythm ------- */
-    .timeline { list-style: none; margin-top: 34px; }
-    .timeline li { display: grid; grid-template-columns: 92px 1fr; gap: 22px; padding: 16px 0; border-bottom: 1px solid var(--gold-faint); align-items: baseline; }
-    .timeline li:last-child { border-bottom: none; }
-    .timeline .t { font-family: 'Poiret One', sans-serif; color: var(--gold-bright); letter-spacing: 0.1em; font-size: 1.05rem; white-space: nowrap; }
-    .timeline .d { color: var(--muted); font-size: 0.98rem; }
-    .timeline a, .brunch-copy a { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 0.15em; }
-
-    /* ------- Sunday jazz brunch ------- */
-    .brunch-panel {
-      position: relative;
-      max-width: 760px; margin: 0 auto; padding: 28px 0 0;
-      text-align: center; border: 0; border-top: 1px solid rgba(212, 175, 106, 0.4);
-      background: none;
-    }
-    .brunch-panel::before { content: none; }
-    .brunch-panel h2 { margin: 0 0 16px; }
-    .brunch-panel .btn { display: inline-block; margin-top: 28px; max-width: 100%; box-sizing: border-box; line-height: 1.35; }
-    .brunch-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; }
-    .gathering { border-top: 1px solid #30281c; margin-top: 28px; padding-top: 24px; }
-    .gathering .btn { margin-top: 16px; }
-    .brunch-actions .btn { margin-top: 0; }
-    .brunch-copy {
-      max-width: 700px; margin: 0 auto; color: #f4ead8;
-      font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
-      font-weight: 400; font-size: 17px; line-height: 1.6; letter-spacing: normal;
-    }
-    .brunch-notes {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 28px;
-      margin: 34px auto 38px; color: var(--gold-bright);
-      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase;
-    }
-    .brunch-notes span { position: relative; }
-    .brunch-notes span + span::before { content: '◆'; position: absolute; left: -18px; color: var(--gold-dim); font-size: 0.48rem; }
-
-    /* ------- upcoming events (edit the JSON in #upcoming) ------- */
-    .upcoming-list { list-style: none; max-width: 760px; margin: 10px auto 0; }
-    .upcoming-list li {
-      display: grid; grid-template-columns: 1fr auto; gap: 6px 24px;
-      align-items: center; text-align: left;
-      padding: 22px 0; border-bottom: 1px solid var(--gold-faint);
-    }
-    .upcoming-when { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
-    .upcoming-name {
-      display: block; margin-top: 4px; font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(1.6rem, 3vw, 2.1rem); color: var(--cream); text-decoration: none; line-height: 1.15;
-    }
-    .upcoming-name:hover { color: var(--gold-bright); }
-    .upcoming-detail { grid-column: 1 / -1; color: var(--muted); margin: 0; }
-    .upcoming-list .btn { justify-self: end; }
-    .upcoming-cta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-    .upcoming-cta .party-link { margin-left: 0; font-size: 0.68rem; white-space: normal; }
-    .mobile-menu .party-link {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      text-transform: none;
-      color: var(--gold-bright);
-    }
-    @media (max-width: 640px) {
-      .upcoming-list li { grid-template-columns: 1fr; }
-      .upcoming-list .btn { justify-self: start; }
-      .upcoming-cta { align-items: flex-start; }
-    }
-    /* ------- reviews ------- */
-    .rating-summary { text-align: center; margin: -30px auto 44px; color: var(--muted); }
-    .rating-summary strong { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--cream); font-weight: 500; }
-    .rating-stars { color: var(--gold); letter-spacing: 0.16em; white-space: nowrap; }
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1040px; margin: 0 auto; }
-    .review-card {
-      position: relative; display: flex; flex-direction: column; min-height: 280px;
-      padding: 38px 34px 32px; border: 1px solid var(--gold-faint); background: var(--ink);
-    }
-    .review-card::before {
-      content: '“'; position: absolute; top: 8px; right: 24px;
-      font-family: 'Cormorant Garamond', serif; font-size: 5rem; line-height: 1; color: var(--gold-faint);
-    }
-    .review-card blockquote { margin: 24px 0 28px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; line-height: 1.5; color: var(--cream); }
-    .reviewer { margin-top: auto; color: var(--muted-2); font-size: 0.7rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; }
-    .reviews-action { text-align: center; margin-top: 42px; }
-
-    /* ------- gallery duo ------- */
-    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 48px); max-width: 900px; margin: 0 auto; }
-    .duo figure { position: relative; }
-    .duo .arch { aspect-ratio: 3/4; }
-    .duo figcaption { text-align: center; margin-top: 18px; font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--muted-2); font-weight: 400; }
-
-    /* ------- visit ------- */
-    .visit-photo { border: 1px solid var(--gold-dim); padding: 12px; background: var(--ink); max-width: 980px; margin: 0 auto 70px; }
-    .visit-photo img { width: 100%; height: auto; aspect-ratio: 1400 / 748; object-fit: cover; display: block; }
-    .visit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gold-faint); border: 1px solid var(--gold-faint); max-width: 980px; margin: 0 auto; }
-    .visit-cell { background: var(--black); padding: 14px 12px; text-align: center; }
-    .visit-cell .eyebrow { display: block; margin-bottom: 6px; }
-    .visit-cell p, .visit-cell a { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--cream); text-decoration: none; line-height: 1.45; }
-    .visit-cell a:hover { color: var(--gold-bright); }
-    .visit-actions { display: flex; justify-content: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
-
-    /* ------- faq ------- */
-    .faq-wrap { max-width: 760px; margin: 0 auto; }
-    details {
-      border: 1px solid var(--gold-faint); background: var(--ink);
-      margin-bottom: 8px; padding: 0 28px;
-    }
-    details[open] { border-color: var(--gold-dim); }
-    summary {
-      cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;
-      padding: 14px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.28rem; color: var(--cream);
-    }
-    summary:hover, summary:focus-visible { color: var(--gold-bright); }
-    summary::-webkit-details-marker { display: none; }
-    summary::after { content: '+'; color: var(--gold); font-family: 'Josefin Sans', sans-serif; font-size: 1.3rem; font-weight: 300; }
-    details[open] summary::after { content: '–'; }
-    details p { color: var(--muted); padding-bottom: 14px; font-size: 0.95rem; }
-
-    /* ------- join ------- */
-    .join { text-align: center; }
-    .join-note {
-      max-width: 36em; margin: 28px auto 22px;
-      color: var(--muted); font-family: 'Cormorant Garamond', serif;
-      font-style: italic; font-size: 1.25rem;
-    }
-    .join-form { display: flex; gap: 12px; max-width: 480px; margin: 40px auto 0; }
-    .join-form input {
-      flex: 1; background: var(--ink); border: 1px solid var(--gold-faint);
-      color: var(--cream); padding: 16px 20px; font-family: 'Josefin Sans', sans-serif;
-      font-size: 0.9rem; letter-spacing: 0.05em; outline: none; transition: border-color 0.3s ease;
-    }
-    .join-form input:focus { border-color: var(--gold); }
-    .join-form input::placeholder { color: var(--muted-2); }
-    .join-form button { border: none; cursor: pointer; font-family: 'Josefin Sans', sans-serif; }
-    .join-ok { display: none; margin-top: 34px; color: var(--gold-bright); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; }
-    .join-social { margin-top: 44px; display: flex; gap: 28px; justify-content: center; font-size: 0.74rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 400; }
-    .join-social a { color: var(--muted-2); text-decoration: none; transition: color 0.25s ease; }
-    .join-social a:hover { color: var(--gold-bright); }
-
-    /* ------- footer ------- */
-    footer { border-top: 1px solid var(--gold-faint); padding: 12px 0 8px; text-align: center; }
-    .foot-logo { width: 240px; margin: 0 auto 30px; }
-    footer .fine { color: #f4ead8; font-size: 16px; letter-spacing: 0.03em; margin-top: 8px; line-height: 1.5; }
-    footer .fine a { color: #f4ead8; }
-    footer .fine a:hover { color: var(--gold); }
-
-    /* ------- responsive ------- */
-    @media (max-width: 1200px) {
-      .nav-links { display: none; }
-      .burger { display: block; }
-    }
-    @media (max-width: 900px) {
-      .feature { grid-template-columns: 1fr; }
-      .menu-grid { grid-template-columns: 1fr; }
-      .reviews-grid { grid-template-columns: 1fr; max-width: 560px; }
-      .duo { grid-template-columns: 1fr; max-width: 460px; }
-      .visit-grid { grid-template-columns: 1fr; }
-      section { padding: 80px 0; }
-      .join-form { flex-direction: column; }
-    }
-    @media (max-width: 768px) {
-      .nav-phone, .nav-cta { display: none; }
-      header.hero {
-        min-height: auto;
-        justify-content: flex-start;
-        padding: 92px 18px 28px;
-      }
-      .hero-title { font-size: clamp(1.7rem, 7vw, 2.2rem); margin-bottom: 10px; }
-      .hero-sub { font-size: 1.15rem; margin-bottom: 8px; }
-      .hero-locale {
-        margin-bottom: 16px;
-        letter-spacing: 0.06em;
-        font-size: 0.68rem;
-        white-space: nowrap;
-      }
-      .hero-hours {
-        margin-top: 12px;
-        gap: 4px 12px;
-        letter-spacing: 0.06em;
-        font-size: 0.68rem;
-      }
-      header.hero .hero-actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        width: 100%;
-        max-width: 340px;
-      }
-      header.hero .hero-actions .party-link {
-        grid-column: 1 / -1;
-        order: 5;
-        width: auto;
-        white-space: normal;
-      }
-      .hero .btn {
-        padding: 13px 8px;
-        letter-spacing: 0.08em;
-        text-align: center;
-        width: 100%;
-      }
-    }
-
-    /* ------- hero: full-bleed room ------- */
-    header.hero { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; text-align: left; position: relative; overflow: hidden; min-height: 100svh; padding: 120px max(28px, calc((100% - 1120px)/2)) 72px; }
-    header.hero::before { display: none; }
-    .hero-copy { position: relative; z-index: 2; max-width: 36rem; }
-    .hero-photo { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; border-radius: 0; overflow: hidden; box-shadow: none; }
-    .hero-photo picture { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .hero-photo::after {
-      content:''; position:absolute; inset:0; z-index: 2; border:0; border-radius:0; pointer-events:none;
-      background:
-        linear-gradient(90deg, rgba(7,6,5,.86) 0%, rgba(7,6,5,.55) 18%, rgba(7,6,5,.16) 34%, rgba(7,6,5,0) 52%),
-        linear-gradient(180deg, rgba(7,6,5,.9) 0%, rgba(7,6,5,.78) 8%, rgba(7,6,5,.34) 16%, rgba(7,6,5,0) 30%, rgba(7,6,5,.2) 64%, rgba(7,6,5,.78) 100%);
-    }
-    .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; }
-    .hero-slide.is-lead { z-index: 0; object-position: 42% 46%; }
-    .hero-photo.is-live .hero-slide.is-lead { animation: hero-drift 32s ease-in-out infinite alternate; }
-    @keyframes hero-drift {
-      from { transform: scale(1) translate3d(0,0,0); }
-      to { transform: scale(1.055) translate3d(-1.1%, 0, 0); }
-    }
-    header.hero .btn-line {
-      background: rgba(7, 6, 5, 0.62);
-      border-color: rgba(238, 217, 164, 0.92);
-      color: #f4ead8;
-      backdrop-filter: blur(8px);
-    }
-    header.hero .btn-line:hover,
-    header.hero .btn-line:focus-visible { background: #d4af6a; border-color: #d4af6a; color: #060504; }
-    .hero-status { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
-    .hero-status.is-open::before { content:''; width:7px; height:7px; border-radius:50%; background:#7fd88f; box-shadow:0 0 0 0 rgba(127,216,143,.5); animation: pulse 2.2s infinite; flex: none; }
-    .hero-title, .hero-sub, .title, h2, p { text-wrap: pretty; }
-    .hero-title { margin: 0 0 16px; max-width: 13em; font-size: clamp(2.4rem, 4.4vw, 4.15rem); line-height: 1.12; letter-spacing: -0.018em; }
-    .hero-title em { font-style: italic; color: var(--gold); }
-    .hero-sub { margin: 0 0 28px; max-width: 26em; font-size: clamp(1.2rem, 2vw, 1.55rem); font-style: normal; font-weight: 500; color: rgba(244,234,216,.88); }
-    header.hero .hero-actions { justify-content: flex-start; }
-    .hero-proof { margin-top: 26px; font-size: .78rem; letter-spacing: .12em; color: var(--muted); font-weight: 400; }
-    .hero-proof span { color: var(--gold); letter-spacing: .1em; margin-right: 6px; }
-    header.hero .hero-hours { justify-content: flex-start; margin-top: 14px; gap: 28px; }
-    .res-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gold-faint); border: 1px solid var(--gold-faint); max-width: 900px; margin: 0 auto 44px; }
-    .res-cell { background: var(--black); padding: 34px 26px; text-align: center; }
-    .res-num { display: block; font-family: 'Cormorant Garamond', serif; font-size: 3rem; line-height: 1; color: var(--gold-bright); margin-bottom: 10px; }
-    .res-label { display: block; font-family: 'Poiret One', sans-serif; font-size: 1.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-bright); margin-bottom: 10px; }
-    .res-num small { font-size: .45em; margin-left: 2px; }
-    .res-cell p { color: var(--muted); font-size: .92rem; margin-top: 10px; }
-    @media (max-width: 700px) { .res-grid { grid-template-columns: 1fr; } .res-cell { padding: 24px 20px; } }
-    .night-band { position: relative; padding: 0; margin: 0; overflow: hidden; }
-    .night-band picture, .night-band img { display: block; width: 100%; height: min(78vh, 820px); min-height: 420px; object-fit: cover; object-position: center 42%; }
-    .night-band::after { content:''; position:absolute; inset:0; pointer-events:none; background: linear-gradient(180deg, rgba(7,6,5,.2) 0%, transparent 28%, transparent 62%, rgba(7,6,5,.72) 100%); }
-    .night-caption { position:absolute; z-index:1; left: max(24px, calc((100% - 1120px) / 2)); bottom: 36px; margin: 0; }
-    .night-caption span { display:block; font-size:.72rem; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
-    .night-caption strong { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(2rem, 4vw, 3.2rem); color:var(--cream); letter-spacing:0; }
-    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 2vw, 28px); max-width: 1080px; margin: 0 auto; }
-    .gallery figure { margin: 0; }
-    .gallery .arch { aspect-ratio: 3/4; }
-    .gallery figcaption { text-align: center; margin-top: 14px; font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
-    .press-grid { grid-template-columns: repeat(4, 1fr); max-width: 1080px; }
-    .foot-logo { display: block; width: 150px !important; max-width: 180px; height: auto !important; }
-    @media (max-width: 900px) {
-      .gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; padding: 0 4px 8px; -webkit-overflow-scrolling: touch; }
-      .gallery figure { flex: 0 0 72%; scroll-snap-align: center; }
-      .press-grid { grid-template-columns: 1fr 1fr; }
-    }
-    .menu-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 0 auto 18px; }
-    .menu-tabs[hidden] { display: none; }
-    .menu-tabs button { background: transparent; border: 1px solid var(--gold-dim); color: var(--cream); font: inherit; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; padding: 12px 18px; cursor: pointer; min-height: 44px; }
-    .menu-tabs button[aria-pressed="true"] { background: var(--gold); color: #060504; border-color: var(--gold); }
-    .menu-tabs button:focus-visible, a:focus-visible, button:focus-visible, .btn-line:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
-    .btn-solid:hover, .nav-cta:hover, a[data-cta].btn-solid:hover { background: #f0ddb0; color: #060504; }
-    .btn-solid:focus-visible, .nav-cta:focus-visible, a[data-cta].btn-solid:focus-visible { outline: 2px solid #f4ead8; outline-offset: 3px; background: #f0ddb0; color: #060504; }
-    .burger:hover, .burger:focus-visible { border-color: var(--gold-bright); color: var(--gold-bright); }
-    .menu-served { text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--muted); font-size: 1.1rem; margin-bottom: 34px; }
-    .menu-col[data-hidden] { display: none; }
-    .menu-grid.single { grid-template-columns: 1fr; max-width: 620px; margin-left: auto; margin-right: auto; }
-    @media (max-width: 900px) { .menu-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 4px; } .menu-tabs button { flex: none; padding: 11px 14px; letter-spacing: .12em; } .visit-photo img { aspect-ratio: 16/10; object-position: 68% 50%; height: auto !important; } .visit-photo picture { height: auto; } }
-    .foot-logo { height: auto !important; }
-    .skip-link { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--gold); color: #060504; padding: 10px 16px; text-decoration: none; font-weight: 400; }
-    .skip-link:focus { top: 12px; }
-    .res-call { text-align: center; margin-top: 22px; color: var(--cream); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; }
-    .res-call a { color: var(--gold-bright); }
-    body { font-size: 17px; }
-    :root { --muted: #e7dcc8; --muted-2: #d9ccb8; }
-    .mi .mi-desc, .feature .copy p, .faq-wrap details p, .res-cell p, .brunch-copy, .morning p, #menu .band-line { font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif; font-weight: 400; font-size: 17px; line-height: 1.6; letter-spacing: normal; }
-    .mi .mi-desc { color: #f4ead8; }
-    .feature .copy p, .faq-wrap details p, .morning p { color: #f4ead8; }
-    .hero-proof a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--gold-faint); }
-    .res-top { margin: 0 auto 40px; }
-    header.hero .hero-actions .hero-call { display: none; }
-    @media (max-width: 900px) {
-      header.hero .hero-actions { grid-template-columns: 1fr 1fr; }
-      header.hero .hero-actions .btn-solid { grid-column: 1 / -1; padding: 16px 8px; font-size: .8rem; }
-    }
-    @media (max-width: 420px) {
-      header.hero .hero-actions { grid-template-columns: 1fr; }
-      header.hero .hero-actions .btn,
-      header.hero .hero-actions .btn-solid { grid-column: 1 / -1; }
-    }
-    .nw { white-space: nowrap; }
-    .hero-call { display: none; }
-    @media (min-width: 901px) { header.hero .hero-actions { gap: 14px; } header.hero .btn { padding: 17px 30px; } }
-    .hero-cta-row { display: contents; }
-    @media (min-width: 1024px) {
-      header.hero .hero-cta-row {
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        gap: 10px;
-      }
-      header.hero .hero-cta-row .btn {
-        flex: none;
-        white-space: nowrap;
-        padding: 15px 20px;
-        letter-spacing: 0.14em;
-      }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .hero-status.is-open::before, .marquee-track, .hero-slide { animation: none !important; }
-      html { scroll-behavior: auto; }
-    }
-    @media (max-width: 900px) {
-      header.hero { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; text-align: left; min-height: 100svh; padding: 88px 18px calc(80px + env(safe-area-inset-bottom, 0px)); }
-      .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; }
-      .hero-photo::after {
-        inset: 0; border: 0; border-radius: 0;
-        background:
-          linear-gradient(180deg, rgba(7,6,5,.4) 0%, rgba(7,6,5,0) 18%, rgba(7,6,5,0) 46%, rgba(7,6,5,.58) 70%, rgba(7,6,5,.94) 100%);
-      }
-      .hero-slide.is-lead { object-position: center 38%; }
-      .hero-copy { padding: 0; max-width: none; width: 100%; }
-      .night-band img { height: 62vh; min-height: 320px; }
-      .hero-status { justify-content: flex-start; letter-spacing: .14em; font-size: .64rem; margin-bottom: 8px; }
-      .hero-title { margin: 0 0 8px; font-size: 34px; line-height: 1.15; max-width: 12em; }
-      .hero-sub { margin: 0 0 14px; font-size: 1.08rem; color: rgba(244,234,216,.88); }
-      header.hero .hero-actions { margin: 0; gap: 8px; max-width: 340px; }
-      .hero-proof { margin-top: 12px; font-size: .68rem; letter-spacing: .04em; }
-      header.hero .hero-hours { justify-content: flex-start; margin-top: 8px; gap: 4px 14px; }
-      section { padding: 28px 0; }
-      .brunch-panel { padding: 24px 0 0; }
-      .brunch-actions { grid-template-columns: 1fr; }
-      .brunch-panel .btn { display: flex; width: 100%; align-items: center; justify-content: center; letter-spacing: 0.12em; padding: 16px 14px; }
-    }
-    .nav-links a, .nav-cta, .nav-phone, .btn, .hero-status, .hero-hours, .hero-badge, .hero-locale, .brunch-notes {
-      font-family: 'Josefin Sans', sans-serif;
-    }
-  </style>
+</style>
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <nav id="nav" aria-label="Primary">
-    <div class="nav-inner">
-      <a class="nav-brand" href="#top" aria-label="Sober Bar home">
-        <img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801" />
-      </a>
-      <ul class="nav-links">
-        <li><a href="/menu.html#cocktails">Cocktails</a></li>
-        <li><a href="/menu.html">Menu</a></li>
-        <li><a href="/private-events.html">Private Events</a></li>
-        <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
-        <li><a href="/reservations.html">Reservations</a></li>
-        <li><a href="#visit">Visit</a></li>
+<body class="house home has-site-nav">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="site-nav" aria-label="Primary">
+    <div class="site-nav-inner">
+      <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="" width="400" height="250"></a>
+      <ul class="site-links"><li><a href="/menu.html#cocktails">Cocktails</a></li><li><a href="/menu.html">Menu</a></li><li><a href="/private-events.html">Private Events</a></li><li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li><li><a href="/reservations.html">Reservations</a></li><li><a href="/#visit">Visit</a></li>
         <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
       </ul>
-      <a class="nav-phone" href="tel:+18135861660">(813) 586-1660</a>
-      <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a></div>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+      <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
+      <a class="site-cta" data-cta="header" href="/menu.html">View the menu</a>
+      <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
     </div>
   </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
-    <a href="/menu.html#cocktails">Cocktails</a>
-    <a href="/menu.html">Menu</a>
-    <a href="/private-events.html">Private Events</a>
-    <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
-    <a href="/reservations.html">Reservations</a>
-    <a href="#visit">Visit</a>
+  <div class="site-menu" id="siteMenu">
+    <a data-cta="mobile-menu" href="/menu.html">View the menu</a>
+    <a href="/menu.html#cocktails">Cocktails</a><a href="/menu.html">Menu</a><a href="/private-events.html">Private Events</a><a href="/sunday-jazz-brunch.html">Jazz Brunch</a><a href="/reservations.html">Reservations</a><a href="/#visit">Visit</a>
     <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
     <a href="tel:+18135861660">(813) 586-1660</a>
   </div>
-
-  <main id="main">
+</header>
+<main id="main">
   <header class="hero" id="top">
-    <div class="hero-photo">
-      <picture>
-        <source media="(max-width: 900px)" srcset="/images/space/bartenders-phone.webp" type="image/webp">
-        <source type="image/webp" srcset="/images/space/bar-wide-480.webp 480w, /images/space/bar-wide-800.webp 800w, /images/space/bar-wide-1400.webp 1400w" sizes="100vw">
-        <img class="hero-slide is-lead" src="/images/space/bar-wide-1400.jpg" width="1400" height="794" alt="The bar at Sober Bar at night, pendant lights over the stools" fetchpriority="high" />
-      </picture>
+    <div class="hero-arch">
+      <div class="hero-frame">
+        <picture>
+<source media="(max-width: 720px)" type="image/webp" srcset="/images/house/chandelier-phone-poster-720.webp">
+<source type="image/avif" srcset="/images/house/chandelier-desktop-poster-960.avif 960w, /images/house/chandelier-desktop-poster-1440.avif 1440w, /images/house/chandelier-desktop-poster-1920.avif 1920w" sizes="55vw">
+<source type="image/webp" srcset="/images/house/chandelier-desktop-poster-960.webp 960w, /images/house/chandelier-desktop-poster-1440.webp 1440w, /images/house/chandelier-desktop-poster-1920.webp 1920w" sizes="55vw">
+<img src="/images/house/chandelier-desktop-poster-1920.jpg" width="1920" height="1080" alt="Alcohol-free cocktails under the chandelier" fetchpriority="high">
+</picture>
+        <video id="heroVideo" muted playsinline loop preload="none"></video>
+        <button type="button" class="media-pause" id="videoPause" hidden aria-pressed="false">Pause video</button>
+      </div>
     </div>
     <div class="hero-copy">
-      <p class="hero-status" id="openStatus">Open daily from 7 am · Beach Blvd, Gulfport</p>
+      <div class="sun-wrap" aria-hidden="true">
+  <svg class="sunburst" viewBox="0 0 200 200">
+    <g fill="none" stroke="#d4af6a" stroke-width="1.2">
+      <circle cx="100" cy="100" r="34"/><circle cx="100" cy="100" r="58"/><circle cx="100" cy="100" r="78"/>
+      <path d="M100 8 L106 70 L100 64 L94 70 Z M100 192 L106 130 L100 136 L94 130 Z M8 100 L70 94 L64 100 L70 106 Z M192 100 L130 94 L136 100 L130 106 Z"/>
+      <path d="M32 32 L74 80 M168 32 L126 80 M32 168 L74 120 M168 168 L126 120" stroke-width="1"/>
+    </g>
+  </svg>
+  <img class="sun-logo" src="/images/logo-sunburst-400.webp" alt="" width="400" height="250">
+</div>
+      <p class="invite">Stay awhile.</p>
       <h1 class="hero-title">Coffee by day.<br><em>Cocktails after dark.</em></h1>
-      <p class="hero-sub">Alcohol-free cocktails, coffee, and a New Orleans-inspired kitchen in Gulfport, FL.</p>
-      <div class="hero-actions">
-        <div class="hero-cta-row">
-          <a class="btn btn-solid" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
-          <a class="btn btn-line" href="/menu.html">View menu</a>
-          <a class="btn btn-line hero-call" href="tel:+18135861660">Call</a>
-        </div>
+      <p class="hero-sub">An alcohol-free bar, coffee house and New Orleans kitchen on Beach Blvd, Gulfport.</p>
+      <div class="actions">
+        <a class="btn" data-cta="hero" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
+        <a class="btn line" href="/menu.html">View the menu</a>
       </div>
-      <p class="hero-proof"><a href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">4.9 ★ on Google · 129 reviews</a></p>
-      <div class="hero-hours">
-        <span><b>Sun – Thu</b> 7 am – 10 pm</span>
-        <span><b>Fri – Sat</b> 7 am – Midnight</span>
-      </div>
+      <p class="hero-proof"><a href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">4.9★ on Google · 129 reviews</a></p>
     </div>
   </header>
 
-  <section id="day-night">
+  <div class="marquee" id="marquee">
+    <div class="marquee-track">
+      <p>Alcohol-free cocktails · Coffee from 7am · New Orleans kitchen · Jazz every Sunday · 4.9★ Google (129)</p>
+      <p aria-hidden="true">Alcohol-free cocktails · Coffee from 7am · New Orleans kitchen · Jazz every Sunday · 4.9★ Google (129)</p>
+    </div>
+    <button type="button" class="media-pause" id="marqueePause" aria-pressed="false">Pause</button>
+  </div>
+
+  <section class="porch porch-lit" id="porch">
+    <picture>
+<source type="image/avif" srcset="/images/house/porch-night-800.avif 800w, /images/house/porch-night-1400.avif 1400w, /images/house/porch-night-2000.avif 2000w, /images/house/porch-night-2800.avif 2800w" sizes="100vw">
+<source type="image/webp" srcset="/images/house/porch-night-800.webp 800w, /images/house/porch-night-1400.webp 1400w, /images/house/porch-night-2000.webp 2000w, /images/house/porch-night-2800.webp 2800w" sizes="100vw">
+<img src="/images/house/porch-night-2800.jpg" width="2800" height="2012" alt="The porch of Sober Bar at night, windows lit on Beach Boulevard" loading="lazy" decoding="async">
+</picture>
+    <span class="porch-dim" aria-hidden="true"></span>
+    <div class="porch-copy">
+      <p class="room-name">The porch, lit.</p>
+      <p class="invite">We saw you looking. You can come in now.</p>
+      <p>Look for the lights on Beach Boulevard.</p>
+      <p><a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
+    </div>
+  </section>
+
+  <section class="rooms" id="rooms">
+    <div class="rooms-head">
+      <p class="invite">Rooms of the house</p>
+    </div>
+    <div class="doors">
+      <a class="door" href="/menu.html#cocktails">
+        <span class="door-frame"><picture>
+<source type="image/avif" srcset="/images/house/bar-portrait-480.avif 480w, /images/house/bar-portrait-800.avif 800w, /images/house/bar-portrait-1100.avif 1100w" sizes="(max-width: 800px) 80vw, 280px">
+<source type="image/webp" srcset="/images/house/bar-portrait-480.webp 480w, /images/house/bar-portrait-800.webp 800w, /images/house/bar-portrait-1100.webp 1100w" sizes="(max-width: 800px) 80vw, 280px">
+<img src="/images/house/bar-portrait-1100.jpg" width="1100" height="1466" alt="The bar, white tile and brass" loading="lazy" decoding="async">
+</picture></span>
+        <span class="door-name">The Bar</span>
+        <span class="door-cap">White tile, brass, and the cocktail list.</span>
+      </a>
+      <a class="door" href="/private-events.html">
+        <span class="door-frame"><picture>
+<source type="image/avif" srcset="/images/house/parlor-480.avif 480w, /images/house/parlor-800.avif 800w" sizes="(max-width: 800px) 80vw, 280px">
+<source type="image/webp" srcset="/images/house/parlor-480.webp 480w, /images/house/parlor-800.webp 800w" sizes="(max-width: 800px) 80vw, 280px">
+<img src="/images/house/parlor-800.jpg" width="800" height="1067" alt="The parlor, red velvet and a chandelier" loading="lazy" decoding="async">
+</picture></span>
+        <span class="door-name">The Parlor</span>
+        <span class="door-cap">Red velvet, a chesterfield, and the chandelier.</span>
+      </a>
+      <a class="door" href="/breakfast-gulfport.html">
+        <span class="door-frame"><picture>
+<source type="image/avif" srcset="/images/house/lounge-800.avif 800w, /images/house/lounge-1400.avif 1400w, /images/house/lounge-2048.avif 2048w" sizes="(max-width: 800px) 80vw, 280px">
+<source type="image/webp" srcset="/images/house/lounge-800.webp 800w, /images/house/lounge-1400.webp 1400w, /images/house/lounge-2048.webp 2048w" sizes="(max-width: 800px) 80vw, 280px">
+<img src="/images/house/lounge-2048.jpg" width="2048" height="1536" alt="The lounge under the chandelier" loading="lazy" decoding="async">
+</picture></span>
+        <span class="door-name">The Lounge</span>
+        <span class="door-cap">Daylight, coffee, and a place to stay.</span>
+      </a>
+      <a class="door" href="#porch">
+        <span class="door-frame"><picture>
+<source type="image/avif" srcset="/images/house/porch-day-800.avif 800w, /images/house/porch-day-1400.avif 1400w" sizes="(max-width: 800px) 80vw, 280px">
+<source type="image/webp" srcset="/images/house/porch-day-800.webp 800w, /images/house/porch-day-1400.webp 1400w" sizes="(max-width: 800px) 80vw, 280px">
+<img src="/images/house/porch-day-1400.jpg" width="1400" height="748" alt="The storefront on Beach Boulevard" loading="lazy" decoding="async">
+</picture></span>
+        <span class="door-name">The Porch</span>
+        <span class="door-cap">The lights on Beach Boulevard.</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="office" id="office">
+    <div class="office-copy">
+      <h2>Your “out of office” office.</h2>
+      <p>Espresso and free, fast WiFi from 7am.</p>
+    </div>
+    <figure>
+      <picture>
+<source type="image/avif" srcset="/images/house/lounge-800.avif 800w, /images/house/lounge-1400.avif 1400w, /images/house/lounge-2048.avif 2048w" sizes="(max-width: 900px) calc(100vw - 40px), 640px">
+<source type="image/webp" srcset="/images/house/lounge-800.webp 800w, /images/house/lounge-1400.webp 1400w, /images/house/lounge-2048.webp 2048w" sizes="(max-width: 900px) calc(100vw - 40px), 640px">
+<img src="/images/house/lounge-2048.jpg" width="2048" height="1536" alt="The empty lounge at Sober Bar, a bench under the chandelier" loading="lazy" decoding="async">
+</picture>
+    </figure>
+  </section>
+
+  <section class="bar-chapter" id="from-the-bar">
     <div class="shell">
-      <div class="morning">
-        <div>
-          <h2 class="story-line rise">Your “out of office” office.</h2>
-          <p>Espresso and free, fast WiFi from 7am. Settle in.</p>
-          <p><a class="day-directions" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions →</a></p>
-        </div>
-        <figure class="daynight rise">
-          <picture>
-            <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 48px), 520px" type="image/webp">
-            <img src="/images/space/lounge-1400.jpg" width="1400" height="1050" alt="The empty lounge at Sober Bar, a bench under the chandelier" loading="lazy" decoding="async">
-          </picture>
-        </figure>
+      <p class="room-name" style="font-size:clamp(3rem,10vw,7rem)">From the bar</p>
+      <div class="drink-grid">
+        <a class="drink" href="/menu.html#cocktails"><picture>
+<source type="image/avif" srcset="/images/house/ube-480.avif 480w, /images/house/ube-800.avif 800w, /images/house/ube-1152.avif 1152w" sizes="(max-width: 800px) 70vw, 420px">
+<source type="image/webp" srcset="/images/house/ube-480.webp 480w, /images/house/ube-800.webp 800w, /images/house/ube-1152.webp 1152w" sizes="(max-width: 800px) 70vw, 420px">
+<img src="/images/house/ube-1152.jpg" width="1152" height="1440" alt="" loading="lazy" decoding="async">
+</picture><span><span class="drink-name">Call Me An Ube</span><p>Ritual gin alt, ube, coconut cream, key lime, pineapple</p></span></a>
+        <a class="drink" href="/menu.html#cocktails"><picture>
+<source type="image/avif" srcset="/images/house/bees-480.avif 480w, /images/house/bees-800.avif 800w, /images/house/bees-1152.avif 1152w" sizes="(max-width: 800px) 70vw, 420px">
+<source type="image/webp" srcset="/images/house/bees-480.webp 480w, /images/house/bees-800.webp 800w, /images/house/bees-1152.webp 1152w" sizes="(max-width: 800px) 70vw, 420px">
+<img src="/images/house/bees-1152.jpg" width="1152" height="1440" alt="" loading="lazy" decoding="async">
+</picture><span><span class="drink-name">Bee’s Bouquet</span><p>Gin alt, fresh lemon, honey, and lavender</p></span></a>
+        <a class="drink drink-ue" href="/menu.html#cocktails"><picture>
+<source type="image/avif" srcset="/images/house/hot-mami-440.avif 440w" sizes="(max-width: 800px) 70vw, 440px">
+<source type="image/webp" srcset="/images/house/hot-mami-440.webp 440w" sizes="(max-width: 800px) 70vw, 440px">
+<img src="/images/house/hot-mami-440.jpg" width="440" height="330" alt="" loading="lazy" decoding="async">
+</picture><span><span class="drink-name">Hot Mami</span><p>Reposado tequila alt, jalapeño, lime, pineapple ginger, chili</p></span></a>
+        <a class="drink drink-ue" href="/menu.html#cocktails"><picture>
+<source type="image/avif" srcset="/images/house/lilikoi-440.avif 440w" sizes="(max-width: 800px) 70vw, 440px">
+<source type="image/webp" srcset="/images/house/lilikoi-440.webp 440w" sizes="(max-width: 800px) 70vw, 440px">
+<img src="/images/house/lilikoi-440.jpg" width="440" height="330" alt="" loading="lazy" decoding="async">
+</picture><span><span class="drink-name">Lilikoi</span></span></a>
       </div>
+      <p class="actions"><a class="btn line" href="/menu.html#cocktails">See all cocktails</a></p>
+    </div>
+  </section>
+
+  <section class="kitchen" id="kitchen">
+    <figure class="kitchen-bleed">
+      <picture>
+<source type="image/avif" srcset="/images/house/spread-800.avif 800w, /images/house/spread-1280.avif 1280w, /images/house/spread-1920.avif 1920w, /images/house/spread-2560.avif 2560w" sizes="100vw">
+<source type="image/webp" srcset="/images/house/spread-800.webp 800w, /images/house/spread-1280.webp 1280w, /images/house/spread-1920.webp 1920w, /images/house/spread-2560.webp 2560w" sizes="100vw">
+<img src="/images/house/spread-2560.jpg" width="2560" height="1267" alt="An overhead spread of plates and alcohol-free drinks" loading="lazy" decoding="async">
+</picture>
+    </figure>
+    <div class="shell">
+      <p class="invite">From the kitchen</p>
+      <nav class="chips" aria-label="Menu categories">
+        <a href="/menu.html#cocktails">Cocktails</a>
+        <a href="/menu.html#beer">Beer &amp; Kombucha</a>
+        <a href="/menu.html#coffee">Coffee</a>
+        <a href="/menu.html#breakfast">Breakfast</a>
+        <a href="/menu.html#provisions">Provisions</a>
+      </nav>
+      <div class="actions">
+        <a class="btn" data-cta="menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
+      </div>
+      <p>Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Book ahead for Friday and Saturday evenings.</p>
+    </div>
+  </section>
+
+  <section class="poster" id="jazz-brunch">
+    <figure class="poster-photo">
+      <picture>
+        <source srcset="/images/stills/jazz-musicians-landscape-1080x810.webp" type="image/webp">
+        <img src="/images/stills/jazz-musicians-landscape-1080x810.jpg" width="1080" height="810" alt="Musicians playing by the windows" loading="lazy" decoding="async">
+      </picture>
+    </figure>
+    <div class="poster-copy">
+      <p class="poster-giant">Every Sunday</p>
+      <p class="poster-band">The Western Gypsies</p>
+      <p class="poster-when">Brunch 10am–1pm</p>
+      <div class="actions">
+        <a class="btn" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve Sunday brunch</a>
+        <a class="btn line" href="/sunday-jazz-brunch.html">Explore Sunday Jazz Brunch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gather" id="gather">
+    <figure>
+      <picture>
+        <source srcset="/images/stills/events-dancing-chandelier-portrait-720.webp" type="image/webp">
+        <img src="/images/stills/events-dancing-chandelier-portrait-720.jpg" width="720" height="1280" alt="Guests dancing under the chandelier" loading="lazy" decoding="async">
+      </picture>
+    </figure>
+    <div>
+      <p class="invite">Gather</p>
+      <p>Showers, birthdays, office gatherings, and recovery milestones.</p>
+      <p><a class="btn" href="/private-events.html#inquire">Plan a gathering</a></p>
     </div>
   </section>
 
   <section id="reviews">
     <div class="shell">
-      <div class="sec-head">
-        <span class="eyebrow">Google reviews</span>
-        <h2 class="title rise">Guests, in their words.</h2>
-      </div>
-      <p><a class="rating-link" href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">4.9 ★ on Google · 129 reviews</a></p>
+      <p><a href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">4.9★ on Google · 129 reviews</a></p>
       <div class="quotes">
         <a class="quote-card" href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">
-          <blockquote>
-            <p>Great vibes, jazz music playing. Very accommodating and cozy for a ladies brunch. Food and drinks on point. Great service.</p>
-            <footer>Angela Terrio</footer>
-          </blockquote>
+          <p>Great vibes, jazz music playing. Very accommodating and cozy for a ladies brunch. Food and drinks on point. Great service.</p>
+          <footer>Angela Terrio</footer>
         </a>
         <a class="quote-card" href="https://www.google.com/maps/place/Sober+Bar+%26+Kitchen/@27.7389544,-82.7076021,17z/data=!4m8!3m7!1s0x88c2e78e64cafbb1:0x7e8503703396fb68!8m2!3d27.7389544!4d-82.7076021!9m1!1b1!16s%2Fg%2F11ymphd1g5" target="_blank" rel="noopener">
-          <blockquote>
-            <p>So grateful to have this gem in Gulfport. An upscale vibe meets comfort… We needed somewhere like this.</p>
-            <footer>Jenna Kirkpatrick</footer>
-          </blockquote>
+          <p>So grateful to have this gem in Gulfport. An upscale vibe meets comfort… We needed somewhere like this.</p>
+          <footer>Jenna Kirkpatrick</footer>
         </a>
       </div>
       <figure class="guest-still">
@@ -978,168 +937,48 @@ html { scroll-padding-top: 84px; }
           <img src="/images/stills/bar-guests-landscape-720x540.jpg" width="720" height="540" alt="Guests seated along the bar" loading="lazy" decoding="async">
         </picture>
       </figure>
-      <p class="press-link"><a href="/as-seen-in.html">In the press</a></p>
-    </div>
-  </section>
-
-  <section id="menu" class="menu-bg">
-    <div class="shell">
-      <div class="sec-head">
-        <span class="eyebrow">The menu</span>
-        <h2 class="title rise">Stay for another <span class="round-line">round.</span></h2>
-      </div>
-      <p class="band-line">Whipped ricotta, spicy soppressata, and hot honey.</p>
-      <figure class="band-photo tone-food rise">
-        <picture>
-          <source srcset="/images/food/dd-hot-honey-lead-400.webp 400w, /images/food/dd-hot-honey-lead-640.webp 640w, /images/food/dd-hot-honey-lead-800.webp 800w, /images/food/dd-hot-honey-lead-1024.webp 1024w" sizes="(max-width: 900px) calc(100vw - 48px), 560px" type="image/webp">
-          <img src="/images/food/dd-hot-honey-lead-1024.jpg" width="1024" height="768" alt="Hot Honey Soppressata Flatbread" loading="lazy" decoding="async">
-        </picture>
-        <figcaption>Hot Honey Soppressata Flatbread</figcaption>
-      </figure>
-      <p class="menu-hint">Browse the menu →</p>
-      <ul class="band-rows">
-        <li><a href="/menu.html#cocktails"><span>Cocktails</span><span class="arrow" aria-hidden="true">→</span></a></li>
-        <li><a href="/menu.html#coffee"><span>Coffee</span><span class="arrow" aria-hidden="true">→</span></a></li>
-        <li><a href="/menu.html#breakfast"><span>Breakfast</span><span class="arrow" aria-hidden="true">→</span></a></li>
-        <li><a href="/menu.html#provisions"><span>Provisions</span><span class="arrow" aria-hidden="true">→</span></a></li>
-      </ul>
-      <p class="menu-go"><a class="btn btn-solid" href="/menu.html">Explore the menu</a></p>
-    </div>
-  </section>
-
-  <section id="jazz-brunch">
-    <div class="shell">
-      <div class="brunch-panel">
-        <h2 class="title rise">Sunday Jazz <em>Brunch</em></h2>
-        <p class="brunch-copy">Live jazz every Sunday with the Western Gypsies. Coffee, alcohol-free cocktails, and brunch in Gulfport.</p>
-        <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Explore Sunday Jazz Brunch →</a></p>
-        <div class="brunch-actions">
-          <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" rel="noopener noreferrer" target="_blank">Reserve Sunday brunch</a>
-        </div>
-        <div class="gathering">
-          <p class="brunch-copy">Planning a gathering? Tell us your date and headcount.</p>
-          <a class="btn btn-line" href="/private-events.html#inquire">Plan a gathering</a>
-        </div>
-      </div>
+      <p><a href="/as-seen-in.html">In the press</a></p>
     </div>
   </section>
 
   <section id="visit">
     <div class="shell">
-      <div class="sec-head">
-        <span class="eyebrow">Visit</span>
-        <h2 class="title rise">Right on Beach Boulevard.</h2>
+      <p class="room-name" style="font-size:clamp(3rem,8vw,6rem)">Visit</p>
+      <div class="visit-grid">
+        <div><span>Address</span><p>3062 Beach Blvd S<br>Gulfport, FL 33707</p></div>
+        <div><span>Hours</span><p>Sun–Thu 7am–10pm<br>Fri–Sat 7am–midnight</p></div>
+        <div><span>Contact</span><p><a href="tel:+18135861660">(813) 586-1660</a><br><a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p></div>
       </div>
-      <div class="visit-split">
-        <figure class="visit-photo tone-room rise">
-          <picture>
-            <source srcset="/images/space/porch-480.webp 480w, /images/space/porch-800.webp 800w, /images/space/porch-1400.webp 1400w" sizes="(max-width: 800px) 92vw, 52vw" type="image/webp">
-            <img src="/images/space/porch-1400.jpg" width="1400" height="1006" alt="The front porch of Sober Bar at night" loading="lazy" decoding="async">
-          </picture>
-        </figure>
-        <div>
-          <div class="visit-grid">
-            <div class="visit-cell">
-              <span class="eyebrow">Address</span>
-              <p>3062 Beach Blvd S<br>Gulfport, FL 33707</p>
-            </div>
-            <div class="visit-cell">
-              <span class="eyebrow">Hours</span>
-              <p>Sun – Thu · 7 am – 10 pm<br>Fri – Sat · 7 am – Midnight</p>
-            </div>
-            <div class="visit-cell">
-              <span class="eyebrow">Contact</span>
-              <p><a href="tel:+18135861660">(813) 586-1660</a><br><a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
-            </div>
-          </div>
-          <p class="party-link">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Book ahead for Friday and Saturday evenings.</p>
-          <div class="visit-actions">
-            <a class="btn btn-solid" data-cta="visit" href="/reservations.html">Reservations</a>
-            <a class="btn btn-line" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
-          </div>
-        </div>
-      </div>
+      <p><a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a> · <a href="/reservations.html">Reservations</a></p>
     </div>
   </section>
 
-  <section id="faq" class="menu-bg">
+  <section id="faq">
     <div class="shell">
-      <div class="sec-head">
-        <span class="eyebrow">Questions</span>
-        <h2 class="title rise">Before you visit.</h2>
-      </div>
-      <div class="faq-wrap">
-        <details>
-          <summary>What are your hours?</summary>
-          <p>Open daily. Sunday through Thursday 7 am – 10 pm, Friday and Saturday 7 am – midnight.</p>
-        </details>
-        <details>
-          <summary>Can I work from here during the day?</summary>
-          <p>Yes. Free, fast WiFi, seats, and espresso from 7am.</p>
-        </details>
-        <details>
-          <summary>Do you serve food all day?</summary>
-          <p>Yes. Breakfast, flatbreads, muffulettas, and shareable plates from open to close.</p>
-        </details>
-      </div>
-      <p class="guide-note">Planning a visit? The <a href="/guides.html">Gulfport guides</a> cover the alcohol-free bar, mocktails, Sunday jazz brunch, coffee with WiFi, and things to do nearby.</p>
+      <h2 class="invite">Before you visit.</h2>
+      <details><summary>What are your hours?</summary><p>Open daily. Sunday through Thursday 7 am – 10 pm, Friday and Saturday 7 am – midnight.</p></details>
+      <details><summary>Can I work from here during the day?</summary><p>Yes. Free, fast WiFi, seats, and espresso from 7am.</p></details>
+      <details><summary>Do you serve food all day?</summary><p>Yes. Breakfast, flatbreads, muffulettas, and shareable plates from open to close.</p></details>
+      <p>Planning a visit? The <a href="/guides.html">Gulfport guides</a> cover the alcohol-free bar, mocktails, Sunday jazz brunch, coffee with WiFi, and things to do nearby.</p>
     </div>
   </section>
-
-  </main>
-
-  <footer>
-    <div class="shell">
-      <p class="fine">Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
-      <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
-      <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
-      <p class="fine"><a href="/menu.html">Menu</a> · <a href="/reservations.html">Reservations</a> · <a href="/sunday-jazz-brunch.html">Jazz brunch</a> · <a href="/private-events.html">Private events</a> · <a href="/guides.html">Guides</a></p>
-      <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
-      <p class="fine">© 2026 Sober Bar</p>
-    </div>
-  </footer>
-
-  <nav class="mobile-actions" aria-label="Call, reserve, or directions">
-    <a href="tel:+18135861660">Call</a>
-    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
-    <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
-  </nav>
-
-  <script>
-    const nav = document.getElementById('nav');
-    function onScroll() {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    const burger = document.getElementById('burger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    function setMenu(open, restore) {
-      mobileMenu.classList.toggle('open', open);
-      burger.setAttribute('aria-expanded', String(open));
-      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      burger.textContent = open ? '✕' : '☰';
-      document.body.style.overflow = open ? 'hidden' : '';
-      var main = document.getElementById('main'); if (main) main.inert = open;
-      if (open) { var f = mobileMenu.querySelector('a'); if (f) f.focus(); } else if (restore) burger.focus();
-    }
-    burger.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open'), true));
-    window.matchMedia('(min-width: 1201px)').addEventListener('change', (m) => { if (m.matches && mobileMenu.classList.contains('open')) setMenu(false, false); });
-    mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false, false)));
-    document.addEventListener('keydown', (e) => {
-      if (!mobileMenu.classList.contains('open')) return;
-      if (e.key === 'Escape') { setMenu(false, true); return; }
-      if (e.key === 'Tab') {
-        var items = [burger].concat(Array.from(mobileMenu.querySelectorAll('a')));
-        var i = items.indexOf(document.activeElement);
-        if (e.shiftKey && i <= 0) { e.preventDefault(); items[items.length - 1].focus(); }
-        else if (!e.shiftKey && i === items.length - 1) { e.preventDefault(); items[0].focus(); }
-      }
-    });
-
-  </script>
-
-  <script type="application/ld+json">
+</main>
+<footer class="site-foot">
+  <p>Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
+  <p>3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
+  <p>Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
+  <p><a href="/menu.html">Menu</a> · <a href="/reservations.html">Reservations</a> · <a href="/sunday-jazz-brunch.html">Jazz brunch</a> · <a href="/private-events.html">Private events</a> · <a href="/guides.html">Guides</a></p>
+  <p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  <p>© 2026 Sober Bar</p>
+</footer>
+<nav class="mobile-actions" aria-label="Call, reserve, or directions">
+  <a href="tel:+18135861660">Call</a>
+  <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
+  <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+</nav>
+<script src="/nav.js" defer></script>
+<script src="/house.js" defer></script>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": ["BarOrPub", "CafeOrCoffeeShop"],
@@ -1195,7 +1034,7 @@ html { scroll-padding-top: 84px; }
     ]
   }
   </script>
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -1218,36 +1057,5 @@ html { scroll-padding-top: 84px; }
     ]
   }
   </script>
-<script>
-(function () {
-  var tabs = document.querySelector('.menu-tabs'); if (!tabs) return;
-  var cols = document.querySelectorAll('.menu-col[data-cat]');
-  function show(cat) {
-    tabs.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.tab === cat)); });
-    var n = 0;
-    cols.forEach(function (c) { var on = cat === 'all' || c.dataset.cat.split(' ').indexOf(cat) > -1; if (on) { n++; c.removeAttribute('data-hidden'); c.classList.add('visible'); } else c.setAttribute('data-hidden', ''); });
-    var g = document.querySelector('.menu-grid'); if (g) g.classList.toggle('single', n === 1);
-  }
-  tabs.hidden = false;
-  tabs.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) show(b.dataset.tab); });
-  var h = 12; try { h = parseInt(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false }).format(new Date()), 10) % 24; } catch (e) {}
-  show(h < 11 ? 'breakfast' : h >= 17 ? 'drinks' : 'kitchen');
-})();
-</script>
-<script>
-(function () {
-  var el = document.getElementById('openStatus'); if (!el) return;
-  try {
-    var parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
-    var get = function (t) { return (parts.find(function (p) { return p.type === t; }) || {}).value; };
-    var day = get('weekday'), h = parseInt(get('hour'), 10) % 24, m = parseInt(get('minute'), 10);
-    var late = (day === 'Fri' || day === 'Sat'), closeH = late ? 24 : 22, t = h + m / 60;
-    if (t >= 7 && t < closeH) { el.textContent = 'Open now · until ' + (late ? 'midnight' : '10 pm') + ' tonight'; el.classList.add('is-open'); }
-    else if (t < 7) { el.textContent = 'Opens at 7 am · coffee & breakfast'; }
-    else { el.textContent = 'Closed now · opens 7 am tomorrow'; }
-  } catch (e) {}
-})();
-</script>
-<script src="/nav.js" defer></script>
 </body>
 </html>

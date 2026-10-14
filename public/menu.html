@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>document.documentElement.classList.add("js");</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,224 +11,775 @@
   <meta property="og:description" content="Alcohol-free cocktails, alcohol-free beer, coffee, breakfast, and New Orleans-inspired plates in Gulfport, FL. Open daily from 7am.">
   <meta property="og:url" content="https://www.sipsoberbar.com/menu.html">
   <meta property="og:image" content="https://www.sipsoberbar.com/images/food/spread-lead-2560.jpg">
+  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/food/spread-lead-2560.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Menu · Sober Bar &amp; Kitchen, Gulfport FL">
   <meta name="twitter:description" content="Alcohol-free cocktails, alcohol-free beer, coffee, breakfast, and New Orleans-inspired plates in Gulfport, FL.">
-  <meta name="twitter:image" content="https://www.sipsoberbar.com/images/food/spread-lead-2560.jpg">
   <script src="/analytics.js" defer></script>
-  <link rel="preload" href="/fonts/josefin-sans-normal-300.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/cormorant-garamond-normal-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/webp" media="(max-width: 768px)" imagesrcset="/images/food/spread-lead-43-720.webp 720w, /images/food/spread-lead-43-800.webp 800w, /images/food/spread-lead-43-1120.webp 1120w" imagesizes="calc(100vw - 40px)" fetchpriority="high">
-  <link rel="stylesheet" href="/fonts.css">
-  <link rel="stylesheet" href="/chrome.css">
-  <style>
-    :root { --black:#070605; --ink:#12100c; --gold:#d4af6a; --gold-bright:#eed9a4; --cream:#f4ead8; --muted:rgba(244,234,216,.78); }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; }
-    body { background:var(--black); color:var(--cream); font-family:'Inter','Inter Fallback',system-ui,sans-serif; font-weight:400; font-size:17px; line-height:1.6; }
-    a { color:#eed9a4; }
-    .party-link { color:#eed9a4; opacity:1; }
-    .shell { width:min(100% - 40px, 1180px); margin:0 auto; padding:48px 0 64px; }
-    .crumbs { font-size:.78rem; letter-spacing:.06em; margin-bottom:22px; }
-    .crumbs a { color:var(--gold); text-decoration:none; }
-    h1 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(3.75rem, 8vw, 6.5rem); letter-spacing:0; text-transform:none; color:var(--cream); margin-bottom:12px; line-height:0.98; }
-    h2 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.7rem; letter-spacing:0; text-transform:none; color:var(--gold); margin:28px 0 12px; }
-    .lead { font-family:'Cormorant Garamond', Georgia, serif; font-style:normal; font-weight:500; font-size:clamp(1.25rem,2.4vw,1.55rem); color:var(--cream); margin-bottom:14px; }
-    .topbar { text-align:right; font-size:.78rem; letter-spacing:.06em; margin-bottom:18px; }
-    .topbar a { color:var(--gold-bright); }
-    .actions { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:8px 0 22px; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:14px 22px; background:var(--gold); color:var(--black); text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; }
-    .btn.line { background:transparent; color:#f4ead8; border:1px solid rgba(244,234,216,.72); font-weight:500; }
-    .menu-jump-label { display:none; }
-    .menu-jumps { display:flex; flex-wrap:wrap; gap:8px 10px; position:sticky; top:84px; z-index:30; background:#070605; padding:12px 0 16px; margin:0 0 28px; border-bottom:1px solid rgba(212,175,106,.35); }
-    .menu-jumps a { display:inline-flex; align-items:center; min-height:44px; padding:10px 14px; color:var(--gold-bright); font-size:16px; line-height:1.3; text-decoration:none; border-bottom:1px solid rgba(212,175,106,.5); }
-    .menu-jumps a:hover { color:var(--cream); border-bottom-color:var(--gold-bright); background:rgba(212,175,106,.16); }
-    .menu-jumps a:focus-visible { color:var(--cream); outline:2px solid var(--gold-bright); outline-offset:3px; background:rgba(212,175,106,.16); }
-    .menu-jumps a[aria-current="true"] { color:var(--cream); border-bottom-color:var(--gold); box-shadow:inset 0 -2px 0 var(--gold); }
-    .menu-lead { margin:0 0 22px; width:100%; text-align:left; }
-    .menu-lead picture { display:block; }
-    .menu-lead figcaption, .cat-photo figcaption { margin-top:10px; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:20px; letter-spacing:0; text-transform:none; color:#d4af6a; line-height:1.3; text-align:center; }
-    .cat-split { display:grid; grid-template-columns:1fr; gap:12px; align-items:start; margin-top:8px; }
-    .cat-split > div, .cat-split > .cat-photo { grid-column:auto; grid-row:auto; min-width:0; margin:0; }
-    .cat-split h3 { margin-top:8px; }
-    .menu-board section, #hot-honey, #garden-mezze, #classic-melt, .cat-photo { scroll-margin-top:196px; }
-    body.has-site-nav .menu-lead img { width:100%; max-width:100%; height:auto; margin:0; aspect-ratio:auto; object-fit:contain; display:block; border-radius:6px; }
-    body.has-site-nav .cat-photo img { width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; object-position:center; display:block; border-radius:6px; }
-    @media (max-width:768px) {
-      body, .mi-desc, .note { font-size:17px; line-height:1.55; }
-      .lead { font-size:1.35rem; line-height:1.35; }
-      .cat-photo figcaption, .menu-lead figcaption { font-size:20px; color:#d4af6a; }
-      .actions .btn { display:none; }
-      body.has-site-nav .menu-lead img { width:100%; max-width:100%; aspect-ratio:4 / 3; height:auto; object-fit:cover; object-position:center; }
-    }
-    .menu-board { display:block; }
-    .menu-chapter { margin:0 0 48px; }
-    .menu-chapter > h2 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(2rem, 4vw, 2.75rem); letter-spacing:0; text-transform:none; color:var(--cream); margin:8px 0 18px; }
-    .chapter-kicker { margin:4px 0 8px; padding-top:22px; border-top:1px solid rgba(212,175,106,.4); font-family:'Cormorant Garamond', Georgia, serif; font-style:italic; font-weight:500; font-size:clamp(2.6rem, 5vw, 4rem); line-height:1.12; color:var(--gold); }
-    .kicker-sun { display:block; width:40px; height:22px; margin:2px 0 16px; }
-    .cat-photo a { display:block; color:inherit; text-decoration:none; outline:2px solid transparent; outline-offset:4px; transition:outline-color 160ms ease; }
-    .cat-photo a:hover, .cat-photo a:focus-visible { outline-color:#d4af6a; }
-    .mi:target { border-radius:6px; background-color:rgba(212,175,106,.2); }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior:auto; }
-    }
-    .chapter-grid { display:grid; grid-template-columns:1fr; gap:36px; align-items:start; }
-    @media (min-width:761px) {
-      .menu-jumps { box-shadow: 100vmax 0 0 #070605, -100vmax 0 0 #070605; }
-      .chapter-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:32px; }
-      .chapter-grid > :nth-child(3) { grid-column:1 / -1; }
-      .chapter-grid > :nth-child(3) ul { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:56px; row-gap:0; align-items:start; }
-      .cat-photo { width:min(100%, 560px); }
-      #breakfast .cat-photo { margin-left:0; margin-right:auto; }
-      #provisions .cat-photo { margin-left:auto; margin-right:0; }
-    }
-    .menu-board h3 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:2.2rem; letter-spacing:0; text-transform:none; color:var(--gold); line-height:1.12; margin:8px 0 20px; padding-bottom:12px; border-bottom:1px solid rgba(212,175,106,.7); }
-    ul { list-style:none; }
-    .mi { display:grid; grid-template-columns:72px 1fr; gap:14px; align-items:start; margin:0 0 16px; }
-    .mi > div { grid-column:2; grid-row:1; min-width:0; }
-    .mi:not(.has-photo) { grid-template-columns:1fr; gap:0; }
-    .mi:not(.has-photo) > div { grid-column:1; }
-    .mi picture { grid-column:1; grid-row:1; display:block; width:72px; height:72px; }
-    .mi img { width:72px; height:72px; object-fit:cover; border-radius:6px; display:block; }
-    .mi-name { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.55rem; line-height:1.15; color:var(--cream); }
-    .mi-desc { font-family:'Inter', 'Inter Fallback', system-ui, sans-serif; font-size:17px; font-weight:400; line-height:1.6; letter-spacing:normal; color:#f4ead8; }
-    .note { margin-top:28px; color:var(--muted); font-size:.92rem; }
-    footer { text-align:center; padding:12px 0 8px; font-size:.78rem; color:var(--muted); }
-    footer a { color:var(--gold); text-decoration:none; }
-    footer p { margin-bottom:8px; }
-    @media (min-width:761px) {
-      body.has-site-nav .cat-photo img { width:100%; height:auto; max-height:none; aspect-ratio:4 / 3; object-fit:contain; object-position:center; }
-    }
-    @media (max-width:760px) {
-      .chapter-grid { grid-template-columns:1fr; }
-      .chapter-grid > :nth-child(3) { grid-column:auto; }
-      .chapter-grid > :nth-child(3) ul { display:block; grid-template-columns:none; }
-      .menu-jump-bar { position:sticky; top:76px; z-index:30; background:#070605; margin:0 0 20px; }
-      .menu-jump-bar::after { content:''; position:absolute; top:0; right:0; bottom:0; width:42px; pointer-events:none; background:linear-gradient(90deg, rgba(7,6,5,0), #070605 86%); }
-      .menu-jump-label { display:block; margin:0; padding:8px 48px 0 20px; font-family:'Josefin Sans', sans-serif; font-size:13px; letter-spacing:.02em; line-height:1.3; color:#d4af6a; }
-      .menu-jumps { position:static; top:auto; z-index:auto; flex-wrap:nowrap; overflow-x:scroll; overscroll-behavior-x:contain; padding:6px 48px 10px 20px; margin:0; background:transparent; scrollbar-width:thin; scrollbar-color:#d4af6a rgba(212,175,106,.28); }
-      .menu-board h3 { line-height:1.12; margin:6px 0 18px; padding-bottom:12px; }
-      .menu-jumps::-webkit-scrollbar { height:3px; }
-      .menu-jumps::-webkit-scrollbar-track { background:rgba(212,175,106,.18); }
-      .menu-jumps::-webkit-scrollbar-thumb { background:#d4af6a; }
-      .menu-jumps a { flex:0 0 auto; padding:12px 18px; }
-      .menu-board section, .cat-photo { scroll-margin-top:200px; }
-    }
-  </style>
+  <link rel="preload" as="image" href="/images/house/barloop-phone-mast-720.webp" type="image/webp" media="(max-width: 720px)" fetchpriority="high">
+  
+<style>
+/* Self-hosted Latin subsets (SIL Open Font License). Variable files cover the listed weights. */
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-italic-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('/fonts/cormorant-garamond-normal-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-normal-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  ascent-override: 90.49%;
+  descent-override: 22.56%;
+  line-gap-override: 0%;
+  size-adjust: 107.64%;
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url('/fonts/josefin-sans-normal-300.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/poiret-one-normal-400.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Body copy is Inter at 17px. Buttons, eyebrows, and nav stay Josefin. */
+body {
+  font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+.btn,
+.eyebrow,
+.crumbs,
+.nav-links a,
+.nav-cta,
+.nav-phone,
+.hero-badge,
+.hero-status,
+.hero-hours,
+.facts dt,
+.tag {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* House redesign: rooms, arches, poster type. Loaded after chrome.css. */
+
+body.house {
+  background: #070605;
+  color: #f4ead8;
+  font-family: "Inter", "Inter Fallback", system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+body.house.has-site-nav { padding-top: 76px; }
+body.home.has-site-nav { padding-top: 0; }
+body.house a { color: #eed9a4; }
+body.house a:focus-visible,
+body.house button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+body.house a.skip {
+  position: absolute;
+  left: 12px;
+  top: -48px;
+  background: #d4af6a;
+  color: #1a120c;
+  padding: 8px 12px;
+  z-index: 100;
+  text-decoration: none;
+}
+body.house a.skip:focus { top: 12px; color: #1a120c; }
+
+body.home .site-nav {
+  background: linear-gradient(rgba(7, 6, 5, 0.72), rgba(7, 6, 5, 0));
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+}
+
+.room-name,
+.poster-giant,
+.poster-band,
+.drink-name,
+.card-name {
+  font-family: "Poiret One", "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #d4af6a;
+  line-height: 0.88;
+}
+.invite {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  color: #f4ead8;
+}
+.btn,
+body.house a.btn,
+body.house button.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  background: #d4af6a;
+  color: #1a120c;
+  font-family: "Inter", "Inter Fallback", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+}
+body.house a.btn.line,
+body.house a.btn-line {
+  background: transparent;
+  color: #f4ead8;
+  border: 1px solid rgba(212, 175, 106, 0.7);
+}
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 18px 0; }
+.shell { width: min(100% - 40px, 1120px); margin: 0 auto; }
+.prose { width: min(100% - 40px, 760px); margin: 0 auto; }
+.prose h2, .chapter h2 {
+  font-family: "Poiret One", serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #d4af6a;
+  font-weight: 400;
+  margin: 36px 0 10px;
+}
+.prose p, .prose li { color: rgba(244, 234, 216, 0.88); }
+.crumbs { font-family: "Josefin Sans", sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; }
+.crumbs a { text-decoration: none; color: #d4af6a; }
+
+/* Hero */
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  background: #070605;
+}
+.hero-arch { min-height: 100svh; padding: 18px 0 18px 18px; }
+.hero-frame {
+  position: relative;
+  height: calc(100svh - 36px);
+  border-radius: 999px 999px 0 0;
+  overflow: hidden;
+  background: #120e0c;
+}
+.hero-frame img,
+.hero-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-frame video { z-index: 1; opacity: 0; }
+.hero-frame video.is-playing { opacity: 1; }
+.media-pause {
+  position: absolute;
+  z-index: 2;
+  right: 12px;
+  bottom: 12px;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 12px;
+  background: rgba(7, 6, 5, 0.72);
+  color: #f4ead8;
+  border: 1px solid rgba(212, 175, 106, 0.6);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 88px 6vw 48px 4vw;
+  position: relative;
+}
+.sun-wrap {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.sunburst {
+  position: absolute;
+  inset: -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  animation: sun 20s ease-in-out infinite alternate;
+}
+.sun-logo { position: relative; width: 180px; height: auto; display: block; }
+@keyframes sun {
+  from { transform: rotate(0deg); filter: brightness(1); }
+  to { transform: rotate(1deg); filter: brightness(1.2); }
+}
+.hero-title {
+  font-family: "Poiret One", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 5.4vw, 6.4rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: #f4ead8;
+  margin: 8px 0 12px;
+}
+.hero-title em {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.58em;
+  letter-spacing: 0;
+  color: #eed9a4;
+}
+.hero-sub { max-width: 28rem; margin: 0 0 18px; color: rgba(244, 234, 216, 0.86); }
+.hero-proof { margin-top: 16px; }
+.hero-proof a { color: #f4ead8; }
+
+/* Marquee */
+.marquee {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow: hidden;
+  border-top: 1px solid rgba(212, 175, 106, 0.35);
+  border-bottom: 1px solid rgba(212, 175, 106, 0.35);
+  background: #100e0b;
+  min-height: 52px;
+}
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: ticker 42s linear infinite;
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #eed9a4;
+}
+.marquee-track p { margin: 0; }
+.marquee.is-paused .marquee-track { animation-play-state: paused; }
+.marquee .media-pause { position: static; flex: none; margin-right: 10px; }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Porch */
+.porch {
+  position: relative;
+  background: #0b1424;
+  min-height: 88vh;
+  display: grid;
+  align-items: end;
+}
+.porch img { width: 100%; height: 88vh; object-fit: cover; display: block; }
+.porch-dim {
+  position: absolute;
+  inset: 0;
+  background: #02060f;
+  opacity: 0.62;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+.porch-lit.is-on .porch-dim { opacity: 0; }
+.porch-copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8vh 6vw 6vh;
+  background: linear-gradient(transparent, rgba(7, 10, 20, 0.78));
+}
+.porch-copy .room-name { font-size: clamp(4.2rem, 14vw, 11rem); }
+.porch-copy p { max-width: 36rem; font-size: 1.15rem; }
+
+/* Doors */
+.rooms { padding: 72px 0 40px; }
+.rooms-head { width: min(100% - 40px, 1120px); margin: 0 auto 28px; }
+.doors {
+  width: min(100% - 40px, 1180px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.door { color: inherit; text-decoration: none; }
+.door-frame {
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  clip-path: inset(7% 11% 0 11% round 200px);
+  transition: clip-path 400ms ease;
+  background: #14110e;
+}
+.door-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.door:hover .door-frame,
+.door:focus-visible .door-frame { clip-path: inset(0 0 0 0 round 160px); }
+.door-name {
+  display: block;
+  margin-top: 12px;
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+}
+.door-cap { display: block; color: rgba(244, 234, 216, 0.8); font-size: 0.95rem; margin-top: 4px; }
+
+/* Lounge / office */
+.office {
+  display: grid;
+  grid-template-columns: 1fr min(100%, 640px);
+  gap: 36px;
+  align-items: center;
+  padding: 72px 0;
+  background: #0c2f30;
+}
+.office-copy, .office figure { width: min(100% - 40px, 560px); }
+.office-copy { margin-left: auto; padding-right: 20px; }
+.office h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.05;
+  color: #f4ead8;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.office figure { margin: 0 auto; }
+.office img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+
+/* Drinks gallery */
+.bar-chapter { background: #070605; padding: 64px 0; }
+.drink-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 28px;
+}
+.drink { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 16px; align-items: end; color: inherit; text-decoration: none; }
+.drink img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; transform: scale(1); transition: transform 1.1s ease; }
+.drink.is-in img { transform: scale(1.03); }
+.drink-ue img { aspect-ratio: 587 / 440; max-width: 440px; }
+.drink-name { font-size: clamp(2rem, 3vw, 3.2rem); margin: 0 0 8px; }
+.drink p { margin: 0; color: rgba(244, 234, 216, 0.82); }
+.type-card {
+  aspect-ratio: 4 / 5;
+  border: 1px solid rgba(212, 175, 106, 0.45);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: #120e0c;
+}
+
+/* Kitchen */
+.kitchen { padding: 0 0 48px; }
+.kitchen-bleed img { width: 100%; height: auto; max-height: none; object-fit: contain; display: block; }
+.crowd-cap { max-width: 1080px; margin: 0 auto; }
+.crowd-cap img { width: 100%; height: auto; max-height: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
+.chips a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border: 1px solid rgba(212, 175, 106, 0.5);
+  text-decoration: none;
+  color: #f4ead8;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Sunday poster */
+.poster {
+  display: grid;
+  grid-template-columns: minmax(0, 60%) 1fr;
+  background: #1a0c10;
+  align-items: center;
+}
+.poster-photo { width: min(100%, 1080px); }
+.poster-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.poster-copy { padding: 8vh 5vw; }
+.poster-giant { font-size: clamp(3.4rem, 7vw, 7.2rem); display: block; }
+.poster-band { font-size: clamp(1.8rem, 3vw, 3rem); display: block; margin-top: 10px; color: #f4ead8; }
+.poster-when { font-family: "Josefin Sans", sans-serif; letter-spacing: 0.18em; margin: 14px 0 18px; color: #eed9a4; }
+
+/* Gather + reviews */
+.gather {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 64px 0;
+  background: #4a1218;
+}
+.gather img { width: 100%; max-width: 360px; height: auto; aspect-ratio: 9 / 16; object-fit: cover; }
+.quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.quote-card { display: block; text-decoration: none; color: inherit; border-top: 1px solid rgba(212, 175, 106, 0.4); padding-top: 12px; }
+.quote-card p { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.45rem; line-height: 1.3; color: #f4ead8; }
+.guest-still { width: min(100%, 640px); margin: 22px auto; }
+.guest-still img { width: 100%; height: auto; aspect-ratio: 4 / 3; }
+
+.visit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.visit-grid span { font-family: "Josefin Sans", sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #d4af6a; }
+details { border-top: 1px solid rgba(244, 234, 216, 0.2); padding: 12px 0; }
+summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+footer.site-foot { border-top: 1px solid rgba(212, 175, 106, 0.28); padding: 28px 0 88px; text-align: center; }
+footer.site-foot p { margin: 0 0 8px; }
+footer.site-foot a { color: #f4ead8; }
+
+/* Menu */
+.mast {
+  position: relative;
+  height: 40vh;
+  min-height: 220px;
+  overflow: hidden;
+}
+.mast img { width: 100%; height: 40vh; min-height: 220px; object-fit: cover; display: block; }
+.mast-title {
+  position: absolute;
+  inset: auto 0 18px 0;
+  width: min(100% - 40px, 1120px);
+  margin: 0 auto;
+}
+.mast-title h1 {
+  font-family: "Poiret One", serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: #f4ead8;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 0.9;
+}
+.menu-jumps {
+  position: sticky;
+  top: 76px;
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  background: rgba(7, 6, 5, 0.94);
+  padding: 8px 0;
+}
+.menu-jumps a {
+  flex: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  color: #f4ead8;
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+}
+.menu-jumps a[aria-current="true"] { border-bottom-color: #d4af6a; color: #eed9a4; }
+.parchment {
+  background: #efe6d4;
+  color: #1c140e;
+  padding: 28px 0 40px;
+}
+.parchment a { color: #6a3b12; }
+.parchment h2, .parchment h3 { color: #3a2412; }
+.food-list, .coffee-grid { list-style: none; margin: 0; padding: 0; }
+.coffee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; }
+.mi { display: grid; grid-template-columns: 120px 1fr; gap: 12px; align-items: center; margin: 0 0 14px; }
+.parchment .mi { grid-template-columns: 200px 1fr; }
+.parchment .mi.sm { grid-template-columns: 160px 1fr; }
+.parchment .mi.sm img { width: 160px; height: 128px; }
+.mi img { width: 120px; height: 120px; object-fit: cover; display: block; }
+.parchment .mi img { width: 200px; height: 160px; }
+.mi-name { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.45rem; margin: 0; color: inherit; }
+.mi-desc { margin: 0; font-size: 0.95rem; }
+.note { font-size: 0.95rem; }
+
+/* Panels */
+.service-panels { display: grid; grid-template-columns: 1fr 1fr; min-height: 78vh; }
+.service {
+  position: relative;
+  min-height: 70vh;
+  color: #f4ead8;
+  display: flex;
+  align-items: flex-end;
+  text-decoration: none;
+}
+.service img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.service span { position: relative; z-index: 1; padding: 28px; background: linear-gradient(transparent, rgba(0,0,0,.62)); width: 100%; }
+.service strong { display: block; font-family: "Poiret One", serif; font-size: clamp(2.4rem, 5vw, 4.4rem); font-weight: 400; letter-spacing: 0.04em; }
+
+.collage { display: grid; grid-template-columns: minmax(0, 800px) 280px; gap: 0; align-items: end; justify-content: center; }
+.collage .dance { margin-left: -48px; }
+.collage img { width: 100%; height: auto; display: block; }
+.collage .parlor-shot { max-width: 800px; }
+.collage .dance img { max-width: 280px; aspect-ratio: 9 / 16; object-fit: cover; }
+.settings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.settings figure { margin: 0; }
+.settings img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.settings figcaption { font-family: "Poiret One", serif; letter-spacing: 0.08em; text-transform: uppercase; color: #d4af6a; margin-top: 6px; }
+
+.related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; list-style: none; padding: 0; }
+.related a { display: block; text-decoration: none; color: inherit; }
+.related img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.related h2 { font-size: 1.4rem; margin: 8px 0 0; }
+
+.inquire-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+.inquire-form label { font-family: "Josefin Sans", sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #eed9a4; }
+.inquire-form input, .inquire-form select, .inquire-form textarea {
+  width: 100%;
+  font-family: "Inter", "Inter Fallback", sans-serif;
+  font-size: 16px;
+  padding: 10px 12px;
+  background: #120e0c;
+  color: #f4ead8;
+  border: 1px solid rgba(212, 175, 106, 0.4);
+}
+.inquire-form .is-wide, .inquire-form .form-lead, .inquire-form .occasion-ack, .inquire-form .form-mail-note, .inquire-form button { grid-column: 1 / -1; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card { border: 1px solid rgba(212, 175, 106, 0.35); padding: 16px; }
+.card h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 1.6rem; margin: 6px 0; }
+.gather-line { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: clamp(1.8rem, 3vw, 2.6rem); }
+
+body.house.has-site-nav figure img { height: auto; max-height: none; object-position: center; }
+body.house .hero-frame img,
+body.house .service img { height: 100%; }
+body.house .porch > picture { display: block; }
+body.house .porch > picture img { width: 100%; height: 88vh; max-height: none; object-fit: cover; }
+body.house .mast img { width: 100%; height: 40vh; min-height: 220px; max-height: none; object-fit: cover; }
+
+@media (max-width: 800px) {
+  .hero { display: block; min-height: 100svh; }
+  .hero-arch { min-height: 100svh; padding: 0; }
+  .hero-frame { height: 100svh; border-radius: 0; }
+  .hero-copy {
+    position: absolute;
+    left: 0; right: 0; bottom: 64px;
+    padding: 24px 20px 16px;
+    background: linear-gradient(transparent, rgba(7, 6, 5, 0.82));
+  }
+  .hero-title { font-size: clamp(2.5rem, 12vw, 3.4rem); }
+  .sun-wrap { width: 96px; height: 96px; }
+  .sun-logo { width: 96px; }
+  .doors { display: flex; flex-direction: column; align-items: center; gap: 28px; scroll-snap-type: y mandatory; }
+  .door { width: 80vw; scroll-snap-align: center; }
+  .room-name { font-size: 22vw; }
+  .office, .poster, .gather, .drink, .service-panels, .visit-grid, .quotes, .coffee-grid, .collage, .settings, .related, .cards, .inquire-form {
+    grid-template-columns: 1fr;
+  }
+  .office-copy { margin: 0 auto; padding: 0 0 12px; }
+  .poster-photo { width: 100%; }
+  .gather img, .collage .dance { margin: 0 auto; }
+  .parchment .mi { grid-template-columns: 120px 1fr; }
+  .parchment .mi img { width: 120px; height: 96px; }
+  .drink-ue img { max-width: 100%; }
+  .kitchen-bleed img { aspect-ratio: 640 / 769; }
+}
+
+.site-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 90;
+  background: rgba(7, 6, 5, 0.94);
+  border-bottom: 1px solid rgba(212, 175, 106, 0.28);
+}
+.site-nav-inner {
+  width: min(100% - 32px, 1180px);
+  margin: 0 auto;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.site-brand img { height: 52px; width: auto; display: block; }
+.site-links {
+  display: flex; flex: 1; justify-content: center; align-items: center;
+  gap: 14px; list-style: none; margin: 0; padding: 0;
+}
+.site-links a, .site-phone, .site-cta {
+  text-decoration: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4ead8;
+  white-space: nowrap;
+}
+.site-cta {
+  color: #d4af6a;
+  border: 1px solid rgba(212, 175, 106, 0.55);
+  padding: 12px 16px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.site-burger {
+  display: none; background: none; border: 1px solid rgba(212, 175, 106, 0.45);
+  color: #d4af6a; width: 44px; height: 44px; margin-left: auto;
+}
+.site-menu {
+  display: none; position: fixed; inset: 0; z-index: 80;
+  background: rgba(7, 6, 5, 0.97); flex-direction: column; align-items: center;
+  gap: 16px; padding: 96px 20px; overflow: auto;
+}
+.site-menu.is-open { display: flex; }
+.site-menu a { color: #f4ead8; text-decoration: none; font-family: "Poiret One", serif; font-size: 1.25rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.mobile-actions { display: none; }
+@media (max-width: 1100px) {
+  .site-links, .site-phone, .site-cta { display: none; }
+  .site-burger { display: inline-flex; align-items: center; justify-content: center; }
+}
+@media (max-width: 768px) {
+  .mobile-actions {
+    display: grid; grid-template-columns: repeat(3, 1fr); position: fixed;
+    right: 0; bottom: 0; left: 0; height: calc(60px + env(safe-area-inset-bottom, 0px));
+    z-index: 80; background: rgba(7, 6, 5, 0.96); border-top: 1px solid rgba(212, 175, 106, 0.35);
+  }
+  .mobile-actions a {
+    display: flex; align-items: center; justify-content: center; height: 60px;
+    text-decoration: none; color: #eed9a4; font-family: "Josefin Sans", sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .mobile-actions a.is-primary { background: #d4af6a; color: #1a120c; }
+  body.house { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sunburst, .marquee-track { animation: none; }
+  .porch-dim { opacity: 0; transition: none; }
+  .door-frame { transition: none; clip-path: inset(0 0 0 0 round 160px); }
+  .drink img { transform: none !important; transition: none; }
+  .hero-frame video { display: none; }
+}
+
+</style>
 </head>
-<body class="has-site-nav">
-  <header class="site-header">
-    <nav class="site-nav" aria-label="Primary">
-      <div class="site-nav-inner">
-        <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="Sober Bar" width="1280" height="801"></a>
-        <ul class="site-links">
-          <li><a href="/menu.html#cocktails">Cocktails</a></li>
-          <li><a href="/menu.html" aria-current="page">Menu</a></li>
-          <li><a href="/private-events.html">Private Events</a></li>
-          <li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li>
-          <li><a href="/reservations.html">Reservations</a></li>
-          <li><a href="/#visit">Visit</a></li>
-          <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
-        </ul>
-        <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
-        <a class="site-cta" data-cta="header" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
-        <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
-      </div>
-    </nav>
-    <div class="site-menu" id="siteMenu">
-      <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
-      <a href="/menu.html#cocktails">Cocktails</a>
-      <a href="/menu.html" aria-current="page">Menu</a>
-      <a href="/private-events.html">Private Events</a>
-      <a href="/sunday-jazz-brunch.html">Jazz Brunch</a>
-      <a href="/reservations.html">Reservations</a>
-      <a href="/#visit">Visit</a>
-      <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
-      <a href="tel:+18135861660">(813) 586-1660</a>
+<body class="house has-site-nav">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="site-nav" aria-label="Primary">
+    <div class="site-nav-inner">
+      <a class="site-brand" href="/" aria-label="Sober Bar home"><img src="/images/logo-sunburst-400.webp" alt="" width="400" height="250"></a>
+      <ul class="site-links"><li><a href="/menu.html#cocktails">Cocktails</a></li><li><a href="/menu.html" aria-current="page">Menu</a></li><li><a href="/private-events.html">Private Events</a></li><li><a href="/sunday-jazz-brunch.html">Jazz Brunch</a></li><li><a href="/reservations.html">Reservations</a></li><li><a href="/#visit">Visit</a></li>
+        <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
+      </ul>
+      <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
+      <a class="site-cta" data-cta="header" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
+      <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
     </div>
-  </header>
-
-  <div class="shell">
-
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Sober Bar &amp; Kitchen</a> · Menu</nav>
-    <h1>Our Menu</h1>
-    <p class="lead">Coffee from 7am. Alcohol-free cocktails. New Orleans-inspired plates from open to close.</p>
-    <figure class="menu-lead tone-food">
-      <picture>
-        <source media="(max-width: 768px)" srcset="/images/food/spread-lead-43-720.webp 720w, /images/food/spread-lead-43-800.webp 800w, /images/food/spread-lead-43-1120.webp 1120w" sizes="calc(100vw - 40px)" type="image/webp">
-        <source media="(max-width: 768px)" srcset="/images/food/spread-lead-43-1120.jpg" type="image/jpeg">
-        <source srcset="/images/food/spread-lead-400.webp 400w, /images/food/spread-lead-640.webp 640w, /images/food/spread-lead-800.webp 800w, /images/food/spread-lead-1200.webp 1200w, /images/food/spread-lead-1600.webp 1600w, /images/food/spread-lead-2000.webp 2000w, /images/food/spread-lead-2560.webp 2560w" sizes="(max-width: 760px) calc(100vw - 40px), 1180px" type="image/webp">
-        <img src="/images/food/spread-lead-2560.jpg" width="2560" height="840" alt="" fetchpriority="high">
-      </picture>
-      <figcaption>Plates from the kitchen</figcaption>
-    </figure>
-    <div class="actions">
-      <a class="btn" data-cta="menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
-      <span class="party-link">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Book ahead for Friday and Saturday evenings.</span>
-      <a class="btn line" href="tel:+18135861660">Call</a>
-    </div>
-    <div class="menu-jump-bar">
-      <p class="menu-jump-label">Find your next round · Swipe categories</p>
-      <nav class="menu-jumps" aria-label="Menu categories">
-        <a href="#cocktails">Cocktails</a>
-        <a href="#beer">Beer &amp; Kombucha</a>
-        <a href="#coffee">Coffee</a>
-        <a href="#breakfast">Breakfast</a>
-        <a href="#provisions">Provisions</a>
-      </nav>
-    </div>
-    
-    <div class="menu-board">
-    <section class="menu-chapter">
-      <h2 class="rise">From the bar</h2>
-      <div class="chapter-grid">
-        <section id="cocktails"><h3>Alcohol-Free Cocktails</h3><ul><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-call-me-an-ube-160.avif 160w, /images/food/ue-call-me-an-ube-320.avif 320w" sizes="72px"><img src="/images/food/ue-call-me-an-ube-160.webp" srcset="/images/food/ue-call-me-an-ube-160.webp 160w, /images/food/ue-call-me-an-ube-320.webp 320w" sizes="72px" width="72" height="72" alt="Call Me An Ube" loading="lazy" decoding="async"></picture><div><p class="mi-name">Call Me An Ube</p><p class="mi-desc">Ritual gin alt, ube, coconut cream, key lime, pineapple</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-hot-mami-160.avif 160w, /images/food/ue-hot-mami-320.avif 320w" sizes="72px"><img src="/images/food/ue-hot-mami-160.webp" srcset="/images/food/ue-hot-mami-160.webp 160w, /images/food/ue-hot-mami-320.webp 320w" sizes="72px" width="72" height="72" alt="Hot Mami" loading="lazy" decoding="async"></picture><div><p class="mi-name">Hot Mami</p><p class="mi-desc">Reposado tequila alt, jalapeño, lime, pineapple ginger, chili</p></div></li><li class="mi"><div><p class="mi-name">Jinn &amp; Juniper</p><p class="mi-desc">Gin alt, cucumber, juniper, and ashwagandha</p></div></li><li class="mi has-photo"><picture><img src="/images/food/bees-bouquet-160.webp" srcset="/images/food/bees-bouquet-160.webp 160w, /images/food/bees-bouquet-320.webp 320w" sizes="72px" width="72" height="72" alt="Bee's Bouquet" loading="lazy" decoding="async"></picture><div><p class="mi-name">Bee's Bouquet</p><p class="mi-desc">Gin alt, fresh lemon, honey, and lavender</p></div></li><li class="mi"><div><p class="mi-name">Moonlit Meringue</p><p class="mi-desc">Gin alt, alcohol-free limoncello, egg white, lavender bitters — cloud-soft</p></div></li><li class="mi"><div><p class="mi-name">Espresso Martini</p><p class="mi-desc">Reposado tequila alt, cold brew espresso, agave, fig &amp; walnut bitters</p></div></li><li class="mi"><div><p class="mi-name">Lilikoi</p></div></li></ul></section>
-        <section id="beer"><h3>Beer &amp; Kombucha</h3><ul><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-run-wild-ipa-160.avif 160w, /images/food/ue-run-wild-ipa-320.avif 320w" sizes="72px"><img src="/images/food/ue-run-wild-ipa-160.webp" srcset="/images/food/ue-run-wild-ipa-160.webp 160w, /images/food/ue-run-wild-ipa-320.webp 320w" sizes="72px" width="72" height="72" alt="Run Wild IPA" loading="lazy" decoding="async"></picture><div><p class="mi-name">Run Wild IPA</p><p class="mi-desc">Crisp, hoppy, citrus-forward alcohol-free IPA</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-guinness-0-0-160.avif 160w, /images/food/ue-guinness-0-0-320.avif 320w" sizes="72px"><img src="/images/food/ue-guinness-0-0-160.webp" srcset="/images/food/ue-guinness-0-0-160.webp 160w, /images/food/ue-guinness-0-0-320.webp 320w" sizes="72px" width="72" height="72" alt="Guinness 0.0" loading="lazy" decoding="async"></picture><div><p class="mi-name">Guinness 0.0</p><p class="mi-desc">Alcohol-free stout</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-heineken-zero-160.avif 160w, /images/food/ue-heineken-zero-320.avif 320w" sizes="72px"><img src="/images/food/ue-heineken-zero-160.webp" srcset="/images/food/ue-heineken-zero-160.webp 160w, /images/food/ue-heineken-zero-320.webp 320w" sizes="72px" width="72" height="72" alt="Heineken Zero" loading="lazy" decoding="async"></picture><div><p class="mi-name">Heineken Zero</p><p class="mi-desc">Alcohol-free lager</p></div></li><li class="mi"><div><p class="mi-name">Beech Kombucha</p><p class="mi-desc">Bright, sparkling fermented tea on draft</p></div></li></ul></section>
-        <section id="coffee"><h3>Coffee &amp; Espresso</h3><ul><li class="mi has-photo"><picture><img src="/images/food/dd-cortado-600.webp" srcset="/images/food/dd-cortado-600.webp 600w" sizes="72px" width="72" height="72" alt="Cortado" loading="lazy" decoding="async"></picture><div><p class="mi-name">Cortado</p><p class="mi-desc">Espresso with a small pour of steamed milk</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cappuccino-160.avif 160w, /images/food/ue-cappuccino-320.avif 320w" sizes="72px"><img src="/images/food/ue-cappuccino-160.webp" srcset="/images/food/ue-cappuccino-160.webp 160w, /images/food/ue-cappuccino-320.webp 320w" sizes="72px" width="72" height="72" alt="Cappuccino" loading="lazy" decoding="async"></picture><div><p class="mi-name">Cappuccino</p><p class="mi-desc">Espresso, steamed milk, and a thick cap of foam</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-americano-160.avif 160w, /images/food/ue-americano-320.avif 320w" sizes="72px"><img src="/images/food/ue-americano-160.webp" srcset="/images/food/ue-americano-160.webp 160w, /images/food/ue-americano-320.webp 320w" sizes="72px" width="72" height="72" alt="Americano" loading="lazy" decoding="async"></picture><div><p class="mi-name">Americano</p><p class="mi-desc">Espresso and hot water</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cafe-au-lait-160.avif 160w, /images/food/ue-cafe-au-lait-320.avif 320w" sizes="72px"><img src="/images/food/ue-cafe-au-lait-160.webp" srcset="/images/food/ue-cafe-au-lait-160.webp 160w, /images/food/ue-cafe-au-lait-320.webp 320w" sizes="72px" width="72" height="72" alt="Café au Lait" loading="lazy" decoding="async"></picture><div><p class="mi-name">Café au Lait</p><p class="mi-desc">Hot coffee and steamed milk — a New Orleans classic</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-latte-160.avif 160w, /images/food/ue-latte-320.avif 320w" sizes="72px"><img src="/images/food/ue-latte-160.webp" srcset="/images/food/ue-latte-160.webp 160w, /images/food/ue-latte-320.webp 320w" sizes="72px" width="72" height="72" alt="Latte" loading="lazy" decoding="async"></picture><div><p class="mi-name">Latte</p><p class="mi-desc">Espresso and steamed milk</p></div></li><li class="mi has-photo"><picture><img src="/images/food/dd-mocha-600.webp" srcset="/images/food/dd-mocha-600.webp 600w" sizes="72px" width="72" height="72" alt="Mocha" loading="lazy" decoding="async"></picture><div><p class="mi-name">Mocha</p><p class="mi-desc">Espresso, chocolate, and steamed milk</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cold-brew-kyoto-160.avif 160w, /images/food/ue-cold-brew-kyoto-320.avif 320w" sizes="72px"><img src="/images/food/ue-cold-brew-kyoto-160.webp" srcset="/images/food/ue-cold-brew-kyoto-160.webp 160w, /images/food/ue-cold-brew-kyoto-320.webp 320w" sizes="72px" width="72" height="72" alt="Kyoto Cold Brew" loading="lazy" decoding="async"></picture><div><p class="mi-name">Kyoto Cold Brew</p><p class="mi-desc">Slow-dripped cold brew</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-cold-brew-nitro-160.avif 160w, /images/food/ue-cold-brew-nitro-320.avif 320w" sizes="72px"><img src="/images/food/ue-cold-brew-nitro-160.webp" srcset="/images/food/ue-cold-brew-nitro-160.webp 160w, /images/food/ue-cold-brew-nitro-320.webp 320w" sizes="72px" width="72" height="72" alt="Nitro Cold Brew" loading="lazy" decoding="async"></picture><div><p class="mi-name">Nitro Cold Brew</p><p class="mi-desc">Cold brew poured on nitro</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-chai-latte-160.avif 160w, /images/food/dd-chai-latte-320.avif 320w" sizes="72px"><img src="/images/food/dd-chai-latte-160.webp" srcset="/images/food/dd-chai-latte-160.webp 160w, /images/food/dd-chai-latte-320.webp 320w" sizes="72px" width="72" height="72" alt="Chai Latte" loading="lazy" decoding="async"></picture><div><p class="mi-name">Chai Latte</p><p class="mi-desc">Spiced chai with steamed milk</p></div></li></ul></section>
-      </div>
-    </section>
-    <p class="chapter-kicker rise">New Orleans-inspired plates.</p>
-    <svg class="kicker-sun" viewBox="0 0 40 22" width="40" height="22" aria-hidden="true" focusable="false">
-      <g fill="none" stroke="#d4af6a" stroke-width="1.15" stroke-linecap="round">
-        <line x1="21.1" y1="21.0" x2="38.0" y2="21.0"/>
-        <line x1="21.1" y1="20.7" x2="30.6" y2="18.2"/>
-        <line x1="21.0" y1="20.4" x2="35.6" y2="12.0"/>
-        <line x1="20.8" y1="20.2" x2="27.8" y2="13.2"/>
-        <line x1="20.6" y1="20.0" x2="29.0" y2="5.4"/>
-        <line x1="20.3" y1="19.9" x2="22.8" y2="10.4"/>
-        <line x1="20.0" y1="19.9" x2="20.0" y2="3.0"/>
-        <line x1="19.7" y1="19.9" x2="17.2" y2="10.4"/>
-        <line x1="19.4" y1="20.0" x2="11.0" y2="5.4"/>
-        <line x1="19.2" y1="20.2" x2="12.2" y2="13.2"/>
-        <line x1="19.0" y1="20.4" x2="4.4" y2="12.0"/>
-        <line x1="18.9" y1="20.7" x2="9.4" y2="18.2"/>
-        <line x1="18.9" y1="21.0" x2="2.0" y2="21.0"/>
-      </g>
-    </svg>
-    <section class="menu-chapter">
-      <h2 class="rise">From the kitchen</h2>
-      <div class="chapter-grid">
-        <section id="breakfast" class="cat-split"><div><h3>Breakfast Sandwiches</h3><ul><li class="mi has-photo" id="classic-melt"><picture><source type="image/avif" srcset="/images/food/dd-classic-morning-melt-160.avif 160w, /images/food/dd-classic-morning-melt-320.avif 320w" sizes="72px"><img src="/images/food/dd-classic-morning-melt-160.webp" srcset="/images/food/dd-classic-morning-melt-160.webp 160w, /images/food/dd-classic-morning-melt-320.webp 320w" sizes="72px" width="72" height="72" alt="The Classic Morning Melt" loading="lazy" decoding="async"></picture><div><p class="mi-name">The Classic Morning Melt</p><p class="mi-desc">English muffin, egg, American cheese, bacon, sausage, or ham</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-beach-blvd-bodega-160.avif 160w, /images/food/ue-beach-blvd-bodega-320.avif 320w" sizes="72px"><img src="/images/food/ue-beach-blvd-bodega-160.webp" srcset="/images/food/ue-beach-blvd-bodega-160.webp 160w, /images/food/ue-beach-blvd-bodega-320.webp 320w" sizes="72px" width="72" height="72" alt="Beach Blvd Bodega" loading="lazy" decoding="async"></picture><div><p class="mi-name">Beach Blvd Bodega</p><p class="mi-desc">Everything bagel, egg, American cheese, choice of meat</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-the-white-rabbit-160.avif 160w, /images/food/ue-the-white-rabbit-320.avif 320w" sizes="72px"><img src="/images/food/ue-the-white-rabbit-160.webp" srcset="/images/food/ue-the-white-rabbit-160.webp 160w, /images/food/ue-the-white-rabbit-320.webp 320w" sizes="72px" width="72" height="72" alt="The White Rabbit" loading="lazy" decoding="async"></picture><div><p class="mi-name">The White Rabbit</p><p class="mi-desc">Plain bagel, egg, brie, fig spread, prosciutto, hot honey</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-the-mad-hatter-160.avif 160w, /images/food/ue-the-mad-hatter-320.avif 320w" sizes="72px"><img src="/images/food/ue-the-mad-hatter-160.webp" srcset="/images/food/ue-the-mad-hatter-160.webp 160w, /images/food/ue-the-mad-hatter-320.webp 320w" sizes="72px" width="72" height="72" alt="The Mad Hatter" loading="lazy" decoding="async"></picture><div><p class="mi-name">The Mad Hatter</p><p class="mi-desc">English muffin or bagel, egg, everything bacon, choice of meat, provolone, tomato, spinach, pesto</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-the-breakfast-muffaletta-160.avif 160w, /images/food/ue-the-breakfast-muffaletta-320.avif 320w" sizes="72px"><img src="/images/food/ue-the-breakfast-muffaletta-160.webp" srcset="/images/food/ue-the-breakfast-muffaletta-160.webp 160w, /images/food/ue-the-breakfast-muffaletta-320.webp 320w" sizes="72px" width="72" height="72" alt="Breakfast Muffuletta" loading="lazy" decoding="async"></picture><div><p class="mi-name">Breakfast Muffuletta</p><p class="mi-desc">Toasted focaccia, pesto cream cheese, egg, sausage, bacon, smoked provolone</p></div></li><li class="mi has-photo"><picture><img src="/images/food/dd-big-easy-breakfast-flatbread-600.webp" srcset="/images/food/dd-big-easy-breakfast-flatbread-600.webp 600w" sizes="72px" width="72" height="72" alt="Big Easy Breakfast Flatbread" loading="lazy" decoding="async"></picture><div><p class="mi-name">Big Easy Breakfast Flatbread</p><p class="mi-desc">Pesto cream cheese, mozzarella, sausage, bacon, egg, hot honey drizzle</p></div></li></ul></div><figure class="cat-photo tone-dish rise"><a href="#classic-melt" aria-label="Read about The Classic Morning Melt"><picture><source srcset="/images/food/dd-classic-melt-lead-400.webp 400w, /images/food/dd-classic-melt-lead-640.webp 640w, /images/food/dd-classic-melt-lead-800.webp 800w, /images/food/dd-classic-melt-lead-1025.webp 1025w" sizes="(max-width: 760px) 92vw, 560px" type="image/webp"><img src="/images/food/dd-classic-melt-lead-1025.jpg" width="1025" height="768" alt="" loading="lazy" decoding="async"></picture></a><figcaption>The Classic Morning Melt</figcaption></figure></section>
-        <section id="provisions" class="cat-split"><div><h3>Provisions &amp; Salads</h3><ul><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-muffuletta-160.avif 160w, /images/food/dd-muffuletta-320.avif 320w" sizes="72px"><img src="/images/food/dd-muffuletta-160.webp" srcset="/images/food/dd-muffuletta-160.webp 160w, /images/food/dd-muffuletta-320.webp 320w" sizes="72px" width="72" height="72" alt="The Muffuletta" loading="lazy" decoding="async"></picture><div><p class="mi-name">The Muffuletta</p><p class="mi-desc">Genoa salami, capicola, mozzarella, olive salad, basil pesto, toasted focaccia</p></div></li><li class="mi has-photo" id="hot-honey"><picture><source type="image/avif" srcset="/images/food/dd-hot-honey-soppressata-160.avif 160w, /images/food/dd-hot-honey-soppressata-320.avif 320w" sizes="72px"><img src="/images/food/dd-hot-honey-soppressata-160.webp" srcset="/images/food/dd-hot-honey-soppressata-160.webp 160w, /images/food/dd-hot-honey-soppressata-320.webp 320w" sizes="72px" width="72" height="72" alt="Hot Honey Soppressata Flatbread" loading="lazy" decoding="async"></picture><div><p class="mi-name">Hot Honey Soppressata Flatbread</p><p class="mi-desc">Whipped ricotta, mozzarella, spicy soppressata, hot honey</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/dd-fig-brie-prosciutto-160.avif 160w, /images/food/dd-fig-brie-prosciutto-320.avif 320w" sizes="72px"><img src="/images/food/dd-fig-brie-prosciutto-160.webp" srcset="/images/food/dd-fig-brie-prosciutto-160.webp 160w, /images/food/dd-fig-brie-prosciutto-320.webp 320w" sizes="72px" width="72" height="72" alt="Fig, Brie &amp; Prosciutto Flatbread" loading="lazy" decoding="async"></picture><div><p class="mi-name">Fig, Brie &amp; Prosciutto Flatbread</p><p class="mi-desc">Brie, fig jam, prosciutto, toasted pecans, arugula, hot honey</p></div></li><li class="mi has-photo" id="garden-mezze"><picture><source type="image/avif" srcset="/images/food/dd-garden-mezze-160.avif 160w, /images/food/dd-garden-mezze-320.avif 320w" sizes="72px"><img src="/images/food/dd-garden-mezze-160.webp" srcset="/images/food/dd-garden-mezze-160.webp 160w, /images/food/dd-garden-mezze-320.webp 320w" sizes="72px" width="72" height="72" alt="Garden Mezze Flatbread" loading="lazy" decoding="async"></picture><div><p class="mi-name">Garden Mezze Flatbread (V)</p><p class="mi-desc">Hummus, roasted red peppers, pickled onion, balsamic-agave — plant-based</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-garden-district-muffuletta-160.avif 160w, /images/food/ue-garden-district-muffuletta-320.avif 320w" sizes="72px"><img src="/images/food/ue-garden-district-muffuletta-160.webp" srcset="/images/food/ue-garden-district-muffuletta-160.webp 160w, /images/food/ue-garden-district-muffuletta-320.webp 320w" sizes="72px" width="72" height="72" alt="Garden District Muffuletta" loading="lazy" decoding="async"></picture><div><p class="mi-name">Garden District Muffuletta</p><p class="mi-desc">Vegan pesto, olive tapenade, roasted peppers, sourdough — plant-based</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-goat-cheese-berry-salad-160.avif 160w, /images/food/ue-goat-cheese-berry-salad-320.avif 320w" sizes="72px"><img src="/images/food/ue-goat-cheese-berry-salad-160.webp" srcset="/images/food/ue-goat-cheese-berry-salad-160.webp 160w, /images/food/ue-goat-cheese-berry-salad-320.webp 320w" sizes="72px" width="72" height="72" alt="Goat Cheese Berry Salad" loading="lazy" decoding="async"></picture><div><p class="mi-name">Goat Cheese Berry Salad</p><p class="mi-desc">Mixed greens, fresh berries, toasted pecans, goat cheese</p></div></li><li class="mi has-photo"><picture><source type="image/avif" srcset="/images/food/ue-spicy-mardi-gras-salad-160.avif 160w, /images/food/ue-spicy-mardi-gras-salad-320.avif 320w" sizes="72px"><img src="/images/food/ue-spicy-mardi-gras-salad-160.webp" srcset="/images/food/ue-spicy-mardi-gras-salad-160.webp 160w, /images/food/ue-spicy-mardi-gras-salad-320.webp 320w" sizes="72px" width="72" height="72" alt="Spicy Mardi Gras Salad" loading="lazy" decoding="async"></picture><div><p class="mi-name">Spicy Mardi Gras Salad</p><p class="mi-desc">Greens, hot capicola, Genoa salami, egg, blue cheese</p></div></li></ul></div><figure class="cat-photo tone-dish rise"><a href="#garden-mezze" aria-label="Read about Garden Mezze Flatbread"><picture><source srcset="/images/food/dd-garden-mezze-lead-400.webp 400w, /images/food/dd-garden-mezze-lead-640.webp 640w, /images/food/dd-garden-mezze-lead-800.webp 800w, /images/food/dd-garden-mezze-lead-1025.webp 1025w" sizes="(max-width: 760px) 92vw, 560px" type="image/webp"><img src="/images/food/dd-garden-mezze-lead-1025.jpg" width="1025" height="768" alt="" loading="lazy" decoding="async"></picture></a><figcaption>Garden Mezze Flatbread (V)</figcaption></figure></section>
-      </div>
-    </section>
-    </div>
-    <p class="note">Ask us for today’s prices. Tell us about allergies before you order. A few plates are marked plant-based in the description.</p>
-  </div>
-  <footer>
-    <p class="fine">Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
-    <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
-    <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
-    <p class="fine"><a href="/menu.html">Menu</a> · <a href="/reservations.html">Reservations</a> · <a href="/sunday-jazz-brunch.html">Jazz brunch</a> · <a href="/private-events.html">Private events</a> · <a href="/guides.html">Guides</a></p>
-    <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
-    <p class="fine">© 2026 Sober Bar</p>
-  </footer>
-  <nav class="mobile-actions" aria-label="Call, reserve, or directions">
-    <a href="tel:+18135861660">Call</a>
-    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
-    <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
   </nav>
-  <script type="application/ld+json">
+  <div class="site-menu" id="siteMenu">
+    <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
+    <a href="/menu.html#cocktails">Cocktails</a><a href="/menu.html" aria-current="page">Menu</a><a href="/private-events.html">Private Events</a><a href="/sunday-jazz-brunch.html">Jazz Brunch</a><a href="/reservations.html">Reservations</a><a href="/#visit">Visit</a>
+    <a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a>
+    <a href="tel:+18135861660">(813) 586-1660</a>
+  </div>
+</header>
+<main id="main">
+  <div class="mast"><picture>
+<source media="(max-width: 720px)" type="image/webp" srcset="/images/house/barloop-phone-mast-720.webp">
+<source type="image/webp" srcset="/images/house/barloop-desktop-poster-960.webp 960w, /images/house/barloop-desktop-poster-1440.webp 1440w, /images/house/barloop-desktop-poster-1920.webp 1920w" sizes="100vw">
+<img src="/images/house/barloop-desktop-poster-1920.jpg" width="1920" height="1080" alt="The bar room at Sober Bar" fetchpriority="high">
+</picture><div class="mast-title"><p class="crumbs"><a href="/">Sober Bar &amp; Kitchen</a> · Menu</p><h1>Our Menu</h1></div></div>
+  <div class="shell">
+    <p class="invite">Coffee from 7am. Alcohol-free cocktails. New Orleans-inspired plates from open to close.</p>
+  </div>
+  <figure class="kitchen-bleed"><picture>
+<source media="(max-width: 800px)" type="image/avif" srcset="/images/house/spread-tall-640.avif 640w, /images/house/spread-tall-960.avif 960w" sizes="360px">
+<source media="(max-width: 800px)" type="image/webp" srcset="/images/house/spread-tall-640.webp 640w, /images/house/spread-tall-960.webp 960w" sizes="360px">
+<source type="image/webp" srcset="/images/house/spread-800.webp 800w, /images/house/spread-1280.webp 1280w, /images/house/spread-1920.webp 1920w, /images/house/spread-2560.webp 2560w" sizes="100vw">
+<img src="/images/house/spread-2560.jpg" width="1920" height="950" alt="" loading="lazy" decoding="async">
+</picture><figcaption class="shell">Plates from the kitchen</figcaption></figure>
+  <div class="shell">
+    <nav class="menu-jumps" aria-label="Menu categories">
+      <a href="#cocktails">Cocktails</a>
+      <a href="#beer">Beer &amp; Kombucha</a>
+      <a href="#coffee">Coffee</a>
+      <a href="#breakfast">Breakfast</a>
+      <a href="#provisions">Provisions</a>
+    </nav>
+  </div>
+  <section id="cocktails"><h2>Alcohol-Free Cocktails</h2><div class="drink-grid"><article class="drink"><div><picture>
+<source type="image/avif" data-srcset="/images/house/ube-480.avif 480w, /images/house/ube-800.avif 800w, /images/house/ube-1152.avif 1152w" sizes="(max-width: 800px) 86vw, 420px">
+<source type="image/webp" data-srcset="/images/house/ube-480.webp 480w, /images/house/ube-800.webp 800w, /images/house/ube-1152.webp 1152w" sizes="(max-width: 800px) 86vw, 420px">
+<img data-src="/images/house/ube-1152.jpg" width="1152" height="1440" alt="" loading="lazy" decoding="async">
+</picture></div><div><h3 class="drink-name">Call Me An Ube</h3><p>Ritual gin alt, ube, coconut cream, key lime, pineapple</p></div></article><article class="drink drink-ue"><div><picture>
+<source type="image/avif" data-srcset="/images/house/hot-mami-440.avif 440w" sizes="(max-width: 800px) 86vw, 420px">
+<source type="image/webp" data-srcset="/images/house/hot-mami-440.webp 440w" sizes="(max-width: 800px) 86vw, 420px">
+<img data-src="/images/house/hot-mami-440.jpg" width="440" height="330" alt="" loading="lazy" decoding="async">
+</picture></div><div><h3 class="drink-name">Hot Mami</h3><p>Reposado tequila alt, jalapeño, lime, pineapple ginger, chili</p></div></article><article class="type-card"><h3 class="card-name">Jinn &amp; Juniper</h3><p>Gin alt, cucumber, juniper, and ashwagandha</p></article><article class="drink"><div><picture>
+<source type="image/avif" data-srcset="/images/house/bees-480.avif 480w, /images/house/bees-800.avif 800w, /images/house/bees-1152.avif 1152w" sizes="(max-width: 800px) 86vw, 420px">
+<source type="image/webp" data-srcset="/images/house/bees-480.webp 480w, /images/house/bees-800.webp 800w, /images/house/bees-1152.webp 1152w" sizes="(max-width: 800px) 86vw, 420px">
+<img data-src="/images/house/bees-1152.jpg" width="1152" height="1440" alt="" loading="lazy" decoding="async">
+</picture></div><div><h3 class="drink-name">Bee's Bouquet</h3><p>Gin alt, fresh lemon, honey, and lavender</p></div></article><article class="type-card"><h3 class="card-name">Moonlit Meringue</h3><p>Gin alt, alcohol-free limoncello, egg white, lavender bitters — cloud-soft</p></article><article class="type-card"><h3 class="card-name">Espresso Martini</h3><p>Reposado tequila alt, cold brew espresso, agave, fig &amp; walnut bitters</p></article><article class="drink drink-ue"><div><picture>
+<source type="image/avif" data-srcset="/images/house/lilikoi-440.avif 440w" sizes="(max-width: 800px) 86vw, 420px">
+<source type="image/webp" data-srcset="/images/house/lilikoi-440.webp 440w" sizes="(max-width: 800px) 86vw, 420px">
+<img data-src="/images/house/lilikoi-440.jpg" width="440" height="330" alt="" loading="lazy" decoding="async">
+</picture></div><div><h3 class="drink-name">Lilikoi</h3></div></article></div></section><section id="beer"><div class="shell"><h2>Beer &amp; Kombucha</h2><ul class="coffee-grid"><li class="mi"><img data-src="/images/food/ue-run-wild-ipa-160.webp" data-srcset="/images/food/ue-run-wild-ipa-160.webp 160w, /images/food/ue-run-wild-ipa-320.webp 320w" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Run Wild IPA</p><p class="mi-desc">Crisp, hoppy, citrus-forward alcohol-free IPA</p></div></li><li class="mi"><img data-src="/images/food/ue-guinness-0-0-160.webp" data-srcset="/images/food/ue-guinness-0-0-160.webp 160w, /images/food/ue-guinness-0-0-320.webp 320w" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Guinness 0.0</p><p class="mi-desc">Alcohol-free stout</p></div></li><li class="mi"><img data-src="/images/food/ue-heineken-zero-160.webp" data-srcset="/images/food/ue-heineken-zero-160.webp 160w, /images/food/ue-heineken-zero-320.webp 320w" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Heineken Zero</p><p class="mi-desc">Alcohol-free lager</p></div></li><li class="mi"><div><p class="mi-name">Beech Kombucha</p><p class="mi-desc">Bright, sparkling fermented tea on draft</p></div></li></ul></div></section><section id="coffee"><div class="shell"><h2>Coffee &amp; Espresso</h2><ul class="coffee-grid"><li class="mi"><img data-src="/images/food/dd-cortado-600.webp" data-srcset="/images/food/dd-cortado-600.webp" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Cortado</p><p class="mi-desc">Espresso with a small pour of steamed milk</p></div></li><li class="mi"><img data-src="/images/food/ue-cappuccino-160.webp" data-srcset="/images/food/ue-cappuccino-160.webp 160w, /images/food/ue-cappuccino-320.webp 320w" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Cappuccino</p><p class="mi-desc">Espresso, steamed milk, and a thick cap of foam</p></div></li><li class="mi"><img data-src="/images/food/ue-americano-160.webp" data-srcset="/images/food/ue-americano-160.webp 160w, /images/food/ue-americano-320.webp 320w" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Americano</p><p class="mi-desc">Espresso and hot water</p></div></li><li class="mi"><img data-src="/images/food/ue-cafe-au-lait-160.webp" data-srcset="/images/food/ue-cafe-au-lait-160.webp 160w, /images/food/ue-cafe-au-lait-320.webp 320w" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Café au Lait</p><p class="mi-desc">Hot coffee and steamed milk — a New Orleans classic</p></div></li><li class="mi"><img data-src="/images/food/ue-latte-160.webp" data-srcset="/images/food/ue-latte-160.webp 160w, /images/food/ue-latte-320.webp 320w" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Latte</p><p class="mi-desc">Espresso and steamed milk</p></div></li><li class="mi"><img data-src="/images/food/dd-mocha-600.webp" data-srcset="/images/food/dd-mocha-600.webp" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Mocha</p><p class="mi-desc">Espresso, chocolate, and steamed milk</p></div></li><li class="mi"><img data-src="/images/food/ue-cold-brew-kyoto-160.webp" data-srcset="/images/food/ue-cold-brew-kyoto-160.webp 160w, /images/food/ue-cold-brew-kyoto-320.webp 320w" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Kyoto Cold Brew</p><p class="mi-desc">Slow-dripped cold brew</p></div></li><li class="mi"><img data-src="/images/food/ue-cold-brew-nitro-160.webp" data-srcset="/images/food/ue-cold-brew-nitro-160.webp 160w, /images/food/ue-cold-brew-nitro-320.webp 320w" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Nitro Cold Brew</p><p class="mi-desc">Cold brew poured on nitro</p></div></li><li class="mi"><img data-src="/images/food/dd-chai-latte-160.webp" data-srcset="/images/food/dd-chai-latte-160.webp 160w, /images/food/dd-chai-latte-320.webp 320w" sizes="120px" width="120" height="120" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Chai Latte</p><p class="mi-desc">Spiced chai with steamed milk</p></div></li></ul></div></section>
+  <div class="parchment"><section id="breakfast"><div class="shell"><h2>Breakfast Sandwiches</h2><ul class="food-list"><li class="mi"><img data-src="/images/food/dd-classic-morning-melt-160.webp" data-srcset="/images/food/dd-classic-morning-melt-160.webp 160w, /images/food/dd-classic-morning-melt-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">The Classic Morning Melt</p><p class="mi-desc">English muffin, egg, American cheese, bacon, sausage, or ham</p></div></li><li class="mi"><img data-src="/images/food/ue-beach-blvd-bodega-160.webp" data-srcset="/images/food/ue-beach-blvd-bodega-160.webp 160w, /images/food/ue-beach-blvd-bodega-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Beach Blvd Bodega</p><p class="mi-desc">Everything bagel, egg, American cheese, choice of meat</p></div></li><li class="mi"><img data-src="/images/food/ue-the-white-rabbit-160.webp" data-srcset="/images/food/ue-the-white-rabbit-160.webp 160w, /images/food/ue-the-white-rabbit-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">The White Rabbit</p><p class="mi-desc">Plain bagel, egg, brie, fig spread, prosciutto, hot honey</p></div></li><li class="mi"><img data-src="/images/food/ue-the-mad-hatter-160.webp" data-srcset="/images/food/ue-the-mad-hatter-160.webp 160w, /images/food/ue-the-mad-hatter-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">The Mad Hatter</p><p class="mi-desc">English muffin or bagel, egg, everything bacon, choice of meat, provolone, tomato, spinach, pesto</p></div></li><li class="mi"><img data-src="/images/food/ue-the-breakfast-muffaletta-160.webp" data-srcset="/images/food/ue-the-breakfast-muffaletta-160.webp 160w, /images/food/ue-the-breakfast-muffaletta-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Breakfast Muffuletta</p><p class="mi-desc">Toasted focaccia, pesto cream cheese, egg, sausage, bacon, smoked provolone</p></div></li><li class="mi"><img data-src="/images/food/dd-big-easy-breakfast-flatbread-600.webp" data-srcset="/images/food/dd-big-easy-breakfast-flatbread-600.webp" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Big Easy Breakfast Flatbread</p><p class="mi-desc">Pesto cream cheese, mozzarella, sausage, bacon, egg, hot honey drizzle</p></div></li></ul></div></section><section id="provisions"><div class="shell"><h2>Provisions &amp; Salads</h2><ul class="food-list"><li class="mi"><img data-src="/images/food/dd-muffuletta-160.webp" data-srcset="/images/food/dd-muffuletta-160.webp 160w, /images/food/dd-muffuletta-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">The Muffuletta</p><p class="mi-desc">Genoa salami, capicola, mozzarella, olive salad, basil pesto, toasted focaccia</p></div></li><li class="mi"><img data-src="/images/food/dd-hot-honey-soppressata-160.webp" data-srcset="/images/food/dd-hot-honey-soppressata-160.webp 160w, /images/food/dd-hot-honey-soppressata-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Hot Honey Soppressata Flatbread</p><p class="mi-desc">Whipped ricotta, mozzarella, spicy soppressata, hot honey</p></div></li><li class="mi"><img data-src="/images/food/dd-fig-brie-prosciutto-160.webp" data-srcset="/images/food/dd-fig-brie-prosciutto-160.webp 160w, /images/food/dd-fig-brie-prosciutto-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Fig, Brie &amp; Prosciutto Flatbread</p><p class="mi-desc">Brie, fig jam, prosciutto, toasted pecans, arugula, hot honey</p></div></li><li class="mi"><img data-src="/images/food/dd-garden-mezze-160.webp" data-srcset="/images/food/dd-garden-mezze-160.webp 160w, /images/food/dd-garden-mezze-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Garden Mezze Flatbread (V)</p><p class="mi-desc">Hummus, roasted red peppers, pickled onion, balsamic-agave — plant-based</p></div></li><li class="mi"><img data-src="/images/food/ue-garden-district-muffuletta-160.webp" data-srcset="/images/food/ue-garden-district-muffuletta-160.webp 160w, /images/food/ue-garden-district-muffuletta-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Garden District Muffuletta</p><p class="mi-desc">Vegan pesto, olive tapenade, roasted peppers, sourdough — plant-based</p></div></li><li class="mi"><img data-src="/images/food/ue-goat-cheese-berry-salad-160.webp" data-srcset="/images/food/ue-goat-cheese-berry-salad-160.webp 160w, /images/food/ue-goat-cheese-berry-salad-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Goat Cheese Berry Salad</p><p class="mi-desc">Mixed greens, fresh berries, toasted pecans, goat cheese</p></div></li><li class="mi"><img data-src="/images/food/ue-spicy-mardi-gras-salad-160.webp" data-srcset="/images/food/ue-spicy-mardi-gras-salad-160.webp 160w, /images/food/ue-spicy-mardi-gras-salad-320.webp 320w" sizes="200px" width="200" height="200" alt="" loading="lazy" decoding="async"><div><p class="mi-name">Spicy Mardi Gras Salad</p><p class="mi-desc">Greens, hot capicola, Genoa salami, egg, blue cheese</p></div></li></ul></div></section><div class="shell"><p class="note">Ask us for today’s prices. Tell us about allergies before you order. A few plates are marked plant-based in the description.</p></div></div>
+  <div class="shell">
+    <div class="actions"><a class="btn" data-cta="menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a></div>
+    <p>Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Book ahead for Friday and Saturday evenings.</p>
+  </div>
+</main>
+<footer class="site-foot">
+  <p>Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
+  <p>3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
+  <p>Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
+  <p><a href="/menu.html">Menu</a> · <a href="/reservations.html">Reservations</a> · <a href="/sunday-jazz-brunch.html">Jazz brunch</a> · <a href="/private-events.html">Private events</a> · <a href="/guides.html">Guides</a></p>
+  <p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+  <p>© 2026 Sober Bar</p>
+</footer>
+<nav class="mobile-actions" aria-label="Call, reserve, or directions">
+  <a href="tel:+18135861660">Call</a>
+  <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
+  <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
+</nav>
+<script src="/nav.js" defer></script>
+<script src="/house.js" defer></script>
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Menu",
@@ -438,7 +988,7 @@
   ]
 }
   </script>
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -458,6 +1008,4 @@
   ]
 }
   </script>
-  <script src="/nav.js" defer></script>
-</body>
-</html>
+</body></html>
