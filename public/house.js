@@ -23,8 +23,8 @@
   var video = document.getElementById("heroVideo");
   var videoBtn = document.getElementById("videoPause");
   if (video && !reduce) {
-    var phone = window.matchMedia("(max-width: 720px)").matches;
-    var base = phone ? "/video/chandelier-phone" : "/video/chandelier-desktop";
+    var phone = window.matchMedia("(max-width: 800px)").matches;
+    var base = phone ? "/video/bar-phone" : "/video/bar-desktop";
     video.innerHTML = '<source src="' + base + '.webm" type="video/webm"><source src="' + base + '.mp4" type="video/mp4">';
     var start = function () {
       var play = video.play();
@@ -67,6 +67,12 @@
         }
       }, { rootMargin: "0px" }).observe(img);
     }
+  });
+  document.querySelectorAll(".door").forEach(function (door) {
+    door.addEventListener("pointerdown", function () { door.classList.add("is-open"); });
+    door.addEventListener("pointerup", function () { door.classList.remove("is-open"); });
+    door.addEventListener("pointercancel", function () { door.classList.remove("is-open"); });
+    door.addEventListener("pointerleave", function () { door.classList.remove("is-open"); });
   });
   var marquee = document.getElementById("marquee");
   var marqueeBtn = document.getElementById("marqueePause");
