@@ -166,7 +166,9 @@ html { scroll-padding-top: 84px; }
 
     .morning { display: grid; grid-template-columns: minmax(0, 1fr) min(100%, 520px); gap: 40px; align-items: center; }
     .daynight { margin: 0; width: min(100%, 520px); max-width: 520px; justify-self: start; }
-    .daynight img { width: 100%; max-width: 720px; height: auto; aspect-ratio: 4 / 5; display: block; }
+    .daynight img { width: 100%; max-width: 1400px; height: auto; aspect-ratio: 4 / 3; display: block; }
+    .guide-note { margin: 28px 0 0; max-width: 42rem; }
+    .guide-note a { color: var(--gold-bright); text-decoration: underline; text-underline-offset: 0.15em; }
     .guest-still { margin: 28px auto 0; width: min(100%, 640px); max-width: 640px; }
     .guest-still img { width: 100%; max-width: 720px; height: auto; aspect-ratio: 4 / 3; display: block; }
     .story-line { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.12; color: var(--cream); max-width: 18em; margin: 0; }
@@ -935,14 +937,14 @@ html { scroll-padding-top: 84px; }
     <div class="shell">
       <div class="morning">
         <div>
-          <h2 class="story-line rise">Your out-of-office office.</h2>
+          <h2 class="story-line rise">Your “out of office” office.</h2>
           <p>Espresso and free, fast WiFi from 7am. Settle in.</p>
           <p><a class="day-directions" href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions →</a></p>
         </div>
         <figure class="daynight rise">
           <picture>
-            <source srcset="/images/stills/daytime-laptop-portrait-720.webp" type="image/webp">
-            <img src="/images/stills/daytime-laptop-portrait-720.jpg" width="720" height="900" alt="A laptop open beside a coffee in the morning" loading="lazy" decoding="async">
+            <source srcset="/images/space/lounge-480.webp 480w, /images/space/lounge-800.webp 800w, /images/space/lounge-1400.webp 1400w" sizes="(max-width: 900px) calc(100vw - 48px), 520px" type="image/webp">
+            <img src="/images/space/lounge-1400.jpg" width="1400" height="1050" alt="The empty lounge at Sober Bar, a bench under the chandelier" loading="lazy" decoding="async">
           </picture>
         </figure>
       </div>
@@ -986,7 +988,7 @@ html { scroll-padding-top: 84px; }
         <span class="eyebrow">The menu</span>
         <h2 class="title rise">Stay for another <span class="round-line">round.</span></h2>
       </div>
-      <p class="band-line">Espresso. Hot honey. Something with a little kick.</p>
+      <p class="band-line">Whipped ricotta, spicy soppressata, and hot honey.</p>
       <figure class="band-photo tone-food rise">
         <picture>
           <source srcset="/images/food/dd-hot-honey-lead-400.webp 400w, /images/food/dd-hot-honey-lead-640.webp 640w, /images/food/dd-hot-honey-lead-800.webp 800w, /images/food/dd-hot-honey-lead-1024.webp 1024w" sizes="(max-width: 900px) calc(100vw - 48px), 560px" type="image/webp">
@@ -1009,7 +1011,7 @@ html { scroll-padding-top: 84px; }
     <div class="shell">
       <div class="brunch-panel">
         <h2 class="title rise">Sunday Jazz <em>Brunch</em></h2>
-        <p class="brunch-copy">Live jazz every Sunday. Coffee, alcohol-free cocktails, and brunch in Gulfport.</p>
+        <p class="brunch-copy">Live jazz every Sunday with the Western Gypsies. Coffee, alcohol-free cocktails, and brunch in Gulfport.</p>
         <p class="brunch-copy"><a href="/sunday-jazz-brunch.html">Explore Sunday Jazz Brunch →</a></p>
         <div class="brunch-actions">
           <a class="btn btn-solid" data-cta="jazz-brunch" href="https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637" rel="noopener noreferrer" target="_blank">Reserve Sunday brunch</a>
@@ -1064,7 +1066,7 @@ html { scroll-padding-top: 84px; }
     <div class="shell">
       <div class="sec-head">
         <span class="eyebrow">Questions</span>
-        <h2 class="title rise">Before you come through.</h2>
+        <h2 class="title rise">Before you visit.</h2>
       </div>
       <div class="faq-wrap">
         <details>
@@ -1072,14 +1074,15 @@ html { scroll-padding-top: 84px; }
           <p>Open daily. Sunday through Thursday 7 am – 10 pm, Friday and Saturday 7 am – midnight.</p>
         </details>
         <details>
-          <summary>Can I work here during the day?</summary>
-          <p>Yes. Mornings are coffee-house energy: free, fast WiFi, good seats, and espresso.</p>
+          <summary>Can I work from here during the day?</summary>
+          <p>Yes. Free, fast WiFi, seats, and espresso from 7am.</p>
         </details>
         <details>
           <summary>Do you serve food all day?</summary>
           <p>Yes. Breakfast, flatbreads, muffulettas, and shareable plates from open to close.</p>
         </details>
       </div>
+      <p class="guide-note">Planning a visit? The <a href="/guides.html">Gulfport guides</a> cover the alcohol-free bar, mocktails, Sunday jazz brunch, coffee with WiFi, and things to do nearby.</p>
     </div>
   </section>
 
@@ -1090,7 +1093,7 @@ html { scroll-padding-top: 84px; }
       <p class="fine">Sober Bar &amp; Kitchen · <a href="tel:+18135861660">(813) 586-1660</a> · <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a></p>
       <p class="fine">3062 Beach Blvd S, Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a></p>
       <p class="fine">Sunday–Thursday 7am–10pm · Friday–Saturday 7am–midnight</p>
-      <p class="fine"><a href="/menu.html">Menu</a> · <a href="/reservations.html">Reservations</a> · <a href="/sunday-jazz-brunch.html">Jazz brunch</a> · <a href="/private-events.html">Private events</a></p>
+      <p class="fine"><a href="/menu.html">Menu</a> · <a href="/reservations.html">Reservations</a> · <a href="/sunday-jazz-brunch.html">Jazz brunch</a> · <a href="/private-events.html">Private events</a> · <a href="/guides.html">Guides</a></p>
       <p class="fine"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
       <p class="fine">© 2026 Sober Bar</p>
     </div>
@@ -1204,8 +1207,8 @@ html { scroll-padding-top: 84px; }
       },
       {
         "@type": "Question",
-        "name": "Can I work here during the day?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Mornings are coffee-house energy: free, fast WiFi, good seats, and espresso." }
+        "name": "Can I work from here during the day?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Free, fast WiFi, seats, and espresso from 7am." }
       },
       {
         "@type": "Question",
