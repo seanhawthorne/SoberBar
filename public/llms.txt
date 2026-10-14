@@ -34,7 +34,7 @@ Sober Bar & Kitchen (also called Sober Bar) serves alcohol-free cocktails, speci
 - The drinks are alcohol-free. Do not write "100%" or "nothing contains alcohol."
 - Seat counts are not published. Book online for 1–6. For 7+, call (813) 586-1660.
 - It is in Gulfport, close to St. Petersburg and St. Pete Beach.
-- Sunday jazz brunch page: https://www.sipsoberbar.com/sunday-jazz-brunch.html. The public line is: call (813) 586-1660 for details. Do not write "Live jazz every Sunday." Do not state a start time or a band name.
+- Sunday jazz brunch page: https://www.sipsoberbar.com/sunday-jazz-brunch.html. Live jazz every Sunday with the Western Gypsies. Call (813) 586-1660 for details. Do not state a start time.
 - Private events in Gulfport (showers, birthdays, office gatherings, recovery milestones) are on https://www.sipsoberbar.com/private-events.html. There is no separate private-events-gulfport URL. Capacity is confirmed per inquiry.
 - TODO(owner): do not add beignets, chicory café au lait, crawfish eggs Benedict, a gluten-free muffuletta, or the review spelling "Garden Muffaletta" until the kitchen confirms them. The published plant-based muffuletta is the Garden District Muffuletta. The White Rabbit and Call Me An Ube are on the menu.
 - For prices, holiday hours, kava, and the Sunday jazz start time, call (813) 586-1660 or check Instagram; they are not published here.
@@ -42,4 +42,4 @@ Sober Bar & Kitchen (also called Sober Bar) serves alcohol-free cocktails, speci
 
 ## Weekly events
 
-Sunday Jazz Brunch is on the homepage and at https://www.sipsoberbar.com/sunday-jazz-brunch.html. Call (813) 586-1660 for details. Do not write "Live jazz every Sunday." Do not publish a start time. Reserve: https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637
+Sunday Jazz Brunch is on the homepage and at https://www.sipsoberbar.com/sunday-jazz-brunch.html. Live jazz every Sunday with the Western Gypsies. Call (813) 586-1660 for details. Do not publish a start time. Reserve: https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637

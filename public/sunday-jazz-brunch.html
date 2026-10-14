@@ -47,13 +47,10 @@
     .facts dd { margin:4px 0 0; color:var(--cream); }
     figure { margin:8px 0 28px; }
     figure img { width:100%; height:auto; display:block; }
-    body.has-site-nav figure.jazz-lead,
-    body.has-site-nav figure.jazz-crowd { margin:0; max-width:1080px; }
-    body.has-site-nav figure.jazz-lead img,
-    body.has-site-nav figure.jazz-crowd img { width:100%; max-width:1080px; height:auto; object-fit:cover; }
-    body.has-site-nav figure.jazz-lead img { aspect-ratio:4 / 3; }
-    body.has-site-nav figure.jazz-crowd img { aspect-ratio:4 / 3; }
-    .jazz-crowd { margin:8px 0 8px; }
+    body.has-site-nav figure.jazz-lead { margin:0; max-width:1080px; }
+    body.has-site-nav figure.jazz-crowd { width:min(100%, 760px); max-width:760px; margin:28px auto; }
+    body.has-site-nav figure.jazz-lead img { width:100%; max-width:1080px; height:auto; object-fit:cover; aspect-ratio:4 / 3; }
+    body.has-site-nav figure.jazz-crowd img { width:100%; max-width:1080px; height:auto; object-fit:cover; aspect-ratio:4 / 3; }
     figcaption { font-family:'Josefin Sans', sans-serif; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-top:8px; }
     details { border:0; border-top:1px solid rgba(244,234,216,.28); background:transparent; margin:0; padding:0 4px; }
     details:last-child { border-bottom:1px solid rgba(244,234,216,.28); }
@@ -91,14 +88,12 @@
         margin-top:112px;
       }
       .split.order-chapter > h2 { margin:0; font-size:clamp(2.35rem, 3.8vw, 3.2rem); }
-      body.has-site-nav figure.jazz-crowd img { aspect-ratio:4 / 3; }
       .split.order-chapter .split-copy { max-width:none; }
       .actions .party-link { text-align:left; align-self:flex-start; margin-left:0; }
     }
     @media (max-width:899px) {
       .split.order-chapter { margin-top:24px; padding:16px 0 8px; border-top:1px solid rgba(244,234,216,.28); }
       .split.order-chapter > h2 { margin-top:0; }
-      body.has-site-nav figure.jazz-crowd img { aspect-ratio:9 / 16; }
     }
     @media (max-width:640px) {
       .facts dl { grid-template-columns:1fr; }
@@ -141,7 +136,7 @@
     </div>
   </header>
   <div class="shell">
-    <!-- TODO(owner): Brunch hours are Sundays 10am–1pm. Do not add a separate jazz set time or a band name. -->
+    <!-- TODO(owner): Brunch hours are Sundays 10am–1pm. Live jazz every Sunday with the Western Gypsies is approved. Do not add a jazz set time. -->
     <!-- TODO(owner): Name Sunday-only dishes only after they are on the menu. Do not add beignets, chicory café au lait, crawfish eggs Benedict, or a gluten-free muffuletta until the kitchen confirms them. -->
     <div class="opener">
       <div class="opener-copy">
@@ -172,8 +167,6 @@
 
     <figure class="jazz-crowd">
       <picture>
-        <source media="(max-width: 899px)" srcset="/images/stills/jazz-room-crowd-portrait-1080.webp" type="image/webp">
-        <source media="(max-width: 899px)" srcset="/images/stills/jazz-room-crowd-portrait-1080.jpg" type="image/jpeg">
         <source srcset="/images/stills/jazz-room-crowd-landscape-1080x810.webp" type="image/webp">
         <img src="/images/stills/jazz-room-crowd-landscape-1080x810.jpg" width="1080" height="810" alt="Guests in the room for Sunday jazz brunch" loading="lazy" decoding="async">
       </picture>
@@ -214,7 +207,7 @@
       <dl>
         <div>
           <dt>Address</dt>
-          <dd>3062 Beach Blvd S<br>Gulfport, FL 33707</dd>
+          <dd>3062 Beach Blvd S<br>Gulfport, FL 33707 · <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions →</a></dd>
         </div>
         <div>
           <dt>Phone</dt>

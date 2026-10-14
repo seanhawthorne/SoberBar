@@ -258,7 +258,8 @@
     .reserve-lead { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(1.25rem, 2.4vw, 1.7rem); line-height:1.25; color:var(--cream); max-width:22em; margin:0 auto 16px; }
     .reserve-note { color:#f4ead8; font-family:'Inter', 'Inter Fallback', system-ui, sans-serif; font-weight:400; font-size:17px; letter-spacing:normal; line-height:1.6; max-width:40em; margin:8px auto 0; }
     .reserve-break { width:min(100% - 48px, 480px); margin:28px auto 8px; }
-    .reserve-break img { width:100%; max-width:720px; height:auto; aspect-ratio:4 / 3; display:block; }
+    .reserve-break img { width:100%; max-width:480px; height:auto; aspect-ratio:4 / 3; display:block; }
+    #top { scroll-margin-top: 84px; }
     .reserve-more { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:22px; }
     .reserve-more .btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 18px; background:transparent; color:#f4ead8; border:1px solid rgba(244,234,216,.72); font-weight:500; }
     header.hero { text-align:center; }
@@ -287,13 +288,13 @@
         <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
       </ul>
       <a class="nav-phone" href="tel:+18135861660">(813) 586-1660</a>
-      <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a></div>
+      <div class="nav-reserve"><a class="nav-cta" data-cta="header" href="#top">Save your table</a></div>
       <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a data-cta="mobile-menu" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>
+    <a data-cta="mobile-menu" href="#top">Save your table</a>
     <a href="tel:+18135861660">(813) 586-1660</a>
     <a href="/menu.html#cocktails">Cocktails</a>
     <a href="/menu.html">Menu</a>
@@ -459,7 +460,7 @@
   </script>
   <nav class="mobile-actions" aria-label="Call, reserve, or directions">
     <a href="tel:+18135861660">Call</a>
-    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
+    <a class="is-primary" data-cta="sticky" href="#top">Reserve</a>
     <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
   </nav>
 

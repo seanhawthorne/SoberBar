@@ -48,6 +48,7 @@
     .btn { display:inline-block; margin-top:0; padding:14px 32px; background:var(--gold); color:#060504; font-weight:600; text-decoration:none; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; white-space:nowrap; text-align:center; }
     .btn.line { background:transparent; color:var(--gold); border:1px solid rgba(212,175,106,.45); font-weight:600; }
     .intro-actions { justify-content:flex-start; margin:0 0 28px; }
+    .intro-note { flex:1 1 100%; align-self:flex-start; margin:8px 0 0; }
     .facts { border:1px solid rgba(212,175,106,.28); padding:22px 22px 6px; margin:36px 0 0; text-align:left; }
     .facts h2 { margin-top:0; }
     .facts dl { display:grid; grid-template-columns:1fr 1fr; gap:16px 28px; }
@@ -117,12 +118,12 @@
           <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
         </ul>
         <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
-        <a class="site-cta" data-cta="header" href="#inquiry">Plan a gathering</a>
+        <a class="site-cta" data-cta="header" href="#inquire">Plan a gathering</a>
         <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
       </div>
     </nav>
     <div class="site-menu" id="siteMenu">
-      <a data-cta="mobile-menu" href="#inquiry">Plan a gathering</a>
+      <a data-cta="mobile-menu" href="#inquire">Plan a gathering</a>
       <a href="/menu.html#cocktails">Cocktails</a>
       <a href="/menu.html">Menu</a>
       <a href="/private-events.html" aria-current="page">Private Events</a>
@@ -140,8 +141,8 @@
         <h1>Private events in Gulfport, FL</h1>
         <p class="lead">Showers, birthdays, office gatherings, and recovery milestones, under the chandeliers.</p>
         <div class="actions intro-actions">
-          <a class="btn" href="#inquiry">Plan a gathering</a>
-          <span class="party-link">Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>. Book ahead for Friday and Saturday evenings.</span>
+          <a class="btn" href="#inquire">Plan a gathering</a>
+          <p class="intro-note">Tell us your date and headcount; we’ll confirm what fits.</p>
         </div>
       </div>
       <figure class="event-still">
@@ -193,13 +194,14 @@
     <p>Just coming for coffee? See <a href="/breakfast-gulfport.html">breakfast and coffee</a>. Making dinner plans? <a data-cta="private-events" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Save your table</a>.</p>
 
     <div class="cta" id="inquire">
-      <div class="inquire-intro" id="inquiry">
+      <div class="inquire-intro">
         <h2 class="rise" style="margin-top:0">Tell us what you're planning.</h2>
         <p>Menus, staffing, pricing, and availability are confirmed in your event quote. An inquiry does not hold the date.</p>
         <p class="price-note">No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>, or call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
       </div>
       <form class="inquire-form" id="inquireForm" action="mailto:Sean@sipsoberbar.com" method="post" enctype="text/plain">
         <p class="form-lead">A few details. We’ll take it from there.</p>
+        <p class="form-mail-note">This opens an email draft. Send it to complete your inquiry.</p>
         <p class="occasion-ack" id="occasion-ack" hidden aria-live="polite"></p>
         <div>
           <label for="inq-name">Name</label>
@@ -237,7 +239,7 @@
           <label for="inq-notes">Notes</label>
           <textarea id="inq-notes" name="notes" placeholder="Indoor seating, food, or anything else we should know"></textarea>
         </div>
-        <p class="form-mail-note">Sending this opens an email draft.</p>
+        <p class="form-mail-note">This opens an email draft. Send it to complete your inquiry.</p>
         <button class="btn" type="submit">Open email draft</button>
       </form>
     </div>
@@ -421,7 +423,7 @@
   </script>
   <nav class="mobile-actions" aria-label="Call, reserve, or directions">
     <a href="tel:+18135861660">Call</a>
-    <a class="is-primary" data-cta="sticky" href="#inquiry">Plan a gathering</a>
+    <a class="is-primary" data-cta="sticky" href="#inquire">Plan a gathering</a>
     <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
   </nav>
 
