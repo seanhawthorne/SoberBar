@@ -46,8 +46,9 @@
     body {
       background: var(--black);
       color: var(--cream);
-      font-family: 'Josefin Sans', 'Futura', sans-serif;
-      font-weight: 300;
+      font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: 17px;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
@@ -228,7 +229,7 @@
     summary::-webkit-details-marker { display: none; }
     summary::after { content: '+'; color: var(--gold); font-family: 'Josefin Sans', sans-serif; font-size: 1.3rem; font-weight: 300; }
     details[open] summary::after { content: '–'; }
-    .faq-wrap details p { color: #f4ead8; padding-bottom: 24px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; font-weight: 400; font-size: 17px; letter-spacing: normal; line-height: 1.6; }
+    .faq-wrap details p { color: #f4ead8; padding-bottom: 24px; font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif; font-weight: 400; font-size: 17px; letter-spacing: normal; line-height: 1.6; }
     details p a { color: var(--gold); text-decoration: underline; text-underline-offset: 0.15em; }
     details p a:hover { color: var(--gold-bright); }
 
@@ -255,7 +256,7 @@
     .reserve-pair { display:flex; flex-wrap:wrap; justify-content:center; gap:14px; width:min(100%, 680px); margin:6px auto 18px; }
     .reserve-pair .btn { display:flex; align-items:center; justify-content:center; text-align:center; min-height:56px; height:56px; width:auto; white-space:nowrap; padding:0 18px; line-height:1.15; letter-spacing:0; box-sizing:border-box; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.65rem; text-transform:none; }
     .reserve-lead { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(1.25rem, 2.4vw, 1.7rem); line-height:1.25; color:var(--cream); max-width:22em; margin:0 auto 16px; }
-    .reserve-note { color:#f4ead8; font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif; font-weight:400; font-size:17px; letter-spacing:normal; line-height:1.6; max-width:40em; margin:8px auto 0; }
+    .reserve-note { color:#f4ead8; font-family:'Inter', 'Inter Fallback', system-ui, sans-serif; font-weight:400; font-size:17px; letter-spacing:normal; line-height:1.6; max-width:40em; margin:8px auto 0; }
     .reserve-more { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:22px; }
     .reserve-more .btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 18px; background:transparent; color:#f4ead8; border:1px solid rgba(244,234,216,.72); font-weight:500; }
     header.hero { text-align:center; }

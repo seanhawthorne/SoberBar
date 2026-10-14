@@ -15,16 +15,16 @@
   <style>
     :root { --black:#070605; --ink:#12100c; --gold:#d4af6a; --gold-bright:#eed9a4; --cream:#f4ead8; --muted:rgba(244,234,216,.66); }
     * { box-sizing:border-box; margin:0; padding:0; }
-    body { background:var(--black); color:var(--cream); font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-weight:400; line-height:1.6; }
+    body { background:var(--black); color:var(--cream); font-family:'Inter', 'Inter Fallback', system-ui, sans-serif; font-weight:400; line-height:1.6; }
     .shell { width:min(100% - 48px, 1080px); margin:0 auto; padding:72px 0 80px; }
     h1 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(2.4rem,5vw,3rem); letter-spacing:0; text-transform:none; color:var(--cream); margin-bottom:18px; line-height:1.05; }
     h2 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.7rem; color:var(--gold-bright); margin:32px 0 14px; letter-spacing:0; text-transform:none; }
     h3 { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.7rem; letter-spacing:0; text-transform:none; color:var(--cream); line-height:1.15; margin:0 0 10px; }
-    p, li, dd { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; font-weight:400; letter-spacing:normal; line-height:1.6; color:#f4ead8; margin-bottom:16px; }
+    p, li, dd { font-family:'Inter', 'Inter Fallback', system-ui, sans-serif; font-size:17px; font-weight:400; letter-spacing:normal; line-height:1.6; color:#f4ead8; margin-bottom:16px; }
     ul { margin-left:24px; }
     a { color:var(--gold-bright); }
     .eyebrow { font-family:'Josefin Sans', sans-serif; font-size:.72rem; letter-spacing:.4em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; display:block; }
-    .lead { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-style:normal; font-weight:400; font-size:17px; color:#f4ead8; line-height:1.6; margin-bottom:22px; }
+    .lead { font-family:'Inter', 'Inter Fallback', system-ui, sans-serif; font-style:normal; font-weight:400; font-size:17px; color:#f4ead8; line-height:1.6; margin-bottom:22px; }
     .gather-line { font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:clamp(1.85rem, 3.2vw, 2.65rem); line-height:1.22; color:var(--cream); margin:0 0 28px; }
     .opener { display:grid; gap:22px; margin-bottom:36px; }
     .opener-copy .actions { margin-bottom:0; }
@@ -38,7 +38,7 @@
     .card h3 { margin-top:0; }
     .card p:last-child { margin-bottom:0; }
     .card ul { margin-left:18px; }
-    .plan-link { display:inline-flex; align-items:center; min-height:44px; margin-top:4px; padding:0 2px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; font-weight:400; letter-spacing:normal; line-height:1.6; color:var(--gold-bright); text-decoration:underline; text-underline-offset:0.15em; }
+    .plan-link { display:inline-flex; align-items:center; min-height:44px; margin-top:4px; padding:0 2px; font-family:'Inter', 'Inter Fallback', system-ui, sans-serif; font-size:17px; font-weight:400; letter-spacing:normal; line-height:1.6; color:var(--gold-bright); text-decoration:underline; text-underline-offset:0.15em; }
     .plan-link:hover { color:var(--cream); }
     .plan-link:focus-visible { outline:2px solid var(--gold-bright); outline-offset:3px; }
     .price-note { font-size:.85rem; color:var(--muted); line-height:1.6; }
@@ -58,11 +58,23 @@
     .occasion-ack { grid-column:1 / -1; margin:0 0 4px; min-height:calc(1.15rem * 1.3); font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.15rem; line-height:1.3; color:var(--gold); }
     .occasion-ack[hidden] { display:block; visibility:hidden; }
     .inquire-form label { display:block; font-family:'Josefin Sans', sans-serif; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
-    .inquire-form input, .inquire-form select, .inquire-form textarea { box-sizing:border-box; width:100%; max-width:100%; min-width:0; background:transparent; color:var(--cream); border:1px solid rgba(212,175,106,.35); padding:0 16px; min-height:48px; height:48px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:16px; line-height:1.4; }
+    .inquire-form input, .inquire-form select, .inquire-form textarea { box-sizing:border-box; width:100%; max-width:100%; min-width:0; background:transparent; color:var(--cream); border:1px solid rgba(212,175,106,.35); padding:0 16px; min-height:48px; height:48px; font-family:'Inter', 'Inter Fallback', system-ui, sans-serif; font-size:16px; line-height:1.4; }
     .inquire-form input:focus, .inquire-form select:focus, .inquire-form textarea:focus,
     .inquire-form input:focus-visible, .inquire-form select:focus-visible, .inquire-form textarea:focus-visible { outline:2px solid #d4af6a; outline-offset:2px; border-color:#d4af6a; background:rgba(212,175,106,.1); }
     .inquire-form textarea { height:auto; min-height:120px; padding:14px 16px; resize:vertical; }
     .inquire-form button { border:0; cursor:pointer; font-family:'Josefin Sans', sans-serif; min-height:48px; }
+    .form-mail-note { grid-column:1 / -1; margin:0; font-size:0.85rem; line-height:1.4; color:var(--muted); }
+    .questions { margin-top:36px; }
+    .questions h2 { margin-top:0; }
+    .questions details { border:0; border-top:1px solid rgba(244,234,216,.28); background:transparent; margin:0; padding:0 4px; }
+    .questions details:last-child { border-bottom:1px solid rgba(244,234,216,.28); }
+    .questions summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0; font-family:'Cormorant Garamond', Georgia, serif; font-weight:500; font-size:1.28rem; color:var(--cream); }
+    .questions summary::-webkit-details-marker { display:none; }
+    .questions summary::marker { content:''; }
+    .questions summary::after { content:'+'; color:var(--gold); font-family:'Josefin Sans', sans-serif; font-size:1.3rem; font-weight:300; }
+    .questions details[open] summary::after { content:'–'; }
+    .questions details p { margin:0; padding-bottom:24px; }
+    .questions details p a { color:var(--gold); text-decoration:underline; text-underline-offset:0.15em; }
     .actions { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-start; align-items:center; }
     @media (min-width:900px) {
       .opener { grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:40px; align-items:center; }
@@ -70,7 +82,8 @@
       .cta { display:grid; grid-template-columns:minmax(0,0.9fr) minmax(280px,1.1fr); gap:28px 48px; align-items:start; }
       .inquire-intro { grid-column:1; grid-row:1; }
       .inquire-form { max-width:none; margin:0; grid-column:2; grid-row:1; grid-template-columns:1fr 1fr; gap:14px 16px; }
-      .inquire-form .is-wide, .inquire-form .form-lead, .inquire-form .occasion-ack, .inquire-form button { grid-column:1 / -1; }
+      .inquire-form .is-wide, .inquire-form .form-lead, .inquire-form .occasion-ack, .inquire-form .form-mail-note, .inquire-form button { grid-column:1 / -1; }
+      .intro-actions .party-link, .actions .party-link { text-align:left; align-self:flex-start; margin-left:0; }
     }
     @media (min-width:761px) {
       .grid { grid-template-columns:1fr 1fr; }
@@ -101,7 +114,7 @@
           <li><a href="https://shop.sipsoberbar.com" target="_blank" rel="noopener">Merch</a></li>
         </ul>
         <a class="site-phone" href="tel:+18135861660">(813) 586-1660</a>
-        <a class="site-cta" data-cta="header" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>
+        <a class="site-cta" data-cta="header" href="#inquiry">Plan a gathering</a>
         <button class="site-burger" id="siteBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">☰</button>
       </div>
     </nav>
@@ -178,7 +191,7 @@
     <p>Just coming for coffee? See <a href="/breakfast-gulfport.html">breakfast and coffee</a>. Making dinner plans? <a data-cta="private-events" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve a table</a>.</p>
 
     <div class="cta" id="inquire">
-      <div class="inquire-intro">
+      <div class="inquire-intro" id="inquiry">
         <h2 class="rise" style="margin-top:0">Tell us what you're planning.</h2>
         <p>Menus, staffing, pricing, and availability are confirmed in your event quote. An inquiry does not hold the date.</p>
         <p class="price-note">No mail app? Email <a href="mailto:Sean@sipsoberbar.com">Sean@sipsoberbar.com</a>, or call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
@@ -222,9 +235,26 @@
           <label for="inq-notes">Notes</label>
           <textarea id="inq-notes" name="notes" placeholder="Indoor seating, food, or anything else we should know"></textarea>
         </div>
+        <p class="form-mail-note">Sending this opens an email draft.</p>
         <button class="btn" type="submit">Open email draft</button>
       </form>
     </div>
+
+    <section class="questions" aria-label="Questions">
+      <h2 class="rise">Questions</h2>
+      <details>
+        <summary>How many people can book online?</summary>
+        <p>Book online for 1–6. For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
+      </details>
+      <details>
+        <summary>How do I ask about a private event?</summary>
+        <p>Use the form on this page. Sending it opens an email draft. You can also call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
+      </details>
+      <details>
+        <summary>What if the group is larger than six?</summary>
+        <p>For 7+, call <a href="tel:+18135861660">(813) 586-1660</a>.</p>
+      </details>
+    </section>
 
     <section class="facts" aria-label="Hours, address, and phone">
       <h2 class="rise">Visit</h2>
@@ -270,11 +300,16 @@
       occasionAck.hidden = !line;
     }
     var occasionSelect = document.getElementById('inq-occasion');
+    function syncOccasion() {
+      if (occasionSelect) setOccasionLine(occasionSelect.value);
+    }
     if (occasionSelect) {
       occasionSelect.addEventListener('change', function () {
         setOccasionLine(occasionSelect.value);
       });
+      syncOccasion();
     }
+    window.addEventListener('load', syncOccasion);
     document.querySelectorAll('.plan-link').forEach(function (link) {
       link.addEventListener('click', function () {
         var occasion = link.getAttribute('data-occasion');
@@ -366,25 +401,25 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How many people can a private event at Sober Bar hold?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Call (813) 586-1660 or send an inquiry." }
+        "name": "How many people can book online?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Book online for 1–6. For 7+, call (813) 586-1660." }
       },
       {
         "@type": "Question",
-        "name": "What private events does Sober Bar host in Gulfport?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Showers, birthdays, office gatherings, recovery milestones, book clubs, and other private celebrations." }
+        "name": "How do I ask about a private event?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use the form on this page. Sending it opens an email draft. You can also call (813) 586-1660." }
       },
       {
         "@type": "Question",
-        "name": "How do I inquire about a private event?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Use the inquiry form on this page. It opens an email to Sean@sipsoberbar.com and does not reserve the date. You can also call (813) 586-1660." }
+        "name": "What if the group is larger than six?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For 7+, call (813) 586-1660." }
       }
     ]
   }
   </script>
   <nav class="mobile-actions" aria-label="Call, reserve, or directions">
     <a href="tel:+18135861660">Call</a>
-    <a class="is-primary" data-cta="sticky" href="https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637" target="_blank" rel="noopener noreferrer">Reserve</a>
+    <a class="is-primary" data-cta="sticky" href="#inquiry">Plan a gathering</a>
     <a href="https://maps.google.com/?q=3062+Beach+Blvd+S+Gulfport+FL+33707" target="_blank" rel="noopener">Directions</a>
   </nav>
 
