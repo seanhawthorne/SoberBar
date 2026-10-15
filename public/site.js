@@ -25,7 +25,7 @@
   d.querySelectorAll('[data-status]').forEach(function (el) {
     var txt;
     if (brunchNow) txt = 'Jazz brunch is on now · until 1pm';
-    else if (open) txt = 'Open now · ' + (g.min < 1020 ? 'free, fast WiFi · ' : '') + 'until ' + (closeMin(g.day) === 1440 ? 'midnight' : '10pm');
+    else if (open) txt = 'Open now · until ' + (closeMin(g.day) === 1440 ? 'midnight' : '10pm');
     else txt = 'Closed now · doors at 7am';
     el.querySelector('span').textContent = txt;
     el.classList.toggle('closed', !open);

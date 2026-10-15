@@ -72,3 +72,30 @@ Screenshots in `_shots/r7/`: `home-first-390x844.png`, `home-first-1440x900.png`
 
 Checks: 15 pages × 390/1440 have 0 horizontal overflow, 0 broken images, and 0 JS errors. Drag, keyboard, and the reserve dialog all work.
 Lighthouse mobile (last runs): home **94–95** performance / **100** accessibility; menu **95 / 100**. The new daytime photo is lazy-loaded so it doesn’t compete with the porch photo; home now sits right at the 95 line and varies run to run. Menu accessibility briefly hit 96 because the parchment sections’ background was misread under `content-visibility`; those sections now render normally and it’s back to 100.
+
+## r8 / r9: home rebuilt around vibe, cocktails, and food (owner: "sell the food, the cocktails, and the vibe")
+Shots: `_shots/r8/` and `_shots/r9/` (home-first-390x844, home-first-1440x900, index-390 at 390×6000, index-1440 at 1440×5000), each with a `critique.md`.
+
+**Removed from home:** the day/night clock and scrubber, the "One day on Beach Boulevard" intro and dial, and all five hour chapters (7:00 / 12:00 / 5:30 / 8:00 / 11:59).
+
+**New home, top to bottom:**
+1. **Hero:** the night porch at full bleed ("We saw you looking. You can come in now."), with *Coffee by day. Cocktails after dark.*, a live open/closed status, Save your table / View the menu, 4.9★ from 129 reviews, and an "Every Sunday · Live jazz & brunch" card.
+2. Marquee.
+3. **The rooms:** "A real bar. *Minus the hangover.*" over an editorial mosaic: the Parlor, the Bar, Sundays (jazz room crowd → jazz page), Private events (dancing under the chandelier → events page), the Counter, the Lounge.
+4. **WiFi**, one band: *Your “out of office” office.* Espresso from 7am and free, fast WiFi.
+5. **From the bar · menu preview:** "Seven signatures. *All alcohol-free.*" Call Me An Ube and Bee's Bouquet as large portraits, Hot Mami and Lilikoi (name only), then Jinn & Juniper, Moonlit Meringue, and Espresso Martini with their ingredients. "Plus alcohol-free beer, and Beech Kombucha on draft." Links to menu.html#cocktails.
+6. **From the kitchen · menu preview:** the full-bleed Sunday table spread (the bar spread on phone), then six DoorDash dishes with exact DoorDash names: The Muffuletta; Fig, Brie, & Prosciutto Flatbread; The Classic Morning Melt; Hot Honey Sopressata Flatbread; Big Easy Breakfast Flatbread; Garden Mezze Flatbread (V). Then See the full menu / Save your table.
+7. Sunday Jazz Brunch poster (the Western Gypsies, every Sunday, brunch 10am–1pm, no set times).
+8. Reviews: 4.9 from 129 Google reviews, two quotes, the press strip.
+9. Gulfport guides strip (4 guides + all guides).
+10. Visit, hours, directions, and FAQ.
+
+All SeatOn links are unchanged. The order keeps vibe/space photos above the cocktail and food previews.
+
+**Also changed:** the menu page's beer copy now reads "Alcohol-free beer, plus Beech Kombucha on draft", so only the kombucha is claimed as draft. The DoorDash dish photos (`images/dish/`) have no watermarks; the muffuletta is cropped to the sandwich. Unused CSS was pruned site-wide, and the dark logo now loads only on light pages.
+
+**Checks:** 16 pages × 390/1440 have 0 horizontal overflow and 0 JS errors. There are no banned phrases on home (Red Widow, 100%, Bagels & Bowls items, Angus Sliders, walk-in, call for jazz details, patio). No staff-posing stills and no patio.jpg.
+
+**Lighthouse mobile (final):** home **96 / 97** performance (two runs), **100** accessibility, 100 best practices, 100 SEO; LCP 2.6s, TBT ~90ms, CLS 0. Menu 97 / 100, reservations 97 / 100, private events 98 / 100.
+
+Package: `/workspace/claude-site.tgz` (excludes `_build` and `_shots`). Not deployed; no git, no messages.
