@@ -1,3 +1,34 @@
+# Sober Bar & Kitchen, Gulfport FL: alcohol-free bar, café and New Orleans kitchen.
+# Search engines and AI assistants are welcome to read and cite every public page.
+# Plain-text summaries for AI tools: https://www.sipsoberbar.com/llms.txt
+# and https://www.sipsoberbar.com/llms-full.txt
+
+# AI assistants, AI search and model crawlers
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: GoogleOther
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Meta-ExternalAgent
+User-agent: Meta-ExternalFetcher
+User-agent: Amazonbot
+User-agent: DuckAssistBot
+User-agent: MistralAI-User
+User-agent: cohere-ai
+User-agent: YouBot
+User-agent: CCBot
+Allow: /
+
+# Search engines and everyone else
 User-agent: *
 Allow: /
+
 Sitemap: https://www.sipsoberbar.com/sitemap.xml
