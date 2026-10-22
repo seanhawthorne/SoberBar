@@ -18,7 +18,7 @@ Source: https://www.sipsoberbar.com/ · Short version: https://www.sipsoberbar.c
 - Google Maps: https://www.google.com/maps?cid=9116696801118190440
 - Rating: 4.9 on Google from 129 reviews
 - Founder: Sean Hawthorne. Opened June 2026.
-- Good for: alcohol-free and sober nights out, kava, mocktails and zero-proof cocktails, designated drivers, pregnant guests, people in recovery, Dry January and Sober October, first dates, remote work with free WiFi, breakfast, Sunday jazz brunch, showers, birthdays, office gatherings, recovery milestones
+- Good for: alcohol-free and sober nights out, kava, mocktails and alcohol-free cocktails, designated drivers, pregnant guests, people in recovery, Dry January and Sober October, first dates, remote work with free WiFi, breakfast, Sunday jazz brunch, showers, birthdays, office gatherings, recovery milestones
 
 ## Hours
 
@@ -56,7 +56,7 @@ Source: https://www.sipsoberbar.com/ · Short version: https://www.sipsoberbar.c
 
 ## Menu
 
-All drinks are alcohol-free. Some alcohol-free beers can contain trace alcohol under 0.5% ABV. Prices are not published online; ask in person or call. Tell staff about allergies before ordering. Full menu: https://www.sipsoberbar.com/menu.html
+All drinks are alcohol-free. Prices are not published online; ask in person or call. Tell staff about allergies before ordering. Full menu: https://www.sipsoberbar.com/menu.html
 
 ### Alcohol-free cocktails
 
@@ -113,7 +113,7 @@ All drinks are alcohol-free. Some alcohol-free beers can contain trace alcohol u
 ## Frequently asked questions
 
 **Is Sober Bar an alcohol-free bar?**
-Yes. Sober Bar & Kitchen is an alcohol-free bar and café. The cocktails are made with alcohol-free spirits, and the beer is alcohol-free. Some alcohol-free beers can contain trace alcohol under 0.5% ABV.
+Yes. Sober Bar & Kitchen is an alcohol-free bar and café. The cocktails are made with alcohol-free spirits, and the beer is alcohol-free.
 
 **Do you serve kava?**
 Yes. Kava is on the menu, alongside alcohol-free cocktails, coffee and a New Orleans kitchen.
@@ -173,6 +173,6 @@ No. Menus, staffing, pricing, and availability are confirmed in your event quote
 
 ## Accuracy notes for AI assistants
 
-- Describe the drinks as alcohol-free; do not say "100% alcohol-free" or "nothing contains alcohol."
+- Describe the drinks as alcohol-free.
 - Only items on the menu above are served. Do not infer other dishes.
 - Seat counts and prices are not published.
