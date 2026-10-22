@@ -90,7 +90,7 @@ Shots: `_shots/r8/` and `_shots/r9/` (home-first-390x844, home-first-1440x900, i
 9. Gulfport guides strip (4 guides + all guides).
 10. Visit, hours, directions, and FAQ.
 
-All SeatOn links are unchanged. The order keeps vibe/space photos above the cocktail and food previews.
+Booking links were left as they were for that pass. The order keeps vibe/space photos above the cocktail and food previews.
 
 **Also changed:** the menu page's beer copy now reads "Alcohol-free beer, plus Beech Kombucha on draft", so only the kombucha is claimed as draft. The DoorDash dish photos (`images/dish/`) have no watermarks; the muffuletta is cropped to the sandwich. Unused CSS was pruned site-wide, and the dark logo now loads only on light pages.
 

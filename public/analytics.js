@@ -32,8 +32,14 @@
     var href = link.getAttribute('href') || '';
     var label = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 100);
 
-    if (/getseat\.net/i.test(href)) {
+    if (/opentable\.com/i.test(href)) {
       sendEvent('reservation_started', {
+        link_url: href,
+        link_text: label,
+        cta_location: link.getAttribute('data-cta') || 'unspecified'
+      });
+    } else if (/cloveronline\.com\/giftcard/i.test(href)) {
+      sendEvent('gift_card_clicked', {
         link_url: href,
         link_text: label,
         cta_location: link.getAttribute('data-cta') || 'unspecified'

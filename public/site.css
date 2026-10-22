@@ -62,7 +62,8 @@ button{font:inherit;color:inherit}
 .jz-top{margin:0 0 18px}
 @media (min-width:861px){.jz-top{display:none}}
 body.locked{overflow:hidden}
-.nav{display:flex;gap:26px;margin-left:auto;align-items:center}
+.nav{display:flex;gap:22px;margin-left:auto;align-items:center}
+@media (max-width:1240px){.nav{gap:14px}.nav a{font-size:14px}.head{gap:16px}}
 .nav a{font-size:15px;text-decoration:none;color:var(--on-dark);opacity:.9;position:relative;padding:6px 0}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
 .nav a:hover::after,.nav a[aria-current=page]::after{transform:scaleX(1)}
@@ -227,6 +228,14 @@ blockquote footer{font-size:14px;letter-spacing:.06em;color:var(--fg2)}
 .hours td{padding:8px 0;border-bottom:1px solid color-mix(in srgb,var(--fg) 15%,transparent)}
 .hours td:last-child{text-align:right;font-variant-numeric:tabular-nums}
 .hours tr.today td{color:var(--acc);font-weight:600}
+.giftline{margin:14px 0 0;font-size:15px;color:var(--fg2)}
+.giftline a{font-weight:600}
+.ot-book{display:grid;justify-items:center;gap:16px;margin:4px auto 34px;width:min(100%,420px)}
+.ot-mount{width:min(100%,224px);min-height:301px;display:grid;place-items:center;background:#fff;border-radius:4px}
+.ot-mount iframe{max-width:100%;background:#fff;border-radius:4px}
+.drawer{overflow-y:auto}
+.ot-fallback{margin:0;width:100%}
+.ot-fallback .btn{width:100%;justify-content:center}
 .faq details{border-bottom:1px solid color-mix(in srgb,var(--fg) 18%,transparent)}
 .faq summary{cursor:pointer;list-style:none;padding:14px 30px 14px 0;font:400 22px/1.25 var(--serif);position:relative}
 .faq summary::-webkit-details-marker{display:none}
