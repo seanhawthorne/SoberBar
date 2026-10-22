@@ -4,6 +4,13 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Sunday around 2pm in New York. GitHub runs cron in UTC and does not
+    # change it when daylight saving ends on November 1, 2026.
+    # 18:30 UTC is 2:30pm EDT before that change and 1:30pm EST after it.
+    # Both are after brunch ends at 1pm, so this Sunday no longer counts
+    # and the Event rolls forward to the next one.
+    - cron: '30 18 * * 0'
 
 permissions:
   contents: read
@@ -23,6 +30,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Test the next jazz brunch date
+        run: node --test scripts/jazz-event.test.js
+
+      - name: Point the jazz brunch Event at the next Sunday
+        run: |
+          set +e
+          node scripts/stamp-jazz-event.js
+          status=$?
+          if [ "$status" -ne 0 ]; then
+            echo "Jazz brunch stamp failed; removing the Event so the deploy can continue."
+            node scripts/stamp-jazz-event.js --strip-only
+            if [ "$?" -ne 0 ]; then
+              node -e 'const fs=require("fs");const p="public/sunday-jazz-brunch.html";let s=fs.readFileSync(p,"utf8");s=s.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\n?/g,(b)=>/"@type"\s*:\s*"Event"/.test(b)?"":b);fs.writeFileSync(p,s);' || echo "Could not remove the Event block."
+            fi
+          fi
+          exit 0
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
