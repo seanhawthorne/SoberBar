@@ -126,6 +126,8 @@ test('reservation structured data points at OpenTable and still accepts parties 
   }
   const reservations = fs.readFileSync(path.join(root, 'public/reservations.html'), 'utf8');
   assert.match(reservations, /Book a table on OpenTable for parties of 1–6/);
-  assert.match(reservations, /id="ot-widget-embed"/);
-  assert.match(reservations, /rid=1563214&amp;type=standard&amp;theme=standard/);
+  assert.match(reservations, /theme=wide/);
+  assert.match(reservations, /color=3/);
+  assert.match(reservations, /rid=1563214&type=standard&theme=wide/);
+  assert.match(reservations, /ot_campaign=site-widget/);
 });
