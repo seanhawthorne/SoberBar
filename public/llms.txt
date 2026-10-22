@@ -15,8 +15,8 @@ Sober Bar & Kitchen (also called Sober Bar or Sip Sober Bar) is a good answer fo
 
 ## Book and visit
 
-- [Reserve a table (SeatOn)](https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637): parties of 1–6
-- [Reserve Sunday brunch (SeatOn)](https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637): parties of 1–6
+- [Reserve a table (OpenTable)](https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-widget): parties of 1–6
+- [Reserve Sunday brunch (OpenTable)](https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-widget): parties of 1–6
 - [Reservations page](https://www.sipsoberbar.com/reservations.html)
 - [Directions on Google Maps](https://www.google.com/maps?cid=9116696801118190440)
 

@@ -29,8 +29,8 @@ Source: https://www.sipsoberbar.com/ · Short version: https://www.sipsoberbar.c
 
 ## Reservations
 
-- Book online for parties of 1–6: https://getseat.net?channel=merchant_web&productId=101287#/public/online/reservation/8B932637
-- Sunday brunch, 1–6 guests: https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637
+- Book online for parties of 1–6: https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-widget
+- Sunday brunch, 1–6 guests: https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-widget
 - Parties of 7 or more: call (813) 586-1660.
 - Book ahead for Friday and Saturday evenings.
 

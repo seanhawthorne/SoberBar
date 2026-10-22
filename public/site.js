@@ -2,6 +2,8 @@
   'use strict';
   var d = document, root = d.documentElement;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Same site-widget link used on every Reserve control.
+  var OT_RESERVE = 'https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-widget';
 
   /* ---- Gulfport time ---- */
   function nowGulfport() {
@@ -38,7 +40,7 @@
   if (g.day === 0 && g.min < 780) {
     d.querySelectorAll('[data-cta="hero"]').forEach(function (a) {
       a.removeAttribute('data-reserve');
-      a.href = 'https://getseat.net?channel=merchant_web&productId=101285#/public/online/reservation/8B932637';
+      a.href = OT_RESERVE;
       a.setAttribute('data-cta', 'hero-sunday');
       a.firstChild.textContent = 'Reserve Sunday brunch ';
     });
@@ -165,6 +167,32 @@
     });
     dlg.querySelector('.x').addEventListener('click', function () { dlg.close(); });
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  }
+
+  /* ---- OpenTable widget: load when the booking panel is near the screen ---- */
+  var otMount = d.getElementById('ot-mount');
+  var otTpl = d.getElementById('ot-widget-embed');
+  if (otMount && otTpl) {
+    var loadOt = function () {
+      if (otMount.dataset.loaded) return;
+      var proto = otTpl.content && otTpl.content.querySelector('script');
+      if (!proto) return;
+      otMount.dataset.loaded = '1';
+      var s = d.createElement('script');
+      s.async = false;
+      s.src = proto.getAttribute('src');
+      otMount.appendChild(s);
+    };
+    if ('IntersectionObserver' in window) {
+      var otIo = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          loadOt();
+          otIo.disconnect();
+        });
+      }, { rootMargin: '280px 0px' });
+      otIo.observe(otMount);
+    } else loadOt();
   }
 
   /* ---- marquee pause ---- */
