@@ -124,6 +124,51 @@ test('jazz brunch reserve links use the brunch experience', () => {
   assert.match(js, /var OT_RESERVE = 'https:\/\/www\.opentable\.com\/r\/sipsoberbar-reservations-gulfport\?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-widget'/);
 });
 
+test('dinner entrées have no prices and the homepage reserves dinner', () => {
+  const names = [
+    'Braised Beef Short Rib',
+    'Chicken & Sausage Gumbo',
+    'Fire Braised Chicken',
+    'Shrimp & Grits',
+    'Blackened Redfish',
+    'Blackened Chicken Alfredo',
+  ];
+  const menu = fs.readFileSync(path.join(root, 'public/menu.html'), 'utf8');
+  const home = fs.readFileSync(path.join(root, 'public/index.html'), 'utf8').replace(/&amp;/g, '&');
+  const menuStart = menu.indexOf('id="entrees"');
+  const menuSlice = menu.slice(menuStart, menu.indexOf('</section>', menuStart)).replace(/&amp;/g, '&');
+  assert.ok(menuStart > 0);
+  for (const name of names) {
+    assert.ok(menuSlice.includes(name), name);
+    assert.ok(home.includes(name), `homepage ${name}`);
+  }
+  assert.match(menuSlice, /Add fire-braised chicken\./);
+  assert.equal(menuSlice.includes('+$3'), false);
+  assert.equal(/\$\d/.test(menuSlice), false);
+  assert.match(home, /Now serving <em class="it">dinner\.<\/em>/);
+  assert.match(home, /Add fire-braised chicken\./);
+  const dinner = home.match(/data-cta="home-dinner"[^>]*>|href="[^"]+"[^>]*data-cta="home-dinner"/);
+  assert.ok(dinner, 'home-dinner link');
+  const dinnerAnchor = home.match(/<a\b[^>]*data-cta="home-dinner"[^>]*>/);
+  assert.ok(dinnerAnchor);
+  const dinnerUrl = dinnerAnchor[0].match(/href="([^"]+)"/)[1].replace(/&amp;/g, '&');
+  assert.ok(dinnerUrl.includes(siteWidget), dinnerUrl);
+  assert.equal(dinnerUrl.includes('experienceId=833122'), false);
+  assert.equal(dinnerUrl.includes('+$3'), false);
+
+  const blocks = [...menu.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  const data = JSON.parse(blocks[0][1]);
+  const section = data.hasMenuSection.find((entry) => entry.name === 'Entrées');
+  assert.deepStrictEqual(section.hasMenuItem.map((item) => item.name), names);
+  for (const item of section.hasMenuItem) {
+    assert.equal(item.offers, undefined);
+    assert.equal(/\$\d|\+\s*\$/.test(JSON.stringify(item)), false);
+  }
+  const shrimp = section.hasMenuItem.find((item) => item.name === 'Shrimp & Grits');
+  assert.match(shrimp.description, /Add fire-braised chicken\./);
+  assert.equal(shrimp.description.includes('+$3'), false);
+});
+
 test('menu lists beignets as alcohol-free with no price', () => {
   const html = fs.readFileSync(path.join(root, 'public/menu.html'), 'utf8');
   assert.match(html, /<h3>Beignets<\/h3><p>Alcohol-free<\/p>/);
