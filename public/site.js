@@ -2,8 +2,10 @@
   'use strict';
   var d = document, root = d.documentElement;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // Same site-widget link used on every Reserve control.
+  // Dinner and any-day Reserve controls stay on the standard booking link.
   var OT_RESERVE = 'https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-widget';
+  // Jazz brunch buttons and the brunch side of the chooser use the experience.
+  var OT_BRUNCH = 'https://www.opentable.com/booking/experiences-availability?rid=1563214&experienceId=833122&shareReferrer=web&ot_source=Restaurant%20website&ot_campaign=site-brunch';
 
   /* ---- Gulfport time ---- */
   function nowGulfport() {
@@ -40,7 +42,7 @@
   if (g.day === 0 && g.min < 780) {
     d.querySelectorAll('[data-cta="hero"]').forEach(function (a) {
       a.removeAttribute('data-reserve');
-      a.href = OT_RESERVE;
+      a.href = OT_BRUNCH;
       a.setAttribute('data-cta', 'hero-sunday');
       a.firstChild.textContent = 'Reserve Sunday brunch ';
     });
@@ -156,6 +158,8 @@
   }
 
   /* ---- reserve chooser ---- */
+  d.querySelectorAll('[data-cta="chooser-dinner"]').forEach(function (a) { a.href = OT_RESERVE; });
+  d.querySelectorAll('[data-cta="chooser-brunch"]').forEach(function (a) { a.href = OT_BRUNCH; });
   var dlg = d.getElementById('reserve');
   if (dlg && dlg.showModal) {
     d.addEventListener('click', function (e) {
