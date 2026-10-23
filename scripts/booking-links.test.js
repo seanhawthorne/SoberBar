@@ -124,49 +124,64 @@ test('jazz brunch reserve links use the brunch experience', () => {
   assert.match(js, /var OT_RESERVE = 'https:\/\/www\.opentable\.com\/r\/sipsoberbar-reservations-gulfport\?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-widget'/);
 });
 
-test('dinner entrées have no prices and the homepage reserves dinner', () => {
+test('dinner entrées use the card, owner prices, photos, and service hours', () => {
   const names = [
-    'Braised Beef Short Rib',
-    'Chicken & Sausage Gumbo',
-    'Fire Braised Chicken',
-    'Shrimp & Grits',
-    'Blackened Redfish',
-    'Blackened Chicken Alfredo',
+    'Pesto Parm Gnocchi',
+    'Three-Cheese Stuffed Shells',
+    'Chicken "Lasagna" al Forno',
+    'Chicken Bacon Ranch Tortellini',
+    'Cajun Crawfish Tortellini',
+    'Creole Shrimp & Grits',
   ];
+  const prices = ['18', '19', '22', '20', '26', '23'];
   const menu = fs.readFileSync(path.join(root, 'public/menu.html'), 'utf8');
   const home = fs.readFileSync(path.join(root, 'public/index.html'), 'utf8').replace(/&amp;/g, '&');
   const menuStart = menu.indexOf('id="entrees"');
   const menuSlice = menu.slice(menuStart, menu.indexOf('</section>', menuStart)).replace(/&amp;/g, '&');
+  const hours = 'Served from 4pm onward daily, and during Sunday brunch (10am–1pm).';
   assert.ok(menuStart > 0);
-  for (const name of names) {
-    assert.ok(menuSlice.includes(name), name);
-    assert.ok(home.includes(name), `homepage ${name}`);
+  assert.ok(menu.indexOf('id="entrees"') < menu.indexOf('id="breakfast"'));
+  for (const name of names) assert.ok(menuSlice.includes(name), name);
+  assert.match(menuSlice, /\$18\. Pillowy potato gnocchi/);
+  assert.match(menuSlice, /Add fire-braised chicken \+\$3\./);
+  assert.match(menuSlice, /\$26\. Cheese tortellini and tender crawfish tails/);
+  assert.equal(menuSlice.includes('$24'), false);
+  assert.match(menuSlice, /Each served with Cheesy Garlic Focaccia/);
+  assert.ok(menuSlice.includes(hours));
+  assert.equal(menu.includes('list.jpg'), false);
+  assert.equal(/non-alcoholic|mocktail|zero-proof/i.test(menuSlice), false);
+  for (const name of ['pesto-parm-gnocchi', 'three-cheese-stuffed-shells', 'chicken-lasagna-al-forno', 'chicken-bacon-ranch-tortellini', 'cajun-crawfish-tortellini', 'creole-shrimp-grits']) {
+    assert.ok(menuSlice.includes(`/images/menu/${name}-200.webp`));
+    assert.ok(menuSlice.includes(`/images/menu/${name}-200.jpg`));
+    assert.ok(fs.existsSync(path.join(root, 'public/images/menu', `${name}-400.webp`)));
+    assert.ok(fs.existsSync(path.join(root, 'public/images/menu', `${name}-400.jpg`)));
   }
-  assert.match(menuSlice, /Add fire-braised chicken\./);
-  assert.equal(menuSlice.includes('+$3'), false);
-  assert.equal(/\$\d/.test(menuSlice), false);
+
   assert.match(home, /Now serving <em class="it">dinner\.<\/em>/);
-  assert.match(home, /Add fire-braised chicken\./);
-  const dinner = home.match(/data-cta="home-dinner"[^>]*>|href="[^"]+"[^>]*data-cta="home-dinner"/);
-  assert.ok(dinner, 'home-dinner link');
+  assert.ok(home.includes(hours));
+  assert.ok(home.includes('Each served with Cheesy Garlic Focaccia'));
+  assert.ok(home.includes('Pesto Parm Gnocchi'));
+  assert.ok(home.includes('Chicken "Lasagna" al Forno'));
+  assert.ok(home.includes('Creole Shrimp & Grits'));
+  assert.ok(home.includes('/images/dish/pesto-parm-gnocchi-800.webp'));
+  assert.ok(home.includes('/images/dish/pesto-parm-gnocchi-800.jpg'));
   const dinnerAnchor = home.match(/<a\b[^>]*data-cta="home-dinner"[^>]*>/);
   assert.ok(dinnerAnchor);
   const dinnerUrl = dinnerAnchor[0].match(/href="([^"]+)"/)[1].replace(/&amp;/g, '&');
   assert.ok(dinnerUrl.includes(siteWidget), dinnerUrl);
   assert.equal(dinnerUrl.includes('experienceId=833122'), false);
-  assert.equal(dinnerUrl.includes('+$3'), false);
 
   const blocks = [...menu.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
   const data = JSON.parse(blocks[0][1]);
   const section = data.hasMenuSection.find((entry) => entry.name === 'Entrées');
+  assert.equal(section.description, `${hours} Each served with Cheesy Garlic Focaccia.`);
   assert.deepStrictEqual(section.hasMenuItem.map((item) => item.name), names);
-  for (const item of section.hasMenuItem) {
-    assert.equal(item.offers, undefined);
-    assert.equal(/\$\d|\+\s*\$/.test(JSON.stringify(item)), false);
-  }
-  const shrimp = section.hasMenuItem.find((item) => item.name === 'Shrimp & Grits');
-  assert.match(shrimp.description, /Add fire-braised chicken\./);
-  assert.equal(shrimp.description.includes('+$3'), false);
+  assert.deepStrictEqual(section.hasMenuItem.map((item) => item.offers.price), prices);
+  const crawfish = section.hasMenuItem.find((item) => item.name === 'Cajun Crawfish Tortellini');
+  assert.equal(crawfish.offers.price, '26');
+  assert.equal(JSON.stringify(crawfish).includes('24'), false);
+  const gnocchi = section.hasMenuItem.find((item) => item.name === 'Pesto Parm Gnocchi');
+  assert.match(gnocchi.description, /Add fire-braised chicken \+\$3\./);
 });
 
 test('menu lists beignets as alcohol-free with no price', () => {
