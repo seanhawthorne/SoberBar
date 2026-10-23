@@ -198,6 +198,36 @@ test('menu lists beignets as alcohol-free with no price', () => {
   assert.equal(item.offers, undefined);
 });
 
+test('titles and meta descriptions lead with dinner and leave kava on the menu', () => {
+  const title = 'Sober Bar & Kitchen | Alcohol-Free Bar, Dinner & Coffee in Gulfport, FL';
+  const description = 'Alcohol-free bar and dinner in Gulfport, FL. Coffee from 7am, a New Orleans kitchen, and Sunday jazz brunch. Open daily.';
+  assert.ok(description.length < 160, String(description.length));
+  assert.match(description, /^Alcohol-free bar and dinner/);
+  const home = fs.readFileSync(path.join(root, 'public/index.html'), 'utf8').replace(/&amp;/g, '&');
+  assert.equal(home.split(title).length - 1, 3);
+  assert.equal(home.split(description).length - 1, 3);
+  const business = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  assert.equal(business.name, 'Sober Bar & Kitchen');
+  assert.match(business.description, /^Sober Bar & Kitchen is an alcohol-free bar and dinner/);
+  assert.equal(/kava/i.test(business.description), false);
+
+  const misses = [];
+  for (const file of walk(path.join(root, 'public')).filter((entry) => entry.endsWith('.html'))) {
+    const html = fs.readFileSync(file, 'utf8');
+    const tags = html.match(/<title>[\s\S]*?<\/title>|<meta\b[^>]*(?:name|property)="(?:description|og:title|og:description|twitter:title|twitter:description)"[^>]*>/g) || [];
+    for (const tag of tags) {
+      const text = tag.replace(/&amp;/g, '&');
+      if (/kava/i.test(text)) misses.push(`${path.basename(file)} ${text.slice(0, 120)}`);
+    }
+  }
+  assert.deepStrictEqual(misses, []);
+
+  const menu = fs.readFileSync(path.join(root, 'public/menu.html'), 'utf8');
+  assert.match(menu, /<h3>Kava<\/h3>/);
+  const kavaPage = fs.readFileSync(path.join(root, 'public/kava-bar-gulfport.html'), 'utf8');
+  assert.match(kavaPage, /<h1>A kava bar in/);
+});
+
 test('gift cards are in the nav, footer, and one homepage line', () => {
   const pages = walk(path.join(root, 'public')).filter((file) => file.endsWith('.html'));
   const missingNav = [];
