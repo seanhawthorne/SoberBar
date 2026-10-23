@@ -8,6 +8,7 @@ const test = require('node:test');
 const root = path.join(__dirname, '..');
 const banned = ['seat' + 'on', 'get' + 'seat'];
 const siteWidget = 'ot_source=Restaurant%20website&ot_campaign=site-widget';
+const dinnerBook = 'https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-dinner';
 const brunchBook = 'https://www.opentable.com/booking/experiences-availability?rid=1563214&experienceId=833122&shareReferrer=web&ot_source=Restaurant%20website&ot_campaign=site-brunch';
 const plainBook = 'https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214';
 const brunchCtas = [
@@ -66,6 +67,7 @@ test('no legacy booking-brand strings remain', () => {
 
 test('reserve links use the site-widget campaign, with one plain fallback', () => {
   const plainHits = [];
+  const dinnerHits = [];
   const offCampaign = [];
   for (const file of textFiles()) {
     const rel = path.relative(root, file);
@@ -79,7 +81,10 @@ test('reserve links use the site-widget campaign, with one plain fallback', () =
         plainHits.push(rel);
         continue;
       }
-      if (url === brunchBook) continue;
+      if (url === brunchBook || url === dinnerBook) {
+        if (url === dinnerBook) dinnerHits.push(rel);
+        continue;
+      }
       if (!url.includes('rid=1563214') && !url.includes('restref=1563214')) {
         offCampaign.push(`${rel} missing rid: ${url}`);
       }
@@ -87,6 +92,7 @@ test('reserve links use the site-widget campaign, with one plain fallback', () =
     }
   }
   assert.deepStrictEqual(plainHits, ['public/reservations.html']);
+  assert.deepStrictEqual(dinnerHits, ['public/index.html']);
   assert.deepStrictEqual(offCampaign, []);
 });
 
@@ -124,7 +130,7 @@ test('jazz brunch reserve links use the brunch experience', () => {
   assert.match(js, /var OT_RESERVE = 'https:\/\/www\.opentable\.com\/r\/sipsoberbar-reservations-gulfport\?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-widget'/);
 });
 
-test('dinner entrées use the card, owner prices, photos, and service hours', () => {
+test('dinner entrées show photos and hours, with no prices', () => {
   const names = [
     'Pesto Parm Gnocchi',
     'Three-Cheese Stuffed Shells',
@@ -133,19 +139,17 @@ test('dinner entrées use the card, owner prices, photos, and service hours', ()
     'Cajun Crawfish Tortellini',
     'Creole Shrimp & Grits',
   ];
-  const prices = ['18', '19', '22', '20', '26', '23'];
   const menu = fs.readFileSync(path.join(root, 'public/menu.html'), 'utf8');
   const home = fs.readFileSync(path.join(root, 'public/index.html'), 'utf8').replace(/&amp;/g, '&');
   const menuStart = menu.indexOf('id="entrees"');
   const menuSlice = menu.slice(menuStart, menu.indexOf('</section>', menuStart)).replace(/&amp;/g, '&');
-  const hours = 'Served from 4pm onward daily, and during Sunday brunch (10am–1pm).';
+  const hours = 'Served from 4pm daily and during Sunday brunch (10am–1pm).';
   assert.ok(menuStart > 0);
   assert.ok(menu.indexOf('id="entrees"') < menu.indexOf('id="breakfast"'));
   for (const name of names) assert.ok(menuSlice.includes(name), name);
-  assert.match(menuSlice, /\$18\. Pillowy potato gnocchi/);
-  assert.match(menuSlice, /Add fire-braised chicken \+\$3\./);
-  assert.match(menuSlice, /\$26\. Cheese tortellini and tender crawfish tails/);
-  assert.equal(menuSlice.includes('$24'), false);
+  assert.match(menuSlice, /Pillowy potato gnocchi/);
+  assert.match(menuSlice, /Add fire-braised chicken\./);
+  assert.equal(/\$\d|\+\s*\$?\s*3/.test(menuSlice), false);
   assert.match(menuSlice, /Each served with Cheesy Garlic Focaccia/);
   assert.ok(menuSlice.includes(hours));
   assert.equal(menu.includes('list.jpg'), false);
@@ -157,31 +161,33 @@ test('dinner entrées use the card, owner prices, photos, and service hours', ()
     assert.ok(fs.existsSync(path.join(root, 'public/images/menu', `${name}-400.jpg`)));
   }
 
-  assert.match(home, /Now serving <em class="it">dinner\.<\/em>/);
-  assert.ok(home.includes(hours));
-  assert.ok(home.includes('Each served with Cheesy Garlic Focaccia'));
-  assert.ok(home.includes('Pesto Parm Gnocchi'));
-  assert.ok(home.includes('Chicken "Lasagna" al Forno'));
-  assert.ok(home.includes('Creole Shrimp & Grits'));
-  assert.ok(home.includes('/images/dish/pesto-parm-gnocchi-800.webp'));
-  assert.ok(home.includes('/images/dish/pesto-parm-gnocchi-800.jpg'));
-  const dinnerAnchor = home.match(/<a\b[^>]*data-cta="home-dinner"[^>]*>/);
+  const dinnerStart = home.indexOf('id="dinner"');
+  const dinnerSlice = home.slice(dinnerStart, home.indexOf('</section>', dinnerStart));
+  assert.match(dinnerSlice, /Now serving <em class="it">dinner\.<\/em>/);
+  assert.ok(dinnerSlice.includes(hours));
+  assert.ok(dinnerSlice.includes('Pesto Parm Gnocchi'));
+  assert.ok(dinnerSlice.includes('Chicken "Lasagna" al Forno'));
+  assert.ok(dinnerSlice.includes('Creole Shrimp & Grits'));
+  assert.ok(dinnerSlice.includes('/images/dish/pesto-parm-gnocchi-800.webp'));
+  assert.ok(dinnerSlice.includes('/images/dish/pesto-parm-gnocchi-800.jpg'));
+  assert.equal(/\$\d|\+\s*\$?\s*3/.test(dinnerSlice), false);
+  const dinnerAnchor = dinnerSlice.match(/<a\b[^>]*data-cta="home-dinner"[^>]*>/);
   assert.ok(dinnerAnchor);
   const dinnerUrl = dinnerAnchor[0].match(/href="([^"]+)"/)[1].replace(/&amp;/g, '&');
-  assert.ok(dinnerUrl.includes(siteWidget), dinnerUrl);
+  assert.ok(dinnerUrl.includes('ot_campaign=site-dinner'), dinnerUrl);
+  assert.ok(dinnerUrl.includes('restref=1563214'), dinnerUrl);
   assert.equal(dinnerUrl.includes('experienceId=833122'), false);
+  assert.equal(dinnerUrl.includes(siteWidget), false);
 
   const blocks = [...menu.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
   const data = JSON.parse(blocks[0][1]);
   const section = data.hasMenuSection.find((entry) => entry.name === 'Entrées');
   assert.equal(section.description, `${hours} Each served with Cheesy Garlic Focaccia.`);
   assert.deepStrictEqual(section.hasMenuItem.map((item) => item.name), names);
-  assert.deepStrictEqual(section.hasMenuItem.map((item) => item.offers.price), prices);
-  const crawfish = section.hasMenuItem.find((item) => item.name === 'Cajun Crawfish Tortellini');
-  assert.equal(crawfish.offers.price, '26');
-  assert.equal(JSON.stringify(crawfish).includes('24'), false);
+  assert.equal(section.hasMenuItem.some((item) => item.offers), false);
+  assert.equal(/\$\d|\+\s*\$?\s*3/.test(JSON.stringify(section)), false);
   const gnocchi = section.hasMenuItem.find((item) => item.name === 'Pesto Parm Gnocchi');
-  assert.match(gnocchi.description, /Add fire-braised chicken \+\$3\./);
+  assert.match(gnocchi.description, /Add fire-braised chicken\./);
 });
 
 test('menu lists beignets as alcohol-free with no price', () => {
@@ -196,6 +202,36 @@ test('menu lists beignets as alcohol-free with no price', () => {
   const item = breakfast.hasMenuItem.find((entry) => entry.name === 'Beignets');
   assert.equal(item.description, 'Alcohol-free');
   assert.equal(item.offers, undefined);
+});
+
+test('titles and meta descriptions lead with dinner and leave kava on the menu', () => {
+  const title = 'Sober Bar & Kitchen | Alcohol-Free Bar, Dinner & Coffee in Gulfport, FL';
+  const description = 'Alcohol-free bar and dinner in Gulfport, FL. Coffee from 7am, a New Orleans kitchen, and Sunday jazz brunch. Open daily.';
+  assert.ok(description.length < 160, String(description.length));
+  assert.match(description, /^Alcohol-free bar and dinner/);
+  const home = fs.readFileSync(path.join(root, 'public/index.html'), 'utf8').replace(/&amp;/g, '&');
+  assert.equal(home.split(title).length - 1, 3);
+  assert.equal(home.split(description).length - 1, 3);
+  const business = JSON.parse(home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  assert.equal(business.name, 'Sober Bar & Kitchen');
+  assert.match(business.description, /^Sober Bar & Kitchen is an alcohol-free bar and dinner/);
+  assert.equal(/kava/i.test(business.description), false);
+
+  const misses = [];
+  for (const file of walk(path.join(root, 'public')).filter((entry) => entry.endsWith('.html'))) {
+    const html = fs.readFileSync(file, 'utf8');
+    const tags = html.match(/<title>[\s\S]*?<\/title>|<meta\b[^>]*(?:name|property)="(?:description|og:title|og:description|twitter:title|twitter:description)"[^>]*>/g) || [];
+    for (const tag of tags) {
+      const text = tag.replace(/&amp;/g, '&');
+      if (/kava/i.test(text)) misses.push(`${path.basename(file)} ${text.slice(0, 120)}`);
+    }
+  }
+  assert.deepStrictEqual(misses, []);
+
+  const menu = fs.readFileSync(path.join(root, 'public/menu.html'), 'utf8');
+  assert.match(menu, /<h3>Kava<\/h3>/);
+  const kavaPage = fs.readFileSync(path.join(root, 'public/kava-bar-gulfport.html'), 'utf8');
+  assert.match(kavaPage, /<h1>A kava bar in/);
 });
 
 test('gift cards are in the nav, footer, and one homepage line', () => {
