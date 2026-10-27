@@ -9,6 +9,12 @@ const root = path.join(__dirname, '..');
 const banned = ['seat' + 'on', 'get' + 'seat'];
 const siteWidget = 'ot_source=Restaurant%20website&ot_campaign=site-widget';
 const dinnerBook = 'https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=site-dinner';
+const dinnerPageBook = 'https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214&lang=en-US&ot_source=Restaurant%20website&ot_campaign=dinner-page';
+const dinnerPageFiles = new Set([
+  'public/dinner-gulfport.html',
+  'public/llms.txt',
+  'public/llms-full.txt',
+]);
 const brunchBook = 'https://www.opentable.com/booking/experiences-availability?rid=1563214&experienceId=833122&shareReferrer=web&ot_source=Restaurant%20website&ot_campaign=site-brunch';
 const plainBook = 'https://www.opentable.com/r/sipsoberbar-reservations-gulfport?restref=1563214';
 const brunchCtas = [
@@ -83,6 +89,10 @@ test('reserve links use the site-widget campaign, with one plain fallback', () =
       }
       if (url === brunchBook || url === dinnerBook) {
         if (url === dinnerBook) dinnerHits.push(rel);
+        continue;
+      }
+      if (url === dinnerPageBook) {
+        if (!dinnerPageFiles.has(rel)) offCampaign.push(`${rel} unexpected dinner-page campaign`);
         continue;
       }
       if (!url.includes('rid=1563214') && !url.includes('restref=1563214')) {
@@ -253,6 +263,94 @@ test('gift cards are in the nav, footer, and one homepage line', () => {
   for (const file of others) {
     const text = fs.readFileSync(file, 'utf8');
     assert.equal(text.includes('utm_medium=homepage'), false, path.basename(file));
+  }
+});
+
+test('Gulfport dinner page lists six entrées without prices', () => {
+  const names = [
+    'Pesto Parm Gnocchi',
+    'Three-Cheese Stuffed Shells',
+    'Chicken "Lasagna" al Forno',
+    'Chicken Bacon Ranch Tortellini',
+    'Cajun Crawfish Tortellini',
+    'Creole Shrimp & Grits',
+  ];
+  const html = fs.readFileSync(path.join(root, 'public/dinner-gulfport.html'), 'utf8').replace(/&amp;/g, '&');
+  const main = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
+  const hours = 'Served from 4pm daily and during Sunday Jazz Brunch (10am–1pm)';
+  assert.ok(main.includes(hours));
+  assert.ok(main.includes('Each served with Cheesy Garlic Focaccia'));
+  assert.ok(main.includes('Gluten-free and vegan options available.'));
+  for (const name of names) assert.ok(main.includes(name), name);
+  assert.ok(main.includes('Add fire-braised chicken.'));
+  assert.equal((main.match(/data-cta="dinner-page"/g) || []).length, 3);
+  assert.ok(main.includes(dinnerPageBook));
+  assert.equal(/\$\d|priceRange|offers/.test(main), false);
+  assert.equal(/kava|zero-proof|\bABV\b|LGBTQ/i.test(main), false);
+  const dishList = main.slice(main.indexOf('<ul class="dishes">'), main.indexOf('</ul>'));
+  assert.equal(/gluten|vegan/i.test(dishList), false);
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((block) => JSON.parse(block[1]));
+  const menu = blocks.find((data) => data['@type'] === 'Menu');
+  const business = blocks.find((data) => Array.isArray(data['@type']) && data['@type'].includes('Restaurant'));
+  assert.ok(menu);
+  assert.ok(business);
+  assert.deepStrictEqual(menu.hasMenuSection[0].hasMenuItem.map((item) => item.name), names);
+  assert.equal(JSON.stringify(menu).includes('offers'), false);
+  assert.equal(/\$\d/.test(JSON.stringify(menu)), false);
+  assert.ok(business.servesCuisine.includes('Cajun'));
+  assert.ok(business.servesCuisine.includes('Creole'));
+  const amenities = business.amenityFeature.map((feature) => feature.name);
+  for (const name of ['Wheelchair accessible', 'Gender-neutral restroom', 'Vegan options', 'Gluten-free options']) {
+    assert.ok(amenities.includes(name), name);
+  }
+  assert.equal(business.priceRange, undefined);
+  const sitemap = fs.readFileSync(path.join(root, 'public/sitemap.xml'), 'utf8');
+  assert.ok(sitemap.includes('https://www.sipsoberbar.com/dinner-gulfport.html'));
+  assert.ok(html.includes('href="/dinner-gulfport.html" aria-current="page">Dinner</a>'));
+  assert.ok(html.includes('href="/dinner-gulfport.html">Dinner in Gulfport</a>'));
+});
+
+test('llms files lead with dinner and skip kava and ratings', () => {
+  const line = 'Gluten-free and vegan options; wheelchair accessible; gender-neutral restroom.';
+  const names = [
+    'Pesto Parm Gnocchi',
+    'Three-Cheese Stuffed Shells',
+    'Chicken "Lasagna" al Forno',
+    'Chicken Bacon Ranch Tortellini',
+    'Cajun Crawfish Tortellini',
+    'Creole Shrimp & Grits',
+  ];
+  for (const rel of ['public/llms.txt', 'public/llms-full.txt']) {
+    const text = fs.readFileSync(path.join(root, rel), 'utf8');
+    assert.match(text.split('\n').slice(0, 6).join('\n'), /dinner/i);
+    assert.ok(text.includes(line), rel);
+    for (const name of names) assert.ok(text.includes(name), `${rel} ${name}`);
+    assert.equal(/kava|zero-?proof|\bABV\b|4\.9|129 review|100%/i.test(text), false, rel);
+    assert.equal(/\$\d/.test(text), false, rel);
+  }
+});
+
+test('homepage hero drops kava bar wording and typed ratings', () => {
+  const home = fs.readFileSync(path.join(root, 'public/index.html'), 'utf8');
+  const visible = home.replace(/<style[\s\S]*?<\/style>/g, '');
+  assert.match(visible, /An alcohol-free bar, kitchen &amp; coffee house on Beach Blvd, Gulfport\./);
+  const heroStart = visible.indexOf('class="vhero"');
+  const hero = visible.slice(heroStart, visible.indexOf('id="rooms"', heroStart));
+  assert.equal(/kava/i.test(hero), false);
+  assert.equal(/4\.9|129 review/.test(visible), false);
+  for (const rel of ['public/index.html', 'public/breakfast-gulfport.html', 'public/private-events.html', 'public/reservations.html', 'public/dinner-gulfport.html']) {
+    const html = fs.readFileSync(path.join(root, rel), 'utf8');
+    const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((block) => JSON.parse(block[1]));
+    const business = blocks.find((data) => Array.isArray(data['@type']) && data['@type'].includes('Restaurant'));
+    assert.ok(business, rel);
+    assert.ok(business.servesCuisine.includes('Cajun'), rel);
+    assert.ok(business.servesCuisine.includes('Creole'), rel);
+    const amenities = business.amenityFeature.map((feature) => feature.name);
+    assert.ok(amenities.includes('Wheelchair accessible'), rel);
+    assert.ok(amenities.includes('Gender-neutral restroom'), rel);
+    assert.ok(amenities.includes('Vegan options'), rel);
+    assert.ok(amenities.includes('Gluten-free options'), rel);
+    assert.equal(business.priceRange, undefined, rel);
   }
 });
 
